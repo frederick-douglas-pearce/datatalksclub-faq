@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: e8bd670973
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_2715561d.png
 question: Clipping outliers
 section: 'Module 1: Introduction'
 sort_order: 580
@@ -12,5 +16,5 @@ Use the pandas function describe() which can provide a report of the data distri
 
 df[‘duration’].describe()
 
-![Image](images/mlops-zoomcamp/image_2715561d.png)
+<{IMAGE:image_1}>
 

@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 7cec1857a9
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_789bb06f.png
 question: DBT allows only 1 project in free developer version.
 section: 'Module 4: analytics engineering with dbt'
 sort_order: 3300
@@ -8,5 +12,5 @@ sort_order: 3300
 
 Yes, DBT allows only 1 project under one account. But you can create multiple accounts as shown below:
 
-![Image](images/data-engineering-zoomcamp/image_789bb06f.png)
+<{IMAGE:image_1}>
 

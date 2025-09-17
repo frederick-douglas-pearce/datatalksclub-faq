@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 6a3a0cc252
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_c66aba56.png
 question: Login to DB not working in Adminer UI even after right DB, user and password.
 section: 'Module 5: Monitoring'
 sort_order: 2180
@@ -10,7 +14,7 @@ Problem: In adminer ui Adminer access is not working even after right DB user an
 
 (It wasn't for me) Adminer simply does not respond and does not show DB details
 
-![Image](images/mlops-zoomcamp/image_c66aba56.png)
+<{IMAGE:image_1}>
 
 Solution: Try accessing DB from command line via psql
 

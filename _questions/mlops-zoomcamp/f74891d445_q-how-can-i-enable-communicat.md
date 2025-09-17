@@ -1,13 +1,17 @@
 ---
 course: mlops-zoomcamp
 id: f74891d445
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_09b2050c.png
 question: 'Q: How can I enable communication between Docker containers when invoked
   from a Kestra task?'
 section: 'Module 3: Orchestration'
 sort_order: 1530
 ---
 
-![Image](images/mlops-zoomcamp/image_09b2050c.png)
+<{IMAGE:image_1}>
 
 A: Use the docker.Run plugin in your Kestra task to run containers. This plugin supports advanced Docker options like custom networks.
 

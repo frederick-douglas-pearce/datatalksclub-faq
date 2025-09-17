@@ -1,12 +1,16 @@
 ---
 course: machine-learning-zoomcamp
 id: ced071dd97
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_36a238d9.png
 question: docker  build ERROR [x/y] COPY …
 section: 5. Deploying Machine Learning Models
 sort_order: 2030
 ---
 
-![Image](images/machine-learning-zoomcamp/image_36a238d9.png)
+<{IMAGE:image_1}>
 
 Solution:
 

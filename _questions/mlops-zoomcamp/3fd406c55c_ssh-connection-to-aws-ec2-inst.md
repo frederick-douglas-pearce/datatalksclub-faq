@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 3fd406c55c
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_e822dac8.png
 question: SSH Connection to AWS EC2 instance from local machine WSL getting terminated
   frequently within a minute of inactivity.
 section: 'Module 2: Experiment tracking'
@@ -9,7 +13,7 @@ sort_order: 990
 
 If the ssh connection from your local machine’s WSL to AWS EC2 instance is frequently getting terminated with very short span of inactivity with the following message displayed at prompt:
 
-![Image](images/mlops-zoomcamp/image_e822dac8.png)
+<{IMAGE:image_1}>
 
 You can fix the same by adding the following lines to your config file at your .ssh directory in your WSL environment:
 

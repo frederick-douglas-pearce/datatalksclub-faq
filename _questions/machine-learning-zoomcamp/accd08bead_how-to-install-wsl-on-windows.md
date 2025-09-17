@@ -1,6 +1,10 @@
 ---
 course: machine-learning-zoomcamp
 id: accd08bead
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_b74116cb.png
 question: How to install WSL on Windows 10 and 11 ?
 section: 5. Deploying Machine Learning Models
 sort_order: 1800
@@ -44,7 +48,7 @@ You are now inside of your linux system. You can test some commands such as “p
 
 To go to your windows system: you need to go back two times with cd ../.. And then go to the “mnt” directory with cd mnt. If you list here your files, you will see your disks. You can move to the desired folder, for example here I moved to the ML_Zoomcamp folder:
 
-![Image](images/machine-learning-zoomcamp/image_b74116cb.png)
+<{IMAGE:image_1}>
 
 Python should be already installed but you can check it by running sudo apt install python3 command.
 

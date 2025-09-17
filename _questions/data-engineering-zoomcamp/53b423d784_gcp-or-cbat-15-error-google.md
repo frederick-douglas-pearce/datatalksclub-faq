@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 53b423d784
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_993adb67.png
 question: GCP - OR-CBAT-15 ERROR Google cloud free trial account
 section: 'Module 1: Docker and Terraform'
 sort_order: 1450
@@ -16,5 +20,5 @@ It seems that Pyypl web-card should work too.
 
 ny-rides.json
 
-![Image](images/data-engineering-zoomcamp/image_993adb67.png)
+<{IMAGE:image_1}>
 

@@ -1,6 +1,10 @@
 ---
 course: machine-learning-zoomcamp
 id: bcedbb12fe
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_6e1c348d.png
 question: 'Could not install packages due to an OSError: [WinError 5] Access is denied'
 section: 10. Kubernetes and TensorFlow Serving
 sort_order: 3490
@@ -12,7 +16,7 @@ ERROR: Could not install packages due to an OSError: [WinError 5] Access is deni
 
 Consider using the `--user` option or check the permissions.
 
-![Image](images/machine-learning-zoomcamp/image_6e1c348d.png)
+<{IMAGE:image_1}>
 
 Solution description :
 

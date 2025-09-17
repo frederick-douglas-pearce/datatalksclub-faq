@@ -1,13 +1,17 @@
 ---
 course: data-engineering-zoomcamp
 id: 62f6c8dd8d
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_bc654841.png
 question: WSL - WSL integration with distro Ubuntu unexpectedly stopped with exit
   code 1.
 section: 'Module 1: Docker and Terraform'
 sort_order: 1030
 ---
 
-![Image](images/data-engineering-zoomcamp/image_bc654841.png)
+<{IMAGE:image_1}>
 
 Up restarting the same issue appears. Happens out of the blue on windows.
 

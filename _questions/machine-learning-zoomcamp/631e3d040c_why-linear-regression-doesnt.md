@@ -1,6 +1,10 @@
 ---
 course: machine-learning-zoomcamp
 id: 631e3d040c
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_008f5d2a.png
 question: Why linear regression doesn’t provide a “perfect” fit?
 section: 2. Machine Learning for Regression
 sort_order: 730
@@ -12,7 +16,7 @@ Q: “In lesson 2.8 why is y_pred different from y? After all, we trained X_trai
 
 A: linear regression is a pretty simple model, it neither can nor should fit 100% (nor any other model, as this would be the sign of overfitting). This picture might illustrate some intuition behind this, imagine X is a single feature:
 
-![Image](images/machine-learning-zoomcamp/image_008f5d2a.png)
+<{IMAGE:image_1}>
 
 As our model is linear, how would you draw a line to fit all the "dots"?
 

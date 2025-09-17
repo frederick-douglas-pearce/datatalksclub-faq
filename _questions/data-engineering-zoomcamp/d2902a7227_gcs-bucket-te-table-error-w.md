@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: d2902a7227
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_5924f19e.png
 question: 'GCS Bucket - te table: Error while reading data, error message: Parquet
   column ''XYZ'' has type INT which does not match the target cpp_type DOUBLE. File:
   gs://path/to/some/blob.parquet'
@@ -14,7 +18,7 @@ When dealing for example with the FHV Datasets from 2019, however (see image bel
 
 So while importing these files as parquet to BigQuery, the first one will be used to define the schema of the table, while all files following that will be used to append data on the existing table. Which means, they must all follow the very same schema of the file that created the table.
 
-![Image](images/data-engineering-zoomcamp/image_5924f19e.png)
+<{IMAGE:image_1}>
 
 So, in order to prevent errors like that, make sure to enforce the data types for the columns on the DataFrame before you serialize/upload them to BigQuery. Like this:
 

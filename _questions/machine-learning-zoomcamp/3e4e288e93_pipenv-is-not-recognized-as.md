@@ -1,6 +1,19 @@
 ---
 course: machine-learning-zoomcamp
 id: 3e4e288e93
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_6db28918.png
+- description: 'image #2'
+  id: image_2
+  path: images/machine-learning-zoomcamp/image_3b4fce52.png
+- description: 'image #3'
+  id: image_3
+  path: images/machine-learning-zoomcamp/image_b2712e9d.png
+- description: 'image #4'
+  id: image_4
+  path: images/machine-learning-zoomcamp/image_a4cd7017.png
 question: '''pipenv'' is not recognized as an internal or external command, operable
   program or batch file.'
 section: 5. Deploying Machine Learning Models
@@ -19,15 +32,15 @@ Solution for Windows
 
 Open this option
 
-![Image](images/machine-learning-zoomcamp/image_6db28918.png)
+<{IMAGE:image_1}>
 
 Click here
 
-![Image](images/machine-learning-zoomcamp/image_3b4fce52.png)
+<{IMAGE:image_2}>
 
 Click in Edit Button
 
-![Image](images/machine-learning-zoomcamp/image_b2712e9d.png)
+<{IMAGE:image_3}>
 
 Make sure the next two locations are on the PATH, otherwise, add it.
 
@@ -35,7 +48,7 @@ C:\Users\AppData\....\Python\PythonXX\
 
 C:\Users\AppData\....\Python\PythonXX\Scripts\
 
-![Image](images/machine-learning-zoomcamp/image_a4cd7017.png)
+<{IMAGE:image_4}>
 
 Added by Alejandro Aponte
 

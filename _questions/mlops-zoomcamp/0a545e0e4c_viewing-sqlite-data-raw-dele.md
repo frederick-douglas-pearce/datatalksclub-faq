@@ -1,6 +1,13 @@
 ---
 course: mlops-zoomcamp
 id: 0a545e0e4c
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_10815a9d.png
+- description: 'image #2'
+  id: image_2
+  path: images/mlops-zoomcamp/image_e3defff0.png
 question: Viewing SQLite Data Raw & Deleting Experiments Manually
 section: 'Module 2: Experiment tracking'
 sort_order: 1100
@@ -12,7 +19,7 @@ This is very useful to understand the entity structure of the data being stored 
 
 Added by Senthilkumar Gopal
 
-![Image](images/mlops-zoomcamp/image_10815a9d.png)
+<{IMAGE:image_1}>
 
-![Image](images/mlops-zoomcamp/image_e3defff0.png)
+<{IMAGE:image_2}>
 

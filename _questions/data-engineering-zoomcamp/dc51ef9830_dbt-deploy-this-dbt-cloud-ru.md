@@ -1,6 +1,19 @@
 ---
 course: data-engineering-zoomcamp
 id: dc51ef9830
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_c27ecb8e.png
+- description: 'image #2'
+  id: image_2
+  path: images/data-engineering-zoomcamp/image_8b6478c1.png
+- description: 'image #3'
+  id: image_3
+  path: images/data-engineering-zoomcamp/image_80992235.png
+- description: 'image #4'
+  id: image_4
+  path: images/data-engineering-zoomcamp/image_cd924928.png
 question: DBT Deploy - This dbt Cloud run was cancelled because a valid dbt project
   was not found.
 section: 'Module 4: analytics engineering with dbt'
@@ -21,17 +34,17 @@ For example:
 
 Make sure your file explorer path and this Project settings path matches and there’s no files waiting to be committed to github if you’re running the job to deploy to PROD.
 
-![Image](images/data-engineering-zoomcamp/image_c27ecb8e.png)
+<{IMAGE:image_1}>
 
-![Image](images/data-engineering-zoomcamp/image_8b6478c1.png)
+<{IMAGE:image_2}>
 
 And that you had setup the PROD environment to check in the main branch, or whichever you specified.
 
 In the picture below, I had set it to ella2024 to be checked as “production-ready” by the “freshness” check mark at the PROD environment settings. So each time I merge a branch from something else into ella2024 and then trigger the PR, the CI check job would kick-in. But we still do need to Merge and close the PR manually, I believe, that part is not automated.
 
-![Image](images/data-engineering-zoomcamp/image_80992235.png)
+<{IMAGE:image_3}>
 
 You set up the PROD custom branch (if not default main) in the Environment setup screen.
 
-![Image](images/data-engineering-zoomcamp/image_cd924928.png)
+<{IMAGE:image_4}>
 

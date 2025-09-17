@@ -32,8 +32,16 @@ def parse_frontmatter(content):
         return {}, content
 
 
-def process_markdown(content):
-    """Convert markdown to HTML while preserving template syntax as literal text"""
+def process_markdown(content, images=None):
+    """Convert markdown to HTML while replacing image placeholders with actual image tags"""
+    # Replace image placeholders with markdown image syntax
+    if images:
+        for image in images:
+            placeholder = f'<{{IMAGE:{image["id"]}}}>'.replace('{', '{{').replace('}', '}}')
+            # Create proper markdown image syntax
+            image_markdown = f'![{image["description"]}]({image["path"]})'
+            content = content.replace(f'<{{IMAGE:{image["id"]}}}>', image_markdown)
+    
     # Configure markdown with basic extensions
     md = markdown.Markdown(extensions=['nl2br', 'tables'])
     return md.convert(content)
@@ -87,8 +95,9 @@ def collect_questions():
                     print(f"Skipping {question_file}: missing question field in frontmatter")
                     continue
                 
-                # Process markdown to HTML
-                html_content = process_markdown(markdown_content)
+                # Process markdown to HTML with image placeholders
+                images = frontmatter.get('images', [])
+                html_content = process_markdown(markdown_content, images)
                 
                 question_data = {
                     'id': frontmatter.get('id', ''),
@@ -97,7 +106,8 @@ def collect_questions():
                     'sort_order': frontmatter.get('sort_order', 999999),
                     'course': course_name,
                     'content': html_content,
-                    'file': question_file.name
+                    'file': question_file.name,
+                    'images': images
                 }
                 
                 section_name = frontmatter.get('section', 'Unknown Section')

@@ -1,13 +1,17 @@
 ---
 course: data-engineering-zoomcamp
 id: edcc24a810
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_dc508dc3.png
 question: 'Docker-Compose -  Data retention (could not translate host name "pg-database"
   to address: Name or service not known)'
 section: 'Module 1: Docker and Terraform'
 sort_order: 860
 ---
 
-![Image](images/data-engineering-zoomcamp/image_dc508dc3.png)
+<{IMAGE:image_1}>
 
 Make sure postgres database is running.​​Use the command to start containers in detached mode: docker-compose up -d
 

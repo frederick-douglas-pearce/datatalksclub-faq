@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 93dfb7d96c
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_03216ab8.png
 question: 'Grafana dashboard error after reset: db query error: pq: database “test”
   does not exist'
 section: 'Module 5: Monitoring'
@@ -9,7 +13,7 @@ sort_order: 2130
 
 Problem: You’ve already loaded your data, created a dashboard and even saved it according to the exercise. But suddenly when you run docker-compose up after saving the dashboard file you get this error: db query error: pq: database “test” does not exist
 
-![Image](images/mlops-zoomcamp/image_03216ab8.png)
+<{IMAGE:image_1}>
 
 Solution:
 

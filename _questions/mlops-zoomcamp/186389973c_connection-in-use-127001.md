@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 186389973c
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_ad7daf39.png
 question: 'Connection in use: (''127.0.0.1'', 5000)'
 section: 'Module 2: Experiment tracking'
 sort_order: 810
@@ -14,7 +18,7 @@ Run ps -A | grep gunicorn
 
 Look for the number process id which is the 1st number after running the command
 
-![Image](images/mlops-zoomcamp/image_ad7daf39.png)
+<{IMAGE:image_1}>
 
 kill 13580
 

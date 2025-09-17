@@ -1,13 +1,17 @@
 ---
 course: data-engineering-zoomcamp
 id: ec6d89a462
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_ee3efac5.png
 question: 'Access Denied: Table yellow_tripdata: User does not have permission to
   query table yellow_tripdata, or perhaps it does not exist in location US.'
 section: 'Module 4: analytics engineering with dbt'
 sort_order: 3010
 ---
 
-![Image](images/data-engineering-zoomcamp/image_ee3efac5.png)
+<{IMAGE:image_1}>
 
 Database Error in model stg_yellow_tripdata (models/staging/stg_yellow_tripdata.sql)
 

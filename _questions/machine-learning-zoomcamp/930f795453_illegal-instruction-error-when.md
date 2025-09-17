@@ -1,6 +1,10 @@
 ---
 course: machine-learning-zoomcamp
 id: 930f795453
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_51551549.png
 question: Illegal instruction error when running tensorflow/serving image on Mac M2
   Apple Silicon (potentially on M1 as well)
 section: 10. Kubernetes and TensorFlow Serving
@@ -81,5 +85,5 @@ Or new since Oct 2024:
 
 Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [https://docs.docker.com/desktop/features/vmm/](https://docs.docker.com/desktop/features/vmm/)
 
-![Image](images/machine-learning-zoomcamp/image_51551549.png)
+<{IMAGE:image_1}>
 

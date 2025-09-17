@@ -1,6 +1,13 @@
 ---
 course: machine-learning-zoomcamp
 id: a1469eef57
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_5d15610e.png
+- description: 'image #2'
+  id: image_2
+  path: images/machine-learning-zoomcamp/image_ca88b4f9.png
 question: How does the project evaluation work for you as a peer reviewer?
 section: Projects (Midterm and Capstone)
 sort_order: 3810
@@ -34,13 +41,13 @@ Edit the above code to replace [Example1@gmail.com](mailto:Example1@gmail.com) a
 
 Store and run the above python code from your terminal. See below as the Hashed Email (SHA-1) value
 
-![Image](images/machine-learning-zoomcamp/image_5d15610e.png)
+<{IMAGE:image_1}>
 
 You then go to the link: [https://docs.google.com/spreadsheets/d/e/2PACX-1vR-7RRtq7AMx5OzI-tDbkzsbxNLm-NvFOP5OfJmhCek9oYcDx5jzxtZW2ZqWvBqc395UZpHBv1of9R1/pubhtml?gid=876309294&single=true](https://docs.google.com/spreadsheets/d/e/2PACX-1vR-7RRtq7AMx5OzI-tDbkzsbxNLm-NvFOP5OfJmhCek9oYcDx5jzxtZW2ZqWvBqc395UZpHBv1of9R1/pubhtml?gid=876309294&single=true)
 
 Lastly, copy the “Hashed Email (SHA-1): bd9770be022dede87419068aa1acd7a2ab441675” value and search for 3 identical entries. There you should see your peer project to be reviewed.
 
-![Image](images/machine-learning-zoomcamp/image_ca88b4f9.png)
+<{IMAGE:image_2}>
 
 By Emmanuel Ayeni
 

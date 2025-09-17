@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 73876c8348
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_63f6a6fb.png
 question: Docker-Compose - Errors pertaining to docker-compose.yml and pgadmin setup
 section: 'Module 1: Docker and Terraform'
 sort_order: 950
@@ -16,7 +20,7 @@ set low_memory=false when importing the csv file (df = pd.read_csv('yellow_tripd
 
 use the below function (in the upload-data.ipynb) for better tracking of your ingestion process (see attachment)
 
-![Image](images/data-engineering-zoomcamp/image_63f6a6fb.png)
+<{IMAGE:image_1}>
 
 Order of execution:
 

@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 31a648c28a
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_3cc4ae4e.png
 question: Protobuf error when installing MLflow
 section: 'Module 2: Experiment tracking'
 sort_order: 980
@@ -16,7 +20,7 @@ mlflow
 
 I get this error:
 
-![Image](images/mlops-zoomcamp/image_3cc4ae4e.png)
+<{IMAGE:image_1}>
 
 SOLUTION: You need to downgrade the version of 'protobuf' module to 3.20.x or lower. Initially, it was version=4.21, I installed protobuf==3.20
 

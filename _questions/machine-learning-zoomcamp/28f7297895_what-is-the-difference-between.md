@@ -1,6 +1,10 @@
 ---
 course: machine-learning-zoomcamp
 id: 28f7297895
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_d2a8633d.png
 question: What is the difference between .decision_function() and .predict_proba()?
 section: 3. Machine Learning for Classification
 sort_order: 1360
@@ -12,7 +16,7 @@ In Scikit-Learn’s LogisticRegression, a model that is trained will have raw va
 
 .predict_proba() goes one step further by inputting these raw values into the sigmoid function, to convert them into probabilities (between 0 and 1).
 
-![Image](images/machine-learning-zoomcamp/image_d2a8633d.png)
+<{IMAGE:image_1}>
 
 Kemal Dahha
 

@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 6314bc3029
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_1813f02b.png
 question: Certificate - generating, receiving after projects graded
 section: 'Module 1: Docker and Terraform'
 sort_order: 480
@@ -24,7 +28,7 @@ When you try to download the 2021 data from [TLC website](https://www1.nyc.gov/s
 
 If you click on the link, and ERROR 403: Forbidden on the terminal.
 
-![Image](images/data-engineering-zoomcamp/image_1813f02b.png)
+<{IMAGE:image_1}>
 
 We have a backup, so use it instead: [https://github.com/DataTalksClub/nyc-tlc-data](https://github.com/DataTalksClub/nyc-tlc-data)r
 

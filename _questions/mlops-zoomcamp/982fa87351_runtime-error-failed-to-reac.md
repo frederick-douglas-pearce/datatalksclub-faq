@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 982fa87351
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_f4090a89.png
 question: 'Runtime Error : Failed to Reach API on Prefect'
 section: 'Module 5: Monitoring'
 sort_order: 2120
@@ -10,7 +14,7 @@ Problem: When to running evidently_metrics_calculation.py show RuntimeError: Can
 
 Solution: Register or Signup on [https://app.prefect.cloud/account/](https://app.prefect.cloud/account/)
 
-![Image](images/mlops-zoomcamp/image_f4090a89.png)
+<{IMAGE:image_1}>
 
 Added by Sofyan Akbar
 

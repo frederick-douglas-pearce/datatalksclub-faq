@@ -1,6 +1,10 @@
 ---
 course: machine-learning-zoomcamp
 id: ba250275a3
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_16b33640.png
 question: 'wget: unable to resolve host address ''raw.githubusercontent.com'''
 section: 1. Introduction to Machine Learning
 sort_order: 360
@@ -20,5 +24,5 @@ Solution:
 
 In your Kaggle notebook settings, turn on the Internet for your session. It's on the settings panel, on the right hand side of the Kaggle screen. You'll be asked to verify your phone number so Kaggle knows you are not a bot.
 
-![Image](images/machine-learning-zoomcamp/image_16b33640.png)
+<{IMAGE:image_1}>
 

@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: ba50d9e0bc
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_f76f8e53.png
 question: Mage in Codespaces in a subfolder under mlops-zoomcamp repository
 section: 'Module 3: Orchestration'
 sort_order: 1320
@@ -16,7 +20,7 @@ Error response from daemon: too many requests: You have reached your pull rate l
 
 Issue (2) you get these popups with different % values but all saying space is in single digits.
 
-![Image](images/mlops-zoomcamp/image_f76f8e53.png)
+<{IMAGE:image_1}>
 
 Solution: It is not recommended to setup Mage as a subfolder of mlops-zoomcamp. See findings in this [thread](https://datatalks-club.slack.com/archives/C02R98X7DS9/p1716963258584219).
 

@@ -1,6 +1,16 @@
 ---
 course: machine-learning-zoomcamp
 id: f3423f5014
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_b1bb532e.png
+- description: 'image #2'
+  id: image_2
+  path: images/machine-learning-zoomcamp/image_5921040c.jpg
+- description: 'image #3'
+  id: image_3
+  path: images/machine-learning-zoomcamp/image_c812cf91.png
 question: Uploading the homework to Github
 section: 1. Introduction to Machine Learning
 sort_order: 300
@@ -28,13 +38,13 @@ If this is your first time to use Github, you will find a great & straightforwar
 
 You can also use the “upload file” functionality from GitHub for that
 
-![Image](images/machine-learning-zoomcamp/image_b1bb532e.png)
+<{IMAGE:image_1}>
 
 If you write your code on Google colab you can also directly share it on your Github.
 
-![Image](images/machine-learning-zoomcamp/image_5921040c.jpg)
+<{IMAGE:image_2}>
 
-![Image](images/machine-learning-zoomcamp/image_c812cf91.png)
+<{IMAGE:image_3}>
 
 (By [Pranab Sarma](https://github.com/pranabsarma18))
 

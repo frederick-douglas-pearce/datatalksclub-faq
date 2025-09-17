@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 12dffd5b1a
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_cb7165fc.png
 question: 'PGCLI -connection failed: FATAL: password authentication failed for user
   "root"'
 section: 'Module 1: Docker and Terraform'
@@ -37,7 +41,7 @@ postgres:13
 
 So keep the database connected and you will be able to implement all the next steps of the tutorial.
 
-![Image](images/data-engineering-zoomcamp/image_cb7165fc.png)
+<{IMAGE:image_1}>
 
 Option 5: Change the Port for Docker PostgreSQL
 

@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: eb759226aa
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_31ceb9bc.png
 question: GCP - ssh public key error - multiple users / usernames
 section: 'Module 1: Docker and Terraform'
 sort_order: 1490
@@ -18,5 +22,5 @@ Then delete mySSHuser account in the VM terminal just to keep things clean. (i s
 
 Temporary solution: Before i figured out my issue, I took a shortcut by ssh’ing into the VM in the browser (see screenshot), which actually worked nicely for a while. But eventually I wanted to use VScode.
 
-![Image](images/data-engineering-zoomcamp/image_31ceb9bc.png)
+<{IMAGE:image_1}>
 

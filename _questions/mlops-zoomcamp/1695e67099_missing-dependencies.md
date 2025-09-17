@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 1695e67099
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_7c6ef087.png
 question: Missing dependencies
 section: 'Module 1: Introduction'
 sort_order: 450
@@ -8,7 +12,7 @@ sort_order: 450
 
 If some dependencies are missing
 
-![Image](images/mlops-zoomcamp/image_7c6ef087.png)
+<{IMAGE:image_1}>
 
 Install following packages
 

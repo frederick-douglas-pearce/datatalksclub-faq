@@ -1,6 +1,16 @@
 ---
 course: data-engineering-zoomcamp
 id: 5b5d82a924
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_4c7b9e6b.png
+- description: 'image #2'
+  id: image_2
+  path: images/data-engineering-zoomcamp/image_b4d5ed3c.png
+- description: 'image #3'
+  id: image_3
+  path: images/data-engineering-zoomcamp/image_2ba9606d.png
 question: Homework - dlt Exercise 3 - Merge a generator concerns
 section: Workshop 1 - dlthub
 sort_order: 4430
@@ -16,13 +26,13 @@ The sum of all eight records' respective ages is too big to be in the choices. Y
 
 FIXED = use a raw string and keep the file:/// at the start of your file path
 
-![Image](images/data-engineering-zoomcamp/image_4c7b9e6b.png)
+<{IMAGE:image_1}>
 
-![Image](images/data-engineering-zoomcamp/image_b4d5ed3c.png)
+<{IMAGE:image_2}>
 
 I'm having an issue with the dlt workshop notebook. The 'Load to Parquet file' section specifically. No matter what I change the file path to, it's still saving the dlt files directly to my C drive.
 
-![Image](images/data-engineering-zoomcamp/image_2ba9606d.png)
+<{IMAGE:image_3}>
 
 # Set the bucket_url. We can also use a local folder
 

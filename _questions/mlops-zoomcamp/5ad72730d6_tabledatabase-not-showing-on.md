@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 5ad72730d6
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_a92c0f4d.png
 question: Table/database not showing on grafana dashboard
 section: 'Module 5: Monitoring'
 sort_order: 2090
@@ -38,7 +42,7 @@ database: test
 
 Solution 2: Utilise the Code option rather than the Builder option and load the data in using your own SQL queries. See screenshot below (box highlight in red). Tip, if you write your FROM statement first the SELECT options are able to be done through auto-complete too.
 
-![Image](images/mlops-zoomcamp/image_a92c0f4d.png)
+<{IMAGE:image_1}>
 
 Answered by  Anuj Panthri, added by Andrea Nicolas, edit by Marcus Leiwe
 

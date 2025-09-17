@@ -1,6 +1,13 @@
 ---
 course: machine-learning-zoomcamp
 id: 76134388e5
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_982c6309.png
+- description: 'image #2'
+  id: image_2
+  path: images/machine-learning-zoomcamp/image_ce53403a.png
 question: How to use Google Colab for Deep Learning?
 section: 8. Neural Networks and Deep Learning
 sort_order: 2740
@@ -14,9 +21,9 @@ Click on “Change runtime type”
 
 Choose T4 GPU
 
-![Image](images/machine-learning-zoomcamp/image_982c6309.png)
+<{IMAGE:image_1}>
 
-![Image](images/machine-learning-zoomcamp/image_ce53403a.png)
+<{IMAGE:image_2}>
 
 Khurram Majeed
 

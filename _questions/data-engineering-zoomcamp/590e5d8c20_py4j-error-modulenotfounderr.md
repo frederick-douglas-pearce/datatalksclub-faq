@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 590e5d8c20
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_be1c5cff.png
 question: 'Py4J Error - ModuleNotFoundError: No module named ''py4j'' (Solve with
   latest version)'
 section: 'Module 5: pyspark'
@@ -13,7 +17,7 @@ conda install -c conda-forge py4j
 
 Take care of the latest version number in the website to replace appropriately.
 
-![Image](images/data-engineering-zoomcamp/image_be1c5cff.png)
+<{IMAGE:image_1}>
 
 Now add
 

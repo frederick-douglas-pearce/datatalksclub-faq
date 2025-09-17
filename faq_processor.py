@@ -350,6 +350,24 @@ def create_question_file(question_data, course_name, question_index, question_id
     # Calculate sort order: question index * 10 to allow for future insertion
     sort_order = question_index * 10
     
+    # Extract images and create image metadata
+    images = []
+    image_counter = 1
+    content_with_placeholders = []
+    
+    for item in question_data['content']:
+        if item['type'] == 'text':
+            content_with_placeholders.append(item['content'])
+        elif item['type'] == 'image':
+            image_id = f'image_{image_counter}'
+            images.append({
+                'id': image_id,
+                'description': f'image #{image_counter}',
+                'path': item['content']
+            })
+            content_with_placeholders.append(f'<{{IMAGE:{image_id}}}>')
+            image_counter += 1
+    
     with open(question_file, 'w', encoding='utf-8') as f:
         # Create frontmatter data
         frontmatter_data = {
@@ -360,17 +378,18 @@ def create_question_file(question_data, course_name, question_index, question_id
             'sort_order': sort_order
         }
         
+        # Add images to frontmatter if any exist
+        if images:
+            frontmatter_data['images'] = images
+        
         # Write properly formatted YAML frontmatter
         f.write('---\n')
         yaml.dump(frontmatter_data, f, default_flow_style=False, allow_unicode=True)
         f.write('---\n\n')
         
-        # Write answer content
-        for item in question_data['content']:
-            if item['type'] == 'text':
-                f.write(f'{item["content"]}\n\n')
-            elif item['type'] == 'image':
-                f.write(f'![Image]({item["content"]})\n\n')
+        # Write answer content with image placeholders
+        for content in content_with_placeholders:
+            f.write(f'{content}\n\n')
     
     return filename
 

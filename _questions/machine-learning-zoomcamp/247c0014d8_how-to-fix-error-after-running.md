@@ -1,12 +1,16 @@
 ---
 course: machine-learning-zoomcamp
 id: 247c0014d8
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_46ecce14.png
 question: How to fix error after running the Docker run command
 section: 5. Deploying Machine Learning Models
 sort_order: 2050
 ---
 
-![Image](images/machine-learning-zoomcamp/image_46ecce14.png)
+<{IMAGE:image_1}>
 
 Solution
 

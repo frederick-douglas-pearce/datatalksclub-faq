@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 23687d0f93
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_48537290.png
 question: DBT - The database is correct but I get Error with Incorrect Schema in Models
 section: 'Module 4: analytics engineering with dbt'
 sort_order: 3290
@@ -24,7 +28,7 @@ Navigate to the Credentials section in the dbt Cloud project settings.
 
 Ensure the correct database and schema are set (e.g., ‘my_dataset’).
 
-![Image](images/data-engineering-zoomcamp/image_48537290.png)
+<{IMAGE:image_1}>
 
 Verify Environment Settings:
 

@@ -1,12 +1,16 @@
 ---
 course: data-engineering-zoomcamp
 id: a31defac51
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_d2b29adb.png
 question: Why do we need the Staging dataset?
 section: 'Module 4: analytics engineering with dbt'
 sort_order: 2730
 ---
 
-![Image](images/data-engineering-zoomcamp/image_d2b29adb.png)
+<{IMAGE:image_1}>
 
 Vic created three different datasets in the videos.. dbt_<name> was used for development and you used a production dataset for the production environment. What was the use for the staging dataset?
 

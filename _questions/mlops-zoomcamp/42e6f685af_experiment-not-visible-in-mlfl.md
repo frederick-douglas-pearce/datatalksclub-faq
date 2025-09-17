@@ -1,16 +1,26 @@
 ---
 course: mlops-zoomcamp
 id: 42e6f685af
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_c5935be1.png
+- description: 'image #2'
+  id: image_2
+  path: images/mlops-zoomcamp/image_d1cb06e4.png
+- description: 'image #3'
+  id: image_3
+  path: images/mlops-zoomcamp/image_54ddd284.png
 question: Experiment not visible in MLflow UI
 section: 'Module 2: Experiment tracking'
 sort_order: 830
 ---
 
-![Image](images/mlops-zoomcamp/image_c5935be1.png)
+<{IMAGE:image_1}>
 
-![Image](images/mlops-zoomcamp/image_d1cb06e4.png)
+<{IMAGE:image_2}>
 
-![Image](images/mlops-zoomcamp/image_54ddd284.png)
+<{IMAGE:image_3}>
 
 Make sure you launch the mlflow UI from the same directory as the code that is running the experiments (same directory that contains the mlruns directory and the database that stores the experiments).
 

@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 0c116f6001
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_91f633ae.png
 question: In module 5.3.1, trying to run spark.createDataFrame(df_pandas).show() returns
   error
 section: 'Module 5: pyspark'
@@ -15,7 +19,7 @@ this is because the method inside the pyspark refers to a package that has been 
 
 You can do this code below, which is mentioned in the stackoverflow link above:
 
-![Image](images/data-engineering-zoomcamp/image_91f633ae.png)
+<{IMAGE:image_1}>
 
 Another work around here is to create a conda enviroment to donwgrade python’s version to 3.8 and pandas to 1.5.3
 

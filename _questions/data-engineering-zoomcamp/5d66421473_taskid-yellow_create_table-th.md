@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 5d66421473
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_e66c0b8d.png
 question: 'taskid: yellow_create_table The connection attempt failed. Host.docker.internal'
 section: 'Module 2: Workflow Orchestration'
 sort_order: 1960
@@ -12,5 +16,5 @@ Using the modified Docker Compose file in 02-workflow-orchestration readme troub
 
 The pluginDefaults exist in both 2_postgres_taxi_scheduled.yaml, 02_postgres_taxi.yaml, please modify as shown below.
 
-![Image](images/data-engineering-zoomcamp/image_e66c0b8d.png)
+<{IMAGE:image_1}>
 

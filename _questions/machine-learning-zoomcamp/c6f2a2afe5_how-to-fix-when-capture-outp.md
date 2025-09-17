@@ -1,6 +1,13 @@
 ---
 course: machine-learning-zoomcamp
 id: c6f2a2afe5
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/machine-learning-zoomcamp/image_03f8bfd8.jpg
+- description: 'image #2'
+  id: image_2
+  path: images/machine-learning-zoomcamp/image_a95d78a7.jpg
 question: How to fix when %%capture output is not working in Google Collab Notebook
 section: 6. Decision Trees and Ensemble Learning
 sort_order: 2400
@@ -8,9 +15,9 @@ sort_order: 2400
 
 I was using Google Collab Notebook for the 2024 cohort HW 06. For the Q6 here, the
 
-![Image](images/machine-learning-zoomcamp/image_03f8bfd8.jpg)
+<{IMAGE:image_1}>
 
-![Image](images/machine-learning-zoomcamp/image_a95d78a7.jpg)
+<{IMAGE:image_2}>
 
 was not working in the Collab Notebook. This led me to find a solution which is as follows:
 

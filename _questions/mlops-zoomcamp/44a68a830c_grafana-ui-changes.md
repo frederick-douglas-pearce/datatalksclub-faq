@@ -1,6 +1,13 @@
 ---
 course: mlops-zoomcamp
 id: 44a68a830c
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_4e90873b.png
+- description: 'image #2'
+  id: image_2
+  path: images/mlops-zoomcamp/image_27675c03.png
 question: Grafana UI Changes
 section: 'Module 5: Monitoring'
 sort_order: 2110
@@ -8,11 +15,11 @@ sort_order: 2110
 
 Problem: When selecting column from table db has no time column: no time column found
 
-![Image](images/mlops-zoomcamp/image_4e90873b.png)
+<{IMAGE:image_1}>
 
 Solution: Add timestamp column in query builder
 
-![Image](images/mlops-zoomcamp/image_27675c03.png)
+<{IMAGE:image_2}>
 
 Added by Rohmat S
 

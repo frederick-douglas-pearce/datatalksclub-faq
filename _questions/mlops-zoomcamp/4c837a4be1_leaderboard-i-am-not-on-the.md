@@ -1,6 +1,10 @@
 ---
 course: mlops-zoomcamp
 id: 4c837a4be1
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/mlops-zoomcamp/image_5a22f8fa.png
 question: Leaderboard - I am not on the leaderboard / how do I know which one I am
   on the leaderboard?
 section: General course questions
@@ -11,7 +15,7 @@ When you set up your account you are automatically assigned a random name such a
 
 If you want to see what your Display name is, click on the Edit Course Profile button.
 
-![Image](images/mlops-zoomcamp/image_5a22f8fa.png)
+<{IMAGE:image_1}>
 
 First field is your nickname/displayed-name, change it if you want to be known as your Slack username or Github username or whatever nickname if you want to remain anonymous
 

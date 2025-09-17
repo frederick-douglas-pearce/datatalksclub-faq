@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 89733da275
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_c3c0865e.png
 question: dbt macro errors with get_payment_type_description(payment_type)
 section: 'Module 4: analytics engineering with dbt'
 sort_order: 2820
@@ -38,5 +42,5 @@ end
 
 {%- endmacro %}
 
-![Image](images/data-engineering-zoomcamp/image_c3c0865e.png)
+<{IMAGE:image_1}>
 

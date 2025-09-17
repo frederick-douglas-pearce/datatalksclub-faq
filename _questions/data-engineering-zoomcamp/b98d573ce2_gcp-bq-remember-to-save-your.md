@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: b98d573ce2
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_85e101a4.png
 question: GCP BQ - Remember to save your queries
 section: 'Module 3: Data Warehousing'
 sort_order: 2110
@@ -14,7 +18,7 @@ I was almost finishing the homework, when my Chrome Tab froze and I had to reloa
 
 Save your script from time to time. Just click on the button at the top bar. Your saved file will be available on the left panel.
 
-![Image](images/data-engineering-zoomcamp/image_85e101a4.png)
+<{IMAGE:image_1}>
 
 Alternatively, you can copy paste your queries into an .sql file in your preferred editor (Notepad++, VS Code, etc.). Using the .sql extension will provide convenient color formatting.
 

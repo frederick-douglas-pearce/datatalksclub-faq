@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 47f7c8310a
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_51551549.png
 question: GCP BQ ML - Export ML model to make predictions does not work for MacBook
   with Apple M1 chip (arm architecture).
 section: 'Module 3: Data Warehousing'
@@ -25,5 +29,5 @@ Or new since Oct 2024:
 
 Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [https://docs.docker.com/desktop/features/vmm/](https://docs.docker.com/desktop/features/vmm/)
 
-![Image](images/data-engineering-zoomcamp/image_51551549.png)
+<{IMAGE:image_1}>
 

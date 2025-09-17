@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: 7255a1c3bc
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_813348b4.png
 question: Leaderboard - I am not on the leaderboard / how do I know which one I am
   on the leaderboard?
 section: Course Management Platform for Homeworks, Project and Certificate
@@ -15,5 +19,5 @@ Go to your profile:  →
 
 2024: [https://courses.datatalks.club/de-zoomcamp-2024/enrollment ](https://courses.datatalks.club/de-zoomcamp-2025/enrollment)Log in -> your display name is here, you can also change it should you wish. Make sure your Certificate name is correct, this name will later be printed on your certificate!!!
 
-![Image](images/data-engineering-zoomcamp/image_813348b4.png)
+<{IMAGE:image_1}>
 

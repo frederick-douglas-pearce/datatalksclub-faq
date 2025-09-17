@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: e839b64165
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_bd4861e1.png
 question: How to run a dbt-core project as an Airflow Task Group on Google Cloud Composer
   using a service account JSON key
 section: Project
@@ -17,5 +21,5 @@ Create a new DAG using the DbtTaskGroup class and a ProfileConfig specifying a p
 
 Your dbt lineage graph should now appear as tasks inside a task group like this:
 
-![Image](images/data-engineering-zoomcamp/image_bd4861e1.png)
+<{IMAGE:image_1}>
 

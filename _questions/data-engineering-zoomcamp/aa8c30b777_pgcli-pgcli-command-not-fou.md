@@ -1,6 +1,10 @@
 ---
 course: data-engineering-zoomcamp
 id: aa8c30b777
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_b33cbd22.png
 question: 'PGCLI - pgcli: command not found'
 section: 'Module 1: Docker and Terraform'
 sort_order: 1130
@@ -30,7 +34,7 @@ So I had to add c:\python310\lib\Scripts to PATH, as shown below.
 
 Put the above path in "Path" (or "PATH") in System Variables
 
-![Image](images/data-engineering-zoomcamp/image_b33cbd22.png)
+<{IMAGE:image_1}>
 
 Reference: [https://stackoverflow.com/a/68233660](https://stackoverflow.com/a/68233660)
 
