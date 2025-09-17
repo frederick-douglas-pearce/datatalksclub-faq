@@ -1,22 +1,20 @@
 course: llm-zoomcamp
-course_name: "llm-zoomcamp"
+course_name: "LLM Zoomcamp"
 sections:
-  - id: general-course-related-questions
-    name: "General course-related questions"
-  - id: module-1-introduction
+  - id: general
+    name: "General Course-Related Questions"
+  - id: module-1
     name: "Module 1: Introduction"
-  - id: module-2-vector-search
+  - id: module-2
     name: "Module 2: Vector Search"
-  - id: module-3-evaluation
+  - id: module-3
     name: "Module 3: Evaluation"
-  - id: module-4-monitoring
+  - id: module-4
     name: "Module 4: Monitoring"
-  - id: module-6-x
+  - id: module-6
     name: "Module 6: X"
-  - id: capstone-project
+  - id: project
     name: "Capstone Project"
-  - id: certificates
-    name: "Certificates"
   - id: workshops-dlthub
     name: "Workshops: dlthub"
   - id: workshops-agents

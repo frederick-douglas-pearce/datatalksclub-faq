@@ -1,29 +1,29 @@
 course: machine-learning-zoomcamp
-course_name: "machine-learning-zoomcamp"
+course_name: "ML Zoomcamp"
 sections:
-  - id: general-course-related-question-review
-    name: "General course-related question review"
-  - id: 1-introduction-to-machine-learning
-    name: "1. Introduction to Machine Learning"
-  - id: 2-machine-learning-for-regression
-    name: "2. Machine Learning for Regression"
-  - id: 3-machine-learning-for-classification
-    name: "3. Machine Learning for Classification"
-  - id: 4-evaluation-metrics-for-classification
-    name: "4. Evaluation Metrics for Classification"
-  - id: 5-deploying-machine-learning-models
-    name: "5. Deploying Machine Learning Models"
-  - id: 6-decision-trees-and-ensemble-learning
-    name: "6. Decision Trees and Ensemble Learning"
-  - id: 8-neural-networks-and-deep-learning
-    name: "8. Neural Networks and Deep Learning"
-  - id: 9-serverless-deep-learning
-    name: "9. Serverless Deep Learning"
-  - id: 10-kubernetes-and-tensorflow-serving
-    name: "10. Kubernetes and TensorFlow Serving"
-  - id: 11-kserve
-    name: "11. KServe"
-  - id: projects-midterm-and-capstone
+  - id: general
+    name: "General Course-Related Questions"
+  - id: module-1
+    name: "Module 1. Introduction to Machine Learning"
+  - id: module-2
+    name: "Module 2. Machine Learning for Regression"
+  - id: module-3
+    name: "Module 3. Machine Learning for Classification"
+  - id: module-4
+    name: "Module 4. Evaluation Metrics for Classification"
+  - id: module-5
+    name: "Module 5. Deploying Machine Learning Models"
+  - id: module-6
+    name: "Module 6. Decision Trees and Ensemble Learning"
+  - id: module-8
+    name: "Module 8. Neural Networks and Deep Learning"
+  - id: module-9
+    name: "Module 9. Serverless Deep Learning"
+  - id: module-10
+    name: "Module 10. Kubernetes and TensorFlow Serving"
+  - id: module-11
+    name: "Module 11. KServe"
+  - id: projects
     name: "Projects (Midterm and Capstone)"
-  - id: miscellaneous
+  - id: misc
     name: "Miscellaneous"
