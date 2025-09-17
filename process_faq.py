@@ -1,5 +1,6 @@
 import hashlib
 import re
+import sys
 from pathlib import Path
 import yaml
 
@@ -459,6 +460,12 @@ def create_metadata_file(course_data):
 
 
 # Main execution
+print("ERROR: You're not supposed to run process_faq.py directly anymore!")
+print("The FAQ system now uses the nested directory structure.")
+print("Questions are already organized in _questions/course/section/ directories.")
+print("Use generate_website.py to generate the static site instead.")
+sys.exit(1)
+
 faq_documents = {
     'data-engineering-zoomcamp': '19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw',
     'machine-learning-zoomcamp': '1LpPanc33QJJ6BSsyxVg-pWNMplal84TdZtq10naIhD8',
