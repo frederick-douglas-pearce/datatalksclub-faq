@@ -136,7 +136,59 @@ def extract_paragraph_content(paragraph):
         else:
             content_parts.append(text)
     
-    return ''.join(content_parts)
+    # Join all content and then process for plain text URLs
+    full_text = ''.join(content_parts)
+    
+    # Convert plain text URLs to markdown links (but preserve existing markdown links)
+    full_text = convert_plain_urls_to_markdown(full_text)
+    
+    return full_text
+
+def convert_plain_urls_to_markdown(text):
+    """Convert plain text URLs to markdown links, but preserve existing markdown links"""
+    import re
+    
+    # Pattern to match URLs that are NOT already in markdown format
+    # This uses negative lookbehind and lookahead to avoid matching URLs inside [text](url)
+    url_pattern = r'(?<!\]\()(https?://[^\s\)\]]+)(?!\))'
+    
+    def replace_url(match):
+        url = match.group(1)
+        # Create a simple link text from the URL (domain + path start)
+        try:
+            # Extract a reasonable link text from the URL
+            if 'github.com' in url:
+                link_text = 'GitHub'
+            elif 'docs.google.com' in url:
+                link_text = 'Google Docs'
+            elif 'stackoverflow.com' in url:
+                link_text = 'Stack Overflow'
+            elif 'datatalks.club' in url or 'courses.datatalks.club' in url:
+                link_text = 'DataTalks Course'
+            elif 'loom.com' in url:
+                link_text = 'Loom Video'
+            elif 'slack.com' in url:
+                link_text = 'Slack'
+            elif 'youtube.com' in url or 'youtu.be' in url:
+                link_text = 'YouTube'
+            elif 'medium.com' in url:
+                link_text = 'Medium'
+            elif 'kaggle.com' in url:
+                link_text = 'Kaggle'
+            else:
+                # Default: use the domain name
+                domain = url.split('/')[2] if len(url.split('/')) > 2 else url
+                # Clean up common subdomains
+                if domain.startswith('www.'):
+                    domain = domain[4:]
+                link_text = domain
+        except:
+            link_text = 'Link'
+        
+        return f'[{link_text}]({url})'
+    
+    # Apply the replacement
+    return re.sub(url_pattern, replace_url, text)
 
 def read_faq(cache_file, course_name):
     """Read FAQ from cached docx file and extract content with images and links"""
