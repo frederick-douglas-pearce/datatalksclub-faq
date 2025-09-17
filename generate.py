@@ -408,60 +408,145 @@ def generate_site(courses):
         
         print(f"Generated {course_file}")
     
-    # Generate index page
-    default_template = env.get_template('default.html')
-    
-    index_content = f"""
-    <h1>DataTalks.Club FAQ</h1>
-    <p>Welcome to the FAQ collection for DataTalks.Club courses.</p>
-    
-    <h2>Available Courses</h2>
-    <div class="course-links">
-        {''.join([f'<div class="course-link"><a href="{course}.html"><h3>{course.replace("-", " ").title()}</h3></a></div>' for course in courses.keys()])}
-    </div>
-    
-    <h2>About</h2>
-    <p>This site contains frequently asked questions and answers from the DataTalks.Club community courses.</p>
-    
+    # Generate index page using a custom template for the home page
+    index_template_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTalks.Club FAQ</title>
     <style>
-    .course-links {{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
-        margin: 2rem 0;
-    }}
-    .course-link {{
-        padding: 1.5rem;
-        background: #f8f9fa;
-        border-radius: 8px;
-        border: 1px solid #dee2e6;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }}
-    .course-link:hover {{
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }}
-    .course-link a {{
-        text-decoration: none;
-        color: inherit;
-    }}
-    .course-link h3 {{
-        margin: 0;
-        color: #2c3e50;
-    }}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+        .content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .course-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .course-link {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .course-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .course-link a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .course-link h3 {
+            margin: 0 0 0.5rem 0;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+        .course-description {
+            color: #666;
+            font-size: 0.9em;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .content {
+                padding: 1rem;
+            }
+            .course-links {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-    """
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DataTalks.Club FAQ</h1>
+        </div>
+    </header>
     
-    index_html = default_template.render(
-        content=index_content,
-        courses=course_list,
-        show_nav=False,
-        page_title=None,
+    <div class="container">
+        <main class="content">
+            <h1>Welcome to DataTalks.Club FAQ</h1>
+            <p>This comprehensive FAQ collection contains answers to frequently asked questions from the DataTalks.Club community courses. Browse through course-specific questions and solutions.</p>
+            
+            <h2>Available Courses</h2>
+            <div class="course-links">
+                {% for course_name, sections in courses.items() %}
+                <div class="course-link">
+                    <a href="{{ course_name }}.html">
+                        <h3>{{ course_name | title_case }}</h3>
+                        <div class="course-description">
+                            {{ sections | length }} sections • 
+                            {{ sections.values() | map('length') | sum }} questions
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <h2>About</h2>
+            <p>These FAQs are compiled from real questions and answers from the DataTalks.Club community. Each course page is organized by sections with detailed answers, code examples, and helpful resources.</p>
+            
+            <h3>Quick Navigation</h3>
+            <ul>
+                {% for course_name in courses.keys() %}
+                <li><a href="{{ course_name }}.html">{{ course_name | title_case }} FAQ</a></li>
+                {% endfor %}
+            </ul>
+        </main>
+        
+        <footer>
+            <p>Generated on {{ generation_time }} | DataTalks.Club FAQ</p>
+        </footer>
+    </div>
+</body>
+</html>"""
+    
+    # Create index template
+    index_template = env.from_string(index_template_content)
+    
+    index_html = index_template.render(
+        courses=courses,
         generation_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     )
-    
-    # Replace content block
-    index_html = index_html.replace('{% block content %}{% endblock %}', index_content)
     
     index_file = site_dir / 'index.html'
     with open(index_file, 'w', encoding='utf-8') as f:
