@@ -1,4 +1,5 @@
 course: mlops-zoomcamp
+course_name: "MLOps Zoomcamp"
 sections:
   - "General course questions"
   - "Module 1: Introduction"

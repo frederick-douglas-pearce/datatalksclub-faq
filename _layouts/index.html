@@ -6,13 +6,13 @@
 
 <h2>Available Courses</h2>
 <div class="course-links">
-    {% for course_name, sections in courses.items() %}
+    {% for course in courses %}
     <div class="course-link">
-        <a href="{{ course_name }}.html">
-            <h3>{{ course_name | title_case }}</h3>
+        <a href="{{ course.id }}.html">
+            <h3>{{ course.name }}</h3>
             <div class="course-description">
-                {{ sections | length }} sections • 
-                {{ sections.values() | map('length') | sum }} questions
+                {{ course.num_sections }} sections • 
+                {{ course.num_questions }} questions
             </div>
         </a>
     </div>
@@ -24,8 +24,8 @@
 
 <h3>Quick Navigation</h3>
 <ul>
-    {% for course_name in courses.keys() %}
-    <li><a href="{{ course_name }}.html">{{ course_name | title_case }} FAQ</a></li>
+    {% for course in courses %}
+    <li><a href="{{ course.id }}.html">{{ course.name }} FAQ</a></li>
     {% endfor %}
 </ul>
 {% endblock %}

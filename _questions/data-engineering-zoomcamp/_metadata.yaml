@@ -1,4 +1,5 @@
 course: data-engineering-zoomcamp
+course_name: "Data Engineering Zoomcamp"
 sections:
   - "General course-related questions"
   - "Course Management Platform for Homeworks, Project and Certificate"

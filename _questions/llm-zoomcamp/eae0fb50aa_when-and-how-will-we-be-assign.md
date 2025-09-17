@@ -1,0 +1,10 @@
+---
+course: llm-zoomcamp
+id: eae0fb50aa
+question: When and how will we be assigned projects for review/grading?
+section: Capstone Project
+sort_order: 630
+---
+
+After the submission deadline has passed, an Excelsheet will be shared with 3 projects being assigned to each participant.
+

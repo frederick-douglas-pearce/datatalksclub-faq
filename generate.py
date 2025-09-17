@@ -37,7 +37,6 @@ def process_markdown(content, images=None):
     # Replace image placeholders with markdown image syntax
     if images:
         for image in images:
-            placeholder = f'<{{IMAGE:{image["id"]}}}>'.replace('{', '{{').replace('}', '}}')
             # Create proper markdown image syntax
             image_markdown = f'![{image["description"]}]({image["path"]})'
             content = content.replace(f'<{{IMAGE:{image["id"]}}}>', image_markdown)
@@ -48,16 +47,22 @@ def process_markdown(content, images=None):
 
 
 def load_course_metadata(course_dir):
-    """Load metadata for a course to get section ordering"""
+    """Load metadata for a course to get section ordering and course name"""
     metadata_file = course_dir / '_metadata.yaml'
     if metadata_file.exists():
         try:
             with open(metadata_file, 'r', encoding='utf-8') as f:
                 metadata = yaml.safe_load(f)
-                return metadata.get('sections', [])
+                return {
+                    'sections': metadata.get('sections', []),
+                    'course_name': metadata.get('course_name', course_dir.name)
+                }
         except Exception as e:
             print(f"Error loading metadata for {course_dir.name}: {e}")
-    return []
+    return {
+        'sections': [],
+        'course_name': course_dir.name
+    }
 
 
 def collect_questions():
@@ -76,9 +81,11 @@ def collect_questions():
         course_name = course_dir.name
         print(f"Processing course: {course_name}")
         
-        # Load course metadata to get section ordering
-        section_order = load_course_metadata(course_dir)
-        print(f"  Found {len(section_order)} sections in metadata")
+        # Load course metadata to get section ordering and course name
+        metadata = load_course_metadata(course_dir)
+        section_order = metadata['sections']
+        course_display_name = metadata['course_name']
+        print(f"  Found {len(section_order)} sections in metadata, display name: {course_display_name}")
         
         # Collect questions by section
         sections = defaultdict(list)
@@ -118,7 +125,8 @@ def collect_questions():
         
         courses[course_name] = {
             'sections': sections,
-            'section_order': section_order
+            'section_order': section_order,
+            'course_name': course_display_name
         }
     
     return courses
@@ -199,11 +207,11 @@ def generate_site(courses):
     if site_dir.exists():
         shutil.rmtree(site_dir)
     site_dir.mkdir(exist_ok=True)
-    
+
     # Create assets directory
     assets_dir = site_dir / 'assets' / 'css'
     assets_dir.mkdir(parents=True, exist_ok=True)
-    
+
     # Copy images
     images_src = Path('images')
     if images_src.exists():
@@ -219,8 +227,12 @@ def generate_site(courses):
     courses = sort_sections_and_questions(courses)
     
     # Prepare course list for navigation
-    course_list = [{'name': name} for name in courses.keys()]
-    
+    course_list = [
+        {
+            'name': course_data['course_name'],
+            'id': name,
+        } for name, course_data in courses.items()]
+
     # Generate course pages using external templates
     course_template = env.get_template('course.html')
     
@@ -228,11 +240,12 @@ def generate_site(courses):
         ordered_sections = course_data['ordered_sections']
         
         html = course_template.render(
-            course_name=course_name,
+            course_name=course_data['course_name'],
+            course_id=course_name,
             sections=ordered_sections,
             courses=course_list,
             show_nav=True,
-            page_title=course_name.replace('-', ' ').title(),
+            page_title=course_data['course_name'],
             generation_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         )
         
@@ -246,9 +259,17 @@ def generate_site(courses):
     index_template = env.get_template('index.html')
     
     # Prepare courses data for index page
-    index_courses = {}
+    index_courses = []
     for course_name, course_data in courses.items():
-        index_courses[course_name] = course_data['ordered_sections']
+        num_sections = len(course_data['ordered_sections'])
+        num_questions = sum(len(qs) for qs in course_data['ordered_sections'].values())
+
+        index_courses.append({
+            'name': course_data['course_name'],
+            'id': course_name,
+            'num_sections': num_sections,
+            'num_questions': num_questions,
+        })
     
     index_html = index_template.render(
         courses=index_courses,

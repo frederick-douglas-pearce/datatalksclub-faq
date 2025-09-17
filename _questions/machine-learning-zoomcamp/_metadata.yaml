@@ -1,4 +1,5 @@
 course: machine-learning-zoomcamp
+course_name: "ML Zoomcamp"
 sections:
   - "General course-related question review"
   - "1. Introduction to Machine Learning"

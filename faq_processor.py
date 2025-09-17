@@ -412,6 +412,7 @@ def create_metadata_file(course_data):
     
     with open(metadata_file, 'w', encoding='utf-8') as f:
         f.write(f'course: {course_data["course"]}\n')
+        f.write(f'course_name: {course_data["course"]}\n')
         f.write('sections:\n')
         for section in sections:
             f.write(f'  - "{section}"\n')
@@ -424,6 +425,7 @@ faq_documents = {
     'data-engineering-zoomcamp': '19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw',
     'machine-learning-zoomcamp': '1LpPanc33QJJ6BSsyxVg-pWNMplal84TdZtq10naIhD8',
     'mlops-zoomcamp': '12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0',
+    'llm-zoomcamp': '1m2KexowAXTmexfC5rVTCSnaShvdUQ8Ag2IEiwBDHxN0'
 }
 
 documents = []
