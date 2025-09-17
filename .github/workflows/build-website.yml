@@ -1,11 +1,22 @@
-name: Build FAQ Website
+name: Build and Deploy FAQ Website
 
 on:
   push:
     branches: [ main ]
 
+# Sets permissions for GitHub Pages deployment
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-website:
+  build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
@@ -18,30 +29,22 @@ jobs:
         python-version: '3.12'
         
     - name: Install uv
-      run: |
-        curl -LsSf https://astral.sh/uv/install.sh | sh
-        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+      run: pip install uv
         
-    - name: Extract questions from Google Docs
-      run: make extract
+    - name: Sync dependencies
+      run: uv sync
       
     - name: Build static website
       run: make website
       
-    - name: Check if there are changes to commit
-      id: verify-changed-files
-      run: |
-        if [ -n "$(git status --porcelain)" ]; then
-          echo "changed=true" >> $GITHUB_OUTPUT
-        else
-          echo "changed=false" >> $GITHUB_OUTPUT
-        fi
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '_site'
         
-    - name: Commit and push changes
-      if: steps.verify-changed-files.outputs.changed == 'true'
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Update FAQ website content"
-        git push
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
