@@ -53,42 +53,50 @@ def extract_images_from_docx(doc, course_name):
     image_mapping = {}
     
     for rel_id, rel in doc.part.rels.items():
-        if "image" in rel.target_ref:
-            try:
-                # Check if this is an internal relationship with a target part
-                if hasattr(rel, 'is_external') and rel.is_external:
-                    print(f"Skipping external image reference: {rel.target_ref}")
-                    continue
-                    
-                image_data = rel.target_part.blob
-                
-                # Generate filename based on content hash
-                image_hash = hashlib.md5(image_data).hexdigest()[:8]
-                
-                # Determine file extension
-                content_type = rel.target_part.content_type
-                if 'png' in content_type:
-                    ext = 'png'
-                elif 'jpeg' in content_type or 'jpg' in content_type:
-                    ext = 'jpg'
-                elif 'gif' in content_type:
-                    ext = 'gif'
-                else:
-                    ext = 'png'
-                
-                image_filename = f'image_{image_hash}.{ext}'
-                image_path = images_dir / image_filename
-                
-                with open(image_path, 'wb') as f:
-                    f.write(image_data)
-                
-                # Map using the relationship ID with Jekyll-style absolute path
-                image_mapping[rel_id] = f'/images/{course_name}/{image_filename}'
-                print(f"Extracted image: {rel_id} -> {image_filename}")
-            except (ValueError, AttributeError):
-                # Skip external images or broken references
-                print(f"Skipping external or broken image reference: {rel.target_ref}")
+        # Check if this is actually an image relationship by checking the relationship type
+        # Image relationships should have content types like image/png, image/jpeg, etc.
+        try:
+            # Skip external relationships entirely
+            if hasattr(rel, 'is_external') and rel.is_external:
                 continue
+            
+            # Check if the target part has an image content type
+            if not hasattr(rel, 'target_part') or not hasattr(rel.target_part, 'content_type'):
+                continue
+                
+            content_type = rel.target_part.content_type
+            if not content_type or not content_type.startswith('image/'):
+                continue
+                
+            image_data = rel.target_part.blob
+            
+            # Generate filename based on content hash
+            image_hash = hashlib.md5(image_data).hexdigest()[:8]
+            
+            # Determine file extension from content type
+            if 'png' in content_type:
+                ext = 'png'
+            elif 'jpeg' in content_type or 'jpg' in content_type:
+                ext = 'jpg'
+            elif 'gif' in content_type:
+                ext = 'gif'
+            elif 'webp' in content_type:
+                ext = 'webp'
+            else:
+                ext = 'png'  # Default fallback
+            
+            image_filename = f'image_{image_hash}.{ext}'
+            image_path = images_dir / image_filename
+            
+            with open(image_path, 'wb') as f:
+                f.write(image_data)
+            
+            # Map using the relationship ID with relative path
+            image_mapping[rel_id] = f'images/{course_name}/{image_filename}'
+            print(f"Extracted image: {rel_id} -> {image_filename}")
+        except (ValueError, AttributeError, Exception):
+            # Skip any relationships that can't be processed as images
+            continue
     
     return image_mapping
 
@@ -213,49 +221,57 @@ def read_faq(cache_file, course_name):
 
     return questions
 
-def yaml_escape(text):
-    """Escape text for YAML frontmatter using quoted strings"""
-    if not text:
-        return '""'
-    
-    # Escape quotes and backslashes
-    text = text.replace('\\', '\\\\')  # Escape backslashes first
-    text = text.replace('"', '\\"')   # Escape quotes
-    text = text.replace('\n', ' ')    # Replace newlines with spaces
-    text = text.replace('\r', ' ')    # Replace carriage returns with spaces
-    
-    # Always wrap in quotes for safety
-    return f'"{text}"'
 
-def liquid_escape(text):
-    """Escape text to prevent Liquid template processing - simplified approach"""
-    if not text:
-        return text
-    
-    # Use code blocks to prevent Liquid processing
-    return text
 
-def create_question_file(question_data, course_name, question_index):
-    """Create individual question markdown file with Jekyll frontmatter in course folder"""
+
+
+def generate_unique_id(course_name, section, question, used_ids):
+    """Generate a unique ID for a question, ensuring no collisions"""
+    base_text = f"{course_name}_{section}_{question}"
+    base_id = hashlib.md5(base_text.encode()).hexdigest()[:10]
+    
+    if base_id not in used_ids:
+        used_ids.add(base_id)
+        return base_id
+    
+    # If collision, try with incrementing suffix
+    counter = 1
+    while True:
+        collision_text = f"{base_text}_{counter}"
+        collision_id = hashlib.md5(collision_text.encode()).hexdigest()[:10]
+        if collision_id not in used_ids:
+            used_ids.add(collision_id)
+            return collision_id
+        counter += 1
+
+def create_question_file(question_data, course_name, question_index, question_id):
+    """Create individual question markdown file with frontmatter in course folder"""
     course_dir = Path('_questions') / course_name
     course_dir.mkdir(parents=True, exist_ok=True)
     
-    # Create safe filename
-    question_title = question_data['question']
-    safe_title = sanitize_filename(question_title)
-    filename = f'{question_index:03d}-{safe_title}.md'
+    # Create short name for filename (truncate to 30 chars)
+    question_title = question_data['question'][:30] if len(question_data['question']) > 30 else question_data['question']
+    short_name = sanitize_filename(question_title)
+    
+    # Use ID + short name as filename
+    filename = f'{question_id}_{short_name}.md'
     
     question_file = course_dir / filename
     
+    # Calculate sort order: question index * 10 to allow for future insertion
+    sort_order = question_index * 10
+    
     with open(question_file, 'w', encoding='utf-8') as f:
-        # Write Jekyll frontmatter with proper escaping
+        # Write frontmatter without escaping - keep full question text
         f.write('---\n')
-        f.write(f'question: {yaml_escape(question_data["question"])}\n')
-        f.write(f'section: {yaml_escape(question_data["section"])}\n')
-        f.write(f'course: {yaml_escape(course_name)}\n')
+        f.write(f'id: {question_id}\n')
+        f.write(f'question: {question_data["question"]}\n')
+        f.write(f'section: {question_data["section"]}\n')
+        f.write(f'course: {course_name}\n')
+        f.write(f'sort_order: {sort_order}\n')
         f.write('---\n\n')
         
-        # Write answer content without raw tags since output is false
+        # Write answer content
         for item in question_data['content']:
             if item['type'] == 'text':
                 f.write(f'{item["content"]}\n\n')
@@ -264,65 +280,30 @@ def create_question_file(question_data, course_name, question_index):
     
     return filename
 
-def create_course_index(course_data):
-    """Create course index page that uses Liquid templates to display questions from collection"""
-    course_name = course_data['course']
+def create_metadata_file(course_data):
+    """Create _metadata.yaml file with section order for the course"""
+    course_dir = Path('_questions') / course_data['course']
+    course_dir.mkdir(parents=True, exist_ok=True)
     
-    # Create course index in root directory
-    index_file = Path(f'{course_name}.md')
+    metadata_file = course_dir / '_metadata.yaml'
     
-    with open(index_file, 'w', encoding='utf-8') as f:
-        # Write Jekyll frontmatter
-        f.write('---\n')
-        f.write('layout: default\n')
-        f.write(f'title: "{course_name.replace("-", " ").title()} FAQ"\n')
-        f.write('---\n\n')
-        
-        f.write(f'# {course_name.replace("-", " ").title()} FAQ\n\n')
-        
-        # Use Liquid template to loop through questions from collection
-        f.write('{% assign course_questions = site.questions | where: "course", "' + course_name + '" %}\n')
-        f.write('{% assign sections = course_questions | group_by: "section" %}\n\n')
-        
-        f.write('{% for section in sections %}\n')
-        f.write('## {{ section.name }}\n\n')
-        
-        f.write('{% for question in section.items %}\n')
-        f.write('### {{ question.question }}\n\n')
-        f.write('{{ question.content }}\n\n')
-        f.write('---\n\n')
-        f.write('{% endfor %}\n\n')
-        f.write('{% endfor %}\n')
+    # Extract sections in order of appearance
+    sections = []
+    seen_sections = set()
     
-    print(f"Generated course index: {index_file}")
-
-def create_index_page():
-    """Create main index page"""
-    index_content = '''---
-layout: default
-title: DataTalks.Club FAQ
----
-
-# DataTalks.Club FAQ
-
-Welcome to the FAQ collection for DataTalks.Club courses.
-
-## Available Courses
-
-- [Data Engineering Zoomcamp]({{ site.baseurl }}/data-engineering-zoomcamp)
-- [Machine Learning Zoomcamp]({{ site.baseurl }}/machine-learning-zoomcamp)
-- [MLOps Zoomcamp]({{ site.baseurl }}/mlops-zoomcamp)
-
-## About
-
-This site contains frequently asked questions and answers from the DataTalks.Club community courses.
-'''
+    for question in course_data['questions']:
+        section = question['section']
+        if section not in seen_sections:
+            sections.append(section)
+            seen_sections.add(section)
     
-    with open('index.md', 'w', encoding='utf-8') as f:
-        f.write(index_content)
+    with open(metadata_file, 'w', encoding='utf-8') as f:
+        f.write(f'course: {course_data["course"]}\n')
+        f.write('sections:\n')
+        for section in sections:
+            f.write(f'  - "{section}"\n')
     
-    print("Generated main index: index.md")
-
+    print(f"Generated metadata: {metadata_file}")
 
 
 # Main execution
@@ -332,11 +313,8 @@ faq_documents = {
     'mlops-zoomcamp': '12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0',
 }
 
-# Create index page
-print("Creating index page...")
-create_index_page()
-
 documents = []
+used_ids = set()  # Track used IDs across all courses
 
 for course, file_id in faq_documents.items():
     print(f"\nProcessing {course}...")
@@ -350,10 +328,14 @@ for course, file_id in faq_documents.items():
     course_data = {'course': course, 'questions': course_documents}
     documents.append(course_data)
     
-    # Create individual question files
+    # Create individual question files with unique IDs
     print(f"Creating question files for {course}...")
     for i, question_data in enumerate(course_documents):
-        create_question_file(question_data, course, i + 1)
+        question_id = generate_unique_id(course, question_data['section'], question_data['question'], used_ids)
+        create_question_file(question_data, course, i + 1, question_id)
+    
+    # Create metadata file with section order
+    create_metadata_file(course_data)
     
     # Create course index page
     create_course_index(course_data)

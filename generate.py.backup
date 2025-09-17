@@ -1,0 +1,465 @@
+#!/usr/bin/env python3
+"""
+Static Site Generator for FAQ Content
+Processes markdown files from _questions/ and generates static HTML site in _site/
+"""
+
+import shutil
+from pathlib import Path
+import yaml
+from collections import defaultdict
+from jinja2 import Environment, FileSystemLoader
+import markdown
+from datetime import datetime
+
+
+def parse_frontmatter(content):
+    """Parse YAML frontmatter from markdown content"""
+    if not content.startswith('---'):
+        return {}, content
+    
+    try:
+        # Split frontmatter and content
+        parts = content.split('---', 2)
+        if len(parts) < 3:
+            return {}, content
+        
+        frontmatter = yaml.safe_load(parts[1])
+        markdown_content = parts[2].strip()
+        
+        return frontmatter or {}, markdown_content
+    except yaml.YAMLError:
+        return {}, content
+
+
+def process_markdown(content):
+    """Convert markdown to HTML while preserving template syntax as literal text"""
+    # Configure markdown with basic extensions
+    md = markdown.Markdown(extensions=['nl2br', 'tables'])
+    return md.convert(content)
+
+
+def collect_questions():
+    """Collect all questions from _questions directory"""
+    questions_dir = Path('questions')
+    if not questions_dir.exists():
+        print("No questions directory found")
+        return {}
+    
+    courses = defaultdict(lambda: defaultdict(list))
+    
+    for course_dir in questions_dir.iterdir():
+        if not course_dir.is_dir():
+            continue
+            
+        course_name = course_dir.name
+        print(f"Processing course: {course_name}")
+        
+        # Process all markdown files in course directory
+        for question_file in sorted(course_dir.glob('*.md')):
+            try:
+                with open(question_file, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                frontmatter, markdown_content = parse_frontmatter(content)
+                
+                if not frontmatter.get('question') or not frontmatter.get('section'):
+                    print(f"Skipping {question_file}: missing required frontmatter")
+                    continue
+                
+                # Process markdown to HTML
+                html_content = process_markdown(markdown_content)
+                
+                question_data = {
+                    'question': frontmatter['question'],
+                    'section': frontmatter['section'],
+                    'course': course_name,
+                    'content': html_content,
+                    'file': question_file.name
+                }
+                
+                section_name = frontmatter['section']
+                courses[course_name][section_name].append(question_data)
+                
+            except Exception as e:
+                print(f"Error processing {question_file}: {e}")
+    
+    return courses
+
+
+def setup_jinja_environment():
+    """Set up Jinja2 environment with templates from _layouts"""
+    layouts_dir = Path('_layouts')
+    if not layouts_dir.exists():
+        layouts_dir.mkdir(exist_ok=True)
+    
+    env = Environment(
+        loader=FileSystemLoader(str(layouts_dir)),
+        autoescape=True
+    )
+    
+    # Add custom filters
+    def title_case(text):
+        return text.replace('-', ' ').replace('_', ' ').title()
+    
+    env.filters['title_case'] = title_case
+    
+    return env
+
+
+def create_default_templates():
+    """Check if templates exist, create minimal ones if missing"""
+    layouts_dir = Path('_layouts')
+    if not layouts_dir.exists():
+        layouts_dir.mkdir(exist_ok=True)
+        print(f"Created {layouts_dir} directory")
+    
+    required_templates = ['base.html', 'index.html', 'course.html']
+    missing_templates = [tmpl for tmpl in required_templates if not (layouts_dir / tmpl).exists()]
+    
+    if missing_templates:
+        print(f"Warning: Missing templates: {missing_templates}")
+        print("Templates should be created in _layouts/ directory")
+    else:
+        print("All required templates found in _layouts/")
+    
+    return True
+    
+    # Default layout template
+    default_template = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page_title %}{{ page_title }} - {% endif %}DataTalks.Club FAQ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+        .course-nav {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .course-nav a {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 4px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .course-nav a:hover {
+            background: #2980b9;
+        }
+        .content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        .question {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question h3 {
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+        .question-content {
+            color: #555;
+        }
+        .question-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .question-content pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .question-content code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+        .question-content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .question-content a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            margin-top: 3rem;
+        }
+        .course-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .course-link {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .course-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .course-link a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .course-link h3 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        .table-of-contents {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .table-of-contents ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        .table-of-contents a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .content {
+                padding: 1rem;
+            }
+            .course-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DataTalks.Club FAQ</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        {% if show_nav %}
+        <nav class="course-nav">
+            <a href="index.html">Home</a>
+            {% for course in courses %}
+            <a href="{{ course.name }}.html">{{ course.name | title_case }}</a>
+            {% endfor %}
+        </nav>
+        {% endif %}
+        
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+        
+        <footer>
+            <p>Generated on {{ generation_time }} | DataTalks.Club FAQ</p>
+        </footer>
+    </div>
+</body>
+</html>"""
+    
+    if not default_file.exists():
+        with open(default_file, 'w', encoding='utf-8') as f:
+            f.write(default_template)
+    
+    # Course template
+    course_template = """{% extends "default.html" %}
+
+{% block content %}
+<h1>{{ course_name | title_case }} FAQ</h1>
+
+{% if sections %}
+<div class="table-of-contents">
+    <h2>Table of Contents</h2>
+    <ul>
+    {% for section_name in sections.keys() %}
+        <li><a href="#{{ section_name | lower | replace(' ', '-') }}">{{ section_name }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% for section_name, questions in sections.items() %}
+<div class="section" id="{{ section_name | lower | replace(' ', '-') }}">
+    <h2>{{ section_name }}</h2>
+    
+    {% for question in questions %}
+    <div class="question">
+        <h3>{{ question.question }}</h3>
+        <div class="question-content">
+            {{ question.content | safe }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+
+{% else %}
+<p>No questions found for this course.</p>
+{% endif %}
+{% endblock %}"""
+    
+    if not course_file.exists():
+        with open(course_file, 'w', encoding='utf-8') as f:
+            f.write(course_template)
+    
+    print("Set up templates in {layouts_dir}".format(layouts_dir=layouts_dir))
+
+
+def generate_site(courses):
+    """Generate the complete static site"""
+    site_dir = Path('_site')
+    
+    # Clean and create site directory
+    if site_dir.exists():
+        shutil.rmtree(site_dir)
+    site_dir.mkdir(exist_ok=True)
+    
+    # Create assets directory
+    assets_dir = site_dir / 'assets' / 'css'
+    assets_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Copy images
+    images_src = Path('images')
+    if images_src.exists():
+        images_dest = site_dir / 'images'
+        shutil.copytree(images_src, images_dest)
+        print(f"Copied images to {images_dest}")
+    
+    # Setup Jinja environment
+    create_default_templates()
+    env = setup_jinja_environment()
+    
+    # Prepare course list for navigation
+    course_list = [{'name': name} for name in courses.keys()]
+    
+    # Generate course pages using external templates
+    course_template = env.get_template('course.html')
+    
+    for course_name, sections in courses.items():
+        html = course_template.render(
+            course_name=course_name,
+            sections=sections,
+            courses=course_list,
+            show_nav=True,
+            page_title=course_name.replace('-', ' ').title(),
+            generation_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        )
+        
+        course_file = site_dir / f'{course_name}.html'
+        with open(course_file, 'w', encoding='utf-8') as f:
+            f.write(html)
+        
+        print(f"Generated {course_file}")
+    
+    # Generate index page using external template
+    index_template = env.get_template('index.html')
+    
+    index_html = index_template.render(
+        courses=courses,
+        generation_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    )
+    
+    index_file = site_dir / 'index.html'
+    with open(index_file, 'w', encoding='utf-8') as f:
+        f.write(index_html)
+    
+    print(f"Generated {index_file}")
+    
+    print(f"\nSite generated successfully in {site_dir}")
+    return site_dir
+
+
+def main():
+    """Main execution function"""
+    print("DataTalks.Club FAQ Static Site Generator")
+    print("=" * 50)
+    
+    # Collect questions from _questions directory
+    print("\n1. Collecting questions...")
+    courses = collect_questions()
+    
+    if not courses:
+        print("No courses or questions found!")
+        return
+    
+    # Print summary
+    total_questions = sum(len(questions) for sections in courses.values() for questions in sections.values())
+    print(f"Found {len(courses)} courses with {total_questions} total questions")
+    
+    for course_name, sections in courses.items():
+        course_questions = sum(len(questions) for questions in sections.values())
+        print(f"  - {course_name}: {len(sections)} sections, {course_questions} questions")
+    
+    # Generate static site
+    print("\n2. Generating static site...")
+    site_dir = generate_site(courses)
+    
+    print("\n✅ Site generation complete!")
+    print(f"📁 Output directory: {site_dir.absolute()}")
+    print(f"🌐 Open {site_dir.absolute() / 'index.html'} in your browser")
+
+
+if __name__ == '__main__':
+    main()

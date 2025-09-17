@@ -41,7 +41,7 @@ def process_markdown(content):
 
 def collect_questions():
     """Collect all questions from _questions directory"""
-    questions_dir = Path('questions')
+    questions_dir = Path('_questions')
     if not questions_dir.exists():
         print("No questions directory found")
         return {}
