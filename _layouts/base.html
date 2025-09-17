@@ -99,13 +99,6 @@
         .question-content a:hover {
             text-decoration: underline;
         }
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #7f8c8d;
-            border-top: 1px solid #ecf0f1;
-            margin-top: 3rem;
-        }
         .course-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -126,10 +119,16 @@
         .course-link a {
             text-decoration: none;
             color: inherit;
+            display: block;
         }
         .course-link h3 {
-            margin: 0;
+            margin: 0 0 0.5rem 0;
             color: #2c3e50;
+            font-size: 1.2em;
+        }
+        .course-description {
+            color: #666;
+            font-size: 0.9em;
         }
         .table-of-contents {
             background: #f8f9fa;
@@ -150,6 +149,13 @@
         }
         .table-of-contents a:hover {
             text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            margin-top: 3rem;
         }
         @media (max-width: 768px) {
             .container {

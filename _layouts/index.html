@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to DataTalks.Club FAQ</h1>
+<p>This comprehensive FAQ collection contains answers to frequently asked questions from the DataTalks.Club community courses. Browse through course-specific questions and solutions.</p>
+
+<h2>Available Courses</h2>
+<div class="course-links">
+    {% for course_name, sections in courses.items() %}
+    <div class="course-link">
+        <a href="{{ course_name }}.html">
+            <h3>{{ course_name | title_case }}</h3>
+            <div class="course-description">
+                {{ sections | length }} sections • 
+                {{ sections.values() | map('length') | sum }} questions
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<h2>About</h2>
+<p>These FAQs are compiled from real questions and answers from the DataTalks.Club community. Each course page is organized by sections with detailed answers, code examples, and helpful resources.</p>
+
+<h3>Quick Navigation</h3>
+<ul>
+    {% for course_name in courses.keys() %}
+    <li><a href="{{ course_name }}.html">{{ course_name | title_case }} FAQ</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
