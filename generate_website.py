@@ -41,8 +41,20 @@ def process_markdown(content, images=None):
             image_markdown = f'![{image["description"]}]({image["path"]})'
             content = content.replace(f'<{{IMAGE:{image["id"]}}}>', image_markdown)
     
-    # Configure markdown with basic extensions
-    md = markdown.Markdown(extensions=['nl2br', 'tables'])
+    # Configure markdown with extensions including syntax highlighting
+    md = markdown.Markdown(extensions=[
+        'nl2br', 
+        'tables', 
+        'codehilite',
+        'fenced_code'
+    ], extension_configs={
+        'codehilite': {
+            'css_class': 'highlight',
+            'use_pygments': True,
+            'guess_lang': True,
+            'linenums': False
+        }
+    })
     return md.convert(content)
 
 
