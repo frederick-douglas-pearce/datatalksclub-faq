@@ -1,6 +1,6 @@
 ---
 id: 3ef50b0d88
-question: 'Question 7: Multiplication operators.'
+question: 'Homework Q7: Multiplication operators.'
 sort_order: 510
 ---
 

@@ -5,8 +5,12 @@ sections:
     name: "General Course-Related Questions"
   - id: module-1
     name: "Module 1. Introduction to Machine Learning"
+  - id: module-1-homework
+    name: "Module 1 Homework"
   - id: module-2
     name: "Module 2. Machine Learning for Regression"
+  - id: module-2-homework
+    name: "Module 2 Homework"
   - id: module-3
     name: "Module 3. Machine Learning for Classification"
   - id: module-4

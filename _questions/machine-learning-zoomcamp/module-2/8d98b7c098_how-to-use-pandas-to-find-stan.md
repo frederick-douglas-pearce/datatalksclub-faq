@@ -1,6 +1,6 @@
 ---
 id: 8d98b7c098
-question: How to use pandas to find standard deviation
+question: Find standard deviation with Pandas
 sort_order: 860
 ---
 

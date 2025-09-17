@@ -1,9 +1,10 @@
 ---
 id: 3ff258b230
-question: '[Question 4](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/cohorts/2023/02-regression/homework.md#question-4):
-  what is `r`, is it the same as `alpha` in [sklearn.Ridge](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html)[()](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html)?'
+question: 'Homework Q4: Is r same as alpha is Scikit-Learn Ridge?'
 sort_order: 720
 ---
+
+What is `r`, is it the same as `alpha` in [sklearn.Ridge](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html)
 
 In the context of regression, particularly with regularization:
 

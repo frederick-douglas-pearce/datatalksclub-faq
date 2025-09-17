@@ -4,7 +4,9 @@ question: I filled the form, but haven't received a confirmation email. Is it no
 sort_order: 80
 ---
 
-The process is automated now, so you should receive the email eventually. If you haven’t, check your promotions tab in Gmail as well as spam.
+Normally, you'd receive the email shortly after you signed up.
+
+If you haven’t, check your promotions tab in Gmail as well as spam.
 
 If you unsubscribed from our newsletter, you won't get course related updates too.
 

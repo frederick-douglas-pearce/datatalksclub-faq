@@ -4,7 +4,7 @@ images:
 - description: 'image #1'
   id: image_1
   path: images/machine-learning-zoomcamp/image_16b33640.png
-question: 'wget: unable to resolve host address ''raw.githubusercontent.com'''
+question: 'Kaggle: wget: unable to resolve host address raw.githubusercontent.com'
 sort_order: 360
 ---
 

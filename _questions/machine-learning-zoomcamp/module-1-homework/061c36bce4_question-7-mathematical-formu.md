@@ -4,7 +4,13 @@ question: 'Question 7: Mathematical formula for linear regression'
 sort_order: 490
 ---
 
-In Question 7 we are asked to calculate
+In Question 7 we are asked to calculate 
+
+XTX=XTX
+XTXinv=(XTX)-1
+w=(XTX)-1XTy
+
+The initial problem w=X-1y can be solved by this, where a Matrix X is multiplied by some unknown weights w resulting in the target y.
 
 The initial problem  can be solved by this, where a Matrix X is multiplied by some unknown weights w resulting in the target y.
 

@@ -1,6 +1,6 @@
 ---
 id: af50bd4d07
-question: Meaning of mean in homework 2, question 3
+question: 'Homework Q3: Meaning of mean'
 sort_order: 780
 ---
 

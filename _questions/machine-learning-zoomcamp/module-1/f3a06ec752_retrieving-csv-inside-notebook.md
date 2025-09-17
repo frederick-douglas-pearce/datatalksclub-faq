@@ -1,10 +1,15 @@
 ---
 id: f3a06ec752
-question: Retrieving csv inside notebook
+question: Downloading a csv file inside notebook
 sort_order: 280
 ---
 
-You can use
+The best way is to use pandas and give it the URL directly:
+
+url = 'https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv'
+df = pd.read_csv(url)
+
+You can also execute cmd/bash commands inside Jupyter: 
 
 !wget [raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
 

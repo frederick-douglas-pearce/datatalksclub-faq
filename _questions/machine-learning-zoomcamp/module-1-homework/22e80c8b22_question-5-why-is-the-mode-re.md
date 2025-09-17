@@ -1,7 +1,6 @@
 ---
 id: 22e80c8b22
-question: 'Question 5: Why is the mode returned as a Series instead of a single value
-  in my DataFrame?'
+question: 'Homework Q5: Why the mode returns a Series instead of a single value?'
 sort_order: 470
 ---
 

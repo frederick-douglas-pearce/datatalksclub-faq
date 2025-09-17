@@ -1,7 +1,6 @@
 ---
 id: 4115da8cbc
-question: 'Question 5: How and why do we replace the NaN values with average of the
-  column?'
+question: 'Homework Q5: How to replace NaNs with the average?'
 sort_order: 460
 ---
 

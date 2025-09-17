@@ -1,6 +1,6 @@
 ---
 id: 261ca9cbab
-question: 'Fatal: Authentication failed for ''[GitHub](https://github.com/username)'
+question: 'Fatal: Authentication failed for https://github.com/username'
 sort_order: 350
 ---
 
