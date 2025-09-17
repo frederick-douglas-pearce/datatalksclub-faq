@@ -63,8 +63,8 @@ def collect_questions():
                 
                 frontmatter, markdown_content = parse_frontmatter(content)
                 
-                if not frontmatter.get('question') or not frontmatter.get('section'):
-                    print(f"Skipping {question_file}: missing required frontmatter")
+                if not frontmatter.get('question'):
+                    print(f"Skipping {question_file}: missing question field in frontmatter")
                     continue
                 
                 # Process markdown to HTML
@@ -72,13 +72,13 @@ def collect_questions():
                 
                 question_data = {
                     'question': frontmatter['question'],
-                    'section': frontmatter['section'],
+                    'section': frontmatter.get('section', 'Unknown Section'),
                     'course': course_name,
                     'content': html_content,
                     'file': question_file.name
                 }
                 
-                section_name = frontmatter['section']
+                section_name = frontmatter.get('section', 'Unknown Section')
                 courses[course_name][section_name].append(question_data)
                 
             except Exception as e:
