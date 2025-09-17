@@ -147,6 +147,9 @@ def collect_questions():
                         images = frontmatter.get('images', [])
                         html_content = process_markdown(markdown_content, images)
                         
+                        # Get relative path from _questions directory
+                        relative_path = question_file.relative_to(Path('_questions'))
+                        
                         question_data = {
                             'id': frontmatter.get('id', ''),
                             'question': frontmatter['question'],
@@ -154,7 +157,7 @@ def collect_questions():
                             'sort_order': frontmatter.get('sort_order', 999999),
                             'course': course_name,
                             'content': html_content,
-                            'file': question_file.name,
+                            'file_path': str(relative_path).replace('\\', '/'),  # Full path for GitHub link
                             'images': images
                         }
                         
@@ -181,18 +184,21 @@ def collect_questions():
                     images = frontmatter.get('images', [])
                     html_content = process_markdown(markdown_content, images)
                     
+                    section_name = frontmatter.get('section', 'Unknown Section')
+                    # Get relative path from _questions directory
+                    relative_path = question_file.relative_to(Path('_questions'))
+                    
                     question_data = {
                         'id': frontmatter.get('id', ''),
                         'question': frontmatter['question'],
-                        'section': frontmatter.get('section', 'Unknown Section'),
+                        'section': section_name,
                         'sort_order': frontmatter.get('sort_order', 999999),
                         'course': course_name,
                         'content': html_content,
-                        'file': question_file.name,
+                        'file_path': str(relative_path).replace('\\', '/'),  # Full path for GitHub link
                         'images': images
                     }
                     
-                    section_name = frontmatter.get('section', 'Unknown Section')
                     sections[section_name].append(question_data)
                     
                 except Exception as e:
@@ -398,7 +404,7 @@ def main():
         print(f"  - {course_name}: {len(sections)} sections, {course_questions} questions")
     
     print(f"Found {len(courses)} courses with {total_questions} total questions")
-    
+
     # Generate static site
     print("\n2. Generating static site...")
     site_dir = generate_site(courses)

@@ -26,6 +26,9 @@
         <div class="question-content">
             {{ question.content | safe }}
         </div>
+        <div class="question-meta">
+            <a href="https://github.com/DataTalksClub/faq/blob/main/_questions/{{ question.file_path }}" class="edit-link" target="_blank">edit on GitHub</a>
+        </div>
     </div>
     {% endfor %}
 </div>
