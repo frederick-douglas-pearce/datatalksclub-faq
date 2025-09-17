@@ -7,17 +7,17 @@
 <div class="table-of-contents">
     <h2>Table of Contents</h2>
     <ul>
-    {% for section_name in sections.keys() %}
-        <li><a href="#{{ section_name | lower | replace(' ', '-') }}">{{ section_name }}</a></li>
+    {% for section in sections %}
+        <li><a href="#{{ section.id }}">{{ section.name }}</a></li>
     {% endfor %}
     </ul>
 </div>
 
-{% for section_name, questions in sections.items() %}
-<div class="section" id="{{ section_name | lower | replace(' ', '-') }}">
-    <h2>{{ section_name }}</h2>
+{% for section in sections %}
+<div class="section" id="{{ section.id }}">
+    <h2>{{ section.name }}</h2>
     
-    {% for question in questions %}
+    {% for question in section.questions %}
     <div class="question" id="{{ question.id }}">
         <h3>
             <a href="#{{ question.id }}" class="anchor-link">#</a>

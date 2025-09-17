@@ -256,21 +256,32 @@ def sort_sections_and_questions(courses):
         for section_name, questions in sections.items():
             questions.sort(key=lambda q: q['sort_order'])
         
-        # Create ordered sections dict based on metadata order
-        ordered_sections = {}
+        # Create ordered sections list with both ID and name information
+        ordered_sections = []
         
         # First, add sections in metadata order
-        # section_order now contains dicts with 'name' keys
+        # section_order now contains dicts with 'id' and 'name' keys
         for section_info in section_order:
             section_name = section_info['name']
+            section_id = section_info['id']
             if section_name in sections:
-                ordered_sections[section_name] = sections[section_name]
+                ordered_sections.append({
+                    'id': section_id,
+                    'name': section_name,
+                    'questions': sections[section_name]
+                })
         
         # Then add any sections not in metadata (in alphabetical order)
         metadata_section_names = {s['name'] for s in section_order}
         remaining_sections = sorted([s for s in sections.keys() if s not in metadata_section_names])
         for section_name in remaining_sections:
-            ordered_sections[section_name] = sections[section_name]
+            # Generate ID from name for sections not in metadata
+            section_id = section_name.lower().replace(' ', '-').replace(':', '').replace('.', '')
+            ordered_sections.append({
+                'id': section_id,
+                'name': section_name,
+                'questions': sections[section_name]
+            })
         
         courses[course_name]['ordered_sections'] = ordered_sections
     
@@ -339,8 +350,9 @@ def generate_site(courses):
     # Prepare courses data for index page
     index_courses = []
     for course_name, course_data in courses.items():
-        num_sections = len(course_data['ordered_sections'])
-        num_questions = sum(len(qs) for qs in course_data['ordered_sections'].values())
+        ordered_sections = course_data['ordered_sections']
+        num_sections = len(ordered_sections)
+        num_questions = sum(len(section['questions']) for section in ordered_sections)
 
         index_courses.append({
             'name': course_data['course_name'],

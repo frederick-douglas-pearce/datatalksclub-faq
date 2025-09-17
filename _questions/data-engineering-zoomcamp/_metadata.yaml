@@ -2,9 +2,7 @@ course: data-engineering-zoomcamp
 course_name: "Data Engineering Zoomcamp"
 sections:
   - id: general
-    name: "General course-related questions"
-  - id: course-management-platform
-    name: "Course Management Platform for Homeworks, Project and Certificate"
+    name: "General Course-Related Questions"
   - id: module-1
     name: "Module 1: Docker and Terraform"
   - id: module-2
