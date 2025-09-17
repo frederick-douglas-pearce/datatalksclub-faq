@@ -28,7 +28,7 @@ I'm having an issue with the dlt workshop notebook. The 'Load to Parquet file' s
 
 os.environ['DESTINATION__FILESYSTEM__BUCKET_URL'] = r'file:///content/.dlt/my_folder'
 
-url = "[[storage.googleapis.com](https://storage.googleapis.com/dtc_zoomcamp_api/yellow_tripdata_2009-06.jsonl)](https://storage.googleapis.com/dtc_zoomcamp_api/yellow_tripdata_2009-06.jsonl)"
+url = "[https://storage.googleapis.com/dtc_zoomcamp_api/yellow_tripdata_2009-06.jsonl](https://storage.googleapis.com/dtc_zoomcamp_api/yellow_tripdata_2009-06.jsonl)"
 
 # Define your pipeline
 

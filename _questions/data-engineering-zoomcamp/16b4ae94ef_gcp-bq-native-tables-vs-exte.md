@@ -14,7 +14,7 @@ Materialized table: Copy of this external table. Now the data is stored in the b
 
 Resources:
 
-[[cloud.google.com](https://cloud.google.com/bigquery/docs/external-tables)](https://cloud.google.com/bigquery/docs/external-tables)
+[https://cloud.google.com/bigquery/docs/external-tables](https://cloud.google.com/bigquery/docs/external-tables)
 
-[[cloud.google.com](https://cloud.google.com/bigquery/docs/tables-intro)](https://cloud.google.com/bigquery/docs/tables-intro)
+[https://cloud.google.com/bigquery/docs/tables-intro](https://cloud.google.com/bigquery/docs/tables-intro)
 

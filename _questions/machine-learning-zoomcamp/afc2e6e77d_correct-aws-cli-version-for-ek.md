@@ -8,5 +8,5 @@ sort_order: 3620
 
 Make sure you are on AWS CLI v2 (check with aws --version)
 
-[[docs.aws.amazon.com](https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration-instructions.html)](https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration-instructions.html)
+[https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration-instructions.html](https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration-instructions.html)
 

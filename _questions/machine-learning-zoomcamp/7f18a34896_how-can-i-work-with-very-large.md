@@ -17,7 +17,7 @@ Optimizing data types: Pandas’ automatic data type inference (when reading dat
 
 Using Dask, an open-source python project which parallelizes Numpy and Pandas.
 
-(see, e.g. [[vantage-ai.com](https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas)](https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas))
+(see, e.g. [https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas](https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas))
 
 By Rileen Sinha
 

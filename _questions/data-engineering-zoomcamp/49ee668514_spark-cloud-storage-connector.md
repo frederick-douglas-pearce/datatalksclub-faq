@@ -10,7 +10,7 @@ sort_order: 3550
 
 There’s a few extra steps to go into reading from GCS with PySpark
 
-1.)  IMPORTANT: Download the Cloud Storage connector for Hadoop here:[ [cloud.google.com](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage#clusters)](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage#clusters)
+1.)  IMPORTANT: Download the Cloud Storage connector for Hadoop here:[ [cloud.google.com](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage#cluster)s](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage#clusters)
 
 As the name implies, this .jar file is what essentially connects PySpark with your GCS
 

@@ -16,7 +16,7 @@ Windows 10 Pro / 11 Pro Users: In order to use Hyper-V as its back-end, you MUST
 
 Windows 10 Home / 11 Home Users: On the other hand, Users of the 'Home' version do NOT have the option Hyper-V option enabled, which means, you can only get Docker up and running using the WSL2 credentials(Windows Subsystem for Linux). Url
 
-You can find the detailed instructions to do so here: rt g[[pureinfotech.com](https://pureinfotech.com/install-wsl-windows-11/)](https://pureinfotech.com/install-wsl-windows-11/)
+You can find the detailed instructions to do so here: rt g[https://pureinfotech.com/install-wsl-windows-11/](https://pureinfotech.com/install-wsl-windows-11/)
 
-In case, you run into another issue while trying to install WSL2 (WslRegisterDistribution failed with error: 0x800701bc), Make sure you update the WSL2 Linux Kernel, following the guidelines here: [[GitHub](https://github.com/microsoft/WSL/issues/5393)](https://github.com/microsoft/WSL/issues/5393)
+In case, you run into another issue while trying to install WSL2 (WslRegisterDistribution failed with error: 0x800701bc), Make sure you update the WSL2 Linux Kernel, following the guidelines here: [https://github.com/microsoft/WSL/issues/5393](https://github.com/microsoft/WSL/issues/5393)
 

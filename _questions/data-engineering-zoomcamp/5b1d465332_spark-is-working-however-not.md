@@ -16,7 +16,7 @@ Verify the current application session address:
 
 Eg: Using spark.sparkContext.uiWebUrl command in your session.
 
-Expected output: [[your.application.session.address.internal:4041](http://your.application.session.address.internal:4041)](http://spark-exec.southamerica-east1-c.c.de-zoomcamp-25-449418.internal:4041/)
+Expected output: [http://your.application.session.address.internal:4041](http://spark-exec.southamerica-east1-c.c.de-zoomcamp-25-449418.internal:4041/)
 
 Indicating port 4041
 

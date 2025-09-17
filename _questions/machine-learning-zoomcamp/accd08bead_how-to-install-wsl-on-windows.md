@@ -32,7 +32,7 @@ For updates, run: wsl --update.
 
 It is quite simple, and you can follow these instructions here:
 
-[[YouTube](https://www.youtube.com/watch?v=qYlgUDKKK5A&ab_channel=NeuralNine)](https://www.youtube.com/watch?v=qYlgUDKKK5A&ab_channel=NeuralNine)
+[https://www.youtube.com/watch?v=qYlgUDKKK5A&ab_channel=NeuralNine](https://www.youtube.com/watch?v=qYlgUDKKK5A&ab_channel=NeuralNine)
 
 Make sure that you have “Virtual Machine Platform” feature activated in your Windows “Features”. To do that, search “features” in the research bar and see if the checkbox is selected. You also need to make sure that your system (in the bios) is able to virtualize. This is usually the case.
 
@@ -58,7 +58,7 @@ You can check that your modifications are taken into account by opening a new te
 
 You will need to install pip by running this command sudo apt install python3-pip
 
-NB: I had this error message when trying to install pipenv ([[GitHub](https://github.com/microsoft/WSL/issues/5663)](https://github.com/microsoft/WSL/issues/5663)):
+NB: I had this error message when trying to install pipenv ([https://github.com/microsoft/WSL/issues/5663](https://github.com/microsoft/WSL/issues/5663)):
 
 /sbin/ldconfig.real: Can't link /usr/lib/wsl/lib/libnvoptix_loader.so.1 to libnvoptix.so.1
 

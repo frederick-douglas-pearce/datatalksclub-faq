@@ -8,7 +8,7 @@ section: 'Module 4: analytics engineering with dbt'
 sort_order: 3190
 ---
 
-If you uploaded manually the fvh 2019 parquet files manually after downloading from [[d37ci6vzurychx.cloudfront.net](https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet)](https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet) you may face errors regarding date types while loading the data in a landing table (say fhv_tripdata). Try to create an the external table with the schema defines as following and load each month in a loop.
+If you uploaded manually the fvh 2019 parquet files manually after downloading from [https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet) you may face errors regarding date types while loading the data in a landing table (say fhv_tripdata). Try to create an the external table with the schema defines as following and load each month in a loop.
 
 -----Correct load with schema defination----will not throw error----------------------
 

@@ -8,7 +8,7 @@ sort_order: 3360
 
 I’ve tried to do everything in Google Colab. Here is a way to work with Docker in Google Colab:
 
-[[GitHub](https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885)](https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885)
+[https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885](https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885)
 
 %%shell
 

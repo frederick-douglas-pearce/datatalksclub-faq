@@ -6,5 +6,5 @@ section: 8. Neural Networks and Deep Learning
 sort_order: 2720
 ---
 
-Here is an article that worked for me: [[knowmledge.com](https://knowmledge.com/2023/12/07/ml-zoomcamp-2023-project/)](https://knowmledge.com/2023/12/07/ml-zoomcamp-2023-project/)
+Here is an article that worked for me: [https://knowmledge.com/2023/12/07/ml-zoomcamp-2023-project/](https://knowmledge.com/2023/12/07/ml-zoomcamp-2023-project/)
 

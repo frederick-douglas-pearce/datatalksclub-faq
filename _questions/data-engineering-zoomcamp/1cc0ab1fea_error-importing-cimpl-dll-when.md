@@ -28,5 +28,5 @@ ImportError: DLL load failed while importing cimpl
 
 You need to set this DLL manually in Conda Env.
 
-Source: [[githubhot.com](https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2)](https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2)
+Source: [https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2](https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2)
 

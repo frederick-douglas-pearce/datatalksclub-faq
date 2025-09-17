@@ -22,5 +22,5 @@ Solution: Initialize a project through UI.
 
 Importing git repo of an existing dbt project:
 
-Please read through these details for doing it: [[docs.getdbt.com](https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url)](https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url)
+Please read through these details for doing it: [https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url](https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url)
 

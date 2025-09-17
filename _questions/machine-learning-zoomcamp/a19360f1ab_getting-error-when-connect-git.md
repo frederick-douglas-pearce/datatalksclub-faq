@@ -12,7 +12,7 @@ When follow module 8.1b video to setup git in Saturn Cloud, run `ssh -T [git@git
 
 Solution description:
 
-Alternative way, we can setup git in our Saturn Cloud env with generate SSH key in our Saturn Cloud and add it to our git account host. After it, we can access/manage our git through Saturn’s jupyter server. All steps detailed on this following tutorial: [[saturncloud.io](https://saturncloud.io/docs/using-saturn-cloud/gitrepo/)](https://saturncloud.io/docs/using-saturn-cloud/gitrepo/)
+Alternative way, we can setup git in our Saturn Cloud env with generate SSH key in our Saturn Cloud and add it to our git account host. After it, we can access/manage our git through Saturn’s jupyter server. All steps detailed on this following tutorial: [https://saturncloud.io/docs/using-saturn-cloud/gitrepo/](https://saturncloud.io/docs/using-saturn-cloud/gitrepo/)
 
 Added by Ryan Pramana
 

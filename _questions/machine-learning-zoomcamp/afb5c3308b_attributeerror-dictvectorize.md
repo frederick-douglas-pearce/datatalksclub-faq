@@ -6,7 +6,7 @@ section: 3. Machine Learning for Classification
 sort_order: 1320
 ---
 
-The solution is to use “get_feature_names_out” instead. See details: [[scikit-learn.org](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html)](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html)
+The solution is to use “get_feature_names_out” instead. See details: [https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html)
 
 George Chizhmak
 

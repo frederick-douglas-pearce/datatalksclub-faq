@@ -16,7 +16,7 @@ Both aws and gcp give microinstance for free for a VERY long time, and a bunch m
 
 Saturn even provides free GPU instances. Recent promo link from mlzoomcamp for Saturn:
 
-“You can sign up here: [[bit.ly](https://bit.ly/saturn-mlzoomcamp)](https://bit.ly/saturn-mlzoomcamp)
+“You can sign up here: [https://bit.ly/saturn-mlzoomcamp](https://bit.ly/saturn-mlzoomcamp)
 
 When you sign up, write in the chat box that you're an ML Zoomcamp student and you should get extra GPU hours (something like 150)”
 

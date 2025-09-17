@@ -10,5 +10,5 @@ Problem: I tried to run starter notebook on pipenv environment but had issues wi
 
 Downgrading to tornado==6.1 fixed the issue
 
-[[Stack Overflow](https://stackoverflow.com/questions/54971836/no-output-jupyter-notebook)](https://stackoverflow.com/questions/54971836/no-output-jupyter-notebook)
+[https://stackoverflow.com/questions/54971836/no-output-jupyter-notebook](https://stackoverflow.com/questions/54971836/no-output-jupyter-notebook)
 

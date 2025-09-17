@@ -6,7 +6,7 @@ section: 5. Deploying Machine Learning Models
 sort_order: 2220
 ---
 
-You need to include the protocol scheme: '[[localhost:9696](http://localhost:9696/predict)](http://localhost:9696/predict)'.
+You need to include the protocol scheme: '[http://localhost:9696/predict](http://localhost:9696/predict)'.
 
 Without the http:// part, requests has no idea how to connect to the remote server.
 

@@ -9,7 +9,7 @@ sort_order: 2790
 
 If you’re trying to configure CI with Github and on the job’s options you can’t see Run on Pull Requests? on triggers, you have to reconnect with Github using native connection instead clone by SSH. Follow these steps:
 
-On Profile Settings > Linked Accounts connect your Github account with dbt project allowing the permissions asked. More info at [[docs.getdbt.com](https://docs.getdbt.com/docs/collaborate/git/connect-gith)](https://docs.getdbt.com/docs/collaborate/git/connect-github)
+On Profile Settings > Linked Accounts connect your Github account with dbt project allowing the permissions asked. More info at [https://docs.getdbt.com/docs/collaborate/git/connect-gith](https://docs.getdbt.com/docs/collaborate/git/connect-github)
 
 ![Image](images/data-engineering-zoomcamp/image_7800f401.png)
 

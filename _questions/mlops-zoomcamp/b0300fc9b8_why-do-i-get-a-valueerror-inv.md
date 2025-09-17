@@ -7,7 +7,7 @@ section: 'Module 6: Best practices'
 sort_order: 2400
 ---
 
-Answer: Boto3 does not support underscores (_) in service URLs. Naming your Docker Compose services with underscores will cause Boto3 to throw an error when connecting to the endpoint. (Source: [[GitHub](https://github.com/boto/boto3/issues/703)](https://github.com/boto/boto3/issues/703))
+Answer: Boto3 does not support underscores (_) in service URLs. Naming your Docker Compose services with underscores will cause Boto3 to throw an error when connecting to the endpoint. (Source: [https://github.com/boto/boto3/issues/703](https://github.com/boto/boto3/issues/703))
 
 # Incorrect Docker Compose configuration with underscores
 

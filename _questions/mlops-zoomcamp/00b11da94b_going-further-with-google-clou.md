@@ -16,7 +16,7 @@ In the GCP Console, go to the "IAM & Admin" section, then "Service accounts."
 
 Create a new service account, grant it the necessary permissions (e.g., "Storage Object Admin" for GCS access), and generate a JSON key file.
 
-Install the Google Cloud SDK: [[cloud.google.com](https://cloud.google.com/sdk/docs/install)](https://cloud.google.com/sdk/docs/install)
+Install the Google Cloud SDK: [https://cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)
 
 Authenticate the SDK with your GCP account: gcloud auth login
 

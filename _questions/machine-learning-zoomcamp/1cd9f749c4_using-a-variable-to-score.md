@@ -6,7 +6,7 @@ section: 4. Evaluation Metrics for Classification
 sort_order: 1410
 ---
 
-[[Slack](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1696475675887119)](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1696475675887119)
+[https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1696475675887119](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1696475675887119)
 
 Metrics can be used on a series or a dataframe
 

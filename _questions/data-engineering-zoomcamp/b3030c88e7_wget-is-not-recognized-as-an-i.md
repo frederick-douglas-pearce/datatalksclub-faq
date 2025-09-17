@@ -40,5 +40,5 @@ pip install wget
 
 Alternatively, you can just paste the file URL into your web browser and download the file normally that way. You’ll want to move the resulting file into your working directory.
 
-Also recommended a look at the python library requests for the loading gz file  [[pypi.org](https://pypi.org/project/requests)](https://pypi.org/project/requests/)
+Also recommended a look at the python library requests for the loading gz file  [https://pypi.org/project/requests](https://pypi.org/project/requests/)
 

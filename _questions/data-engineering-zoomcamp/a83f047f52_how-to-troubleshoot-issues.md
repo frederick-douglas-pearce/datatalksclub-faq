@@ -28,7 +28,7 @@ Sometimes reinstalling fails to resolve the issue but works if you uninstall fir
 
 Post your question to Stackoverflow. Read the Stackoverflow guide on posting good questions.
 
-[[Stack Overflow](https://stackoverflow.com/help/how-to-ask)](https://stackoverflow.com/help/how-to-ask)
+[https://stackoverflow.com/help/how-to-ask](https://stackoverflow.com/help/how-to-ask)
 
 This will be your real life. Ask an expert in the future (in addition to coworkers).
 

@@ -8,11 +8,11 @@ sort_order: 2960
 
 The Python package ‘’ is an interactive GPU process viewer similar to ‘htop’ for CPU.
 
-[[pypi.org](https://pypi.org/project//)](https://pypi.org/project/nvitop/)
+[https://pypi.org/project//](https://pypi.org/project/nvitop/)
 
 ![Image](images/machine-learning-zoomcamp/image_e3c103cd.png)
 
-Image source: [[pypi.org](https://pypi.org/project//)](https://pypi.org/project/nvitop/)
+Image source: [https://pypi.org/project//](https://pypi.org/project/nvitop/)
 
 Added by Sylvia Schmitt
 

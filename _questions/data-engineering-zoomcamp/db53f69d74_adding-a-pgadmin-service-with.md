@@ -12,5 +12,5 @@ The associated error was:
 
 And the resolution involved changing the ownership of my local directory to the user “5050” which is pgadmin. Unlike postgres, pgadmin requires you to give it permission. Apparently the postgres user inside the docker container creates the postgres volume/dir, so it has permission`s already.
 
-This is a good source: [[Stack Overflow](https://stackoverflow.com/questions/64781245/permission-denied-var-lib-pgadmin-sessions-in-docker)](https://stackoverflow.com/questions/64781245/permission-denied-var-lib-pgadmin-sessions-in-docker)G
+This is a good source: [https://stackoverflow.com/questions/64781245/permission-denied-var-lib-pgadmin-sessions-in-docker](https://stackoverflow.com/questions/64781245/permission-denied-var-lib-pgadmin-sessions-in-docker)G
 

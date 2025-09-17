@@ -48,7 +48,7 @@ docker run -it --rm \
 
 emacski/tensorflow-serving:latest-linux_arm64
 
-See more here: [[GitHub](https://github.com/emacski/tensorflow-serving-arm)](https://github.com/emacski/tensorflow-serving-arm)
+See more here: [https://github.com/emacski/tensorflow-serving-arm](https://github.com/emacski/tensorflow-serving-arm)
 
 Added by Daniel Egbo
 

@@ -12,9 +12,9 @@ For some reason, Conda also doesn't include this when installing confluent-kafka
 
 More sources on Anaconda and confluent-kafka issues:
 
-[[GitHub](https://github.com/confluentinc/confluent-kafka-python/issues/590)](https://github.com/confluentinc/confluent-kafka-python/issues/590)
+[https://github.com/confluentinc/confluent-kafka-python/issues/590](https://github.com/confluentinc/confluent-kafka-python/issues/590)
 
-[[GitHub](https://github.com/confluentinc/confluent-kafka-python/issues/1221)](https://github.com/confluentinc/confluent-kafka-python/issues/1221)
+[https://github.com/confluentinc/confluent-kafka-python/issues/1221](https://github.com/confluentinc/confluent-kafka-python/issues/1221)
 
-[[Stack Overflow](https://stackoverflow.com/questions/69085157/cannot-import-producer-from-confluent-kafka)](https://stackoverflow.com/questions/69085157/cannot-import-producer-from-confluent-kafka)
+[https://stackoverflow.com/questions/69085157/cannot-import-producer-from-confluent-kafka](https://stackoverflow.com/questions/69085157/cannot-import-producer-from-confluent-kafka)
 

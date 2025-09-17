@@ -20,7 +20,7 @@ Put the class into a separate module and import it in both the script that saves
 
 Note: If Flask is used (no waitress) in predict.py, and predict.py has the definition of the class, When  it is run: python predict.py, it will work because the class is in the same namespace as the one used when the model was saved (__main__).
 
-Detailed info: [[Stack Overflow](https://stackoverflow.com/questions/27732354/unable-to-load-files-using-pickle-and-multiple-modules)](https://stackoverflow.com/questions/27732354/unable-to-load-files-using-pickle-and-multiple-modules)
+Detailed info: [https://stackoverflow.com/questions/27732354/unable-to-load-files-using-pickle-and-multiple-modules](https://stackoverflow.com/questions/27732354/unable-to-load-files-using-pickle-and-multiple-modules)
 
 Marcos MJD
 

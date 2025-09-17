@@ -12,7 +12,7 @@ Issue: If you don’t define the column format while converting from csv to parq
 
 Sebastian adapted the script:
 
-[[GitHub](https://github.com/sebastian2296/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/web_to_gcs.py)](https://github.com/sebastian2296/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/web_to_gcs.py)
+[https://github.com/sebastian2296/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/web_to_gcs.py](https://github.com/sebastian2296/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/web_to_gcs.py)
 
 Need a quick change to make the file work with gz files, added the following lines (and don’t forget to delete the file at the end of each iteration of the loop to avoid any problem of disk space)
 

@@ -12,7 +12,7 @@ from sklearn.metrics import mean_squared_error
 
 rms = mean_squared_error(y_actual, y_predicted, squared=False)
 
-See details: [[Stack Overflow](https://stackoverflow.com/questions/17197492/is-there-a-library-function-for-root-mean-square-error-rmse-in-python)](https://stackoverflow.com/questions/17197492/is-there-a-library-function-for-root-mean-square-error-rmse-in-python)
+See details: [https://stackoverflow.com/questions/17197492/is-there-a-library-function-for-root-mean-square-error-rmse-in-python](https://stackoverflow.com/questions/17197492/is-there-a-library-function-for-root-mean-square-error-rmse-in-python)
 
 Ahmed Okka
 

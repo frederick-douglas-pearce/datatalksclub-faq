@@ -162,20 +162,33 @@ def convert_plain_urls_to_markdown(text):
     import re
     
     # Pattern to match URLs that are NOT already in markdown format
-    # This uses negative lookbehind and lookahead to avoid matching URLs inside [text](url)
-    # Also avoid matching URLs that are already processed as markdown links
-    url_pattern = r'(?<!\]\()(https?://[^\s\)\]]+)(?!\))'
+    # This pattern uses negative lookbehind and lookahead to avoid matching:
+    # 1. URLs inside markdown link targets: [text](url)
+    # 2. URLs inside markdown link text: [url](target)
+    url_pattern = r'(?<!\[)(?<!\]\()(https?://[^\s\)\]]+)(?!\))(?!\]\()'
     
     def replace_url(match):
         url = match.group(1)
         
-        # Double-check that this URL isn't already part of a markdown link
-        # by looking at the context around it
+        # Additional context check - look for markdown link patterns around this URL
         start_pos = match.start()
-        if start_pos > 2:
-            before = text[start_pos-2:start_pos]
-            if before == '](': 
-                return url  # Don't replace, it's already part of a markdown link
+        end_pos = match.end()
+        
+        # Check if this URL is inside a markdown link text [url](...) 
+        # Look for [ before the URL and ]( after it
+        text_before = text[:start_pos]
+        text_after = text[end_pos:]
+        
+        # Find the last [ before our URL
+        last_bracket = text_before.rfind('[')
+        if last_bracket >= 0:
+            # Check if there's a ]( pattern after our URL
+            if text_after.startswith(']('):
+                return url  # This URL is inside [url](target), don't convert
+        
+        # Check if this URL is inside a markdown link target ](url)
+        if start_pos >= 2 and text[start_pos-2:start_pos] == '](': 
+            return url  # Don't replace, it's already part of a markdown link target
         
         # Create a simple link text from the URL (domain + path start)
         try:

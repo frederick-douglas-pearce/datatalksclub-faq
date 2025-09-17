@@ -6,7 +6,7 @@ section: 'Module 5: pyspark'
 sort_order: 3890
 ---
 
-The MacOS setup instruction ([[GitHub](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/05-batch/setup/macos.md#installing-java)](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/05-batch/setup/macos.md#installing-java)) for setting the JAVA_HOME environment variable is for Intel-based Macs which have a default install location at /usr/local/. If you have an Apple Silicon mac, you will have to set JAVA_HOME to /opt/homebrew/, specifically in your .bashrc or .zshrc:
+The MacOS setup instruction ([https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/05-batch/setup/macos.md#installing-java](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/05-batch/setup/macos.md#installing-java)) for setting the JAVA_HOME environment variable is for Intel-based Macs which have a default install location at /usr/local/. If you have an Apple Silicon mac, you will have to set JAVA_HOME to /opt/homebrew/, specifically in your .bashrc or .zshrc:
 
 export JAVA_HOME="/opt/homebrew/opt/openjdk/bin"
 
@@ -22,5 +22,5 @@ Check java version with the next command:
 
 Java -version
 
-Reference: [[docs.brew.sh](https://docs.brew.sh/Installation)](https://docs.brew.sh/Installation)
+Reference: [https://docs.brew.sh/Installation](https://docs.brew.sh/Installation)
 

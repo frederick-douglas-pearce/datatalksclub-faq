@@ -7,5 +7,5 @@ section: General course questions
 sort_order: 130
 ---
 
-You can find the deadlines for each homework assignment in the course schedule/ timeline provided at [[DataTalks Course](https://courses.datatalks.club/mlops-zoomcamp-2024/)](https://courses.datatalks.club/mlops-zoomcamp-2024/). The time is your own local time, it has been automatically converted.
+You can find the deadlines for each homework assignment in the course schedule/ timeline provided at [https://courses.datatalks.club/mlops-zoomcamp-2024/](https://courses.datatalks.club/mlops-zoomcamp-2024/). The time is your own local time, it has been automatically converted.
 

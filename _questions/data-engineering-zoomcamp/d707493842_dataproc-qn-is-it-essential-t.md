@@ -7,7 +7,7 @@ section: 'Module 5: pyspark'
 sort_order: 3860
 ---
 
-Ans: No, you can submit a job to DataProc from your local computer by installing gsutil ([[cloud.google.com](https://cloud.google.com/storage/docs/gsutil_install)](https://cloud.google.com/storage/docs/gsutil_install)) and configuring it. Then, you can execute the following command from your local computer.
+Ans: No, you can submit a job to DataProc from your local computer by installing gsutil ([https://cloud.google.com/storage/docs/gsutil_install](https://cloud.google.com/storage/docs/gsutil_install)) and configuring it. Then, you can execute the following command from your local computer.
 
 gcloud dataproc jobs submit pyspark \
 

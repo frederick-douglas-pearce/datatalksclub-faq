@@ -8,7 +8,7 @@ sort_order: 650
 
 For users of kaggle notebooks, the dataset can be loaded through widget using the below command. Please remember that ! before wget is essential
 
-!wget [[raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
+!wget [https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
 
 Once the dataset is loaded to the kaggle notebook server, it can be read through the below pandas command
 

@@ -8,7 +8,7 @@ sort_order: 2160
 
 Reference:
 
-[[cloud.google.com](https://cloud.google.com/bigquery/docs/external-data-cloud-storage)](https://cloud.google.com/bigquery/docs/external-data-cloud-storage)
+[https://cloud.google.com/bigquery/docs/external-data-cloud-storage](https://cloud.google.com/bigquery/docs/external-data-cloud-storage)
 
 Solution:
 

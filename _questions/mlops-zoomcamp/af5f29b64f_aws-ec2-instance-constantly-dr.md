@@ -30,7 +30,7 @@ The disconnection will occur whether I SSH via WSL2 or via VS Code, and usually 
 
 I cannot reconnect to the instance without stopping and restarting with a new IPv4 address.
 
-I’ve gone through steps listed on this page:[ [aws.amazon.com](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-resolve-ssh-connection-errors/)](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-resolve-ssh-connection-errors/)
+I’ve gone through steps listed on this page:[ [aws.amazon.com](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-resolve-ssh-connection-errors)/](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-resolve-ssh-connection-errors/)
 
 Inbound rule should allow all incoming IPs for SSH.
 
@@ -38,9 +38,9 @@ What I expect to happen:
 
 SSH connection should remain while I’m actively using the instance, and if it does disconnect, I should be able to reconnect back.
 
-Solution: sometimes the hang ups are caused by the instance running out of memory. In one instance, using EC2 feature to view screenshot of the instance as a means to troubleshoot, it was the OS out-of-memory feature which killed off some critical processes. In this case, if we can’t use a higher compute VM with more RAM, try adding a swap file, which uses the disk as RAM substitute and prevents the OOM error. Follow Ubuntu’s documentation here: [[help.ubuntu.com](https://help.ubuntu.com/community/SwapFaq)](https://help.ubuntu.com/community/SwapFaq).
+Solution: sometimes the hang ups are caused by the instance running out of memory. In one instance, using EC2 feature to view screenshot of the instance as a means to troubleshoot, it was the OS out-of-memory feature which killed off some critical processes. In this case, if we can’t use a higher compute VM with more RAM, try adding a swap file, which uses the disk as RAM substitute and prevents the OOM error. Follow Ubuntu’s documentation here: [https://help.ubuntu.com/community/SwapFaq](https://help.ubuntu.com/community/SwapFaq).
 
-Alternatively follow AWS’s own doc, which mirrors Ubuntu’s: [[aws.amazon.com](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/)](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/)
+Alternatively follow AWS’s own doc, which mirrors Ubuntu’s: [https://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/)
 
 Added by Claudia van Dijk: In addition, if your connection happens to be dropping because of timeouts, you can add this line to your local .ssh/config file, which makes it ping the connection every 50 seconds in case timeout is set to 60 seconds:
 

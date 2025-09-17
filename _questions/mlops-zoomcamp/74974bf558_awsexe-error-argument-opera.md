@@ -23,7 +23,7 @@ aws.exe: error: argument operation: Invalid choice, valid choices are…
 
 Use this command instead. More info here:
 
-[[docs.aws.amazon.com](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html)](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html)
+[https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html)
 
 aws ecr get-login-password \
 

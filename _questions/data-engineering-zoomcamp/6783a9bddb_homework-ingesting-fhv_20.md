@@ -10,7 +10,7 @@ Issue: If you’re having problems loading the FHV_20?? data from the github rep
 
 URL_TEMPLATE = URL_PREFIX + "/fhv_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.parquet?raw=true"
 
-Second, update make sure the URL_PREFIX is set to the following value:URL_PREFIX = "[[GitHub](https://github.com/alexeygrigorev/datasets/)](https://github.com/alexeygrigorev/datasets/blob/master/nyc-tlc/fhv)[blob](https://github.com/alexeygrigorev/datasets/blob/master/nyc-tlc/fhv)[/master/nyc-tlc/fhv](https://github.com/alexeygrigorev/datasets/blob/master/nyc-tlc/fhv)"
+Second, update make sure the URL_PREFIX is set to the following value:URL_PREFIX = "[https://github.com/alexeygrigorev/datasets/](https://github.com/alexeygrigorev/datasets/blob/master/nyc-tlc/fhv)[blob](https://github.com/alexeygrigorev/datasets/blob/master/nyc-tlc/fhv)[/master/nyc-tlc/fhv](https://github.com/alexeygrigorev/datasets/blob/master/nyc-tlc/fhv)"
 
 It is critical that you use this link with the keyword blob. If your link has ‘tree’ here, replace it. Everything else can stay the same, including the curl -sSLf command. ‘
 

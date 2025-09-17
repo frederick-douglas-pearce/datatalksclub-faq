@@ -23,7 +23,7 @@ WARNING: Project creation failed: HttpError accessing <[cloudresourcemanager.goo
 
 }
 
-From Stackoverflow: [[Stack Overflow](https://stackoverflow.com/questions/52561383/gcloud-cli-cannot-create-project-the-project-id-you-specified-is-already-in-us?rq=1)](https://stackoverflow.com/questions/52561383/gcloud-cli-cannot-create-project-the-project-id-you-specified-is-already-in-us?rq=1)
+From Stackoverflow: [https://stackoverflow.com/questions/52561383/gcloud-cli-cannot-create-project-the-project-id-you-specified-is-already-in-us?rq=1](https://stackoverflow.com/questions/52561383/gcloud-cli-cannot-create-project-the-project-id-you-specified-is-already-in-us?rq=1)
 
 Project IDs are unique across all projects. That means if any user ever had a project with that ID, you cannot use it. testproject is pretty common, so it's not surprising it's already taken.
 

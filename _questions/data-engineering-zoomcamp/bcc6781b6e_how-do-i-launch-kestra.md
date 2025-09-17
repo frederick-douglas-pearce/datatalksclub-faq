@@ -14,7 +14,7 @@ Start docker in linux with docker run --pull=always --rm -it -p 8080:8080 --user
 
 Once run you can login to dashboard at localhost:8080
 
-For windows instructions see the Kestra github here [[GitHub](https://github.com/kestra-io/kestra)](https://github.com/kestra-io/kestra)
+For windows instructions see the Kestra github here [https://github.com/kestra-io/kestra](https://github.com/kestra-io/kestra)
 
 Here sample docker-compose for kestraservices:
 

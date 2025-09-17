@@ -8,7 +8,7 @@ sort_order: 2990
 
 I found this code snippet fixed my OOM errors, as I have an Nvidia GPU. Can't speak to OOM errors on CPU, though.
 
-[[tensorflow.org](https://www.tensorflow.org/api_docs/python/tf/config/experimental/set_memory_growth)](https://www.tensorflow.org/api_docs/python/tf/config/experimental/set_memory_growth)
+[https://www.tensorflow.org/api_docs/python/tf/config/experimental/set_memory_growth](https://www.tensorflow.org/api_docs/python/tf/config/experimental/set_memory_growth)
 
 ```
 

@@ -12,7 +12,7 @@ If you create a folder data and download datasets or raw files in your local rep
 
 3. Add rules *.parquet - to ignore all parquet files
 
-data/ - to ignore all files in folder dataFor more pattern read GIT documentation[[git-scm.com](https://git-scm.com/docs/gitignore)](https://git-scm.com/docs/gitignore)
+data/ - to ignore all files in folder dataFor more pattern read GIT documentation[https://git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore)
 
 Added by Olga Rudakova (olgakurgan@gmail.com)
 

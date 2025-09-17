@@ -9,7 +9,7 @@ sort_order: 3590
 
 Problem: I download kind from the next command:
 
-curl.exe -Lo kind-windows-amd64.exe [[kind.sigs.k8s.io](https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64)](https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64)
+curl.exe -Lo kind-windows-amd64.exe [https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64](https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64)
 
 When I try
 

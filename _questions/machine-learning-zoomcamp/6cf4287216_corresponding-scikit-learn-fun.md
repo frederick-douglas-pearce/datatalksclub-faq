@@ -17,7 +17,7 @@ sklearn.linear_model.Ridge
 
 The linear model from Scikit-Learn are explained  here:
 
-[[scikit-learn.org](https://scikit-learn.org/stable/modules/linear_model.html)](https://scikit-learn.org/stable/modules/linear_model.html)
+[https://scikit-learn.org/stable/modules/linear_model.html](https://scikit-learn.org/stable/modules/linear_model.html)
 
 Added by Sylvia Schmitt
 

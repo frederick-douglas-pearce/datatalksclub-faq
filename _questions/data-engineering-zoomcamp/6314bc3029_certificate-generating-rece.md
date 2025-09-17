@@ -16,7 +16,7 @@ A: There’ll be an announcement in Telegram and the course channel for
 
 (2)  when the grading is completed.
 
-After the second announcement, please follow instructions in [[GitHub](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md)](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md) on how to generate the Certificate document yourself.
+After the second announcement, please follow instructions in [https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md) on how to generate the Certificate document yourself.
 
 Taxi Data - Yellow Taxi Trip Records downloading error, Error no or XML error webpage
 
@@ -26,9 +26,9 @@ If you click on the link, and ERROR 403: Forbidden on the terminal.
 
 ![Image](images/data-engineering-zoomcamp/image_1813f02b.png)
 
-We have a backup, so use it instead: [[GitHub](https://github.com/DataTalksClub/nyc-tlc-data)](https://github.com/DataTalksClub/nyc-tlc-data)r
+We have a backup, so use it instead: [https://github.com/DataTalksClub/nyc-tlc-data](https://github.com/DataTalksClub/nyc-tlc-data)r
 
-So the link should be [[GitHub](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz)](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz)
+So the link should be [https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz)
 
 Note: Make sure to [unzip the “gz” file](https://linuxize.com/post/how-to-unzip-gz-file/) (no, the “unzip” command won’t work for this.)
 

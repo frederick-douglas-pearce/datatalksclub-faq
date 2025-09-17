@@ -6,5 +6,5 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 1680
 ---
 
-Here: [[releases.hashicorp.com](https://releases.hashicorp.com/terraform/1.1.3/terraform_1.1.3_linux_amd64.zip)](https://releases.hashicorp.com/terraform/1.1.3/terraform_1.1.3_linux_amd64.zip)
+Here: [https://releases.hashicorp.com/terraform/1.1.3/terraform_1.1.3_linux_amd64.zip](https://releases.hashicorp.com/terraform/1.1.3/terraform_1.1.3_linux_amd64.zip)
 

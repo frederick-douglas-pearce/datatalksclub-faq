@@ -10,5 +10,5 @@ Getting the following warning when running mlflow.sklearn:2022/05/28 04:36:36 WA
 
 Solution: use 0.24.1 <= scikit-learn <= 1.4.2 (Updated: May 26, 2024)
 
-Reference: [[mlflow.org](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html)](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html)
+Reference: [https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html)
 

@@ -8,25 +8,25 @@ sort_order: 3740
 
 These links apply to all projects, actually. Again, for some cohorts, the modules/syllabus might be different, so always check in your cohort’s folder as well for additional or different instructions, if any.
 
-Midterm Project Sample: [[GitHub](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/cohorts/2021/07-midterm-project)](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/cohorts/2021/07-midterm-project)
+Midterm Project Sample: [https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/cohorts/2021/07-midterm-project](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/cohorts/2021/07-midterm-project)
 
-MidTerm Project Deliverables: [[GitHub](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/projects)](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/projects)
+MidTerm Project Deliverables: [https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/projects](https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp/projects)
 
-Submit MidTerm Project: [[Google Docs](https://docs.google.com/forms/d/e/1FAIpQLSfgmOk0QrmHu5t0H6Ri1Wy_FDVS8I_nr5lY3sufkgk18I6S5A/viewform)](https://docs.google.com/forms/d/e/1FAIpQLSfgmOk0QrmHu5t0H6Ri1Wy_FDVS8I_nr5lY3sufkgk18I6S5A/viewform)
+Submit MidTerm Project: [https://docs.google.com/forms/d/e/1FAIpQLSfgmOk0QrmHu5t0H6Ri1Wy_FDVS8I_nr5lY3sufkgk18I6S5A/viewform](https://docs.google.com/forms/d/e/1FAIpQLSfgmOk0QrmHu5t0H6Ri1Wy_FDVS8I_nr5lY3sufkgk18I6S5A/viewform)
 
 Datasets:
 
-[[Kaggle](https://www.kaggle.com/datasets)](https://www.kaggle.com/datasets) and [[Kaggle](https://www.kaggle.com/competitions)](https://www.kaggle.com/competitions)
+[https://www.kaggle.com/datasets](https://www.kaggle.com/datasets) and [https://www.kaggle.com/competitions](https://www.kaggle.com/competitions)
 
-[[archive.ics.uci.edu](https://archive.ics.uci.edu/ml/index.php)](https://archive.ics.uci.edu/ml/index.php)
+[https://archive.ics.uci.edu/ml/index.php](https://archive.ics.uci.edu/ml/index.php)
 
-[[data.europa.eu](https://data.europa.eu/en)](https://data.europa.eu/en)
+[https://data.europa.eu/en](https://data.europa.eu/en)
 
-[[openml.org](https://www.openml.org/search?type=data)](https://www.openml.org/search?type=data)
+[https://www.openml.org/search?type=data](https://www.openml.org/search?type=data)
 
-[[newzealand.ai](https://newzealand.ai/public-data-sets)](https://newzealand.ai/public-data-sets)
+[https://newzealand.ai/public-data-sets](https://newzealand.ai/public-data-sets)
 
-[[datasetsearch.research.google.com](https://datasetsearch.research.google.com)](https://datasetsearch.research.google.com/)
+[https://datasetsearch.research.google.com](https://datasetsearch.research.google.com/)
 
 What to do and Deliverables
 

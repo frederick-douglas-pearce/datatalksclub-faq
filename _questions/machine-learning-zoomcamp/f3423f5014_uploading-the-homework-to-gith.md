@@ -12,7 +12,7 @@ git push -u origin master:
 
 error: src refspec master does not match any
 
-error: failed to push some refs to '[[GitHub](https://github.com/XXXXXX/1st-Homework.git)](https://github.com/XXXXXX/1st-Homework.git)'
+error: failed to push some refs to '[https://github.com/XXXXXX/1st-Homework.git](https://github.com/XXXXXX/1st-Homework.git)'
 
 Solution:
 
@@ -22,7 +22,7 @@ git commit -m "initial commit"
 
 git push origin main
 
-If this is your first time to use Github, you will find a great & straightforward tutorial in this link [[dennisivy.com](https://dennisivy.com/github-quickstart)](https://dennisivy.com/github-quickstart)
+If this is your first time to use Github, you will find a great & straightforward tutorial in this link [https://dennisivy.com/github-quickstart](https://dennisivy.com/github-quickstart)
 
 (Asia Saeed)
 

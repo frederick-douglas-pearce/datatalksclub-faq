@@ -6,11 +6,11 @@ section: 'Module 3: Orchestration'
 sort_order: 1390
 ---
 
-[[docs.mage.ai](https://docs.mage.ai/platform/projects/management)](https://docs.mage.ai/platform/projects/management)
+[https://docs.mage.ai/platform/projects/management](https://docs.mage.ai/platform/projects/management)
 
-[[docs.mage.ai](https://docs.mage.ai/design/abstractions/project-structure)](https://docs.mage.ai/design/abstractions/project-structure)
+[https://docs.mage.ai/design/abstractions/project-structure](https://docs.mage.ai/design/abstractions/project-structure)
 
-[[docs.mage.ai](https://docs.mage.ai/orchestration/global-data-products/overview)](https://docs.mage.ai/orchestration/global-data-products/overview)
+[https://docs.mage.ai/orchestration/global-data-products/overview](https://docs.mage.ai/orchestration/global-data-products/overview)
 
 Running the GDP block takes forever.
 

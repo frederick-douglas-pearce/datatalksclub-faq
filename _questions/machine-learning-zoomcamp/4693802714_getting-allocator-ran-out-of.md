@@ -22,9 +22,9 @@ After doing this most of my issues went away. I say most because there was one i
 
 Added by Martin Uribe
 
-Problem with downloading  [xception_v4_large_08_0.894.h5](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)  fileThe following old link is not valid anymore :[[GitHub](https://github.com/alexeygrigorev/mlbookcamp-code/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)](https://github.com/alexeygrigorev/mlbookcamp-code/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)====>The new link to download the file is :
+Problem with downloading  [xception_v4_large_08_0.894.h5](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)  fileThe following old link is not valid anymore :[https://github.com/alexeygrigorev/mlbookcamp-code/releases/download/chapter7-model/xception_v4_large_08_0.894.h5](https://github.com/alexeygrigorev/mlbookcamp-code/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)====>The new link to download the file is :
 
-[[GitHub](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model)](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model)
+[https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model)
 
 Added by Sam
 

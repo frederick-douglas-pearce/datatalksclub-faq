@@ -16,5 +16,5 @@ os.environ['PYSPARK_PYTHON'] = sys.executable
 
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
-Dataproc Pricing: [[cloud.google.com](https://cloud.google.com/dataproc/pricing#on_gke_pricing)](https://cloud.google.com/dataproc/pricing#on_gke_pricing)
+Dataproc Pricing: [https://cloud.google.com/dataproc/pricing#on_gke_pricing](https://cloud.google.com/dataproc/pricing#on_gke_pricing)
 

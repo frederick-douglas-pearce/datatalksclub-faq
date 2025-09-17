@@ -58,7 +58,7 @@ Or you can use the built-in Python functionality for downloading the files:
 
 import urllib.request
 
-url = "[[raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)"
+url = "[https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)"
 
 urllib.request.urlretrieve(url, "housing.csv")
 

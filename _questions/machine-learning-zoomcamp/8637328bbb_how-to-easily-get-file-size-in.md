@@ -16,7 +16,7 @@ Now you can check the size of your file, for example in MB:
 
 Write-host "MB":($FileSize/1MB)
 
-Source: [[sharepointdiary.com](https://www.sharepointdiary.com/2020/10/powershell-get-file-size.html#:~:text=To%20get%20the%20size%20of,the%20file%2C%20including%20its%20size)](https://www.sharepointdiary.com/2020/10/powershell-get-file-size.html#:~:text=To%20get%20the%20size%20of,the%20file%2C%20including%20its%20size).
+Source: [https://www.sharepointdiary.com/2020/10/powershell-get-file-size.html#:~:text=To%20get%20the%20size%20of,the%20file%2C%20including%20its%20size](https://www.sharepointdiary.com/2020/10/powershell-get-file-size.html#:~:text=To%20get%20the%20size%20of,the%20file%2C%20including%20its%20size).
 
 Added by Mélanie Fouesnard
 

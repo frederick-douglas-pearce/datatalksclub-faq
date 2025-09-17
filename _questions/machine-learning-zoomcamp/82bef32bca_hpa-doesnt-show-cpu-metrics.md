@@ -18,7 +18,7 @@ Solution:
 
 -> Delete HPA (kubectl delete hpa credit-hpa)
 
--> kubectl apply -f[ [raw.githubusercontent.com](https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml)](https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml)
+-> kubectl apply -f[ [raw.githubusercontent.com](https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yam)l](https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml)
 
 -> Create HPA
 

@@ -22,11 +22,11 @@ Pastor Soto
 
 Check all available versions here:
 
-[[google-coral.github.io](https://google-coral.github.io/py-repo/tflite-runtime/)](https://google-coral.github.io/py-repo/tflite-runtime/)
+[https://google-coral.github.io/py-repo/tflite-runtime/](https://google-coral.github.io/py-repo/tflite-runtime/)
 
 If you don’t find a combination matching your setup, try out the options at
 
-[[GitHub](https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite)](https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite)
+[https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite](https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite)
 
 which you can install as shown in the lecture, e.g.
 

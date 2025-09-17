@@ -21,7 +21,7 @@ Winpty is a Windows software package providing an interface similar to a Unix pt
 
 More info on terminal, shell, console applications hi and so on:
 
-[[conemu.github.io](https://conemu.github.io/en/TerminalVsShell.html)](https://conemu.github.io/en/TerminalVsShell.html)
+[https://conemu.github.io/en/TerminalVsShell.html](https://conemu.github.io/en/TerminalVsShell.html)
 
 (Marcos MJD)
 

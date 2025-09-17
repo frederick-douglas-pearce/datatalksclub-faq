@@ -16,7 +16,7 @@ Inverse * Original:
 
 Solution:
 
-It's because floating point math doesn't work well on computers as shown here: [[Stack Overflow](https://stackoverflow.com/questions/588004/is-floating-point-math-broken)](https://stackoverflow.com/questions/588004/is-floating-point-math-broken)
+It's because floating point math doesn't work well on computers as shown here: [https://stackoverflow.com/questions/588004/is-floating-point-math-broken](https://stackoverflow.com/questions/588004/is-floating-point-math-broken)
 
 (Added by Wesley Barreto)
 

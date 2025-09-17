@@ -74,5 +74,5 @@ Make sure you install pgcli without sudo.
 
 The recommended approach is to use conda/anaconda to make sure your system python is not affected.
 
-If conda install gets stuck at "Solving environment" try these alternatives: [[Stack Overflow](https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda)](https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda)
+If conda install gets stuck at "Solving environment" try these alternatives: [https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda](https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda)
 

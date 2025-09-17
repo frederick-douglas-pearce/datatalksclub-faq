@@ -6,7 +6,7 @@ section: 3. Machine Learning for Classification
 sort_order: 1340
 ---
 
-This article explains different encoding techniques used [[towardsdatascience.com](https://towardsdatascience.com/all-about-categorical-variable-encoding-305f3361fd02)](https://towardsdatascience.com/all-about-categorical-variable-encoding-305f3361fd02)
+This article explains different encoding techniques used [https://towardsdatascience.com/all-about-categorical-variable-encoding-305f3361fd02](https://towardsdatascience.com/all-about-categorical-variable-encoding-305f3361fd02)
 
 Hrithik Kumar Advani
 

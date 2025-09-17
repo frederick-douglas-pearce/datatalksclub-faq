@@ -32,7 +32,7 @@ Server: PostgreSQL 16.1 (Debian 16.1-1.pgdg120+1)
 
 Version: 4.0.1
 
-Home:[ [pgcli.com](http://pgcli.com)](http://pgcli.com/)
+Home:[ [pgcli.co](http://pgcli.co)m](http://pgcli.com/)
 
 root@pg-database:ny_taxi> \dt
 

@@ -10,5 +10,5 @@ Problem descriptionFollowing video 6.3, at minute 11:23, get records command ret
 
 Solution description
 
-Add --no-sign-request to Kinesis get records call: aws --endpoint-url=[[localhost:4566](http://localhost:4566)](http://localhost:4566/) kinesis get-records --shard-iterator […] --no-sign-request
+Add --no-sign-request to Kinesis get records call: aws --endpoint-url=[http://localhost:4566](http://localhost:4566/) kinesis get-records --shard-iterator […] --no-sign-request
 

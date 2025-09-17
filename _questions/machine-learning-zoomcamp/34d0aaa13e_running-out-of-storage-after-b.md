@@ -24,7 +24,7 @@ It turns out that deleting docker images does not actually free up any space as 
 
 > docker system prune
 
-See also: [[Stack Overflow](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)
+See also: [https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)
 
 Added by Konrad Mühlberg
 

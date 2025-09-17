@@ -10,5 +10,5 @@ Welcome to the course! Go to the course page ([GitHub - DataTalksClub/machine-le
 
 Click on the links and start watching the videos. Also watch office hours from previous cohorts. Go to the DTC youtube channel and click on Playlists and search for {course yyyy}. ML Zoomcamp was first launched in 2021.
 
-Or you can just use this link: [[mlzoomcamp.com](http://mlzoomcamp.com/#syllabus)](http://mlzoomcamp.com/#syllabus)
+Or you can just use this link: [http://mlzoomcamp.com/#syllabus](http://mlzoomcamp.com/#syllabus)
 

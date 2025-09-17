@@ -69,7 +69,7 @@ Follow the links below to get a deep view of it .
 
 [stackoverflow](https://stackoverflow.com/questions/54374935/how-can-i-fix-this-strange-error-runtimeerror-cuda-error-out-of-memory)
 
-[[Medium](https://medium.com/@snk.nitin/how-to-solve-cuda-out-of-memory-error-850bb247cfb2)](https://medium.com/@snk.nitin/how-to-solve-cuda-out-of-memory-error-850bb247cfb2)
+[https://medium.com/@snk.nitin/how-to-solve-cuda-out-of-memory-error-850bb247cfb2](https://medium.com/@snk.nitin/how-to-solve-cuda-out-of-memory-error-850bb247cfb2)
 
 (added by Nikisha)
 

@@ -79,7 +79,7 @@ Added by Alex Litvinov
 
 Or new since Oct 2024:
 
-Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [[docs.docker.com](https://docs.docker.com/desktop/features/vmm/)](https://docs.docker.com/desktop/features/vmm/)
+Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [https://docs.docker.com/desktop/features/vmm/](https://docs.docker.com/desktop/features/vmm/)
 
 ![Image](images/machine-learning-zoomcamp/image_51551549.png)
 

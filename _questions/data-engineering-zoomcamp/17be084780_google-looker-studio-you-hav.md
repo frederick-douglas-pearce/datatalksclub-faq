@@ -10,5 +10,5 @@ When accessing Looker Studio through the Google Cloud Project console, you may b
 
 ![Image](images/data-engineering-zoomcamp/image_2c1e7560.png)
 
-Instead, navigate to [[lookerstudio.google.com](https://lookerstudio.google.com/navigation/reporting)](https://lookerstudio.google.com/navigation/reporting) which will take you to the free version.
+Instead, navigate to [https://lookerstudio.google.com/navigation/reporting](https://lookerstudio.google.com/navigation/reporting) which will take you to the free version.
 

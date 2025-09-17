@@ -28,9 +28,9 @@ ON [attributes table joining table2] (...)
 
 What differs the most between several SQL providers are built-in functions.
 
-For Built-in Spark SQL function check this link: [[spark.apache.org](https://spark.apache.org/docs/latest/api/sql/index.html)](https://spark.apache.org/docs/latest/api/sql/index.html)
+For Built-in Spark SQL function check this link: [https://spark.apache.org/docs/latest/api/sql/index.html](https://spark.apache.org/docs/latest/api/sql/index.html)
 
 Extra information on SPARK SQL :
 
-[[databricks.com](https://databricks.com/glossary/what-is-spark-sql#:~:text=Spark%20SQL%20is%20a%20Spark,on%20existing%20deployments%20and%20data)](https://databricks.com/glossary/what-is-spark-sql#:~:text=Spark%20SQL%20is%20a%20Spark,on%20existing%20deployments%20and%20data).
+[https://databricks.com/glossary/what-is-spark-sql#:~:text=Spark%20SQL%20is%20a%20Spark,on%20existing%20deployments%20and%20data](https://databricks.com/glossary/what-is-spark-sql#:~:text=Spark%20SQL%20is%20a%20Spark,on%20existing%20deployments%20and%20data).
 

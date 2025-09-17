@@ -33,7 +33,7 @@ One obstacle is that the regular int64 pandas use (I think this is from the nump
 
 Sources:
 
-[[pandas.pydata.org](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)
+[https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)
 
 [Nullable integer data type — pandas 1.5.3 documentation](https://pandas.pydata.org/docs/user_guide/integer_na.html)
 

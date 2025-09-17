@@ -16,7 +16,7 @@ If I do it inside the loop [0.01, 0.1, 1, 10] or outside the loop in Q6, HW04 it
 
 Did you try using a different random_state? From my understanding, KFold just makes N (which is equal to n_splits) separate pairs of datasets (train+val).
 
-[[scikit-learn.org](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)
+[https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)
 
 In my case changing random state changed results
 

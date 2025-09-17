@@ -14,7 +14,7 @@ This is because the X is an int but a float is expected.
 
 Solution:
 
-I found this solution from this question here [[Stack Overflow](https://stackoverflow.com/questions/76102508/valueerror-cannot-set-tensor-got-value-of-type-float64-but-expected-type-float)](https://stackoverflow.com/questions/76102508/valueerror-cannot-set-tensor-got-value-of-type-float64-but-expected-type-float) :
+I found this solution from this question here [https://stackoverflow.com/questions/76102508/valueerror-cannot-set-tensor-got-value-of-type-float64-but-expected-type-float](https://stackoverflow.com/questions/76102508/valueerror-cannot-set-tensor-got-value-of-type-float64-but-expected-type-float) :
 
 # Need to convert to float32 before set_tensor
 

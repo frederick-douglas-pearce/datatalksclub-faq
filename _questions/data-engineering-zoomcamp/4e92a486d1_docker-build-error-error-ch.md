@@ -12,11 +12,11 @@ When feeding the database with the data the user id of the directory ny_taxi_pos
 
 Since at this point we only need the files Dockerfile and ingest_data.py, to fix this error one can run the docker build command on a different directory (having only these two files).
 
-A more complete explanation can be found here: [[Stack Overflow](https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata)](https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata)
+A more complete explanation can be found here: [https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata](https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata)
 
 You can fix the problem by changing the permission of the directory on ubuntu with following command:
 
 sudo chown -R $USER dir_path
 
-On windows follow the link: [[thegeekpage.com](https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/)](https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/) Added byKenan Arslanbay
+On windows follow the link: [https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/](https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/) Added byKenan Arslanbay
 
