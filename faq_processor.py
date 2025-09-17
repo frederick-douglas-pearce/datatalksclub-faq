@@ -92,8 +92,45 @@ def extract_images_from_docx(doc, course_name):
     
     return image_mapping
 
+def extract_paragraph_content(paragraph):
+    """Extract text and hyperlinks from a paragraph"""
+    content_parts = []
+    
+    for run in paragraph.runs:
+        text = run.text
+        if not text:
+            continue
+            
+        # Check if this run is part of a hyperlink
+        hyperlink = None
+        element = run._element
+        
+        # Look for hyperlink in the run's parent elements
+        parent = element.getparent()
+        while parent is not None:
+            if parent.tag.endswith('}hyperlink'):
+                # Found hyperlink element, get the relationship ID
+                rel_id = parent.get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id')
+                if rel_id:
+                    try:
+                        # Get the hyperlink target from document relationships
+                        rel = paragraph._parent.part.rels[rel_id]
+                        hyperlink = rel.target_ref
+                    except (KeyError, AttributeError):
+                        pass
+                break
+            parent = parent.getparent()
+        
+        # Add text with optional hyperlink
+        if hyperlink:
+            content_parts.append(f'[{text}]({hyperlink})')
+        else:
+            content_parts.append(text)
+    
+    return ''.join(content_parts)
+
 def read_faq(cache_file, course_name):
-    """Read FAQ from cached docx file and extract content with images"""
+    """Read FAQ from cached docx file and extract content with images and links"""
     doc = docx.Document(cache_file)
     
     # Extract images
@@ -110,7 +147,9 @@ def read_faq(cache_file, course_name):
      
     for p in doc.paragraphs:
         style = p.style.name.lower()
-        p_text = clean_line(p.text)
+        
+        # Extract text with hyperlinks
+        p_text = clean_line(extract_paragraph_content(p))
     
         # Check for images in paragraph using a simpler approach
         images_in_paragraph = []
@@ -174,27 +213,49 @@ def read_faq(cache_file, course_name):
 
     return questions
 
+def yaml_escape(text):
+    """Escape text for YAML frontmatter using quoted strings"""
+    if not text:
+        return '""'
+    
+    # Escape quotes and backslashes
+    text = text.replace('\\', '\\\\')  # Escape backslashes first
+    text = text.replace('"', '\\"')   # Escape quotes
+    text = text.replace('\n', ' ')    # Replace newlines with spaces
+    text = text.replace('\r', ' ')    # Replace carriage returns with spaces
+    
+    # Always wrap in quotes for safety
+    return f'"{text}"'
+
+def liquid_escape(text):
+    """Escape text to prevent Liquid template processing - simplified approach"""
+    if not text:
+        return text
+    
+    # Use code blocks to prevent Liquid processing
+    return text
+
 def create_question_file(question_data, course_name, question_index):
-    """Create individual question markdown file with Jekyll frontmatter"""
-    questions_dir = Path('_questions')
-    questions_dir.mkdir(exist_ok=True)
+    """Create individual question markdown file with Jekyll frontmatter in course folder"""
+    course_dir = Path('_questions') / course_name
+    course_dir.mkdir(parents=True, exist_ok=True)
     
     # Create safe filename
     question_title = question_data['question']
     safe_title = sanitize_filename(question_title)
-    filename = f'{course_name}-{question_index:03d}-{safe_title}.md'
+    filename = f'{question_index:03d}-{safe_title}.md'
     
-    question_file = questions_dir / filename
+    question_file = course_dir / filename
     
     with open(question_file, 'w', encoding='utf-8') as f:
-        # Write Jekyll frontmatter
+        # Write Jekyll frontmatter with proper escaping
         f.write('---\n')
-        f.write(f'question: "{question_data["question"]}"\n')
-        f.write(f'section: "{question_data["section"]}"\n')
-        f.write(f'course: "{course_name}"\n')
+        f.write(f'question: {yaml_escape(question_data["question"])}\n')
+        f.write(f'section: {yaml_escape(question_data["section"])}\n')
+        f.write(f'course: {yaml_escape(course_name)}\n')
         f.write('---\n\n')
         
-        # Write answer content
+        # Write answer content without raw tags since output is false
         for item in question_data['content']:
             if item['type'] == 'text':
                 f.write(f'{item["content"]}\n\n')
@@ -204,9 +265,8 @@ def create_question_file(question_data, course_name, question_index):
     return filename
 
 def create_course_index(course_data):
-    """Create course index page that lists all questions"""
+    """Create course index page that uses Liquid templates to display questions from collection"""
     course_name = course_data['course']
-    documents = course_data['documents']
     
     # Create course index in root directory
     index_file = Path(f'{course_name}.md')
@@ -214,158 +274,27 @@ def create_course_index(course_data):
     with open(index_file, 'w', encoding='utf-8') as f:
         # Write Jekyll frontmatter
         f.write('---\n')
-        f.write('layout: course\n')
+        f.write('layout: default\n')
         f.write(f'title: "{course_name.replace("-", " ").title()} FAQ"\n')
-        f.write(f'course: "{course_name}"\n')
         f.write('---\n\n')
         
         f.write(f'# {course_name.replace("-", " ").title()} FAQ\n\n')
         
-        current_section = ''
+        # Use Liquid template to loop through questions from collection
+        f.write('{% assign course_questions = site.questions | where: "course", "' + course_name + '" %}\n')
+        f.write('{% assign sections = course_questions | group_by: "section" %}\n\n')
         
-        for i, doc in enumerate(documents):
-            section = doc['section']
-            question = doc['question']
-            
-            if section != current_section:
-                f.write(f'## {section}\n\n')
-                current_section = section
-            
-            # Create safe filename for link
-            safe_title = sanitize_filename(question)
-            question_filename = f'{course_name}-{i+1:03d}-{safe_title}'
-            
-            f.write(f'- [{question}]({{{{site.baseurl}}}}/questions/{question_filename})\n')
+        f.write('{% for section in sections %}\n')
+        f.write('## {{ section.name }}\n\n')
         
-        f.write('\n')
+        f.write('{% for question in section.items %}\n')
+        f.write('### {{ question.question }}\n\n')
+        f.write('{{ question.content }}\n\n')
+        f.write('---\n\n')
+        f.write('{% endfor %}\n\n')
+        f.write('{% endfor %}\n')
     
     print(f"Generated course index: {index_file}")
-
-def create_jekyll_config():
-    """Create basic Jekyll configuration"""
-    config_content = '''title: DataTalks.Club FAQ
-description: Frequently Asked Questions from DataTalks.Club courses
-baseurl: ""
-url: ""
-
-markdown: kramdown
-highlighter: rouge
-theme: minima
-
-collections:
-  questions:
-    output: true
-    permalink: /questions/:name/
-
-defaults:
-  - scope:
-      path: ""
-      type: "questions"
-    values:
-      layout: "question"
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-'''
-    
-    with open('_config.yml', 'w', encoding='utf-8') as f:
-        f.write(config_content)
-    
-    print("Generated Jekyll config: _config.yml")
-
-def create_jekyll_layouts():
-    """Create basic Jekyll layout files"""
-    layouts_dir = Path('_layouts')
-    layouts_dir.mkdir(exist_ok=True)
-    
-    # Default layout
-    default_layout = '''<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="{{ site.baseurl }}/">Home</a>
-            <a href="{{ site.baseurl }}/data-engineering-zoomcamp">Data Engineering</a>
-            <a href="{{ site.baseurl }}/machine-learning-zoomcamp">Machine Learning</a>
-            <a href="{{ site.baseurl }}/mlops-zoomcamp">MLOps</a>
-        </nav>
-    </header>
-    
-    <main>
-        {{ content }}
-    </main>
-    
-    <footer>
-        <p>&copy; {{ site.time | date: "%Y" }} DataTalks.Club FAQ</p>
-    </footer>
-</body>
-</html>
-'''
-    
-    with open(layouts_dir / 'default.html', 'w', encoding='utf-8') as f:
-        f.write(default_layout)
-    
-    # Question layout
-    question_layout = '''---
-layout: default
----
-
-<article class="question">
-    <header>
-        <h1>{{ page.question }}</h1>
-        <div class="metadata">
-            <span class="course">Course: <a href="{{ site.baseurl }}/{{ page.course }}">{{ page.course | replace: "-", " " | capitalize }}</a></span>
-            <span class="section">Section: {{ page.section }}</span>
-        </div>
-    </header>
-    
-    <div class="answer">
-        {{ content }}
-    </div>
-    
-    <footer>
-        <nav class="question-nav">
-            <a href="{{ site.baseurl }}/{{ page.course }}">&larr; Back to {{ page.course | replace: "-", " " | capitalize }}</a>
-        </nav>
-    </footer>
-</article>
-'''
-    
-    with open(layouts_dir / 'question.html', 'w', encoding='utf-8') as f:
-        f.write(question_layout)
-    
-    # Course layout
-    course_layout = '''---
-layout: default
----
-
-<article class="course">
-    <header>
-        <h1>{{ page.title }}</h1>
-    </header>
-    
-    <div class="course-content">
-        {{ content }}
-    </div>
-</article>
-'''
-    
-    with open(layouts_dir / 'course.html', 'w', encoding='utf-8') as f:
-        f.write(course_layout)
-    
-    print("Generated Jekyll layouts in _layouts/")
 
 def create_index_page():
     """Create main index page"""
@@ -394,6 +323,8 @@ This site contains frequently asked questions and answers from the DataTalks.Clu
     
     print("Generated main index: index.md")
 
+
+
 # Main execution
 faq_documents = {
     'data-engineering-zoomcamp': '19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw',
@@ -401,10 +332,8 @@ faq_documents = {
     'mlops-zoomcamp': '12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0',
 }
 
-# Create Jekyll structure
-print("Creating Jekyll site structure...")
-create_jekyll_config()
-create_jekyll_layouts()
+# Create index page
+print("Creating index page...")
 create_index_page()
 
 documents = []
@@ -418,7 +347,7 @@ for course, file_id in faq_documents.items():
     # Read FAQ with images
     course_documents = read_faq(cache_file, course)
     
-    course_data = {'course': course, 'documents': course_documents}
+    course_data = {'course': course, 'questions': course_documents}
     documents.append(course_data)
     
     # Create individual question files
@@ -430,9 +359,7 @@ for course, file_id in faq_documents.items():
     create_course_index(course_data)
 
 print(f"\nProcessed {len(documents)} courses successfully!")
-print("Jekyll site structure created:")
-print("- _config.yml - Jekyll configuration")
-print("- _layouts/ - Page layouts")
+print("Generated files:")
 print("- _questions/ - Individual question files")
 print("- index.md - Main index page")
 print("- [course].md - Course index pages")
