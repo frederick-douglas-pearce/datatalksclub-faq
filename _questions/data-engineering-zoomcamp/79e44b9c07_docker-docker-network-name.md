@@ -6,5 +6,5 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 760
 ---
 
-Get the network name via: $ .
+Get the network name via: $ [docker network ls](https://docs.docker.com/engine/reference/commandline/network_ls/).
 

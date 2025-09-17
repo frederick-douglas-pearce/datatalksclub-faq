@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 9f2048fc73
 question: 'Bad int64 value: 0.0 error'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2930
+sort_order: 2960
 ---
 
 Some ehail fees are null and casting them to integer gives Bad int64 value: 0.0 error,

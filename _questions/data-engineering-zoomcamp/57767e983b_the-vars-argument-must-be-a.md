@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 57767e983b
 question: The - vars argument must be a YAML dictionary, but was of type str
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2970
+sort_order: 3000
 ---
 
 Remember to add a space between the variable and the value. Otherwise, it won't be interpreted as a dictionary.

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 87fddc59b7
 question: Setup - Failed to clone repository.
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2480
+sort_order: 2510
 ---
 
 Error: Failed to clone repository.
@@ -12,7 +12,7 @@ git clone git@github.com:DataTalksClub/data-engineering-zoomcamp.git /usr/src/de
 
 Cloning into '/usr/src/develop/...
 
-Warning: Permanently added ',140.82.114.4' (ECDSA) to the list of known hosts.
+Warning: Permanently added '[github.com](http://github.com/),140.82.114.4' (ECDSA) to the list of known hosts.
 
 git@github.com: Permission denied (publickey).
 

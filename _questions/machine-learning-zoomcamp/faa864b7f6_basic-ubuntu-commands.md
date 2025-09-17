@@ -8,8 +8,7 @@ sort_order: 1780
 
 Cd .. (go back)
 
-Ls (see current folders)
-Cd ‘path’/ (go to this path)
+Ls (see current folders)Cd ‘path’/ (go to this path)
 
 Pwd (home)
 

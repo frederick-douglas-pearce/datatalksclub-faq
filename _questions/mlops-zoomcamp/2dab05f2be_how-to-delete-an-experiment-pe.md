@@ -18,5 +18,5 @@ In your jupyter notebook, load the SQL magic scripts with this: %load_ext sql
 
 Load the database with this: %sql sqlite:///nameofdatabase.db
 
-Run the following SQL script to delete the experiment permanently: check
+Run the following SQL script to delete the experiment permanently: check[ link ](https://stackoverflow.com/a/68431980/14151292)
 

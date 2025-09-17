@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 13559b737e
 question: The chart in Grafana doesn’t get updates
 section: 'Module 5: Monitoring'
-sort_order: 2010
+sort_order: 2020
 ---
 
 Problem description. While my metric generation script was still running, I noticed that the charts in Grafana don’t get updated.

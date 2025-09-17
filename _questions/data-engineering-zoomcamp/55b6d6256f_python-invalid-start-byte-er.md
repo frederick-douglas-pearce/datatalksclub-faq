@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 55b6d6256f
 question: Python - invalid start byte Error Message
 section: 'Module 3: Data Warehousing'
-sort_order: 2370
+sort_order: 2400
 ---
 
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa0 in position 41721: invalid start byte

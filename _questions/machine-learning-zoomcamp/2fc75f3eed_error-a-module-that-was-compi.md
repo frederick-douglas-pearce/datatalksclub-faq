@@ -7,7 +7,7 @@ section: 9. Serverless Deep Learning
 sort_order: 3240
 ---
 
-After installing tflite runtime by using the wheel suggested in the homework 9 (), I was getting a runtime error while testing the lambda handler. The error was:
+After installing tflite runtime by using the wheel suggested in the homework 9 ([[GitHub](https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.14.0-cp310-cp310-linux_x86_64.whl)](https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.14.0-cp310-cp310-linux_x86_64.whl)), I was getting a runtime error while testing the lambda handler. The error was:
 
 “..ImportError:
 

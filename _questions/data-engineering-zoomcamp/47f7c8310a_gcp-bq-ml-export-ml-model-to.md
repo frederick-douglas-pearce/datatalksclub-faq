@@ -4,7 +4,7 @@ id: 47f7c8310a
 question: GCP BQ ML - Export ML model to make predictions does not work for MacBook
   with Apple M1 chip (arm architecture).
 section: 'Module 3: Data Warehousing'
-sort_order: 2280
+sort_order: 2310
 ---
 
 Solution: proceed with setting up serving_dir on your computer as in the extract_model.md file. Then instead of
@@ -23,7 +23,7 @@ Then run the curl command as written, and you should get a prediction.
 
 Or new since Oct 2024:
 
-Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later).
+Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [[docs.docker.com](https://docs.docker.com/desktop/features/vmm/)](https://docs.docker.com/desktop/features/vmm/)
 
 ![Image](images/data-engineering-zoomcamp/image_51551549.png)
 

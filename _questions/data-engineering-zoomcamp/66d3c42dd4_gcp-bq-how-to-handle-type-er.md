@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 66d3c42dd4
 question: GCP BQ - How to handle type error from big query and parquet data?
 section: 'Module 3: Data Warehousing'
-sort_order: 2190
+sort_order: 2220
 ---
 
 Problem: When you inject data into GCS using Pandas, there is a chance that some dataset has missing values on  DOlocationID and PUlocationID. Pandas by default will cast these columns as float data type, causing inconsistent data type between parquet in GCS and schema defined in big query. You will see something like this:

@@ -11,11 +11,9 @@ When you set up your account you are automatically assigned a random name such a
 
 Go to your profile:  →
 
-2025:
+2025: [[DataTalks Course](https://courses.datatalks.club/de-zoomcamp-2025/enrollment)](https://courses.datatalks.club/de-zoomcamp-2025/enrollment)
 
-2024: 
-
-Log in -> your display name is here, you can also change it should you wish. Make sure your Certificate name is correct, this name will later be printed on your certificate!!!
+2024: [[DataTalks Course](https://courses.datatalks.club/de-zoomcamp-2024/enrollment) ](https://courses.datatalks.club/de-zoomcamp-2025/enrollment)Log in -> your display name is here, you can also change it should you wish. Make sure your Certificate name is correct, this name will later be printed on your certificate!!!
 
 ![Image](images/data-engineering-zoomcamp/image_813348b4.png)
 

@@ -5,7 +5,7 @@ question: 'When executing dbt run after fact_trips.sql has been created, the tas
   failed with error:  “Access Denied: BigQuery BigQuery: Permission denied while globbing
   file pattern.”'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2610
+sort_order: 2640
 ---
 
 1. Fixed by adding the Storage Object Viewer role to the service account in use in BigQuery.

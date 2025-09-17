@@ -6,8 +6,7 @@ section: 'Module 1: Introduction'
 sort_order: 500
 ---
 
-Run the following command:
-!pip install pyarrow
+Run the following command:!pip install pyarrow
 
 After successfully downloading, you can delete the command.
 

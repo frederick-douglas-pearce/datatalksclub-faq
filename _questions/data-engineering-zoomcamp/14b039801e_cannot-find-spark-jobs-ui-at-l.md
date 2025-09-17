@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 14b039801e
 question: Cannot find Spark jobs UI at localhost
 section: 'Module 5: pyspark'
-sort_order: 3350
+sort_order: 3380
 ---
 
 This is because current port is in use, Spark UI will run on a different port. You can check which port Spark is using by running this command:

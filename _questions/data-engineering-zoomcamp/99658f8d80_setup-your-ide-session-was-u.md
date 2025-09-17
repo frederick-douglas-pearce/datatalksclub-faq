@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 99658f8d80
 question: Setup - Your IDE session was unable to start. Please contact support.
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2510
+sort_order: 2540
 ---
 
 Issue: If the DBT cloud IDE loading indefinitely then giving you this error

@@ -8,6 +8,8 @@ sort_order: 1320
 
 Pandas can interpret “string” column values as “datetime” directly when reading the CSV file using “pd.read_csv” using the parameter “parse_dates”, which for example can contain a list of column names or column indices. Then the conversion afterwards is not required anymore.
 
+[pandas.read_csv — pandas 2.1.4 documentation (pydata.org)](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
+
 Example from week 1
 
 import pandas as pd

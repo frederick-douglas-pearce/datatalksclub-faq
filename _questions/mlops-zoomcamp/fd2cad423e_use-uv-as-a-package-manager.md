@@ -6,7 +6,7 @@ section: 'Module 1: Introduction'
 sort_order: 740
 ---
 
-There is an option to run the project without anaconda and not much pain with maintaining multiple pythons on your machine. The new package manager uv is a speedy and powerful one written in Rust. It’s good to use in your python projects overall.
+There is an option to run the project without anaconda and not much pain with maintaining multiple pythons on your machine. The new package manager uv is a speedy and powerful one written in Rust. It’s good to use in your python projects overall. [Install guide](https://docs.astral.sh/uv/getting-started/installation/)
 
 uv venv --python 3.9.7 # install python 3.9.7 that is used in the course
 

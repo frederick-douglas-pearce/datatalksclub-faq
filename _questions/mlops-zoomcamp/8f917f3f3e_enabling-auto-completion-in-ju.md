@@ -10,5 +10,5 @@ Problem: how to enable auto completion in jupyter notebook? Tab doesn’t work f
 
 Solution: !pip install --upgrade jedi==0.17.2
 
-Christopher R.J.()
+Christopher R.J.([romanjaimesc@gmail.com](mailto:romanjaimesc@gmail.com))
 

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a07b793f65
 question: 'GCP BQ - “bq: command not found”'
 section: 'Module 3: Data Warehousing'
-sort_order: 2040
+sort_order: 2070
 ---
 
 Run the following command to check if “BigQuery Command Line Tool” is installed or not: gcloud components list

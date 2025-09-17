@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 49e1ec9d84
 question: dbt - Where should we create `profiles.yml` ?
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3230
+sort_order: 3260
 ---
 
 For local environment i.e. dbt-core, the profile configuration is valid for all projects. Note: dbt Cloud doesn’t require it.
@@ -22,5 +22,5 @@ Create a new folder named .dbt if it doesn't already exist.
 
 Inside the .dbt folder, create a new file named profiles.yml.
 
-Usage example can be found .
+Usage example can be found [here](https://gist.github.com/pizofreude/ff4d0601f1eb353683d8af8f4b5aac27?permalink_comment_id=5457712#gistcomment-5457712).
 

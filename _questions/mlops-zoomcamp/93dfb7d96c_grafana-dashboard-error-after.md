@@ -4,7 +4,7 @@ id: 93dfb7d96c
 question: 'Grafana dashboard error after reset: db query error: pq: database “test”
   does not exist'
 section: 'Module 5: Monitoring'
-sort_order: 2120
+sort_order: 2130
 ---
 
 Problem: You’ve already loaded your data, created a dashboard and even saved it according to the exercise. But suddenly when you run docker-compose up after saving the dashboard file you get this error: db query error: pq: database “test” does not exist

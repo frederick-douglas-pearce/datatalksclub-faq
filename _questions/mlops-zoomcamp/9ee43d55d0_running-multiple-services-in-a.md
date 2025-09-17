@@ -3,14 +3,14 @@ course: mlops-zoomcamp
 id: 9ee43d55d0
 question: Running multiple services in a Docker container
 section: 'Module 4: Deployment'
-sort_order: 1680
+sort_order: 1690
 ---
 
 If you are trying to run Flask gunicorn & MLFlow server from the same container, defining both in Dockerfile with CMD will only run MLFlow & not Flask.
 
 Solution: Create separate shell script with server run commands, for eg:
 
-> 	script1.sh
+> script1.sh
 
 #!/bin/bash
 
@@ -18,7 +18,7 @@ gunicorn --bind=0.0.0.0:9696 predict:app
 
 Another script with e.g. MLFlow server:
 
->	script2.sh
+>script2.sh
 
 #!/bin/bash
 
@@ -26,7 +26,7 @@ mlflow server -h 0.0.0.0 -p 5000 --backend-store-uri=sqlite:///mlflow.db --defau
 
 Create a wrapper script to run above 2 scripts:
 
->	wrapper_script.sh
+>wrapper_script.sh
 
 #!/bin/bash
 
@@ -52,7 +52,7 @@ chmod +x *.sh
 
 Now we can define last line of Dockerfile as:
 
-> 	Dockerfile
+> Dockerfile
 
 CMD ./wrapper_script.sh
 

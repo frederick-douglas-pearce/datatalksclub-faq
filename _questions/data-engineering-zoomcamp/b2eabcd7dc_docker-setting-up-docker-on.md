@@ -6,7 +6,7 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 670
 ---
 
-Check this article for details -
+Check this article for details - [Setting up docker in macOS](https://medium.com/@vivekslair/setting-up-docker-in-macos-ee36d37b3be2)
 
 From researching it seems this method might be out of date, it seems that since docker changed their licensing model, the above is a bit hit and miss. What worked for me was to just go to the docker website and download their dmg. Haven’t had an issue with that method.
 

@@ -10,11 +10,7 @@ sort_order: 1580
 
 Go to section Automation
 
-Add Startup script
-```
-#!/bin/bash
-sudo ufw allow ssh
-```
+Add Startup script```#!/bin/bashsudo ufw allow ssh```
 
 Stop and Start VM.
 

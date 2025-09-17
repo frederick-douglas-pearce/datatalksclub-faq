@@ -17,7 +17,7 @@ In this case, you need to delete the directory with data (the one you map to the
 
 Solution 2:
 
-If your data is critical, you may be able to reset the write-ahead lock from within the docker container (see )
+If your data is critical, you may be able to reset the write-ahead lock from within the docker container (see [here](https://github.com/alexg9010/2025_data_engineering_zoomcamp/blob/master/01_docker/README.md#fix-broken-postgress-docker-container))
 
 docker run -it \
 

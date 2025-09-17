@@ -8,7 +8,5 @@ sort_order: 1370
 
 create_engine('postgresql://root:root@localhost:5432/ny_taxi')  I get the error "TypeError: 'module' object is not callable"
 
-Solution:
-conn_string = "postgresql+psycopg://root:root@localhost:5432/ny_taxi"
-engine = create_engine(conn_string)
+Solution:conn_string = "postgresql+psycopg://root:root@localhost:5432/ny_taxi"engine = create_engine(conn_string)
 

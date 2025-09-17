@@ -6,7 +6,7 @@ section: 2. Machine Learning for Regression
 sort_order: 890
 ---
 
-Use ‘pandas.concat’ function () to combine two dataframes. To combine two numpy arrays use numpy.concatenate () function. So the code would be as follows:
+Use ‘pandas.concat’ function ([[pandas.pydata.org](https://pandas.pydata.org/docs/reference/api/pandas.concat.html)](https://pandas.pydata.org/docs/reference/api/pandas.concat.html)) to combine two dataframes. To combine two numpy arrays use numpy.concatenate ([[numpy.org](https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html)](https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html)) function. So the code would be as follows:
 
 df_train_combined = pd.concat([df_train, df_val])
 

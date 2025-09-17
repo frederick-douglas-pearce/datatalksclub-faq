@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: ab1b812541
 question: How is my capstone project going to be evaluated?
 section: Project
-sort_order: 4180
+sort_order: 4210
 ---
 
 Each submitted project will be evaluated by 3 (three) randomly assigned students that have also submitted the project.
@@ -12,5 +12,5 @@ You will also be responsible for grading the projects from 3 fellow students you
 
 The final grade you get will be the median score of the grades you get from the peer reviewers.
 
-And of course, the peer review criteria for evaluating or being evaluated must follow the guidelines defined .
+And of course, the peer review criteria for evaluating or being evaluated must follow the guidelines defined [here](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_7_project#peer-review-criteria).
 

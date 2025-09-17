@@ -18,8 +18,7 @@ Or if all else fails, first run the following command: DOCKER_BUILDKIT=0  docker
 
 (optional) Added by Odimegwu David
 
-Q: How can I deploy a machine learning model using AWS Lambda and API Gateway?
-To deploy a machine learning model using AWS Lambda and API Gateway, follow these steps:
+Q: How can I deploy a machine learning model using AWS Lambda and API Gateway?To deploy a machine learning model using AWS Lambda and API Gateway, follow these steps:
 
 Prepare the Code for Lambda: Start by developing and testing your machine learning model (e.g., using TensorFlow Lite) locally. Ensure the model is optimized for serverless execution.
 

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: d2add610e3
 question: How do I set up credentials to run dlt in my environment (not Google Colab)?
 section: Workshop 1 - dlthub
-sort_order: 4430
+sort_order: 4460
 ---
 
 You can set up credentials for `dlt` in several ways. Here are the two most common methods:
@@ -28,5 +28,5 @@ Never commit secrets.toml to version control (add it to .gitignore).
 
 Credentials can also be loaded via vaults, AWS Parameter Store, or custom setups.
 
-For additional methods and detailed information, refer to the
+For additional methods and detailed information, refer to the [official dlt documentation](https://dlthub.com/docs/general-usage/credentials/)
 

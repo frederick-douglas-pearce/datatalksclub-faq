@@ -66,5 +66,5 @@ sudo dockerd
 
 sudo service docker start
 
-Added by
+Added by [Ugochukwu Onyebuchi](https://github.com/ColeDrain)
 

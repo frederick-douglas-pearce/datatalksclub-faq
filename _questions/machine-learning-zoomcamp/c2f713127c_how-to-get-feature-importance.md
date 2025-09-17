@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: c2f713127c
 question: How to get feature importance for XGboost model
 section: Miscellaneous
-sort_order: 3870
+sort_order: 3880
 ---
 
 Using model.feature_importances_ can gives you an error:

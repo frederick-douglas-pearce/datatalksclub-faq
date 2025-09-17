@@ -18,5 +18,7 @@ pip install --upgrade pip
 
 For more about xgbboost and installation, check here:
 
+[[xgboost.readthedocs.io](https://xgboost.readthedocs.io/en/stable/install.html)](https://xgboost.readthedocs.io/en/stable/install.html)
+
 Aminat Abolade
 

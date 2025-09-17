@@ -12,7 +12,7 @@ python3 --version
 
 For windows,
 
-Visit the official python website at  to download the python version you need for installation
+Visit the official python website at [ ](https://www.python.org/downloads/)[[python.org](https://www.python.org/downloads/)](https://www.python.org/downloads/) to download the python version you need for installation
 
 Run the installer and  ensure to check the box that says “Add Python to PATH” during installation and complete the installation by following the prompts
 

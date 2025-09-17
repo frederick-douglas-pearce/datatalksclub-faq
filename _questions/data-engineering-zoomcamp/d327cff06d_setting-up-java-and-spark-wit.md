@@ -4,7 +4,7 @@ id: d327cff06d
 question: Setting up Java and Spark (with PySpark) on Linux (Alternative option using
   SDKMAN)
 section: 'Module 5: pyspark'
-sort_order: 3290
+sort_order: 3320
 ---
 
 Install SDKMAN:

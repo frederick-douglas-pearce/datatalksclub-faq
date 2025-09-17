@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 5137e6c204
 question: Get an error ‘ unspecified location constraint is incompatible ’
 section: 'Module 6: Best practices'
-sort_order: 2230
+sort_order: 2240
 ---
 
 You may get an error while creating a bucket with localstack and the boto3 client:

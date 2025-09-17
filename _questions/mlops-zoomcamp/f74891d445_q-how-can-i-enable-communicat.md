@@ -4,7 +4,7 @@ id: f74891d445
 question: 'Q: How can I enable communication between Docker containers when invoked
   from a Kestra task?'
 section: 'Module 3: Orchestration'
-sort_order: 1520
+sort_order: 1530
 ---
 
 ![Image](images/mlops-zoomcamp/image_09b2050c.png)

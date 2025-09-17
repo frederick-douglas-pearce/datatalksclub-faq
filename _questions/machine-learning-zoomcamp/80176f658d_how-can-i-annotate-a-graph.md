@@ -6,7 +6,7 @@ section: 4. Evaluation Metrics for Classification
 sort_order: 1570
 ---
 
-Matplotlib has a cool method to  where you could provide an X,Y point and annotate with an arrow and text. For example this will show an arrow pointing to the x,y point optimal threshold.
+Matplotlib has a cool method to [annotate](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html) where you could provide an X,Y point and annotate with an arrow and text. For example this will show an arrow pointing to the x,y point optimal threshold.
 
 plt.annotate(f'Optimal Threshold: {optimal_threshold:.2f}\nOptimal F1 Score: {optimal_f1_score:.2f}',
 

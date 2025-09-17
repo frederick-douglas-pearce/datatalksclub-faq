@@ -4,7 +4,7 @@ id: 74974bf558
 question: 'aws.exe: error: argument operation: Invalid choice — Docker can not login
   to ECR.'
 section: 'Module 4: Deployment'
-sort_order: 1540
+sort_order: 1550
 ---
 
 Windows with AWS CLI already installed
@@ -22,6 +22,8 @@ shows error
 aws.exe: error: argument operation: Invalid choice, valid choices are…
 
 Use this command instead. More info here:
+
+[[docs.aws.amazon.com](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html)](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html)
 
 aws ecr get-login-password \
 

@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 424d68d110
 question: Error when running ImageDataGenerator.flow_from_dataframe
 section: Miscellaneous
-sort_order: 3970
+sort_order: 3980
 ---
 
 Error: ImageDataGenerator name 'scipy' is not defined.

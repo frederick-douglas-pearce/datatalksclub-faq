@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 560c0eb368
 question: Managing Multiple Docker Containers with docker-compose profile
 section: 'Module 6: Best practices'
-sort_order: 2330
+sort_order: 2340
 ---
 
 Problem description

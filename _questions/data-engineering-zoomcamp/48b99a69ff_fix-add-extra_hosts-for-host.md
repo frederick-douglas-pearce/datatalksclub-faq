@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 48b99a69ff
 question: 'Fix: Add extra_hosts for host.docker.internal on Linux'
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1940
+sort_order: 1970
 ---
 
 This update corrects the Docker Compose configuration to resolve the error when using the alias `host.docker.internal` on Linux systems. Since this alias does not resolve natively on Linux, the following entry was added to the affected container:

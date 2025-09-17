@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 61b2ad91aa
 question: Run Local Cluster Spark in Windows 10 with CMD
 section: 'Module 5: pyspark'
-sort_order: 3730
+sort_order: 3760
 ---
 
 Go to %SPARK_HOME%\bin

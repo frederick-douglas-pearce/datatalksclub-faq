@@ -4,12 +4,12 @@ id: 4076e3f3a6
 question: '''kind'' is not recognized as an internal or external command, operable
   program or batch file. (In Windows)'
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3580
+sort_order: 3590
 ---
 
 Problem: I download kind from the next command:
 
-curl.exe -Lo kind-windows-amd64.exe
+curl.exe -Lo kind-windows-amd64.exe [[kind.sigs.k8s.io](https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64)](https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64)
 
 When I try
 

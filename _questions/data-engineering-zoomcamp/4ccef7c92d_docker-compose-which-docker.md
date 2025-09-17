@@ -6,7 +6,7 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 970
 ---
 
-To figure out which docker-compose you need to download from  you can check your system with these commands:
+To figure out which docker-compose you need to download from [[GitHub](https://github.com/docker/compose/releases)](https://github.com/docker/compose/releases) you can check your system with these commands:
 
 uname -s  -> return Linux most likely
 

@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: f8533d5ffd
 question: HPA instance doesn’t run properly (easier solution)
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3470
+sort_order: 3480
 ---
 
 In case the HPA instance does not run correctly even after installing the latest version of Metrics Server from the components.yaml manifest with:

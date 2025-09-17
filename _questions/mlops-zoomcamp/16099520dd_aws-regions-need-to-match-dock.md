@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 16099520dd
 question: AWS regions need to match docker-compose
 section: 'Module 6: Best practices'
-sort_order: 2350
+sort_order: 2360
 ---
 
 Problem description

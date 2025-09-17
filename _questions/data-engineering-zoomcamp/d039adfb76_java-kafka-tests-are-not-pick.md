@@ -3,14 +3,14 @@ course: data-engineering-zoomcamp
 id: d039adfb76
 question: 'Java Kafka: Tests are not picked up in VSCode'
 section: 'Module 6: streaming with kafka'
-sort_order: 4120
+sort_order: 4150
 ---
 
 Situation: in VS Code, usually there will be a triangle icon next to each test. I couldn’t see it at first and had to do some fixes.
 
 Solution:
 
-()
+([Source](https://stackoverflow.com/a/66527032))
 
 VS Code
 

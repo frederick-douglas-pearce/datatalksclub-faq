@@ -4,10 +4,10 @@ id: 477104b863
 question: 'Python Kafka: ./spark-submit.sh streaming.py - ERROR StandaloneSchedulerBackend:
   Application has been killed. Reason: All masters are unresponsive! Giving up.'
 section: 'Module 6: streaming with kafka'
-sort_order: 4040
+sort_order: 4070
 ---
 
-While following  , when running ./spark-submit.sh streaming.py, encountered the following error:
+While following [tutorial 13.2](https://www.youtube.com/watch?v=5hRJ8-6Fpyk&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=79) , when running ./spark-submit.sh streaming.py, encountered the following error:
 
 …
 

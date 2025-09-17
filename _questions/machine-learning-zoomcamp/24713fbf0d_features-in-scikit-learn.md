@@ -3,13 +3,12 @@ course: machine-learning-zoomcamp
 id: 24713fbf0d
 question: Features in scikit-learn?
 section: Miscellaneous
-sort_order: 4160
+sort_order: 4170
 ---
 
 Features (X) must always be formatted as a 2-D array to be accepted by scikit-learn.
 
-Use reshape to reshape a 1D array to a 2D.
-							(-Aileah) :>
+Use reshape to reshape a 1D array to a 2D.(-Aileah) :>
 
 (added by Tano
 

@@ -8,8 +8,5 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 770
 ---
 
-Sometimes, when you try to restart a docker image configured with a network name, the above message appears. In this case, use the following command with the appropriate container name:
->>> If the container is running state, use docker stop <container_name>
->>> then, docker rm pg-database
-Or use docker start instead of docker run in order to restart the docker image without removing it.
+Sometimes, when you try to restart a docker image configured with a network name, the above message appears. In this case, use the following command with the appropriate container name:>>> If the container is running state, use docker stop <container_name>>>> then, docker rm pg-databaseOr use docker start instead of docker run in order to restart the docker image without removing it.
 

@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 28676cfdf9
 question: What version of Evidently AI is used in the course?
 section: 'Module 5: Monitoring'
-sort_order: 2190
+sort_order: 2200
 ---
 
 In the video (current cohort: 2025) the Evidently used is 0.4.17, but any version up to 0.6.7 will be able to run the code in the video and the repo.

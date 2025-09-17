@@ -16,5 +16,5 @@ Familiarity with SQL
 
 Experience with Python (helpful but not required)
 
-No prior data engineering experience is necessary. See
+No prior data engineering experience is necessary. See [Readme on GitHub](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/README.md#prerequisites)
 

@@ -6,7 +6,7 @@ section: 8. Neural Networks and Deep Learning
 sort_order: 2980
 ---
 
-It’s quite useful to understand that all types of models in the course are a plain stack of layers where each layer has exactly one input tensor and one output tensor ( model TF page,  class).
+It’s quite useful to understand that all types of models in the course are a plain stack of layers where each layer has exactly one input tensor and one output tensor ([Sequential](https://www.tensorflow.org/guide/keras/sequential_model) model TF page, [Sequential](https://keras.io/api/models/sequential/) class).
 
 You can simply start from an “empty” model and add more and more layers in a sequential order.
 
@@ -16,9 +16,9 @@ In Alexey’s videos it is implemented as chained calls of different entities (�
 
 Maybe a more complicated way makes sense when you do Transfer Learning and want to separate “Base” model vs. rest, but in the HW you need to recreate the full model from scratch ⇒ I believe it is easier to work with a sequence of “similar” layers.
 
-You can read more about it in this TF2 .
+You can read more about it in this TF2 [tutorial](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/).
 
-A really useful Sequential model example is shared in the Kaggle’s “Bee or Wasp” dataset folder with code:
+A really useful Sequential model example is shared in the Kaggle’s “Bee or Wasp” dataset folder with code: [notebook](https://www.kaggle.com/code/tammygusmao/bee-or-wasp-from-scratch-to-transfer-learning)
 
 Added by Ivan Brigida
 

@@ -69,6 +69,23 @@
         .question h3 {
             color: #34495e;
             margin-bottom: 1rem;
+            position: relative;
+        }
+        .anchor-link {
+            position: absolute;
+            left: -30px;
+            top: 0;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: normal;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .question:hover .anchor-link {
+            opacity: 1;
+        }
+        .anchor-link:hover {
+            text-decoration: none;
         }
         .question-content {
             color: #555;

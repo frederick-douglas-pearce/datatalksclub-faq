@@ -5,7 +5,7 @@ question: GCP BQ - Unable to load data from external tables into a materialized 
   in BigQuery due to an invalid timestamp error that are added while appending data
   to the file in Google Cloud Storage
 section: 'Module 3: Data Warehousing'
-sort_order: 2100
+sort_order: 2130
 ---
 
 could not parse 'pickup_datetime' as timestamp for field pickup_datetime (position 2)

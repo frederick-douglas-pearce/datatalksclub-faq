@@ -8,7 +8,7 @@ sort_order: 2820
 
 Problem description:
 
-Getting an error using <git clone :alexeygrigorev/clothing-dataset-small.git>
+Getting an error using <git clone [git@github.com](mailto:git@github.com):alexeygrigorev/clothing-dataset-small.git>
 
 The error:
 

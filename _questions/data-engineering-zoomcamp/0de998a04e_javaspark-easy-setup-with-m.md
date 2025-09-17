@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 0de998a04e
 question: Java+Spark - Easy setup with miniconda env (worked on MacOS)
 section: 'Module 5: pyspark'
-sort_order: 3360
+sort_order: 3390
 ---
 
 If anyone is a Pythonista or becoming one (which you will essentially be one along this journey), and desires to have all python dependencies under same virtual environment (e.g. conda) as done with prefect and previous exercises, simply follow these steps
@@ -32,16 +32,9 @@ Py4J - Py4JJavaError: An error occurred while calling (...)  java.net.ConnectExc
 
 If you're getting `Py4JavaError` with a generic root cause, such as the described above (Connection refused: no further information). You're most likely using incompatible versions of the JDK or Python with Spark.
 
-As of the , it supports JDK 8 / 11 / 17. All of which can be easily installed with  on macOS or Linux environments
+As of the [current latest Spark version (3.5.0)](https://spark.apache.org/docs/3.5.0/), it supports JDK 8 / 11 / 17. All of which can be easily installed with [SDKMan!](https://sdkman.io/) on macOS or Linux environments$ sdk install java 17.0.10-librca$ sdk install spark 3.5.0$ sdk install hadoop 3.3.5py4j
 
-$ sdk install java 17.0.10-librca
-$ sdk install spark 3.5.0
-$ sdk install hadoop 3.3.5py4j
-
-make sure you're setting up your virtualenv with either 3.8 / 3.9 / 3.10 / 3.11 (Most importantly avoid using 3.12 for now as not all libs in the data-science/engineering ecosystem are fully package for that)
-
-
-$ conda create -n ENV_NAME python=3.11
+[As PySpark 3.5.0 supports Python 3.8+](https://spark.apache.org/docs/3.5.0/) make sure you're setting up your virtualenv with either 3.8 / 3.9 / 3.10 / 3.11 (Most importantly avoid using 3.12 for now as not all libs in the data-science/engineering ecosystem are fully package for that)$ conda create -n ENV_NAME python=3.11
 
 $ conda activate ENV_NAME
 
@@ -73,9 +66,9 @@ export PYTHONPATH="${SPARK_HOME}spark-3.5.1-bin-hadoop3py4j-0.10.9.5-src.zip:$PY
 
 You also need to add environment variables correctly which paths to java jdk, spark and hadoop through
 
-Go to , download the right winutils for hadoop-3.2.0. Then create a new folder,bin and put every thing in side to make a /c/tools/hadoop-3.2.0/bin(You might not need to do this, but after testing it without the /bin I could not make it to work)
+Go to [Stephenlaye2/winutils3.3.0: winutils.exe hadoop.dll and hdfs.dll binaries for hadoop windows (github.com)](https://github.com/Stephenlaye2/winutils3.3.0), download the right winutils for hadoop-3.2.0. Then create a new folder,bin and put every thing in side to make a /c/tools/hadoop-3.2.0/bin(You might not need to do this, but after testing it without the /bin I could not make it to work)
 
-Then follow the solution in this video:
+Then follow the solution in this video: [How To Resolve Issue with Writing DataFrame to Local File | winutils | msvcp100.dll (youtube.com)](https://www.youtube.com/watch?v=yFem0Pu0gC8)
 
 Remember to restart IDE and computer, After the error An error occurred while calling o54.parquet.  is fixed but new errors like o31.parquet. Or o35.parquet. appear.
 

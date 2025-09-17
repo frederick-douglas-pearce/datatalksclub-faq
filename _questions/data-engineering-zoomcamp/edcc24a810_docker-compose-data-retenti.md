@@ -9,9 +9,7 @@ sort_order: 860
 
 ![Image](images/data-engineering-zoomcamp/image_dc508dc3.png)
 
-Make sure postgres database is running.
-
-​​Use the command to start containers in detached mode: docker-compose up -d
+Make sure postgres database is running.​​Use the command to start containers in detached mode: docker-compose up -d
 
 (data-engineering-zoomcamp) hw % docker compose up -d
 
@@ -29,8 +27,7 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS
 
 faf05090972e   postgres:13      "docker-entrypoint.s…"   39 seconds ago   Up 37 seconds   0.0.0.0:5432->5432/tcp          pg-database
 
-6344dcecd58f   dpage/pgadmin4   "/entrypoint.sh"         39 seconds ago   Up 37 seconds   443/tcp, 0.0.0.0:8080->80/tcp   pg-admin
-hw
+6344dcecd58f   dpage/pgadmin4   "/entrypoint.sh"         39 seconds ago   Up 37 seconds   443/tcp, 0.0.0.0:8080->80/tcp   pg-adminhw
 
 To view logs for a container: docker logs <containerid>
 

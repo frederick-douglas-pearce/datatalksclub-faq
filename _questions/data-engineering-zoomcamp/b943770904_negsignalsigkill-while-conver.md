@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: b943770904
 question: Negsignal:SIGKILL while converting data files to parquet format
 section: 'Module 6: streaming with kafka'
-sort_order: 3950
+sort_order: 3980
 ---
 
 Got this error because the docker container memory was exhausted. The data file was up to 800MB but my docker container does not have enough memory to handle that.

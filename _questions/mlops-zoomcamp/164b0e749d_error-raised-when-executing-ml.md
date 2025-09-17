@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 164b0e749d
 question: Error raised when executing mlflow’s pyfunc.load_model in lambda function.
 section: 'Module 4: Deployment'
-sort_order: 1730
+sort_order: 1740
 ---
 
 When the request is processed in lambda function, mlflow library raises:

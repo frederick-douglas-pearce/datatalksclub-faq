@@ -10,5 +10,7 @@ sort_order: 790
 
 Sure, the path may be an URL :
 
+[[pandas.pydata.org](https://pandas.pydata.org/docs/reference/api/pandas.read_parquet.html)](https://pandas.pydata.org/docs/reference/api/pandas.read_parquet.html)
+
 Yann Pham-Van
 

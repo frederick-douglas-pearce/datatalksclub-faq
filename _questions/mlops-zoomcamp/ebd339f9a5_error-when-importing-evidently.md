@@ -3,16 +3,16 @@ course: mlops-zoomcamp
 id: ebd339f9a5
 question: Error when importing evidently package because of numpy version upgraded
 section: 'Module 5: Monitoring'
-sort_order: 2060
+sort_order: 2070
 ---
 
 A new version of Numpy has just been released v 2.0.0 (on Jun 16, 2024), and this causes an import error of the package.
 
 "`np.chararray` is deprecated and will be removed from "
 
-419     	"the main namespace in the future. Use an array with a string "
+419     "the main namespace in the future. Use an array with a string "
 
-420     	"or bytes dtype instead.", DeprecationWarning, stacklevel=2): `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+420     "or bytes dtype instead.", DeprecationWarning, stacklevel=2): `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
 
 Or
 

@@ -13,11 +13,13 @@ M.Sari
 
 OneHotEncoder has the option to output a row column tuple matrix. DictVectorizer is a one step method to encode and support row column tuple matrix output.
 
-Harinder()
+Harinder([sudwalh@gmail.com](mailto:sudwalh@gmail.com))
 
 We used DictVectorizer because it provides a simple one-step way to handle both categorical and numerical features from dictionaries, and directly outputs a sparse matrix—making it ideal for ML pipelines without extra preprocessing.
 
 Yann Pham-Van
 
 Use OneHotEncoder when you want full control, need to work with sklearn pipelines, or must handle unknown categories safely. Use DictVectorizer when your data is in dictionary format (e.g., JSON or from APIs) and you want to plug it into a pipeline quickly.
+
+[Gabi Fonseca](https://github.com/fonsecagabriella/data_science/blob/main/00_general_notes/encoding_summary.ipynb)
 

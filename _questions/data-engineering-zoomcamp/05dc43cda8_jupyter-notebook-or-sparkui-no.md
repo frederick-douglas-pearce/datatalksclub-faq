@@ -4,7 +4,7 @@ id: 05dc43cda8
 question: Jupyter Notebook or SparkUI not loading properly at localhost after port
   forwarding from VS code?
 section: 'Module 5: pyspark'
-sort_order: 3770
+sort_order: 3800
 ---
 
 Possible solution - Try to forward the port using ssh cli instead of vs code.

@@ -8,7 +8,7 @@ sort_order: 1130
 
 Ridge with sag solver requires feature to be of the same scale. You may get the following warning: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
 
-Play with different scalers. See
+Play with different scalers. See [notebook-scaling-ohe.ipynb](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/03-classification/notebook-scaling-ohe.ipynb)
 
 Dmytro Durach
 

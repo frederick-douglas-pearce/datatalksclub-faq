@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 49b5277d77
 question: GCP BQ - DATE() Error in BigQuery
 section: 'Module 3: Data Warehousing'
-sort_order: 2220
+sort_order: 2250
 ---
 
 Error Message:

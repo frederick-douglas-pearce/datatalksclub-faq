@@ -4,7 +4,7 @@ id: 0c116f6001
 question: In module 5.3.1, trying to run spark.createDataFrame(df_pandas).show() returns
   error
 section: 'Module 5: pyspark'
-sort_order: 3840
+sort_order: 3870
 ---
 
 AttributeError: 'DataFrame' object has no attribute 'iteritems'

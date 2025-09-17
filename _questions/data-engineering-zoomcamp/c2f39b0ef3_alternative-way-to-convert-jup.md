@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: c2f39b0ef3
 question: Alternative way to convert Jupyter notebook to Python script  (via jupytext)
 section: 'Module 1: Docker and Terraform'
-sort_order: 1800
+sort_order: 1820
 ---
 
 If you keep getting errors with nbconvert after: jupyter nbconvert --to script <your_notebook.ipynb>

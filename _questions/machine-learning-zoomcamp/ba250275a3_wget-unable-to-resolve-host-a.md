@@ -8,9 +8,9 @@ sort_order: 360
 
 In Kaggle, when you are trying to !wget a dataset from github (or any other public repository/location), you get the following error:
 
-Getting  this error while trying to import data- !wget
+Getting  this error while trying to import data- !wget[ [raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
 
---2022-09-17 16:55:24--
+--2022-09-17 16:55:24-- [ [raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
 
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... failed: Temporary failure in name resolution.
 

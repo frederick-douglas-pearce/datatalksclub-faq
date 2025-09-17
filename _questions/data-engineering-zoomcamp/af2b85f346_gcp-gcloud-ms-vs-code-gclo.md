@@ -14,11 +14,7 @@ And there might be a prompt to ask if you want to open it via browser, if you cl
 
 ![Image](images/data-engineering-zoomcamp/image_6b01ae01.png)
 
-Solution : you should instead hover on the long link, and ctrl + click the long link
-
-Click configure Trusted Domains here
-
-Popup will appear, pick first or second entry
+Solution : you should instead hover on the long link, and ctrl + click the long linkClick configure Trusted Domains herePopup will appear, pick first or second entry
 
 ![Image](images/data-engineering-zoomcamp/image_bc858c4b.png)
 

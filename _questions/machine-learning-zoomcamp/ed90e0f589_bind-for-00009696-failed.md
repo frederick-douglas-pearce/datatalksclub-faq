@@ -18,5 +18,7 @@ Issue has been resolved running the following command:
 
 docker kill $(docker ps -q)
 
+[[GitHub](https://github.com/docker/for-win/issues/2722)](https://github.com/docker/for-win/issues/2722)
+
 Asia Saeed
 

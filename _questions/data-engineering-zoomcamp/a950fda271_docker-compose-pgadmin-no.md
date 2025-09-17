@@ -92,8 +92,5 @@ In this case, the network name is generated automatically: The name of the direc
 
 You can find the network’s name during running docker-compose up
 
-pg-database Pulling
- pg-database Pulled
- Network week_1_default  Creating <-- THIS ONE
- Network week_1_default  Created
+pg-database Pulling pg-database Pulled Network week_1_default  Creating <-- THIS ONE Network week_1_default  Created
 

@@ -3,10 +3,10 @@ course: machine-learning-zoomcamp
 id: 0d443f17b1
 question: What are the project deadlines?
 section: Projects (Midterm and Capstone)
-sort_order: 3700
+sort_order: 3710
 ---
 
-Answer: For 2024 cohort you can see them .
+Answer: For 2024 cohort you can see them [here](https://courses.datatalks.club/ml-zoomcamp-2024/).
 
 Capstone 1:
 

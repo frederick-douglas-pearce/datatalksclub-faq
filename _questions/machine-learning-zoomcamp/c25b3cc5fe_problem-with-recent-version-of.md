@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: c25b3cc5fe
 question: Problem with recent version of protobuf
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3440
+sort_order: 3450
 ---
 
 In session 10.3, when creating the virtual environment with pipenv and trying to run the script gateway.py, you might get this error:

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 6022cc0440
 question: GCP FREE TRIAL ACCOUNT ERROR
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2570
+sort_order: 2600
 ---
 
 If you're encountering an error when trying to create a GCP free trial account, the issue isn’t related to country restrictions, credit/debit card problems, or IP issues, it's a random problem with no clear logical reason behind it. Here’s a simple workaround that worked for me:

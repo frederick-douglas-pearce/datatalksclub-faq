@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 1cc0ab1fea
 question: Error importing cimpl dll when running avro examples
 section: 'Module 6: streaming with kafka'
-sort_order: 3910
+sort_order: 3940
 ---
 
 ImportError: DLL load failed while importing cimpl: The specified module could not be found
@@ -28,5 +28,5 @@ ImportError: DLL load failed while importing cimpl
 
 You need to set this DLL manually in Conda Env.
 
-Source:
+Source: [[githubhot.com](https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2)](https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2)
 

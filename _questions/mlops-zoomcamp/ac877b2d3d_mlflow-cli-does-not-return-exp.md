@@ -8,8 +8,7 @@ sort_order: 1080
 
 Problem: CLI commands (mlflow experiments list) do not return experiments
 
-Solution description: need to set environment variable for the Tracking URI:
-$ export MLFLOW_TRACKING_URI=[127.0.0.1:5000](http://127.0.0.1:5000)
+Solution description: need to set environment variable for the Tracking URI:$ export MLFLOW_TRACKING_URI=[127.0.0.1:5000](http://127.0.0.1:5000)
 
 Added and Answered by Dino Vitale
 

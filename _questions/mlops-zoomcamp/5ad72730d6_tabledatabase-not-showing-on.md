@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 5ad72730d6
 question: Table/database not showing on grafana dashboard
 section: 'Module 5: Monitoring'
-sort_order: 2080
+sort_order: 2090
 ---
 
 Problem: for 5.4, when trying to create a new dashboard grafana does not list the ‘dummy_metrics’ table in the query tab.

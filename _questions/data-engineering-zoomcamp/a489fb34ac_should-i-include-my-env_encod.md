@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a489fb34ac
 question: Should I include my .env_encoded file in my .gitignore?
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1910
+sort_order: 1940
 ---
 
 ⚠️ Yes, you should definitely include the .env_encoded file in your .gitignore file. Here's why:
@@ -12,12 +12,9 @@ Security: The .env_encoded file contains sensitive information, namely the base6
 
 Best Practices: It's a common practice to not commit environment files or any files containing secrets to version control systems like Git. This prevents accidental exposure of sensitive data.
 
-⚠️ How to do it:
-# Add this line to your .gitignore file
-.env_encoded
+⚠️ How to do it:# Add this line to your .gitignore file.env_encoded
 
-⚠️ More on Security:
-Base64 encoding is easily reversible. Base64 is an encoding scheme, not an encryption method. It's designed to encode binary data into ASCII characters that can be safely transmitted over systems that are designed to deal with text. Here's why it's not secure for protecting sensitive information:
+⚠️ More on Security:Base64 encoding is easily reversible. Base64 is an encoding scheme, not an encryption method. It's designed to encode binary data into ASCII characters that can be safely transmitted over systems that are designed to deal with text. Here's why it's not secure for protecting sensitive information:
 
 Reversibility: Base64 encoding simply translates binary data into a text string using a specific set of 64 characters. Decoding it back to the original data is straightforward and doesn't require any secret key or password.
 

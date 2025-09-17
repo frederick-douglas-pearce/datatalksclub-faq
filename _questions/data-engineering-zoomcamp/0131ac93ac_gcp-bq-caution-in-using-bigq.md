@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 0131ac93ac
 question: GCP BQ - Caution in using bigquery:no
 section: 'Module 3: Data Warehousing'
-sort_order: 2050
+sort_order: 2080
 ---
 
 Use big queries carefully,

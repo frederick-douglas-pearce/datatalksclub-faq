@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a3790900cc
 question: 'Spark-shell: unable to load native-hadoop library for platform - Windows'
 section: 'Module 5: pyspark'
-sort_order: 3310
+sort_order: 3340
 ---
 
 If after installing Java (either jdk or openjdk), Hadoop and Spark, and setting the corresponding environment variables you find the following error when spark-shell is run at CMD:

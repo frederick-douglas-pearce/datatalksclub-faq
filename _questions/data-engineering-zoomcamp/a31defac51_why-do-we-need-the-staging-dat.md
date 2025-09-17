@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a31defac51
 question: Why do we need the Staging dataset?
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2700
+sort_order: 2730
 ---
 
 ![Image](images/data-engineering-zoomcamp/image_d2b29adb.png)

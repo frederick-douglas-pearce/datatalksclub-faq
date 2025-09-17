@@ -4,7 +4,7 @@ id: 687d54c6ba
 question: Docker-compose takes infinitely long to install zip unzip packages for linux,
   which are required to unpack datasets
 section: 'Module 3: Data Warehousing'
-sort_order: 1980
+sort_order: 2010
 ---
 
 A:

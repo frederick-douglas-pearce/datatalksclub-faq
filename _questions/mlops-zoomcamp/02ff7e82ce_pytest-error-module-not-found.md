@@ -4,7 +4,7 @@ id: 02ff7e82ce
 question: Pytest error ‘module not found’ when using pre-commit hooks if using custom
   packages in the source code
 section: 'Module 6: Best practices'
-sort_order: 2310
+sort_order: 2320
 ---
 
 Problem description

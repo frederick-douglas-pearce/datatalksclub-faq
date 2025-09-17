@@ -39,6 +39,19 @@ def process_markdown(content):
     return md.convert(content)
 
 
+def load_course_metadata(course_dir):
+    """Load metadata for a course to get section ordering"""
+    metadata_file = course_dir / '_metadata.yaml'
+    if metadata_file.exists():
+        try:
+            with open(metadata_file, 'r', encoding='utf-8') as f:
+                metadata = yaml.safe_load(f)
+                return metadata.get('sections', [])
+        except Exception as e:
+            print(f"Error loading metadata for {course_dir.name}: {e}")
+    return []
+
+
 def collect_questions():
     """Collect all questions from _questions directory"""
     questions_dir = Path('_questions')
@@ -46,7 +59,7 @@ def collect_questions():
         print("No questions directory found")
         return {}
     
-    courses = defaultdict(lambda: defaultdict(list))
+    courses = {}
     
     for course_dir in questions_dir.iterdir():
         if not course_dir.is_dir():
@@ -54,6 +67,13 @@ def collect_questions():
             
         course_name = course_dir.name
         print(f"Processing course: {course_name}")
+        
+        # Load course metadata to get section ordering
+        section_order = load_course_metadata(course_dir)
+        print(f"  Found {len(section_order)} sections in metadata")
+        
+        # Collect questions by section
+        sections = defaultdict(list)
         
         # Process all markdown files in course directory
         for question_file in sorted(course_dir.glob('*.md')):
@@ -71,18 +91,25 @@ def collect_questions():
                 html_content = process_markdown(markdown_content)
                 
                 question_data = {
+                    'id': frontmatter.get('id', ''),
                     'question': frontmatter['question'],
                     'section': frontmatter.get('section', 'Unknown Section'),
+                    'sort_order': frontmatter.get('sort_order', 999999),
                     'course': course_name,
                     'content': html_content,
                     'file': question_file.name
                 }
                 
                 section_name = frontmatter.get('section', 'Unknown Section')
-                courses[course_name][section_name].append(question_data)
+                sections[section_name].append(question_data)
                 
             except Exception as e:
                 print(f"Error processing {question_file}: {e}")
+        
+        courses[course_name] = {
+            'sections': sections,
+            'section_order': section_order
+        }
     
     return courses
 
@@ -126,6 +153,34 @@ def create_default_templates():
     return True
 
 
+def sort_sections_and_questions(courses):
+    """Sort sections according to metadata order and questions by sort_order"""
+    for course_name, course_data in courses.items():
+        sections = course_data['sections']
+        section_order = course_data['section_order']
+        
+        # Sort questions within each section by sort_order
+        for section_name, questions in sections.items():
+            questions.sort(key=lambda q: q['sort_order'])
+        
+        # Create ordered sections dict based on metadata order
+        ordered_sections = {}
+        
+        # First, add sections in metadata order
+        for section_name in section_order:
+            if section_name in sections:
+                ordered_sections[section_name] = sections[section_name]
+        
+        # Then add any sections not in metadata (in alphabetical order)
+        remaining_sections = sorted([s for s in sections.keys() if s not in section_order])
+        for section_name in remaining_sections:
+            ordered_sections[section_name] = sections[section_name]
+        
+        courses[course_name]['ordered_sections'] = ordered_sections
+    
+    return courses
+
+
 def generate_site(courses):
     """Generate the complete static site"""
     site_dir = Path('_site')
@@ -150,16 +205,21 @@ def generate_site(courses):
     create_default_templates()
     env = setup_jinja_environment()
     
+    # Sort sections and questions
+    courses = sort_sections_and_questions(courses)
+    
     # Prepare course list for navigation
     course_list = [{'name': name} for name in courses.keys()]
     
     # Generate course pages using external templates
     course_template = env.get_template('course.html')
     
-    for course_name, sections in courses.items():
+    for course_name, course_data in courses.items():
+        ordered_sections = course_data['ordered_sections']
+        
         html = course_template.render(
             course_name=course_name,
-            sections=sections,
+            sections=ordered_sections,
             courses=course_list,
             show_nav=True,
             page_title=course_name.replace('-', ' ').title(),
@@ -175,8 +235,13 @@ def generate_site(courses):
     # Generate index page using external template
     index_template = env.get_template('index.html')
     
+    # Prepare courses data for index page
+    index_courses = {}
+    for course_name, course_data in courses.items():
+        index_courses[course_name] = course_data['ordered_sections']
+    
     index_html = index_template.render(
-        courses=courses,
+        courses=index_courses,
         generation_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     )
     
@@ -204,12 +269,14 @@ def main():
         return
     
     # Print summary
-    total_questions = sum(len(questions) for sections in courses.values() for questions in sections.values())
-    print(f"Found {len(courses)} courses with {total_questions} total questions")
-    
-    for course_name, sections in courses.items():
+    total_questions = 0
+    for course_name, course_data in courses.items():
+        sections = course_data['sections']
         course_questions = sum(len(questions) for questions in sections.values())
+        total_questions += course_questions
         print(f"  - {course_name}: {len(sections)} sections, {course_questions} questions")
+    
+    print(f"Found {len(courses)} courses with {total_questions} total questions")
     
     # Generate static site
     print("\n2. Generating static site...")

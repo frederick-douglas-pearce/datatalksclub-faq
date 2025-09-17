@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 95b01285f5
 question: When You are getting error dbt_utils not found
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2620
+sort_order: 2650
 ---
 
 You need to create packages.yml file in main project directory and add packages’ meta data:

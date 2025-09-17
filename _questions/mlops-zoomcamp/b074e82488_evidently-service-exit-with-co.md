@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: b074e82488
 question: Evidently service exit with code 2
 section: 'Module 5: Monitoring'
-sort_order: 1950
+sort_order: 1960
 ---
 
 Problem description

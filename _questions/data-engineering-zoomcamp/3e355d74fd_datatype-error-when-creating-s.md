@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 3e355d74fd
 question: DataType error when creating Spark DataFrame with a specified schema?
 section: 'Module 5: pyspark'
-sort_order: 3540
+sort_order: 3570
 ---
 
 Probably you’ll encounter this if you followed the video ‘5.3.1 - First Look at Spark/PySpark’ and used the parquet file from the TLC website (csv was used in the video).

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 9abc27b002
 question: 'Kestra: Don’t forget to set GCP_CREDS variable'
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1960
+sort_order: 1990
 ---
 
 If you plan on using Kestra with Google Cloud Platform, make sure you setup the GCP_CREDS that’s gonna be used in the flows that has “gcp” on its name.

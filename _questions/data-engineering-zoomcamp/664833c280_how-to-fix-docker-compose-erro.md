@@ -5,7 +5,7 @@ question: 'How to fix docker compose error: Error response from daemon: pull acc
   denied for spark-3.3.1, repository does not exist or may require ''docker login'':
   denied: requested access to the resource is denied'
 section: 'Module 6: streaming with kafka'
-sort_order: 4010
+sort_order: 4040
 ---
 
 If you get this error, know that you have not built your sparks and juypter images. This images aren’t readily available on dockerHub.

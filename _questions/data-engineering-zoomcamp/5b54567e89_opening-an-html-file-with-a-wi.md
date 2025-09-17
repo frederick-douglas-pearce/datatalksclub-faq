@@ -6,7 +6,7 @@ section: Course Management Platform for Homeworks, Project and Certificate
 sort_order: 460
 ---
 
-If you’re running Linux on Windows Subsystem for Linux (WSL) 2, you can open HTML files from the guest (Linux) with whatever Internet Browser you have installed on the host (Windows). Just install  and open the page with wslview <file>, for example:
+If you’re running Linux on Windows Subsystem for Linux (WSL) 2, you can open HTML files from the guest (Linux) with whatever Internet Browser you have installed on the host (Windows). Just install [wslu](https://wslutiliti.es/wslu/install.html) and open the page with wslview <file>, for example:
 
 wslview index.html
 

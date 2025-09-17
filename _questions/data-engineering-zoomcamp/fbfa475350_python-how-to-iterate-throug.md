@@ -10,7 +10,7 @@ Contrary to panda’s read_csv method there’s no such easy way to iterate thro
 
 import pyarrow.parquet as pq
 
-output_name = “”
+output_name = “[[d37ci6vzurychx.cloudfront.net](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet)](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet)”
 
 parquet_file = pq.ParquetFile(output_name)
 

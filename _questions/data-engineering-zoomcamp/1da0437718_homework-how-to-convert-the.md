@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 1da0437718
 question: Homework - how to convert the time difference of two timestamps to hours
 section: 'Module 5: pyspark'
-sort_order: 3800
+sort_order: 3830
 ---
 
 Pyspark converts the difference of two TimestampType values to Python's native datetime.timedelta object. The timedelta object only stores the duration in terms of days, seconds, and microseconds. Each of the three units of time must be manually converted into hours in order to express the total duration between the two timestamps using only hours.

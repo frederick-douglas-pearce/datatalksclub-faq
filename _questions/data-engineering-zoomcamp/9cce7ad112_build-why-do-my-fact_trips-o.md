@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 9cce7ad112
 question: Build - Why do my fact_trips only contain one month of data?
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2650
+sort_order: 2680
 ---
 
 Check if you specified if_exists argument correctly when writing data from GCS to BigQuery. When I wrote my automated flow for each month of the years 2019 and 2020 for green and yellow data I had specified if_exists="replace" while I was experimenting with the flow setup. Once you want to run the flow for all months in 2019 and 2020 make sure to set if_exists="append"

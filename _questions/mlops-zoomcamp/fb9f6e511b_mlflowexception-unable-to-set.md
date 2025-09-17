@@ -10,7 +10,7 @@ raise MlflowException(
 
 mlflow.exceptions.MlflowException: Cannot set a deleted experiment 'random-forest-hyperopt' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.
 
-There are many options to solve in this link:
+There are many options to solve in this link: [[Stack Overflow](https://stackoverflow.com/questions/60088889/how-do-you-permanently-delete-an-experiment-in-mlflow)](https://stackoverflow.com/questions/60088889/how-do-you-permanently-delete-an-experiment-in-mlflow)
 
 ✅Had deleted the experiment from the mlflow ui, and this command in CLI works mlflow gc --backend-store-uri sqlite:///backend.db (use the filename.db that you had used, obviously)
 

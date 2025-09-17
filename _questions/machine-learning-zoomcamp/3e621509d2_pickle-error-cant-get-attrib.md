@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 3e621509d2
 question: 'Pickle error: can’t get attribute XXX on module __main__'
 section: Miscellaneous
-sort_order: 3890
+sort_order: 3900
 ---
 
 When running a docker container with waitress serving the app.py for making predictions, pickle will throw an error that can't get attribute <name_of_class> on module __main__.
@@ -20,7 +20,7 @@ Put the class into a separate module and import it in both the script that saves
 
 Note: If Flask is used (no waitress) in predict.py, and predict.py has the definition of the class, When  it is run: python predict.py, it will work because the class is in the same namespace as the one used when the model was saved (__main__).
 
-Detailed info:
+Detailed info: [[Stack Overflow](https://stackoverflow.com/questions/27732354/unable-to-load-files-using-pickle-and-multiple-modules)](https://stackoverflow.com/questions/27732354/unable-to-load-files-using-pickle-and-multiple-modules)
 
 Marcos MJD
 

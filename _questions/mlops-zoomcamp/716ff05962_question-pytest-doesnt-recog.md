@@ -4,7 +4,7 @@ id: 716ff05962
 question: 'Question: pytest doesn''t recognize my installed libraries, but the script
   works in the terminal. Why?'
 section: Capstone Project
-sort_order: 2410
+sort_order: 2420
 ---
 
 Answer: This usually happens because VS Code is using a different Python interpreter than the one in your terminal. As a result, pytest can't see the packages installed in your virtual environment.

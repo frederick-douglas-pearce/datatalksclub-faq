@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: b72ed00c7b
 question: Warning when run load_yellow_data python script
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2410
+sort_order: 2440
 ---
 
 RuntimeWarning: As the c extension couldn't be imported, google-crc32c is using a pure python implementation that is significantly slower. If possible, please configure a c build environment and compile extention warnings.warn(_SLOW_CRC32C_WARNING, RuntimeWarning)

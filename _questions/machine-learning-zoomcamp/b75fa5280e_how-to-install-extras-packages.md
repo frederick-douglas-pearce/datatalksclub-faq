@@ -3,11 +3,10 @@ course: machine-learning-zoomcamp
 id: b75fa5280e
 question: How to install extras packages on Google Colab or Kaggle?
 section: Miscellaneous
-sort_order: 4260
+sort_order: 4270
 ---
 
-Create a cell and, for example, you can perform the next command using PIP:
-!pip install tensorflow[and-cuda]==2.14
+Create a cell and, for example, you can perform the next command using PIP:!pip install tensorflow[and-cuda]==2.14
 
 2.you can use Conda commands, for example:
 

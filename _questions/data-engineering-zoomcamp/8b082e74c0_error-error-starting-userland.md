@@ -4,7 +4,7 @@ id: 8b082e74c0
 question: 'Error: error starting userland proxy: listen tcp4 0.0.0.0:8080: bind: address
   already in use'
 section: 'Module 1: Docker and Terraform'
-sort_order: 1770
+sort_order: 1790
 ---
 
 Resolution: You need to stop the services which is using the port.
@@ -41,19 +41,13 @@ Resolution: This happens due to insufficient permission for docker to access a c
 
 1. You can create a .dockerignore file and add the directory/file which you want Dockerfile to ignore while build.
 
-2. If the above does not work, then put the dockerfile and corresponding script, `	1.py` in our case to a subfolder. and run `docker build ...`
+2. If the above does not work, then put the dockerfile and corresponding script, `1.py` in our case to a subfolder. and run `docker build ...`
 
 from inside the new folder.
 
 ~ Abhijit Chakraborty
 
-Docker-Compose - it is illegal to have any blank spaces between the environment argument in docker-compose.yml
+Docker-Compose - it is illegal to have any blank spaces between the environment argument in docker-compose.ymlThe following ways of configuring it will not work:
 
-The following ways of configuring it will not work:
-
-- PGADMIN_DEFAULT_EMAIL = 
-- PGADMIN_DEFAULT_PASSWORD = root
-
-- PGADMIN_DEFAULT_EMAIL=
-- PGADMIN_DEFAULT_PASSWORD=root
+- PGADMIN_DEFAULT_EMAIL = [admin@admin.com](mailto:admin@admin.com)- PGADMIN_DEFAULT_PASSWORD = root- PGADMIN_DEFAULT_EMAIL=[admin@admin.com](mailto:admin@admin.com)- PGADMIN_DEFAULT_PASSWORD=root
 

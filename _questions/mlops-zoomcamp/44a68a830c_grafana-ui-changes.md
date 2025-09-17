@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 44a68a830c
 question: Grafana UI Changes
 section: 'Module 5: Monitoring'
-sort_order: 2100
+sort_order: 2110
 ---
 
 Problem: When selecting column from table db has no time column: no time column found

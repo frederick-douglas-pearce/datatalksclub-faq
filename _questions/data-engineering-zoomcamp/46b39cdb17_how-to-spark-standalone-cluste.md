@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 46b39cdb17
 question: How to spark standalone cluster is run on windows OS
 section: 'Module 5: pyspark'
-sort_order: 3670
+sort_order: 3700
 ---
 
 Change the working directory to the spark directory:

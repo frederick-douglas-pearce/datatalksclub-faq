@@ -6,7 +6,7 @@ section: 9. Serverless Deep Learning
 sort_order: 3220
 ---
 
-Problem: Trying to test API gateway in , running: $ python test.py
+Problem: Trying to test API gateway in [9.7 - API Gateway: Exposing the Lambda Function](https://www.youtube.com/watch?v=wyZ9aqQOXvs&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR), running: $ python test.py
 
 With error message:
 

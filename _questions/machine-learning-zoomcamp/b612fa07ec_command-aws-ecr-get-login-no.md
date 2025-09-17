@@ -4,7 +4,7 @@ id: b612fa07ec
 question: 'Command aws ecr get-login --no-include-email returns “aws: error: argument
   operation: Invalid choice…”'
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3630
+sort_order: 3640
 ---
 
 As per AWS documentation:

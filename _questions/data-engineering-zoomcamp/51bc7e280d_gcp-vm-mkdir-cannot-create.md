@@ -18,3 +18,5 @@ You should do it in your home directory. Should be your home (~)
 
 Local. But it seems you're trying to do it in the root folder (/). Should be your home (~)
 
+[Link to Video 1.4.1](https://www.youtube.com/watch?v=ae-CV2KfoN0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+

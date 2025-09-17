@@ -6,6 +6,12 @@ section: 'Module 3: Orchestration'
 sort_order: 1390
 ---
 
+[[docs.mage.ai](https://docs.mage.ai/platform/projects/management)](https://docs.mage.ai/platform/projects/management)
+
+[[docs.mage.ai](https://docs.mage.ai/design/abstractions/project-structure)](https://docs.mage.ai/design/abstractions/project-structure)
+
+[[docs.mage.ai](https://docs.mage.ai/orchestration/global-data-products/overview)](https://docs.mage.ai/orchestration/global-data-products/overview)
+
 Running the GDP block takes forever.
 
 Exception: Pipeline run xx for global data product training_set: failed
@@ -38,7 +44,7 @@ Rename the block to what is used in the video
 
 Run the block to test it (Play button or Ctrl+Enter)
 
-If it helps, do the same for the file in path “unit_3_observability” (ella’s full disclosure: unit_2 works after I removed all things GDP and recreate, now I cannot replicate the same success for unit_3. Still trying…)
+If it helps, do the same for the file in path “unit_3_observability” (ella’s full disclosure: unit_2 works after I removed all things GDP and recreate, now I cannot replicate the same success for unit_3. Still trying…[let’s discuss here](https://datatalks-club.slack.com/archives/C02R98X7DS9/p1717396679251329))
 
 Error with creating Global Data Product on Mage: AttributeError: 'NoneType' object has no attribute 'to_dict'
 

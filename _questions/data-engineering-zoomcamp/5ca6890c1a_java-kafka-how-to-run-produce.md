@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 5ca6890c1a
 question: 'Java Kafka: How to run producer/consumer/kstreams/etc in terminal'
 section: 'Module 6: streaming with kafka'
-sort_order: 4100
+sort_order: 4130
 ---
 
 In the project directory, run:

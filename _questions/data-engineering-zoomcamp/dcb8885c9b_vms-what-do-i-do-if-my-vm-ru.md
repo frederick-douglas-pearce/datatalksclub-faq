@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: dcb8885c9b
 question: VMs - What do I do if my VM runs out of space?
 section: 'Module 3: Data Warehousing'
-sort_order: 2290
+sort_order: 2320
 ---
 
 Try deleting data you’ve saved to your VM locally during ETLs

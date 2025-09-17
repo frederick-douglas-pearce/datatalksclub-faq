@@ -6,7 +6,7 @@ section: General course-related questions
 sort_order: 70
 ---
 
-For the 2025 edition we are using Kestra (see ) instead of MageAI (Module 2). Lookout for new videos. See
+For the 2025 edition we are using Kestra (see [Demo](https://www.youtube.com/watch?v=R0JAFvDCmSY)) instead of MageAI (Module 2). Lookout for new videos. See [Playlist](https://www.youtube.com/playlist?list=PLEK3H8YwZn1oPPShk2p5k3E9vO-gPnUCf)
 
-For the 2024 edition we used Mage AI instead of Prefect and re-recorded the terraform videos, For 2023, we used Prefect instead of Airflow. See Playlists on YouTube and .
+For the 2024 edition we used Mage AI instead of Prefect and re-recorded the terraform videos, For 2023, we used Prefect instead of Airflow. See Playlists on YouTube and [cohorts folder in Github repo](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/cohorts).
 

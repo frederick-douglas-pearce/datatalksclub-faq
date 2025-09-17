@@ -6,7 +6,7 @@ section: 4. Evaluation Metrics for Classification
 sort_order: 1600
 ---
 
-You can find the intercept between these two curves using numpy diff ( ) and sign ():
+You can find the intercept between these two curves using numpy diff ([[numpy.org](https://numpy.org/doc/stable/reference/generated/numpy.diff.html)](https://numpy.org/doc/stable/reference/generated/numpy.diff.html) ) and sign ([[numpy.org](https://numpy.org/doc/stable/reference/generated/numpy.sign.html)](https://numpy.org/doc/stable/reference/generated/numpy.sign.html)):
 
 I suppose here that you have your df_scores ready with your three columns ‘threshold’, ‘precision’ and ‘recall’:
 

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 5c5321c295
 question: Project 1 & Project 2
 section: Project
-sort_order: 4200
+sort_order: 4230
 ---
 
 There is only ONE project for this Zoomcamp. You do not need to submit or create two projects.
@@ -16,5 +16,5 @@ Alex clarifies: “Ideally yes, you should try to re-run everything. But I under
 
 Certificates: how do I get it?
 
-A:
+A: See the certificate.mdx file
 

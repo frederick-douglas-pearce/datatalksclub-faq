@@ -12,7 +12,7 @@ The error I was getting was:
 
 Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory
 
-The fix (from ): vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+The fix (from [here](https://stackoverflow.com/questions/68630526/lib64-ld-linux-x86-64-so-2-no-such-file-or-directory-error)): vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 Open mlbookcamp-code/course-zoomcamp/01-intro/environment/Dockerfile
 

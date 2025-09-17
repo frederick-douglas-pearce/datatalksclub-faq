@@ -7,8 +7,7 @@ section: 'Module 2: Experiment tracking'
 sort_order: 890
 ---
 
-This is caused by ```mlflow.xgboost.autolog()``` when version 1.6.1 of xgboost
-Downgrade to 1.6.0
+This is caused by ```mlflow.xgboost.autolog()``` when version 1.6.1 of xgboostDowngrade to 1.6.0
 
 ```pip install xgboost==1.6.0``` or update requirements file with xgboost==1.6.0 instead of xgboost
 

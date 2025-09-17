@@ -3,10 +3,12 @@ course: machine-learning-zoomcamp
 id: c4ad81910b
 question: Install Docker (udocker) in Google Colab
 section: 9. Serverless Deep Learning
-sort_order: 3350
+sort_order: 3360
 ---
 
 I’ve tried to do everything in Google Colab. Here is a way to work with Docker in Google Colab:
+
+[[GitHub](https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885)](https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885)
 
 %%shell
 

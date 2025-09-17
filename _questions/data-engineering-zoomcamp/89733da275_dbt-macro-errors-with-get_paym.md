@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 89733da275
 question: dbt macro errors with get_payment_type_description(payment_type)
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2790
+sort_order: 2820
 ---
 
 You will face this issue if you copied and pasted the exact macro directly from data-engineering-zoomcamp repo.

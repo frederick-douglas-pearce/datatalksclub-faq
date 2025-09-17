@@ -4,7 +4,7 @@ id: faddbcb675
 question: Join Error on LocationID “Unable to find common supertype for templated
   argument”
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3170
+sort_order: 3200
 ---
 
 No matching signature for operator = for argument types: STRING, INT64

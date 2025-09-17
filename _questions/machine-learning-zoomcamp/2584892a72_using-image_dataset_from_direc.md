@@ -7,8 +7,7 @@ section: 8. Neural Networks and Deep Learning
 sort_order: 3020
 ---
 
-From the keras documentation:
-Deprecated:  is not recommended for new code. Prefer loading images with  and transforming the output  with preprocessing layers. For more information, see the tutorials for  and , as well as the .
+From the keras documentation:Deprecated: [tf.keras.preprocessing.image.ImageDataGenerator](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator) is not recommended for new code. Prefer loading images with [tf.keras.utils.image_dataset_from_directory](https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory) and transforming the output [tf.data.Dataset](https://www.tensorflow.org/api_docs/python/tf/data/Dataset) with preprocessing layers. For more information, see the tutorials for [loading images](https://www.tensorflow.org/tutorials/load_data/images) and [augmenting images](https://www.tensorflow.org/tutorials/images/data_augmentation), as well as the [preprocessing layer guide](https://www.tensorflow.org/guide/keras/preprocessing_layers).
 
 Hrithik Kumar Advani
 

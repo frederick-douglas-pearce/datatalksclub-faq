@@ -18,8 +18,7 @@ More robust and can manage worker processes.
 
 Usage:
 
-Modify the CMD in your Dockerfile:
-CMD ["gunicorn", "--bind", "0.0.0.0:9696", "app:app"]
+Modify the CMD in your Dockerfile:CMD ["gunicorn", "--bind", "0.0.0.0:9696", "app:app"]
 
 (added by David Peterson)
 

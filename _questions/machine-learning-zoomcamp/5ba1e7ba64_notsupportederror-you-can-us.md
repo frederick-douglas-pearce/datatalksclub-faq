@@ -37,5 +37,5 @@ eb local run --port 9696
 
 Added by Lynn Samson
 
-Original solution from
+Original solution from [Stack Overflow](https://stackoverflow.com/a/75804355/24066976)
 

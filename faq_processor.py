@@ -102,44 +102,57 @@ def extract_images_from_docx(doc, course_name):
     return image_mapping
 
 def extract_paragraph_content(paragraph):
-    """Extract text and hyperlinks from a paragraph"""
+    """Extract text and hyperlinks from a paragraph by walking through XML elements"""
     content_parts = []
     
-    for run in paragraph.runs:
-        text = run.text
-        if not text:
-            continue
-            
-        # Check if this run is part of a hyperlink
-        hyperlink = None
-        element = run._element
-        
-        # Look for hyperlink in the run's parent elements
-        parent = element.getparent()
-        while parent is not None:
-            if parent.tag.endswith('}hyperlink'):
-                # Found hyperlink element, get the relationship ID
-                rel_id = parent.get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id')
-                if rel_id:
-                    try:
-                        # Get the hyperlink target from document relationships
-                        rel = paragraph._parent.part.rels[rel_id]
-                        hyperlink = rel.target_ref
-                    except (KeyError, AttributeError):
-                        pass
-                break
-            parent = parent.getparent()
-        
-        # Add text with optional hyperlink
-        if hyperlink:
-            content_parts.append(f'[{text}]({hyperlink})')
-        else:
-            content_parts.append(text)
+    # Get the paragraph XML element
+    p_elem = paragraph._p
     
-    # Join all content and then process for plain text URLs
+    # Walk through all child elements in order
+    for child in p_elem:
+        if child.tag.endswith('}r'):  # This is a run
+            # Extract text from this run
+            text_content = ''
+            for t_elem in child.iter():
+                if t_elem.tag.endswith('}t') and t_elem.text:
+                    text_content += t_elem.text
+            
+            if text_content:
+                content_parts.append(text_content)
+                
+        elif child.tag.endswith('}hyperlink'):  # This is a hyperlink
+            # Get relationship ID
+            rel_id = None
+            for attr_name, attr_value in child.attrib.items():
+                if 'id' in attr_name.lower():
+                    rel_id = attr_value
+                    break
+            
+            # Get the text content of this hyperlink
+            hyperlink_text = ''
+            for text_elem in child.iter():
+                if text_elem.tag.endswith('}t') and text_elem.text:
+                    hyperlink_text += text_elem.text
+            
+            # Get the URL
+            url = None
+            if rel_id:
+                try:
+                    rel = paragraph._parent.part.rels[rel_id]
+                    url = rel.target_ref
+                except (KeyError, AttributeError):
+                    pass
+            
+            # Add as markdown link if we have both text and URL
+            if hyperlink_text and url:
+                content_parts.append(f'[{hyperlink_text}]({url})')
+            elif hyperlink_text:
+                content_parts.append(hyperlink_text)
+    
+    # Join all content
     full_text = ''.join(content_parts)
     
-    # Convert plain text URLs to markdown links (but preserve existing markdown links)
+    # Convert any remaining plain text URLs to markdown links (but preserve existing markdown links)
     full_text = convert_plain_urls_to_markdown(full_text)
     
     return full_text
@@ -150,10 +163,20 @@ def convert_plain_urls_to_markdown(text):
     
     # Pattern to match URLs that are NOT already in markdown format
     # This uses negative lookbehind and lookahead to avoid matching URLs inside [text](url)
+    # Also avoid matching URLs that are already processed as markdown links
     url_pattern = r'(?<!\]\()(https?://[^\s\)\]]+)(?!\))'
     
     def replace_url(match):
         url = match.group(1)
+        
+        # Double-check that this URL isn't already part of a markdown link
+        # by looking at the context around it
+        start_pos = match.start()
+        if start_pos > 2:
+            before = text[start_pos-2:start_pos]
+            if before == '](': 
+                return url  # Don't replace, it's already part of a markdown link
+        
         # Create a simple link text from the URL (domain + path start)
         try:
             # Extract a reasonable link text from the URL

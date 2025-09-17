@@ -12,7 +12,7 @@ CSRFError: 400 Bad Request: The referrer does not match the host.
 
 Solution #1:
 
-As recommended in the following issue   setting the following environment variable solved it.
+As recommended in the following issue  [[GitHub](https://github.com/pgadmin-org/pgadmin4/issues/5432)](https://github.com/pgadmin-org/pgadmin4/issues/5432) setting the following environment variable solved it.
 
 PGADMIN_CONFIG_WTF_CSRF_ENABLED="False"
 

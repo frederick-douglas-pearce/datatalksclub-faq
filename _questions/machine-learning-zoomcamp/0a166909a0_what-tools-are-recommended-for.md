@@ -4,7 +4,7 @@ id: 0a166909a0
 question: What tools are recommended for setting up a local Kubernetes environment
   for model deployment practice?
 section: 11. KServe
-sort_order: 3680
+sort_order: 3690
 ---
 
 Several tools can help set up a local Kubernetes environment:

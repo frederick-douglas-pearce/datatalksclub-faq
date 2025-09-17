@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 2d292454ac
 question: Multiline commands in Windows Powershell
 section: 'Module 4: Deployment'
-sort_order: 1550
+sort_order: 1560
 ---
 
 Use ` at the end of each line except the last. Note that multiline string does not need `.

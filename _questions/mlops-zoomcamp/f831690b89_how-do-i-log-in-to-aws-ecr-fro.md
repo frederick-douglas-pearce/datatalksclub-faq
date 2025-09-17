@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: f831690b89
 question: How do I log in to AWS ECR from the terminal using Docker?
 section: 'Module 5: Monitoring'
-sort_order: 1900
+sort_order: 1910
 ---
 
 Before (deprecated command):

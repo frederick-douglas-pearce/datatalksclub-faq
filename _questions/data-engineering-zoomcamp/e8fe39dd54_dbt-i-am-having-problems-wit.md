@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: e8fe39dd54
 question: DBT - I am having problems with columns datatype while running DBT/BigQuery
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2520
+sort_order: 2550
 ---
 
 Issue: If you don’t define the column format while converting from csv to parquet Python will “choose” based on the first rows.
@@ -12,9 +12,11 @@ Issue: If you don’t define the column format while converting from csv to parq
 
 Sebastian adapted the script:
 
+[[GitHub](https://github.com/sebastian2296/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/web_to_gcs.py)](https://github.com/sebastian2296/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/web_to_gcs.py)
+
 Need a quick change to make the file work with gz files, added the following lines (and don’t forget to delete the file at the end of each iteration of the loop to avoid any problem of disk space)
 
-file_name_gz = f"{service}_tripdata_{year}-{month}."
+file_name_gz = f"{service}_tripdata_{year}-{month}.[csv.gz](http://csv.gz)"
 
 open(file_name_gz, 'wb').write(r.content)
 

@@ -7,7 +7,7 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 630
 ---
 
-If you're running a Home Edition, you can still make it work with WSL2 (Windows Subsystem for Linux) by following the
+If you're running a Home Edition, you can still make it work with WSL2 (Windows Subsystem for Linux) by following the [tutorial here](https://pureinfotech.com/install-wsl-windows-11/)
 
-If even after making sure your WSL2 (or Hyper-V) is set up accordingly, Docker remains stuck, you can try the option to  or do a fresh install.
+If even after making sure your WSL2 (or Hyper-V) is set up accordingly, Docker remains stuck, you can try the option to [Reset to Factory Defaults](https://imgur.com/CfESyNt) or do a fresh install.
 

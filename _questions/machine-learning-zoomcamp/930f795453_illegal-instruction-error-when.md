@@ -4,7 +4,7 @@ id: 930f795453
 question: Illegal instruction error when running tensorflow/serving image on Mac M2
   Apple Silicon (potentially on M1 as well)
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3650
+sort_order: 3660
 ---
 
 Similar to the one above but with a different solution the main reason is that emacski doesn’t seem to maintain the repo any more, the latest image is from 2 years ago at the time of writing (December 2023)
@@ -79,7 +79,7 @@ Added by Alex Litvinov
 
 Or new since Oct 2024:
 
-Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later).
+Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [[docs.docker.com](https://docs.docker.com/desktop/features/vmm/)](https://docs.docker.com/desktop/features/vmm/)
 
 ![Image](images/machine-learning-zoomcamp/image_51551549.png)
 

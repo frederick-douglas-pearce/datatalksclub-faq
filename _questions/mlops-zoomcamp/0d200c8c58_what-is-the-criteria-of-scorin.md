@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 0d200c8c58
 question: What is the criteria of scoring home work?
 section: Capstone Project
-sort_order: 2450
+sort_order: 2460
 ---
 
 What is the scoring given for homework

@@ -8,9 +8,9 @@ sort_order: 290
 
 In case one would like to set a github repository (e.g. for Homeworks), one can follow 2 great tutorials that helped a lot
 
-Setting up github on AWS instance -
+Setting up github on AWS instance - [this](https://gist.github.com/matthewoden/b29353e266c554e04be8ea2058bcc2a0)
 
-Setting up keys on AWS instance -
+Setting up keys on AWS instance - [this](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 Then, one should be able to push to its repo
 
@@ -32,5 +32,5 @@ Resizable compute capacity in the Cloud.
 
 Added by Giri (glk08909@gmail.com)
 
-Added by Daniel Hen ()
+Added by Daniel Hen ([daniel8hen@gmail.com](mailto:daniel8hen@gmail.com))
 

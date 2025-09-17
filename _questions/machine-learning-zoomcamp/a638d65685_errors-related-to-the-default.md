@@ -11,7 +11,9 @@ While weeks 1-4 can relatively easily be followed and the associated homework co
 
 It is advised to prepare your “homework environment” with a cloud provider of your choice. A thorough step-by-step guide for doing so for an AWS EC2 instance is provided in an introductory video taken from the MLOPS course here:
 
+[[YouTube](https://www.youtube.com/watch?v=IXSiYkP23zo)](https://www.youtube.com/watch?v=IXSiYkP23zo)
+
 Note that (only) small  instances can be run for free, and that larger ones will be billed hourly based on usage (but can and should be stopped when not in use).
 
-Alternative ways are sketched here:
+Alternative ways are sketched here:[[GitHub](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/01-intro/06-environment.md)](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/01-intro/06-environment.md)
 

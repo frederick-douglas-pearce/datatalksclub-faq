@@ -4,7 +4,7 @@ id: 8ab8329fea
 question: Could not parse the dbt project. please check that the repository contains
   a valid dbt project
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2990
+sort_order: 3020
 ---
 
 Running the Environment on the master branch causes this error, you must activate “Only run on a custom branch” checkbox and specify the branch you are working when Environment is setup.

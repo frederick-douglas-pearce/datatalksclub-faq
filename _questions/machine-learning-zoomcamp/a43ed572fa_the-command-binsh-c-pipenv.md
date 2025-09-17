@@ -23,5 +23,5 @@ Then, change it on your Dockerfile:
 
 FROM python:3.9.7-slim
 
-Added by
+Added by [Filipe Melo](https://github.com/lipinor)
 

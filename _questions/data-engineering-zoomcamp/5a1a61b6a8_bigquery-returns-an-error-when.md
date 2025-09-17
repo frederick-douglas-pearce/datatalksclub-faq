@@ -4,7 +4,7 @@ id: 5a1a61b6a8
 question: BigQuery returns an error when I try to run the dm_monthly_zone_revenue.sql
   model.
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2660
+sort_order: 2690
 ---
 
 R: After the second SELECT, change this line:

@@ -14,7 +14,7 @@ print(f'Average mark for the Homework is {avg:.3f}') - using F string
 
 Also there is pandas.Series. round idf you need to round values in the whole Series
 
-Please check the documentation
+Please check the documentation[[pandas.pydata.org](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.round.html#pandas.Series.round)](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.round.html#pandas.Series.round)
 
 Added by Olga Rudakova
 

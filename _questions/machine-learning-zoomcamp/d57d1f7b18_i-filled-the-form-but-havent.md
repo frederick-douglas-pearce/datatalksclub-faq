@@ -10,5 +10,5 @@ The process is automated now, so you should receive the email eventually. If you
 
 If you unsubscribed from our newsletter, you won't get course related updates too.
 
-But don't worry, it’s not a problem. To make sure you don’t miss anything, join the  in Slack and . This is enough to follow the course.
+But don't worry, it’s not a problem. To make sure you don’t miss anything, join the [#course -ml-zoomcamp channel](https://app.slack.com/client/T01ATQK62F8/C0288NJ5XSA) in Slack and [our telegram channel with announcements](https://t.me/mlzoomcamp). This is enough to follow the course.
 

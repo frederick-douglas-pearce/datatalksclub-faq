@@ -8,8 +8,7 @@ sort_order: 950
 
 If you’re using a  postgres  backend locally or remotely and you don’t want to delete the entire backend, you can run this script to permanently delete an experiment. I had a separate env.py file to retrieve my environment variables from.
 
-```
-import os
+```import os
 
 import sys
 

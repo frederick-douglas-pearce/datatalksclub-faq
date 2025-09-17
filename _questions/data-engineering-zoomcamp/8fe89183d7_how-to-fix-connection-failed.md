@@ -4,7 +4,7 @@ id: 8fe89183d7
 question: 'How to fix “connection failed: connection to server at "127.0.0.1", port
   5432 failed” error when setting up Postgres connection in pgAdmin?'
 section: 'Module 6: streaming with kafka'
-sort_order: 4160
+sort_order: 4190
 ---
 
 Instead of using “localhost” as the host name/address, try “postgres”, or “host.docker.internal” instead

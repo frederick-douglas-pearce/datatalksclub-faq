@@ -6,8 +6,7 @@ section: 1. Introduction to Machine Learning
 sort_order: 380
 ---
 
-Forward your ports in .ssh.
-Type “nano .ssh/config”
+Forward your ports in .ssh.Type “nano .ssh/config”
 
 And add “LocalForward 8888 localhost:8888” to forward your Jupyter.
 

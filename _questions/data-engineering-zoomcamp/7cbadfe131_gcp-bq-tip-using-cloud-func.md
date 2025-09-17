@@ -4,7 +4,7 @@ id: 7cbadfe131
 question: 'GCP BQ - Tip: Using Cloud Function to read csv.gz files from github directly
   to BigQuery in Google Cloud:'
 section: 'Module 3: Data Warehousing'
-sort_order: 2170
+sort_order: 2200
 ---
 
 There are multiple benefits of using Cloud Functions to automate tasks in Google Cloud.

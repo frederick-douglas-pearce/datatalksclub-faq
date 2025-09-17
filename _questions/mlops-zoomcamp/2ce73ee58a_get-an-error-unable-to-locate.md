@@ -4,7 +4,7 @@ id: 2ce73ee58a
 question: Get an error ‘Unable to locate credentials’ after running localstack with
   kinesis
 section: 'Module 6: Best practices'
-sort_order: 2220
+sort_order: 2230
 ---
 
 You may get an error ‘{'errorMessage': 'Unable to locate credentials', …’ from the print statement in test_docker.py after running localstack with kinesis.

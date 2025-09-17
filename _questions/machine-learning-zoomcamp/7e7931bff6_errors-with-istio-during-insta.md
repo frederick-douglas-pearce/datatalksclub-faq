@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 7e7931bff6
 question: Errors with istio during installation
 section: Projects (Midterm and Capstone)
-sort_order: 3690
+sort_order: 3700
 ---
 
 Problem description:
@@ -18,7 +18,7 @@ Check kubectl version with kubectl version
 
 Solution description
 
-Edit the file “quick_install.bash” by downloading it with curl without running bash. Edit the versions of Istio and Knative as per the matrix on the .
+Edit the file “quick_install.bash” by downloading it with curl without running bash. Edit the versions of Istio and Knative as per the matrix on the [KServe website](https://kserve.github.io/website/master/admin/serverless/serverless/#recommended-version-matrix).
 
 Run the bash script now.
 

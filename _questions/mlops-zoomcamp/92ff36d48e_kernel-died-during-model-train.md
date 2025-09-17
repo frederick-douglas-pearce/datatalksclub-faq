@@ -8,5 +8,5 @@ sort_order: 780
 
 While training the model in Jupyter Notebook ono Github Codespaces . You may get an error where the jupyter kernel dies. Simply upgrade the machine type in Codespaces from 8 cores to 14 cores. It is free to upgrade but be aware that you use up more hours .
 
-Added by :
+Added by :[ Abiodun Gbadamosi](https://github.com/AOGbadamosi2018)
 

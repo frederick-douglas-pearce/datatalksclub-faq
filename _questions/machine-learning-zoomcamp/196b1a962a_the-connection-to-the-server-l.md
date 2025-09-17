@@ -4,7 +4,7 @@ id: 196b1a962a
 question: The connection to the server localhost:8080 was refused - did you specify
   the right host or port?
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3530
+sort_order: 3540
 ---
 
 I ran into an issue where kubectl wasn't working.

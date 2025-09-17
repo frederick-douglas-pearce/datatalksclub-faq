@@ -4,10 +4,10 @@ id: ced9c0443e
 question: Where can I find other people’s projects to peer review them and where do
   I post mine for peer review? (cohort 2024).
 section: Miscellaneous
-sort_order: 4310
+sort_order: 4320
 ---
 
-The review assignments will be available on  after the first phase of the project is over -i.e. after the submission deadline. After that you will have one week to complete the review.
+The review assignments will be available on [CoursePlatform](https://courses.datatalks.club/ml-zoomcamp-2024/) after the first phase of the project is over -i.e. after the submission deadline. After that you will have one week to complete the review.
 
 Saturn Cloud errors (in Jupyter Notebook):
 

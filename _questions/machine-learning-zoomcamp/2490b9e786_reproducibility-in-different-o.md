@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 2490b9e786
 question: Reproducibility in different OS
 section: Miscellaneous
-sort_order: 4180
+sort_order: 4190
 ---
 
 When trying to rerun the docker file in Windows, as opposed to developing in WSL/Linux, I got the error of:

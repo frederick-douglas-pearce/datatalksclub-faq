@@ -4,7 +4,7 @@ id: 8bfd724e4f
 question: Compilation Error in test accepted_values_stg_green_tripdata_Payment_type__False___var_payment_type_values_
   (models/staging/schema.yml)  'NoneType' object is not iterable
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2780
+sort_order: 2810
 ---
 
 > in macro test_accepted_values (tests/generic/builtin.sql)

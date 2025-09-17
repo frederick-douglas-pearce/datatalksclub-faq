@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 5bf804473e
 question: Dockerizing lightgbm
 section: 'Module 4: Deployment'
-sort_order: 1720
+sort_order: 1730
 ---
 
 Problem description: lib_lightgbm.so Reason: image not found

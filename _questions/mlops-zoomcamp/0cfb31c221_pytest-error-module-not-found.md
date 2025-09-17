@@ -4,7 +4,7 @@ id: 0cfb31c221
 question: Pytest error ‘module not found’ when if using custom packages in the source
   code
 section: 'Module 6: Best practices'
-sort_order: 2300
+sort_order: 2310
 ---
 
 Problem description

@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 4d86e49240
 question: Are there any alternative to Evidently on cloud platforms ?
 section: 'Module 5: Monitoring'
-sort_order: 2130
+sort_order: 2140
 ---
 
 There are several alternatives to Evidently for monitoring machine learning models in the cloud. Here are a few options on popular cloud platforms:

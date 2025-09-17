@@ -8,7 +8,7 @@ sort_order: 640
 
 The dataset can be read directly to pandas dataframe from the github link using the technique shown below
 
-dfh=pd.read_csv("")
+dfh=pd.read_csv("[[raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)")
 
 Krishna Anand
 

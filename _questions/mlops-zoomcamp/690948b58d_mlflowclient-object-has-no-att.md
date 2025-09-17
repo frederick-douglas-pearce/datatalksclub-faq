@@ -6,7 +6,7 @@ section: 'Module 2: Experiment tracking'
 sort_order: 900
 ---
 
-and then removed in the later version
+[Since the version 1.29 the list_experiments method was deprecated](https://mlflow.org/docs/1.29.0/python_api/mlflow.client.html#mlflow.client.MlflowClient.list_experiments) and then removed in the later version
 
 You should use # Register the best model model_uri = f"runs:/{best_run.info.run_id}/model" mlflow.register_model(model_uri=model_uri, name="RandomForestBestModel") instead
 

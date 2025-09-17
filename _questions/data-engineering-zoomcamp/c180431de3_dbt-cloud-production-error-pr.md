@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: c180431de3
 question: 'DBT Cloud production error: prod dataset not available in location EU'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2440
+sort_order: 2470
 ---
 
 Problem: I am trying to deploy my DBT  models to production, using DBT Cloud. The data should live in BigQuery.  The dataset location is EU.  However, when I am running the model in production, a prod dataset is being create in BigQuery with a location US and the dbt invoke build is failing giving me "ERROR 404: porject.dataset:prod not available in location EU". I tried different ways to fix this. I am not sure if there is a more simple solution then creating my project or buckets in location US. Hope anyone can help here.

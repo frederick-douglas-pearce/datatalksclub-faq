@@ -18,11 +18,13 @@ If you just create some random folder with the name "xyz", it will also be consi
 
 a clear explanation below:
 
+[[Medium](https://vijayabhaskar96.medium.com/tutorial-image-classification-with-keras-flow-from-directory-and-generators-95f75ebe5720)](https://vijayabhaskar96.medium.com/tutorial-image-classification-with-keras-flow-from-directory-and-generators-95f75ebe5720)
+
 Added by Bhaskar Sarma
 
 Error with Tensorflow importing using saturn Cloud preconfigured template:
 
-TypeError: Unable to convert function return value to a Python type! The signature was 	() -> handle.
+TypeError: Unable to convert function return value to a Python type! The signature was () -> handle.
 
 Successful Dependency Reinstallation:
 

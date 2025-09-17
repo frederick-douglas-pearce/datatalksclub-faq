@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 05fc1b38f6
 question: 'Hadoop - Exception in thread "main" java.lang.UnsatisfiedLinkError: org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Ljava/lang/String;I)Z'
 section: 'Module 5: pyspark'
-sort_order: 3700
+sort_order: 3730
 ---
 
 If you are seeing this (or similar) error when attempting to write to parquet, it is likely an issue with your path variables.

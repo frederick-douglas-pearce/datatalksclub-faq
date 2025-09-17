@@ -5,7 +5,7 @@ question: 'Dataproc - ERROR: (gcloud.dataproc.jobs.submit.pyspark) The required 
   [project] is not currently set. It can be set on a per-command basis by re-running
   your command with the [--project] flag.'
 section: 'Module 5: pyspark'
-sort_order: 3720
+sort_order: 3750
 ---
 
 Fix is to set the flag like the error states. Get your project ID from your dashboard and set it like so:

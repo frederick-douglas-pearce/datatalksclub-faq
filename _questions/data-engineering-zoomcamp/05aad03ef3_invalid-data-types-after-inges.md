@@ -5,10 +5,10 @@ question: 'Invalid data types after Ingesting FHV data through parquet files: Co
   not parse SR_Flag as Float64,Couldn’t parse datetime column as timestamp,couldn’t
   handle NULL values in PULocationID,DOLocationID'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3160
+sort_order: 3190
 ---
 
-If you uploaded manually the fvh 2019 parquet files manually after downloading from  you may face errors regarding date types while loading the data in a landing table (say fhv_tripdata). Try to create an the external table with the schema defines as following and load each month in a loop.
+If you uploaded manually the fvh 2019 parquet files manually after downloading from [[d37ci6vzurychx.cloudfront.net](https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet)](https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet) you may face errors regarding date types while loading the data in a landing table (say fhv_tripdata). Try to create an the external table with the schema defines as following and load each month in a loop.
 
 -----Correct load with schema defination----will not throw error----------------------
 

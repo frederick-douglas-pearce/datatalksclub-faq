@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: a345ebd834
 question: 'Github actions: Permission denied error when executing script file'
 section: 'Module 6: Best practices'
-sort_order: 2320
+sort_order: 2330
 ---
 
 Problem description

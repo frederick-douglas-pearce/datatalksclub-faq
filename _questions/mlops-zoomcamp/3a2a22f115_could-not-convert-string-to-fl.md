@@ -36,9 +36,7 @@ rval = scope._impls[node.name](*args, **kwargs)
 
 ValueError: could not convert string to float: '0 int\n1   float\n2     hyperopt_param\n3       Literal{n_estimators}\n4       quniform\n5         Literal{10}\n6         Literal{50}\n7         Literal{1}'
 
-Solution: There are two plausible errors to this. Both are in the hpo.py file where the hyper-parameter tuning is run. The objective function should look like this.
-
-   def objective(params):
+Solution: There are two plausible errors to this. Both are in the hpo.py file where the hyper-parameter tuning is run. The objective function should look like this.   def objective(params):
 
 # It's important to set the "with" statement and the "log_params" function here
 

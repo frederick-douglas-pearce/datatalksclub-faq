@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 358cb2fd4d
 question: SQL - SELECT Zone FROM taxi_zones Error Column Zone doesn't exist
 section: 'Module 1: Docker and Terraform'
-sort_order: 1730
+sort_order: 1750
 ---
 
 It is inconvenient to use quotation marks all the time, so it is better to put the data to the database all in lowercase, so in Pandas after

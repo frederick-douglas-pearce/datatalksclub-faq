@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: '4693802714'
 question: 'Getting: Allocator ran out of memory errors?'
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3430
+sort_order: 3440
 ---
 
 If you are running tensorflow on your own machine and you start getting the following errors:
@@ -22,14 +22,9 @@ After doing this most of my issues went away. I say most because there was one i
 
 Added by Martin Uribe
 
-Problem with downloading    file
+Problem with downloading  [xception_v4_large_08_0.894.h5](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)  fileThe following old link is not valid anymore :[[GitHub](https://github.com/alexeygrigorev/mlbookcamp-code/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)](https://github.com/alexeygrigorev/mlbookcamp-code/releases/download/chapter7-model/xception_v4_large_08_0.894.h5)====>The new link to download the file is :
 
-The following old link is not valid anymore :
-
-
-
-
-====>	The new link to download the file is :
+[[GitHub](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model)](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model)
 
 Added by Sam
 

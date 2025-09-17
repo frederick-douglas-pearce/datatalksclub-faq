@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: e4bce3ff6b
 question: Error when running Kestra flow connecting to postgres.
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1840
+sort_order: 1870
 ---
 
 Error: org.postgresql.util.psqlexception the connection attempt failed due to this config on kestra flow -> jdbc:postgresql://host.docker.internal:5432/postgres-zoomcamp

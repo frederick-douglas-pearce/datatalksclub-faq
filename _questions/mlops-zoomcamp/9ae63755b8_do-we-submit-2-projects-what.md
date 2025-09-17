@@ -3,11 +3,10 @@ course: mlops-zoomcamp
 id: 9ae63755b8
 question: Do we submit 2 projects, what does attempt 1 and 2 mean?
 section: Capstone Project
-sort_order: 2430
+sort_order: 2440
 ---
 
-You only need to submit 1 project. 
-If the submission at the first attempt fails, you can improve it and re-submit during attempt#2 submission window.
+You only need to submit 1 project. If the submission at the first attempt fails, you can improve it and re-submit during attempt#2 submission window.
 
 If you want to submit 2 projects for the experience and exposure, you must use different datasets and problem statements.
 

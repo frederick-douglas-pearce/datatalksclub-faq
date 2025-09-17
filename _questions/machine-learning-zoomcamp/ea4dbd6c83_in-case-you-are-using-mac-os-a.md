@@ -26,5 +26,7 @@ Links: Put the web address (URL) here, and cURL will extract data from it and sa
 
 More about it at:
 
+[Curl Documentation](https://curl.se/docs/manpage.html)
+
 Added by David Espejo
 

@@ -11,14 +11,13 @@ sort_order: 1030
 
 Up restarting the same issue appears. Happens out of the blue on windows.
 
-Solution 1: Fixing DNS Issue (credit: ) this worked for me personally
+Solution 1: Fixing DNS Issue (credit: [reddit](https://www.reddit.com/r/docker/comments/p98xq6/docker_failed_to_start_exit_code_1/)) this worked for me personally
 
 reg add "HKLM\System\CurrentControlSet\Services\Dnscache" /v "Start" /t REG_DWORD /d "4" /f
 
 Restart your computer and then enable it with the following
 
-reg add "HKLM\System\CurrentControlSet\Services\Dnscache" /v "Start" /t REG_DWORD /d "2" /f
-Restart your OS again. It should work.
+reg add "HKLM\System\CurrentControlSet\Services\Dnscache" /v "Start" /t REG_DWORD /d "2" /fRestart your OS again. It should work.
 
 Solution 2: right click on running Docker icon (next to clock) and chose "Switch to Linux containers" n
 

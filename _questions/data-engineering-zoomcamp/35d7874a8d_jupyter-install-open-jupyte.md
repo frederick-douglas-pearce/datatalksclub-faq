@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 35d7874a8d
 question: Jupyter - Install, open Jupyter and convert Jupyter notebook to Python script
 section: 'Module 1: Docker and Terraform'
-sort_order: 1790
+sort_order: 1810
 ---
 
 Install and open Jupyter Notebook

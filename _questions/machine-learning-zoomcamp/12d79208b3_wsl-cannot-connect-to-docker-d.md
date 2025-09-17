@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 12d79208b3
 question: WSL Cannot Connect To Docker Daemon
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3450
+sort_order: 3460
 ---
 
 Due to the uncertainties associated with machines, sometimes you can get the error message like this when you try to run a docker command:

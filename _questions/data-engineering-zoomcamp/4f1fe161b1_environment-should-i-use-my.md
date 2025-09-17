@@ -17,7 +17,7 @@ However, if you prefer to set up a virtual machine, you may start with these fir
 
 Using GitHub Codespaces
 
-codespace
+[Setting up the environment on a cloud VM](https://www.youtube.com/watch?v=ae-CV2KfoN0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb) codespace
 
 I decided to work on a virtual machine because I have different laptops & PCs for my home & office, so I can work on this boot camp virtually anywhere.
 

@@ -4,7 +4,7 @@ id: 45bd267149
 question: “Parquet column 'ehail_fee' has type DOUBLE which does not match the target
   cpp_type INT64”
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2530
+sort_order: 2560
 ---
 
 Reason: Parquet files have their own schema. Some parquet files for green data have records with decimals in ehail_fee column.
@@ -32,4 +32,8 @@ pd.from_csv(..., dtype=type_dict)
 One obstacle is that the regular int64 pandas use (I think this is from the numpy library) does not accept null values (NaN, not a number). But you can use the pandas Int64 instead, notice capital ‘I’. The type_dict is a python dictionary mapping the column names to the dtypes.
 
 Sources:
+
+[[pandas.pydata.org](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)
+
+[Nullable integer data type — pandas 1.5.3 documentation](https://pandas.pydata.org/docs/user_guide/integer_na.html)
 

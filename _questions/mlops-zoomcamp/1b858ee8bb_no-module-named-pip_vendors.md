@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 1b858ee8bb
 question: No module named 'pip._vendor.six'
 section: 'Module 4: Deployment'
-sort_order: 1580
+sort_order: 1590
 ---
 
 During scikit-learn installation via the command:

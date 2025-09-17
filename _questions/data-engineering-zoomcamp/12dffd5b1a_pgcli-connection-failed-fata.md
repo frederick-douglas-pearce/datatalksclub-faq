@@ -21,9 +21,7 @@ Option 4: NEW SOLUTION: 27/01/2024
 
 PGCLI -connection failed: FATAL:  password authentication failed for user "root"
 
-If you’ve got the error above, it’s probably because you were just like me, closed the connection to the Postgres:13 image in the previous step of the tutorial, which is
-
-docker run -it \
+If you’ve got the error above, it’s probably because you were just like me, closed the connection to the Postgres:13 image in the previous step of the tutorial, which isdocker run -it \
 
 -e POSTGRES_USER=root \
 
@@ -43,9 +41,7 @@ So keep the database connected and you will be able to implement all the next st
 
 Option 5: Change the Port for Docker PostgreSQL
 
-After running the command: pgcli -h localhost -p 5432 -u root -d ny_taxi User get the enter password prompt and despite using the correct one, the error persist. This is provably due to user having installed Postgres in local machine. The easiest solution to this port conflict between host and container is by Changing the Port for Docker PostgreSQL: You can configure your Docker PostgreSQL container to use a different port. This way, it won't conflict with the PostgreSQL instance running on your local machine. When running the PostgreSQL container, map it to a different port on your host machine. E.g.:
-
- docker run -it \\
+After running the command: pgcli -h localhost -p 5432 -u root -d ny_taxi User get the enter password prompt and despite using the correct one, the error persist. This is provably due to user having installed Postgres in local machine. The easiest solution to this port conflict between host and container is by Changing the Port for Docker PostgreSQL: You can configure your Docker PostgreSQL container to use a different port. This way, it won't conflict with the PostgreSQL instance running on your local machine. When running the PostgreSQL container, map it to a different port on your host machine. E.g.: docker run -it \\
 
 -e POSTGRES_USER="root" \\
 

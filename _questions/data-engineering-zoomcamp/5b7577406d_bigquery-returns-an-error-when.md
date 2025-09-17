@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 5b7577406d
 question: 'BigQuery returns an error when i try to run ‘dbt run’:'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3020
+sort_order: 3050
 ---
 
 My taxi data was loaded into gcs with etl_web_to_gcs.py script that converts csv data into parquet. Then I placed raw data trips into external tables and when I executed dbt run I got an error message: Parquet column 'passenger_count' has type INT64 which does not match the target cpp_type DOUBLE. It is because several columns in files have different formats of data.

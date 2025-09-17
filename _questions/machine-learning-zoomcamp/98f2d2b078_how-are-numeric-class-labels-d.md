@@ -14,7 +14,7 @@ for subdir in sorted(os.listdir(directory)):
 
 …
 
-Reference: , line 563
+Reference: [[GitHub](https://github.com/keras-team/keras/blob/master/keras/preprocessing/image.py)](https://github.com/keras-team/keras/blob/master/keras/preprocessing/image.py), line 563
 
 This means folders will be read in alphabetical order. For example, in the case of a folder named dino, and another named dragon, dino will read first and will have class label 0, whereas dragon will be read in next and will have class label 1.
 

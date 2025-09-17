@@ -8,8 +8,7 @@ sort_order: 770
 
 Error
 
-A module that was compiled using NumPy 1.x cannot be run in NumPy 2.2.4 as it may crash.
-OR
+A module that was compiled using NumPy 1.x cannot be run in NumPy 2.2.4 as it may crash.OR
 
 AttributeError: module 'pyarrow' has no attribute '__version__'
 

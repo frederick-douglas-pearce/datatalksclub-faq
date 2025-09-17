@@ -16,5 +16,5 @@ Edit file /home/ubuntu/.jupyter/jupyter_notebook_config.py to add following line
 
 NotebookApp.ip = '*'
 
-Added by Atul Gupta ()
+Added by Atul Gupta ([samatul@gmail.com](mailto:samatul@gmail.com))
 

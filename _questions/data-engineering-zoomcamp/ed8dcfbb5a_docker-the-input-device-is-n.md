@@ -12,14 +12,15 @@ $ docker run -it ubuntu bash
 
 the input device is not a TTY. If you are using mintty, try prefixing the command with 'winpty'
 
+[error:](about:blank)
+
 Solution:
 
-Use winpty before docker command ()
+Use winpty before docker command ([source](https://stackoverflow.com/a/49965690))
 
 $ winpty docker run -it ubuntu bash
 
-You also can make an alias:
-echo "alias docker='winpty docker'" >> ~/.bashrc
+You also can make an alias:echo "alias docker='winpty docker'" >> ~/.bashrc
 
 OR
 

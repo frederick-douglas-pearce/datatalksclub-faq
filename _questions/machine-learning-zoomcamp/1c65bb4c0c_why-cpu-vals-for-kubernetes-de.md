@@ -4,7 +4,7 @@ id: 1c65bb4c0c
 question: Why cpu vals for Kubernetes deployment.yaml look like “100m” and “500m”?
   What does "m" mean?
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3560
+sort_order: 3570
 ---
 
 In Kubernetes resource specifications, such as CPU requests and limits, the "m" stands for milliCPU, which is a unit of computing power. It represents one thousandth of a CPU core.

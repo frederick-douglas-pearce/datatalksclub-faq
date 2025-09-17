@@ -4,7 +4,7 @@ id: cb04adb824
 question: Get an error “<botocore.awsrequest.AWSRequest object at 0x7fbaf2666280>”
   after running an AWS CLI command
 section: 'Module 6: Best practices'
-sort_order: 2240
+sort_order: 2250
 ---
 
 When executing an AWS CLI command (e.g., aws s3 ls), you can get the error <botocore.awsrequest.AWSRequest object at 0x7fbaf2666280>.

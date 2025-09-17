@@ -6,9 +6,7 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 1460
 ---
 
-The ny-rides.json is your private file in Google Cloud Platform (GCP). 
-
-And here’s the way to find it:
+The ny-rides.json is your private file in Google Cloud Platform (GCP). And here’s the way to find it:
 
 GCP -> Select project with your  instance -> IAM & Admin -> Service Accounts Keys tab -> add key, JSON as key type, then click create
 

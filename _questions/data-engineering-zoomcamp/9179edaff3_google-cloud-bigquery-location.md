@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 9179edaff3
 question: Google Cloud BigQuery Location Problems
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3060
+sort_order: 3090
 ---
 
 When running a query on BigQuery sometimes could appear a this table is not on the specified location error.

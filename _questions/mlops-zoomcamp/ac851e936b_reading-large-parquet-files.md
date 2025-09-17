@@ -14,11 +14,11 @@ IndexError: index 311297 is out of bounds for axis 0 with size 131743
 
 I solved it by performing the homework directly as a python script.
 
-Added by Ibraheem Taha ()
+Added by Ibraheem Taha ([ibraheemtaha91@gmail.com](mailto:ibraheemtaha91@gmail.com))
 
 You can try using the Pyspark library
 
-Answered by kamaldeen ()
+Answered by kamaldeen ([kamaldeen32@gmail.com](mailto:kamaldeen32@gmail.com))
 
-Parquet format can be read in chunks: . (IK)
+Parquet format can be read in chunks: [link](http://blog.clairvoyantsoft.com/efficient-processing-of-parquet-files-in-chunks-using-pyarrow-b315cc0c62f9). (IK)
 

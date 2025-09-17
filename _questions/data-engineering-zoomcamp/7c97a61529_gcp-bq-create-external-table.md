@@ -3,10 +3,12 @@ course: data-engineering-zoomcamp
 id: 7c97a61529
 question: GCP BQ - Create External Table using Python
 section: 'Module 3: Data Warehousing'
-sort_order: 2130
+sort_order: 2160
 ---
 
 Reference:
+
+[[cloud.google.com](https://cloud.google.com/bigquery/docs/external-data-cloud-storage)](https://cloud.google.com/bigquery/docs/external-data-cloud-storage)
 
 Solution:
 

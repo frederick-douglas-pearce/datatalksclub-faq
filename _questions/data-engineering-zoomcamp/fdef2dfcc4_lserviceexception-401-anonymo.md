@@ -5,7 +5,7 @@ question: 'lServiceException: 401 Anonymous caller does not have storage.objects
   access to the Google Cloud Storage bucket. Permission ''storage.objects.list'' denied
   on resource (or it may not exist).'
 section: 'Module 5: pyspark'
-sort_order: 3740
+sort_order: 3770
 ---
 
 This occurs because you are not logged in “gcloud auth login” and maybe the project id is not settled. Then type in a terminal:

@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 17eeab7562
 question: Loading the Image with PILLOW library and converting to numpy array
 section: Miscellaneous
-sort_order: 3840
+sort_order: 3850
 ---
 
 Pip install pillow - install pillow library

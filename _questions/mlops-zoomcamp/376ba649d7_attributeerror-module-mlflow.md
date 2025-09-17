@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 376ba649d7
 question: 'AttributeError: module ''mlflow'' has no attribute ''set_tracking_url'''
 section: 'Module 3: Orchestration'
-sort_order: 1490
+sort_order: 1500
 ---
 
 In a mage block, the python statement mlflow.set_tracking_uri() was returning an attribute error. This problem was observed when running mage in one container and mlflow in another. If you encounter this, consider that there may be something else in your project with the name “mlflow”.
@@ -22,9 +22,7 @@ Rename the folder it in your local drive (since it gets mounted in docker-compos
 
 Change the folder name in the dockerfile for the mlflow service (where you specify the backend-store-uri in the mlflow server command)
 
-Change the folder name in docker-compose.yml (when mounting the folder for the mlflow service), e.g. 
-Volumes:
-  - "${PWD}/mlflow_data:/home/mlflow_data/"
+Change the folder name in docker-compose.yml (when mounting the folder for the mlflow service), e.g. Volumes:  - "${PWD}/mlflow_data:/home/mlflow_data/"
 
 This should resolve the issue of confusing python with which mlflow to import.
 

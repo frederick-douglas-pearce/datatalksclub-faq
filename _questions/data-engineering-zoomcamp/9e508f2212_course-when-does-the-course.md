@@ -24,11 +24,11 @@ Don’t change the pages format (it should be “pageless”)
 
 Add name and date for reference, if possible
 
-The next cohort starts January 13th 2025. More info at .
+The next cohort starts January 13th 2025. More info at [DTC](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).
 
-Register before the course starts using this .
+Register before the course starts using this [link](https://airtable.com/shr6oVXeQvSI5HuWD).
 
-Joint the .
+Joint the [course Telegram channel with announcements](https://t.me/dezoomcamp).
 
 Don’t forget to register in DataTalks.Club's Slack and join the channel.
 

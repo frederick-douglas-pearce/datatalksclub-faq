@@ -10,7 +10,7 @@ When training the models, in the fit function, you can specify the number of wor
 
 The number of threads apparently also works for GPUs, and came very handy in google colab for the T4 GPU, since it was very very slow, and workers default value is 1.
 
-I changed the workers variable to 2560, following this thread in stackoverflow. I am using the free T4 GPU.  ()
+I changed the workers variable to 2560, following this thread in stackoverflow. I am using the free T4 GPU.  ([[Stack Overflow](https://stackoverflow.com/questions/68208398/how-to-find-the-number-of-cores-in-google-colabs-gpu)](https://stackoverflow.com/questions/68208398/how-to-find-the-number-of-cores-in-google-colabs-gpu))
 
 Added by Ibai Irastorza
 

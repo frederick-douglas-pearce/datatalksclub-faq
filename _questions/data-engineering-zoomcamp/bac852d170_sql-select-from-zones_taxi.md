@@ -4,7 +4,7 @@ id: bac852d170
 question: SQL - SELECT * FROM zones_taxi WHERE Zone='Astoria Zone'; Error Column Zone
   doesn't exist
 section: 'Module 1: Docker and Terraform'
-sort_order: 1720
+sort_order: 1740
 ---
 
 For the HW1 I encountered this issue. The solution is

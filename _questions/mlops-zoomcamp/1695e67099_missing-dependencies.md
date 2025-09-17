@@ -24,7 +24,7 @@ pyarrow
 
 seaborn
 
-pip install -r
+pip install -r [requirements.txt](https://github.com/CodeProcessor/mlops-zoomcamp-notes/blob/main/01-Intro/homework/requirements.txt)
 
 I have seen this error when using pandas.read_parquet(), the solution is to install pyarrow or fastparquet by doing !pip install pyarrow in the notebook
 

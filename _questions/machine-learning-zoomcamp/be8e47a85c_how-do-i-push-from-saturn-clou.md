@@ -10,6 +10,10 @@ Connecting your GPU on Saturn Cloud to Github repository is not compulsory, sinc
 
 Solution description: Follow the instructions in these github docs to create an SSH private and public key:
 
+[[GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-ke)](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+[y-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)[[GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=webui)](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=webui)
+
 Then the second video on this module about saturn cloud would show you how to add the ssh keys to secrets and authenticate through a terminal.
 
 Or alternatively, you could just use the public keys provided by Saturn Cloud by default. To do so, follow these steps:
@@ -22,7 +26,7 @@ Copy the default public key provided by Saturn Cloud
 
 Paste these key into the SSH keys section of your github repo
 
-Open a terminal on Saturn Cloud and run this command “ssh -T ”
+Open a terminal on Saturn Cloud and run this command “ssh -T [git@github.com](mailto:git@github.com)”
 
 You will receive a successful authentication notice.
 

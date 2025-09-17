@@ -5,7 +5,7 @@ question: DBT - I ran dbt run without specifying variable which gave me a table 
   100 rows. I ran again with the variable value specified but my table still has 100
   rows in BQ.
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2690
+sort_order: 2720
 ---
 
 Remove the dataset from BigQuery created by dbt and run again (with test disabled) to ensure the dataset created has all the rows.

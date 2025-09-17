@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 21e010f826
 question: 'GCP BQ - Error: Missing close double quote (") character'
 section: 'Module 3: Data Warehousing'
-sort_order: 2150
+sort_order: 2180
 ---
 
 To avoid this error you can upload data from Google Cloud Storage to BigQuery through BigQuery Cloud Shell using the command:

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 9f9a1b9e4f
 question: Terraform Teardown of BigQuery Dataset
 section: 'Module 1: Docker and Terraform'
-sort_order: 1710
+sort_order: 1730
 ---
 
 When running `terraform destroy`, the following error can occur:

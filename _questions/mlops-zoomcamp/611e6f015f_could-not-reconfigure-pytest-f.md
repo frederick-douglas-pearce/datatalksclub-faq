@@ -4,7 +4,7 @@ id: 611e6f015f
 question: Could not reconfigure pytest from zero after getting done with previous
   folder
 section: 'Module 6: Best practices'
-sort_order: 2260
+sort_order: 2270
 ---
 
 ![Image](images/mlops-zoomcamp/image_b6cec005.png)

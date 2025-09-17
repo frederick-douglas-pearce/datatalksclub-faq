@@ -10,5 +10,5 @@ Problem: The February dataset has been used as a validation/test dataset and bee
 
 Answer: The sparsematrix result from DictVectorizer shouldn’t be turned into an ndarray. After removing that part of the code, I ended up receiving a correct result .
 
-Tahina Mahatoky ()
+Tahina Mahatoky ([tahinadanny@gmail.com](mailto:tahinadanny@gmail.com))
 

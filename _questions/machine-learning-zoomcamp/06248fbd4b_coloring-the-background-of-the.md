@@ -7,7 +7,7 @@ section: 3. Machine Learning for Classification
 sort_order: 1040
 ---
 
-The background of any dataframe can be colored (not only the correlation matrix) based on the numerical values the dataframe contains by using the method .
+The background of any dataframe can be colored (not only the correlation matrix) based on the numerical values the dataframe contains by using the method [pandas.io.formats.style.Styler.background_graident](https://pandas.pydata.org/docs/reference/api/pandas.io.formats.style.Styler.background_gradient.html).
 
 Here an example on how to color the correlation matrix. A color map of choice can get passed, here ‘viridis’ is used.
 

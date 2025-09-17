@@ -12,5 +12,5 @@ Using the Python library wget you installed with pip, try python -m wget <url>
 
 Write the usual command and add --no-check-certificate at the end. So it should be:
 
-!wget<website_url> --no-check-certificate
+!wget[ ](https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv)<website_url> --no-check-certificate
 

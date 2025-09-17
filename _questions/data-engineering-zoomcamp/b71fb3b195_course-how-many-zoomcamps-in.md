@@ -6,7 +6,7 @@ section: General course-related questions
 sort_order: 60
 ---
 
-There are multiple Zoomcamps in a year, as of 2025. More info at .
+There are multiple Zoomcamps in a year, as of 2025. More info at [DTC Article](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).
 
 However, they are five separate courses, estimated to be during these months:
 

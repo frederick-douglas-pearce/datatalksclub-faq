@@ -4,7 +4,7 @@ id: 7889d2bad5
 question: 'SSH error in VS Code - “Could not establish connection to "de-zoomcamp":
   Permission denied (publickey).”'
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1810
+sort_order: 1830
 ---
 
 If you are using Windows, try copying the .ssh folder from the Linux file path to Windows. In the config file, use

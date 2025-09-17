@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 56d8f7ae9a
 question: Why is my table not being created in PostgreSQL when I submit a job?
 section: Project
-sort_order: 4170
+sort_order: 4200
 ---
 
 There could be a few reasons for this issue:

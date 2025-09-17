@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a1ea959c7e
 question: Module “kafka” not found when trying to run producer.py
 section: 'Module 6: streaming with kafka'
-sort_order: 3900
+sort_order: 3930
 ---
 
 Solution from Alexey: create a virtual environment and run requirements.txt and the python files in that environment.

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: d9072c7279
 question: Inconsistent number of rows when re-running fact_trips model
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2900
+sort_order: 2930
 ---
 
 This is due to the way the deduplication is done in the two staging files.

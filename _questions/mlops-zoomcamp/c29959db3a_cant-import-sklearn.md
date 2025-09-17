@@ -14,5 +14,5 @@ I had this issue and to solve it I did
 
 !pip install scikit-learn
 
-Joel Auccapuclla ()
+Joel Auccapuclla ([auccapuclla 2013@gmail.com](mailto:tahinadanny@gmail.com))
 

@@ -4,7 +4,7 @@ id: e058b2432a
 question: 'Cannot create a cluster: Insufficient ''SSD_TOTAL_GB'' quota. Requested
   500.0, available 250.0.'
 section: 'Module 5: pyspark'
-sort_order: 3850
+sort_order: 3880
 ---
 
 A: The master and worker nodes are allocated a maximum of 250 GB of memory combined. In the configuration section, adhere to the following specifications:

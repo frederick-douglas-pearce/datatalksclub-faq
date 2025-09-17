@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a340ad48c5
 question: Spark fails when reading from BigQuery and using `.show()` on `SELECT` queries
 section: 'Module 5: pyspark'
-sort_order: 3500
+sort_order: 3530
 ---
 
 ✅I got it working using `gcs-connector-hadoop-2.2.5-shaded.jar` and Spark 3.1

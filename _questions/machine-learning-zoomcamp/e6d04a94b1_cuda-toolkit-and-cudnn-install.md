@@ -3,20 +3,20 @@ course: machine-learning-zoomcamp
 id: e6d04a94b1
 question: CUDA toolkit and cuDNN Install for Tensorflow
 section: Miscellaneous
-sort_order: 4080
+sort_order: 4090
 ---
 
-Install Nvidia drivers: .
+Install Nvidia drivers: [[nvidia.com](https://www.nvidia.com/download/index.aspx)](https://www.nvidia.com/download/index.aspx).
 
 Windows:
 
-Install Anaconda prompt
+Install Anaconda prompt [[anaconda.com](https://www.anaconda.com/)](https://www.anaconda.com/)
 
 Two options:
 
 Install package ‘tensorflow-gpu’ in Anaconda
 
-Install the Tensorflow way
+Install the Tensorflow way [[tensorflow.org](https://www.tensorflow.org/install/pip#windows-native)](https://www.tensorflow.org/install/pip#windows-native)
 
 WSL/Linux:
 
@@ -24,7 +24,7 @@ WSL: Use the Windows Nvida drivers, do not touch that.
 
 Two options:
 
-Install the Tensorflow way
+Install the Tensorflow way [[tensorflow.org](https://www.tensorflow.org/install/pip#linux_1)](https://www.tensorflow.org/install/pip#linux_1)
 
 Make sure to follow step 4 to install CUDA by environment
 
@@ -32,9 +32,9 @@ Also run:
 
 echo ‘export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX/lib/> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
-Install CUDA toolkit 11.x.x
+Install CUDA toolkit 11.x.x [[developer.nvidia.com](https://developer.nvidia.com/cuda-toolkit-archive)](https://developer.nvidia.com/cuda-toolkit-archive)
 
-Install
+Install [[developer.nvidia.com](https://developer.nvidia.com/rdp/cudnn-download)](https://developer.nvidia.com/rdp/cudnn-download)
 
 Now you should be able to do training/inference with GPU in Tensorflow
 

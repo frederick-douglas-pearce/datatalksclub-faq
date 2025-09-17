@@ -18,8 +18,11 @@
     <h2>{{ section_name }}</h2>
     
     {% for question in questions %}
-    <div class="question">
-        <h3>{{ question.question }}</h3>
+    <div class="question" id="{{ question.id }}">
+        <h3>
+            <a href="#{{ question.id }}" class="anchor-link">#</a>
+            {{ question.question }}
+        </h3>
         <div class="question-content">
             {{ question.content | safe }}
         </div>

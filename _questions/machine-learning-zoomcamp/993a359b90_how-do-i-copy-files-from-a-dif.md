@@ -11,5 +11,5 @@ You can copy files from your local machine into a Docker container using the doc
 
 In the Dockerfile, you can provide the folder containing the files that you want to copy over. The basic syntax is as follows:
 
-COPY ["src/predict.py", "models/xgb_model.bin", "./"]											Gopakumar Gopinathan
+COPY ["src/predict.py", "models/xgb_model.bin", "./"]Gopakumar Gopinathan
 

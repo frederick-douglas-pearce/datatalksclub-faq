@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 84f10086ab
 question: 'Import pyspark - Error: No Module named ‘pyspark’'
 section: 'Module 5: pyspark'
-sort_order: 3340
+sort_order: 3370
 ---
 
 Ensure that your `PYTHONPATH` is set correctly to include the PySpark library. You can check if PySpark is pointing to the correct location by running:

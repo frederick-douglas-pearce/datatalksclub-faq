@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 0f2a26772e
 question: Python - Generators in python
 section: 'Module 3: Data Warehousing'
-sort_order: 2380
+sort_order: 2410
 ---
 
 A generator is a function in python that returns an iterator using the yield keyword.

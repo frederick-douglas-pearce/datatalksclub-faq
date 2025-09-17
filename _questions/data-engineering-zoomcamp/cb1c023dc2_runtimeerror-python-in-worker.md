@@ -5,7 +5,7 @@ question: 'RuntimeError: Python in worker has different version 3.11 than that i
   driver 3.10, PySpark cannot run with different minor versions. Please check environment
   variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.'
 section: 'Module 5: pyspark'
-sort_order: 3820
+sort_order: 3850
 ---
 
 import os
@@ -16,5 +16,5 @@ os.environ['PYSPARK_PYTHON'] = sys.executable
 
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
-Dataproc Pricing:
+Dataproc Pricing: [[cloud.google.com](https://cloud.google.com/dataproc/pricing#on_gke_pricing)](https://cloud.google.com/dataproc/pricing#on_gke_pricing)
 

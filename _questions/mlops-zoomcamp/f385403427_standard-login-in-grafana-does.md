@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: f385403427
 question: Standard login in Grafana does not work
 section: 'Module 5: Monitoring'
-sort_order: 2000
+sort_order: 2010
 ---
 
 When you try to login in Grafana with standard requisites (admin/admin) it throw up an error.

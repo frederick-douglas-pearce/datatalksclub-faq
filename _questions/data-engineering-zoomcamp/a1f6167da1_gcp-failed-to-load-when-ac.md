@@ -7,5 +7,5 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 1470
 ---
 
-You likely didn’t enable the .
+You likely didn’t enable the [Compute Engine API](https://console.cloud.google.com/marketplace/details/google/compute.googleapis.com).
 

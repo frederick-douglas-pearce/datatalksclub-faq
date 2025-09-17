@@ -4,7 +4,7 @@ id: 590e5d8c20
 question: 'Py4J Error - ModuleNotFoundError: No module named ''py4j'' (Solve with
   latest version)'
 section: 'Module 5: pyspark'
-sort_order: 3410
+sort_order: 3440
 ---
 
 If below does not work, then download the latest available py4j version with

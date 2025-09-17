@@ -4,7 +4,7 @@ id: dc51ef9830
 question: DBT Deploy - This dbt Cloud run was cancelled because a valid dbt project
   was not found.
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3070
+sort_order: 3100
 ---
 
 This happens because we have moved the dbt project to another directory on our repo.

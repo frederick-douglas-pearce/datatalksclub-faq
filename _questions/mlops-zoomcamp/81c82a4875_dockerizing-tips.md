@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 81c82a4875
 question: Dockerizing tips
 section: 'Module 4: Deployment'
-sort_order: 1670
+sort_order: 1680
 ---
 
 Ensure the correct image is being used to derive from.

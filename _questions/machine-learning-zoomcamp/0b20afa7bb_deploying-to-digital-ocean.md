@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 0b20afa7bb
 question: Deploying to Digital Ocean
 section: Miscellaneous
-sort_order: 4190
+sort_order: 4200
 ---
 
 You may quickly deploy your project to DigitalOcean App Cloud. The process is relatively straightforward. The deployment costs about 5 USD/month. The container needs to be up until the end of the project evaluation.

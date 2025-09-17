@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: f48b484cd4
 question: Embedding dlt into Apache Airflow
 section: Workshop 1 - dlthub
-sort_order: 4450
+sort_order: 4480
 ---
 
 from airflow import DAG

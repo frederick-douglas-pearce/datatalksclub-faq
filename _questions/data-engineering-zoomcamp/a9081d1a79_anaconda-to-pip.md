@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a9081d1a79
 question: Anaconda to PIP
 section: 'Module 1: Docker and Terraform'
-sort_order: 1780
+sort_order: 1800
 ---
 
 To get a pip-friendly requirements.txt file file from Anaconda use

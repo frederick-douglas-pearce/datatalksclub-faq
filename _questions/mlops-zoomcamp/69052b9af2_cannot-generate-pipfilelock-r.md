@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 69052b9af2
 question: Cannot generate pipfile.lock raise InstallationError( pip9.exceptions.InstallationError)
 section: 'Module 4: Deployment'
-sort_order: 1690
+sort_order: 1700
 ---
 
 Problem description cannot generate pipfile.lock raise InstallationError( pip9.exceptions.InstallationError: Command "python setup.py egg_info" failed with error code 1

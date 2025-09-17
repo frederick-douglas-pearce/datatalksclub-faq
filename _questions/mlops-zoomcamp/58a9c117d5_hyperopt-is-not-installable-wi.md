@@ -30,7 +30,7 @@ It is probably because your conda is out of date. You can update Conda with
 
 $conda update -n base -c defaults conda
 
-If that doesn’t work you can always install it via, which is the advice from the
+If that doesn’t work you can always install it via, which is the advice from the [conda page](https://anaconda.org/intel/hyperopt)
 
 $conda install intel::hyperopt
 

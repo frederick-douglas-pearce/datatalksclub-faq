@@ -3,16 +3,12 @@ course: data-engineering-zoomcamp
 id: 7be69bdcb4
 question: Loading Dlt Exports from GCS Filesystems
 section: Workshop 1 - dlthub
-sort_order: 4470
+sort_order: 4500
 ---
 
-When using the filesystem destination, you may have issues reading the files exported because dlt will by default compress the files. 
+When using the filesystem destination, you may have issues reading the files exported because dlt will by default compress the files. If you are using loader_file_format="parquet" then BigQuery should cope with this compression OK. If you want to use jsonl or csv format however, then you may need to disable file compression to avoid issues with reading the files directly in BigQuery. To do this set the following config:[normalize.data_writer]
 
-If you are using loader_file_format="parquet" then BigQuery should cope with this compression OK. If you want to use jsonl or csv format however, then you may need to disable file compression to avoid issues with reading the files directly in BigQuery. To do this set the following config:
-
-[normalize.data_writer]
-
-disable_compression = true   There is further information at
+disable_compression = true   There is further information at [[dlthub.com](https://dlthub.com/docs/dlt-ecosystem/destinations/filesystem#file-compression)](https://dlthub.com/docs/dlt-ecosystem/destinations/filesystem#file-compression)
 
 [WARNING]: Test 'test.taxi_rides_ny.relationships_stg_yellow_tripdata_dropoff_locationid__locationid__ref_taxi_zone_lookup_csv_.085c4830e7' (models/staging/schema.yml) depends on a node named 'taxi_zone_lookup.csv' in package '' which was not found
 

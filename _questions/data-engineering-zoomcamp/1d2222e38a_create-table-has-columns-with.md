@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 1d2222e38a
 question: CREATE TABLE has columns with duplicate name locationid.
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2920
+sort_order: 2950
 ---
 
 This error could result if you are using some select * query without mentioning the name of table for ex:

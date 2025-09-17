@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 7efbf0d444
 question: Chart for classes and predictions
 section: Miscellaneous
-sort_order: 4050
+sort_order: 4060
 ---
 
 How to visualize the predictions per classes after training a neural net

@@ -12,5 +12,5 @@ Even when an EC2 instance is stopped, there WILL be other charges that are incur
 
 You can set up billing alerts. (I've never done this, so no advice on how to do this).
 
-(Question by: Akshit Miglani () and Answer by Anna Vasylytsya)
+(Question by: Akshit Miglani ([akshit.miglani09@gmail.com](mailto:akshit.miglani09@gmail.com)) and Answer by Anna Vasylytsya)
 

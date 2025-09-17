@@ -7,5 +7,5 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 940
 ---
 
-Installing pass via ‘sudo apt install pass’ helped to solve the issue. More about this can be found here:
+Installing pass via ‘sudo apt install pass’ helped to solve the issue. More about this can be found here: [[GitHub](https://github.com/moby/buildkit/issues/1078)](https://github.com/moby/buildkit/issues/1078)
 

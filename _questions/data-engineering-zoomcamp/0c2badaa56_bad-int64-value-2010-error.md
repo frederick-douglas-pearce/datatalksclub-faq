@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 0c2badaa56
 question: 'Bad int64 value: 2.0/1.0 error'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2940
+sort_order: 2970
 ---
 
 You might encounter this when building the fact_trips.sql model. The issue may be with the payment_type_description field.

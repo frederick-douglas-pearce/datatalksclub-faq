@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: aeaede4fd1
 question: How do I properly authenticate a Google Cloud Service Account in Kestra?
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1900
+sort_order: 1930
 ---
 
 Several authentication methods are available;

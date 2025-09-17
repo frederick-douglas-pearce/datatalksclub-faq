@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: fd11200ead
 question: How to see the model in the docker container in app/?
 section: 'Module 4: Deployment'
-sort_order: 1770
+sort_order: 1780
 ---
 
 If anyone is troubleshooting or just interested in seeing the model listed on the image svizor/zoomcamp-model:mlops-3.10.0-slim.

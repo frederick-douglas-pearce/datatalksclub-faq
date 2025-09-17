@@ -3,12 +3,10 @@ course: data-engineering-zoomcamp
 id: e3ce42af1a
 question: How do you read data stored in gcs on pandas with your local computer?
 section: 'Module 5: pyspark'
-sort_order: 3640
+sort_order: 3670
 ---
 
-To do this
-pip install gcsfs,
+To do thispip install gcsfs,
 
-Thereafter copy the uri path to the file and use 
-df = pandas.read_csc(gs://path)
+Thereafter copy the uri path to the file and use df = pandas.read_csc(gs://path)
 

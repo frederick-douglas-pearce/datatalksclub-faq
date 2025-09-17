@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a32ed35da6
 question: Dim_zones.sql Dataset was not found in location US When Running fact_trips.sql
 section: 'Module 3: Data Warehousing'
-sort_order: 2270
+sort_order: 2300
 ---
 
 To solve this error mention the location = US when creating the dim_zones table

@@ -4,7 +4,7 @@ id: d01cbfa9cb
 question: 'Java Kafka: <project_name>-1.0-SNAPSHOT.jar errors: package xxx does not
   exist even after gradle build'
 section: 'Module 6: streaming with kafka'
-sort_order: 4070
+sort_order: 4100
 ---
 
 In my set up, all of the dependencies listed in gradle.build were not installed in <project_name>-1.0-SNAPSHOT.jar.

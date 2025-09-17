@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 41463c387b
 question: Loading FHV Data goes into slumber using Mage?
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3200
+sort_order: 3230
 ---
 
 Try loading the data using jupyter notebooks in a local environment. There might be bandwidth issues with Mage.

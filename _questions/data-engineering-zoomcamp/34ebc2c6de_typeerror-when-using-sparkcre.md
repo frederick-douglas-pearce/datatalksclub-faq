@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 34ebc2c6de
 question: TypeError when using spark.createDataFrame function on a pandas df
 section: 'Module 5: pyspark'
-sort_order: 3650
+sort_order: 3680
 ---
 
 Error:

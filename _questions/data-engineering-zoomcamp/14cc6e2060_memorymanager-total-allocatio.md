@@ -4,13 +4,12 @@ id: 14cc6e2060
 question: 'MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of
   heap memory'
 section: 'Module 5: pyspark'
-sort_order: 3660
+sort_order: 3690
 ---
 
 Default executor memory is 1gb. This error appeared when working with the homework dataset.
 
-Error: MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
-Scaling row group sizes to 95.00% for 8 writers
+Error: MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memoryScaling row group sizes to 95.00% for 8 writers
 
 Solution:
 

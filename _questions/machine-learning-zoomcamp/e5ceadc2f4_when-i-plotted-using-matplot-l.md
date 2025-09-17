@@ -6,7 +6,7 @@ question: 'When I plotted using Matplot lib to check if median has a tail, I got
   and will be removed in a future version. Use isinstance(dtype, CategoricalDtype)
   instead'
 section: Miscellaneous
-sort_order: 4170
+sort_order: 4180
 ---
 
 You can probably resolve this by installing the latest version of Pandas. You can do this conveniently from a Jupyter code cell by writing:

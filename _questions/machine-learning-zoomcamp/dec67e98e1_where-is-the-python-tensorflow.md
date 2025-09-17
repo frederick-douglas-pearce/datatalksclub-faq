@@ -6,7 +6,7 @@ section: 8. Neural Networks and Deep Learning
 sort_order: 2760
 ---
 
-This template is referred to in the video 8.1b
+This template is referred to in the video 8.1b [Setting up the Environment on Saturn Cloud](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/08-deep-learning/01b-saturn-cloud.md)
 
 but the location shown in the video is no longer correct.
 

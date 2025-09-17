@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 5b5d82a924
 question: Homework - dlt Exercise 3 - Merge a generator concerns
 section: Workshop 1 - dlthub
-sort_order: 4400
+sort_order: 4430
 ---
 
 After loading, you should have a total of 8 records, and ID 3 should have age 33
@@ -28,7 +28,7 @@ I'm having an issue with the dlt workshop notebook. The 'Load to Parquet file' s
 
 os.environ['DESTINATION__FILESYSTEM__BUCKET_URL'] = r'file:///content/.dlt/my_folder'
 
-url = ""
+url = "[[storage.googleapis.com](https://storage.googleapis.com/dtc_zoomcamp_api/yellow_tripdata_2009-06.jsonl)](https://storage.googleapis.com/dtc_zoomcamp_api/yellow_tripdata_2009-06.jsonl)"
 
 # Define your pipeline
 

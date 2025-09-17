@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 5c68f358c2
 question: Generate Evidently Chart in Grafana
 section: 'Module 5: Monitoring'
-sort_order: 2050
+sort_order: 2060
 ---
 
 Problem: Can we generate charts like Evidently inside Grafana?
@@ -12,7 +12,7 @@ Solution: In Grafana that would be a stat panel (just a number) and scatter plot
 
 If you want to recreate the Evidently visualizations externally, you can export the Evidently output in JSON with include_render=True
 
-(more details here ) and then parse information from it for your external visualization layer. To include everything you need for non-aggregated visuals, you should also add "raw_data": True  option (more details here ).
+(more details here [[docs.evidentlyai.com](https://docs.evidentlyai.com/user-guide/customization/json-dict-output)](https://docs.evidentlyai.com/user-guide/customization/json-dict-output)) and then parse information from it for your external visualization layer. To include everything you need for non-aggregated visuals, you should also add "raw_data": True  option (more details here [[docs.evidentlyai.com](https://docs.evidentlyai.com/user-guide/customization/report-data-aggregation)](https://docs.evidentlyai.com/user-guide/customization/report-data-aggregation)).
 
 Overall, this specific plot with under- and over-performance segments is more useful during debugging, so might be easier to access it ad hoc using Evidently.
 

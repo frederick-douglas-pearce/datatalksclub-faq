@@ -4,7 +4,7 @@ id: 16481ac8f7
 question: 'docker: Error response from daemon: mkdir C:\Program Files\Git\var: Access
   is denied.'
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1830
+sort_order: 1860
 ---
 
 Description:

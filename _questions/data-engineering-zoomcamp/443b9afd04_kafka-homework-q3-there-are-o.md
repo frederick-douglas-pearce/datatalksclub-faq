@@ -4,7 +4,7 @@ id: 443b9afd04
 question: 'Kafka homework Q3, there are options that support scaling concept more
   than the others:'
 section: 'Module 6: streaming with kafka'
-sort_order: 4000
+sort_order: 4030
 ---
 
 Ankush said we can focus on horizontal scaling option.

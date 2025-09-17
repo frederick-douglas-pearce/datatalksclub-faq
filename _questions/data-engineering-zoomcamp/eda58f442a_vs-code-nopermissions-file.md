@@ -4,7 +4,7 @@ id: eda58f442a
 question: '​​VS Code: NoPermissions (FileSystemError): Error: EACCES: permission denied
   (linux)'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3050
+sort_order: 3080
 ---
 
 If you have problems editing dbt_project.yml when using Docker after ‘docker-compose run dbt-bq-dtc init’, to change profile ‘taxi_rides_ny’ to 'bq-dbt-workshop’, just run:

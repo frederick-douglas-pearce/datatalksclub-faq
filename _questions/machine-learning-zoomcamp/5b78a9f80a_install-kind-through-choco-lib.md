@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 5b78a9f80a
 question: Install kind through choco library
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3510
+sort_order: 3520
 ---
 
 First you need to launch a powershell terminal with administrator privilege.

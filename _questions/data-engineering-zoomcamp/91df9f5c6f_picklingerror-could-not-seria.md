@@ -4,7 +4,7 @@ id: 91df9f5c6f
 question: 'PicklingError: Could not serialise object: IndexError: tuple index out
   of range.'
 section: 'Module 5: pyspark'
-sort_order: 3610
+sort_order: 3640
 ---
 
 Occurred while running : spark.createDataFrame(df_pandas).show()

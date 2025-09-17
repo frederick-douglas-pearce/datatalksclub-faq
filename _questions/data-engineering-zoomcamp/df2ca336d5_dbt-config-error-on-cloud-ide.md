@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: df2ca336d5
 question: 'DBT-Config ERROR on CLOUD IDE: No dbt_project.yml found at expected path'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2430
+sort_order: 2460
 ---
 
 (Lower left Corner after setting all connections to BQ and Github)
@@ -22,5 +22,5 @@ Solution: Initialize a project through UI.
 
 Importing git repo of an existing dbt project:
 
-Please read through these details for doing it:
+Please read through these details for doing it: [[docs.getdbt.com](https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url)](https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url)
 

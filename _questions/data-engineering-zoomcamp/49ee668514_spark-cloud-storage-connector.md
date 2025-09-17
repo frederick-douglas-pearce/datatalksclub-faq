@@ -3,14 +3,14 @@ course: data-engineering-zoomcamp
 id: 49ee668514
 question: Spark Cloud Storage connector
 section: 'Module 5: pyspark'
-sort_order: 3520
+sort_order: 3550
 ---
 
-: has anyone figured out how to read from GCP data lake instead of downloading all the taxi data again?
+[Link to Slack Thread ](https://datatalks-club.slack.com/archives/C01FABYF2RG/p1646013709648279?thread_ts=1646008578.136059&cid=C01FABYF2RG): has anyone figured out how to read from GCP data lake instead of downloading all the taxi data again?
 
 There’s a few extra steps to go into reading from GCS with PySpark
 
-1.)  IMPORTANT: Download the Cloud Storage connector for Hadoop here:
+1.)  IMPORTANT: Download the Cloud Storage connector for Hadoop here:[ [cloud.google.com](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage#clusters)](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage#clusters)
 
 As the name implies, this .jar file is what essentially connects PySpark with your GCS
 

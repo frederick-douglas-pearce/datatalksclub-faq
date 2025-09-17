@@ -7,7 +7,7 @@ section: 4. Evaluation Metrics for Classification
 sort_order: 1490
 ---
 
-When calculating the ROC AUC score using  the function expects two parameters “y_true” and “y_score”. So for each numerical value in the dataframe it will be passed as the “y_score” to the function and the target variable will get passed a “y_true” each time.
+When calculating the ROC AUC score using [sklearn.metrics.roc_auc_score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) the function expects two parameters “y_true” and “y_score”. So for each numerical value in the dataframe it will be passed as the “y_score” to the function and the target variable will get passed a “y_true” each time.
 
 Sylvia Schmitt
 

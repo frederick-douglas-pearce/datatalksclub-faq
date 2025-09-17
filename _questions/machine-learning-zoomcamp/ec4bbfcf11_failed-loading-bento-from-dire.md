@@ -4,7 +4,7 @@ id: ec4bbfcf11
 question: 'Failed loading Bento from directory /home/bentoml/bento: Failed to import
   module "service": No module named ''sklearn'''
 section: Miscellaneous
-sort_order: 3910
+sort_order: 3920
 ---
 
 I was getting the below error message when I was trying to create docker image using bentoml

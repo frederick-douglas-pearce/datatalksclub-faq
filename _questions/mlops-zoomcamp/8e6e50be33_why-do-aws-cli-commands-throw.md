@@ -5,7 +5,7 @@ question: Why do aws cli commands throw <botocore.awsrequest.AWSRequest object a
   0x74c89c3562d0> type messages when listing or creating aws s3 buckets with localstack
   ?
 section: 'Module 6: Best practices'
-sort_order: 2340
+sort_order: 2350
 ---
 
 If you encounter such messages when you try to list your aws s3 buckets for example (aws --endpoint-url=[localhost:4566](http://localhost:4566) s3 ls), you can try to configure AWS by setting up the same region, access key and secret key as the ones that appear in your docker-compose file.

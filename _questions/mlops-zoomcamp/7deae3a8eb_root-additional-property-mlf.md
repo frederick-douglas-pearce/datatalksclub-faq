@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 7deae3a8eb
 question: (root) Additional property mlflow is not allowed
 section: 'Module 3: Orchestration'
-sort_order: 1440
+sort_order: 1450
 ---
 
 This error means that you are not writing below server on Docker Compose file. To solve the issue

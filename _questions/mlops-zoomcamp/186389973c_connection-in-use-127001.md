@@ -20,6 +20,10 @@ kill 13580
 
 where 13580  represents the process number.
 
+[Source](https://stackoverflow.com/questions/60531166/how-to-safely-shutdown-mlflow-ui#:~:text=I%20also%20met%20a%20similar,and%20kill%20%5BPID%5D%20manually.)
+
+[warrie.warrieus@gmail.com](mailto:warrie.warrieus@gmail.com)
+
 Or by executing the following command it will kill all the processes using port 5000:
 
 >> sudo fuser -k 5000/tcp

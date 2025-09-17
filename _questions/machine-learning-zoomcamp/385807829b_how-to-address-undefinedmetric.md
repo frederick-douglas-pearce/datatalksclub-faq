@@ -21,14 +21,9 @@ Just as shown below:
 
 from sklearn.metrics import f1_score, precision_score, recall_score
 
-# For precision score 
-precision = precision_score(y_true, y_pred, average='weighted', zero_division=’warn’) 
+# For precision score precision = precision_score(y_true, y_pred, average='weighted', zero_division=’warn’) # For recall score recall = recall_score(y_true, y_pred, average='weighted', zero_division=0)
 
-# For recall score 
-recall = recall_score(y_true, y_pred, average='weighted', zero_division=0)
-
-# For f1-score
-f1 = f1_score(y_true, y_pred, average='weighted', zero_division=0)
+# For f1-scoref1 = f1_score(y_true, y_pred, average='weighted', zero_division=0)
 
 (added by Jon Areas)
 

@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: b389358dc7
 question: How to install Conda environment in my local machine?
 section: Miscellaneous
-sort_order: 4130
+sort_order: 4140
 ---
 
 You don’t install a conda environment. First you create it, then you activate it.
@@ -22,7 +22,7 @@ You can verify that it worked if you see (ml-zoomcamp) prepended to your command
 
 Note:
 
-The answer above assumes Anaconda has already been installed on your local machine. If this is not the case, you can download it from . After installing it, you can verify it succeeded with the following command in a terminal: conda --version.
+The answer above assumes Anaconda has already been installed on your local machine. If this is not the case, you can download it from [Anaconda’s download page](https://www.anaconda.com/download). After installing it, you can verify it succeeded with the following command in a terminal: conda --version.
 
 (added by Kemal Dahha)
 

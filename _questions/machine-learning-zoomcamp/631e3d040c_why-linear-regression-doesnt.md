@@ -16,7 +16,7 @@ A: linear regression is a pretty simple model, it neither can nor should fit 100
 
 As our model is linear, how would you draw a line to fit all the "dots"?
 
-You could "fit" all the "dots" on this pic using something like  (non-linear least squares) if you wanted to, but imagine how it would perform on previously unseen data.
+You could "fit" all the "dots" on this pic using something like [scipy.optimize.curve_fit](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) (non-linear least squares) if you wanted to, but imagine how it would perform on previously unseen data.
 
 Added by Andrii Larkin
 

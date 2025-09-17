@@ -4,7 +4,7 @@ id: adaf994857
 question: "Replace: \n{{ dbt_utils.surrogate_key([ \n     field_a, \n     field_b,\
   \ \n     field_c,\n     …,\n     field_z     \n]) }}"
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2670
+sort_order: 2700
 ---
 
 For this instead:

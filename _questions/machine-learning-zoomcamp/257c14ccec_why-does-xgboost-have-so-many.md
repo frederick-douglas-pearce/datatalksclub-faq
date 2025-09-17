@@ -21,5 +21,5 @@ Begin with these parameters before exploring others like gamma and min_child_wei
 
 (added by David Peterson)
 
-This section is moved to
+This section is moved to Projects
 

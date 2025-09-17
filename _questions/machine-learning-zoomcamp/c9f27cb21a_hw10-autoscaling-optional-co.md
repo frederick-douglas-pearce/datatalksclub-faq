@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: c9f27cb21a
 question: HW10 Autoscaling (optional) command does not work
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3670
+sort_order: 3680
 ---
 
 This command never worked:

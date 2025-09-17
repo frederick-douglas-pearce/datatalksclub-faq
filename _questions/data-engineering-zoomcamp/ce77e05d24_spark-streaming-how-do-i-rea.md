@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: ce77e05d24
 question: Spark Streaming - How do I read from multiple topics in the same Spark Session
 section: Project
-sort_order: 4230
+sort_order: 4260
 ---
 
 Initiate a Spark Session

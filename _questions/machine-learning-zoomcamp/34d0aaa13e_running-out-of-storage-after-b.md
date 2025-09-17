@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 34d0aaa13e
 question: Running out of storage after building many docker images
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3540
+sort_order: 3550
 ---
 
 Problem description
@@ -24,7 +24,7 @@ It turns out that deleting docker images does not actually free up any space as 
 
 > docker system prune
 
-See also:
+See also: [[Stack Overflow](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)
 
 Added by Konrad Mühlberg
 

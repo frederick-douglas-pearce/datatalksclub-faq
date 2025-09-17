@@ -4,7 +4,7 @@ id: e00253e2df
 question: Fix Out of Memory error while orchestrating the workflow on a ML Pipeline
   for a high volume dataset.
 section: 'Module 4: Deployment'
-sort_order: 1530
+sort_order: 1540
 ---
 
 We come across situations in data transformation & pre-processing as well as model training in a ML pipeline where we need to handle dataset of high dimensionality or/and high cardinality (usually millions). And we often end up with Out of Memory (OOM) errors like below when the flow is running:

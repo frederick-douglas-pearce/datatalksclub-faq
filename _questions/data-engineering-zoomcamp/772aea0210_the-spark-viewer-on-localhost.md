@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 772aea0210
 question: The spark viewer on localhost:4040 was not showing the current run
 section: 'Module 5: pyspark'
-sort_order: 3470
+sort_order: 3500
 ---
 
 ✅Solution: I had two notebooks running, and the one I wanted to look at had opened a port on localhost:4041.
@@ -12,6 +12,5 @@ If a port is in use, then Spark uses the next available port number. It can be e
 
 You can run spark.sparkContext.uiWebUrl
 
-and result will be some like
-'[172.19.10.61:4041'](http://172.19.10.61:4041')
+and result will be some like'[172.19.10.61:4041'](http://172.19.10.61:4041')
 

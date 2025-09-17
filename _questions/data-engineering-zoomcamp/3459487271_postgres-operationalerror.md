@@ -23,7 +23,7 @@ Other solution that worked:
 
 Changing `POSTGRES_USER=juroot` to `PGUSER=postgres`
 
-Based on this:
+Based on this: [postgres with docker compose gives FATAL: role "root" does not exist error - Stack Overflow](https://stackoverflow.com/questions/60193781/postgres-with-docker-compose-gives-fatal-role-root-does-not-exist-error)
 
 Also `docker compose down`, removing folder that had postgres volume, running `docker compose up` again.
 

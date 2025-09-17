@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 1f4fd984f5
 question: Data type errors when ingesting with parquet files
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2890
+sort_order: 2920
 ---
 
 The easiest way to avoid these errors is by ingesting the relevant data in a .csv.gz file type. Then, do:

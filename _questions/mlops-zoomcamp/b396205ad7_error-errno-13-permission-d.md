@@ -4,7 +4,7 @@ id: b396205ad7
 question: 'Error “[Errno 13] Permission denied: ''/home/ubuntu/.aws/credentials’”
   when running any aws command'
 section: 'Module 6: Best practices'
-sort_order: 2380
+sort_order: 2390
 ---
 
 After installing awscliv2 in linux you can get this error every time you try to run an aws command that needs to use the credentials. For example, if you run aws configure, you can insert the key and secret but finally you receive the error message.

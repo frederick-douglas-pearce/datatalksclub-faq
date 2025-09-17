@@ -5,7 +5,7 @@ question: 'Why do I get a “ValueError: The truth value of a DataFrame is ambig
   Use a.empty, a.bool(), a.item(), a.any() or a.all()” error when doing unit test
   that involves comparing two data frames?'
 section: 'Module 6: Best practices'
-sort_order: 2400
+sort_order: 2410
 ---
 
 Solution: Follow the tip: When you compare two Pandas DataFrames, the result is also a DataFrame. The same is true for Pandas Series. Also, a DataFrame could be turned into a list of dictionaries.

@@ -4,7 +4,7 @@ id: 6435e27634
 question: 'Ingestion: When attempting to use the provided quick script to load trip
   data into GCS, you receive error Access Denied from the S3 bucket'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2540
+sort_order: 2570
 ---
 
 If the provided URL isn’t working for you ([nyc-tlc.s3.amazonaws.com](https://nyc-tlc.s3.amazonaws.com/trip+data)/):

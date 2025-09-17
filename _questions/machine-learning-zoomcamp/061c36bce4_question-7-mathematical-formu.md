@@ -12,6 +12,12 @@ The initial problem  can be solved by this, where a Matrix X is multiplied by so
 
 Additional reading and videos:
 
+[Ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)
+
+[Multiple Linear Regression in Matrix Form](https://www.youtube.com/watch?v=jZ_Hq-7ifk8)
+
+[Pseudoinverse Solution to OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares)
+
 Added by Sylvia Schmitt
 
 with commends from Dmytro Durach

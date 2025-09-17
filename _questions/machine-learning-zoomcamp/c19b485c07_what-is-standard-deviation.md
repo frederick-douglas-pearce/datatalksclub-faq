@@ -12,7 +12,7 @@ One of the most important characteristics of the normal distribution is that mea
 
 (Tatiana Dávila)
 
-In statistics, the standard deviation is a measure of the amount of variation or dispersion of a set of values. A low standard deviation indicates that the values tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the values are spread out over a wider range. [] The formula to calculate standard deviation is:
+In statistics, the standard deviation is a measure of the amount of variation or dispersion of a set of values. A low standard deviation indicates that the values tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the values are spread out over a wider range. [[Wikipedia](https://en.wikipedia.org/wiki/Standard_deviation)] The formula to calculate standard deviation is:
 
 ![Image](images/machine-learning-zoomcamp/image_88209e28.png)
 

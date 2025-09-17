@@ -3,12 +3,12 @@ course: machine-learning-zoomcamp
 id: 02bb92c002
 question: How to install easily kubectl on windows ?
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3500
+sort_order: 3510
 ---
 
-To install kubectl on windows using the terminal in vscode (powershell), I followed this tutorial:
+To install kubectl on windows using the terminal in vscode (powershell), I followed this tutorial: [[Medium](https://medium.com/@ggauravsigra/install-kubectl-on-windows-af77da2e6fff)](https://medium.com/@ggauravsigra/install-kubectl-on-windows-af77da2e6fff)
 
-I first downloaded kubectl with curl, with these command lines:
+I first downloaded kubectl with curl, with these command lines: [[kubernetes.io](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-kubectl-binary-with-curl-on-windows)](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-kubectl-binary-with-curl-on-windows)
 
 At step 3, I followed the tutorial with the copy of the exe file in a specific folder on C drive.
 

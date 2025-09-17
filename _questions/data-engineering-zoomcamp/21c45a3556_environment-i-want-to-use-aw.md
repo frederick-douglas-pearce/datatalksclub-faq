@@ -10,7 +10,7 @@ Yes, you can. Just remember to adapt all the information on the videos to AWS. B
 
 The problem would be when you need help. You’d need to rely on fellow coursemates who also use AWS (or have experience using it before), which might be in smaller numbers than those learning the course with GCP.
 
-See the  channel on slack
+See the [de-course-aws](https://datatalks-club.slack.com/archives/C04J4U9NK46) channel on slack
 
-Also see ?
+Also see Is it possible to use x tool instead of the one tool you use?
 

@@ -4,7 +4,7 @@ id: 7f18a34896
 question: How can I work with very large datasets, e.g. the New York Yellow Taxi dataset,
   with over a million rows?
 section: Miscellaneous
-sort_order: 4210
+sort_order: 4220
 ---
 
 You can consider several different approaches:
@@ -17,7 +17,7 @@ Optimizing data types: Pandas’ automatic data type inference (when reading dat
 
 Using Dask, an open-source python project which parallelizes Numpy and Pandas.
 
-(see, e.g. )
+(see, e.g. [[vantage-ai.com](https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas)](https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas))
 
 By Rileen Sinha
 

@@ -5,7 +5,7 @@ question: 'Solution: The notebook in the repo is missing some code, Include the 
   to log the dict_vectorizer. If the error is after using pipelines, update the predict
   function as seen in the video.'
 section: 'Module 4: Deployment'
-sort_order: 1750
+sort_order: 1760
 ---
 
 Added by Oluwadara Adedeji

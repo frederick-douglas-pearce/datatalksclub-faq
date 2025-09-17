@@ -14,12 +14,11 @@ You must remember that you would have a different IP public address every time y
 
 Additionally, AWS enables you to set up an automatic email alert if a predefined budget is exceeded.
 
-.
+[Here is a tutorial to set this up](https://www.c-sharpcorner.com/article/set-up-an-iam-user-and-the-alert-for-budget-in-aws/).
 
-Also, you can estimate the cost yourself, using  (to use it you don’t even need to be logged in).
-At the time of writing (20.05.2023) t3a.xlarge instance with 2 hr/day usage (which translates to 10 hr/week that should be enough to complete the course) and 30GB EBS monthly cost is 10.14 USD
+Also, you can estimate the cost yourself, using [AWS pricing calculator](https://calculator.aws/#/) (to use it you don’t even need to be logged in).At the time of writing (20.05.2023) t3a.xlarge instance with 2 hr/day usage (which translates to 10 hr/week that should be enough to complete the course) and 30GB EBS monthly cost is 10.14 USD
 
-Here’s
+Here’s [a link to the estimate](https://calculator.aws/#/estimate?id=b24f75864e0af54cbfeeb6083e1c74c605923c65)
 
-Added by Alex Litvinov ()
+Added by Alex Litvinov ([aaalex.lit@gmail.com](mailto:aaalex.lit@gmail.com))
 

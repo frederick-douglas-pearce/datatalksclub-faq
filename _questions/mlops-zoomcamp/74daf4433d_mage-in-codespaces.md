@@ -18,8 +18,7 @@ Error response from daemon: invalid volume specification: '/workspaces/mage-mlop
 
 Solution for (1) & (2): stay tuned…still testing
 
-docker info and docker –version runs fine. 
-But when I do docker compose down, stop codespaces, and reconnect, the errors went away. Not sure if it is reproducible for everyone, though.
+docker info and docker –version runs fine. But when I do docker compose down, stop codespaces, and reconnect, the errors went away. Not sure if it is reproducible for everyone, though.
 
 Errors (3)
 

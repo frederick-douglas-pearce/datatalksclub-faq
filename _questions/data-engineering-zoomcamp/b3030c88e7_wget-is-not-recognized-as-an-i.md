@@ -10,19 +10,17 @@ sort_order: 520
 
 “​​No such file or directory: 'output.csv.gz'”, may also caused by wget not recognized
 
-. 
-On Ubuntu, run:
+. On Ubuntu, run:
 
 $ sudo apt-get install wget
 
-On MacOS, the easiest way to install wget is to use :
+On MacOS, the easiest way to install wget is to use [Brew](https://brew.sh/):
 
 $ brew install wget
 
-On Windows, the easiest way to install wget is to use :
+On Windows, the easiest way to install wget is to use [Chocolatey](https://chocolatey.org/):
 
-$ choco install wget
-Or you can download a binary ([gnuwin32.sourceforge.net](https://gnuwin32.sourceforge.net/packages/wget.ht)m) and put it to any location in your PATH (e.g. C:/tools/)
+$ choco install wgetOr you can download a binary ([gnuwin32.sourceforge.net](https://gnuwin32.sourceforge.net/packages/wget.ht)m) and put it to any location in your PATH (e.g. C:/tools/)
 
 Also, you can following this step to install Wget on MS Windows
 
@@ -34,8 +32,7 @@ Also, you can following this step to install Wget on MS Windows
 
 * Move wget.exe to your `Git\mingw64\bin\`.
 
-Alternatively, you can use a Python wget library, but instead of simply using “wget” you’ll need to use 
-python -m wget
+Alternatively, you can use a Python wget library, but instead of simply using “wget” you’ll need to use python -m wget
 
 You need to install it with pip first:
 
@@ -43,5 +40,5 @@ pip install wget
 
 Alternatively, you can just paste the file URL into your web browser and download the file normally that way. You’ll want to move the resulting file into your working directory.
 
-Also recommended a look at the python library requests for the loading gz file
+Also recommended a look at the python library requests for the loading gz file  [[pypi.org](https://pypi.org/project/requests)](https://pypi.org/project/requests/)
 

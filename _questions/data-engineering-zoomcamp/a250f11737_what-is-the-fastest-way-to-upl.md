@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: a250f11737
 question: What is the fastest way to upload taxi data to dbt-postgres?
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3220
+sort_order: 3250
 ---
 
 Use the PostgreSQL COPY FROM feature that is compatible with csv files

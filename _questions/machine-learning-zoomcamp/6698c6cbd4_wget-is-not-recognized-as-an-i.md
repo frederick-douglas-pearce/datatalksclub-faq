@@ -12,11 +12,11 @@ On Ubuntu, run
 
 sudo apt-get install wget
 
-On Windows, the easiest way to install wget is to use :
+On Windows, the easiest way to install wget is to use [Chocolatey](https://chocolatey.org/):
 
 choco install wget
 
-Or you can download a binary  and put it to any location in your PATH (e.g. C:/tools/)
+Or you can download a binary [from here](http://gnuwin32.sourceforge.net/packages/wget.htm) and put it to any location in your PATH (e.g. C:/tools/)
 
 On Mac, the easiest way to install wget is to use brew.
 
@@ -58,7 +58,7 @@ Or you can use the built-in Python functionality for downloading the files:
 
 import urllib.request
 
-url = ""
+url = "[[raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)"
 
 urllib.request.urlretrieve(url, "housing.csv")
 

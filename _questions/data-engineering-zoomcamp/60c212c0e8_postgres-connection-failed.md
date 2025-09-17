@@ -13,8 +13,7 @@ sudo lsof -i :5432
 
 sudo kill -9 PID
 
-Windows users:
-Found that my issue was related to PostgresSQL running locally on my machine and that pgAdmin4 was using my 5432 port.
+Windows users:Found that my issue was related to PostgresSQL running locally on my machine and that pgAdmin4 was using my 5432 port.
 
 To stop this process:
 

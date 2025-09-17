@@ -3,10 +3,10 @@ course: machine-learning-zoomcamp
 id: 8a23cfbf67
 question: How to test AWS Lambda + Docker locally?
 section: 9. Serverless Deep Learning
-sort_order: 3330
+sort_order: 3340
 ---
 
-This deployment setup can be tested locally using  (runtime interface emulator).
+This deployment setup can be tested locally using [AWS RIE](https://github.com/aws/aws-lambda-runtime-interface-emulator/#test-an-image-with-rie-included-in-the-image) (runtime interface emulator).
 
 Basically, if your Docker image was built upon base AWS Lambda image (FROM public.ecr.aws/lambda/python:3.10) - just use certain ports for “docker run” and a certain “localhost link” for testing:
 

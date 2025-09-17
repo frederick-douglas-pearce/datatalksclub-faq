@@ -3,10 +3,12 @@ course: data-engineering-zoomcamp
 id: 88f2fb38b0
 question: GCP BQ - Check BigQuery Table Exist And Delete
 section: 'Module 3: Data Warehousing'
-sort_order: 2140
+sort_order: 2170
 ---
 
 Reference:
+
+[[Stack Overflow](https://stackoverflow.com/questions/60941726/can-bigquery-api-overwrite-existing-table-view-with-create-table-tables-inser)](https://stackoverflow.com/questions/60941726/can-bigquery-api-overwrite-existing-table-view-with-create-table-tables-inser)
 
 Solution:
 

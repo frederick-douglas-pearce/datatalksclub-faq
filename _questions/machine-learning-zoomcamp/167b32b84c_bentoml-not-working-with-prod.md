@@ -4,7 +4,7 @@ id: 167b32b84c
 question: 'BentoML not working with –production flag at any stage: e.g. with bentoml
   serve and while running the bentoml container'
 section: Miscellaneous
-sort_order: 3920
+sort_order: 3930
 ---
 
 You might see a long error message with something about sparse matrices, and in the swagger UI, you get a code 500 error with “” (empty string) as output.

@@ -6,5 +6,5 @@ section: Course Management Platform for Homeworks, Project and Certificate
 sort_order: 470
 ---
 
-This  shows you how to set up the Chrome Remote Desktop service on a Debian Linux virtual machine (VM) instance on Compute Engine. Chrome Remote Desktop allows you to remotely access applications with a graphical user interface.
+This [tutorial](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine?hl=en) shows you how to set up the Chrome Remote Desktop service on a Debian Linux virtual machine (VM) instance on Compute Engine. Chrome Remote Desktop allows you to remotely access applications with a graphical user interface.
 

@@ -4,7 +4,7 @@ id: 8248dd9d7f
 question: 'GCP BQ - When trying to cluster by DATE(tpep_pickup_datetime) it gives
   an error: Entries in the CLUSTER BY clause must be column names'
 section: 'Module 3: Data Warehousing'
-sort_order: 2230
+sort_order: 2260
 ---
 
 No need to convert as you can cluster by a TIMESTAMP column directly in BigQuery. BigQuery supports clustering on TIMESTAMP, DATE, DATETIME, STRING, INT64, and BOOL types.

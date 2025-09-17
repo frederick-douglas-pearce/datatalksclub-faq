@@ -14,9 +14,9 @@ docker build -t clothing-model .
 
 It throws a pip install error for the tflite runtime whl
 
-ERROR: failed to solve: process "/bin/sh -c pip install " did not complete successfully: exit code: 1
+ERROR: failed to solve: process "/bin/sh -c pip install [[GitHub](https://github.com/alexeygrigorev/tflite-aws-lambda/blob/main/tflite/tflite_runtime-2.14.0-cp310-cp310-linux_x86_64.whl)](https://github.com/alexeygrigorev/tflite-aws-lambda/blob/main/tflite/tflite_runtime-2.14.0-cp310-cp310-linux_x86_64.whl)" did not complete successfully: exit code: 1
 
-Try to use this link:
+Try to use this link: [[GitHub](https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.14.0-cp310-cp310-linux_x86_64.whl)](https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.14.0-cp310-cp310-linux_x86_64.whl)
 
 If the link above does not work:
 

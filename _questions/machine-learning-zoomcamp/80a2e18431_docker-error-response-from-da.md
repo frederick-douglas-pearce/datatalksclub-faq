@@ -6,14 +6,10 @@ question: 'docker: Error response from daemon: failed to create task for contain
   to start container process: exec: "gunicorn": executable file not found in $PATH:
   unknown.'
 section: Miscellaneous
-sort_order: 4280
+sort_order: 4290
 ---
 
-You need to add gunicorn and flask just to be safe to Pipfile with nano Pipfile.
-
-add
-
-[[source]]
+You need to add gunicorn and flask just to be safe to Pipfile with nano Pipfile.add[[source]]
 
 url = "[pypi.org](https://pypi.org/simple")
 
@@ -27,7 +23,7 @@ scikit-learn = "==1.5.2"
 
 gunicorn = "*"
 
-flask 	    = “*”
+flask     = “*”
 
 [dev-packages]
 

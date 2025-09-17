@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 26c9cf7346
 question: About getting the wrong result when multiplying matrices
 section: Miscellaneous
-sort_order: 4090
+sort_order: 4100
 ---
 
 When multiplying matrices, the order of multiplication is important.

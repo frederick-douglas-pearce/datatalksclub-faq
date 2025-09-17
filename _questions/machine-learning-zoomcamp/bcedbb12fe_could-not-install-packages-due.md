@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: bcedbb12fe
 question: 'Could not install packages due to an OSError: [WinError 5] Access is denied'
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3480
+sort_order: 3490
 ---
 
 When I run pip install grpcio==1.42.0 tensorflow-serving-api==2.7.0 to install the libraries in windows machine,  I was getting the below error :
@@ -24,8 +24,7 @@ Asia Saeed
 
 I'm trying to deploy my machine learning model using Kubernetes, but I'm getting an error stating that my Pods are not starting. What could be the problem?
 
-Solution:
-This issue can be caused by several factors:
+Solution:This issue can be caused by several factors:
 
 Resource Allocation: Ensure that your Pods have enough CPU and memory resources allocated. If resources are too low, the Kubernetes scheduler might fail to schedule your Pods.
 

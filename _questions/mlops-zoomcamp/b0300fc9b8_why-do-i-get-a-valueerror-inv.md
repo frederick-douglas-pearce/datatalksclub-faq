@@ -4,10 +4,10 @@ id: b0300fc9b8
 question: 'Why do I get a ValueError: Invalid endpoint error when using Boto3 with
   Docker Compose services?'
 section: 'Module 6: Best practices'
-sort_order: 2390
+sort_order: 2400
 ---
 
-Answer: Boto3 does not support underscores (_) in service URLs. Naming your Docker Compose services with underscores will cause Boto3 to throw an error when connecting to the endpoint. (Source: )
+Answer: Boto3 does not support underscores (_) in service URLs. Naming your Docker Compose services with underscores will cause Boto3 to throw an error when connecting to the endpoint. (Source: [[GitHub](https://github.com/boto/boto3/issues/703)](https://github.com/boto/boto3/issues/703))
 
 # Incorrect Docker Compose configuration with underscores
 

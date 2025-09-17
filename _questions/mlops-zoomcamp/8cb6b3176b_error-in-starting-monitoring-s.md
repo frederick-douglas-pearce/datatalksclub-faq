@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 8cb6b3176b
 question: Error in starting monitoring services in Linux
 section: 'Module 5: Monitoring'
-sort_order: 1930
+sort_order: 1940
 ---
 
 Problem Description : In Linux, when starting services using docker compose up --build  as shown in video 5.2, the services won’t start and instead we get message unknown flag: --build in command prompt.

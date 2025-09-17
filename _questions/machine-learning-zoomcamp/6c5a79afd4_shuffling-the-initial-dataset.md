@@ -6,7 +6,7 @@ section: 2. Machine Learning for Regression
 sort_order: 750
 ---
 
-It is possible to do the shuffling of the dataset with the pandas built-in function .The complete dataset can be shuffled including resetting the index with the following commands:
+It is possible to do the shuffling of the dataset with the pandas built-in function [pandas.DataFrame.sample](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sample.html).The complete dataset can be shuffled including resetting the index with the following commands:
 
 Setting frac=1 will result in returning a shuffled version of the complete Dataset.
 

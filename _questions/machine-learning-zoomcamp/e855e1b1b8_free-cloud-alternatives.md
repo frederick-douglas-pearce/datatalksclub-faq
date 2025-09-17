@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: e855e1b1b8
 question: Free cloud alternatives
 section: Miscellaneous
-sort_order: 4030
+sort_order: 4040
 ---
 
 Q: Hii folks, I tried deploying my docker image on Render, but it won't I get SIGTERM everytime.
@@ -16,7 +16,7 @@ Both aws and gcp give microinstance for free for a VERY long time, and a bunch m
 
 Saturn even provides free GPU instances. Recent promo link from mlzoomcamp for Saturn:
 
-“You can sign up here:
+“You can sign up here: [[bit.ly](https://bit.ly/saturn-mlzoomcamp)](https://bit.ly/saturn-mlzoomcamp)
 
 When you sign up, write in the chat box that you're an ML Zoomcamp student and you should get extra GPU hours (something like 150)”
 

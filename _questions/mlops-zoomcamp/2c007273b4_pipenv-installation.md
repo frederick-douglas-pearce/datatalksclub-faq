@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 2c007273b4
 question: Pipenv installation
 section: 'Module 4: Deployment'
-sort_order: 1850
+sort_order: 1860
 ---
 
 Make sure you have python and pip

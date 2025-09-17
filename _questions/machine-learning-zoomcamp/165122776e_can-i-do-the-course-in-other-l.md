@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: 165122776e
 question: Can I do the course in other languages, like R or Scala?
 section: Miscellaneous
-sort_order: 4220
+sort_order: 4230
 ---
 
 Technically, yes. Advisable? Not really. Reasons:
@@ -16,5 +16,5 @@ And as for midterms/capstones, your peer-reviewers may not know these other lang
 
 You can create a separate repo using course’s lessons but written in other languages for your own learnings, but not advisable for submissions.
 
-tx[]
+tx[[source](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1694531885396789)]
 

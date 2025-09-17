@@ -4,10 +4,10 @@ id: b209edb213
 question: 'DBT - Error: “404 Not found: Dataset <dataset_name>:<dbt_schema_name> was
   not found in location EU” after building from stg_green_tripdata.sql'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3100
+sort_order: 3130
 ---
 
-In the step in  (DE Zoomcamp 4.3.1 - Build the First dbt Models), after creating `stg_green_tripdata.sql` and clicking `build`, I encountered an error saying dataset not found in location EU. The default location for dbt Bigquery is the US, so when generating the new Bigquery schema for dbt, unless specified, the schema locates in the US.
+In the step in [this video](https://www.youtube.com/watch?v=ueVy2N54lyc&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=44) (DE Zoomcamp 4.3.1 - Build the First dbt Models), after creating `stg_green_tripdata.sql` and clicking `build`, I encountered an error saying dataset not found in location EU. The default location for dbt Bigquery is the US, so when generating the new Bigquery schema for dbt, unless specified, the schema locates in the US.
 
 Solution:
 

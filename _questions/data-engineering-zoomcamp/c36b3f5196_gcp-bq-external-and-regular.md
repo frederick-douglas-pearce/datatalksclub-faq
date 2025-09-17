@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: c36b3f5196
 question: GCP BQ - External and regular table
 section: 'Module 3: Data Warehousing'
-sort_order: 2300
+sort_order: 2330
 ---
 
 External Table (data remains in GCS bucket)

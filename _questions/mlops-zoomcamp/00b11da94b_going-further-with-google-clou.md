@@ -3,7 +3,7 @@ course: mlops-zoomcamp
 id: 00b11da94b
 question: Going further with Google Cloud Platform (load and save data to GCS)
 section: 'Module 4: Deployment'
-sort_order: 1650
+sort_order: 1660
 ---
 
 There is a possibility to load and store the data in a Google Cloud Storage bucket. To do that, we will need to authenticate through the IDE we are using (for example github Codespaces) and allow the read and write from/to a GCS bucket:
@@ -16,7 +16,7 @@ In the GCP Console, go to the "IAM & Admin" section, then "Service accounts."
 
 Create a new service account, grant it the necessary permissions (e.g., "Storage Object Admin" for GCS access), and generate a JSON key file.
 
-Install the Google Cloud SDK:
+Install the Google Cloud SDK: [[cloud.google.com](https://cloud.google.com/sdk/docs/install)](https://cloud.google.com/sdk/docs/install)
 
 Authenticate the SDK with your GCP account: gcloud auth login
 

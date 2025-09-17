@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: eaae17dfea
 question: Embedding dlt into Kestra
 section: Workshop 1 - dlthub
-sort_order: 4460
+sort_order: 4490
 ---
 
 id: dlt_ingestion

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 0f8512fc2a
 question: Spark - Installation Error Code 1603
 section: 'Module 5: pyspark'
-sort_order: 3370
+sort_order: 3400
 ---
 
 Issue: Spark installation on Windows completed but failed to run.
@@ -22,15 +22,11 @@ Open PowerShell as an Administrator
 
 Press Win + X and select Windows PowerShell (Admin) or search for PowerShell, right-click, and select Run as administrator.
 
-Run the following command to install Chocolatey
-
- Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('<[community.chocolatey.org](https://community.chocolatey.org/install.ps1>)'))
+Run the following command to install Chocolatey Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('<[community.chocolatey.org](https://community.chocolatey.org/install.ps1>)'))
 
 Verify the installation
 
-Close and reopen PowerShell as an administrator and run:
-
- choco -v
+Close and reopen PowerShell as an administrator and run: choco -v
 
 You should see the Chocolatey version number indicating that it has been installed successfully.
 

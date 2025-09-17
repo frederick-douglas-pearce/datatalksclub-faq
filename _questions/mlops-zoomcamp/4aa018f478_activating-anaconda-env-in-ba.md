@@ -20,5 +20,5 @@ Reload:
 
 $ source ~/.bashrc
 
-Ahamed Irshad ()
+Ahamed Irshad ([daisyfuentesahamed@gmail.com](mailto:daisyfuentesahamed@gmail.com))
 

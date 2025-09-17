@@ -7,8 +7,7 @@ section: 6. Decision Trees and Ensemble Learning
 sort_order: 2370
 ---
 
-Solution: 
-If you replaced Docker desktop with ‘lima’, you may be able to create an instance of Lima using the . Follow the instructions listed on the page and create an instance with the template supplied. You’ll have to switch your current (if any) docker context to the context associated with this new (running) image. You should be able to use ‘svizor/zoomcamp-model:3.11.5-slim’ as a base image and run your own built image without issues.
+Solution: If you replaced Docker desktop with ‘lima’, you may be able to create an instance of Lima using the [following template](https://gist.github.com/akrylysov/7c1ea3bac409da2758e525f2f82e6373). Follow the instructions listed on the page and create an instance with the template supplied. You’ll have to switch your current (if any) docker context to the context associated with this new (running) image. You should be able to use ‘svizor/zoomcamp-model:3.11.5-slim’ as a base image and run your own built image without issues.
 
 By Alex Khvatov
 

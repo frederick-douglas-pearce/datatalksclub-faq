@@ -5,7 +5,7 @@ question: 'GCS Bucket - te table: Error while reading data, error message: Parqu
   column ''XYZ'' has type INT which does not match the target cpp_type DOUBLE. File:
   gs://path/to/some/blob.parquet'
 section: 'Module 3: Data Warehousing'
-sort_order: 2000
+sort_order: 2030
 ---
 
 Ultimately, when trying to ingest data into a BigQuery table, all files within a given directory must have the same schema.
@@ -18,10 +18,5 @@ So while importing these files as parquet to BigQuery, the first one will be use
 
 So, in order to prevent errors like that, make sure to enforce the data types for the columns on the DataFrame before you serialize/upload them to BigQuery. Like this:
 
-pd.read_csv("path_or_url").astype({
-	"col1_name": "datatype",	
-	"col2_name": "datatype",	
-	...					
-	"colN_name": "datatype" 	
-})
+pd.read_csv("path_or_url").astype({"col1_name": "datatype","col2_name": "datatype",..."colN_name": "datatype" })
 

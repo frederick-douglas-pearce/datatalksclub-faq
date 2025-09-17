@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: b3bb998ae2
 question: How to connect Pyspark with BigQuery?
 section: Project
-sort_order: 4290
+sort_order: 4320
 ---
 
 The following line should be included in pyspark configuration

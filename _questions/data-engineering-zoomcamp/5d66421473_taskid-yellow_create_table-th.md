@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 5d66421473
 question: 'taskid: yellow_create_table The connection attempt failed. Host.docker.internal'
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1930
+sort_order: 1960
 ---
 
 If you're using Linux, you might encounter Connection Refused errors when connecting to the Postgres DB from within Kestra. This is because host.docker.internal works differently on Linux.

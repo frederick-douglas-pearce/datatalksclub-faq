@@ -12,9 +12,9 @@ Video 3.2.8 Error with Xgboost pipeline: ValueError: not enough values to unpack
 
 Solution: Ensure that you have created the variables as in the video and you have this order in your code.
 
-data →
+data → [training_set](http://localhost:6789/pipelines/xgboost_training/edit?sideview=tree#)
 
-data_2 →
+data_2 → [hyperparameter_tuning/xgboost](http://localhost:6789/pipelines/xgboost_training/edit?sideview=tree#)
 
 If not, remove the connections for the xgboost and reconnect starting with the training set, followed by hyperparameter_tuning/xgboost.
 

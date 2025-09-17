@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 23687d0f93
 question: DBT - The database is correct but I get Error with Incorrect Schema in Models
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 3260
+sort_order: 3290
 ---
 
 What to do if your  dbt model fails with an error similar to:

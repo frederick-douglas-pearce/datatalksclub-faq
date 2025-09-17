@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 01092d660a
 question: Spark Standalone Mode on Windows
 section: 'Module 5: pyspark'
-sort_order: 3580
+sort_order: 3610
 ---
 
 Open a CMD terminal in administrator mode

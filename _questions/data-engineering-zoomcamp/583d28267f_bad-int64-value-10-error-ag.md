@@ -3,11 +3,10 @@ course: data-engineering-zoomcamp
 id: 583d28267f
 question: 'Bad int64 value: 1.0 error (again)'
 section: 'Module 4: analytics engineering with dbt'
-sort_order: 2950
+sort_order: 2980
 ---
 
-I found that there are more columns causing the bad INT64: ratecodeid and trip_type on Green_tripdata table.
-You can use the queries below to address them:
+I found that there are more columns causing the bad INT64: ratecodeid and trip_type on Green_tripdata table.You can use the queries below to address them:
 
 CAST(
 

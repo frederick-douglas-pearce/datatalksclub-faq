@@ -6,8 +6,7 @@ section: 5. Deploying Machine Learning Models
 sort_order: 2200
 ---
 
-I wanted to have a fast and simple way to check if the HTTP POST requests are working just running a request from command line. This can be done running ‘curl’. 
-(Used with WSL2 on Windows, should also work on Linux and MacOS)
+I wanted to have a fast and simple way to check if the HTTP POST requests are working just running a request from command line. This can be done running ‘curl’. (Used with WSL2 on Windows, should also work on Linux and MacOS)
 
 curl --json '<json data>' <url>
 

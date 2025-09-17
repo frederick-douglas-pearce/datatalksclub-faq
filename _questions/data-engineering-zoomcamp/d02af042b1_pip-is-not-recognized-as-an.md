@@ -4,7 +4,7 @@ id: d02af042b1
 question: '''pip'' is not recognized as an internal or external command, operable
   program or batch file.'
 section: 'Module 1: Docker and Terraform'
-sort_order: 1760
+sort_order: 1780
 ---
 
 If you use Anaconda (recommended for the course), it comes with pip, so the issues is probably that the anaconda’s Python is not on the PATH.

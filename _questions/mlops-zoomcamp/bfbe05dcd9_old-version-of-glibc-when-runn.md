@@ -14,7 +14,7 @@ manylinux2014: For older Linux distributions with glibc versions older than 2.28
 
 If you're installing XGBoost via pip, the package manager automatically selects the appropriate variant based on your system's glibc version. Starting May 31, 2025, the manylinux2014 variant will no longer be distributed.
 
-This means that systems with glibc versions older than 2.28 will not be able to install future versions of XGBoost via pip unless they upgrade their glibc version or build XGBoost from source.
+This means that systems with glibc versions older than 2.28 will not be able to install future versions of XGBoost via pip unless they upgrade their glibc version or build XGBoost from source. [This behavior is disabled for conda.](https://github.com/conda-forge/xgboost-feedstock/pull/240#discussion_r2106138856)
 
 Added by Jon Areas (areasjx@gmail.com)
 

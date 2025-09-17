@@ -12,7 +12,7 @@ git config -l | grep url
 
 The output should look like this:
 
-remote.origin.url=
+remote.origin.url=[[GitHub](https://github.com/github-username/github-repository-name.git)](https://github.com/github-username/github-repository-name.git)
 
 Change this to the following format and make sure the change is reflected using command in step 1:
 

@@ -4,7 +4,7 @@ id: cd8a62fc55
 question: 'Java Kafka: When running the producer/consumer/etc java scripts, no results
   retrieved or no message sent'
 section: 'Module 6: streaming with kafka'
-sort_order: 4110
+sort_order: 4140
 ---
 
 For example, when running JsonConsumer.java, got:

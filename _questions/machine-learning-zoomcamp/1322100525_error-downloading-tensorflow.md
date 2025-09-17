@@ -3,7 +3,7 @@ course: machine-learning-zoomcamp
 id: '1322100525'
 question: Error downloading  tensorflow/serving:2.7.0 on Apple M1 Mac
 section: 10. Kubernetes and TensorFlow Serving
-sort_order: 3640
+sort_order: 3650
 ---
 
 While trying to run the docker code on M1:
@@ -48,7 +48,7 @@ docker run -it --rm \
 
 emacski/tensorflow-serving:latest-linux_arm64
 
-See more here:
+See more here: [[GitHub](https://github.com/emacski/tensorflow-serving-arm)](https://github.com/emacski/tensorflow-serving-arm)
 
 Added by Daniel Egbo
 

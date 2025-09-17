@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 13c4d27a91
 question: How can I run UV in Kestra without installing it on every flow execution?
 section: Project
-sort_order: 4310
+sort_order: 4340
 ---
 
 To avoid reinstalling uv on each flow run, you can create a custom Docker image based on the official Kestra image with uv pre-installed. Here's how:

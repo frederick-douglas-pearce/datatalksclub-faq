@@ -6,7 +6,7 @@ section: General course-related question review
 sort_order: 150
 ---
 
-Here’s how you join in Slack:
+Here’s how you join in Slack: [[Slack](https://slack.com/help/articles/205239967-Join-a-channel)](https://slack.com/help/articles/205239967-Join-a-channel)
 
 Click “All channels” at the top of your left sidebar. If you don't see this option, click “More” to find it.
 

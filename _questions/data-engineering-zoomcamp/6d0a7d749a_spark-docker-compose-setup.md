@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 6d0a7d749a
 question: Spark docker-compose setup
 section: 'Module 5: pyspark'
-sort_order: 3630
+sort_order: 3660
 ---
 
 To run spark in docker setup

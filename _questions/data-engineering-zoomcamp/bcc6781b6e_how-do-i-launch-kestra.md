@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: bcc6781b6e
 question: How do I launch Kestra?
 section: 'Module 2: Workflow Orchestration'
-sort_order: 1820
+sort_order: 1850
 ---
 
 Start docker in linux with docker run --pull=always --rm -it -p 8080:8080 --user=root \
@@ -14,11 +14,9 @@ Start docker in linux with docker run --pull=always --rm -it -p 8080:8080 --user
 
 Once run you can login to dashboard at localhost:8080
 
-For windows instructions see the Kestra github here
+For windows instructions see the Kestra github here [[GitHub](https://github.com/kestra-io/kestra)](https://github.com/kestra-io/kestra)
 
-Here sample docker-compose for kestra
-
-services:
+Here sample docker-compose for kestraservices:
 
 kestra:
 

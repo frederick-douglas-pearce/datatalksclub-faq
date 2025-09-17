@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: 675d60dadd
 question: Module Not Found Error in Jupyter Notebook .
 section: 'Module 5: pyspark'
-sort_order: 3390
+sort_order: 3420
 ---
 
 Even after installing pyspark correctly on linux machine (VM ) as per course instructions, faced a module not found error in jupyter notebook .

@@ -3,7 +3,7 @@ course: data-engineering-zoomcamp
 id: efa85f71b6
 question: Env variables set in ~/.bashrc are not loaded to Jupyter in VS Code
 section: 'Module 5: pyspark'
-sort_order: 3680
+sort_order: 3710
 ---
 
 I added PYTHONPATH, JAVA_HOME and SPARK_HOME to ~/.bashrc, import pyspark worked ok in iPython in terminal, but couldn’t be found in .ipynb opened in VS Code

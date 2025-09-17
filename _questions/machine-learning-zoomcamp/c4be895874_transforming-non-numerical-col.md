@@ -6,5 +6,5 @@ section: 3. Machine Learning for Classification
 sort_order: 1270
 ---
 
-Use  encoders and scalers, e.g. OneHotEncoder, OrdinalEncoder, and StandardScaler.
+Use [sklearn.preprocessing](https://scikit-learn.org/stable/modules/preprocessing.html) encoders and scalers, e.g. OneHotEncoder, OrdinalEncoder, and StandardScaler.
 

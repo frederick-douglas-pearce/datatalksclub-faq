@@ -7,7 +7,7 @@ section: 'Module 1: Docker and Terraform'
 sort_order: 1080
 ---
 
-For a more visual and detailed explanation, feel free to check the video
+For a more visual and detailed explanation, feel free to check the video [1.4.2 - Port Mapping and Networks in Docker](https://www.youtube.com/watch?v=tOr4hTsHOzU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=16&ab_channel=DataTalksClub%E2%AC%9B)
 
 If you want to debug: the following can help (on a MacOS)
 
@@ -19,11 +19,9 @@ Or list the running postgres services on your local machine with launchctl
 
 To unload the running service on your local machine (on a MacOS):
 
-unload the launch agent for the PostgreSQL service, which will stop the service and free up the port  
-`launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
+unload the launch agent for the PostgreSQL service, which will stop the service and free up the port  `launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
 
-this one to start it again
-`launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
+this one to start it again`launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
 
 Changing port from 5432:5432 to 5431:5432 helped me to avoid this error.
 
