@@ -1,0 +1,12 @@
+---
+id: 5bf804473e
+question: Dockerizing lightgbm
+sort_order: 1730
+---
+
+Problem description: lib_lightgbm.so Reason: image not found
+
+Solution description: Add “RUN apt-get install libgomp1” to your docker. (change installer command based on OS)
+
+Added by Kazeem Hakeem
+

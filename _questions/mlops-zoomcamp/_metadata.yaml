@@ -1,12 +1,21 @@
 course: mlops-zoomcamp
-course_name: "MLOps Zoomcamp"
+course_name: "mlops-zoomcamp"
 sections:
-  - "General course questions"
-  - "Module 1: Introduction"
-  - "Module 2: Experiment tracking"
-  - "Module 3: Orchestration"
-  - "Module 4: Deployment"
-  - "Module 5: Monitoring"
-  - "Module 6: Best practices"
-  - "Capstone Project"
-  - "Certificates:"
+  - id: general-course-questions
+    name: "General course questions"
+  - id: module-1-introduction
+    name: "Module 1: Introduction"
+  - id: module-2-experiment-tracking
+    name: "Module 2: Experiment tracking"
+  - id: module-3-orchestration
+    name: "Module 3: Orchestration"
+  - id: module-4-deployment
+    name: "Module 4: Deployment"
+  - id: module-5-monitoring
+    name: "Module 5: Monitoring"
+  - id: module-6-best-practices
+    name: "Module 6: Best practices"
+  - id: capstone-project
+    name: "Capstone Project"
+  - id: certificates
+    name: "Certificates:"

@@ -1,0 +1,21 @@
+---
+id: 7889d2bad5
+images:
+- description: 'image #1'
+  id: image_1
+  path: images/data-engineering-zoomcamp/image_0f494026.png
+question: 'SSH error in VS Code - “Could not establish connection to "de-zoomcamp":
+  Permission denied (publickey).”'
+sort_order: 1830
+---
+
+If you are using Windows, try copying the .ssh folder from the Linux file path to Windows. In the config file, use
+
+IdentityFile C:\Users\<username>\.ssh\gcp
+
+Instead of IdentityFile ~/.ssh/gcp
+
+Another reason: The private key in its file at the local path C:\Users\<username>\.ssh\gcp needs an extra line in the end:
+
+<{IMAGE:image_1}>
+

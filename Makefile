@@ -1,27 +1,9 @@
-.PHONY: extract website clean clean_questions validate help
-
-# Default target
-help:
-	@echo "Available targets:"
-	@echo "  extract        - Extract FAQ data from Google Docs and generate markdown files"
-	@echo "  website        - Generate static website from markdown files"
-	@echo "  clean_questions - Remove all files in _questions directory before extraction"
-	@echo "  validate       - Validate all question files are compatible with generate.py"
-	@echo "  clean          - Remove generated files"
-	@echo "  help           - Show this help message"
-
-# Clean questions directory before extraction
-clean_questions:
-	uv run python clean_questions.py
+.PHONY: faq website
 
 # Extract FAQ data from Google Docs (with cleanup)
-extract: clean_questions
-	uv run python faq_processor.py
-
-# Validate question files
-validate:
-	uv run python validate_questions.py
+faq:
+	uv run python process_faq.py
 
 # Generate static website
 website:
-	uv run python generate.py
+	uv run python generate_website.py
