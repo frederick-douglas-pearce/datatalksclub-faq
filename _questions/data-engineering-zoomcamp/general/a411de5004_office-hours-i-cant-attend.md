@@ -1,9 +1,8 @@
 ---
 id: a411de5004
-question: Office Hours - I can’t attend the “Office hours” / workshop, will it be
-  recorded?
+question: 'Office Hours: I can’t attend the “Office hours” / workshop, will it be
+  recorded?'
 sort_order: 130
 ---
 
-Yes! Every “Office Hours” will be recorded and available a few minutes after the live session is over; so you can view (or rewatch) whenever you want.
-
+Yes! Every "Office Hours" will be recorded and available a few minutes after the live session is over; so you can view (or rewatch) whenever you want.

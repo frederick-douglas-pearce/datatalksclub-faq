@@ -5,53 +5,56 @@ question: 'Invalid date types after Ingesting FHV data through CSV files: Could 
 sort_order: 3180
 ---
 
-If you uploaded manually the fvh 2019 csv files, you may face errors regarding date types. Try to create an the external table in bigquery but define the pickup_datetime and dropoff_datetime to be strings
+If you uploaded manually the FHV 2019 CSV files, you may face errors regarding date types. Try to create an external table in BigQuery but define the `pickup_datetime` and `dropoff_datetime` to be strings:
 
+```sql
 CREATE OR REPLACE EXTERNAL TABLE `gcp_project.trips_data_all.fhv_tripdata`  (
 
-dispatching_base_num STRING,
+    dispatching_base_num STRING,
 
-pickup_datetime STRING,
+    pickup_datetime STRING,
 
-dropoff_datetime STRING,
+    dropoff_datetime STRING,
 
-PUlocationID STRING,
+    PUlocationID STRING,
 
-DOlocationID STRING,
+    DOlocationID STRING,
 
-SR_Flag STRING,
+    SR_Flag STRING,
 
-Affiliated_base_number STRING
+    Affiliated_base_number STRING
 
 )
 
 OPTIONS (
 
-format = 'csv',
+    format = 'csv',
 
-uris = ['gs://bucket/*.csv']
+    uris = ['gs://bucket/*.csv']
 
 );
+```
 
-Then when creating the fhv core model in dbt, use TIMESTAMP(CAST(()) to ensure it first parses as a string and then convert it to timestamp.
+Then, when creating the FHV core model in dbt, use `TIMESTAMP(CAST(())` to ensure it first parses as a string and then converts it to a timestamp:
 
-with fhv_tripdata as (
+```sql
+WITH fhv_tripdata AS (
 
-select * from {{ ref('stg_fhv_tripdata') }}
+    SELECT * FROM {{ ref('stg_fhv_tripdata') }}
 
 ),
 
-dim_zones as (
+dim_zones AS (
 
-select * from {{ ref('dim_zones') }}
+    SELECT * FROM {{ ref('dim_zones') }}
 
-where borough != 'Unknown'
+    WHERE borough != 'Unknown'
 
 )
 
-select fhv_tripdata.dispatching_base_num,
+SELECT fhv_tripdata.dispatching_base_num,
 
-TIMESTAMP(CAST(fhv_tripdata.pickup_datetime AS STRING)) AS pickup_datetime,
+    TIMESTAMP(CAST(fhv_tripdata.pickup_datetime AS STRING)) AS pickup_datetime,
 
-TIMESTAMP(CAST(fhv_tripdata.dropoff_datetime AS STRING)) AS dropoff_datetime,
-
+    TIMESTAMP(CAST(fhv_tripdata.dropoff_datetime AS STRING)) AS dropoff_datetime,
+```

@@ -4,17 +4,12 @@ question: 'OpenAI: Why does my token count differ from what OpenAI reports?'
 sort_order: 320
 ---
 
-When using tiktoken.encode() to count tokens in your prompt, you might get a number like 320, while OpenAI’s API response reports something like 327. This is expected and due to internal tokens added by OpenAI’s chat formatting.
+When using `tiktoken.encode()` to count tokens in your prompt, you might see a difference compared to OpenAI’s API response. For instance, you might get 320 tokens, while OpenAI reports 327. This is due to internal tokens added by OpenAI’s chat formatting.
 
-Here’s what happens under the hood:
+Here’s what happens:
 
-Each message in a chat.completions.create() call (e.g., {role: "user", content: "..."}) adds 4 structural tokens (role, content, separators).
+- Each message in a `chat.completions.create()` call (e.g., `{role: "user", content: "..."}`) adds 4 structural tokens (role, content, separators).
+- The API adds 2 tokens globally to mark the start of assistant response generation.
+- Extra newlines, whitespace, or uncommon Unicode characters in your content may slightly increase the token count.
 
-The API also adds 2 tokens globally to mark the start of assistant response generation.
-
-Any extra newlines, whitespace, or uncommon Unicode characters in your content may slightly increase the token count.
-
-So even if your visible text is 320 tokens, OpenAI may count 327 due to these internal additions.
-
-Added by José Luis Martínez (Maxkaizo)
-
+Thus, even if your visible text is 320 tokens, OpenAI may count 327 due to these internal additions.

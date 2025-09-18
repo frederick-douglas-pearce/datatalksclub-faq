@@ -7,7 +7,8 @@ sort_order: 4060
 
 Restarting all services worked for me:
 
+```bash
 docker-compose down
 
 docker-compose up
-
+```

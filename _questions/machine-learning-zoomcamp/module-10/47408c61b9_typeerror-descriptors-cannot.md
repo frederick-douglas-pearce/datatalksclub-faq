@@ -4,49 +4,60 @@ question: 'TypeError: Descriptors cannot not be created directly.'
 sort_order: 3500
 ---
 
-Problem description
+### Problem Description
 
-I was getting the below error message when I run gateway.py after modifying the code & creating virtual environment in  video 10.3 :
+You may encounter the following error when running `gateway.py`:
 
+```
+TypeError: Descriptors cannot not be created directly.
+```
+
+This error appears in the following context:
+
+```
 File "C:\Users\Asia\Data_Science_Code\Zoompcamp\Kubernetes\gat.py", line 9, in <module>
-
-from tensorflow_serving.apis import predict_pb2
+  from tensorflow_serving.apis import predict_pb2
 
 File "C:\Users\Asia\.virtualenvs\Kubernetes-Ge6Ts1D5\lib\site-packages\tensorflow_serving\apis\predict_pb2.py", line 14, in <module>
-
-from tensorflow.core.framework import tensor_pb2 as tensorflow_dot_core_dot_framework_dot_tensor__pb2
+  from tensorflow.core.framework import tensor_pb2 as tensorflow_dot_core_dot_framework_dot_tensor__pb2
 
 File "C:\Users\Asia\.virtualenvs\Kubernetes-Ge6Ts1D5\lib\site-packages\tensorflow\core\framework\tensor_pb2.py", line 14, in <module>
-
-from tensorflow.core.framework import resource_handle_pb2 as tensorflow_dot_core_dot_framework_dot_resource__handle__pb2
+  from tensorflow.core.framework import resource_handle_pb2 as tensorflow_dot_core_dot_framework_dot_resource__handle__pb2
 
 File "C:\Users\Asia\.virtualenvs\Kubernetes-Ge6Ts1D5\lib\site-packages\tensorflow\core\framework\resource_handle_pb2.py", line 14, in <module>
-
-from tensorflow.core.framework import tensor_shape_pb2 as tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
+  from tensorflow.core.framework import tensor_shape_pb2 as tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
 
 File "C:\Users\Asia\.virtualenvs\Kubernetes-Ge6Ts1D5\lib\site-packages\tensorflow\core\framework\tensor_shape_pb2.py", line 36, in <module>
-
-_descriptor.FieldDescriptor(
+  _descriptor.FieldDescriptor(
 
 File "C:\Users\Asia\.virtualenvs\Kubernetes-Ge6Ts1D5\lib\site-packages\google\protobuf\descriptor.py", line 560, in __new__
-
-_message.Message._CheckCalledFromGeneratedFile()
+  _message.Message._CheckCalledFromGeneratedFile()
 
 TypeError: Descriptors cannot not be created directly.
+```
 
-If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+This message indicates that your generated protobuf code is out of date, and must be regenerated using `protoc >= 3.19.0`.
 
-If you cannot immediately regenerate your protos, some other possible workarounds are:
+### Solution
 
-1. Downgrade the protobuf package to 3.20.x or lower.
+To resolve the issue, you have several options:
 
-2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+1. **Regenerate your Protocol Buffers:** If possible, regenerate your .proto files using `protoc >= 3.19.0`.
 
-Solution description:
+2. **Downgrade the protobuf package:**
+   
+   Downgrade the protobuf package to version 3.20.x or lower.
 
-Issue has been resolved by downgrading protobuf to version 3.20.1.
+   ```bash
+   pipenv install protobuf==3.20.1
+   ```
+   
+3. **Use a different implementation:**
+   
+   Set the environment variable to use a slower, pure-Python implementation:
 
-pipenv install protobuf==3.20.1
+   ```bash
+   set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+   ```
 
-Asia Saeed
-
+The issue can often be resolved by downgrading `protobuf` to version `3.20.1`. This was confirmed to work in the described scenario.

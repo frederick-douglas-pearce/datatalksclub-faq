@@ -4,7 +4,10 @@ question: Correct AWS CLI version for eksctl
 sort_order: 3620
 ---
 
-Make sure you are on AWS CLI v2 (check with aws --version)
+Ensure you are using AWS CLI v2. You can check your current version with the following command:
 
-[https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration-instructions.html](https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration-instructions.html)
+```bash
+aws --version
+```
 
+For more details, refer to the [AWS CLI v2 migration instructions](https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration-instructions.html).

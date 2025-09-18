@@ -1,12 +1,15 @@
 ---
 id: 87fddc59b7
-question: Setup - Failed to clone repository.
+question: 'Setup: Failed to clone repository.'
 sort_order: 2510
 ---
 
+
+
 Error: Failed to clone repository.
 
-git clone git@github.com:DataTalksClub/data-engineering-zoomcamp.git /usr/src/develop/…
+```
+$ git clone git@github.com:DataTalksClub/data-engineering-zoomcamp.git /usr/src/develop/...
 
 Cloning into '/usr/src/develop/...
 
@@ -15,14 +18,24 @@ Warning: Permanently added '[github.com](http://github.com/),140.82.114.4' (ECDS
 git@github.com: Permission denied (publickey).
 
 fatal: Could not read from remote repository.
+```
 
-Issue: You don’t have permissions to write to DataTalksClub/data-engineering-zoomcamp.git
+**Issue:** You don’t have permissions to write to `DataTalksClub/data-engineering-zoomcamp.git`
 
-Solution 1: Clone the repository and use this forked repo, which contains your github username. Then, proceed to specify the path, as in:
+**Solutions:**
 
-[your github username]/data-engineering-zoomcamp.git
+1. **Clone the Forked Repository**
+   
+   Clone the repository using your forked repo, which contains your GitHub username. Then, specify the path as:
+   
+   ```
+   [your github username]/data-engineering-zoomcamp.git
+   ```
 
-Solution 2: create a fresh repo for dbt-lessons. We’d need to do branching and PRs in this lesson, so it might be a good idea to also not mess up your whole other repo. Then you don’t have to create a subfolder for the dbt project files
+2. **Create a Fresh Repo for dbt-lessons**
+   
+   Create a new repository for dbt-lessons. This approach is beneficial as it allows for branching and pull requests without affecting your other repositories. There's no need to create a subfolder for the dbt project files.
 
-Solution 3: Use https link
-
+3. **Use HTTPS Link**
+   
+   Switch to using an HTTPS link for cloning the repository if SSH access is not configured.

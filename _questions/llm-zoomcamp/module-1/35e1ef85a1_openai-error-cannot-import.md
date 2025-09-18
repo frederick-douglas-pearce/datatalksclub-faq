@@ -4,5 +4,4 @@ question: 'OpenAI: Error: ''Cannot import name OpenAI from openai''; How to fix?
 sort_order: 160
 ---
 
-Update openai version from 0.27.0 -> any 1.x version
-
+Update openai version from 0.27.0 to any 1.x version.

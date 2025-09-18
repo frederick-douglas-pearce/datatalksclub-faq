@@ -11,17 +11,14 @@ question: Inspect MCP Server
 sort_order: 890
 ---
 
-·   Connect to the MCP Server
+- Connect to the MCP Server
 
-<{IMAGE:image_1}>
+  <{IMAGE:image_1}>
 
-·   The inspector can list tools, templates, resources and prompts from the MCP Server
+- The inspector can list tools, templates, resources, and prompts from the MCP Server
 
-<{IMAGE:image_2}>
+  <{IMAGE:image_2}>
 
-Reference
+Reference:
 
 [https://medium.com/@anil.goyal0057/how-to-test-your-mcp-server-using-mcp-inspector-c873c417eec1](https://medium.com/@anil.goyal0057/how-to-test-your-mcp-server-using-mcp-inspector-c873c417eec1)
-
-Added - Sundara Kumar Padmanabhan
-

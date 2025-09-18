@@ -4,15 +4,23 @@ question: Loading the Image with PILLOW library and converting to numpy array
 sort_order: 3850
 ---
 
-Pip install pillow - install pillow library
+To load an image using the PILLOW library and convert it to a NumPy array, you can follow these steps:
 
-from PIL import Image
+1. **Install the Pillow library:**
+   
+   ```bash
+   pip install pillow
+   ```
 
-img = Image.open('aeroplane.png')
+2. **Use the following code to load an image and convert it:**
 
-From numpy import asarray
+   ```python
+   from PIL import Image
+   from numpy import asarray
 
-numdata=asarray(img)
+   # Open the image file
+   img = Image.open('aeroplane.png')
 
-Krishna Anand
-
+   # Convert the image to a NumPy array
+   numdata = asarray(img)
+   ```

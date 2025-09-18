@@ -5,17 +5,28 @@ question: '''kind'' is not recognized as an internal or external command, operab
 sort_order: 3590
 ---
 
-Problem: I download kind from the next command:
+**Problem:**
 
-curl.exe -Lo kind-windows-amd64.exe [https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64](https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64)
+I downloaded `kind` using the following command:
 
-When I try
+```bash
+curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64
+```
 
+When I try to run:
+
+```bash
 kind --version
+```
 
-I get: 'kind' is not recognized as an internal or external command, operable program or batch file
+I receive the error:
 
-Solution: The default name of executable is kind-windows-amd64.exe, so that you have to rename this file to  kind.exe. Put this file in specific folder, and add it to PATH
+```plaintext
+'kind' is not recognized as an internal or external command, operable program or batch file.
+```
 
-Alejandro Aponte
+**Solution:**
 
+1. The default name of the executable is `kind-windows-amd64.exe`. Rename this file to `kind.exe`.
+2. Place `kind.exe` in a specific folder.
+3. Add this folder to the `PATH` environment variable.

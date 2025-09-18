@@ -5,37 +5,23 @@ question: Any advice for adding the Machine Learning Zoomcamp experience to your
 sort_order: 4260
 ---
 
-I’ve seen LinkedIn users list DataTalksClub as Experience with titles as:
+I've seen LinkedIn users list DataTalksClub as Experience with titles such as:
 
-Machine Learning Fellow
+- Machine Learning Fellow
+- Machine Learning Student
+- Machine Learning Participant
+- Machine Learning Trainee
 
-Machine Learning Student
+It is advised not to list this experience as an official job or internship since DataTalksClub did not hire or financially compensate you.
 
-Machine Learning Participant
+Consider incorporating the experience in the following sections:
 
-Machine Learning Trainee
+- Organizations
+- Projects
+- Skills
+- Featured
+- Original posts
+- Certifications
+- Courses
 
-Please note it is best advised that you do not list the experience as an official “job” or “internship” experience since DataTalksClub did not hire you, nor financially compensate you.
-
-Other ways you can incorporate the experience in the following sections:
-
-Organizations
-
-Projects
-
-Skills
-
-Featured
-
-Original posts
-
-Certifications
-
-Courses
-
-By Annaliese Bronz
-
-Interesting question, I put the link of my project into my CV as showcase and make posts to show my progress.
-
-By Ani Mkrtumyan
-
+Interesting suggestion: Add the link of your project to your CV as a showcase and make posts to show your progress.

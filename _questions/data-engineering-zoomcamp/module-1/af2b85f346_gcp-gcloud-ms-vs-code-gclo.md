@@ -20,15 +20,20 @@ question: GCP gcloud + MS VS Code - gcloud auth hangs
 sort_order: 1600
 ---
 
-If you are using MS VS Code and running gcloud in WSL2, when you first try to login to gcp via the gcloud cli gcloud auth application-default login, you will see a message like this, and nothing will happen
+If you are using MS VS Code and running `gcloud` in WSL2, when you first try to login to GCP via the `gcloud` CLI with `gcloud auth application-default login`, you may encounter an issue where a message appears and nothing happens:
 
 <{IMAGE:image_1}>
 
-And there might be a prompt to ask if you want to open it via browser, if you click on it, it will open up a page with error message
+There might be a prompt asking if you want to open it via a browser. If you click on it, it will open a page with an error message:
 
 <{IMAGE:image_2}>
 
-Solution : you should instead hover on the long link, and ctrl + click the long linkClick configure Trusted Domains herePopup will appear, pick first or second entry
+**Solution:**
+
+- Hover over the long link.
+- `Ctrl + Click` the long link.
+- Click "Configure Trusted Domains here."
+- A popup will appear; pick the first or second entry.
 
 <{IMAGE:image_3}>
 
@@ -36,5 +41,4 @@ Solution : you should instead hover on the long link, and ctrl + click the long 
 
 <{IMAGE:image_5}>
 
-Next time you gcloud auth, the login page should popup via default browser without issues
-
+Next time you run `gcloud auth`, the login page should pop up via the default browser without issues.

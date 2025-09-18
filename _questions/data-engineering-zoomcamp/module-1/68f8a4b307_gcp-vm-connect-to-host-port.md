@@ -1,14 +1,16 @@
 ---
 id: 68f8a4b307
-question: GCP VM -  connect to host port 22 no route to host
+question: 'GCP VM: connect to host port 22 no route to host'
 sort_order: 1580
 ---
 
-(reference: [serverfault.com](https://serverfault.com/questions/953290/google-compute-engine-ssh-connect-to-host-ip-port-22-operation-timed-ou)t)Go to edit your VM.
+Go to edit your VM.
 
-Go to section Automation
-
-Add Startup script```#!/bin/bashsudo ufw allow ssh```
-
-Stop and Start VM.
-
+1. Navigate to the **Automation** section.
+2. Add the following Startup script:
+   
+   ```bash
+   #!/bin/bash
+   sudo ufw allow ssh
+   ```
+3. Stop and Start the VM.

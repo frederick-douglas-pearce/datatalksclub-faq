@@ -4,15 +4,15 @@ question: Shuffling the initial dataset using pandas built-in function
 sort_order: 750
 ---
 
-It is possible to do the shuffling of the dataset with the pandas built-in function [pandas.DataFrame.sample](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sample.html).The complete dataset can be shuffled including resetting the index with the following commands:
+It is possible to shuffle the dataset using the pandas built-in function [`pandas.DataFrame.sample`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sample.html). To shuffle the complete dataset and reset the index, use the following commands:
 
-Setting frac=1 will result in returning a shuffled version of the complete Dataset.
+- Set `frac=1` to return a shuffled version of the complete dataset.
+- Set `random_state=seed` for consistent randomization.
 
-Setting random_state=seed will result in the same randomization as used in the course resources.
+```python
+# Shuffling the dataset
 
 df_shuffled = df.sample(frac=1, random_state=seed)
 
 df_shuffled.reset_index(drop=True, inplace=True)
-
-Added by Sylvia Schmitt
-
+```

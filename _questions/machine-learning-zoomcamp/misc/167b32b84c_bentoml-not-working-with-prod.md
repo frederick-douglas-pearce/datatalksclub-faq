@@ -5,9 +5,12 @@ question: 'BentoML not working with –production flag at any stage: e.g. with b
 sort_order: 3930
 ---
 
-You might see a long error message with something about sparse matrices, and in the swagger UI, you get a code 500 error with “” (empty string) as output.
+You might see a long error message related to sparse matrices, and in the swagger UI, you receive a code 500 error with an empty string as output.
 
-Potential reason: Setting DictVectorizer or OHE to sparse while training, and then storing this in a pipeline or custom object in the benotml model saving stage in train.py. This means that when the custom object is called in service.py, it will convert each input to a different sized sparse matrix, and this can't be batched due to inconsistent length. In this case, bentoml model signatures should have batchable set to False for production during saving the bentoml mode in train.py.
+**Potential Reason:**
 
-(Memoona Tahira)
+- If you have set `DictVectorizer` or `OneHotEncoder` (OHE) to sparse while training and stored this in a pipeline or custom object during the BentoML model saving stage in `train.py`, each input becomes a different sized sparse matrix when called in `service.py`. This inconsistency prevents batching due to varying lengths.
 
+**Solution:**
+
+- Ensure that BentoML model signatures have `batchable` set to `False` for production when saving the BentoML model in `train.py`.

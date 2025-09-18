@@ -4,9 +4,9 @@ question: GCP FREE TRIAL ACCOUNT ERROR
 sort_order: 2600
 ---
 
-If you're encountering an error when trying to create a GCP free trial account, the issue isn’t related to country restrictions, credit/debit card problems, or IP issues, it's a random problem with no clear logical reason behind it. Here’s a simple workaround that worked for me:
+If you're encountering an error when trying to create a GCP free trial account, and it's not related to country restrictions, credit/debit card problems, or IP issues, it might be a random problem. Here’s a workaround:
 
-I asked a few friends in my country to try signing up for the free trial using their Gmail accounts and their debit/credit cards. One of them was able to successfully create the account, and I’m temporarily using their Gmail to access the trial.
+- Ask friends in your country to try signing up for the free trial using their Gmail accounts and their debit/credit cards.
+- If one succeeds, you can temporarily use their Gmail to access the trial.
 
-If you're still running into the issue, this method could help you bypass the problem!
-
+This method could help you bypass the issue!

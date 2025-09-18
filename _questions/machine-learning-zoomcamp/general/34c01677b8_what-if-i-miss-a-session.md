@@ -4,5 +4,4 @@ question: What if I miss a session?
 sort_order: 50
 ---
 
-Everything is recorded, so you won’t miss office hours or anything. You will be able to ask your questions in advance and we will cover them during the live stream. Also, you can always ask questions in Slack.
-
+Everything is recorded, so you won’t miss office hours or any content. You can ask your questions in advance, and they will be covered during the live stream. Additionally, you can ask questions in Slack.

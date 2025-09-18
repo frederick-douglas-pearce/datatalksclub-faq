@@ -4,9 +4,11 @@ question: How to set credentials in Google Colab notebook to connect to BigQuery
 sort_order: 4450
 ---
 
-In the secrets sidebar, create a secret ‘BIGQUERY_CRENTIALS’ with value being your Google Cloud service account key. Then load it with:import os
+In the secrets sidebar, create a secret `BIGQUERY_CREDENTIALS` with the value being your Google Cloud service account key. Then load it with:
 
+```python
+import os
 from google.colab import userdata
 
 os.environ["DESTINATION__BIGQUERY__CREDENTIALS"] = userdata.get('BIGQUERY_CREDENTIALS')
-
+```

@@ -9,9 +9,12 @@ question: 'Error: How to fix requests library only installs v2.28 instead of v2.
 sort_order: 760
 ---
 
+If you encounter a 401 Client Error, it may indicate the need to grant access to the key or that the key is incorrect.
+
+To install the correct version directly from the source, use the following command:
+
+```bash
+pip install "requests @ https://github.com/psf/requests/archive/refs/tags/v2.32.3.zip"
+```
+
 <{IMAGE:image_1}>
-
-Or 401 Client Error , then you either need to grant access to the key or the key is wrong.
-
-Install directly from source E.g `pip install "requests @ [https://github.com/psf/requests/archive/refs/tags/v2.32.3.zip](https://github.com/psf/requests/archive/refs/tags/v2.32.3.zip)"`
-

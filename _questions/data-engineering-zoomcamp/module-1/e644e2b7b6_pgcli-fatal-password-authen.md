@@ -5,21 +5,36 @@ question: 'PGCLI - FATAL: password authentication failed for user "root" (You al
 sort_order: 1080
 ---
 
-For a more visual and detailed explanation, feel free to check the video [1.4.2 - Port Mapping and Networks in Docker](https://www.youtube.com/watch?v=tOr4hTsHOzU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=16&ab_channel=DataTalksClub%E2%AC%9B)
+For a more visual and detailed explanation, feel free to check the video [1.4.2 - Port Mapping and Networks in Docker](https://www.youtube.com/watch?v=tOr4hTsHOzU&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=16&ab_channel=DataTalksClub%E2%AC%9B).
 
-If you want to debug: the following can help (on a MacOS)
+If you want to debug the issue on MacOS, you can try the following steps:
 
-To find out if something is blocking your port (on a MacOS):
+- **Check if something is blocking your port:**
+  
+  Use the `lsof` command to find out which application is using a specific port on your local machine:
+  
+  ```bash
+  lsof -i :5432
+  ```
 
-You can use the lsof command to find out which application is using a specific port on your local machine. `lsof -i :5432`wi
+- **List running PostgreSQL services:**
 
-Or list the running postgres services on your local machine with launchctl
+  Use `launchctl` to list running postgres services on your local machine.
 
-To unload the running service on your local machine (on a MacOS):
+- **Unload the running service:**
 
-unload the launch agent for the PostgreSQL service, which will stop the service and free up the port  `launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
+  Unload the launch agent for the PostgreSQL service, which will stop the service and free up the port:
+  
+  ```bash
+  launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+  ```
 
-this one to start it again`launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
+- **Restart the service:**
 
-Changing port from 5432:5432 to 5431:5432 helped me to avoid this error.
+  ```bash
+  launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+  ```
 
+- **Change the port:**
+
+  Changing the port from `5432:5432` to `5431:5432` can help avoid this error.

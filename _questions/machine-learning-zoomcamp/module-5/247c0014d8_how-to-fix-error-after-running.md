@@ -12,19 +12,36 @@ sort_order: 2050
 
 Solution
 
-This error was because there was another instance of gunicorn running. So I thought of removing this along with the zoomcamp_test image. However, it didn’t let me remove the orphan container. So I did the following
+This error occurred because there was another instance of Gunicorn running. To resolve it, follow these steps:
 
-Running the following commands
+1. List all Docker containers:
+   
+   ```bash
+   docker ps -a
+   ```
 
-docker ps -a <to list all docker containers>
+2. List all Docker images:
+   
+   ```bash
+   docker images
+   ```
 
-docker images <to list images>
+3. Stop the container:
+   
+   ```bash
+   docker stop <container ID>
+   ```
 
-docker stop <container ID>
+4. Remove the container:
+   
+   ```bash
+   docker rm <container ID>
+   ```
 
-docker rm <container ID>
+5. Remove the image:
+   
+   ```bash
+   docker rmi <image>
+   ```
 
-docker rmi image
-
-I rebuilt the Docker image, and ran it once again; this time it worked correctly and I was able to serve the test script to the endpoint.
-
+Rebuild the Docker image and run it again. This time, it should work correctly, allowing you to serve the test script to the endpoint.

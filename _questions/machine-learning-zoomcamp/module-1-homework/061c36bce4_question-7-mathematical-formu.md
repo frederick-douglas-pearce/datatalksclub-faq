@@ -4,25 +4,16 @@ question: 'Question 7: Mathematical formula for linear regression'
 sort_order: 490
 ---
 
-In Question 7 we are asked to calculate 
+In Question 7, we are asked to calculate the following:
 
-XTX=XTX
-XTXinv=(XTX)-1
-w=(XTX)-1XTy
+- \( X^TX \)
+- \( (X^TX)^{-1} \)
+- \( w = (X^TX)^{-1}X^Ty \)
 
-The initial problem w=X-1y can be solved by this, where a Matrix X is multiplied by some unknown weights w resulting in the target y.
+The initial problem \( w = X^{-1}y \) can be solved by this, where a matrix \( X \) is multiplied by some unknown weights \( w \) resulting in the target \( y \).
 
-The initial problem  can be solved by this, where a Matrix X is multiplied by some unknown weights w resulting in the target y.
+### Additional Reading and Videos
 
-Additional reading and videos:
-
-[Ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)
-
-[Multiple Linear Regression in Matrix Form](https://www.youtube.com/watch?v=jZ_Hq-7ifk8)
-
-[Pseudoinverse Solution to OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares)
-
-Added by Sylvia Schmitt
-
-with commends from Dmytro Durach
-
+- [Ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)
+- [Multiple Linear Regression in Matrix Form](https://www.youtube.com/watch?v=jZ_Hq-7ifk8)
+- [Pseudoinverse Solution to OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares)

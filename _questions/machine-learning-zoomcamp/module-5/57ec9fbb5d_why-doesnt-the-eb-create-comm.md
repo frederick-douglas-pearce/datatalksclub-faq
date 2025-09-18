@@ -4,19 +4,22 @@ question: Why doesn’t the eb create command use the latest version of my Docke
 sort_order: 2290
 ---
 
-When you make local changes to Dockerfile or any other files and do not commit the changes, AWS won’t  deploy the changes. The reason is that by default, the EB CLI deploys the latest commit in the current branch. If you want to deploy to your environment without committing, you can use the –stage option to deploy changes that have been added to the staging area.
+When you make local changes to the Dockerfile or any other files and do not commit these changes, AWS Elastic Beanstalk (EB) won’t deploy them. By default, the EB CLI deploys the latest commit in the current branch. 
 
-If the docker image creation fails during the “eb create” process, you can still create the image and deploy it by running eb deploy.
+If you want to deploy to your environment without committing, you can use the `–-stage` option to deploy changes that have been added to the staging area.
 
-To deploy changes without committing
+If the Docker image creation fails during the `eb create` process, you can still create the image and deploy it by running `eb deploy`.
 
-Add new and changed files to the staging area:
+**To deploy changes without committing:**
 
-~/eb$ git add .
+1. Add new and changed files to the staging area:
+   
+   ```bash
+   ~/eb$ git add .
+   ```
 
-Deploy the staged changes with eb deploy:
-
-~/eb$ eb deploy --staged
-
-(added by Karina)
-
+2. Deploy the staged changes with `eb deploy`:
+   
+   ```bash
+   ~/eb$ eb deploy --staged
+   ```

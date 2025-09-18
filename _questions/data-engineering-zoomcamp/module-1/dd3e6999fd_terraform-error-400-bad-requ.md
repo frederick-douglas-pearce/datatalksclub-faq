@@ -1,24 +1,27 @@
 ---
 id: dd3e6999fd
-question: Terraform - Error 400 Bad Request.  Invalid JWT Token  on WSL.
+question: 'Terraform: Error 400 Bad Request. Invalid JWT Token on WSL.'
 sort_order: 1650
 ---
 
-When running
+When running:
 
+```bash
 terraform apply
+```
 
-on wsl2 I've got this error:
+on WSL2, you might encounter the following error:
 
-│ Error: Post "[storage.googleapis.com](https://storage.googleapis.com/storage/v1/b?alt=json&prettyPrint=false&project=<your-project-id>":) oauth2: cannot fetch token: 400 Bad Request
+```
+Error: Post "https://storage.googleapis.com/storage/v1/b?alt=json&prettyPrint=false&project=<your-project-id>": oauth2: cannot fetch token: 400 Bad Request
 
-│ Response: {"error":"invalid_grant","error_description":"Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values in the JWT claim."}
+Response: {"error":"invalid_grant","error_description":"Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values in the JWT claim."}
+```
 
-It happens because there may be time desync on your machine which affects computing JWT
+This issue occurs due to potential time desynchronization on your machine, affecting JWT computation.
 
-To fix this, run the command
+To fix this, run the following command to synchronize your system time:
 
+```bash
 sudo hwclock -s
-
-which fixes your system time.
-
+```

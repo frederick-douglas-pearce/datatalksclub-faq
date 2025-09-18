@@ -5,13 +5,33 @@ question: 'TypeError: __init__() got an unexpected keyword argument ''unbound_me
 sort_order: 3630
 ---
 
-Problem Description:
+### Problem Description
 
-In video 10.3, when I was testing a flask service, I got the above error. I ran docker run .. in one terminal. When in second terminal I run python gateway.py, I get the above error.
+In video 10.3, while testing a Flask service, the following error occurred:
 
-Solution: This error has something to do with versions of Flask and Werkzeug. I got the same error, if I just import flask with from flask import Flask.
+```
+TypeError: __init__() got an unexpected keyword argument 'unbound_message'
+```
 
-By running pip freeze > requirements.txt,I found that their versions are Flask==2.2.2 and Werkzeug==2.2.2. This error appears while using an old version of werkzeug (2.2.2) with new version of flask (2.2.2). I solved it by pinning version of Flask into an older version with pipenv install Flask==2.1.3.
+This error was encountered when running `docker run ...` in one terminal and then executing `python gateway.py` in another terminal.
 
-Added by Bhaskar Sarma
+### Solution
 
+This issue is related to the versions of Flask and Werkzeug.
+
+To debug the issue:
+
+1. Run `pip freeze > requirements.txt` to check the installed versions of Flask and Werkzeug.
+   - Example output:
+     ```
+     Flask==2.2.2
+     Werkzeug==2.2.2
+     ```
+2. The error occurs when using an old version of Werkzeug (2.2.2) with a new version of Flask (2.2.2).
+3. To resolve, pin the version of Flask to an older version:
+   
+   ```bash
+   pipenv install Flask==2.1.3
+   ```
+
+This should resolve the compatibility issue.

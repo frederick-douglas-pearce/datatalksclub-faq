@@ -7,97 +7,64 @@ sort_order: 2200
 
 There are multiple benefits of using Cloud Functions to automate tasks in Google Cloud.
 
-Use below Cloud Function python script to load files directly to BigQuery. Use your project id, dataset id & table id as defined by you.
+Use the following Cloud Function Python script to load files directly into BigQuery. Set your project ID, dataset ID, and table ID accordingly.
 
+```python
 import tempfile
-
 import requests
-
 import logging
-
 from google.cloud import bigquery
 
 def hello_world(request):
+    # table_id = <project_id.dataset_id.table_id>
+    table_id = 'de-zoomcap-project.dezoomcamp.fhv-2019'
 
-# table_id = <project_id.dataset_id.table_id>
+    # Create a new BigQuery client
+    client = bigquery.Client()
 
-table_id = 'de-zoomcap-project.dezoomcamp.fhv-2019'
+    for month in range(4, 13):
+        # Define the schema for the data in the CSV.gz files
+        url = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-{:02d}.csv.gz'.format(month)
 
-# Create a new BigQuery client
+        # Download the CSV.gz file from Github
+        response = requests.get(url)
 
-client = bigquery.Client()
+        # Create new table if loading first month data else append
+        write_disposition_string = "WRITE_APPEND" if month > 1 else "WRITE_TRUNCATE"
 
-for month in range(4, 13):
+        # Defining LoadJobConfig with schema of table to prevent it from changing with every table
+        job_config = bigquery.LoadJobConfig(
+            schema=[
+                bigquery.SchemaField("dispatching_base_num", "STRING"),
+                bigquery.SchemaField("pickup_datetime", "TIMESTAMP"),
+                bigquery.SchemaField("dropOff_datetime", "TIMESTAMP"),
+                bigquery.SchemaField("PUlocationID", "STRING"),
+                bigquery.SchemaField("DOlocationID", "STRING"),
+                bigquery.SchemaField("SR_Flag", "STRING"),
+                bigquery.SchemaField("Affiliated_base_number", "STRING"),
+            ],
+            skip_leading_rows=1,
+            write_disposition=write_disposition_string,
+            autodetect=True,
+            source_format="CSV",
+        )
 
-# Define the schema for the data in the CSV.gz files
+        # Load the data into BigQuery
+        # Create a temporary file to prevent the exception: AttributeError: 'bytes' object has no attribute 'tell'
+        with tempfile.NamedTemporaryFile() as f:
+            f.write(response.content)
+            f.seek(0)
 
-url = '[GitHub](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-{:02d}.csv.gz'.format(mont)h)
+            job = client.load_table_from_file(
+                f,
+                table_id,
+                location="US",
+                job_config=job_config,
+            )
 
-# Download the CSV.gz file from Github
+            job.result()
 
-response = requests.get(url)
+        logging.info("Data for month %d successfully loaded into table %s.", month, table_id)
 
-# Create new table if loading first month data else append
-
-write_disposition_string = "WRITE_APPEND" if month > 1 else "WRITE_TRUNCATE"
-
-# Defining LoadJobConfig with schema of table to prevent it from changing with every table
-
-job_config = bigquery.LoadJobConfig(
-
-schema=[
-
-bigquery.SchemaField("dispatching_base_num", "STRING"),
-
-bigquery.SchemaField("pickup_datetime", "TIMESTAMP"),
-
-bigquery.SchemaField("dropOff_datetime", "TIMESTAMP"),
-
-bigquery.SchemaField("PUlocationID", "STRING"),
-
-bigquery.SchemaField("DOlocationID", "STRING"),
-
-bigquery.SchemaField("SR_Flag", "STRING"),
-
-bigquery.SchemaField("Affiliated_base_number", "STRING"),
-
-],
-
-skip_leading_rows=1,
-
-write_disposition=write_disposition_string,
-
-autodetect=True,
-
-source_format="CSV",
-
-)
-
-# Load the data into BigQuery
-
-# Create a temporary file to prevent the exception- AttributeError: 'bytes' object has no attribute 'tell'"
-
-with tempfile.NamedTemporaryFile() as f:
-
-f.write(response.content)
-
-f.seek(0)
-
-job = client.load_table_from_file(
-
-f,
-
-table_id,
-
-location="US",
-
-job_config=job_config,
-
-)
-
-job.result()
-
-logging.info("Data for month %d successfully loaded into table %s.", month, table_id)
-
-return 'Data loaded into table {}.'.format(table_id)
-
+    return 'Data loaded into table {}.'.format(table_id)
+```

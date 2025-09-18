@@ -6,13 +6,10 @@ question: Subnetwork 'default' does not support Private Google Access which is r
 sort_order: 3900
 ---
 
-Search for VPC in Google Cloud Console
+To resolve this issue, follow these steps:
 
-Navigate to the second tab “SUBNETS IN CURRENT PROJECT”
-
-Look for the region/location where your dataproc will be located and click on it
-
-Click the edit button and toggle on the button for “Private Google Access”
-
-Save changes.
-
+1. Search for VPC in Google Cloud Console.
+2. Navigate to the "SUBNETS IN CURRENT PROJECT" tab.
+3. Locate the region/location where your Dataproc will be located and click on it.
+4. Click the edit button and toggle on "Private Google Access."
+5. Save changes.

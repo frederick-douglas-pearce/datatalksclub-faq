@@ -1,18 +1,19 @@
 ---
 id: fd3a06c6ee
-question: Kind cannot load docker image
+question: 'Kind: cannot load docker image'
 sort_order: 3580
 ---
 
-Problem: Failing to load docker-image to cluster (when you’ved named a cluster)
+**Problem:** Failing to load docker-image to cluster (when you've named a cluster)
 
+```bash
 kind load docker-image zoomcamp-10-model:xception-v4-001
 
 ERROR: no nodes found for cluster "kind"
+```
 
-Solution: Specify cluster name with -n
+**Solution:** Specify the cluster name with `-n`
 
+```bash
 kind -n clothing-model load docker-image zoomcamp-10-model:xception-v4-001
-
-Andrew Katoch
-
+```

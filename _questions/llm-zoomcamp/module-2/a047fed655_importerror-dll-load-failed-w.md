@@ -5,17 +5,33 @@ question: 'ImportError: DLL load failed while importing onnxruntime_pybind11_sta
 sort_order: 430
 ---
 
-If you use Anaconda or Miniconda, you can try re-installing onnxruntime with conda
+If you encounter this error while using Anaconda or Miniconda, try re-installing `onnxruntime` with the following command:
 
+```bash
 conda install -c conda-forge onnxruntime
+```
 
-One of the ways you can create an environment to use "qdrant-client[fastembed]>=1.14.2" which throws this error is to create the environment using Conda. Here are the steps -
+To create an environment for using `qdrant-client[fastembed]>=1.14.2`, which may trigger this error, follow these steps:
 
-Create a Conda environment usingconda create --name llm-zoomcamp-env python=3.10
+1. **Create a Conda Environment**
+   
+   ```bash
+   conda create --name llm-zoomcamp-env python=3.10
+   ```
 
-Activate your new environmentconda activate llm-zoomcamp-env
+2. **Activate the Environment**
+   
+   ```bash
+   conda activate llm-zoomcamp-env
+   ```
 
-Install the dependencypip install "qdrant-client[fastembed]>=1.14.2"
+3. **Install the Dependency**
+   
+   ```bash
+   pip install "qdrant-client[fastembed]>=1.14.2"
+   ```
 
-Use this environment either using Jupyter notebook or in VSCode/CursorFor VSCode/Cursor -> Ctrl+Shift+P/Cmd+Shift+P -> Select Python Enterpreter -> Select llm-zoomcamp-env
-
+4. **Use the Environment**
+   
+   - **Jupyter Notebook**: Activate the environment before launching Jupyter.
+   - **VSCode/Cursor**: Use `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac), then select "Python Interpreter" and choose "llm-zoomcamp-env".

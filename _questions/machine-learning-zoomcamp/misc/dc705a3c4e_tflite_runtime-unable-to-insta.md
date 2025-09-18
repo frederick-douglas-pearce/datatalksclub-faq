@@ -4,33 +4,27 @@ question: Tflite_runtime unable to install
 sort_order: 3970
 ---
 
-I am getting this error message when I tried to install tflite in a pipenv environment
+When trying to install `tflite_runtime` in a pipenv environment, the following error message appears:
 
-Error:  An error occurred while installing tflite_runtime!
-
-Error text:
-
+```bash
 ERROR: Could not find a version that satisfies the requirement tflite_runtime (from versions: none)
-
 ERROR: No matching distribution found for tflite_runtime
+```
 
-This version of tflite do not run on python 3.10, the way we can make it work is by install python 3.9, after that it would install the tflite_runtime without problem.
+### Solution
 
-Pastor Soto
+This version of `tflite_runtime` does not run on Python 3.10. To resolve this issue, follow these steps:
 
-Check all available versions here:
+1. **Install Python 3.9**: Use Python 3.9 instead of Python 3.10.
+2. **Reinstall `tflite_runtime`**: With Python 3.9, the installation should proceed without issues.
 
-[https://google-coral.github.io/py-repo/tflite-runtime/](https://google-coral.github.io/py-repo/tflite-runtime/)
+### Additional Resources
 
-If you don’t find a combination matching your setup, try out the options at
+- Check all available versions here: [TFLite Runtime Versions](https://google-coral.github.io/py-repo/tflite-runtime/)
+- If no suitable version is found, consider the options provided at [GitHub Repository](https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite). You can install it using:
 
-[https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite](https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite)
+  ```bash
+  pip install "https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.7.0-cp38-cp38-linux_x86_64.whl"
+  ```
 
-which you can install as shown in the lecture, e.g.
-
-pip install [GitHub](https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.7.0-cp38-cp38-linux_x86_64.whl)
-
-Finally, if nothing works, use the TFLite included in TensorFlow for local development, and use Docker for testing Lambda.
-
-Rileen Sinha (based on discussions on Slack)
-
+- For local development, use the TFLite included in TensorFlow and Docker for testing Lambda.

@@ -5,33 +5,39 @@ question: The connection to the server localhost:8080 was refused - did you spec
 sort_order: 3540
 ---
 
-I ran into an issue where kubectl wasn't working.
+I encountered an issue where `kubectl` wasn't working, and I received the following error when trying to execute a command:
 
-I kept getting the following error:
-
+```bash
 kubectl get service
 
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
+```
 
-I searched online for a resolution, but everyone kept talking about creating an environment variable and creating some admin.config file in my home directory.
+Here is the solution that worked for me:
 
-All hogwash.
+1. Delete the existing cluster:
+   
+   ```bash
+   kind delete cluster
+   ```
 
-The solution to my problem was to just start over.
+2. Remove the Kubernetes configuration directory:
 
-kind delete cluster
+   ```bash
+   rm -rf ~/.kube
+   ```
 
-rm -rf ~/.kube
+3. Create a new cluster:
 
-kind create cluster
+   ```bash
+   kind create cluster
+   ```
 
-Now when I try the same command again:
+After performing these steps, the command worked successfully:
 
+```bash
 kubectl get service
 
 NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-
 kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   53s
-
-Added by Martin Uribe
-
+```

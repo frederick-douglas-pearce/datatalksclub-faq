@@ -4,9 +4,17 @@ question: Error launching Jupyter notebook
 sort_order: 520
 ---
 
-If you face an error kind of ImportError: cannot import name 'contextfilter' from 'jinja2' (anaconda\lib\site-packages\jinja2\__init__.py) when launching a new notebook for a brand new environment.
+If you encounter the error below when launching a Jupyter notebook in a new environment:
 
-Switch to the main environment and run "pip install nbconvert --upgrade".
+```bash
+ImportError: cannot import name 'contextfilter' from 'jinja2' (anaconda\lib\site-packages\jinja2\__init__.py)
+```
 
-Added by George Chizhmak
+Follow these steps:
 
+1. Switch to the main environment.
+2. Run the following command:
+
+   ```bash
+   pip install nbconvert --upgrade
+   ```

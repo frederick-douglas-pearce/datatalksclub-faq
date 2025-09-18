@@ -4,9 +4,16 @@ question: Error while running python3 stream.py worker
 sort_order: 3960
 ---
 
-If you get an error while running the command python3 stream.py worker
+If you get an error while running the command `python3 stream.py worker`, follow these steps:
 
-Run pip uninstall kafka-python
+1. Uninstall the current `kafka-python` package:
+   
+   ```bash
+   pip uninstall kafka-python
+   ```
 
-Then run pip install kafka-python==1.4.6
+2. Install the specific version of `kafka-python`:
 
+   ```bash
+   pip install kafka-python==1.4.6
+   ```

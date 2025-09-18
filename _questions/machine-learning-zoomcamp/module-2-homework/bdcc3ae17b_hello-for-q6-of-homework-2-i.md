@@ -1,18 +1,15 @@
 ---
 id: bdcc3ae17b
-question: 'Homework Q6: is the RMSE result close to the options?'
+question: 'Homework: is the RMSE result close to the options?'
 sort_order: 970
 ---
 
- Mine
-  is about 12.4 different from the closets option, but all the above questions I have
-  pretty close answers, so I don’t know why there is such a great difference in Q6…
+My result is about 12.4 different from the closest option. For previous questions, my answers were close, so I'm unsure why there's a large discrepancy for question 6.
 
-For questions 5 and 6, do not forget to reinitialize:
+For questions 5 and 6, please ensure you reinitialize with:
 
+```python
 Idx = np.arange(n)
+```
 
-For each iteration of r in question 5 and also for question 6
-
-(Added by Victor Emenike)
-
+This should be done for each iteration of `r` in question 5 and also for question 6.

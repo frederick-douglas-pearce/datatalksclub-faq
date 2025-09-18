@@ -1,32 +1,33 @@
 ---
 id: acbc9e940e
-question: 'DBT - When running your first dbt model, if it fails with an error:'
+question: 'DBT: When running your first dbt model, if it fails with an error:'
 sort_order: 2620
 ---
 
+```
 404 Not found: Dataset was not found in location US
 
 404 Not found: Dataset eighth-zenith-372015:trip_data_all was not found in location us-west1
+```
 
-R: Go to BigQuery, and check the location of BOTH
+To resolve this issue, follow these steps:
 
-The source dataset (trips_data_all), and
+1. **Verify Locations in BigQuery:**
+   - Go to BigQuery and check the location of both:
+     - The source dataset (e.g., `trips_data_all`).
+     - The schema you’re writing to. The name should be in the format `dbt_<first initial><last name>` if you didn’t change the default settings.
 
-The schema you’re trying to write to (name should be dbt_<first initial><last name> (if you didn’t change the default settings at the end when setting up your project))
+2. **Check Region Consistency:**
+   - Ensure both datasets are in the same region. Typically, your source data is in your region, while the write location could be multi-regional (e.g., US).
+   - If there's a mismatch, delete the datasets and recreate them in the specified region with the correct naming format.
 
-Likely, your source data will be in your region, but the write location will be a multi-regional location (US in this example). Delete these datasets, and recreate them with your specified region and the correct naming format.
+3. **Specify Single-Region Location:**
+   - Instead of using a multi-regional location like `US`, specify the exact region (e.g., `US-east1`). Refer to [this Github comment](https://github.com/dbt-labs/dbt-bigquery/issues/19#issuecomment-635545315) for more details.
+   - Additional guidance is available in [this post](https://learningdataengineering540969211.wordpress.com/dbt-cloud-and-bigquery-an-effort-to-try-and-resolve-location-issues/).
 
-Alternatively, instead of removing datasets, you can specify the single-region location you are using. E.g. instead of ‘location: US’, specify the region, so ‘location: US-east1’. See [this Github comment](https://github.com/dbt-labs/dbt-bigquery/issues/19#issuecomment-635545315) for more detail. Additionally please see [this post of Sandy](https://learningdataengineering540969211.wordpress.com/dbt-cloud-and-bigquery-an-effort-to-try-and-resolve-location-issues/)
+4. **Update Location in DBT Cloud:**
+   - Go to your profile page (top right drop-down --> profile).
+   - Under Credentials --> Analytics (or your customized name), click on BigQuery >.
+   - Hit Edit and update your location. You may need to re-upload your service account JSON to refresh your private key. Ensure the region matches exactly as specified in BigQuery.
 
-In DBT cloud you can actually specify the location using the following steps:
-
-GPo to your profile page (top right drop-down --> profile)
-
-Then go to under Credentials --> Analytics (you may have customised this name)
-
-Click on Bigquery >
-
-Hit Edit
-
-Update your location, you may need to re-upload your service account JSON to re-fetch your private key, and save. (NOTE: be sure to exactly copy the region BigQuery specifies your dataset is in.)
-
+Following these steps should help resolve location-related errors when running your dbt models.

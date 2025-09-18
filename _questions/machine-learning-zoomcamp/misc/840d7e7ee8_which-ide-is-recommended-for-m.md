@@ -5,6 +5,3 @@ sort_order: 4150
 ---
 
 VSCode and Jupyter.
-
-(added by Kemal Dahha)
-

@@ -4,6 +4,7 @@ question: Embedding dlt into Kestra
 sort_order: 4490
 ---
 
+```yaml
 id: dlt_ingestion
 
 namespace: my.dlt
@@ -14,27 +15,27 @@ tasks:
 
 - id: run_dlt
 
-type: io.kestra.plugin.scripts.python.Commands
+  type: io.kestra.plugin.scripts.python.Commands
 
-commands:
+  commands:
 
-- |
+  - |
 
-import dlt
+    import dlt
 
-from my_dlt_pipeline import load_data  # Import your dlt function
+    from my_dlt_pipeline import load_data  # Import your dlt function
 
-pipeline = dlt.pipeline(
+    pipeline = dlt.pipeline(
 
-pipeline_name="kestra_pipeline",
+      pipeline_name="kestra_pipeline",
 
-destination="duckdb",
+      destination="duckdb",
 
-dataset_name="kestra_dataset"
+      dataset_name="kestra_dataset"
 
-)
+    )
 
-info = pipeline.run(load_data())
+    info = pipeline.run(load_data())
 
-print(info)
-
+    print(info)
+```

@@ -6,9 +6,12 @@ sort_order: 3980
 
 Error: ImageDataGenerator name 'scipy' is not defined.
 
-Check that scipy is installed in your environment.
+To resolve this issue:
 
-Restart jupyter kernel and try again.
+1. Ensure that `scipy` is installed in your environment:
+   
+   ```bash
+   pip install scipy
+   ```
 
-Marcos MJD
-
+2. Restart the Jupyter kernel and try running the code again.

@@ -4,9 +4,20 @@ question: AppendableIndex error in minsearch
 sort_order: 820
 ---
 
-Error: 'ImportError: cannot import name 'AppendableIndex' from 'minsearch''
+### Error
 
-Fix: pip install --upgrade minsearch
+```
+ImportError: cannot import name 'AppendableIndex' from 'minsearch'
+```
 
-(minsearch 0.0.4 works well; jupyter kernel restarting is needed after this upgrade)
+### Fix
 
+1. Run the following command to upgrade:
+   
+   ```bash
+   pip install --upgrade minsearch
+   ```
+
+2. Ensure you are using minsearch version 0.0.4.
+
+3. Restart the Jupyter kernel after the upgrade.

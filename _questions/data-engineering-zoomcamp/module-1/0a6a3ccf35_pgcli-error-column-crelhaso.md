@@ -4,13 +4,10 @@ question: PGCLI - error column c.relhasoids does not exist
 sort_order: 1160
 ---
 
-When using the command `\d <database name>` you get the error column `c.relhasoids does not exist`.
+When using the command `\d <database name>` you get the error `column c.relhasoids does not exist`.
 
 Resolution:
 
-Uninstall pgcli
-
-Reinstall pgclidatabase "ny_taxi" does not exist
-
-Restart pc
-
+1. Uninstall pgcli.
+2. Reinstall pgcli.
+3. Restart your PC.

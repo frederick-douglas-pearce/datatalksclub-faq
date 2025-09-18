@@ -1,16 +1,11 @@
 ---
 id: 139ae54c4f
-question: Difference between predict(X) and predict_proba(X)[:, 1]
+question: Difference between `predict(X)` and `predict_proba(X)[:, 1]`
 sort_order: 1550
 ---
 
-In case of using predict(X) for this task we are getting the binary classification predictions which are 0 and 1. This may lead to incorrect evaluation values.
+Using `predict(X)` provides binary classification predictions, which are either 0 or 1. This could result in inaccurate evaluation values.
 
-The solution is to use predict_proba(X)[:,1], where we get the probability that the value belongs to one of the classes.
+The alternative is to use `predict_proba(X)[:, 1]`, which gives the probability that the value belongs to a specific class.
 
-Vladimir Yesipov
-
-Predict_proba shows probabilities per class.
-
-Ani Mkrtumyan
-
+`predict_proba` displays probabilities for each class.

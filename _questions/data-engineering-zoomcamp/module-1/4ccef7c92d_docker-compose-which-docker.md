@@ -1,16 +1,25 @@
 ---
 id: 4ccef7c92d
-question: Docker-Compose - Which docker-compose binary to use for WSL?
+question: 'Docker-Compose: Which docker-compose binary to use for WSL?'
 sort_order: 970
 ---
 
-To figure out which docker-compose you need to download from [https://github.com/docker/compose/releases](https://github.com/docker/compose/releases) you can check your system with these commands:
+To determine which `docker-compose` binary to download from [Docker Compose releases](https://github.com/docker/compose/releases), you can check your system with the following commands:
 
-uname -s  -> return Linux most likely
+- To check the system type:
 
-uname -m -> return "flavor"
+  ```bash
+  uname -s  # This will most likely return 'Linux'
+  ```
 
-Or try this command -
+- To check the system architecture:
 
-sudo curl -L "[GitHub](https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname) -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  ```bash
+  uname -m  # This will return your system's 'flavor'
+  ```
 
+Alternatively, you can use the following command to download `docker-compose` directly:
+
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```

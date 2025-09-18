@@ -1,50 +1,92 @@
 ---
 id: 513410225e
-question: GCP Virtual Machine (VM) Size, Slow, Clean Up
+question: 'GCP: Virtual Machine (VM) Size, Slow, Clean Up'
 sort_order: 1500
 ---
 
-If you are progressing through the course and find that your VM is starting to become slow you can run the following commands to inspect and detect areas where you can improve this.
+If you are progressing through the course and find that your VM is starting to become slow, you can run the following commands to inspect and detect areas where you can improve:
 
-NB: What size VM should I start with? I started with 30GB but this wasn’t enough, I had to restart the project with a 60GB machine so I’d recommend choosing the 60GB version.
+**Recommended VM Size**
 
-Commands to inspect the health of your VM:
+- Start with a 60GB machine. A 30GB machine may not be sufficient, as you might need to restart the project with a larger size.
 
-System Resource Usage:
+**Commands to Inspect the Health of Your VM**
 
-top or htop: Shows real-time information about system resource usage, including CPU, memory, and processes.
+- **System Resource Usage**
+  
+  ```bash
+  top
+  htop
+  ```
+  Shows real-time information about system resource usage, including CPU, memory, and processes.
 
-free -h: Displays information about system memory usage and availability.
+  ```bash
+  free -h
+  ```
+  Displays information about system memory usage and availability.
 
-df -h: Shows disk space usage of file systems.
+  ```bash
+  df -h
+  ```
+  Shows disk space usage of file systems.
 
-du -h <directory>: Displays disk usage of a specific directory.
+  ```bash
+  du -h <directory>
+  ```
+  Displays disk usage of a specific directory.
 
-Running Processes:
+- **Running Processes**
+  
+  ```bash
+  ps aux
+  ```
+  Lists all running processes along with detailed information.
 
-ps aux: Lists all running processes along with detailed information.
+- **Network**
+  
+  ```bash
+  ifconfig
+  ip addr show
+  ```
+  Shows network interface configuration.
 
-Network:
+  ```bash
+  netstat -tuln
+  ```
+  Displays active network connections and listening ports.
 
-ifconfig or ip addr show: Shows network interface configuration.
+- **Hardware Information**
+  
+  ```bash
+  lscpu
+  ```
+  Displays CPU information.
 
-netstat -tuln: Displays active network connections and listening ports.
+  ```bash
+  lsblk
+  ```
+  Lists block devices (disks and partitions).
 
-Hardware Information:
+  ```bash
+  lshw
+  ```
+  Lists hardware configuration.
 
-lscpu: Displays CPU information.
+- **User and Permissions**
+  
+  ```bash
+  who
+  ```
+  Shows who is logged on and their activities.
 
-lsblk: Lists block devices (disks and partitions).
+  ```bash
+  w
+  ```
+  Displays information about currently logged-in users and their processes.
 
-lshw: Lists hardware configuration.
-
-User and Permissions:
-
-who: Shows who is logged on and their activities.
-
-w: Displays information about currently logged-in users and their processes.
-
-Package Management:
-
-apt list --installed: Lists installed packages (for Ubuntu and Debian-based systems)
-
+- **Package Management**
+  
+  ```bash
+  apt list --installed
+  ```
+  Lists installed packages (for Ubuntu and Debian-based systems).

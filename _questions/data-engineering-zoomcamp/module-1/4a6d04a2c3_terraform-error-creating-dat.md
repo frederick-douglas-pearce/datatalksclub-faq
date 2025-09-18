@@ -7,23 +7,23 @@ sort_order: 1700
 
 The error:
 
+```
 Error: googleapi: Error 403: Access denied., forbidden
 
-│
-
-and
-
-│ Error: Error creating Dataset: googleapi: Error 403: Request had insufficient authentication scopes.
-
-For this solution make sure to run:
-
-echo $GOOGLE_APPLICATION_CREDENTIALS
-
-echo $?
+Error: Error creating Dataset: googleapi: Error 403: Request had insufficient authentication scopes.
+```
 
 Solution:
 
-You have to set again the GOOGLE_APPLICATION_CREDENTIALS as Alexey did in the environment set-up video in week1:
+1. Verify your credentials by running:
+   
+   ```bash
+   echo $GOOGLE_APPLICATION_CREDENTIALS
+   echo $?
+   ```
 
-export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json
+2. Ensure you have set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable correctly, as demonstrated in the environment setup video in week 1:
 
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+   ```

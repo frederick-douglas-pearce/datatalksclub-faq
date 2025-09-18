@@ -4,11 +4,6 @@ question: 'Shortcut: define functions for faster execution'
 sort_order: 840
 ---
 
-As it speeds up the development:
+Defining functions can speed up development significantly. You can create a function like `prepare_df(initial_df, seed, fill_na_type)` to prepare all three dataframes and y_vectors. The `fillna()` operation can be applied before splitting the `initial_df`.
 
-prepare_df(initial_df, seed, fill_na_type)  - that prepared all 3 dataframes and 3 y_vectors. Fillna() can be done before the initial_df is split.
-
-Of course, you can reuse other functions: rmse() and train_linear_regression(X,y,r) from the class notebook
-
-(Ivan Brigida)
-
+Additionally, you can reuse functions such as `rmse()` and `train_linear_regression(X, y, r)` from the class notebook.

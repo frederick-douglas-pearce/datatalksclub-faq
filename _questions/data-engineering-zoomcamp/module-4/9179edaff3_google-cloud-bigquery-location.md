@@ -1,16 +1,21 @@
 ---
 id: 9179edaff3
-question: Google Cloud BigQuery Location Problems
+question: 'Google Cloud BigQuery: Location Problems'
 sort_order: 3090
 ---
 
-When running a query on BigQuery sometimes could appear a this table is not on the specified location error.
+When running a query on BigQuery, you might encounter the error: **"This table is not on the specified location"**.
 
-For this problem there is not a straightforward solution, you need to dig a little, but the problem could be one of these:
+To resolve this issue, consider the following steps:
 
-Check the locations of your bucket, datasets and tables. Make sure they are all on the same one.
+- **Check the Locations**: Ensure the locations of your bucket, datasets, and tables are consistent. They should all reside in the same location.
 
-Change the query settings to the location you are in: on the query window select more -> query settings -> select the location
+- **Modify Query Settings**:
+  1. Go to the query window.
+  2. Select **More** -> **Query Settings**.
+  3. Select the correct location.
 
-Check if all the paths you are using in your query to your tables are correct: you can click on the table -> details -> and copy the path.
-
+- **Verify Table Paths**: Double-check the paths in your query:
+  1. Click on the table.
+  2. Go to **Details**.
+  3. Copy the correct path.

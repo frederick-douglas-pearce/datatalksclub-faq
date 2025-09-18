@@ -1,42 +1,41 @@
 ---
 id: 87e92edf02
-question: Docker - ny_taxi_postgres_data is empty
+question: 'Docker: ny_taxi_postgres_data is empty'
 sort_order: 660
 ---
 
-Even after properly running the docker script the folder is empty in the vs code  then try this (For Windows)
+Even after properly running the Docker script, the folder may appear empty in VS Code. For Windows, try the following steps:
 
+**Solution 1:**
+
+Run the Docker command with the absolute path quoted in the `-v` parameter:
+
+```bash
 winpty docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v "C:\Users\abhin\dataengg\DE_Project_git_connected\DE_OLD\week1_set_up\docker_sql/ny_taxi_postgres_data:/var/lib/postgresql/data" \
+  -p 5432:5432 \
+  postgres:13
+```
 
--e POSTGRES_USER="root" \
+This should resolve the visibility issue in the VS Code `ny_taxi` folder.
 
--e POSTGRES_PASSWORD="root" \
+**Note:** Ensure the correct direction for the slashes: `/` versus `\`.
 
--e POSTGRES_DB="ny_taxi" \
+**Solution 2:**
 
--v "C:\Users\abhin\dataengg\DE_Project_git_connected\DE_OLD\week1_set_up\docker_sql/ny_taxi_postgres_data:/var/lib/postgresql/data" \
+Another possible solution for Windows is to finish the folder path with a forward slash `/`:
 
--p 5432:5432 \
-
-postgres:13
-
-Here quoting the absolute path in  the -v parameter is solving the issue and all the files are visible in the Vs-code ny_taxi folder as shown in the video.
-
-Note: Check he example for the direction of the / \
-
-**Another possible solution for windows, make sure to finish the folder path with a forward slash / :
-
+```bash
 docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v /"$(pwd)"/ny_taxi_postgres_data/:/var/lib/postgresql/data/ \
+  -p 5432:5432 \
+  postgres:13
+```
 
--e POSTGRES_USER="root" \
-
--e POSTGRES_PASSWORD="root" \
-
--e POSTGRES_DB="ny_taxi" \
-
--v /"$(pwd)"/ny_taxi_postgres_data/:/var/lib/postgresql/data/\
-
--p 5432:5432 \
-
-postgres:13
-
+These steps should help resolve the issue of the `ny_taxi_postgres_data` folder appearing empty in your Docker setup.

@@ -4,7 +4,14 @@ question: How do I install the necessary dependencies to run the code?
 sort_order: 4400
 ---
 
-Answer: To run the provided code, ensure that the 'dlt[duckdb]' package is installed. You can do this by executing the provided installation command in a jupyter notebook: !pip install dlt[duckdb]. If you’re doing it locally, be sure to also have duckdb pip installed (even before the duckdb package is loaded).
+To run the provided code, ensure that the `dlt[duckdb]` package is installed. You can do this by executing the following installation command in a Jupyter notebook:
 
-in zsh try:pip install “dlt[duckdb]”
+```bash
+!pip install dlt[duckdb]
+```
 
+If you’re installing it locally, make sure to also have `duckdb` installed before the `duckdb` package is loaded:
+
+```zsh
+pip install "dlt[duckdb]"
+```

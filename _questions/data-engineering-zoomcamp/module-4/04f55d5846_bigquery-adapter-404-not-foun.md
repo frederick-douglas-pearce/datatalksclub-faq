@@ -4,11 +4,15 @@ question: 'BigQuery adapter: 404 Not found: Dataset was not found in location eu
 sort_order: 2750
 ---
 
-Go to Account settings >> Project >> Analytics >> Click on your connection >> go all the way down to Location and type in the GCP location just as displayed in GCP (e.g. europe-west6). You might need to reupload your GCP key.
+1. Go to **Account settings** > **Project** > **Analytics**.
+2. Click on your connection.
+3. Scroll down to **Location** and type in the GCP location exactly as displayed in GCP (e.g., `europe-west6`). You might need to reupload your GCP key.
 
-Delete your dataset in GBQ
+4. Delete your dataset in Google BigQuery (GBQ).
+5. Rebuild the project using the command:
+   
+   ```bash
+   dbt build
+   ```
 
-Rebuild project: dbt build
-
-Newly built dataset should be in the correct location
-
+6. The newly built dataset should be in the correct location.

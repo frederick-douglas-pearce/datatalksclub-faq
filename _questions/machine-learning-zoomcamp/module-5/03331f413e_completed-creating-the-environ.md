@@ -5,7 +5,4 @@ question: Completed creating the environment locally but could not find the envi
 sort_order: 2140
 ---
 
-Ans: so you have created the env. You need to make sure you're in eu-west-1 (ireland) when you check the EB environments. Maybe you're in a different region in your console.
-
-Added by Edidiong Esu
-
+Ensure that you are in the correct AWS region. Check if you are in `eu-west-1` (Ireland) when reviewing your Elastic Beanstalk environments. It's possible you might be in a different region in your AWS console.

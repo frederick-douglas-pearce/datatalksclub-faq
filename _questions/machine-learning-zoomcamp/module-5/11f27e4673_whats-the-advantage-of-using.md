@@ -6,17 +6,13 @@ sort_order: 2330
 
 Gunicorn is a Python WSGI HTTP server that is more suitable for production than the default Flask development server:
 
-Performance:
+- **Performance**: Better at handling multiple simultaneous requests.
+- **Stability**: More robust and can manage worker processes.
 
-Better at handling multiple simultaneous requests.
+**Usage**:
 
-Stability:
+Modify the CMD in your Dockerfile:
 
-More robust and can manage worker processes.
-
-Usage:
-
-Modify the CMD in your Dockerfile:CMD ["gunicorn", "--bind", "0.0.0.0:9696", "app:app"]
-
-(added by David Peterson)
-
+```dockerfile
+CMD ["gunicorn", "--bind", "0.0.0.0:9696", "app:app"]
+```

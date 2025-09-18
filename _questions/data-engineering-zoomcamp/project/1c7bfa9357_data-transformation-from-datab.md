@@ -4,5 +4,4 @@ question: Data Transformation from Databricks to Azure SQL DB
 sort_order: 4270
 ---
 
-Transformed data can be moved in to azure blob storage and then it can be moved in to azure SQL DB, instead of moving directly from databricks to Azure SQL DB.
-
+Transformed data can be moved into Azure Blob Storage and then it can be moved into Azure SQL DB, instead of moving directly from Databricks to Azure SQL DB.

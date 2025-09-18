@@ -10,9 +10,6 @@ sort_order: 2730
 
 <{IMAGE:image_1}>
 
-Vic created three different datasets in the videos.. dbt_<name> was used for development and you used a production dataset for the production environment. What was the use for the staging dataset?
+Staging, as the name suggests, acts as an intermediary between raw datasets and the final fact and dimension tables. It helps in transforming raw data into a more usable format. In staging, datasets are typically materialized as views rather than tables.
 
-R: Staging, as the name suggests, is like an intermediate between the raw datasets and the fact and dim tables, which are the finished product, so to speak. You'll notice that the datasets in staging are materialised as views and not tables.
-
-Vic didn't use it for the project, you just need to create production and dbt_name + trips_data_all that you had already.
-
+In the project, you focus on creating production and `dbt_name + trips_data_all`; the staging dataset serves its role behind the scenes.

@@ -11,4 +11,3 @@ sort_order: 2850
 There is a project setting which allows you to set `Project subdirectory` in dbt cloud:
 
 <{IMAGE:image_1}>
-

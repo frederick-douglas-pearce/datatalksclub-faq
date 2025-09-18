@@ -4,9 +4,9 @@ question: What is the difference between OneHotEncoder and DictVectorizer?
 sort_order: 1200
 ---
 
-Both work in similar ways. That is, to convert categorical features to numerical variables for use in training the model. But the difference lies in the input. OneHotEncoder uses an array as input while DictVectorizer uses a dictionary.
+Both work in similar ways to convert categorical features to numerical variables for use in training a model. The difference lies in the input:
 
-Both will produce the same result. But when we use OneHotEncoder, features are sorted alphabetically. When you use DictVectorizer you stack features that you want.
+- **OneHotEncoder** uses an array as input.
+- **DictVectorizer** uses a dictionary.
 
-Tanya Mard
-
+Both will produce the same result. However, with OneHotEncoder, features are sorted alphabetically. With DictVectorizer, you stack features as desired.

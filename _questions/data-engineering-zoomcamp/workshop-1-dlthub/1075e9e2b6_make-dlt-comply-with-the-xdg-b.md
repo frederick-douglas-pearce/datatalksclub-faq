@@ -4,11 +4,16 @@ question: Make DLT comply with the XDG Base Dir Specification
 sort_order: 4470
 ---
 
-You can set the environment variable in your shell init script (for Bash or ZSH):
+You can set the environment variable in your shell init script:
 
+For Bash or ZSH:
+
+```bash
 export DLT_DATA_DIR=$XDG_DATA_HOME/dlt
+```
 
-Or for Fish (in config.fish):
+For Fish (in `config.fish`):
 
-set -x DLT_DATA_DIR “$XDG_DATA_HOME/dlt”
-
+```bash
+set -x DLT_DATA_DIR "$XDG_DATA_HOME/dlt"
+```

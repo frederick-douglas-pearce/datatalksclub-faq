@@ -1,33 +1,40 @@
 ---
 id: d327cff06d
-question: Setting up Java and Spark (with PySpark) on Linux (Alternative option using
-  SDKMAN)
+question: 'Setting up Java and Spark (with PySpark) on Linux (Alternative option using
+  SDKMAN):'
 sort_order: 3320
 ---
 
-Install SDKMAN:
+1. **Install SDKMAN:**
 
-curl -s "[get.sdkman.io"](https://get.sdkman.io") | bash
+   ```bash
+   curl -s "https://get.sdkman.io" | bash
+   
+   source "$HOME/.sdkman/bin/sdkman-init.sh"
+   ```
 
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+2. **Using SDKMAN, install Java 11 and Spark 3.3.2:**
 
-Using SDKMAN, install Java 11 and Spark 3.3.2:
+   ```bash
+   sdk install java 11.0.22-tem
+   
+   sdk install spark 3.3.2
+   ```
 
-sdk install java 11.0.22-tem
+3. **Open a new terminal or run the following in the same shell:**
 
-sdk install spark 3.3.2
+   ```bash
+   source "$HOME/.sdkman/bin/sdkman-init.sh"
+   ```
 
-Open a new terminal or run the following in the same shell:
+4. **Verify the locations and versions of Java and Spark that were installed:**
 
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-Verify the locations and versions of Java and Spark that were installed:
-
-echo $JAVA_HOME
-
-java -version
-
-echo $SPARK_HOME
-
-spark-submit --version
-
+   ```bash
+   echo $JAVA_HOME
+   
+   java -version
+   
+   echo $SPARK_HOME
+   
+   spark-submit --version
+   ```

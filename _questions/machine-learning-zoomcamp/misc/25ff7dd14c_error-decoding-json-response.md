@@ -4,7 +4,6 @@ question: 'Error decoding JSON response: Expecting value: line 1 column 1 (char 
 sort_order: 4030
 ---
 
-Problem happens when contacting the server waiting to send your predict-test and your data here in the correct shape.The problem was the format input to the model wasn’t in the right shape. Server receives the data in json format (dict) which is not suitable for the model. U should convert it to like numpy arrays.
+This problem occurs when contacting the server to send your predict-test data in the correct shape. The issue is that the input format to the model wasn't in the right shape.
 
-Ahmed Okka
-
+The server receives data in JSON format (dict), which is not suitable for the model. You should convert it to a format like numpy arrays.

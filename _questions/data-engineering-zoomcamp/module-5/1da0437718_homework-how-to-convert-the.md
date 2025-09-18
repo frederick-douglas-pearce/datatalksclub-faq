@@ -1,16 +1,14 @@
 ---
 id: 1da0437718
-question: Homework - how to convert the time difference of two timestamps to hours
+question: 'Homework: how to convert the time difference of two timestamps to hours'
 sort_order: 3830
 ---
 
-Pyspark converts the difference of two TimestampType values to Python's native datetime.timedelta object. The timedelta object only stores the duration in terms of days, seconds, and microseconds. Each of the three units of time must be manually converted into hours in order to express the total duration between the two timestamps using only hours.
+Pyspark converts the difference of two `TimestampType` values to Python's native `datetime.timedelta` object. The `timedelta` object stores the duration in terms of days, seconds, and microseconds. Each of these units must be manually converted into hours to express the total duration between the two timestamps using only hours.
 
-Another way for achieving this is using the datediff (sql function). It receives this parameters
+Another method to achieve this is using the `datediff` SQL function. It requires the following parameters:
 
-Upper Date: the closest date you have. For example dropoff_datetime
+- **Upper Date**: The closer date, e.g., `dropoff_datetime`.
+- **Lower Date**: The farther date, e.g., `pickup_datetime`.
 
-Lower Date: the farthest date you have.  For example pickup_datetime
-
-And the result is returned in terms of days, so you could multiply the result for 24 in order to get the hours.
-
+The result is returned in days, so you can multiply the result by 24 to get the duration in hours.

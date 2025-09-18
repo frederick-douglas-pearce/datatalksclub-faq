@@ -1,30 +1,42 @@
 ---
 id: 1cc0ab1fea
-question: Error importing cimpl dll when running avro examples
+question: 'Error: Importing cimpl DLL when running Avro examples'
 sort_order: 3940
 ---
 
+
+```
 ImportError: DLL load failed while importing cimpl: The specified module could not be found
+```
 
-Verify Python Version:
+### Steps to Resolve:
 
-Make sure you are using a compatible version of Python with the Avro library. Check the Python version and compatibility requirements specified by the Avro library documentation.
+1. **Verify Python Version:**
+   
+   Ensure you are using a compatible version of Python with the Avro library. Check the Python version and compatibility requirements specified by the Avro library documentation.
 
-... you may have to load librdkafka-5d2e2910.dll in the code. Add this before importing avro:
+2. **Load Required DLL:**
+   
+   You may need to load `librdkafka-5d2e2910.dll` in your code before importing Avro. Add the following:
+   
+   ```python
+   from ctypes import CDLL
 
-from ctypes import CDLL
+   CDLL("C:\\Users\\YOUR_USER_NAME\\anaconda3\\envs\\dtcde\\Lib\\site-packages\\confluent_kafka.libs\\librdkafka-5d2e2910.dll")
+   ```
+   
+   Note that this error may occur depending on the OS and Python version installed.
 
-CDLL("C:\\Users\\YOUR_USER_NAME\\anaconda3\\envs\\dtcde\\Lib\\site-packages\\confluent_kafka.libs\librdkafka-5d2e2910.dll")
+3. **Alternative Solution:**
 
-It seems that the error may occur depending on the OS and python version installed.
+   If you encounter `ImportError: DLL load failed while importing cimpl`, you can try the following solution in PowerShell:
 
-ALTERNATIVE:
+   ```bash
+   $env:CONDA_DLL_SEARCH_MODIFICATION_ENABLE=1
+   ```
 
-ImportError: DLL load failed while importing cimpl
+   This sets the DLL manually in the Conda environment.
 
-✅SOLUTION: $env:CONDA_DLL_SEARCH_MODIFICATION_ENABLE=1 in Powershell.
+### Source:
 
-You need to set this DLL manually in Conda Env.
-
-Source: [https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2](https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2)
-
+[Confluent-Kafka Python Issue #1186](https://githubhot.com/repo/confluentinc/confluent-kafka-python/issues/1186?page=2)

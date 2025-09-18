@@ -1,20 +1,23 @@
 ---
 id: 95b01285f5
-question: When You are getting error dbt_utils not found
+question: When you are getting error dbt_utils not found
 sort_order: 2650
 ---
 
-You need to create packages.yml file in main project directory and add packages’ meta data:
+To resolve the "dbt_utils not found" error, follow these steps:
 
-packages:
+1. Create a `packages.yml` file in the main project directory and add the package metadata:
+   
+   ```yaml
+   packages:
+     - package: dbt-labs/dbt_utils
+       version: 0.8.0
+   ```
+   
+2. Run the following command:
 
-- package: dbt-labs/dbt_utils
+   ```bash
+   dbt deps
+   ```
 
-version: 0.8.0
-
-After creating file run:
-
-dbt deps
-
-And hit enter.
-
+3. Press Enter.

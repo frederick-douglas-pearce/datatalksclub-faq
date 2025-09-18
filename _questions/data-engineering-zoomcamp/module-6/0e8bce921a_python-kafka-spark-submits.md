@@ -5,19 +5,24 @@ question: 'Python Kafka: ./spark-submit.sh streaming.py Error: py4j.protocol.Py4
 sort_order: 4090
 ---
 
-Make sure your java version is 11 or 8.
+Make sure your Java version is 11 or 8.
 
-Check your version by:
+- Check your version by:
 
-java --version
+  ```bash
+  java --version
+  ```
 
-Check all your versions by:
+- Check all your installed Java versions by:
 
-/usr/libexec/java_home -V
+  ```bash
+  /usr/libexec/java_home -V
+  ```
 
-If you already have got java 11 but just not selected as default, select the specific version by:
+- If you already have Java 11 but it's not set as the default, select the specific version by:
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 11.0.22)
+  ```bash
+  export JAVA_HOME=$(/usr/libexec/java_home -v 11.0.22)
+  ```
 
-(or other version of 11)
-
+  (or another version of 11)

@@ -4,7 +4,4 @@ question: Can I work with this dataset for midterm project [Kaggle](https://www.
 sort_order: 4310
 ---
 
-Yes, you can provided it does not violate any of the plagiarism rules and it is not one of the common datasets like titanic, iris or Boston housing.set.
-
-By Victor Emenike
-
+Yes, you can, provided it does not violate any of the plagiarism rules and it is not one of the common datasets like Titanic, Iris, or Boston housing.

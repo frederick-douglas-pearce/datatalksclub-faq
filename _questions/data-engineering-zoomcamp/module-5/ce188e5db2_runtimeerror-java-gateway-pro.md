@@ -4,53 +4,58 @@ question: 'RuntimeError: Java gateway process exited before sending its port num
 sort_order: 3410
 ---
 
-After installing all including pyspark (and it is successfully imported), but then running this script on the jupyter notebook
+After installing everything, including PySpark, when running this script in a Jupyter Notebook:
 
+```python
 import pyspark
-
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder \
+    .master("local[*]") \
+    .appName('test') \
+    .getOrCreate()
 
-.master("local[*]") \
-
-.appName('test') \
-
-.getOrCreate()
-
+# Read the CSV file
 df = spark.read \
-
-.option("header", "true") \
-
-.csv('taxi+_zone_lookup.csv')
+    .option("header", "true") \
+    .csv('taxi+_zone_lookup.csv')
 
 df.show()
+```
 
-it gives the error:
+You might encounter the error:
 
+```
 RuntimeError: Java gateway process exited before sending its port number
+```
 
-✅The solution (for me) was:
+### Solutions
 
-pip install findspark on the command line and then
+- **Solution 1:**
+  1. Install `findspark` by running:
+     
+     ```bash
+     pip install findspark
+     ```
+  2. Add the following lines to the top of your script:
 
-Add
+     ```python
+     import findspark
+     findspark.init()
+     ```
 
-import findspark
+- **Solution 2:**
+  1. Ensure that PySpark points to the correct location. Run:
+     
+     ```python
+     pyspark.__file__
+     ```
+     
+     It should list a path like `/home/<your user name>/spark/spark-3.0.3-bin-hadoop3.2/python/pyspark/__init__.py` if you followed the setup correctly.
+  2. If it points to your Python site-packages, remove the PySpark directory there.
+  3. Verify `.bashrc` for correct exports, ensuring no conflicting variables are present.
 
-findspark.init()
+- **Alternative Solution:**
+  - Set environment variables permanently at the system and user levels by following a tutorial.
 
-to the top of the script.
-
-Another possible solution is:
-
-Check that pyspark is pointing to the correct location.
-
-Run pyspark.__file__. It should be list /home/<your user name>/spark/spark-3.0.3-bin-hadoop3.2/python/pyspark/__init__.py if you followed the videos.
-
-If it is pointing to your python site-packages remove the pyspark directory there and check that you have added the correct exports to you .bashrc file and that there are not any other exports which might supersede the ones provided in the course content.
-
-To add to the solution above, if the errors persist in regards to setting the correct path for spark,  an alternative solution for permanent path setting solve the error is  to set environment variables on system and user environment variables following this tutorial:
-
-Once everything is installed, skip to 7:14 to set up environment variables. This allows for the environment variables to be set permanently.
-
+     Once installed, skip to 7:14 in the tutorial to help set up environment variables.

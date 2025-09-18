@@ -4,9 +4,12 @@ question: How to normalize vectors in a Pandas DataFrame column (or Pandas Serie
 sort_order: 520
 ---
 
+To normalize vectors in a Pandas DataFrame column, you can use the following approach:
+
+```python
 import numpy as np
 
 normalize_vec = lambda v: v / np.linalg.norm(v)
 
-df["new_col"] = df["org_col"].apply(norm_vec)
-
+df["new_col"] = df["org_col"].apply(normalize_vec)
+```

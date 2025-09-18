@@ -1,11 +1,14 @@
 ---
 id: 1c7dc011f1
-question: Getting Wrong RMSE that is not matching or close to answer options in HW
-  2(Regression) of 2024 Cohort.
+question: 'Homework: Getting Wrong RMSE that is not matching or close to answer options
+  in HW 2(Regression) of 2024 Cohort.'
 sort_order: 4280
 ---
 
-The following piece of code which involves shuffling is crucial to getting RMSE which is close to the ones in the answer options in the homework.
+The following piece of code, which involves shuffling, is crucial to getting RMSE values close to the answer options in the homework:
+
+```python
+import numpy as np
 
 df = orig_df.copy()
 
@@ -35,39 +38,33 @@ df_test = df_test.reset_index(drop=True)
 
 y_train = df_train.final_price.values
 
-y_val =  df_val.final_price.values
+y_val = df_val.final_price.values
 
 y_test = df_test.final_price.values
 
 del df_train['final_price']
-
 del df_val['final_price']
-
 del df_test['final_price']
+```
 
-2.if we don't get this logic right, then all the RMSE gets messed up. Do double check in your codes.
+- Ensure the logic is correct to avoid incorrect RMSE calculations.
 
-CUDA ran out of memory in google collab
+**CUDA ran out of memory in Google Colab**
 
-Most of the time when we are trying to run the models on collab or kaggle , we tend to face the  runtime error of CUDA out of memory.
+When running models on Google Colab or Kaggle, you might encounter a runtime error related to CUDA running out of memory. Here are some tips to address this:
 
-Tips to overcome this :
+- Reduce the batch size.
+- Use lower precision.
+- Clear the cache to free up unused GPU memory:
 
-Reduce the batch size .
+  ```python
+  import torch
+torch.cuda.empty_cache()
+  ```
 
-Use lower precision
+- Delete unnecessary variables.
 
-Something the memory can be allocated for things which we aren’t using it recently , so try to clear the cache
+For more details, refer to the following resources:
 
-Import torch torch.cuda.empty_cache()  // free up the GPU memory space.
-
-Delete unnecessary variables
-
-Follow the links below to get a deep view of it .
-
-[stackoverflow](https://stackoverflow.com/questions/54374935/how-can-i-fix-this-strange-error-runtimeerror-cuda-error-out-of-memory)
-
-[https://medium.com/@snk.nitin/how-to-solve-cuda-out-of-memory-error-850bb247cfb2](https://medium.com/@snk.nitin/how-to-solve-cuda-out-of-memory-error-850bb247cfb2)
-
-(added by Nikisha)
-
+- [Stack Overflow](https://stackoverflow.com/questions/54374935/how-can-i-fix-this-strange-error-runtimeerror-cuda-error-out-of-memory)
+- [Medium Article](https://medium.com/@snk.nitin/how-to-solve-cuda-out-of-memory-error-850bb247cfb2)

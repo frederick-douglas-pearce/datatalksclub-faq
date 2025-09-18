@@ -4,8 +4,9 @@ question: Dim_zones.sql Dataset was not found in location US When Running fact_t
 sort_order: 2300
 ---
 
-To solve this error mention the location = US when creating the dim_zones table
+To solve this error, specify the location as `US` when creating the `dim_zones` table:
 
+```sql
 {{ config(
 
 materialized='table',
@@ -13,6 +14,6 @@ materialized='table',
 location='US'
 
 ) }}
+```
 
-Just Update this part to solve the issue and run the dim_zones again and then run the fact_trips
-
+Update this part, re-run the `dim_zones` creation, and then run `fact_trips`.

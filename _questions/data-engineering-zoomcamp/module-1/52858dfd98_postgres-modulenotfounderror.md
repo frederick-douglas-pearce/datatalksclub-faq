@@ -13,29 +13,52 @@ sort_order: 1230
 
 Issue:
 
-<{IMAGE:image_1}>
+```
+ModuleNotFoundError: No module named 'psycopg2'
+```
 
-e…
+<IMAGE:image_1>
 
-<{IMAGE:image_2}>
+<IMAGE:image_2>
 
 Solution:
 
-pip install psycopg2-binary
+1. Install psycopg2-binary:
+   
+   ```bash
+   pip install psycopg2-binary
+   ```
 
-If you already have it, you might need to update it:
+2. If psycopg2-binary is already installed, update it:
+   
+   ```bash
+   pip install psycopg2-binary --upgrade
+   ```
 
-pip install psycopg2-binary --upgrade
+3. Other methods if the above fails:
 
-Other methods, if the above fails:
+   - If the error persists, update conda:
+     
+     ```bash
+     conda update -n base -c defaults conda
+     ```
 
-if you are getting the “ ModuleNotFoundError: No module named 'psycopg2' “ error even after the above installation, then try updating conda using the command conda update -n base -c defaults conda. Or if you are using pip, then try updating it before installing the psycopg packages i.e
+   - Alternatively, update pip:
+     
+     ```bash
+     pip install --upgrade pip
+     ```
 
-First uninstall the psycopg package
+   - Reinstall psycopg:
+     
+     - Uninstall the psycopg package.
+     - Update conda or pip.
+     - Reinstall psycopg using pip.
 
-Then update conda or pip
-
-Then install psycopg again using pip.
-
-if you are still facing error with r pcycopg2 and showing pg_config not found then you will have to install postgresql. in MAC it is brew install postgresql
-
+   - If an error shows about `pg_config` not being found, install PostgreSQL:
+     
+     - On Mac, use:
+       
+       ```bash
+       brew install postgresql
+       ```

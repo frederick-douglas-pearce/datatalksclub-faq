@@ -1,16 +1,19 @@
 ---
 id: fee87c684a
-question: DBT Deploy - Error When trying to run the dbt project on Prod
+question: 'DBT Deploy: Error When trying to run the dbt project on Prod'
 sort_order: 3120
 ---
 
-When running trying to run the dbt project on prod there is some things you need to do and check on your own:
+When running the dbt project on production, ensure the following steps:
 
-First Make the pull request and Merge the branch into the main.
+1. **Pull Request and Merge**
+   - Make the pull request and merge the branch into the main.
 
-Make sure you have the latest version, if you made changes to the repo in another place.
+2. **Version Check**
+   - Ensure you have the latest version if changes were made to the repository elsewhere.
 
-Check if the dbt_project.yml file is accessible to the project, if not check this solution (Dbt: This dbt Cloud run was cancelled because a valid dbt project was not found.).
+3. **Project File Accessibility**
+   - Verify that the `dbt_project.yml` file is accessible to the project. If not, refer to the solution for the error: "Dbt: This dbt Cloud run was cancelled because a valid dbt project was not found."
 
-Check if the name you gave to the dataset on BigQuery is the same you put on the dataset spot on the production environment created on dbt cloud.
-
+4. **Dataset Consistency**
+   - Confirm that the name assigned to the dataset on BigQuery matches the name specified in the production environment configuration on dbt Cloud.

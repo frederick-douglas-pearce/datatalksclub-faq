@@ -1,18 +1,27 @@
 ---
 id: 2acc8ec64a
-question: How do I debug a docker container?
+question: 'Docker: How do I debug a docker container?'
 sort_order: 1940
 ---
 
-Launch the container image in interactive mode and overriding the entrypoint, so that it starts a bash command.
+To debug a Docker container, follow these steps:
 
-docker run -it --entrypoint bash <image>
+1. **Launch the container image in interactive mode** while overriding the entrypoint, so that it starts with a bash command:
+   
+   ```bash
+   docker run -it --entrypoint bash <image>
+   ```
 
-If the container is already running, execute a command in the specific container:
+2. If the container is already running, **execute a command in the specific container**:
 
-docker ps (find the container-id)
-
-docker exec -it <container-id> bash
-
-(Marcos MJD)
-
+   - First, find the container ID by listing the running containers:
+     
+     ```bash
+     docker ps
+     ```
+   
+   - Then, execute bash in the container:
+     
+     ```bash
+     docker exec -it <container-id> bash
+     ```

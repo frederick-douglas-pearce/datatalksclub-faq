@@ -4,5 +4,4 @@ question: Is it ok to use NY_Taxi data for the project?
 sort_order: 4360
 ---
 
-No
-
+No.

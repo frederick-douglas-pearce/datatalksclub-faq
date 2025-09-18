@@ -1,28 +1,40 @@
 ---
 id: 34d0aaa13e
-question: Running out of storage after building many docker images
+question: 'Docker: Running out of storage after building many docker images'
 sort_order: 3550
 ---
 
-Problem description
+### Problem Description
 
-Due to experimenting back and forth so much without care for storage, I just ran out of it on my 30-GB AWS instance.
+Due to experimenting extensively, I ran out of storage on my 30-GB AWS instance. Removing empty directories did not resolve the issue as those primarily contained code, which did not occupy much space.
 
-My first reflex was to remove some zoomcamp directories, but of course those are mostly code so it didn’t help much.
+### Solution
 
-Solution description
+1. **Check Existing Images:**
+   - Use the following command to list all Docker images:
+     
+     ```bash
+     docker images
+     ```
+   
+   - This showed over 20 GBs of superseded or duplicate models.
 
-> docker images
+2. **Remove Unnecessary Images:**
+   - Remove unwanted images using:
+     
+     ```bash
+     docker rmi <image_id>
+     ```
+   
+   - However, this did not free up space as anticipated.
 
-revealed that I had over 20 GBs worth of superseded / duplicate models lying around, so I proceeded to > docker rmi
+3. **Free Up Space:**
+   - To actually free up storage, execute:
+     
+     ```bash
+     docker system prune
+     ```
 
-a bunch of those — but to no avail!
+### Additional Reference
 
-It turns out that deleting docker images does not actually free up any space as you might expect. After removing images, you also need to run
-
-> docker system prune
-
-See also: [https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)
-
-Added by Konrad Mühlberg
-
+For more details on why this happens, see: [Stack Overflow Discussion](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)

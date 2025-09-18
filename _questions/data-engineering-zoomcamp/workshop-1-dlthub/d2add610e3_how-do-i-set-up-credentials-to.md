@@ -6,25 +6,25 @@ sort_order: 4460
 
 You can set up credentials for `dlt` in several ways. Here are the two most common methods:
 
-Environment Variables (Easiest)
+### Environment Variables (Easiest)
 
-Set credentials via environment variables. For example, to configure Google Cloud credentials:
+Set credentials via environment variables. For example, to configure Google Cloud credentials. This method avoids hardcoding secrets in your code and works seamlessly with most environments.
 
-This method avoids hardcoding secrets in your code and works seamlessly with most environments.
+### Configuration Files (Recommended for Local Use)
 
-Configuration Files (Recommended for Local Use)
+- Use `.dlt/secrets.toml` for sensitive credentials and `.dlt/config.toml` for non-sensitive configurations.
+- Example for Google Cloud in `secrets.toml`:
 
-Use `.dlt/secrets.toml` for sensitive credentials and `.dlt/config.toml` for non-sensitive configurations.
+```toml
+[google_cloud]
+service_account_key = "YOUR_SERVICE_ACCOUNT_KEY"
+```
 
-Example for Google Cloud in `secrets.toml`:
+- Place these files in the `.dlt` folder of your project.
 
-Place these files in the .dlt folder of your project.
+### Additional Notes:
 
-Additional Notes:
-
-Never commit secrets.toml to version control (add it to .gitignore).
-
-Credentials can also be loaded via vaults, AWS Parameter Store, or custom setups.
+- Never commit `secrets.toml` to version control (add it to `.gitignore`).
+- Credentials can also be loaded via vaults, AWS Parameter Store, or custom setups.
 
 For additional methods and detailed information, refer to the [official dlt documentation](https://dlthub.com/docs/general-usage/credentials/)
-

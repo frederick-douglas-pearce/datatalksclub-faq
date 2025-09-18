@@ -5,4 +5,3 @@ sort_order: 10
 ---
 
 Yes, but if you want to receive a certificate, you need to submit your project while we’re still accepting submissions.
-

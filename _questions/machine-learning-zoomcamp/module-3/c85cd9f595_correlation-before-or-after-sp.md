@@ -4,7 +4,9 @@ question: Correlation before or after splitting the data
 sort_order: 1230
 ---
 
-Should correlation be calculated after splitting or before splitting. And lastly I know how to find the correlation but how do i find the two most correlated features.
+Correlation should be calculated after splitting the data, specifically on the train dataset.
 
-Answer: Correlation matrix of your train dataset. Thus, after splitting. Two most correlated features are the ones having the highest correlation coefficient in terms of absolute values.
+To find the two most correlated features:
 
+1. Generate the correlation matrix of the train dataset.
+2. Identify the pair of features with the highest absolute correlation coefficient.

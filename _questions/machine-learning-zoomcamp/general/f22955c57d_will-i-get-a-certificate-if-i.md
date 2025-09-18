@@ -5,4 +5,3 @@ sort_order: 120
 ---
 
 Yes, it's possible. See the previous answer.
-

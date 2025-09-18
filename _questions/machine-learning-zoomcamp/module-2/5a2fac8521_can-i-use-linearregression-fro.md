@@ -5,4 +5,3 @@ sort_order: 700
 ---
 
 Yes, you can. We will also do that next week, so don’t worry, you will learn how to do it.
-

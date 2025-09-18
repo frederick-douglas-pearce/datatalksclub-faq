@@ -4,15 +4,18 @@ question: Filter a dataset by using its values
 sort_order: 660
 ---
 
-We can filter a dataset by using its values as below.
+We can filter a dataset by using its values as shown below:
 
-df = df[(df["ocean_proximity"] == "<1H OCEAN") | (df["ocean_proximity"] == "INLAND")]
+```python
+# Using OR condition
+ df = df[(df['ocean_proximity'] == '<1H OCEAN') | (df['ocean_proximity'] == 'INLAND')]
+```
 
-You can use | for ‘OR’, and & for ‘AND’
+You can use `|` for 'OR', and `&` for 'AND'.
 
-Alternative:
+Alternative method:
 
-df = df[df['ocean_proximity'].isin(['<1H OCEAN', 'INLAND'])]
-
-Radikal Lukafiardi
-
+```python
+# Using isin()
+ df = df[df['ocean_proximity'].isin(['<1H OCEAN', 'INLAND'])]
+```

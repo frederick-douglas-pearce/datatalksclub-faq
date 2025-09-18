@@ -4,11 +4,13 @@ question: Inconsistent number of rows when re-running fact_trips model
 sort_order: 2930
 ---
 
-This is due to the way the deduplication is done in the two staging files.
+This issue arises from the way deduplication is handled in two staging files.
 
-Solution: add order by in the partition by part of both staging files. Keep adding columns to order by until the number of rows in the fact_trips table is consistent when re-running the fact_trips model.
+**Solution:**
 
-Explanation (a bit convoluted, feel free to clarify, correct etc.)
+- Add an `ORDER BY` clause in the `PARTITION BY` section of both staging files.
+- Continue adding columns to the `ORDER BY` clause until the row count in the `fact_trips` table is consistent upon re-running the model.
 
-We partition by vendor id and pickup_datetime and choose the first row (rn=1) from all these partitions. These partitions are not ordered, so every time we run this, the first row might be a different one. Since the first row is different between runs, it might or might not contain an unknown borough. Then, in the fact_trips model we will discard a different number of rows when we discard all values with an unknown borough.
+**Explanation:**
 
+We partition by `vendor_id` and `pickup_datetime`, selecting the first row (`rn=1`) from these partitions. These partitions lack an order, so every execution might yield a different first row. The inconsistency leads to different rows being processed, possibly with or without an unknown borough. Consequently, the `fact_trips` model discards a varying number of rows based on the presence of unknown boroughs.

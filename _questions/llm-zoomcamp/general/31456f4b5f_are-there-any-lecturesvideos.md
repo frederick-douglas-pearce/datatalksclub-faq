@@ -5,4 +5,3 @@ sort_order: 100
 ---
 
 Please check the bookmarks and pinned links, especially DataTalks.Club’s YouTube account.
-

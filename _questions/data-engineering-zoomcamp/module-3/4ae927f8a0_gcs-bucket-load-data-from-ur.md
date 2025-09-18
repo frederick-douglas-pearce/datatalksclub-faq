@@ -9,6 +9,3 @@ sort_order: 2050
 ---
 
 <{IMAGE:image_1}>
-
-Krishna Anand
-

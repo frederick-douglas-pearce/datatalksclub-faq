@@ -1,16 +1,32 @@
 ---
 id: 7bcbd64ac9
-question: Conda Environment Setup
+question: 'Conda Environment Setup: Do we need to run ''conda create'' and ''conda
+  activate'' every time?'
 sort_order: 390
 ---
 
-With regards to creating an environment for the project, do we need to run the command "conda create -n ......." and "conda activate ml-zoomcamp" everytime we open vs code to work on the project?
+To set up a Conda environment for the project:
 
-Answer:
+- **Initial Setup**: Run the following command only once to create the environment:
+  
+  ```bash
+  conda create -n ml-zoomcamp
+  ```
 
-"conda create -n ...." is just run the first time to create the environment. Once created, you just need to run "conda activate ml-zoomcamp" whenever you want to use it.
+- **Activating Environment**: Each time you want to work on the project, activate the environment:
+  
+  ```bash
+  conda activate ml-zoomcamp
+  ```
 
-(Added by Wesley Barreto)
+- **Exporting Environment**: To export your existing environment to a YAML file:
+  
+  ```bash
+  conda env export > environment.yml
+  ```
 
-conda env export > environment.yml will also allow you to reproduce your existing environment in a YAML file.  You can then recreate it with conda env create -f environment.yml
-
+- **Recreating Environment**: Use the YAML file to recreate the environment:
+  
+  ```bash
+  conda env create -f environment.yml
+  ```

@@ -4,9 +4,15 @@ question: 'Homework Q7: Final multiplication not having 5 column'
 sort_order: 500
 ---
 
-This is most likely that you interchanged the first step of the multiplication
+This is most likely because you interchanged the first step of the multiplication.
 
-You used XTX=X XT instead of XTX=XT X
+Ensure you use:
 
-Added by Emmanuel Ikpesu
-
+- Correct: 
+  ```
+  XTX = XT X
+  ```
+- Instead of incorrect: 
+  ```
+  XTX = X XT
+  ```

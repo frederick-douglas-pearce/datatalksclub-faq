@@ -4,47 +4,57 @@ question: Loading Dlt Exports from GCS Filesystems
 sort_order: 4500
 ---
 
-When using the filesystem destination, you may have issues reading the files exported because dlt will by default compress the files. If you are using loader_file_format="parquet" then BigQuery should cope with this compression OK. If you want to use jsonl or csv format however, then you may need to disable file compression to avoid issues with reading the files directly in BigQuery. To do this set the following config:[normalize.data_writer]
+When using the filesystem destination, you may have issues reading the files exported because DLT will by default compress the files. If you are using `loader_file_format="parquet"` then BigQuery should cope with this compression OK. If you want to use JSONL or CSV format, however, you may need to disable file compression to avoid issues with reading the files directly in BigQuery. To do this, set the following config:
 
-disable_compression = true   There is further information at [https://dlthub.com/docs/dlt-ecosystem/destinations/filesystem#file-compression](https://dlthub.com/docs/dlt-ecosystem/destinations/filesystem#file-compression)
+```bash
+[normalize.data_writer]
+disable_compression = true
+```
 
-[WARNING]: Test 'test.taxi_rides_ny.relationships_stg_yellow_tripdata_dropoff_locationid__locationid__ref_taxi_zone_lookup_csv_.085c4830e7' (models/staging/schema.yml) depends on a node named 'taxi_zone_lookup.csv' in package '' which was not found
+There is further information at [DLTHub Docs](https://dlthub.com/docs/dlt-ecosystem/destinations/filesystem#file-compression).
 
-solve: This warning indicates that dbt is trying to reference a model or source named taxi_zone_lookup.csv, but it cannot find it. We might have a typo in our ref() function.
+**Warning:**
+```yaml
+Test 'test.taxi_rides_ny.relationships_stg_yellow_tripdata_dropoff_locationid__locationid__ref_taxi_zone_lookup_csv_.085c4830e7' (models/staging/schema.yml) depends on a node named 'taxi_zone_lookup.csv' in package '' which was not found
+```
 
-tests:
+**Solution:** This warning indicates that dbt is trying to reference a model or source named `taxi_zone_lookup.csv`, but it cannot find it. We might have a typo in our `ref()` function.
 
-- name: relationships_stg_yellow_tripdata_dropoff_locationid
+**Tests:**
 
-description: "Ensure dropoff_location_id exists in taxi_zone_lookup.csv"
+- **Name:** relationships_stg_yellow_tripdata_dropoff_locationid
+  
+  **Description:** Ensure `dropoff_location_id` exists in `taxi_zone_lookup.csv`
 
-relationships:
+  **Relationships:**
+  - **To:** `ref('taxi_zone_lookup.csv')`  # ❌ Wrong reference
 
-to: ref('taxi_zone_lookup.csv')  # ❌ Wrong reference
+  - **Field:** `locationid`
 
-field: locationid
+  - **To:** `ref('taxi_zone_lookup')`  # ✅ Correct reference
 
-to:
+**Pandas and Spark Version Mismatch:**
 
-to: ref('taxi_zone_lookup')  # ✅ Correct reference
+When running `df_spark = spark.createDataFrame(df_pandas)`, an error indicating a version mismatch between Pandas and Spark was encountered. To resolve this, either:
 
-When I ran df_spark = spark.createDataFrame(df_pandas), I encountered an error indicating a version mismatch between Pandas and Spark. To resolve this, I had two options: either downgrade Pandas to a version below 2 or upgrade Spark to version 3.5.5. I chose to upgrade Spark to 3.5.5, and it worked.
+1. Downgrade Pandas to a version below 2.
+2. Upgrade Spark to version 3.5.5.
 
-Avoiding Backpressure in Flink
+I chose to upgrade Spark to 3.5.5, and it worked.
 
-What’s Backpressure?
+**Avoiding Backpressure in Flink:**
 
-It happens when Flink processes data slower than Kafka produces it.
+**What’s Backpressure?**
 
-This leads to increased memory usage and can slow down or crash the job.
+- It occurs when Flink processes data slower than Kafka produces it.
+- This leads to increased memory usage and can slow down or crash the job.
 
-How to Fix It?
+**How to Fix It?**
 
-Adjust Kafka’s consumer parallelism to match the producer rate.
+- Adjust Kafka’s consumer parallelism to match the producer rate.
+- Increase partitions in Kafka to allow more parallel processing.
+- Monitor Flink metrics to detect backpressure.
 
-Increase partitions in Kafka to allow more parallel processing.
-
-Monitor Flink metrics to detect backpressure.
-
+```python
 env.set_parallelism(4)  # Adjust parallelism to avoid bottlenecks
-
+```

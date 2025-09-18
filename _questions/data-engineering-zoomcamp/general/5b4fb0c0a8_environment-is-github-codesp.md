@@ -8,4 +8,3 @@ sort_order: 240
 GitHub Codespaces offers you computing Linux resources with many pre-installed tools (Docker, Docker Compose, Python).
 
 You can also open any GitHub repository in a GitHub Codespace.
-

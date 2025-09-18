@@ -1,20 +1,23 @@
 ---
 id: 4e92a486d1
-question: 'Docker - build error: error checking context: ''can''t stat ''/home/user/repos/data-engineering/week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data''''.'
+question: 'Docker: build error: error checking context: ''can''t stat ''/home/user/repos/data-engineering/week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data''''.'
 sort_order: 720
 ---
 
-This error appeared when running the command: docker build -t taxi_ingest:v001 .
+This error appeared when running the command:
 
-When feeding the database with the data the user id of the directory ny_taxi_postgres_data was changed to 999, so my user couldn’t access it when running the above command. Even though this is not the problem here it helped to raise the error due to the permission issue.
+```bash
+docker build -t taxi_ingest:v001 .
+```
 
-Since at this point we only need the files Dockerfile and ingest_data.py, to fix this error one can run the docker build command on a different directory (having only these two files).
+The issue often arises because the user ID of the directory `ny_taxi_postgres_data` was changed, causing permission errors when accessing it. To resolve this error, use a directory containing only the necessary files, `Dockerfile` and `ingest_data.py`.
 
-A more complete explanation can be found here: [https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata](https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata)
+If you need to change permissions, use the following command on Ubuntu:
 
-You can fix the problem by changing the permission of the directory on ubuntu with following command:
-
+```bash
 sudo chown -R $USER dir_path
+```
 
-On windows follow the link: [https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/](https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/) Added byKenan Arslanbay
+On Windows, follow the instructions in this guide: [The Geek Page](https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/).
 
+For more information, refer to this explanation on Stack Overflow: [Docker build error checking context](https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata).

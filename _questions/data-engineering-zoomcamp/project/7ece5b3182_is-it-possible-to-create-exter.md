@@ -5,5 +5,4 @@ question: Is it possible to create external tables in BigQuery using URLs, such 
 sort_order: 4350
 ---
 
-Answer: Not really, only Bigtable, Cloud Storage, and Google Drive are supported data stores.
-
+Not really, only Bigtable, Cloud Storage, and Google Drive are supported data stores.

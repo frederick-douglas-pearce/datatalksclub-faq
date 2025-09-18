@@ -1,12 +1,13 @@
 ---
 id: a1dfe98efa
-question: 'Monitoring Wait times and progress of the code execution can be done with:'
+question: 'Monitoring: Wait times and progress of the code execution can be done with:'
 sort_order: 1530
 ---
 
+```python
 from tqdm.auto import tqdm
+```
 
 Tqdm - terminal progress bar
 
-Krishna Anand
-
+<IMAGE:image_id>

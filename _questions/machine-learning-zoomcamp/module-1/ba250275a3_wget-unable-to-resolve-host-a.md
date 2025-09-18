@@ -8,19 +8,17 @@ question: 'Kaggle: wget: unable to resolve host address raw.githubusercontent.co
 sort_order: 360
 ---
 
-In Kaggle, when you are trying to !wget a dataset from github (or any other public repository/location), you get the following error:
+In Kaggle, when you attempt to `!wget` a dataset from GitHub or any other public repository, you might encounter the following error:
 
-Getting  this error while trying to import data- !wget[ [raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.cs)v](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
-
---2022-09-17 16:55:24-- [ [raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.cs)v](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
-
+```
+--2022-09-17 16:55:24--  https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... failed: Temporary failure in name resolution.
-
 wget: unable to resolve host address 'raw.githubusercontent.com'
+```
 
-Solution:
+### Solution:
 
-In your Kaggle notebook settings, turn on the Internet for your session. It's on the settings panel, on the right hand side of the Kaggle screen. You'll be asked to verify your phone number so Kaggle knows you are not a bot.
+- In your Kaggle notebook settings, enable internet access for your session. This option is found in the settings panel on the right-hand side of the Kaggle screen.
+- You will need to verify your phone number to confirm you are not a bot.
 
 <{IMAGE:image_1}>
-

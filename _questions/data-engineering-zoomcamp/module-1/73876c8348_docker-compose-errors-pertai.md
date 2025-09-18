@@ -1,32 +1,55 @@
 ---
 id: 73876c8348
 images:
-- description: 'image #1'
-  id: image_1
-  path: images/data-engineering-zoomcamp/image_63f6a6fb.png
-question: Docker-Compose - Errors pertaining to docker-compose.yml and pgadmin setup
+question: 'Docker-Compose: Errors pertaining to docker-compose.yml and pgadmin setup'
 sort_order: 950
 ---
 
-For everyone who's having problem with Docker compose, getting the data in postgres and similar issues, please take care of the following:
+For those experiencing problems with Docker Compose, getting data in PostgreSQL, and similar issues, follow these steps:
 
-create a new volume on docker (either using the command line or docker desktop app)
+- **Create a new volume** on Docker, either using the command line or Docker Desktop app.
+- **Modify your `docker-compose.yml` file** as needed to fix any setup issues.
+- **Set `low_memory=False`** when importing the CSV file using pandas:
+  
+```python
+df = pd.read_csv('yellow_tripdata_2021-01.csv', nrows=1000, low_memory=False)
+```
 
-make the following changes to your docker-compose.yml file (see attachment)
+- Use the specified function in your `upload-data.ipynb` for better tracking of the ingestion process.
 
-set low_memory=false when importing the csv file (df = pd.read_csv('yellow_tripdata_2021-01.csv', nrows=1000, low_memory=False))
+```python
+from time import time
 
-use the below function (in the upload-data.ipynb) for better tracking of your ingestion process (see attachment)
+counter = 0
+time_counter = 0
 
-<{IMAGE:image_1}>
+while True:
+    t_start = time()
 
-Order of execution:
+    df = next(df_iter)
 
-(1) open terminal in 2_docker_sql folder and run docker compose up
+    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+    df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
 
-(2) ensure no other containers are running except the one you just executed (pgadmin and pgdatabase)
+    df.to_sql(name='yellow_taxi_data', con=engine, if_exists='append')
 
-(3) open jupyter notebook and begin the data ingestion
+    t_end = time()
 
-(4) open pgadmin and set up a server (make sure you use the same configurations as your docker-compose.yml file like the same name (pgdatabase), port, databasename (ny_taxi) etc.
+    t_elapsed = t_end - t_start
 
+    print('Chunk Insertion Done! Time taken: %.2f seconds' %(t_elapsed))
+
+    counter += 1
+    time_counter += t_elapsed
+
+    if counter == 14:
+        print('All Chunks Inserted! Total Time Taken: %.2f seconds' %(time_counter))
+        break
+```
+
+### Order of Execution:
+
+1. Open the terminal in the `2_docker_sql` folder and run: `docker compose up`
+2. Ensure no other containers are running except the ones you just executed (pgAdmin and pgdatabase).
+3. Open Jupyter Notebook and begin the data ingestion.
+4. Open pgAdmin and set up a server. Make sure you use the same configurations as your `docker-compose.yml` file, such as the same name (`pgdatabase`), port, and database name (`ny_taxi`).

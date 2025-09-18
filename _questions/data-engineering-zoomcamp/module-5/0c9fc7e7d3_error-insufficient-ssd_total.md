@@ -13,7 +13,8 @@ Sometimes while creating a dataproc cluster on GCP, the following error is encou
 
 <{IMAGE:image_1}>
 
-Solution: As mentioned [here](https://stackoverflow.com/a/59038704/22748533), sometimes there might not be enough resources in the given region to allocate the request. Usually, gets freed up in a bit and one can create a cluster. – abhirup ghosh
+Solutions:
 
-Solution 2:  Changing the type of boot-disk from PD-Balanced to PD-Standard, in terraform, helped solve the problem.- Sundara Kumar Padmanabhan
+1. As mentioned [here](https://stackoverflow.com/a/59038704/22748533), sometimes there might not be enough resources in the given region to allocate the request. Usually, resources get freed up in a bit, and one can create a cluster.
 
+2. Changing the type of boot-disk from PD-Balanced to PD-Standard in Terraform helped solve the problem.

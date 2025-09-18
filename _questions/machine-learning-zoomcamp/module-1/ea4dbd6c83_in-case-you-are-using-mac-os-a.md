@@ -1,30 +1,22 @@
 ---
 id: ea4dbd6c83
-question: In case you are using mac os and having trouble with WGET
+question: Using macOS and having trouble with WGET
 sort_order: 540
 ---
 
-Wget doesn't ship with macOS, so there are other alternatives to use.
+Wget doesn't ship with macOS, but you can use `curl` as an alternative.
 
-No worries, we got curl:
+Example command:
 
-example:
+```bash
+curl -o ./housing.csv https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv
+```
 
-curl -o ./housing.csv [raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
+### Explanation:
 
-Explanations:
+- **curl**: A utility for retrieving information from the internet.
+- **-o**: Specifies the output filename for the file being downloaded.
+- **filename**: Your choice for naming the file.
+- **URL**: The web address from which `curl` will download the data and save it using the specified filename.
 
-curl: a utility for retrieving information from the internet.
-
--o: Tell it to store the result as a file.
-
-filename: You choose the file's name.
-
-Links: Put the web address (URL) here, and cURL will extract data from it and save it under the name you provide.
-
-More about it at:
-
-[Curl Documentation](https://curl.se/docs/manpage.html)
-
-Added by David Espejo
-
+For more information, you can refer to the [Curl Documentation](https://curl.se/docs/manpage.html)

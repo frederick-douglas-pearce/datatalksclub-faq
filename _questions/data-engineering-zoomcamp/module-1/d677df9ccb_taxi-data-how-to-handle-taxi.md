@@ -1,9 +1,30 @@
 ---
 id: d677df9ccb
-question: Taxi Data - How to handle taxi data files, now that the files are available
-  as *.csv.gz?
+question: 'Taxi Data: How to handle taxi data files, now that the files are available
+  as *.csv.gz?'
 sort_order: 490
 ---
 
-In [this video](https://www.youtube.com/watch?v=B1WwATwf-vY&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), we store the data file as “output.csv”. The data file won’t store correctly if the file extension is csv.gz instead of csv. One alternative is to replace csv_name = “output.cs -v” with the file name given at the end of the URL. Notice that the URL for the yellow taxi data is: [https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz)[yellow_tripdata_2021-01.csv.gz](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz) where the highlighted part is the name of the file. We can parse this file name from the URL and use it as csv_name. That is, we can replace csv_name = “output.csv” withcsv_name = url.split(“/”)[-1] . Then when we use csv_name to using pd.read_csv, there won’t be an issue even though the file name really has the extension csv.gz instead of csv since the pandas read_csv function can read csv.gz files directly.
+In [this video](https://www.youtube.com/watch?v=B1WwATwf-vY&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb), the data file is stored as `output.csv`. If the file extension is `csv.gz` instead of `csv`, it won't store correctly.
 
+To handle this:
+
+1. Replace `csv_name = "output.csv"` with the file name extracted from the URL. For example, for the yellow taxi data, use:
+   
+   ```
+   url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+   csv_name = url.split("/")[-1]
+   ```
+
+2. When you use `csv_name` with `pandas.read_csv`, it will work correctly because `pandas.read_csv` can directly read files with the `csv.gz` extension.
+
+Example:
+
+```python
+import pandas as pd
+
+url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+csv_name = url.split("/")[-1]
+
+data = pd.read_csv(csv_name)
+```

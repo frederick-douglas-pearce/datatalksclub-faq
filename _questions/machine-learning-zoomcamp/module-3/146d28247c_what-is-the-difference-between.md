@@ -4,5 +4,7 @@ question: What is the difference between pandas get_dummies and sklearn OnehotEn
 sort_order: 1210
 ---
 
-They are basically the same. There are some key differences with regards to their input/output types, handling of missing values, etc, but they are both techniques to one-hot-encode categorical variables with identical results. The biggest difference is get_dummies are a convenient choice when you are working with Pandas Dataframes, while if you are building a scikit-learn-based machine learning pipeline and need to handle categorical data as part of that pipeline, OneHotEncoder is a more suitable choice. [Abhirup Ghosh]
+They are basically the same. There are some key differences with regards to their input/output types, handling of missing values, etc., but they are both techniques to one-hot-encode categorical variables with identical results. 
 
+- **pandas get_dummies**: A convenient choice when working with Pandas DataFrames.
+- **sklearn OneHotEncoder**: More suitable for building a scikit-learn-based machine learning pipeline to handle categorical data as part of that pipeline.

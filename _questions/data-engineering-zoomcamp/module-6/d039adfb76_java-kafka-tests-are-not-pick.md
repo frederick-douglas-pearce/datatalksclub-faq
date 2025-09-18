@@ -17,35 +17,25 @@ question: 'Java Kafka: Tests are not picked up in VSCode'
 sort_order: 4150
 ---
 
-Situation: in VS Code, usually there will be a triangle icon next to each test. I couldn’t see it at first and had to do some fixes.
+In VS Code, you might expect to see a triangle icon next to each test method in your Java files. If you don't see it, here are the steps to fix the issue:
 
-Solution:
+1. Open **Explorer** (first icon on the left navigation bar).
+2. Navigate to **JAVA PROJECTS** (bottom collapsable section).
+3. Click the icon in the rightmost position next to **JAVA PROJECTS** to open the options.
+   
+   <{IMAGE:image_1}>
 
-([Source](https://stackoverflow.com/a/66527032))
+   <{IMAGE:image_2}>
+   
+   <{IMAGE:image_3}>
 
-VS Code
+4. Select **Clean Workspace**.
+5. Confirm by clicking **Reload and Delete**.
 
-→ Explorer (first icon on the left navigation bar)
+Following these steps should restore the triangle icons you expect to see next to each test, similar to those visible in Python tests.
 
-<{IMAGE:image_1}>
-
-→ JAVA PROJECTS (bottom collapsable)
-
-→  icon next in the rightmost position to JAVA PROJECTS
-
-<{IMAGE:image_2}>
-
-<{IMAGE:image_3}>
-
-→  clean Workspace
-
-→ Confirm by clicking Reload and Delete
-
-Now you will be able to see the triangle icon next to each test like what you normally see in python tests.
-
-E.g.:
+Example:
 
 <{IMAGE:image_4}>
 
-You can also add classes and packages in this window instead of creating files in the project directory
-
+Additionally, you can add classes and packages in this window instead of creating files directly in the project directory.

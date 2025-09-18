@@ -1,97 +1,66 @@
 ---
 id: 3e83372387
-question: 'Docker - invalid reference format: repository name must be lowercase (Mounting
+question: 'Docker: invalid reference format: repository name must be lowercase (Mounting
   volumes with Docker on Windows)'
 sort_order: 690
 ---
 
-Mapping volumes on Windows could be tricky. The way it was done in the course video doesn’t work for everyone.
+Mapping volumes on Windows can be tricky. If the approach shown in the course video doesn't work for you, consider the following suggestions:
 
-First, if you move your data to some folder without spaces. E.g. if your code is in “C:/Users/Alexey Grigorev/git/…”, move it to “C:/git/…”
+- Move your data to a directory without spaces. For example, move from `C:/Users/Alexey Grigorev/git/...` to `C:/git/...`.
 
-Try replacing the “-v” part with one of the following options:
+- Replace the `-v` part with one of these options:
 
--v /c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+  ```bash
+  -v /c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+  -v //c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+  -v /c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+  -v //c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+  --volume //driveletter/path/ny_taxi_postgres_data/:/var/lib/postgresql/data
+  ```
 
--v //c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+- Add `winpty` before the whole command:
 
--v /c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+  ```bash
+  winpty docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v /c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  postgres:1
+  ```
 
--v //c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+- Try adding quotes:
 
---volume //driveletter/path/ny_taxi_postgres_data/:/var/lib/postgresql/data
+  ```bash
+  -v "/c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
+  -v "//c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
+  -v “/c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
+  -v "//c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
+  -v "c:\some\path\ny_taxi_postgres_data":/var/lib/postgresql/data
+  ```
 
-Try adding winpty before the whole command:
+- Note: If Windows automatically creates a folder called `ny_taxi_postgres_data;C`, it suggests a problem with volume mapping. Try deleting both folders and replacing the `-v` part with other options. Using `//c/` instead of `/c/` might work, as it creates the correct folder `ny_taxi_postgres_data`.
 
-winpty docker run -it
+- A possible solution is using `"$(pwd)"/ny_taxi_postgres_data:/var/lib/postgresql/data` and pay attention to the placement of quotes.
 
--e POSTGRES_USER="root"
+- If none of these work, use a volume name instead of the path:
 
--e POSTGRES_PASSWORD="root"
+  ```bash
+  -v ny_taxi_postgres_data:/var/lib/postgresql/data
+  ```
 
--e POSTGRES_DB="ny_taxi"
+- For Mac, you can wrap `$(pwd)` with quotes:
 
--v /c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data
+  ```bash
+  docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v "$(pwd)"/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  postgres:13
+  ```
 
--p 5432:5432
-
-postgres:1
-
-Try adding quotes:
-
--v "/c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
-
--v "//c:/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
-
--v “/c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
-
--v "//c/some/path/ny_taxi_postgres_data:/var/lib/postgresql/data"
-
--v "c:\some\path\ny_taxi_postgres_data":/var/lib/postgresql/data
-
-Note:  (Window) if it automatically creates a folder called “ny_taxi_postgres_data;C” suggests you have problems with volume mapping, try deleting both folders and replacing “-v” part with other options. For me “//c/” works instead of “/c/”. And it will work by automatically creating a correct folder called “ny_taxi_postgres_data”.
-
-A possible solution to this error would be to use /”$(pwd)”/ny_taxi_postgres_data:/var/lib/postgresql/data (with quotes’ position varying as in the above list).
-
-Yes for windows use the command it works perfectly fine
-
--v /”$(pwd)”/ny_taxi_postgres_data:/var/lib/postgresql/data
-
-Important: note how the quotes are placed.
-
-If none of these options work, you can use a volume name instead of the path:
-
--v ny_taxi_postgres_data:/var/lib/postgresql/data
-
-For Mac: You can wrap $(pwd) with quotes like the highlighted.
-
-docker run -it \
-
--e POSTGRES_USER="root" \
-
--e POSTGRES_PASSWORD="root" \
-
--e POSTGRES_DB="ny_taxi" \
-
--v "$(pwd)"/ny_taxi_postgres_data:/var/lib/postgresql/data \
-
--p 5432:5432 \
-
-Postgres:13
-
-docker run -it \
-
--e POSTGRES_USER="root" \
-
--e POSTGRES_PASSWORD="root" \
-
--e POSTGRES_DB="ny_taxi" \
-
--v "$(pwd)"/ny_taxi_postgres_data:/var/lib/postgresql/data \
-
--p 5432:5432 \
-
-postgres:13
-
-Source:[https://stackoverflow.com/questions/48522615/docker-error-invalid-reference-format-repository-name-must-be-lowercase](https://stackoverflow.com/questions/48522615/docker-error-invalid-reference-format-repository-name-must-be-lowercase)
-
+Source: [StackOverflow](https://stackoverflow.com/questions/48522615/docker-error-invalid-reference-format-repository-name-must-be-lowercase)

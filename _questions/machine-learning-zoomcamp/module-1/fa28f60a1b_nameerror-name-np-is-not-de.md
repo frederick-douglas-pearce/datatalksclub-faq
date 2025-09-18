@@ -4,17 +4,9 @@ question: 'NameError: name ''np'' is not defined'
 sort_order: 420
 ---
 
-Pandas and numpy libraries are not being imported
+If you're using `numpy` or `pandas`, make sure to import the libraries before using them:
 
-NameError: name 'np' is not defined
-
-NameError: name 'pd' is not defined
-
-If you're using numpy or pandas, make sure you use the first few lines before anything else.
-
+```python
 import pandas as pd
-
 import numpy as np
-
-Added by Manuel Alejandro Aponte
-
+```

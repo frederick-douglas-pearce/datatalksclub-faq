@@ -5,23 +5,30 @@ question: 'Postgres - OperationalError: (psycopg2.OperationalError) connection t
 sort_order: 1210
 ---
 
-Can happen when connecting via pgcli
+This error can occur in the following scenarios:
 
-pgcli -h localhost -p 5432 -U root -d ny_taxi
+- **Using `pgcli`**:
+  ```bash
+  pgcli -h localhost -p 5432 -U root -d ny_taxi
+  ```
+- **Uploading data via a connection in a Jupyter notebook**:
+  ```python
+  engine = create_engine('postgresql://root:root@localhost:5432/ny_taxi')
+  ```
 
-Or while uploading data via the connection in jupyter notebook
+### Solutions:
 
-engine = create_engine('postgresql://root:root@localhost:5432/ny_taxi')
+1. **Port Change**:
+   - Change the port from 5432 to another port (e.g., 5431).
+   - Example: Change `5432:5432` to `5431:5432`.
 
-This can happen when Postgres is already installed on your computer. Changing the port can resolve that (e.g. from 5432 to 5431).
+2. **User Change**:
+   - Change `POSTGRES_USER=root` to `PGUSER=postgres`.
 
-Also, you could change port from 5432:5432 to 5431:5432
+3. **Docker Solution**:
+   - Run `docker compose down`.
+   - Remove the folder containing the Postgres volume.
+   - Run `docker compose up` again.
 
-Other solution that worked:
-
-Changing `POSTGRES_USER=juroot` to `PGUSER=postgres`
-
-Based on this: [postgres with docker compose gives FATAL: role "root" does not exist error - Stack Overflow](https://stackoverflow.com/questions/60193781/postgres-with-docker-compose-gives-fatal-role-root-does-not-exist-error)
-
-Also `docker compose down`, removing folder that had postgres volume, running `docker compose up` again.
-
+### Additional Resources:
+For more details, refer to [this Stack Overflow discussion](https://stackoverflow.com/questions/60193781/postgres-with-docker-compose-gives-fatal-role-root-does-not-exist-error).

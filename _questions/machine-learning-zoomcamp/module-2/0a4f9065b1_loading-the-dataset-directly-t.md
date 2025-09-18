@@ -4,13 +4,14 @@ question: Loading the dataset directly through Kaggle Notebooks
 sort_order: 650
 ---
 
-For users of kaggle notebooks, the dataset can be loaded through widget using the below command. Please remember that ! before wget is essential
+To load a dataset in Kaggle Notebooks, you can use the following command. Remember that the `!` before `wget` is essential.
 
-!wget [https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)
+```bash
+!wget https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv
+```
 
-Once the dataset is loaded to the kaggle notebook server, it can be read through the below pandas command
+Once the dataset is loaded onto the Kaggle Notebook server, it can be read using the following pandas command:
 
+```python
 df = pd.read_csv('housing.csv')
-
-Harish Balasundaram
-
+```

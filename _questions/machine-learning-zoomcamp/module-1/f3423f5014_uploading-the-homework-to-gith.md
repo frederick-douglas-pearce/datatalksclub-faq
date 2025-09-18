@@ -14,35 +14,33 @@ question: Uploading the homework to Github
 sort_order: 300
 ---
 
-This is my first time using Github to upload a code. I was getting the below error message when I type
+If you encounter the following error when trying to use Git for the first time:
 
-git push -u origin master:
-
+```bash
 error: src refspec master does not match any
-
-error: failed to push some refs to '[https://github.com/XXXXXX/1st-Homework.git](https://github.com/XXXXXX/1st-Homework.git)'
+error: failed to push some refs to 'https://github.com/XXXXXX/1st-Homework.git'
+```
 
 Solution:
 
-The error message got fixed by running below commands:
+1. Make an initial commit using:
+   
+   ```bash
+   git commit -m "initial commit"
+   ```
 
-git commit -m "initial commit"
+2. Push to the main branch instead:
+   
+   ```bash
+   git push origin main
+   ```
 
-git push origin main
+For a comprehensive guide on using GitHub, visit [GitHub Quickstart](https://dennisivy.com/github-quickstart).
 
-If this is your first time to use Github, you will find a great & straightforward tutorial in this link [https://dennisivy.com/github-quickstart](https://dennisivy.com/github-quickstart)
-
-(Asia Saeed)
-
-You can also use the “upload file” functionality from GitHub for that
+You can also use GitHub's "upload file" feature, or share your Google Colab notebooks directly to GitHub:
 
 <{IMAGE:image_1}>
-
-If you write your code on Google colab you can also directly share it on your Github.
 
 <{IMAGE:image_2}>
 
 <{IMAGE:image_3}>
-
-(By [Pranab Sarma](https://github.com/pranabsarma18))
-

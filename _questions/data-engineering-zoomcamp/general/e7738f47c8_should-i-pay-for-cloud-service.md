@@ -4,5 +4,4 @@ question: Should I pay for cloud services?
 sort_order: 290
 ---
 
-No, if you use and take advantage of their free trial.
-
+It's not mandatory. You can take advantage of their free trial.

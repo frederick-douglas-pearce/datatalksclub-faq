@@ -1,10 +1,9 @@
 ---
 id: c18119ba32
-question: Invalid dataset ID Error Error when running the gcp_setup flow
+question: Invalid dataset ID Error when running the gcp_setup flow
 sort_order: 1920
 ---
 
-When following the [youtube lesson](https://www.youtube.com/watch?v=nKqjjLJ7YXs&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=23) and then running the [gcp_setup flow](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/02-workflow-orchestration/flows/05_gcp_setup.yaml),  it works until the create_bq_dataset task, where I got the following error:
+When following the [YouTube lesson](https://www.youtube.com/watch?v=nKqjjLJ7YXs&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=23) and then running the [gcp_setup flow](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/02-workflow-orchestration/flows/05_gcp_setup.yaml), the error occurs during the `create_bq_dataset` task.
 
-While not very apparent from the error message, we are not suppose to use a dash in the dataset name, so I changed the dataset name to “de_zoomcamp” and it worked.
-
+The error is less clear, but it stems from using a dash in the dataset name. To resolve this, change the dataset name to something like "de_zoomcamp" to avoid using a dash. This should resolve the error.

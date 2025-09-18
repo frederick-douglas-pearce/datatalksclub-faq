@@ -1,16 +1,25 @@
 ---
 id: ca3b8ac8db
-question: pgAdmin - How to Persist pgAdmin Configurations
+question: 'pgAdmin: How to Persist pgAdmin Configurations'
 sort_order: 1280
 ---
 
-Question: How can I keep pgAdmin settings after restarting the container?
+To keep pgAdmin settings after restarting the container, follow these steps:
 
-Answer: Create a directory, map it to /var/lib/pgadmin, and fix permissions:
+1. Create the directory for pgAdmin data:
+   
+   ```bash
+   mkdir -p /path/to/pgadmin-data
+   ```
 
-Create the directory for pgAdmin data:# mkdir -p /path/to/pgadmin-data
+2. Assign ownership to pgAdmin's user (ID 5050):
+   
+   ```bash
+   sudo chown -R 5050:5050 /path/to/pgadmin-data
+   ```
 
-Assign ownership to pgAdmin's user (ID 5050):# sudo chown -R 5050:5050 /path/to/pgadmin-data
-
-# sudo chmod -R 755 /path/to/pgadmin-data
-
+3. Set the appropriate permissions:
+   
+   ```bash
+   sudo chmod -R 755 /path/to/pgadmin-data
+   ```

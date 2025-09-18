@@ -4,9 +4,16 @@ question: 'Python - ModuleNotFoundError: No module named ''pysqlite2'''
 sort_order: 1300
 ---
 
-ImportError: DLL load failed while importing _sqlite3: The specified module could not be found. ModuleNotFoundError: No module named 'pysqlite2'
+```
+ImportError: DLL load failed while importing _sqlite3: The specified module could not be found. 
+ModuleNotFoundError: No module named 'pysqlite2'
+```
 
-The issue seems to arise from the missing of sqlite3.dll in path ".\Anaconda\Dlls\".
+The issue may arise due to the absence of `sqlite3.dll` in the path `".\Anaconda\Dlls\"`.
 
-✅I solved it by simply copying that .dll file from \Anaconda3\Library\bin and put it under the path mentioned above. (if you are using anaconda)
+To resolve the issue:
 
+1. Copy the `sqlite3.dll` file from `\Anaconda3\Library\bin`.
+2. Paste the file into the `".\Anaconda\Dlls\"` directory.
+
+This solution applies if you are using Anaconda.

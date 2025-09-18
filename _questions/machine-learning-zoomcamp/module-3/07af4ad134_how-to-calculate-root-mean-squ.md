@@ -4,29 +4,22 @@ question: How to calculate Root Mean Squared Error?
 sort_order: 1310
 ---
 
-We can use sklearn & numpy packages to calculate Root Mean Squared Error
+We can use `sklearn` and `numpy` packages to calculate Root Mean Squared Error:
 
+```python
 from sklearn.metrics import mean_squared_error
-
 import numpy as np
 
-Rmse = np.sqrt(mean_squared_error(y_pred, y_val/ytest)
+RMSE = np.sqrt(mean_squared_error(y_pred, y_val/y_test))
+```
 
-Added by Radikal Lukafiardi
+You can also refer to this code from Alexey’s notebook for Week 2:
 
-You can also refer to Alexey’s notebook for Week 2:
-
-[GitHub](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/chapter-02-car-price/02-carprice.ipynb)
-
-which includes the following code:
-
+```python
 def rmse(y, y_pred):
+    error = y_pred - y
+    mse = (error ** 2).mean()
+    return np.sqrt(mse)
+```
 
-error = y_pred - y
-
-mse = (error ** 2).mean()
-
-return np.sqrt(mse)
-
-(added by Rileen Sinha)
-
+[GitHub Repository](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/chapter-02-car-price/02-carprice.ipynb)

@@ -1,26 +1,24 @@
 ---
 id: 8f9f91b4de
-question: GCP - Windows Google Cloud SDK install issue:gcp
+question: 'GCP - Windows Google Cloud SDK install issue:'
 sort_order: 1520
 ---
 
-for windows if you having trouble install SDK try follow these steps on the link, if you getting this error:
+If you are encountering installation trouble with the Google Cloud SDK on Windows and receiving the following error:
 
+```
 These credentials will be used by any library that requests Application Default Credentials (ADC).
 
 WARNING:
 
 Cannot find a quota project to add to ADC. You might receive a "quota exceeded" or "API not enabled" error. Run $ gcloud auth application-default set-quota-project to add a quota project.
+```
 
-For me:
+Try these steps:
 
-I reinstalled the sdk using unzip file “install.bat”,
+1. Reinstall the SDK using the unzip file "install.bat".
+2. Check the installation by running `gcloud version`.
+3. Run `gcloud init` to set up your project.
+4. Execute `gcloud auth application-default login`.
 
-after successfully checking gcloud version,
-
-run gcloud init to set up project before
-
-you run gcloud auth application-default login
-
-[https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_1_basics_n_setup/1_terraform_gcp/windows.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_1_basics_n_setup/1_terraform_gcp/windows.md)
-
+For detailed instructions, refer to the following guide: [Windows SDK Installation Guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_1_basics_n_setup/1_terraform_gcp/windows.md)

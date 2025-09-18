@@ -7,15 +7,12 @@ sort_order: 3690
 
 Several tools can help set up a local Kubernetes environment:
 
-Kind: Runs Kubernetes clusters in Docker containers, suitable for testing and development.
+- **Kind**: Runs Kubernetes clusters in Docker containers, suitable for testing and development.
 
-Minikube: Runs a single-node Kubernetes cluster on your local machine.
+- **Minikube**: Runs a single-node Kubernetes cluster on your local machine.
 
-K3s: A lightweight Kubernetes distribution ideal for local development.
+- **K3s**: A lightweight Kubernetes distribution ideal for local development.
 
-MicroK8s: A minimal Kubernetes distribution for local development.
+- **MicroK8s**: A minimal Kubernetes distribution for local development.
 
-Docker Desktop: Includes a standalone Kubernetes server and client for development.
-
-~ David Peterson
-
+- **Docker Desktop**: Includes a standalone Kubernetes server and client for development.

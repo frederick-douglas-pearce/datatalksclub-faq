@@ -5,5 +5,4 @@ question: Is a train.py file necessary when you have a train.ipynb file in your 
 sort_order: 3860
 ---
 
-Ans: train.py has to be a python file. This is because running a python script for training a model is much simpler than running a notebook and that's how training jobs usually look like in real life.
-
+train.py has to be a Python file. This is because running a Python script for training a model is much simpler than running a notebook, and that's how training jobs usually look like in real life.

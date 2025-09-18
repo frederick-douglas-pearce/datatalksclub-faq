@@ -1,10 +1,15 @@
 ---
 id: 4b65d5542d
-question: 'OperationalError when running python prep.pypsycopg2. OperationalError:
+question: 'OperationalError when running python prep.py: psycopg2. OperationalError:
   could not translate host name "postgres" to address: No such host is known. How
   do I fix this issue?'
 sort_order: 500
 ---
 
-Inside .env file change POSTGRES_HOST=localhost
+To resolve this error, update the `.env` file:
 
+- Change the `POSTGRES_HOST` variable to `localhost`.
+
+```ini
+POSTGRES_HOST=localhost
+```

@@ -5,11 +5,8 @@ question: None of the videos have how to install the environment in Mac, does so
 sort_order: 4110
 ---
 
-Refer to [https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/01-intro/06-environment.md](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/01-intro/06-environment.md)
+Refer to the following resources for instructions:
 
-(added by Rileen Sinha)
+- [GitHub Guide](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/01-intro/06-environment.md)
 
-I made a medium article describing it:[https://medium.com/p/eceb6e42e36e](https://medium.com/p/eceb6e42e36e)
-
-Till Meineke
-
+- [Medium Article](https://medium.com/p/eceb6e42e36e)

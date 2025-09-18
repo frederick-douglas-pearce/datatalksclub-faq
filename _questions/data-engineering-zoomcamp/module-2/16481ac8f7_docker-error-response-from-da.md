@@ -5,15 +5,12 @@ question: 'docker: Error response from daemon: mkdir C:\Program Files\Git\var: A
 sort_order: 1860
 ---
 
-Description:
+### Description:
 
-Running the command below in Bash with Docker running and WSL2 installed. Even running Bash as admin won’t work
+When running the following Docker command in Bash with Docker and WSL2 installed, you may encounter an error. Running Bash as admin will not resolve the issue:
 
-```:
-
-$ docker run --pull=always --rm -it -p 8080:8080 --user=root -v
-
-/var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp kestra/kestra:latest server local
+```bash
+$ docker run --pull=always --rm -it -p 8080:8080 --user=root -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp kestra/kestra:latest server local
 
 latest: Pulling from kestra/kestra
 
@@ -24,20 +21,16 @@ Status: Image is up to date for kestra/kestra:latest
 docker: Error response from daemon: mkdir C:\\Program Files\\Git\\var: Access is denied.
 
 See 'docker run --help'.
-
 ```
 
-The error mentioned above will appear and localhost wont shows the Kestra UI, the solution is to run Command Prompt as admin with the following command:
+### Solution:
 
-```
+To resolve this issue, run Command Prompt as an administrator and use the following command:
 
-docker run --pull=always --rm -it -p 8080:8080 --user=root ^
-
--v "/var/run/docker.sock:/var/run/docker.sock" ^
-
+```bash
+docker run --pull=always --rm -it -p 8080:8080 --user=root \
+-v "/var/run/docker.sock:/var/run/docker.sock" \
 -v "C:/Temp:/tmp" kestra/kestra:latest server local
-
 ```
 
-This works flawlessly and localhost shows Kestra UI as usual.
-
+After executing the command as described, the localhost should display the Kestra UI as expected.

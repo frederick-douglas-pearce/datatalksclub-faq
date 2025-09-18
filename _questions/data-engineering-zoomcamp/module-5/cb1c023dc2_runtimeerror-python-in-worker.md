@@ -6,13 +6,14 @@ question: 'RuntimeError: Python in worker has different version 3.11 than that i
 sort_order: 3850
 ---
 
-import os
+To resolve the version mismatch error between the worker and driver Python versions in PySpark, set the environment variables `PYSPARK_PYTHON` and `PYSPARK_DRIVER_PYTHON` to the same executable.
 
+```python
+import os
 import sys
 
 os.environ['PYSPARK_PYTHON'] = sys.executable
-
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
+```
 
-Dataproc Pricing: [https://cloud.google.com/dataproc/pricing#on_gke_pricing](https://cloud.google.com/dataproc/pricing#on_gke_pricing)
-
+For further information on Dataproc Pricing, visit: [Dataproc Pricing](https://cloud.google.com/dataproc/pricing#on_gke_pricing)

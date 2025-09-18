@@ -1,39 +1,50 @@
 ---
 id: 5ba1e7ba64
-question: NotSupportedError - You can use "eb local" only with preconfigured, generic
-  and multicontainer Docker platforms.
+question: 'Error: NotSupportedError - You can use "eb local" only with preconfigured,
+  generic, and multicontainer Docker platforms.'
 sort_order: 2210
 ---
 
-Question:
+When executing:
 
-When executing
-
+```bash
 eb local run  --port 9696
+```
 
-I get the following error:
+You may encounter the following error:
 
+```
 ERROR: NotSupportedError - You can use "eb local" only with preconfigured, generic and multicontainer Docker platforms.
+```
 
-Answer:
+### Solution
 
-There are two options to fix this:
+There are two options to fix this issue:
 
-Re-initialize by running eb init -i and choosing the options from a list (the first default option for docker platform should be fine).
+1. **Re-initialize the Environment:**
+   - Run the initialization command:
+     ```bash
+     eb init -i
+     ```
+   - Choose the appropriate options from the list provided (the first default option for the Docker platform should suffice).
 
-Edit the ‘.elasticbeanstalk/config.yml’ directly changing the default_platform from Docker to default_platform: Docker running on 64bit Amazon Linux 2023
+2. **Manually Edit Configuration:**
+   - Open and edit the ‘.elasticbeanstalk/config.yml’ file.
+   - Change `default_platform` from `Docker` to:
+     ```yaml
+     default_platform: Docker running on 64bit Amazon Linux 2023
+     ```
+   - Note that this option might not be available in the future.
 
-The disadvantage of the second approach is that the option might not be available the following years
+### Alternative Solution:
 
-Added by Alex Litvinov
-
-An alternative solution is to re-run the init command but change the value after the -p flag from docker to a string like "Docker running on 64bit Amazon Linux". Then, re-run the first command. For example:
-
-eb init -p "Docker running on 64bit Amazon Linux" <appname>
-
-eb local run --port 9696
-
-Added by Lynn Samson
+- Re-run the init command and change the `-p` flag value:
+  ```bash
+  eb init -p "Docker running on 64bit Amazon Linux" <appname>
+  ```
+- Then re-run:
+  ```bash
+  eb local run --port 9696
+  ```
 
 Original solution from [Stack Overflow](https://stackoverflow.com/a/75804355/24066976)
-

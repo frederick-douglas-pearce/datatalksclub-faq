@@ -5,4 +5,3 @@ sort_order: 2760
 ---
 
 Create a new branch to edit. More on this can be found [here in the dbt docs](https://docs.getdbt.com/docs/collaborate/git/version-control-basics).
-

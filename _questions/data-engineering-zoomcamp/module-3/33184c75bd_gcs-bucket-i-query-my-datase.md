@@ -4,11 +4,8 @@ question: GCS Bucket - I query my dataset and get a Bad character (ASCII 0) erro
 sort_order: 2060
 ---
 
-Check the Schema
+- **Check the Schema**: Ensure that the schema of your dataset is correctly defined.
 
-You might have a wrong formatting
+- **Formatting Issues**: You might have incorrect formatting in your files.
 
-Try to upload the CSV.GZ files without formatting or going through pandas via wget
-
-[See this Slack conversation for helpful tips](https://datatalks-club.slack.com/archives/C01FABYF2RG/p1676034803779649)
-
+- **Upload Method**: Try uploading the CSV.GZ files without formatting or processing them through pandas. Use `wget` to download if necessary.

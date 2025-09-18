@@ -6,5 +6,6 @@ sort_order: 4130
 
 In the project directory, run:
 
+```bash
 java -cp build/libs/<jar_name>-1.0-SNAPSHOT.jar:out src/main/java/org/example/JsonProducer.java
-
+```

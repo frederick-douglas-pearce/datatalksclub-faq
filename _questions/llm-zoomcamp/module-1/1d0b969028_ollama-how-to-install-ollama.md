@@ -4,51 +4,55 @@ question: 'Ollama: How to install Ollama?'
 sort_order: 330
 ---
 
-First, install Ollama:
+First, install Ollama by visiting [https://ollama.com/download](https://ollama.com/download) and choosing your operating system:
 
-Go to [https://ollama.com/download](https://ollama.com/download)
+- **macOS**: Download the `.pkg` and install it.
+- **Windows**: Download the `.msi` and install it.
+- **Linux**: Run the following command in the terminal:
 
-Choose your operating system:
+  ```bash
+  curl -fsSL https://ollama.com/install.sh | sh
+  ```
 
-macOS: Download the .pkg and install
+Once installed, open a terminal and type:
 
-Windows: Download the .msi and install
-
-Linux: Run this in terminal:
-
-curl -fsSL [ollama.com](https://ollama.com/install.sh) | sh
-
-Open a terminal and type:
-
+```bash
 ollama run llama3
+```
 
-This will:
+This command will:
 
-Download the LLaMA 3 model (~4GB)
+- Download the LLaMA 3 model (~4GB).
+- Start the model locally.
+- Open a chat-like interface where you can type questions.
 
-Start the model locally
+To test the Ollama local server, run the following command:
 
-Open a chat-like interface where you can type questions
+```bash
+curl http://localhost:11434
+```
 
-To test the Ollama local server, execute the following command:curl [http://localhost:11434](http://localhost:11434)
+You should receive a response similar to:
 
-You should receive something like:
+```json
+{"models": [...]}  
+```
 
-{"models": [...]}
+Then, install the Python client with:
 
-Then, install the Python client:
+```bash
+pip install ollama
+```
 
-pip install ollamaHere, you have a minimal python example:import ollama
+Here is a minimal Python example:
+
+```python
+import ollama
 
 response = ollama.chat(
-
-model='llama3',
-
-messages=[{"role": "user", "content": your_prompt}]
-
+    model='llama3',
+    messages=[{"role": "user", "content": your_prompt}]
 )
 
 print(response['message']['content'])
-
-Added by Alexander Daniel Rios
-
+```

@@ -4,17 +4,26 @@ question: 'AttributeError: ''DataFrame'' object has no attribute ''iteritems'''
 sort_order: 3590
 ---
 
-This error comes up on the Spark video 5.3.1 - First Look at Spark/PySpark,
+This error occurs in the Spark video 5.3.1 - First Look at Spark/PySpark because the example utilizes CSV files from 2021, but the current data is in parquet format.
 
-because as at the creation of the video, 2021 data was the most recent which utilised csv files but as at now its parquet.
+When running the command:
 
-So when you run the command spark.createDataFrame(df1_pandas).show(),
+```python
+spark.createDataFrame(df1_pandas).show()
+```
 
-You get the Attribute error. This is caused by the pandas version 2.0.0 which seems incompatible with Spark 3.3.2, so to fix it you have to downgrade pandas to 1.5.3 using the command pip install -U pandas==1.5.3
+You may encounter the Attribute error due to incompatibility between pandas version 2.0.0 and Spark 3.3.2. To resolve this, you can:
 
-Another option is adding the following after importing pandas, if one does not want to downgrade pandas version ([source](https://stackoverflow.com/questions/76404811/attributeerror-dataframe-object-has-no-attribute-iteritems)) :
+- Downgrade pandas to version 1.5.3 using the following command:
+  
+  ```bash
+  pip install -U pandas==1.5.3
+  ```
+  
+- Alternatively, add the following line after importing pandas if you prefer not to downgrade:
+  
+  ```python
+  pd.DataFrame.iteritems = pd.DataFrame.items
+  ```
 
-pd.DataFrame.iteritems = pd.DataFrame.items
-
-Note that this problem is solved with Spark versions from 3.4.1
-
+This issue is resolved in Spark versions from 3.4.1 onwards.

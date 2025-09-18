@@ -4,19 +4,30 @@ question: Running out of storage when using kestra with postgres on GCP VM
 sort_order: 1890
 ---
 
-Running out of storage while trying to backfill. I realized my GCP VM only has 30GB of storage and I was eating it up! Couple things I did/would suggest:
+Running out of storage while trying to backfill. I realized my GCP VM only has 30GB of storage and I was using it up quickly. Here are a couple of suggestions for managing storage:
 
-Clean up your GCP VM drive. You can use this command to see what is taking up the most space:  $ sudo du -sh *
+- **Clean up your GCP VM drive:** Use the command below to identify what is taking up the most space:
 
-(~1gb) For me, Anaconda installer was taking up lots of space - you can delete that immediately because I already installed anaconda. I don’t need the installer anymore.
+  ```bash
+  sudo du -sh *
+  ```
 
-Rm -rf  <anacondainstaller_fpath>
+  - **(~1GB)** For me, the Anaconda installer was consuming a lot of space. If you no longer need it, you can delete it:
+  
+    ```bash
+    rm -rf <anacondainstaller_fpath>
+    ```
 
-(~3gb) Anaconda also takes up lots of space. You can’t delete it all if you want to run python, but you can clean it up significantly. I don’t care much about libs, etc. because I can build them in a docker container! Command is $ conda clean --all -y
+  - **(~3GB)** Anaconda itself takes up a lot of space. You can’t delete it entirely if you need Python, but you can clean it up significantly:
+    
+    ```bash
+    conda clean --all -y
+    ```
 
-You can clean up your kestra files with a purge flow. Here is the generic one: [https://kestra.io/docs/administrator-guide/purge](https://kestra.io/docs/administrator-guide/purge)
+- **Clean up your Kestra files:** Use a purge flow. You can find a generic example here:
+  
+  [https://kestra.io/docs/administrator-guide/purge](https://kestra.io/docs/administrator-guide/purge)
+  
+  I wanted to perform the cleanup immediately, rather than waiting until the end of the month, so I adjusted the `endDate` to `"{{ now() }}"` and removed the trigger block. You can also choose whether to remove FAILED state executions.
 
-I personally wanted to do it immediately, not at end of month, so I made end date just now and got rid of the trigger block. You can also specify if you want to removed FAILED state executions, but I chose not to: endDate: "{{ now() }}"
-
-You can clean up your pg database by manually deleting tables in pgadmin. Or possibly set up a workflow for it in kestra, but it was easy enough to manually delete.
-
+- **Clean up your PostgreSQL database:** You can manually delete tables in pgAdmin, or set up a workflow in Kestra for it. I found it easy to do manually.

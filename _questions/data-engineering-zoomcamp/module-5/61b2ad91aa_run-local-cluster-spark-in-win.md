@@ -4,21 +4,29 @@ question: Run Local Cluster Spark in Windows 10 with CMD
 sort_order: 3760
 ---
 
-Go to %SPARK_HOME%\bin
+1. Go to `%SPARK_HOME%\bin`
 
-Run spark-class org.apache.spark.deploy.master.Master to run the master. This will give you a URL of the form spark://ip:port
+2. Run the following command to start the master:
 
-Run spark-class org.apache.spark.deploy.worker.Worker spark://ip:port to run the worker. Make sure you use the URL you obtained in step 2.
+   ```bash
+   spark-class org.apache.spark.deploy.master.Master
+   ```
+   
+   This will give you a URL of the form `spark://ip:port`.
 
-Create a new Jupyter notebook:
+3. Run the following command to start the worker, replacing `spark://ip:port` with the URL obtained from the previous step:
 
-spark = SparkSession.builder \
+   ```bash
+   spark-class org.apache.spark.deploy.worker.Worker spark://ip:port
+   ```
 
-.master("spark://{ip}:7077") \
+4. Create a new Jupyter notebook and set up the Spark session:
 
-.appName('test') \
+   ```python
+   spark = SparkSession.builder \
+       .master("spark://{ip}:7077") \
+       .appName('test') \
+       .getOrCreate()
+   ```
 
-.getOrCreate()
-
-Check on Spark UI the master, worker and app.
-
+5. Check on the Spark UI to see the master, worker, and application running.

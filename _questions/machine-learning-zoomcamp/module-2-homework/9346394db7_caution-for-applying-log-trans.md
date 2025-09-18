@@ -12,7 +12,4 @@ The instruction for applying log transformation to the ‘median_house_value’ 
 
 <{IMAGE:image_1}>
 
-However, this instruction is absent in the subsequent questions of the homework, and I got stuck with Q5 for a long time, trying to figure out why my RMSE was so huge, when it clicked to me that I forgot to apply log transformation to the target variable. Please remember to apply log transformation to the target variable for each question.
-
-(Added by Soham Mundhada)
-
+However, this instruction is absent in the subsequent questions of the homework, and you might encounter issues like a huge RMSE. Remember to apply log transformation to the target variable for each question.

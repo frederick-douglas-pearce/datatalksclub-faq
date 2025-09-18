@@ -7,5 +7,10 @@ question: 'Terraform - Error: Failed to query available provider packages │ Co
 sort_order: 1610
 ---
 
-It is an internet connectivity error, terraform is somehow not able to access the online registry. Check your VPN/Firewall settings (or just clear cookies or restart your network). Try terraform init again after this, it should work.
+This error typically occurs due to internet connectivity issues. Terraform is unable to access the online registry.
 
+**Solution:**
+
+- Check your VPN/Firewall settings.
+- Clear cookies or restart your network.
+- Run `terraform init` again after addressing the connection issues.

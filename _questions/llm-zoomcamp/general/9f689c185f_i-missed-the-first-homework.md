@@ -5,4 +5,3 @@ sort_order: 70
 ---
 
 Yes, you need to pass the Capstone project to get the certificate. Homework is not mandatory, though it is recommended for reinforcing concepts, and the points awarded count towards your rank on the leaderboard.
-

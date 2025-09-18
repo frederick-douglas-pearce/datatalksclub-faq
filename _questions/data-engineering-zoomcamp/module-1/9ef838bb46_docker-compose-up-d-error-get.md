@@ -1,13 +1,12 @@
 ---
 id: 9ef838bb46
-question: 'Docker Compose up -d error getting credentials - err: exec: "docker-credential-desktop":
+question: 'Docker: Compose up -d error getting credentials - err: exec: "docker-credential-desktop":
   executable file not found in %PATH%, out: ``'
 sort_order: 960
 ---
 
-Locate config.json file for docker (check your home directory; Users/username/.docker).
+To resolve this error, follow these steps:
 
-Modify credsStore to credStore
-
-Save and re-run
-
+1. Locate the `config.json` file for Docker, typically found in your home directory at `Users/username/.docker`.
+2. Modify the `credsStore` setting to `credStore`.
+3. Save the file and re-run your Docker Compose command.

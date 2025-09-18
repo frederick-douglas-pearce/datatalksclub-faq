@@ -1,18 +1,38 @@
 ---
 id: f291e8d311
-question: 'Postgres - bind: address already in use'
+question: 'Postgres: bind: address already in use'
 sort_order: 1170
 ---
 
-1.2.2 Postgres commandline for docker
+### Issue
 
-Various errors when first pasting docker run command - make sure there is only 1 space before “\” and only a newline after “\”
+When attempting to start the Docker Postgres container, you may encounter the error message:
 
-Error - posgres post is already in use. This seems to happen every time i try to start the docker postgres container.
+```
+Error - postgres port is already in use.
+```
 
-Option 1: Figure out what service is using the port (sudo lsof -i :5432) and stop that service:  sudo service postgresql stop.
+### Solutions
 
-Option 2: more long term.
+#### Option 1: Identify and Stop the Service
 
-I actually eventually ended up mapping to a different port, because this happened every time I restarted my VM. So I would map <local 5433: container 5432> in the docker file or docker compose file. Since i am using a VM, I also need to make sure that port 5433 is forwarded.
+1. Determine which service is using the port by running:
+   
+   ```bash
+   sudo lsof -i :5432
+   ```
+   
+2. Stop the service that is using the port:
+   
+   ```bash
+   sudo service postgresql stop
+   ```
 
+#### Option 2: Map to a Different Port
+
+For a more long-term solution, consider mapping to a different port:
+
+- Map local port 5433 to container port 5432 in your Docker configuration (`Dockerfile` or `docker-compose.yml`).
+- If using a VM, ensure that port 5433 is forwarded in the host machine configuration.
+
+This approach prevents conflicts and allows the Docker Postgres container to run without interruption.

@@ -15,19 +15,27 @@ question: Dbt deploy + Git CI - Unable to configure Continuous Integration (CI) 
 sort_order: 2790
 ---
 
-If you’re trying to configure CI with Github and on the job’s options you can’t see Run on Pull Requests? on triggers, you have to reconnect with Github using native connection instead clone by SSH. Follow these steps:
+If you’re trying to configure CI with Github and on the job’s options you can’t see `Run on Pull Requests?` on triggers, follow these steps to reconnect using a native connection instead of cloning by SSH:
 
-On Profile Settings > Linked Accounts connect your Github account with dbt project allowing the permissions asked. More info at [https://docs.getdbt.com/docs/collaborate/git/connect-gith](https://docs.getdbt.com/docs/collaborate/git/connect-github)
+1. **Connect Your Github Account**  
+   - Go to `Profile Settings > Linked Accounts`.
+   - Connect your Github account with the dbt project, allowing the requested permissions.  
+   - More information can be found [here](https://docs.getdbt.com/docs/collaborate/git/connect-github).
+   
+   <{IMAGE:image_1}>
+   
+2. **Disconnect Current Configuration**  
+   - Navigate to `Account Settings > Projects (analytics) > Github connection`.
+   - Click the `Disconnect` button at the bottom left.
 
-<{IMAGE:image_1}>
-
-Disconnect your current Github’s configuration from Account Settings > Projects (analytics) > Github connection. At the bottom left appears the button Disconnect, press it.
-
-Once we have confirmed the change, we can configure it again. This time, choose Github and it will appear in all repositories which you have allowed to work with dbt. Select your repository and it’s ready.
-
-<{IMAGE:image_2}>
-
-Go to the Deploy > job configuration’s page and go down until Triggers and now you can see the option Run on Pull Requests:
-
-<{IMAGE:image_3}>
-
+3. **Reconfigure Github Connection**  
+   - After disconnecting, configure again by choosing Github.
+   - Select your repository from all allowed repositories to work with dbt. Your setup will now be ready.
+   
+   <{IMAGE:image_2}>
+   
+4. **Configure Triggers**  
+   - Go to `Deploy > Job Configuration`.
+   - Scroll down to `Triggers` where you can see the option `Run on Pull Requests:`
+   
+   <{IMAGE:image_3}>

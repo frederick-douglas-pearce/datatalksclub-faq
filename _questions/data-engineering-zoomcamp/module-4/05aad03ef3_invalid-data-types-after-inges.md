@@ -1,42 +1,45 @@
 ---
 id: 05aad03ef3
 question: 'Invalid data types after Ingesting FHV data through parquet files: Could
-  not parse SR_Flag as Float64,Couldn’t parse datetime column as timestamp,couldn’t
-  handle NULL values in PULocationID,DOLocationID'
+  not parse SR_Flag as Float64, Couldn’t parse datetime column as timestamp, couldn’t
+  handle NULL values in PULocationID, DOLocationID'
 sort_order: 3190
 ---
 
-If you uploaded manually the fvh 2019 parquet files manually after downloading from [https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet) you may face errors regarding date types while loading the data in a landing table (say fhv_tripdata). Try to create an the external table with the schema defines as following and load each month in a loop.
+If you uploaded the FHV 2019 parquet files manually after downloading from [this source](https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-*.parquet), you may face errors regarding data types while loading the data into a landing table (e.g., `fhv_tripdata`). To avoid these errors, create an external table with the schema defined as follows and load each month in a loop:
 
------Correct load with schema defination----will not throw error----------------------
-
+```sql
 CREATE OR REPLACE EXTERNAL TABLE `dw-bigquery-week-3.trips_data_all.external_tlc_fhv_trips_2019` (
 
-dispatching_base_num STRING,
+  dispatching_base_num STRING,
 
-pickup_datetime TIMESTAMP,
+  pickup_datetime TIMESTAMP,
 
-dropoff_datetime TIMESTAMP,
+  dropoff_datetime TIMESTAMP,
 
-PUlocationID FLOAT64,
+  PUlocationID FLOAT64,
 
-DOlocationID FLOAT64,
+  DOlocationID FLOAT64,
 
-SR_Flag FLOAT64,
+  SR_Flag FLOAT64,
 
-Affiliated_base_number STRING
+  Affiliated_base_number STRING
 
 )
 
 OPTIONS (
 
-format = 'PARQUET',
+  format = 'PARQUET',
 
-uris = ['gs://project id/fhv_2019_8.parquet']
+  uris = ['gs://project id/fhv_2019_8.parquet']
 
 );
+```
 
-Can Also USE  uris = ['gs://project id/fhv_2019_*.parquet'] (THIS WILL remove the need for the loop and can be done for all month in single RUN )
+You can also use:
 
-– THANKYOU FOR THIS –
+```sql
+uris = ['gs://project id/fhv_2019_*.parquet']
+```
 
+This approach removes the need for a loop and allows you to process all months in a single run.

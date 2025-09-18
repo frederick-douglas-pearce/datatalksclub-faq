@@ -4,19 +4,44 @@ question: Your Pipfile.lock (221d14) is out of date (during Docker build)
 sort_order: 2120
 ---
 
-If during running the  docker build command, you get an error like this:
+If during running the docker build command, you get an error like this:
 
+```
 Your Pipfile.lock (221d14) is out of date. Expected: (939fe0).
 
 Usage: pipenv install [OPTIONS] [PACKAGES]...
 
 ERROR:: Aborting deploy
+```
 
-Option 1: Delete the pipfile.lock via rm Pipfile, and then rebuild the lock via  pipenv lock from the terminal before retrying the docker build command.
+You can try the following solutions:
 
-Option 2:  If it still doesn’t work, remove the pipenv environment, Pipfile and Pipfile.lock, and create a new one before building docker again. Commands to remove pipenv environment and removing pipfiles:
+1. **Delete and Rebuild Pipfile.lock:**
+   - Delete the `Pipfile.lock` using the command:
+   
+     ```bash
+     rm Pipfile.lock
+     ```
+   
+   - Rebuild the lock file:
+   
+     ```bash
+     pipenv lock
+     ```
+   
+   - Retry the `docker build` command.
 
-pipenv  --rm
-
-rm Pipfile*
-
+2. **Remove and Recreate Pipenv Environment:**
+   - Remove the pipenv environment:
+   
+     ```bash
+     pipenv --rm
+     ```
+   
+   - Remove the Pipfile and Pipfile.lock:
+   
+     ```bash
+     rm Pipfile*
+     ```
+   
+   - Create a new environment before retrying the Docker build.

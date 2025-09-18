@@ -4,67 +4,74 @@ question: wget is not recognized as an internal or external command
 sort_order: 270
 ---
 
-If you get “wget is not recognized as an internal or external command”, you need to install it.
+If you encounter the error "wget is not recognized as an internal or external command", you need to install it.
 
-On Ubuntu, run
+- **On Ubuntu, run:**
+  
+  ```bash
+  sudo apt-get install wget
+  ```
 
-sudo apt-get install wget
+- **On Windows, you can use Chocolatey:**
+  
+  ```bash
+  choco install wget
+  ```
+  
+  Or download a binary [from here](http://gnuwin32.sourceforge.net/packages/wget.htm) and add it to your PATH (e.g., `C:/tools/`).
 
-On Windows, the easiest way to install wget is to use [Chocolatey](https://chocolatey.org/):
+- **On Mac, use Homebrew:**
+  
+  ```bash
+  brew install wget
+  ```
 
-choco install wget
+Alternatively, you can use Python libraries:
 
-Or you can download a binary [from here](http://gnuwin32.sourceforge.net/packages/wget.htm) and put it to any location in your PATH (e.g. C:/tools/)
+- **Python `wget` library:**
 
-On Mac, the easiest way to install wget is to use brew.
+  Install it first:
+  
+  ```bash
+  pip install wget
+  ```
 
-Brew install wget
+  Then, in your Python code:
+  
+  ```python
+  import wget
 
-Alternatively, you can use a Python wget library, but instead of simply using “wget” you’ll need to use
+  wget.download("URL")
+  ```
 
-python -m wget
+- **Using `pandas` to read a CSV directly from a URL:**
 
-You need to install it with pip first:
+  ```python
+  import pandas as pd
+  
+  url = "https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv"
+  
+  df = pd.read_csv(url)
+  ```
 
-pip install wget
+  Valid URL schemes include http, ftp, s3, gs, and file.
 
-And then in your python code, for example in your jupyter notebook, use:
+- **Bypassing HTTPS checks (if needed):**
 
-import wget
+  ```python
+  import ssl
+  
+  ssl._create_default_https_context = ssl._create_unverified_context
+  ```
 
-wget.download("URL")
+- **Using Python's `urllib` for downloading files:**
 
-This should download whatever is at the URL in the same directory as your code.
+  ```python
+  import urllib.request
+  
+  url = "https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv"
+  
+  urllib.request.urlretrieve(url, "housing.csv")
+  ```
 
-(Memoona Tahira)
-
-Alternatively, you can read a CSV file from a URL directly with pandas:
-
-url = "[raw.githubusercontent.com](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv")
-
-df = pd.read_csv(url)
-
-Valid URL schemes include http, ftp, s3, gs, and file.
-
-In some cases you might need to bypass https checks:
-
-import ssl
-
-ssl._create_default_https_context = ssl._create_unverified_context
-
-Or you can use the built-in Python functionality for downloading the files:
-
-import urllib.request
-
-url = "[https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv](https://raw.githubusercontent.com/alexeygrigorev/datasets/master/housing.csv)"
-
-urllib.request.urlretrieve(url, "housing.csv")
-
-Urllib.request.urlretrieve() is a standard Python library function available on all devices and platforms. URL requests and URL data retrieval are done with the urllib.request module.
-
-The urlretrieve() function allows you to download files from URLs and save them locally. Python programs use it to download files from the internet.
-
-On any Python-enabled device or platform, you can use the urllib.request.urlretrieve() function to download the file.
-
-(Mohammad Emad Sharifi)
-
+  The `urlretrieve()` function allows you to download files from URLs and save them locally. It is part of the standard Python library `urllib.request`, available on all devices and platforms.

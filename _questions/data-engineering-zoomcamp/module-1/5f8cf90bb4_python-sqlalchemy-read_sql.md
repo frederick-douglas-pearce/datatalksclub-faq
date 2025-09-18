@@ -5,11 +5,13 @@ question: Python - SQLAlchemy - read_sql_query() throws "'OptionEngine' object h
 sort_order: 1400
 ---
 
-First, check SQLAlchemy and Pandas version. Make sure they are both up-to-date. Upgrade them using pip/conda if needed.
+First, check the versions of SQLAlchemy and Pandas to ensure they are both up-to-date. You can upgrade them using `pip` or `conda` if needed.
 
-Then, try to wrap the query using text:
+Then, try to wrap the query using `text`:
 
+```python
 from sqlalchemy import text
 
-query = text("""SELECT * FROM tbl""") df = pd.read_sql_query(query, conn)
-
+query = text("SELECT * FROM tbl")
+df = pd.read_sql_query(query, conn)
+```

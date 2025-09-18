@@ -4,5 +4,4 @@ question: 'SSH Error: ssh: Could not resolve hostname linux: Name or service not
 sort_order: 1770
 ---
 
-To resolve this, ensure that your config file is in C/User/Username/.ssh/config
-
+To resolve this, ensure that your config file is in `C/User/Username/.ssh/config`. 

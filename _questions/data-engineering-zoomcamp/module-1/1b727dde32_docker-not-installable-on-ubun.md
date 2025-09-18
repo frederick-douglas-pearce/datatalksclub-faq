@@ -1,10 +1,11 @@
 ---
 id: 1b727dde32
-question: Docker not installable on Ubuntu
+question: 'Docker: Docker not installable on Ubuntu'
 sort_order: 830
 ---
 
-On some versions of Ubuntu, snap command can be used to install Docker.
+On some versions of Ubuntu, the `snap` command can be used to install Docker.
 
+```bash
 sudo snap install docker
-
+```

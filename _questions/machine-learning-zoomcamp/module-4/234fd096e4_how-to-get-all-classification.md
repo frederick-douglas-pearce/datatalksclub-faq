@@ -4,9 +4,6 @@ question: How to get all classification metrics?
 sort_order: 1430
 ---
 
-How to get classification metrics - precision, recall, f1 score, accuracy simultaneously
+To get classification metrics like precision, recall, F1 score, and accuracy simultaneously, use `classification_report` from `sklearn`.
 
-Use classification_report from sklearn. For more info check [here](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html).
-
-Abhishek N
-
+For more information, check [here](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html).

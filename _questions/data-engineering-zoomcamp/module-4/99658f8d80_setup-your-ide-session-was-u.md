@@ -1,10 +1,14 @@
 ---
 id: 99658f8d80
-question: Setup - Your IDE session was unable to start. Please contact support.
+question: 'Setup: Your IDE session was unable to start. Please contact support.'
 sort_order: 2540
 ---
 
-Issue: If the DBT cloud IDE loading indefinitely then giving you this error
+**Issue:** If the DBT cloud IDE is loading indefinitely and then giving you this error.
 
-Solution: check the dbt_cloud_setup.md  file and make a SSH Key and use gitclone to import repo into dbt project, copy and paste deploy key back in your repo setting.
+**Solution:**
 
+1. Check the `dbt_cloud_setup.md` file.
+2. Create an SSH Key.
+3. Use `git clone` to import the repo into the dbt project.
+4. Copy and paste the deploy key back in your repo settings.

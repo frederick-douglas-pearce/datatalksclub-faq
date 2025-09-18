@@ -7,15 +7,12 @@ sort_order: 4220
 
 You can consider several different approaches:
 
-Sampling: In the exploratory phase, you can use random samples of the data.
+- **Sampling**: In the exploratory phase, you can use random samples of the data.
 
-Chunking: When you do need all the data, you can read and process it in chunks that do fit in the memory.
+- **Chunking**: When you do need all the data, you can read and process it in chunks that do fit in the memory.
 
-Optimizing data types: Pandas’ automatic data type inference (when reading data in) might result in e.g. float64 precision being used to represent integers, which wastes space. You might achieve substantial memory reduction by optimizing the data types.
+- **Optimizing data types**: Pandas’ automatic data type inference (when reading data in) might result in, e.g., `float64` precision being used to represent integers, which wastes space. You might achieve substantial memory reduction by optimizing the data types.
 
-Using Dask, an open-source python project which parallelizes Numpy and Pandas.
+- **Using Dask**: An open-source Python project which parallelizes Numpy and Pandas.
 
-(see, e.g. [https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas](https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas))
-
-By Rileen Sinha
-
+See, e.g., [this blog on Vantage AI](https://www.vantage-ai.com/en/blog/4-strategies-how-to-deal-with-large-datasets-in-pandas)

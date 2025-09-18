@@ -9,25 +9,26 @@ question: Coloring the background of the pandas.DataFrame.corr correlation matri
 sort_order: 1040
 ---
 
-The background of any dataframe can be colored (not only the correlation matrix) based on the numerical values the dataframe contains by using the method [pandas.io.formats.style.Styler.background_graident](https://pandas.pydata.org/docs/reference/api/pandas.io.formats.style.Styler.background_gradient.html).
+The background of any DataFrame, including the correlation matrix, can be colored based on its numerical values using the method [pandas.io.formats.style.Styler.background_gradient](https://pandas.pydata.org/docs/reference/api/pandas.io.formats.style.Styler.background_gradient.html).
 
-Here an example on how to color the correlation matrix. A color map of choice can get passed, here ‘viridis’ is used.
+Here is an example of how to color the correlation matrix. A color map of choice can be passed; here, 'viridis' is used:
 
-# ensure to have only numerical values in the dataframe before calling 'corr'
+- Ensure the DataFrame contains only numerical values before calling `corr`:
 
+```python
 corr_mat = df_numerical_only.corr()
 
 corr_mat.style.background_gradient(cmap='viridis')
+```
 
-Here is an example of how the coloring will look like using a dataframe containing random values and applying “background_gradient” to it.
+- Here is an example of how the coloring will look using a DataFrame containing random values and applying `background_gradient` to it:
 
+```python
 np.random.seed = 3
 
 df_random = pd.DataFrame(data=np.random.random(3*3).reshape(3,3))
 
-df_random.style.background_gradient(cmap='viridis')
+print(df_random.style.background_gradient(cmap='viridis'))
+```
 
 <{IMAGE:image_1}>
-
-Added by Sylvia Schmitt
-

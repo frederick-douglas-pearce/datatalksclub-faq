@@ -4,7 +4,6 @@ question: Remove white spaces from column names in Pyspark
 sort_order: 3580
 ---
 
-df_finalx=df_finalw.select([col(x).alias(x.replace(" ","")) for x in df_finalw.columns])
-
-Krishna Anand
-
+```python
+df_finalx = df_finalw.select([col(x).alias(x.replace(" ", "")) for x in df_finalw.columns])
+```

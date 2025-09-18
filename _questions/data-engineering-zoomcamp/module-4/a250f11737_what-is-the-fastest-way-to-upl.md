@@ -4,37 +4,41 @@ question: What is the fastest way to upload taxi data to dbt-postgres?
 sort_order: 3250
 ---
 
-Use the PostgreSQL COPY FROM feature that is compatible with csv files
+Use the PostgreSQL `COPY FROM` feature, which is compatible with CSV files.
 
-First create the table like (as an example):
+### Steps:
 
-CREATE TABLE taxis (
+1. **Create the Table**
+   
+   First, create your table (example):
+   
+   ```sql
+   CREATE TABLE taxis (
+   
+   …
+   
+   );
+   ```
 
-…
+2. **Use COPY Functionality**
 
-);
+   Use the `COPY` command (example):
 
-And then use copy functionality (as an example):
+   ```sql
+   COPY taxis FROM PROGRAM
+   'url'
+   WITH (
+   FORMAT csv,
+   HEADER true,
+   ENCODING utf8
+   );
+   ```
 
-COPY taxis FROM PROGRAM
+   - Syntax for `COPY`:
 
-‘url'
-
-WITH (
-
-FORMAT csv,
-
-HEADER true,
-
-ENCODING utf8
-
-);
-
-COPY table_name [ ( column_name [, ...] ) ]
-
-FROM { 'filename' | PROGRAM 'command' | STDIN }
-
-[ [ WITH ] ( option [, ...] ) ]
-
-[ WHERE condition ]
-
+   ```sql
+   COPY table_name [ ( column_name [, ...] ) ]
+   FROM { 'filename' | PROGRAM 'command' | STDIN }
+   [ [ WITH ] ( option [, ...] ) ]
+   [ WHERE condition ]
+   ```

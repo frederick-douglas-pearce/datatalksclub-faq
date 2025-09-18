@@ -5,9 +5,8 @@ question: 'Java - RuntimeError: Java gateway process exited before sending its p
 sort_order: 3520
 ---
 
-Shows java_home is not set on the notebook log
+This error indicates that the `JAVA_HOME` environment variable is not set correctly in the notebook log.
 
-[https://sparkbyexamples.com/pyspark/pyspark-exception-java-gateway-process-exited-before-sending-the-driver-its-port-number/](https://sparkbyexamples.com/pyspark/pyspark-exception-java-gateway-process-exited-before-sending-the-driver-its-port-number/)
+For more information, you can refer to the following resource:
 
-[twitter.com](https://twitter.com/drkrishnaanand/status/1765423415878463839)
-
+[PySpark Exception - Java gateway process exited before sending the driver its port number](https://sparkbyexamples.com/pyspark/pyspark-exception-java-gateway-process-exited-before-sending-the-driver-its-port-number/)

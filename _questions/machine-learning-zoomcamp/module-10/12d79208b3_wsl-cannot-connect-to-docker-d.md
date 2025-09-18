@@ -4,19 +4,26 @@ images:
 - description: 'image #1'
   id: image_1
   path: images/machine-learning-zoomcamp/image_41f796fe.png
-question: WSL Cannot Connect To Docker Daemon
+question: 'WSL: Cannot Connect To Docker Daemon'
 sort_order: 3460
 ---
 
-Due to the uncertainties associated with machines, sometimes you can get the error message like this when you try to run a docker command:
+Due to machine uncertainties, you might encounter the following error when trying to run a Docker command:
 
-”Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?”
+```bash
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
 
-Solution: The solution is simple. The Docker Desktop might no longer be connecting to the WSL Linux distro. What you need to do is go to your Docker Desktop setting and then click on resources. Under resources, click on WSL Integration. You will get a tab like the image below:
+**Solution:**
 
-<{IMAGE:image_1}>
+The issue may arise if Docker Desktop is not correctly connecting to the WSL Linux distribution. To resolve this:
 
-Just enable additional distros. That’s all. Even if the additional distro is the same as the default WSL distro.
+1. Open Docker Desktop settings.
+2. Navigate to the "Resources" section.
+3. Click on "WSL Integration."
 
-Odimegwu David
+   <{IMAGE:image_1}>
 
+4. Enable additional distros, even if it matches the default WSL distro.
+
+That's all you need to do.

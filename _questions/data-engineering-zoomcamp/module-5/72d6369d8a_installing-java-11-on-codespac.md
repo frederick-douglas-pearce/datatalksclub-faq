@@ -4,15 +4,30 @@ question: Installing Java 11 on codespaces
 sort_order: 3810
 ---
 
-~ Abhijit Chakraborty
+1. Use the command below to check for available Java SDK versions:
+   
+   ```bash
+   sdk list java
+   ```
 
-`sdk list java`  to check for available java sdk versions.
+2. Install the desired version, for example:
+   
+   ```bash
+   sdk install java 11.0.22-amzn
+   ```
 
-`sdk install java 11.0.22-amzn`  as  java-11.0.22-amzn was available for my codespace.
+3. If prompted, press 'Y' to change the default Java version.
 
-click on Y if prompted to change the default java version.
-
-Check for java version using `java -version `.
-
-If working fine great, else `sdk default java 11.0.22-amzn` or whatever version you have installed.
-
+4. Verify the installation by checking the Java version:
+   
+   ```bash
+   java -version
+   ```
+   
+5. If the version does not work correctly, set the default version with:
+   
+   ```bash
+   sdk default java 11.0.22-amzn
+   ```
+   
+   Adjust this command to match the version you have installed.

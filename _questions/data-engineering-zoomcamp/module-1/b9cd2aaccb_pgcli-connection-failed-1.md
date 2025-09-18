@@ -6,9 +6,10 @@ question: 'PGCLI - connection failed: :1), port 5432 failed: could not receive d
 sort_order: 1060
 ---
 
-Change TO Socket
+To resolve the connection failure with PGCLI, use the following command to connect via socket:
 
+```bash
 pgcli -h 127.0.0.1 -p 5432 -u root -d ny_taxi
+```
 
-pgcli -h 127.0.0.1 -p 5432 -u root -d ny_taxi
-
+Ensure the database server is running and properly configured to accept connections.

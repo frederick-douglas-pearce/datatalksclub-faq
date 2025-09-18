@@ -4,9 +4,4 @@ question: How to select the alpha parameter in Q6
 sort_order: 1170
 ---
 
-Question: Regarding RMSE, how do we decide on the correct score to choose? In the study group discussion    about week two homework, all of us got it wrong and one person had the lowest score selected as well.
-
-Answer: You need to find RMSE for each alpha. If RMSE scores  are equal, you will select the lowest alpha.
-
-Asia Saeed
-
+To select the alpha parameter, you need to find the RMSE for each alpha. If RMSE scores are equal, choose the lowest alpha.

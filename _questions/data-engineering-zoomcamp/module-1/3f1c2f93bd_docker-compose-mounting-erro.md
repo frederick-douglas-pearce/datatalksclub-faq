@@ -1,28 +1,35 @@
 ---
 id: 3f1c2f93bd
-question: Docker-Compose - mounting error
+question: 'Docker-Compose: mounting error'
 sort_order: 840
 ---
 
-error: could not change permissions of directory "/var/lib/postgresql/data": Operation not permitted  volume
 
-if you have used the prev answer (just before this) and have created a local docker volume, then you need to tell the compose file about the named volume:
+```
+error: could not change permissions of directory "/var/lib/postgresql/data": Operation not permitted
+```
 
-volumes:
+If you have used the previous answer and created a local Docker volume, then you need to inform the compose file about the named volume:
 
+```yaml
 dtc_postgres_volume_local:  # Define the named volume here
+```
 
-# services mentioned in the compose file auto become part of the same network!
+- Services mentioned in the compose file automatically become part of the same network.
 
-services:
+### Steps:
 
-your remaining code here . . .
+1. Use the command:
+   ```bash
+   docker volume inspect dtc_postgres_volume_local
+   ```
+   to see the location by checking the value of `Mountpoint`.
 
-now use docker volume inspect dtc_postgres_volume_local to see the location by checking the value of Mountpoint
+2. In some cases, after running `docker compose up`, the mounting directory created is named `docker_sql_dtc_postgres_volume_local` instead of the existing `dtc_postgres_volume_local`.
 
-In my case, after i ran docker compose up the mounting dir created was named ‘docker_sql_dtc_postgres_volume_local’ whereas it should have used the already existing ‘dtc_postgres_volume_local’
+3. Rename the existing `dtc_postgres_volume_local` to `docker_sql_dtc_postgres_volume_local`:
+   - Be careful when performing this operation.
 
-All i did to fix this is that I renamed the existing ‘dtc_postgres_volume_local’ to ‘docker_sql_dtc_postgres_volume_local’ and removed the newly created one (just be careful when doing this)
+4. Remove the newly created one.
 
-run docker compose up again and check if the table is there or not!
-
+5. Run `docker compose up` again and check if the table is there.

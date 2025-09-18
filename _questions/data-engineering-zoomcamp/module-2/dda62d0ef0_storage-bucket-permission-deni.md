@@ -1,12 +1,14 @@
 ---
 id: dda62d0ef0
-question: Storage Bucket Permission Denied Error when running the gcp_setup flow
+question: 'Storage: Bucket Permission Denied Error when running the gcp_setup flow'
 sort_order: 1910
 ---
 
-When following the [youtube lesson](https://www.youtube.com/watch?v=nKqjjLJ7YXs&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=23) and then running the [gcp_setup flow](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/02-workflow-orchestration/flows/05_gcp_setup.yaml), I get the following error:
+When following the [YouTube lesson](https://www.youtube.com/watch?v=nKqjjLJ7YXs&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=23) and then running the [gcp_setup flow](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/02-workflow-orchestration/flows/05_gcp_setup.yaml), you might encounter a permission denied error.
 
-I tried manually creating the bucket in the GCP console, but this showed me that the bucket already existed. So I came up with another name for the bucket and it worked.
+To resolve this:
 
-The GCP bucket name has to be unique globally across all buckets, even if those are not your buckets, because the bucket will be accessible by URL.
+1. Verify if the bucket already exists using the GCP console.
+2. If it exists, choose a different name for the bucket.
 
+**Note:** The GCP bucket name must be unique globally across all buckets, as the bucket will be accessible by URL.

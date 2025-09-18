@@ -4,49 +4,39 @@ question: 'ElasticSearch: ERROR: Elasticsearch exited unexpectedly'
 sort_order: 210
 ---
 
-If you get this error, it’s likely that elasticsearch doesn’t get enough RAM
+If you encounter the error "Elasticsearch exited unexpectedly," it's likely due to insufficient RAM allocated to Elasticsearch.
 
-I specified the RAM size to the configuration (-m 4GB)
+### Solution 1: Specify RAM Size
 
+Specify the RAM size in the configuration:
+
+```bash
 docker run -it \
+  --rm \
+  --name elasticsearch \
+  -m 4GB \
+  -p 9200:9200 \
+  -p 9300:9300 \
+  -e "discovery.type=single-node" \
+  -e "xpack.security.enabled=false" \
+  docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+```
 
---rm \
+You can also try using `-m 2GB`.
 
---name elasticsearch \
+### Solution 2: Set Memory Lock to False
 
--m 4GB \
+Another possible solution is to set the `memory_lock` to false:
 
--p 9200:9200 \
-
--p 9300:9300 \
-
--e "discovery.type=single-node" \
-
--e "xpack.security.enabled=false" \
-
-docker.elastic.co/elasticsearch/elasticsearch:8.4.3
-
-(-m 2gb should also work)
-
-Another possible solution may be to set the memory_lock to false:
-
+```bash
 docker run -it \
-
---rm \
-
---name elasticsearch \
-
--p 9200:9200 \
-
--p 9300:9300 \
-
--e "discovery.type=single-node" \
-
--e see"xpack.security.enabled=false" \
-
--e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
-
--e "bootstrap.memory_lock=false" \
-
-docker.elastic.co/elasticsearch/elasticsearch:8.4.3
-
+  --rm \
+  --name elasticsearch \
+  -p 9200:9200 \
+  -p 9300:9300 \
+  -e "discovery.type=single-node" \
+  -e "xpack.security.enabled=false" \
+  -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+  -e "bootstrap.memory_lock=false" \
+  docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+```

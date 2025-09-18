@@ -5,19 +5,23 @@ question: 'Java Kafka: <project_name>-1.0-SNAPSHOT.jar errors: package xxx does 
 sort_order: 4100
 ---
 
-In my set up, all of the dependencies listed in gradle.build were not installed in <project_name>-1.0-SNAPSHOT.jar.
+In my setup, all of the dependencies listed in `build.gradle` were not installed in `<project_name>-1.0-SNAPSHOT.jar`.
 
 Solution:
 
-In build.gradle file, I added the following at the end:
+1. In the `build.gradle` file, add the following at the end:
+   
+   ```groovy
+   shadowJar {
+       archiveBaseName = "java-kafka-rides"
+       archiveClassifier = ''
+   }
+   ```
 
-shadowJar {
+2. In the command line, run:
+   
+   ```bash
+   gradle shadowjar
+   ```
 
-archiveBaseName = "java-kafka-rides"
-
-archiveClassifier = ''
-
-}
-
-And then in the command line ran ‘gradle shadowjar’, and run the script from java-kafka-rides-1.0-SNAPSHOT.jar created by the shadowjar
-
+3. Execute the script from `java-kafka-rides-1.0-SNAPSHOT.jar` created by the shadowjar.

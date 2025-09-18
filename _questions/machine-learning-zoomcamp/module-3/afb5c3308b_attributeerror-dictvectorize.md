@@ -4,7 +4,4 @@ question: 'AttributeError: ''DictVectorizer'' object has no attribute ''get_feat
 sort_order: 1320
 ---
 
-The solution is to use “get_feature_names_out” instead. See details: [https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html)
-
-George Chizhmak
-
+The solution is to use `get_feature_names_out` instead. See details: [https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html)

@@ -9,19 +9,21 @@ question: 'Py4J Error - ModuleNotFoundError: No module named ''py4j'' (Solve wit
 sort_order: 3440
 ---
 
-If below does not work, then download the latest available py4j version with
+To resolve the Py4J error, follow these steps:
 
-conda install -c conda-forge py4j
+1. Install the latest available Py4J version using conda:
+   
+   ```bash
+   conda install -c conda-forge py4j
+   ```
+   
+   Make sure to replace with the latest version number as found on the website.
 
-Take care of the latest version number in the website to replace appropriately.
+   <{IMAGE:image_1}>
 
-<{IMAGE:image_1}>
-
-Now add
-
-export PYTHONPATH="${SPARK_HOME}/python/:$PYTHONPATH"
-
-export PYTHONPATH="${SPARK_HOME}/python/lib/py4j-0.10.9.7-src.zip:$PYTHONPATH"
-
-in your  .bashrc file.
-
+2. Add the following lines to your `.bashrc` file:
+   
+   ```bash
+   export PYTHONPATH="${SPARK_HOME}/python/:$PYTHONPATH"
+   export PYTHONPATH="${SPARK_HOME}/python/lib/py4j-0.10.9.7-src.zip:$PYTHONPATH"
+   ```

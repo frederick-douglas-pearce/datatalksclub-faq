@@ -4,7 +4,4 @@ question: 'Error: Connecting to Elasticsearch at [elasticsearch:9200](http://ela
 sort_order: 790
 ---
 
-Try removing driver bridge from there?
-
-Added by Abiodun Gbadamosi
-
+Try removing the driver bridge from the configuration.

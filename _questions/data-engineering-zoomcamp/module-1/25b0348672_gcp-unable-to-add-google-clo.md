@@ -1,32 +1,49 @@
 ---
 id: 25b0348672
-question: GCP - Unable to add Google Cloud SDK PATH to Windows
+question: 'GCP: Unable to add Google Cloud SDK PATH to Windows'
 sort_order: 1420
 ---
 
-Unable to add Google Cloud SDK PATH to Windows
+### Issue
 
-Windows error: The installer is unable to automatically update your system PATH. Please add  C:\tools\google-cloud-sdk\bin
+Windows error:
 
-if you are constantly getting this feedback. Might be that you needed to add Gitbash to your Windows path:
+```
+The installer is unable to automatically update your system PATH. Please add C:\tools\google-cloud-sdk\bin
+```
 
-One way of doing that is to use conda: ‘If you are not already using it
+### Solution
 
-Download the Anaconda Navigator
+If you encounter this error frequently, consider the following steps:
 
-Make sure to check the box (add conda to the path when installing navigator: although not recommended do it anyway)
+1. **Add Gitbash to Windows Path:**
+   
+   - **Using Conda:**
+     - Download the Anaconda Navigator.
+     - During installation, check the box to add Conda to the path (even though it's not recommended).
 
-You might also need to install git bash if you are not already using it(or you might need to uninstall it to reinstall it properly)
+2. **Install Git Bash:**
 
-Make sure to check the following boxes while you install Gitbash
+   - If not installed, install Git Bash.
+   - If installed, consider reinstalling it.
+   - During installation, ensure you check:
+     - Add GitBash to Windows Terminal
+     - Use Git and optional Unix tools from the command prompt
 
-Add a GitBash to Windows Terminal
+3. **Setup Git Bash:**
 
-Use Git and optional Unix tools from the command prompt
+   - Open Git Bash and type the following command:
+     
+     ```bash
+     conda init bash
+     ```
+   
+   - This will modify your bash profile.
 
-Now open up git bash and type conda init bash This should modify your bash profile
+4. **Set Gitbash as Default Terminal:**
 
-Additionally, you might want to use Gitbash as your default terminal.
+   - Open the Windows Terminal.
+   - Go to settings.
+   - Change the default profile from Windows PowerShell to Git Bash.
 
-Open your Windows terminal and go to settings, on the default profile change Windows power shell to git bash
-
+By following these steps, you should be able to add the Google Cloud SDK path to your system on Windows without issues.

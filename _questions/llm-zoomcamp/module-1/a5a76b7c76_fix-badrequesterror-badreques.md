@@ -7,11 +7,14 @@ question: 'Fix BadRequestError: BadRequestError(400, ''media_type_header_excepti
 sort_order: 200
 ---
 
-When try to connect to the Elasticsearch server/node version  8.17.6 (as instructed for the Homework 1) running from with the Docker container with the python client elasticsearch version 9.x or more, we run into the BadRequestError mentioned above.
+When trying to connect to the Elasticsearch server/node version 8.17.6 running within a Docker container with the Python client Elasticsearch version 9.x or more, you may encounter the following `BadRequestError`:
 
-This happens because pip install elasticsearch install elasticsearch 9.x python client which runs into compatibility issues with the Elasticsearch 8.17.6. So we can use
+```plaintext
+BadRequestError(400, 'media_type_header_exception', 'Invalid media-type value on headers [Content-Type, Accept]', Accept version must be either version 8 or 7, but found 9. Accept=application/vnd.elasticsearch+json; compatible-with=9)
+```
 
-pip install "elasticsearch>=8,<9"  for mitigation of the problem.
+This issue arises because `pip install elasticsearch` installs Elasticsearch 9.x Python client, which is incompatible with Elasticsearch 8.17.6. To resolve this issue, use the following command to install a compatible Elasticsearch client version:
 
-(Added by Siddhartha Gogoi)
-
+```bash
+pip install "elasticsearch>=8,<9"
+```

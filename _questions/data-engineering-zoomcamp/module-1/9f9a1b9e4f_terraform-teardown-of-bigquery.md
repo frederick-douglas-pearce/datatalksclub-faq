@@ -1,13 +1,12 @@
 ---
 id: 9f9a1b9e4f
-question: Terraform Teardown of BigQuery Dataset
+question: 'Terraform: Teardown of BigQuery Dataset'
 sort_order: 1730
 ---
 
 When running `terraform destroy`, the following error can occur:
 
 ```
-
 Do you really want to destroy all resources?
 
 Terraform will destroy all your managed infrastructure, as shown above.
@@ -21,8 +20,6 @@ google_bigquery_dataset.homework_dataset: Destroying... [id=projects/terraform-d
 ╷
 
 │ Error: Error when reading or editing Dataset: googleapi: Error 400: Dataset terraform-demo-449214:homework_dataset is still in use, resourceInUse
-
 ```
 
-This is because the dataset is still in use by a table. To delete the dataset, we need to set the `delete_contents_on_destroy` property to `true` in the `main.tf` file.
-
+This is because the dataset is still in use by a table. To delete the dataset, set the `delete_contents_on_destroy` property to `true` in the `main.tf` file.

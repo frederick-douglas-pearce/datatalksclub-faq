@@ -6,5 +6,4 @@ question: 'OpenSource: I am using Groq, and it doesn''t provide a tokenizer libr
 sort_order: 270
 ---
 
-The question asks for the number of tokens in gpt-4o model. tiktoken is a python library that can be used to get the number of tokens. You don't need openai api key to to get the number of tokens. You can use the code provided in the question to get the number of tokens.
-
+The question asks for the number of tokens in the GPT-4o model. `tiktoken` is a Python library that can be used to get the number of tokens. You don't need an OpenAI API key to get the number of tokens. You can use the code provided in the question to get the number of tokens.

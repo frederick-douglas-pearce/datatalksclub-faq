@@ -5,9 +5,24 @@ question: 'How to fix “connection failed: connection to server at "127.0.0.1",
 sort_order: 4190
 ---
 
-Instead of using “localhost” as the host name/address, try “postgres”, or “host.docker.internal” instead
+Instead of using “localhost” as the host name/address, try “postgres”, or “host.docker.internal” instead.
 
-Alternative Solution: For those having installed postgres locally and disabling persist data on postgres-container in docker i.e. volume: removed, remember to use postgres port other than 5432 (e.g. 5433 is usable). And for pgadmin host name/address, if localhost, postgres, and host.docker.internal is not working, you can use your own IPv4 Address which can be found in Windows OS via: Command Prompt > ipconfig > Under Wireless LAN adapter WiFi 2. E.g.:
+Alternative Solution:
 
-IPv4 Address. . . . . . . . . . . : 192.168.0.148
+- If you have installed Postgres locally and disabled persist data on the Postgres container in Docker (i.e., volume: removed), use a Postgres port other than 5432, such as 5433.
+- For the pgAdmin host name/address, if 'localhost', 'postgres', or 'host.docker.internal' are not working, you can use your own IPv4 Address.
 
+  To find your IPv4 Address on Windows OS:
+  
+  1. Open Command Prompt.
+  2. Run the command:
+     
+     ```bash
+     ipconfig
+     ```
+  
+  3. Look under Wireless LAN adapter WiFi 2 for the IPv4 Address. For example:
+
+     ```text
+     IPv4 Address. . . . . . . . . . . : 192.168.0.148
+     ```

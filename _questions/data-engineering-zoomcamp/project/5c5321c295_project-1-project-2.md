@@ -6,13 +6,17 @@ sort_order: 4230
 
 There is only ONE project for this Zoomcamp. You do not need to submit or create two projects.
 
-There are simply TWO chances to pass the course. You can use the Second Attempt if you a) fail the first attempt b) do not have the time due to other engagements such as holiday or sickness etc. to enter your project into the first attempt. Project evaluation - Reproducibility
+There are simply TWO chances to pass the course. You can use the Second Attempt if you:
 
-The question is that sometimes even if you take plenty of effort to document every single step, and we can't even sure if the person doing the peer review will be able to follow-up, so how this criteria will be evaluated?
+- Fail the first attempt
+- Do not have the time due to other engagements such as holidays or sickness to enter your project into the first attempt.
 
-Alex clarifies: “Ideally yes, you should try to re-run everything. But I understand that not everyone has time to do it, so if you check the code by looking at it and try to spot errors, places with missing instructions and so on - then it's already great”
+**Project Evaluation - Reproducibility**
 
-Certificates: how do I get it?
+Even with thorough documentation, ensuring that a peer reviewer can follow your steps can be challenging. Here’s how this criterion will be evaluated:
 
-A: See the certificate.mdx file
+> "Ideally yes, you should try to re-run everything. But I understand that not everyone has time to do it, so if you check the code by looking at it and try to spot errors, places with missing instructions, and so on - then it's already great."
 
+**Certificates: How do I get it?**
+
+See the `certificate.mdx` file.

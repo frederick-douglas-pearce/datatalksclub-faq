@@ -6,7 +6,7 @@ sort_order: 4160
 
 In [Confluent Cloud](https://confluent.cloud/):
 
-Environment → default (or whatever you named your environment as) → The right navigation bar →  “Stream Governance API” →  The URL under “Endpoint”
-
-And create credentials from Credentials section below it
-
+- Navigate to your Environment (e.g., default or a custom name).
+- Use the right navigation bar to find "Stream Governance API."
+- The URL can be found under "Endpoint."
+- Create credentials from the Credentials section below it.

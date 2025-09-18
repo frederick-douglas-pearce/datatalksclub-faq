@@ -1,18 +1,20 @@
 ---
 id: 02bb92c002
-question: How to install easily kubectl on windows ?
+question: How to install easily kubectl on Windows?
 sort_order: 3510
 ---
 
-To install kubectl on windows using the terminal in vscode (powershell), I followed this tutorial: [https://medium.com/@ggauravsigra/install-kubectl-on-windows-af77da2e6fff](https://medium.com/@ggauravsigra/install-kubectl-on-windows-af77da2e6fff)
+To install kubectl on Windows using PowerShell in VSCode, follow these steps:
 
-I first downloaded kubectl with curl, with these command lines: [https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-kubectl-binary-with-curl-on-windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-kubectl-binary-with-curl-on-windows)
+1. **Download kubectl with curl**
+   - Use the following command lines as per the [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-kubectl-binary-with-curl-on-windows).
 
-At step 3, I followed the tutorial with the copy of the exe file in a specific folder on C drive.
+2. **Copy the Executable**
+   - At step 3 of the tutorial, copy the `kubectl.exe` file to a specific folder on your C drive.
 
-Then I added this folder path to PATH in my environment variables.
+3. **Update the System PATH**
+   - Add the folder path to the PATH in your environment variables.
 
-Kind can be installed the same way with the curl command on windows, by specifying a folder that will be added to the path environment variable.
+You can also install `kind` similarly using the curl command on Windows by specifying a folder that will be added to the PATH environment variable.
 
-Added by Mélanie Fouesnard
-
+For detailed guidance, refer to this [Medium tutorial](https://medium.com/@ggauravsigra/install-kubectl-on-windows-af77da2e6fff).

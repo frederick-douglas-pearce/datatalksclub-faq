@@ -1,6 +1,6 @@
 ---
 id: 7c97a61529
-question: GCP BQ - Create External Table using Python
+question: 'GCP: BQ - Create External Table using Python'
 sort_order: 2160
 ---
 
@@ -10,6 +10,7 @@ Reference:
 
 Solution:
 
+```python
 from google.cloud import bigquery
 
 # Set table_id to the ID of the table to create
@@ -49,4 +50,4 @@ table = client.create_table(table)  # Make an API request.
 print(f'Created table with external source: {table_id}')
 
 print(f'Format: {table.external_data_configuration.source_format}')
-
+```

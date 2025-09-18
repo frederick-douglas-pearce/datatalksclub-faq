@@ -5,9 +5,13 @@ question: '[pipenv.exceptions.ResolutionFailure]: Warning: Your dependencies cou
 sort_order: 4010
 ---
 
-Problem: If you run pipenv install and get this message. Maybe manually change Pipfile and Pipfile.lock.
+**Problem:** If you run `pipenv install` and get this message, it may indicate a mismatch in your sub-dependencies.
 
-Solution: Run: ` pipenv lock` for fix this problem and dependency files
+**Solution:**
 
-Alejandro Aponte
+1. You may need to manually update `Pipfile` and `Pipfile.lock`.
+2. Run the following command to resolve the dependency issues:
 
+   ```bash
+   pipenv lock
+   ```

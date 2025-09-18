@@ -8,11 +8,17 @@ question: 'taskid: yellow_create_table The connection attempt failed. Host.docke
 sort_order: 1960
 ---
 
-If you're using Linux, you might encounter Connection Refused errors when connecting to the Postgres DB from within Kestra. This is because host.docker.internal works differently on Linux.
+If you're using Linux, you might encounter "Connection Refused" errors when connecting to the Postgres DB from within Kestra. This is because `host.docker.internal` works differently on Linux.
 
-Using the modified Docker Compose file in 02-workflow-orchestration readme troubleshooting tips Docker Compose Example, you can run both Kestra and its dedicated Postgres DB, as well as the Postgres DB for the exercises all together. You can access it within Kestra by referring to the container name postgres_zoomcamp instead of host.docker.internal in pluginDefaults.
+To address this issue:
 
-The pluginDefaults exist in both 2_postgres_taxi_scheduled.yaml, 02_postgres_taxi.yaml, please modify as shown below.
+- Use the modified Docker Compose file mentioned in the "02-workflow-orchestration" README troubleshooting tips.
+- Run both Kestra and its dedicated Postgres DB, along with the Postgres DB for exercises, all together using Docker Compose.
+- Access the Postgres DB within Kestra by using the container name `postgres_zoomcamp` instead of `host.docker.internal` in `pluginDefaults`.
+
+Make sure to modify the `pluginDefaults` in the following files:
+
+- `2_postgres_taxi_scheduled.yaml`
+- `02_postgres_taxi.yaml`
 
 <{IMAGE:image_1}>
-

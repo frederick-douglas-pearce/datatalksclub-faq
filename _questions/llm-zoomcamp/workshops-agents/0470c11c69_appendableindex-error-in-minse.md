@@ -5,7 +5,13 @@ question: AppendableIndex error in minsearch (not resolved by upgrading minsearc
 sort_order: 840
 ---
 
-Error: 'ImportError: cannot import name 'AppendableIndex' from 'minsearch''
+Error:
 
-Fix:  Rename the previously downloaded minsearch.py file to avoid conflicts, then reinstall minsearch using pip so the import works correctly.
+```
+ImportError: cannot import name 'AppendableIndex' from 'minsearch'
+```
 
+Fix:
+
+- Rename the previously downloaded `minsearch.py` file to avoid conflicts.
+- Reinstall `minsearch` using pip so the import works correctly.

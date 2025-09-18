@@ -1,68 +1,91 @@
 ---
 id: 371f4a6519
-question: Cannot connect to the docker daemon. Is the Docker daemon running?
+question: 'Docker: Cannot connect to the docker daemon. Is the Docker daemon running?'
 sort_order: 1830
 ---
 
-Ensure Docker Daemon Is Running
+### Ensure Docker Daemon Is Running
 
-On Windows:
+**On Windows:**
 
-Open Docker Desktop (admin rights may be required).
+- Open Docker Desktop (admin rights may be required).
+- Check if it’s running, and restart Docker Desktop if necessary.
 
-Check if it’s running, and restart Docker Desktop if necessary.
+**On Linux:**
 
-On Linux:
+1. Run the following command to start the Docker daemon:
+   
+   ```bash
+   sudo systemctl start docker
+   ```
+2. Verify it’s running with:
 
-Run sudo systemctl start docker to start the Docker daemon.
+   ```bash
+   sudo systemctl status docker
+   ```
 
-Verify it’s running with sudo systemctl status docker.
+### Verify Docker Group Membership (Linux Only)
 
-Verify Docker Group Membership (Linux Only)
+- Check if your user is in the Docker group:
 
-Check if your user is in the Docker group:
+  ```bash
+  groups $USER
+  ```
 
-groups $USER
+- If "docker" isn’t listed, add yourself with:
 
-If "docker" isn’t listed, add yourself with:
+  ```bash
+  sudo usermod -aG docker $USER
+  ```
 
-sudo usermod -aG docker $USER
+- Log out and back in to apply changes.
 
-Log out and back in to apply changes.
+### Restart the Docker Service (Linux)
 
-Restart the Docker Service (Linux)
-
+```bash
 sudo systemctl restart docker
+```
 
-Check Docker Socket Permissions (Linux)
+### Check Docker Socket Permissions (Linux)
 
-Run the following command to confirm Docker socket permissions:
+- Run the following command to confirm Docker socket permissions:
 
-sudo chmod 666 /var/run/docker.sock
+  ```bash
+  sudo chmod 666 /var/run/docker.sock
+  ```
 
-Try Running Docker with sudo (Linux)
+### Try Running Docker with sudo (Linux)
 
-Run sudo docker ps to check if permissions are causing the issue.
+- Run the following to check if permissions are causing the issue:
 
-Test Docker Setup
+  ```bash
+  sudo docker ps
+  ```
 
-Run a test Docker command to verify connection:
+### Test Docker Setup
 
-docker run hello-world
+- Run a test Docker command to verify connection:
 
-Working on getting Docker installed - when I try running hello-world I am getting the error.
+  ```bash
+  docker run hello-world
+  ```
 
-Docker: Cannot connect to the docker daemon at unix:///var/run/docker.sock. Is the Docker daemon running ?
+### Solution for WSL Error
 
-Solution description
+If you’re encountering the error on WSL, re-install Docker by removing the Docker installation from WSL and installing Docker Desktop on your host machine (Windows).
 
-If you’re getting this error on WSL, re-install your docker: remove the docker installation from WSL and install Docker Desktop on your host machine (Windows).
+**On Linux,** start the docker daemon with either of these commands:
 
-On Linux, start the docker daemon with either of these commands:
+- Start the Docker daemon:
 
-sudo dockerd
+  ```bash
+  sudo dockerd
+  ```
 
-sudo service docker start
+  or
 
-Added by [Ugochukwu Onyebuchi](https://github.com/ColeDrain)
+  ```bash
+  sudo service docker start
+  ```
 
+<{IMAGE:image_id}>

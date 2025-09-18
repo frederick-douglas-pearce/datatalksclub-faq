@@ -12,11 +12,10 @@ question: 'GCP BQ - Cannot read and write in different locations: source: EU, de
 sort_order: 2090
 ---
 
-Be careful when you create your resources on GCP, all of them have to share the same Region in order to allow load data from GCS Bucket to BigQuery. If you forgot it when you created them, you can create a new dataset on BigQuery using the same Region which you used on your GCS Bucket.
+Be careful when you create your resources on GCP; all of them must share the same region to load data from a GCS Bucket to BigQuery. If you forgot this step, you can create a new dataset in BigQuery using the same region as your GCS Bucket.
 
 <{IMAGE:image_1}>
 
 <{IMAGE:image_2}>
 
-This means that your GCS Bucket and the BigQuery dataset are placed in different regions. You have to create a new dataset inside BigQuery in the same region with your GCS bucket and store the data in the newly created dataset.
-
+This error indicates that your GCS Bucket and the BigQuery dataset are placed in different regions. You need to create a new dataset in BigQuery in the same region as your GCS Bucket and store the data in this newly created dataset.

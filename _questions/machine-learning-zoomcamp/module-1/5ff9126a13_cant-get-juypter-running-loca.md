@@ -4,15 +4,9 @@ question: Can’t get Juypter running locally on your machine?
 sort_order: 560
 ---
 
-If you’re struggling to get a Jupyter notebook running locally on your machine, or you have some other issue preventing you from using it (perhaps you’ve only got a cellphone to do your homework with at the moment?) then other online platforms you can consider as a stop gap measure which don’t require anything to be installed are:
+If you’re struggling to get a Jupyter notebook running locally on your machine or have other issues (like only having a cellphone available), consider using the following online platforms that don't require installation:
 
-JupyterLab [https://jupyter.org/try-jupyter/lab/](https://jupyter.org/try-jupyter/lab/)
-
-JupyterLite [https://jupyterlite.github.io/demo/lab/index.html](https://jupyterlite.github.io/demo/lab/index.html)
-
-Replit [https://replit.com/](https://replit.com/)
-
-Google Colab [https://colab.research.google.com/](https://colab.research.google.com/)
-
-Added by David Peterson
-
+- [JupyterLab](https://jupyter.org/try-jupyter/lab/)
+- [JupyterLite](https://jupyterlite.github.io/demo/lab/index.html)
+- [Replit](https://replit.com/)
+- [Google Colab](https://colab.research.google.com/)

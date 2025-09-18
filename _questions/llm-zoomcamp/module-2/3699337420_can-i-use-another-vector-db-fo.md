@@ -4,5 +4,4 @@ question: Can I use another vector db for running RAGs vector search?
 sort_order: 400
 ---
 
-Yes, there are other vector databases, for example Milvus, which is open sourced and you can see the documentation here: [https://milvus.io/docs/overview.md](https://milvus.io/docs/overview.md)
-
+Yes, there are other vector databases. For example, Milvus, which is open sourced. You can see the documentation here: [Milvus Documentation](https://milvus.io/docs/overview.md)

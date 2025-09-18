@@ -1,26 +1,40 @@
 ---
 id: 86d99bbf21
-question: 'Authentication: Why is my OPENAI_API_KEY not found in the jupyter notebook?'
+question: 'Authentication: Why is my OPENAI_API_KEY not found in the Jupyter notebook?'
 sort_order: 260
 ---
 
-Option1: using direnv
 
-created the .envrc file & added my API key, ran direnv allow in the terminal
 
-was getting an error: "OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+There are two options to resolve this issue:
 
-resolution: install dotenv & add the following to a cell in the notebook. You can install dotenv by running: pip install python-dotenv.
+**Option 1: Using direnv**
 
-from dotenv import load_dotenv
+1. Create a `.envrc` file and add your API key.
+2. Run `direnv allow` in the terminal.
 
-load_dotenv('.envrc')
+If you encounter the error:
 
-Option 2: using Codespaces Secrets
+```python
+OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+```
 
-Log in to your GitHub account and navigate to Settings > Codespaces
+- Install `dotenv` by running:
 
-There is a section called secrets where you can create Secrets like OPENAI_API_KEY and select for which repositories the secret is supposed to be available.
+    ```bash
+    pip install python-dotenv
+    ```
 
-Once you set this up, the key will be available in your codespaces session
+- Add the following to a cell in the notebook:
 
+    ```python
+    from dotenv import load_dotenv
+    
+    load_dotenv('.envrc')
+    ```
+
+**Option 2: Using Codespaces Secrets**
+
+1. Log in to your GitHub account and navigate to **Settings > Codespaces**.
+2. In the Secrets section, create a secret like `OPENAI_API_KEY` and select the repositories for which the secret should be available.
+3. Once set up, the key will be available in your Codespaces session.

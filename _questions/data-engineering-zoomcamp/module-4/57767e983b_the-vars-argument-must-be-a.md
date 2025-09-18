@@ -6,9 +6,10 @@ sort_order: 3000
 
 Remember to add a space between the variable and the value. Otherwise, it won't be interpreted as a dictionary.
 
-It should be:
+Correct usage:
 
+```bash
 dbt run --var 'is_test_run: false'
+```
 
-Not able to change Environment Type as it is greyed out and inaccessibleYou don't need to change the environment type. If you are following the videos, you are creating a Production Deployment, so the only available option is the correct one.'
-
+Not able to change Environment Type as it is greyed out and inaccessible. You don't need to change the environment type. If you are following the videos, you are creating a Production Deployment, so the only available option is the correct one.

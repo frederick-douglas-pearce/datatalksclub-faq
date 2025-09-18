@@ -4,5 +4,4 @@ question: 'OpenSource: Can I use open-source alternatives to OpenAI API?'
 sort_order: 290
 ---
 
-Yes. See module 2 and the [open-ai-alternatives.md](https://github.com/DataTalksClub/llm-zoomcamp/blob/main/01-intro/open-ai-alternatives.md) in module 1 folder.
-
+Yes. See module 2 and the [open-ai-alternatives.md](https://github.com/DataTalksClub/llm-zoomcamp/blob/main/01-intro/open-ai-alternatives.md) in the module 1 folder.

@@ -7,25 +7,18 @@ sort_order: 540
 
 1. Delete all containers (including running ones):
 
-```
-
-docker rm -f
-
+```bash
+docker rm -f $(docker ps -aq)
 ```
 
 2. Remove all images:
 
-```
-
-docker rmi -f
-
+```bash
+docker rmi -f $(docker images -q)
 ```
 
 3. Delete all volumes:
 
+```bash
+docker volume rm $(docker volume ls -q)
 ```
-
-docker volume rm
-
-```
-

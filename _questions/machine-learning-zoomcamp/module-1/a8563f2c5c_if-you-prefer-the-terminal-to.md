@@ -4,11 +4,14 @@ question: Port-Forwarding with SSH
 sort_order: 380
 ---
 
-If you prefer the terminal to work, port forward in your config file.
+If you prefer using the terminal for port forwarding, configure it in your SSH config file.
 
-Forward your ports in .ssh.Type “nano .ssh/config”
+1. Open your SSH config file:
+   ```bash
+   nano ~/.ssh/config
+   ```
 
-And add “LocalForward 8888 localhost:8888” to forward your Jupyter.
-
-(Added by Ico)
-
+2. Add the following line to forward your Jupyter server:
+   ```
+   LocalForward 8888 localhost:8888
+   ```

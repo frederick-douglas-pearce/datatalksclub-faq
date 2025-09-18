@@ -4,23 +4,26 @@ question: HW10 Autoscaling (optional) command does not work
 sort_order: 3680
 ---
 
-This command never worked:
+The following command encountered issues:
 
+```bash
 kubectl autoscale deployment subscription --name subscription-hpa --cpu-percent=20 --min=1 --max=3
+```
 
-Going through the error logs, it indicated some sort of certificate validation issues because of the server's certificate not having a valid Subject Alternative Name (SAN) for the node's IP address.
+Error logs indicated certificate validation issues due to the server's certificate lacking a valid Subject Alternative Name (SAN) for the node's IP address.
 
-chatGPT suggested to run in terminal:
+Suggested Steps:
 
-kubectl patch deployment metrics-server -n kube-system --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls"}]'
+1. Run the following command to skip TLS verification:
+   
+   ```bash
+   kubectl patch deployment metrics-server -n kube-system --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls"}]'
+   ```
 
-to skip the TLS verification and
+2. Restart the deployment:
+   
+   ```bash
+   kubectl rollout restart deployment metrics-server -n kube-system
+   ```
 
-kubectl rollout restart deployment metrics-server -n kube-system
-
-to restart the deployment. then the metrics server started working.
-
-Avoiding TLS certificate validation may not be a good solution for production ready systems, but it would be enough for our case.
-
-Till Meineke, Dec 2024
-
+Note: Avoiding TLS certificate validation is not recommended for production systems, but may suffice for this case.

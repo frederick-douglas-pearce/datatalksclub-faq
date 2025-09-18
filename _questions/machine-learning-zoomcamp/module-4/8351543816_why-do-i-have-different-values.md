@@ -1,26 +1,24 @@
 ---
 id: '8351543816'
-question: Why do I have different values of accuracy than the options in the homework?
+question: 'Homework: Why do I have different values of accuracy than the options in
+  the homework?'
 sort_order: 1590
 ---
 
-One main reason behind that, is the way of splitting data. For example, we want to split data into train/validation/test with the ratios 60%/20%/20% respectively.
+One main reason behind this issue is the method of splitting the data. For example, if we want to split the data into train/validation/test with the ratios 60%/20%/20%, different methods may yield different results even if the final ratios are the same.
 
-Although the following two options end up with the same ratio, the data itself is a bit different and not 100% matching in each case.
+1. Method 1:
+   
+   ```python
+   df_train, df_temp = train_test_split(df, test_size=0.4, random_state=42)
+   df_val, df_test = train_test_split(df_temp, test_size=0.5, random_state=42)
+   ```
 
-1)
+2. Method 2:
+   
+   ```python
+   df_full_train, df_test = train_test_split(df, test_size=0.2, random_state=42)
+   df_train, df_val = train_test_split(df_full_train, test_size=0.25, random_state=42)
+   ```
 
-df_train, df_temp = train_test_split(df, test_size=0.4, random_state=42)
-
-df_val, df_test = train_test_split(df_temp, test_size=0.5, random_state=42)
-
-2)
-
-df_full_train, df_test = train_test_split(df, test_size=0.2, random_state=42)
-
-df_train, df_val = train_test_split(df_full_train, test_size=0.25, random_state=42)
-
-Therefore, I would recommend using the second method which is more consistent with the lessons and thus the homeworks.
-
-Ibraheem Taha
-
+While both methods achieve the same ratio, the data split differently, resulting in variations in accuracy. It is recommended to use the second method, as it is more consistent with the lessons and homeworks.

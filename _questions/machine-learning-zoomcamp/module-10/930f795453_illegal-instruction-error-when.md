@@ -9,79 +9,65 @@ question: Illegal instruction error when running tensorflow/serving image on Mac
 sort_order: 3660
 ---
 
-Similar to the one above but with a different solution the main reason is that emacski doesn’t seem to maintain the repo any more, the latest image is from 2 years ago at the time of writing (December 2023)
-
 Problem:
 
-While trying to run the docker code on Mac M2 apple silicon:
+While trying to run the following Docker code on Mac M2 Apple Silicon:
 
+```bash
 docker run --platform linux/amd64 -it --rm \
-
 -p 8500:8500 \
-
 -v $(pwd)/clothing-model:/models/clothing-model/1 \
-
 -e MODEL_NAME="clothing-model" \
-
 tensorflow/serving
+```
 
 You get an error:
 
+```bash
 /usr/bin/tf_serving_entrypoint.sh: line 3:     7 Illegal instruction     tensorflow_model_server --port=8500 --rest_api_port=8501 --model_name=${MODEL_NAME} --model_base_path=${MODEL_BASE_PATH}/${MODEL_NAME} "$@"
+```
 
 Solution:
 
-Use bitnami/tensorflow-serving base image
+1. **Use Bitnami TensorFlow-Serving Base Image**
+   
+   Launch it either using `docker run`:
+   
+   ```bash
+   docker run -d \
+   --name tf_serving \
+   -p 8500:8500 \
+   -p 8501:8501 \
+   -v $(pwd)/clothing-model:/bitnami/model-data/1 \
+   -e TENSORFLOW_SERVING_MODEL_NAME=clothing-model \
+   bitnami/tensorflow-serving:2
+   ```
+   
+   Or use the following `docker-compose.yaml`:
+   
+   ```yaml
+   version: '3'
 
-Launch it either using docker run
+   services:
+     tf_serving:
+       image: bitnami/tensorflow-serving:2
+       volumes:
+         - ${PWD}/clothing-model:/bitnami/model-data/1
+       ports:
+         - 8500:8500
+         - 8501:8501
+       environment:
+         - TENSORFLOW_SERVING_MODEL_NAME=clothing-model
+   ```
+   
+   And run it with:
+   
+   ```bash
+   docker compose up
+   ```
 
-docker run -d \
+2. **Alternative since Oct 2024:**
 
---name tf_serving \
-
--p 8500:8500 \
-
--p 8501:8501 \
-
--v $(pwd)/clothing-model:/bitnami/model-data/1 \
-
--e TENSORFLOW_SERVING_MODEL_NAME=clothing-model \
-
-bitnami/tensorflow-serving:2
-
-Or the following docker-compose.yaml
-
-version: '3'
-
-services:
-
-tf_serving:
-
-image: bitnami/tensorflow-serving:2
-
-volumes:
-
-- ${PWD}/clothing-model:/bitnami/model-data/1
-
-ports:
-
-- 8500:8500
-
-- 8501:8501
-
-environment:
-
-- TENSORFLOW_SERVING_MODEL_NAME=clothing-model
-
-And run it with
-
-docker compose up
-
-Added by Alex Litvinov
-
-Or new since Oct 2024:
-
-Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [https://docs.docker.com/desktop/features/vmm/](https://docs.docker.com/desktop/features/vmm/)
+   Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [Docker VMM Documentation](https://docs.docker.com/desktop/features/vmm/)
 
 <{IMAGE:image_1}>
-

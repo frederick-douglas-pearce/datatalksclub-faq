@@ -4,15 +4,12 @@ question: Chart for classes and predictions
 sort_order: 4060
 ---
 
-How to visualize the predictions per classes after training a neural net
+How to visualize the predictions per classes after training a neural net:
 
-Solution description
-
+```python
 classes, predictions = zip(*dict(zip(classes, predictions)).items())
 
 plt.figure(figsize=(12, 3))
 
 plt.bar(classes, predictions)
-
-Luke
-
+```

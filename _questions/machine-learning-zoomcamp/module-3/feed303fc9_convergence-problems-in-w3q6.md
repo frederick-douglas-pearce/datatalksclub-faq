@@ -4,11 +4,21 @@ question: Convergence Problems in W3Q6
 sort_order: 1130
 ---
 
-Ridge with sag solver requires feature to be of the same scale. You may get the following warning: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+If you're encountering the following warning:
 
-Play with different scalers. See [notebook-scaling-ohe.ipynb](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/03-classification/notebook-scaling-ohe.ipynb)
+```plaintext
+ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+```
 
-Dmytro Durach
+This may be due to the ridge regression solver requiring features to be of the same scale.
 
-(Oscar Garcia)  Use a StandardScaler for the numeric fields and OneHotEncoder (sparce = False) for the categorical features.  This help with the warning. Separate the features (num/cat) without using the encoder first and see if that helps.
+### Solutions:
 
+1. **Use Different Scalers**:
+   - Experiment with different scalers as the Ridge solver is sensitive to the scale of features.
+   - Refer to [notebook-scaling-ohe.ipynb](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/03-classification/notebook-scaling-ohe.ipynb) for examples.
+
+2. **StandardScaler and OneHotEncoder**:
+   - Apply `StandardScaler` to numeric fields.
+   - Use `OneHotEncoder` with `sparse=False` for categorical features.
+   - Separate the features (numeric and categorical) before applying the encoder, which may prevent the warning.

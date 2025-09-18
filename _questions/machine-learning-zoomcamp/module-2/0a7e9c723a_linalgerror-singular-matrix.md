@@ -4,9 +4,6 @@ question: 'LinAlgError: Singular matrix'
 sort_order: 600
 ---
 
-It’s possible that when you follow the videos, you’ll get a Singular Matrix error. We will explain why it happens in the Regularization video. Don’t worry, it’s normal that you have it.
+It’s possible that when you follow the videos, you’ll get a Singular Matrix error. This will be explained in the Regularization video. Don’t worry, it’s normal to encounter this.
 
-You can also have an error because you did the inverse of X once in your code and you’re doing it a second time.
-
-(Added by Cécile Guillot)
-
+You might also receive this error if you invert matrix `X` more than once in your code.

@@ -5,8 +5,8 @@ images:
   id: image_1
   path: images/data-engineering-zoomcamp/image_a3c7073f.png
 question: 'When executing dbt run after fact_trips.sql has been created, the task
-  failed with error:  “Access Denied: BigQuery BigQuery: Permission denied while globbing
-  file pattern.”'
+  failed with error: "Access Denied: BigQuery BigQuery: Permission denied while globbing
+  file pattern."'
 sort_order: 2640
 ---
 
@@ -15,4 +15,3 @@ sort_order: 2640
 2. Add the related roles to the service account in use in GCS.
 
 <{IMAGE:image_1}>
-

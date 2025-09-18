@@ -11,33 +11,32 @@ question: Identifying highly correlated feature pairs easily through unstack
 sort_order: 1050
 ---
 
+To identify highly correlated feature pairs using unstack:
+
+```python
+import pandas as pd
+
 data_corr = pd.DataFrame(data_num.corr().round(3).abs().unstack().sort_values(ascending=False))
 
-data_corr.head(10)
+print(data_corr.head(10))
+```
 
-Added by Harish Balasundaram
+You can also use seaborn to create a heatmap with the correlation:
 
-You can also use seaborn to create a heatmap with the correlation. The code for doing that:
+```python
+import seaborn as sns
 
 sns.heatmap(df[numerical_features].corr(),
+            annot=True,
+            square=True,
+            fmt=".2g",
+            cmap="crest")
+```
 
-annot=True,
-
-square=True,
-
-fmt=".2g",
-
-cmap="crest")
-
-Added by Cecile Guillot
-
-You can refine your heatmap and plot only a triangle, with a blue to red color gradient, that will show every correlation between your numerical variables without redundant information with this function:
+To refine your heatmap and plot only a triangle, with a blue to red color gradient, that will show every correlation between your numerical variables without redundant information:
 
 <{IMAGE:image_1}>
 
-Which outputs, in the case of churn dataset:
+Which outputs, in the case of a churn dataset:
 
 <{IMAGE:image_2}>
-
-(Mélanie Fouesnard)
-

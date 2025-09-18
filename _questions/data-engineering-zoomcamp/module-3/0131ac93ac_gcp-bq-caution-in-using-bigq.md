@@ -1,14 +1,11 @@
 ---
 id: 0131ac93ac
-question: GCP BQ - Caution in using bigquery:no
+question: 'GCP: Caution in using BigQuery - bigquery:no'
 sort_order: 2080
 ---
 
-Use big queries carefully,
+Use BigQuery carefully:
 
-I created by bigquery dataset on an account where my free trial was exhausted, and got a bill of $80.
-
-Use big query in free credits and destroy all the datasets after creation.
-
-Check your Billing daily! Especially if you’ve spinned up a VM.
-
+- I created my BigQuery dataset on an account where my free trial was exhausted and received a bill of $80.
+- Use BigQuery under free credits and destroy all the datasets after creation.
+- Check your billing daily, especially if you've spun up a VM.

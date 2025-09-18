@@ -8,9 +8,6 @@ Why should we transform the target variable to logarithm distribution? Do we do 
 
 Only if you see that your target is highly skewed. The easiest way to evaluate this is by plotting the distribution of the target variable.
 
-This can help to understand skewness and how it can be applied to the distribution of your data set.
+Transforming to a logarithmic scale can help address skewness and improve the distribution of your data set.
 
-[https://en.wikipedia.org/wiki/Skewness](https://en.wikipedia.org/wiki/Skewness)
-
-Pastor Soto
-
+For more information, you can refer to [Skewness on Wikipedia](https://en.wikipedia.org/wiki/Skewness).

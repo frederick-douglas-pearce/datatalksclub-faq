@@ -4,7 +4,8 @@ question: Run MCP Inspector
 sort_order: 880
 ---
 
-·   Run from the terminal the following
+To run the MCP Inspector, execute the following command in the terminal:
 
+```bash
 npx @modelcontextprotocol/inspector
-
+```

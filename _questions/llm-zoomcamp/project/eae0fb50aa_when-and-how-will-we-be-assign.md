@@ -4,5 +4,4 @@ question: When and how will we be assigned projects for review/grading?
 sort_order: 630
 ---
 
-After the submission deadline has passed, an Excelsheet will be shared with 3 projects being assigned to each participant.
-
+After the submission deadline has passed, an Excel sheet will be shared with 3 projects being assigned to each participant.

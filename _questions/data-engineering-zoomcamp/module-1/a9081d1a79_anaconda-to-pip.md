@@ -4,9 +4,17 @@ question: Anaconda to PIP
 sort_order: 1800
 ---
 
-To get a pip-friendly requirements.txt file file from Anaconda use
+To get a pip-friendly `requirements.txt` file from Anaconda, use the following steps:
 
-conda install pip then `pip list –format=freeze > requirements.txt`.
+1. Install pip in your Anaconda environment:
+   ```bash
+   conda install pip
+   ```
+2. Generate the `requirements.txt` file:
+   ```bash
+   pip list --format=freeze > requirements.txt
+   ```
 
-`conda list -d > requirements.txt` will not work and `pip freeze > requirements.txt` may give odd pathing.
-
+Note:
+- `conda list -d > requirements.txt` will not work.
+- `pip freeze > requirements.txt` may give odd pathing.

@@ -4,73 +4,56 @@ question: 'PGCLI - PermissionError: [Errno 13] Permission denied: ''/some/path/.
 sort_order: 1090
 ---
 
-I get this error
+I encountered this error:
 
+```bash
 pgcli -h localhost -p 5432 -U root -d ny_taxi
 
 Traceback (most recent call last):
+  File "/opt/anaconda3/bin/pgcli", line 8, in <module>
+    sys.exit(cli())
+  File "/opt/anaconda3/lib/python3.9/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/opt/anaconda3/lib/python3.9/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/anaconda3/lib/python3.9/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/pgcli/main.py", line 880, in cli
+    os.makedirs(config_dir)
+  File "/opt/anaconda3/lib/python3.9/os.py", line 225, in makedirspython
+    mkdir(name, mode)
+PermissionError: [Errno 13] Permission denied: '/Users/vray/.config/pgcli'
+```
 
-File "/opt/anaconda3/bin/pgcli", line 8, in <module>
+### Solution 1:
 
-sys.exit(cli())
-
-File "/opt/anaconda3/lib/python3.9/site-packages/click/core.py", line 1128, in __call__
-
-return self.main(*args, **kwargs)
-
-File "/opt/anaconda3/lib/python3.9/sitYe-packages/click/core.py", line
-
-1053, in main
-
-rv = self.invoke(ctx)
-
-File "/opt/anaconda3/lib/python3.9/site-packages/click/core.py", line 1395, in invoke
-
-return ctx.invoke(self.callback, **ctx.params)
-
-File "/opt/anaconda3/lib/python3.9/site-packages/click/core.py", line 754, in invoke
-
-return __callback(*args, **kwargs)
-
-File "/opt/anaconda3/lib/python3.9/site-packages/pgcli/main.py", line 880, in cli
-
-os.makedirs(config_dir)
-
-File "/opt/anaconda3/lib/python3.9/os.py", line 225, in makedirspython
-
-mkdir(name, mode)PermissionError: [Errno 13] Permission denied: '/Users/vray/.config/pgcli'
-
-Solution 1:
-
-This error indicates that your user doesn’t have the necessary permissions to access or modify the specified directory or file (/some/path/.config/pgcli).
-
-This can happen in the context of Docker when privileges were assigned to root and not to the user you have.
-
-For example, if a process inside the container creates the file as root, your user might not have write permissions to that file on the host.
+This error indicates that your user doesn’t have the necessary permissions to access or modify the directory or file (`/some/path/.config/pgcli`). This can occur in Docker environments when privileges are assigned to root instead of the current user.
 
 To resolve this:
 
-Check file permissions on the directory /some/path/.config/pgcli and ensure that your user has read/write access. You can do this with the command:
+1. Check the file permissions:
 
-ls -l /some/path/.config/pgcli
+   ```bash
+   ls -l /some/path/.config/pgcli
+   ```
 
-Change ownership/permissions of the file or directory so that your user has the necessary permissions. For example, to grant your user read/write permissions, use:
+2. Change the ownership/permissions so that your user has the necessary permissions:
 
-sudo chown -R user_name /Users/user_name/.config
+   ```bash
+   sudo chown -R user_name /Users/user_name/.config
+   ```
 
-The sudo stands for Super User DO
+   - `sudo` stands for Super User DO.
+   - `chown` means change owner.
+   - `-R` applies recursively.
+   - `user_name` is your PC username (e.g., vray).
 
-The chown means change owner
+### Solution 2:
 
--R is doing so recursively
+Make sure you install pgcli without using `sudo`. The recommended approach is to use conda/anaconda to avoid affecting your system Python.
 
-User_name is the name you gave to your PC (e.g. vray)
+If `conda install` gets stuck at "Solving environment," try these alternatives:
 
-Solution 2:
-
-Make sure you install pgcli without sudo.
-
-The recommended approach is to use conda/anaconda to make sure your system python is not affected.
-
-If conda install gets stuck at "Solving environment" try these alternatives: [https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda](https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda)
-
+[https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda](https://stackoverflow.com/questions/63734508/stuck-at-solving-environment-on-anaconda)

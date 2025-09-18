@@ -1,22 +1,13 @@
 ---
 id: 5baf3e8a5e
-question: Docker engine stopped_failed to fetch extensions
+question: 'Docker: Docker engine stopped_failed to fetch extensions'
 sort_order: 900
 ---
 
-The docker will keep on crashing continuously
+The Docker engine may crash continuously and fail to work after restart. You might see error messages like "docker engine stopped" and "failed to fetch extensions" repeatedly on the screen.
 
-Not working after restart
+**Solution:**
 
-docker engine stopped
-
-And failed to fetch extensions pop ups will on screen non-stop
-
-Solution :
-
-Try checking if latest version of docker is installed / Try updating the docker
-
-If Problem still persist then final solution is to reinstall docker
-
-(Just have to fetch images again else no issues)
-
+- Check if you have the latest version of Docker installed. Update Docker if necessary.
+- If the problem persists, consider reinstalling Docker.
+  - Note: You will need to fetch images again, but there should be no other issues.

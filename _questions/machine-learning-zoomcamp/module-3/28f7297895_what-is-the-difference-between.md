@@ -10,11 +10,8 @@ sort_order: 1360
 
 In Scikit-Learn’s LogisticRegression, a model that is trained will have raw values and the predicted probabilities.
 
-.decision_function() returns raw values which are a linear combination of the features and weights, similar to the output of Linear Regression.
+- **.decision_function()** returns raw values that are a linear combination of the features and weights, similar to the output of Linear Regression.
 
-.predict_proba() goes one step further by inputting these raw values into the sigmoid function, to convert them into probabilities (between 0 and 1).
+- **.predict_proba()** goes one step further by inputting these raw values into the sigmoid function to convert them into probabilities (between 0 and 1).
 
 <{IMAGE:image_1}>
-
-Kemal Dahha
-

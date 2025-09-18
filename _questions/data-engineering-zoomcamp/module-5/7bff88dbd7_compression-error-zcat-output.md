@@ -4,10 +4,11 @@ question: 'Compression Error: zcat output is gibberish, seems like still compres
 sort_order: 3630
 ---
 
-In the code along from Video 5.3.3 Alexey downloads the CSV files from the NYT website and gzips them in their bash script. If we now (2023) follow along but download the data from the GH course Repo, it will already be zippes as csv.gz files. Therefore we zip it again if we follow the code from the video exactly. This then leads to gibberish outcome when we then try to cat the contents or count the lines with zcat, because the file is zipped twitch and zcat only unzips it once.
+In the code along from Video 5.3.3, Alexey downloads the CSV files from the NYT website and gzips them in their bash script. Currently (2023), if we download the data from the GH course repo, it is already zipped as `csv.gz` files. Following the video exactly would zip them again, leading to gibberish output when using `zcat`, as it only unzips the file once.
 
-✅solution: do not gzip the files downloaded from the course repo. Just wget them and save them as they are as csv.gz files. Then the zcat command and the showSchema command will also work
+**Solution:** Do not gzip the files downloaded from the course repo. Simply use `wget` to download and save them as `csv.gz` files. Then the `zcat` command and the `showSchema` command will work correctly.
 
+```bash
 URL="${URL_PREFIX}/${TAXI_TYPE}/${TAXI_TYPE}_tripdata_${YEAR}-${FMONTH}.csv.gz"
 
 LOCAL_PREFIX="data/raw/${TAXI_TYPE}/${YEAR}/${FMONTH}"
@@ -25,4 +26,4 @@ wget ${URL} -O ${LOCAL_PATH}
 echo "compressing ${LOCAL_PATH}"
 
 # gzip ${LOCAL_PATH} <- uncomment this line
-
+```

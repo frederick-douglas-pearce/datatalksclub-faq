@@ -4,5 +4,4 @@ question: Does anyone know nice and relatively large datasets?
 sort_order: 4240
 ---
 
-See a list of datasets here: [https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/projects/datasets.md ](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/projects/datasets.md)
-
+See a list of datasets here: [GitHub Datasets](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/projects/datasets.md)

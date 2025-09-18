@@ -4,7 +4,4 @@ question: Running kind on Linux with Rootless Docker or Rootless Podman
 sort_order: 3600
 ---
 
-Using kind with Rootless Docker or Rootless Podman requires some changes on the system (Linux), see [kind – Rootless (k8s.io)](https://kind.sigs.k8s.io/docs/user/rootless/).
-
-Sylvia Schmitt
-
+Using kind with Rootless Docker or Rootless Podman requires some changes on the system (Linux). See [kind – Rootless (k8s.io)](https://kind.sigs.k8s.io/docs/user/rootless/).

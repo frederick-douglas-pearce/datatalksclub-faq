@@ -4,5 +4,4 @@ question: What are embeddings?
 sort_order: 370
 ---
 
-Embeddings = turning non-numerical data into numerical data, while preserving meaning and context. Similar non-numerical data, when entered into an embedding algorithm, should produce similar numerical data. The similar numerical data being close in mathematical values allows for mathematical semantic similarity algorithms to be leveraged.  See, also, “vector space model” and “dimensionality reduction”.
-
+Embeddings refer to the process of converting non-numerical data into numerical data while preserving meaning and context. When similar non-numerical data is input into an embedding algorithm, it should yield similar numerical data. The proximity of these numerical values allows for the use of mathematical semantic similarity algorithms. Related concepts include the "vector space model" and "dimensionality reduction."

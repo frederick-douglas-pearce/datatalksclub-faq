@@ -1,9 +1,8 @@
 ---
 id: 625c1f542a
-question: GCP BQ - Invalid project ID . Project IDs must contain 6-63 lowercase letters,
-  digits, or dashes. Some project
+question: 'GCP BQ: Invalid project ID. Project IDs must contain 6-63 lowercase letters,
+  digits, or dashes.'
 sort_order: 2230
 ---
 
-Problem occurs when misplacing content after fro``m clause in BigQuery SQLs.Check to remove any extra apaces or any other symbols, keep in lowercases, digits and dashes only
-
+The problem occurs when there is a misplacement of content after the `FROM` clause in BigQuery SQLs. Check to remove any extra spaces or symbols; ensure project IDs are in lowercase, digits, and dashes only.

@@ -1,28 +1,25 @@
 ---
 id: ec091c69a0
-question: WSL - Insufficient system resources exist to complete the requested service.
+question: 'WSL: Insufficient system resources exist to complete the requested service.'
 sort_order: 1020
 ---
 
-Cause:
+**Cause:**
 
-It happens because the apps are not updated. To be specific, search for any pending updates for Windows Terminal, WSL and Windows Security updates.
+This error occurs because some applications are not updated. Specifically, check for any pending updates for Windows Terminal, WSL, and Windows Security updates.
 
-Solution
+**Solution:**
 
-for updating Windows terminal which worked for me:
+To update Windows Terminal:
 
-Go to Microsoft Store.
+1. Open the Microsoft Store.
+2. Go to your library of installed apps.
+3. Search for Windows Terminal.
+4. Update the app.
+5. Restart your system to apply the changes.
 
-Go to the library of apps installed in your system.
+For updating Windows Security updates:
 
-Search for Windows terminal.
-
-Update the app and restart your system to  see the changes.
-
-For updating the Windows security updates:
-
-Go to Windows updates and check if there are any pending updates from Windows, especially security updates.
-
-Do restart your system once the updates are downloaded and installed successfully.unexpectedly
-
+1. Go to Windows Updates settings.
+2. Check for any pending updates, especially security updates.
+3. Restart your system once the updates are downloaded and installed successfully.

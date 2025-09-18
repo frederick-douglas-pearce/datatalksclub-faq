@@ -4,19 +4,23 @@ question: How to automatically infer the column data type (pandas missing value 
 sort_order: 2890
 ---
 
-Problem: when injecting data to bigquery, you may face the type error. This is because pandas by default will parse integer columns with missing value as float type.
+Problem: When injecting data to BigQuery, you may face a type error. This is because pandas by default will parse integer columns with missing values as float type.
 
 Solution:
 
-One way to solve this problem is to specify/ cast data type Int64 during the data transformation stage.
+One way to solve this problem is to specify or cast the data type as `Int64` during the data transformation stage.
 
-However, you may be lazy to type all the int columns. If that is the case, you can simply use convert_dtypes to infer the data type
+If specifying all the integer columns is inconvenient, you can use `convert_dtypes` to infer the data type automatically.
 
-# Make pandas to infer correct data type (as pandas parse int with missing as float)
+- Make pandas infer the correct data type (as pandas parse int with missing as float):
 
-df.fillna(-999999, inplace=True)ingesting
+```python
+# Fill missing values with a placeholder
+ df.fillna(-999999, inplace=True)
 
-df = df.convert_dtypes()
+# Infer data types
+ df = df.convert_dtypes()
 
-df = df.replace(-999999, None)
-
+# Replace placeholder with None
+ df = df.replace(-999999, None)
+```

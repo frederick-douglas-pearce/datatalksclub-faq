@@ -4,11 +4,10 @@ question: How to copy a dataframe without changing the original dataframe?
 sort_order: 810
 ---
 
-Copy of a dataframe is made with X_copy = X.copy().
+Copy a dataframe using:
 
-This is called creating a deep copy.  Otherwise it will keep changing the original dataframe if used like this: X_copy = X.
+```python
+X_copy = X.copy()
+```
 
-Any changes to X_copy will reflect back to X. This is not a real copy, instead it is a “view”.
-
-(Memoona Tahira)
-
+This creates a deep copy of the dataframe. If you use `X_copy = X`, it will create a "view" and any changes to `X_copy` will affect the original dataframe `X`. This is not a real copy.

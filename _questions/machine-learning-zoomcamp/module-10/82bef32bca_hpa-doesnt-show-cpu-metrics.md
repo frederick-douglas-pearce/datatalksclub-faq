@@ -1,26 +1,34 @@
 ---
 id: 82bef32bca
-question: HPA doesn’t show CPU metrics
+question: 'HPA: CPU metrics don''t show'
 sort_order: 3670
 ---
 
-Problem: CPU metrics Shows Unknown
+### Problem
 
+CPU metrics show "Unknown"
+
+```
 NAME         REFERENCE           TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
 
 credit-hpa   Deployment/credit   <unknown>/20%   1         3         1          18s
 
 FailedGetResourceMetric       2m15s (x169 over 44m)  horizontal-pod-autoscaler  failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API:
+```
 
-Solution:
+### Solution
 
--> Delete HPA (kubectl delete hpa credit-hpa)
+1. Delete HPA:
+   ```bash
+   kubectl delete hpa credit-hpa
+   ```
 
--> kubectl apply -f[ [raw.githubusercontent.com](https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yam)l](https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml)
+2. Apply the metrics server configuration:
+   ```bash
+   kubectl apply -f https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml
+   ```
 
--> Create HPA
+3. Recreate the HPA.
 
-This should solve the cpu metrics report issue.
-
-Added by Priya V
+This should solve the CPU metrics report issue.
 

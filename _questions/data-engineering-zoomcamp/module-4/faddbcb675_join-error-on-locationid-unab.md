@@ -1,17 +1,22 @@
 ---
 id: faddbcb675
-question: Join Error on LocationID “Unable to find common supertype for templated
-  argument”
+question: 'Join Error on LocationID: "Unable to find common supertype for templated
+  argument"'
 sort_order: 3200
 ---
 
-No matching signature for operator = for argument types: STRING, INT64
 
-Signature: T1 = T1
 
-Unable to find common supertype for templated argument
+No matching signature for operator `=` for argument types: `STRING`, `INT64`
 
-Make sure the LocationID field is in the same type. If it is in string format in one table, we can use the following code in dbt to convert it to integer:
+**Signature**: `T1 = T1`
 
+**Error:** Unable to find common supertype for templated argument.
+
+**Solution:**
+
+Make sure the `LocationID` field is of the same type in both tables. If it is in string format in one table, use the following dbt code to convert it to an integer:
+
+```sql
 {{ dbt.safe_cast("PULocationID", api.Column.translate_type("integer")) }} as pickup_locationid
-
+```

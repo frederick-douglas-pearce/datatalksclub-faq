@@ -5,6 +5,3 @@ sort_order: 1500
 ---
 
 You must use the `dt_val` dataset to compute the metrics asked in Question 3 and onwards, as you did in Question 2.
-
-Diego Giraldo
-

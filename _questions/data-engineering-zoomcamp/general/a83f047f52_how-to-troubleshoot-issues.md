@@ -4,71 +4,47 @@ question: How to troubleshoot issues
 sort_order: 420
 ---
 
-The first step is to try to solve the issue on your own. Get used to solving problems and reading documentation. This will be a real life skill you need when employed. [ctrl+f] is your friend, use it! It is a universal shortcut and works in all apps/browsers.
+**First Steps:**
 
-What does the error say? There will often be a description of the error or instructions on what is needed or even how to fix it. I have even seen a link to the solution. Does it reference a specific line of your code?
+- Attempt to solve the issue independently. Familiarize yourself with documentation as a crucial skill for problem-solving.
+- Use shortcuts like `[ctrl+f]` to search within documents and browsers.
+- Analyze the error message for descriptions, instructions, and possible solutions.
+- Restart your application, server, or computer as needed.
+  
+**Search for Solutions:**
 
-Restart app or server/pc. In
+- Use search engines like Google, ChatGPT, or Bing AI to research the issue. It is rare to encounter a unique problem.
+- Form your search queries using: `<technology> <problem statement>`. E.g., `pgcli error column c.relhasoids does not exist.`
+- Consult the technology’s official documentation for guidance.
 
-Google it, use ChatGPT, Bing AI etc.
+**Uninstallation and Reinstallation:**
 
-It is going to be rare that you are the first to have the problem, someone out there has posted the fly issue and likely the solution.
+- Uninstall and then reinstall the application if needed, including a system restart.
+- Note that reinstalling without prior uninstallation might not resolve the issue.
 
-Search using: <technology> <problem statement>. Example: pgcli error column c.relhasoids does not exist.
+**Seeking Help:**
 
-There are often different solutions for the same problem due to variation in environments.
+- Post questions on platforms like StackOverflow. Ensure your question adheres to guidelines: [how-to-ask](https://stackoverflow.com/help/how-to-ask).
+- Consider asking experts or colleagues in the future.
 
-Check the tech’s documentation. Use its search if available or use the browsers search function.
+**Community Resources:**
 
-Try uninstall (this may remove the bad actor) and reinstall of application or reimplementation of action. Remember to restart the server/pc for reinstalls.
+- Check Slack channels for pinned messages and use its search function.
+- Refer to this FAQ using search `[ctrl+f]` or utilize the `@ZoomcampQABot` for assistance.
 
-Sometimes reinstalling fails to resolve the issue but works if you uninstall first.
+**When Asking for Help:**
 
-Post your question to Stackoverflow. Read the Stackoverflow guide on posting good questions.
+- Provide detailed information: coding environment, OS, commands, videos followed, etc.
+- Share errors received, with specifics, including line numbers and actions taken.
+- Avoid screenshots; paste code or errors directly. Use ``` for code formatting.
+- Maintain thread consistency; respond in the same thread instead of creating multiple ones.
 
-[https://stackoverflow.com/help/how-to-ask](https://stackoverflow.com/help/how-to-ask)
+**Re-evaluation:**
 
-This will be your real life. Ask an expert in the future (in addition to coworkers).
+- If the issue recurs, create a new post detailing changes in the environment.
+- Communicate additional troubleshooting steps in the same thread.
+- Occasionally take a break to gain a fresh perspective on the problem.
 
-Ask in Slack
+**Documentation Contribution:**
 
-Before asking a question,
-
-Check Pins 📌 in channel (where the shortcut to the repo and this FAQ is located)
-
-Use the slack app’s search function
-
-check the FAQ (this document), use search [ctrl+f]
-
-Use the bot @ZoomcampQABot to do the search for you
-
-When asking a question, include as much information as possible:
-
-What are you coding on? What OS?
-
-What command did you run, which video did you follow? Etc etc
-
-What error did you get? Does it have a line number to the “offending” code and have you check it for typos?
-
-What have you tried that did not work? This answer is crucial as without it, helpers would ask you to do the suggestions in the error log first. Or just read this FAQ document.
-
-DO NOT use screenshots, especially don’t take pictures from a phone.
-
-DO NOT tag instructors, it may discourage others from helping you. Copy and paste errors; if it’s long, just post it in a reply to your thread.
-
-Use ``` for formatting your code.
-
-Use the same thread for the conversation (that means reply to your own thread).
-
-DO NOT create multiple posts to discuss the issue.
-
-You may create a new post if the issue reemerges down the road. Describe what has changed in the environment.
-
-Provide additional information in the same thread of the steps you have taken for resolution.
-
-Take a break and come back later. You will be amazed at how often you figure out the solution after letting your brain rest. Get some fresh air, workout, play a video game, watch a tv show, whatever allows your brain to not think about it for a little while or even until the next day.
-
-Remember technology issues in real life sometimes take days or even weeks to resolve.
-
-If somebody helped you with your problem and it's not in the FAQ, please add it there. It will help other students.
-
+- If your problem solution is not listed, consider adding it to the FAQ to assist others.

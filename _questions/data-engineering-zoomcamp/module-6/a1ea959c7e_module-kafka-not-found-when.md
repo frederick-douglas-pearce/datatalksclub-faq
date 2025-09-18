@@ -4,25 +4,46 @@ question: Module “kafka” not found when trying to run producer.py
 sort_order: 3930
 ---
 
-Solution from Alexey: create a virtual environment and run requirements.txt and the python files in that environment.
 
-To create a virtual env and install packages (run only once)
 
-python -m venv env
+To resolve the "Module 'kafka' not found" error when running `producer.py`, you can create a virtual environment and install the required packages. Follow these steps:
 
-source env/bin/activate
+1. **Create a Virtual Environment**
+   
+   Run the following command to create a virtual environment:
+   
+   ```bash
+   python -m venv env
+   ```
 
-pip install -r ../requirements.txt
+2. **Activate the Virtual Environment**
 
-To activate it (you'll need to run it every time you need the virtual env):
+   - On macOS and Linux:
+     
+     ```bash
+     source env/bin/activate
+     ```
+   
+   - On Windows:
+     
+     ```bash
+     env\Scripts\activate
+     ```
 
-source env/bin/activate
+3. **Install Required Packages**
+   
+   Install the packages listed in `requirements.txt`:
+   
+   ```bash
+   pip install -r ../requirements.txt
+   ```
 
-To deactivate it:
+4. **Deactivate the Virtual Environment**
+   
+   When you're done, deactivate the virtual environment:
+   
+   ```bash
+   deactivate
+   ```
 
-deactivate
-
-This works on MacOS, Linux and Windows - but for Windows the path is slightly different (it's env/Scripts/activate)
-
-Also the virtual environment should be created only to run the python file. Docker images should first all be up and running.
-
+**Note:** Ensure that Docker images are running before executing the Python file. The virtual environment is meant for running the Python files locally.

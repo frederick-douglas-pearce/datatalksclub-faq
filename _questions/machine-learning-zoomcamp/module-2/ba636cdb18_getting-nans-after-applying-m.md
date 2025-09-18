@@ -4,9 +4,9 @@ question: Getting NaNs after applying .mean()
 sort_order: 620
 ---
 
-I was using for loops to apply rmse to list of y_val and y_pred. But the resulting rmse is all nan.
+I was using for loops to apply RMSE to a list of `y_val` and `y_pred`. However, the resulting RMSE was all NaN.
 
-I found out that the problem was when my data reached the mean step after squaring the error in the rmse function. Turned out there were nan in the array, then I traced the problem back to where I first started to split the data: I had only use fillna(0) on the train data, not on the validation and test data. So the problem was fixed after I applied fillna(0) to all the dataset (train, val, test). Voila, my for loops to get rmse from all the seed values work now.
+I discovered that the issue occurred during the mean calculation step in the RMSE function, after squaring the error. There were NaNs in the array, which I traced back to the initial data splitting step. I had only used `fillna(0)` on the training data, not on the validation and test data. 
 
-Added by Sasmito Yudha Husada
+The problem was resolved by applying `fillna(0)` to all datasets (train, validation, and test). My for loops now successfully compute RMSE for all seed values.
 

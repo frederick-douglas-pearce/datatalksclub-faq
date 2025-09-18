@@ -8,11 +8,14 @@ question: 'AttributeError: module ‘collections’ has no attribute ‘MutableM
 sort_order: 2000
 ---
 
-Following the instruction from video week-5.6, using pipenv to install python libraries throws below error
+Following the instruction from video week-5.6, using pipenv to install Python libraries throws the error shown below:
+
+```
+AttributeError: module ‘collections’ has no attribute ‘MutableMapping’
+```
 
 <{IMAGE:image_1}>
 
-Solution to this error is to make sure that you are working with python==3.9 (as informed in the very first lesson of the zoomcamp) and not python==3.10.
+Solution:
 
-Added by Hareesh Tummala
-
+- Ensure you are working with Python version 3.9, as recommended in the first lesson of the Zoomcamp, instead of Python version 3.10.

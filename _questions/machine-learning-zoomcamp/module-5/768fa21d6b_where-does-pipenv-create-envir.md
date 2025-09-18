@@ -4,17 +4,17 @@ question: Where does pipenv create environments and how does it name them?
 sort_order: 1930
 ---
 
-It creates them in
+Pipenv creates environments in different locations depending on the operating system:
 
-OSX/Linux: ~/.local/share/virtualenvs/folder-name_cyrptic-hash
+- **OSX/Linux:** `~/.local/share/virtualenvs/folder-name_cryptic-hash`
+- **Windows:** `C:\Users\<USERNAME>\.virtualenvs\folder-name_cryptic-hash`
 
-Windows: C:\Users\<USERNAME>\.virtualenvs\folder-name_cyrptic-hash
+For example:
 
-Eg: C:\Users\Ella\.virtualenvs\code-qsdUdabf (for module-05 lesson)
+- `C:\Users\Ella\.virtualenvs\code-qsdUdabf` (for module-05 lesson)
 
-The environment name is the name of the last folder in the folder directory where we used the pipenv install command (or any other pipenv command). E.g. If you run any pipenv command in folder path ~/home/user/Churn-Flask-app, it will create an environment named Churn-Flask-app-some_random_characters, and it's path will be like this: /home/user/.local/share/virtualenvs/churn-flask-app-i_mzGMjX.
+The environment name is based on the name of the last folder in the directory where the `pipenv install` command was executed. For example, if you run any pipenv command in the directory `~/home/user/Churn-Flask-app`, it will create an environment named `Churn-Flask-app-some_random_characters`, and its path will look like:
 
-All libraries of this environment will be installed inside this folder. To activate this environment, I will need to cd into the project folder again, and type pipenv shell. In short, the location of the project folder acts as an identifier for an environment, in place of any name.
+- `/home/user/.local/share/virtualenvs/churn-flask-app-i_mzGMjX`
 
-(Memoona Tahira)
-
+All libraries for this environment will be installed inside this folder. To activate the environment, navigate back to the project folder and type `pipenv shell`. Essentially, the location of the project folder acts as an identifier for an environment, replacing any specific name.

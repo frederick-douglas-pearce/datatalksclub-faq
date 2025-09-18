@@ -4,19 +4,15 @@ question: Free cloud alternatives
 sort_order: 4040
 ---
 
-Q: Hii folks, I tried deploying my docker image on Render, but it won't I get SIGTERM everytime.
+**Q:** Hi folks, I tried deploying my Docker image on Render, but it won't work. I get `SIGTERM` every time.
 
-I think .5GB RAM is not enough, is there any other free alternative available ?
+I think 0.5GB RAM is not enough. Is there any other free alternative available?
 
-A: aws (amazon), gcp (google), saturn.
+**A:** There are several free alternatives:
 
-Both aws and gcp give microinstance for free for a VERY long time, and a bunch more free stuff.
+- **AWS (Amazon)** and **GCP (Google)**: Both offer free micro instances for an extended period along with additional free resources.
+- **Saturn Cloud**: Provides free GPU instances. Recent promotional information for Saturn Cloud is available for ML Zoomcamp participants:
+  
+  "You can sign up here: [https://bit.ly/saturn-mlzoomcamp](https://bit.ly/saturn-mlzoomcamp)
 
-Saturn even provides free GPU instances. Recent promo link from mlzoomcamp for Saturn:
-
-“You can sign up here: [https://bit.ly/saturn-mlzoomcamp](https://bit.ly/saturn-mlzoomcamp)
-
-When you sign up, write in the chat box that you're an ML Zoomcamp student and you should get extra GPU hours (something like 150)”
-
-Added by Andrii Larkin
-
+  When you sign up, write in the chat box that you're an ML Zoomcamp student and you should get extra GPU hours (around 150)."

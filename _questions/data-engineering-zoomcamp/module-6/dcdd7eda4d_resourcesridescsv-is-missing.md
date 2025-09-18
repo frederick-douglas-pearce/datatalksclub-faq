@@ -4,5 +4,4 @@ question: resources/rides.csv is missing
 sort_order: 3990
 ---
 
-Copy the file found in the Java example: data-engineering-zoomcamp/week_6_stream_processing/java/kafka_examples/src/main/resources/rides.csv
-
+Copy the file found in the Java example: `data-engineering-zoomcamp/week_6_stream_processing/java/kafka_examples/src/main/resources/rides.csv`

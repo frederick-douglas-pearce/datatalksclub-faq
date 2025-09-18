@@ -8,11 +8,7 @@ When multiplying matrices, the order of multiplication is important.
 
 For example:
 
-A (m x n) * B (n x p) = C (m x p)
+- A (m x n) * B (n x p) = C (m x p)
+- B (n x p) * A (m x n) = D (n x n)
 
-B (n x p) * A (m x n) = D (n x n)
-
-C and D are matrices of different sizes and usually have different values. Therefore the order is important in matrix multiplication and changing the order changes the result.
-
-Baran Akın
-
+C and D are matrices of different sizes and usually have different values. Therefore, the order is important in matrix multiplication, and changing the order changes the result.

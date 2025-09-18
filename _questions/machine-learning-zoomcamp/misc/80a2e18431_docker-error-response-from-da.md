@@ -7,29 +7,35 @@ question: 'docker: Error response from daemon: failed to create task for contain
 sort_order: 4290
 ---
 
-You need to add gunicorn and flask just to be safe to Pipfile with nano Pipfile.add[[source]]
+This error indicates that the executable `gunicorn` is not found in the container's `$PATH`. To resolve this, you need to add `gunicorn` and `flask` to your `Pipfile`.
 
-url = "[pypi.org](https://pypi.org/simple")
+Update your `Pipfile` as follows:
 
+```plaintext
+[[source]]
+url = "https://pypi.org/simple"
 verify_ssl = true
-
 name = "pypi"
 
 [packages]
-
 scikit-learn = "==1.5.2"
-
 gunicorn = "*"
-
-flask     = “*”
+flask = "*"
 
 [dev-packages]
 
 [requires]
-
 python_version = "3.11"
+```
 
-After that run pipenv lock then do the docker build -t [name] .  and docker run [name]
+After making these changes, follow these steps:
 
-(Added by Ico)
-
+1. Run `pipenv lock` to update the `Pipfile.lock`.
+2. Build the Docker image with:
+   ```bash
+   docker build -t [name] .
+   ```
+3. Run the Docker container with:
+   ```bash
+   docker run [name]
+   ```

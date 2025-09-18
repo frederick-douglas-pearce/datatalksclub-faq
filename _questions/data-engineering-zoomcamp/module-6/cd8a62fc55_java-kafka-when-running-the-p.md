@@ -5,8 +5,9 @@ question: 'Java Kafka: When running the producer/consumer/etc java scripts, no r
 sort_order: 4140
 ---
 
-For example, when running JsonConsumer.java, got:
+For example, when running `JsonConsumer.java`, you might see:
 
+```
 Consuming form kafka started
 
 RESULTS:::0
@@ -14,14 +15,16 @@ RESULTS:::0
 RESULTS:::0
 
 RESULTS:::0
+```
 
-Or when running JsonProducer.java, got:
+Or when running `JsonProducer.java`, you might encounter:
 
+```
 Exception in thread "main" java.util.concurrent.ExecutionException: org.apache.kafka.common.errors.SaslAuthenticationException: Authentication failed
+```
 
-Solution:
+**Solution:**
 
-Make sure in the scripts in src/main/java/org/example/ that you are running (e.g. JsonConsumer.java, JsonProducer.java), the StreamsConfig.BOOTSTRAP_SERVERS_CONFIG is the correct server url (e.g. europe-west3 from example vs europe-west2)
+1. Ensure the `StreamsConfig.BOOTSTRAP_SERVERS_CONFIG` in the scripts located at `src/main/java/org/example/` (e.g., `JsonConsumer.java`, `JsonProducer.java`) is pointing to the correct server URL (e.g., `europe-west3` vs `europe-west2`).
 
-Make sure cluster key and secrets are updated in src/main/java/org/example/Secrets.java (KAFKA_CLUSTER_KEY and KAFKA_CLUSTER_SECRET)
-
+2. Verify that the cluster key and secrets are updated in `src/main/java/org/example/Secrets.java` (`KAFKA_CLUSTER_KEY` and `KAFKA_CLUSTER_SECRET`).

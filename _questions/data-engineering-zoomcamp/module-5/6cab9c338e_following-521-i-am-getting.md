@@ -5,5 +5,4 @@ question: 'Following 5.2.1, I am getting an error - Head:cannot open ‘taxi+_zo
 sort_order: 3460
 ---
 
-The latest filename is just ‘taxi_zone_lookup.sv’ so it should work after removing the ‘+’ now.
-
+The latest filename is just `taxi_zone_lookup.csv`, so it should work after removing the `+` now.

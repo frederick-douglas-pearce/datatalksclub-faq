@@ -5,5 +5,4 @@ question: Can I share my answers of the Homework with the community to compare b
 sort_order: 240
 ---
 
-We kindly ask you not to share your answers
-
+We kindly ask you not to share your answers.

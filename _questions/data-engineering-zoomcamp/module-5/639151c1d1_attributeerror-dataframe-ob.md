@@ -4,9 +4,10 @@ question: 'AttributeError: ''DataFrame'' object has no attribute ''iteritems'''
 sort_order: 3600
 ---
 
-Another alternative is to install pandas 2.0.1 (it worked well as at the time of writing this), and it is compatible with Pyspark 3.5.1. Make sure to add or edit your environment variable like this:
+Another alternative is to install pandas 2.0.1 (it worked well at the time of writing this), and it is compatible with Pyspark 3.5.1. Make sure to add or edit your environment variable like this:
 
+```bash
 export SPARK_HOME="${HOME}/spark/spark-3.5.1-bin-hadoop3"
 
 export PATH="${SPARK_HOME}/bin:${PATH}"
-
+```

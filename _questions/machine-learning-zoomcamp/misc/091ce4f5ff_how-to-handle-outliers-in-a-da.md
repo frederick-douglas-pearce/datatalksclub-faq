@@ -4,13 +4,8 @@ question: How to handle outliers in a dataset?
 sort_order: 3910
 ---
 
-There are different techniques, but the most common used are the next:
+There are different techniques, but the most commonly used are the following:
 
-Dataset transformation (for example, log transformation)
-
-Clipping high values
-
-Dropping these observations
-
-Alena Kniazeva
-
+- **Dataset Transformation**: Apply transformations such as log transformation to normalize data.
+- **Clipping High Values**: Limit the range of data by capping extremes.
+- **Dropping Observations**: Remove the outlier observations from the dataset.

@@ -4,7 +4,7 @@ question: 'ValueError: shapes not aligned'
 sort_order: 800
 ---
 
-```
+```python
 X_train = prepare_X(df_train)
 w_0, w = train_linear_regression(X_train, y_train)
 
@@ -27,11 +27,9 @@ Input In [132], in <cell line: 5>()
 ValueError: shapes (4128,) and (1,) not aligned: 4128 (dim 0) != 1 (dim 0)
 ```
 
+If we try to perform an arithmetic operation between two arrays of different shapes or dimensions, it throws an error like operands could not be broadcast together with shapes. Broadcasting can occur in certain scenarios and will fail in others.
 
-If we try to perform an arithmetic operation between 2 arrays of different shapes or different dimensions, it throws an error like operands could not be broadcast together with shapes. There are some scenarios when broadcasting can occur and when it fails.
-
-If this happens sometimes we can use * operator instead of dot() method to solve the issue. So that the error is solved and also we get the dot product.
-
+To solve this issue, you can use the `*` operator instead of the `dot()` method:
 
 ```python
 X_train = prepare_X(df_train)
@@ -45,8 +43,6 @@ rmse(y_val, y_pred)
 
 Output:
 
+```
 0.5713144443358035
-
-
-(Santhosh Kumar)
-
+```

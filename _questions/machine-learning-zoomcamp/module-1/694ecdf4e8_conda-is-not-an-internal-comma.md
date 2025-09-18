@@ -4,15 +4,18 @@ question: Conda is not an internal command
 sort_order: 320
 ---
 
-I have a problem with my terminal. Command
+If you encounter an issue where the command:
 
+```bash
 conda create -n ml-zoomcamp python=3.9
+```
 
-doesn’t work. Any of 3.8/ 3.9 / 3.10 should be all fine
+doesn't work, try the following solutions:
 
-If you’re on Windows and just installed Anaconda, you can use Anaconda’s own terminal called “Anaconda Prompt”.
+1. **Use Anaconda Prompt:**
+   - If you are on Windows, use Anaconda's own terminal called "Anaconda Prompt". This should automatically configure your environment to recognize Conda commands.
 
-If you don’t have Anaconda or Miniconda, you should install it first
+2. **Install Anaconda or Miniconda:**
+   - If you do not have Anaconda or Miniconda installed, download and install one of them first.
 
-(Tatyana Mardvilko)
-
+Note: Any version of Python 3.8, 3.9, or 3.10 should be suitable.

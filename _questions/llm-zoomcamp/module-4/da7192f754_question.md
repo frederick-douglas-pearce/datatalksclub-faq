@@ -5,4 +5,3 @@ sort_order: 470
 ---
 
 Answer
-

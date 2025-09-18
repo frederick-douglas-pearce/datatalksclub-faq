@@ -1,24 +1,31 @@
 ---
 id: e4bce3ff6b
-question: Error when running Kestra flow connecting to postgres.
+question: Error when running Kestra flow connecting to postgres
 sort_order: 1870
 ---
 
-Error: org.postgresql.util.psqlexception the connection attempt failed due to this config on kestra flow -> jdbc:postgresql://host.docker.internal:5432/postgres-zoomcamp
+### Error Message
+```plaintext
+org.postgresql.util.psqlexception the connection attempt failed due to this config on kestra flow -> jdbc:postgresql://host.docker.internal:5432/postgres-zoomcamp
+```
 
-Solution: Just replace host.docker.internal for the name of the service for postgres in docker compose.
+### Solution
+- Replace `host.docker.internal` with the name of the service for Postgres in your Docker Compose file.
 
-—---
+---
 
-I also encountered a similar error as above, slightly different error message:
-
+### Additional Error Message
+```plaintext
 org.postgresql.util.PSQLException: The connection attempt failed. 2025-01-29 22:52:22.281 green_create_table The connection attempt failed. host.docker.internal
+```
 
-I could download my dataset by executing my flow, but when i wanted to ingest it to the pg database, the connection to pg failed.
+### Analysis and Solution
+- If using Linux, the PostgreSQL database URL differs from the tutorial. Instead of `host.docker.internal`, Linux users should use the service or container name for Postgres. For example, use:
+  
+  ```plaintext
+  jdbc:postgresql://postgres:5432/kestra
+  ```
+- Double-check the database name in your Docker Compose file. It might be different from the tutorial; for example, `kestra` instead of `postgres-zoomcamp`.
 
-The main issue was that the pg database url is different for linux than the url in the tutorial. Namely, instead of host.docker.internal, linux users will use the service or container name for postgres, which for me was just postgres.
-
-url: jdbc:postgresql://postgres:5432/kestra
-
-Voila. Also, make sure to double check your pg database name. Mine was kestra in the docker compose file, whereas in the tutorial they had named it postgres-zoomcamp.
-
+### Reminder
+- Ensure that the PostgreSQL database name in the Docker Compose matches what you configure in your flow.

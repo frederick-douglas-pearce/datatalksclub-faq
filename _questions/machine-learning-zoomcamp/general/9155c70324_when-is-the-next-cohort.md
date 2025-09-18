@@ -4,13 +4,8 @@ question: When is the next cohort?
 sort_order: 30
 ---
 
-The course is available in the self-paced mode too, so you can go through the materials at any time. But if you want to do it as a cohort with other students, the next iterations will happen in September 2023, September 2024, September 2025 (and potentially other Septembers as well).
+The course is available in a self-paced mode, allowing you to go through the materials anytime. If you prefer to join a cohort with other students, the next sessions will begin in September 2023, September 2024, and September 2025.
 
+Zoomcamps are scheduled throughout the year. For more information, refer to [A Guide to Free Online Courses at DataTalks.Club](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).
 
-The zoomcamps are spread out throughout the year. See this article [A Guide to Free Online Courses at DataTalks.Club](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html)
-
-The course videos are pre-recorded, you can start watching the course right now.
-
-We will also occasionally have office hours we will answer your questions. The office hours sessions are recorded too. -  hours (live sessions where
-
-You can see the office playlist with year 20xx) as well as the pre-recorded course videos in (playlist without year) in Course Channel’s Bookmarks and/or [DTC’s youtube channel](https://www.youtube.com/@DataTalksClub/playlists)
+Course videos are pre-recorded and available to watch immediately. We also occasionally host office hours for live Q&A, which are recorded and made available later. You can find these recordings and pre-recorded course videos on the Course Channel’s Bookmarks or [DTC’s YouTube channel](https://www.youtube.com/@DataTalksClub/playlists).

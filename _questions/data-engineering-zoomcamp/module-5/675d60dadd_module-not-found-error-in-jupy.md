@@ -1,28 +1,36 @@
 ---
 id: 675d60dadd
-question: Module Not Found Error in Jupyter Notebook .
+question: Module Not Found Error in Jupyter Notebook.
 sort_order: 3420
 ---
 
-Even after installing pyspark correctly on linux machine (VM ) as per course instructions, faced a module not found error in jupyter notebook .
+Even after installing `pyspark` correctly on a Linux machine (VM) as instructed in the course, a module not found error was encountered in the Jupyter Notebook.
 
-The solution which worked for me(use following in jupyter notebook) :
+The solution that worked:
 
-!pip install findspark
+1. Run the following in the Jupyter Notebook:
 
-import findspark
+   ```bash
+   !pip install findspark
+   ```
 
-findspark.init()
+2. Import and initialize `findspark`:
 
-Thereafter , import pyspark and create spark contex<<t as usual
+   ```python
+   import findspark
+   findspark.init()
+   ```
 
-None of the solutions above worked for me till I ran !pip3 install pyspark instead !pip install pyspark.
+3. Thereafter, import `pyspark` and create the Spark context as usual.
 
-Filter based on conditions based on multiple columns
+If the above solution does not work, try:
 
+- Using `!pip3 install pyspark` instead of `!pip install pyspark`.
+
+To filter based on conditions across multiple columns:
+
+```python
 from pyspark.sql.functions import col
 
 new_final.filter((new_final.a_zone=="Murray Hill") & (new_final.b_zone=="Midwood")).show()
-
-Krishna Anand
-
+```

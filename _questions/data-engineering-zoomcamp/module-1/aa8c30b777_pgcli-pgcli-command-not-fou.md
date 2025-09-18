@@ -8,31 +8,50 @@ question: 'PGCLI - pgcli: command not found'
 sort_order: 1130
 ---
 
-Problem: If you have already installed pgcli but bash doesn't recognize pgcli
+### Problem
 
-On Git bash: bash: pgcli: command not found
+If you have already installed `pgcli` but Bash or the Windows Terminal doesn't recognize the command:
 
-On Windows Terminal: pgcli: The term 'pgcli' is not recognized…
+- On Git Bash: 
+  ```bash
+  bash: pgcli: command not found
+  ```
+- On Windows Terminal: 
+  ```
+  pgcli: The term 'pgcli' is not recognized…
+  ```
 
-Solution: Try adding a Python path C:\Users\...\AppData\Roaming\Python\Python39\Scripts to Windows PATH
+### Solution
 
-For details:
+Try adding the Python path to the Windows PATH variable:
 
-Get the location: pip list -v
+1. Use the command to get the location:
+   ```bash
+   pip list -v
+   ```
+2. Copy the path, which looks like:
+   ```
+   C:\Users\...\AppData\Roaming\Python\Python39\site-packages
+   ```
+3. Replace `site-packages` with `Scripts`:
+   ```
+   C:\Users\...\AppData\Roaming\Python\Python39\Scripts
+   ```
 
-Copy C:\Users\...\AppData\Roaming\Python\Python39\site-packages
+It might be that Python is installed elsewhere. For example, it could be under:
 
-3. Replace site-packages with Scripts: C:\Users\...\AppData\Roaming\Python\Python39\Scripts
+- `c:\python310\lib\site-packages`
 
-It can also be that you have Python installed elsewhere.
+In that case, you should add:
 
-For me it was under c:\python310\lib\site-packages
+- `c:\python310\lib\Scripts` to PATH.
 
-So I had to add c:\python310\lib\Scripts to PATH, as shown below.
+### Instructions
 
-Put the above path in "Path" (or "PATH") in System Variables
+- Add the determined path to `Path` (or `PATH`) in System Variables.
 
 <{IMAGE:image_1}>
 
-Reference: [https://stackoverflow.com/a/68233660](https://stackoverflow.com/a/68233660)
+### Reference
 
+[Stack Overflow Reference](https://stackoverflow.com/a/68233660)

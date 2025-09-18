@@ -6,15 +6,24 @@ question: 'lServiceException: 401 Anonymous caller does not have storage.objects
 sort_order: 3770
 ---
 
-This occurs because you are not logged in “gcloud auth login” and maybe the project id is not settled. Then type in a terminal:
+This occurs because you are not logged in with Google Cloud SDK, or the project ID is not set. Follow these steps:
 
-gcloud auth login
+1. Log in using Google Cloud SDK:
+   
+   ```bash
+   gcloud auth login
+   ```
+   
+   This will open a tab in the browser. Accept the terms, then close the tab if needed.
 
-This will open a tab in the browser, accept the terms, after that close the tab if you want. Then set the project is like:
+2. Set the project ID:
+   
+   ```bash
+   gcloud config set project <YOUR_PROJECT_ID>
+   ```
 
-gcloud config set project <YOUR PROJECT_ID>
-
-Then you can run the command to upload the pq dir to a GCS Bucket:
-
-gsutil -m cp -r pq/ <YOUR URI from gsutil>/pq
-
+3. Upload the `pq` directory to a Google Cloud Storage (GCS) Bucket:
+   
+   ```bash
+   gsutil -m cp -r pq/ <YOUR_URI_from_gsutil>/pq
+   ```

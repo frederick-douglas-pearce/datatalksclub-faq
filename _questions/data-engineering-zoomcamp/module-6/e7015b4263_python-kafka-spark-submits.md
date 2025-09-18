@@ -5,17 +5,28 @@ question: 'Python Kafka: ./spark-submit.sh streaming.py - How to check why Spark
 sort_order: 4080
 ---
 
-Start a new terminal
+- Start a new terminal.
 
-Run: docker ps
+- Run the following command to list running containers:
 
-Copy the CONTAINER ID of the spark-master container
+  ```bash
+  docker ps
+  ```
 
-Run: docker exec -it <spark_master_container_id> bash
+- Copy the `CONTAINER ID` of the `spark-master` container.
 
-Run: cat logs/spark-master.out
+- Execute the following command to access the container's shell:
 
-Check for the log when the error happened
+  ```bash
+  docker exec -it <spark_master_container_id> bash
+  ```
 
-Google the error message from there
+- Run this command to view the Spark master logs:
 
+  ```bash
+  cat logs/spark-master.out
+  ```
+
+- Check the log for the timestamp when the error occurred.
+
+- Search the error message online for further troubleshooting.

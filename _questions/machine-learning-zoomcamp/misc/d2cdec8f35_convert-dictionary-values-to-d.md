@@ -4,7 +4,10 @@ question: Convert dictionary values to Dataframe table
 sort_order: 4070
 ---
 
-You can convert the prediction output values to a datafarme using df = pd.DataFrame.from_dict(dict, orient='index' , columns=["Prediction"])
+You can convert the prediction output values to a DataFrame using the following code:
 
-Edidiong Esu
+```python
+import pandas as pd
 
+df = pd.DataFrame.from_dict(your_dict, orient='index', columns=['Prediction'])
+```

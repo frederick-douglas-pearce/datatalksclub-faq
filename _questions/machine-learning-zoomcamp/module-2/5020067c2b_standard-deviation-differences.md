@@ -11,23 +11,22 @@ question: Standard Deviation Differences in Numpy and Pandas
 sort_order: 870
 ---
 
-Numpy and Pandas packages use different equations to compute the standard deviation. Numpy uses  population standard deviation, whereas pandas uses sample standard deviation by default.
+Numpy and Pandas use different equations to compute the standard deviation. Numpy uses the population standard deviation by default, whereas Pandas uses the sample standard deviation.
 
-Numpy
+### Numpy
 
 <{IMAGE:image_1}>
 
-Pandas
+### Pandas
 
 <{IMAGE:image_2}>
 
-pandas default standard deviation is computed using one degree of freedom. You can change degree in of freedom in NumPy to change this to unbiased estimator by using ddof parameter:
+Pandas computes the standard deviation using one degree of freedom by default. You can modify the degree of freedom in Numpy to achieve a similar result by using the `ddof` parameter:
 
+```python
 import numpy as np
 
 np.std(df.weight, ddof=1)
+```
 
-The result will be similar if we change the dof = 1 in numpy
-
-(Harish Balasundaram)
-
+The result will be similar if we set `ddof=1` in Numpy.

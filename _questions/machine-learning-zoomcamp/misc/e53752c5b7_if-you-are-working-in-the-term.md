@@ -1,11 +1,17 @@
 ---
 id: e53752c5b7
-question: If you are working in the terminal on your computer in wsl and you want
-  to go to the directory in explorer to upload to github use type explorer.exe .
+question: If you are working in the terminal on your computer in WSL and you want
+  to go to the directory in Explorer to upload to GitHub, what command should you
+  use?
 sort_order: 4300
 ---
 
-Explorer.exe calls the process and . opens in the current directory.Or you can sync through VScode to github
+Use the following command:
 
-(Added by Ico)
+```bash
+explorer.exe .
+```
 
+This command opens the current directory in Windows Explorer.
+
+Alternatively, you can sync through VSCode to GitHub.

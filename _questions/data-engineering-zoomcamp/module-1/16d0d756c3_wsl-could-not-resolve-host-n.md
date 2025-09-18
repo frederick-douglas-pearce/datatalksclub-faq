@@ -1,20 +1,27 @@
 ---
 id: 16d0d756c3
-question: WSL - Could not resolve host name
+question: 'WSL: Could not resolve host name'
 sort_order: 1050
 ---
 
-Such as the issue above, WSL2 may not be referencing the correct .ssh/config path from Windows. You can create a config file at the home directory of WSL2.
+WSL2 may not be referencing the correct `.ssh/config` path from Windows. You can create a config file in the home directory of WSL2 by following these steps:
 
-cd ~
+1. Navigate to your home directory:
+   
+   ```bash
+   cd ~
+   ```
 
-mkdir .ssh
+2. Create the `.ssh` directory:
+   
+   ```bash
+   mkdir .ssh
+   ```
 
-Create a config file in this new .ssh/ folder referencing this folder:
+3. Create a `config` file in the `.ssh` folder with the following content:
 
-HostName [GPC VM external IP]
-
-User [username]
-
-IdentityFile ~/.ssh/[private key]
-
+   ```
+   HostName [GPC VM external IP]
+   User [username]
+   IdentityFile ~/.ssh/[private key]
+   ```

@@ -1,39 +1,56 @@
 ---
 id: 5e0cffbc79
-question: Homework - Reading parquets from nyc.gov directly into pandas returns Out
-  of bounds error
+question: 'Homework: Reading parquets from nyc.gov directly into pandas returns Out
+  of bounds error'
 sort_order: 2360
 ---
 
-If for whatever reason you try to read parquets directly from nyc.gov’s cloudfront into pandas, you might run into this error:
+If you try to read parquets directly from nyc.gov’s cloudfront into pandas, you might encounter this error:
 
+```python
 pyarrow.lib.ArrowInvalid: Casting from timestamp[us] to timestamp[ns] would result in out of bounds
+```
 
-Cause:
+### Cause:
 
-there is one errant data record where the dropOff_datetime was set to year 3019 instead of 2019.
+There is a data record where `dropOff_datetime` is set to the year 3019 instead of 2019. 
 
-pandas uses “timestamp[ns]” (as noted above), and int64 only allows a ~580 year range, centered on 2000. See `pd.Timestamp.max` and `pd.Timestamp.min`
+Pandas uses "timestamp[ns]" and `int64` only allows a ~580-year range, centered on 2000. See `pd.Timestamp.max` and `pd.Timestamp.min`.
 
-This becomes out of bounds when pandas tries to read it because 3019 > 2300 (approx value of pd.Timestamp.Max
+This becomes out of bounds when pandas tries to read it because 3019 > 2300 (approx value of `pd.Timestamp.max`).
 
-Fix:
+### Fix:
 
-Use pyarrow to read it:import pyarrow.parquet as pq df = pq.read_table('fhv_tripdata_2019-02.parquet').to_pandas(safe=False)However this results in weird timestamps for the offending record
+1. **Use pyarrow to read the data:**
 
-Read the datetime columns separately using pq.read_tabletable = pq.read_table(‘taxi.parquet’)datetimes = [‘list of datetime column names’]df_dts = pd.DataFrame()
+   ```python
+   import pyarrow.parquet as pq
+   df = pq.read_table('fhv_tripdata_2019-02.parquet').to_pandas(safe=False)
+   ```
 
-for col in datetimes:
+   This will result in unusual timestamps for the offending record.
 
-df_dts[col] = pd.to_datetime(table .column(col), errors='coerce')The `errors=’coerce’` parameter will convert the out of bounds timestamps into either the max or the min
+2. **Read datetime columns separately:**
 
-Use parquet.compute.filter to remove the offending rowsimport pyarrow.compute as pc
+   ```python
+   table = pq.read_table('taxi.parquet')
+   datetimes = ['list of datetime column names']
+   df_dts = pd.DataFrame()
 
-table = pq.read_table("‘taxi.parquet")
+   for col in datetimes:
+       df_dts[col] = pd.to_datetime(table.column(col), errors='coerce')
+   ```
 
-df = table.filter(
+   The `errors='coerce'` parameter will convert out-of-bounds timestamps into either the max or min.
 
-pc.less_equal(table["dropOff_datetime"], pa.scalar(pd.Timestamp.max))
+3. **Remove the offending rows using filter:**
 
-).to_pandas()
+   ```python
+   import pyarrow.compute as pc
 
+   table = pq.read_table('taxi.parquet')
+
+   df = table.filter(
+       pc.less_equal(table["dropOff_datetime"], pa.scalar(pd.Timestamp.max))
+   ).to_pandas()
+   ```

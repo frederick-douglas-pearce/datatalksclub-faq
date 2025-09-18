@@ -4,17 +4,14 @@ question: How to identify the shape of dataset in Pandas
 sort_order: 440
 ---
 
-There are many ways to identify the shape of dataset, one of them is using .shape attribute!
+To identify the shape of a dataset in Pandas, you can use the `.shape` attribute:
 
-df.shape
+- `df.shape`: Returns a tuple representing the dimensionality of the DataFrame.
+- `df.shape[0]`: Returns the number of rows.
+- `df.shape[1]`: Returns the number of columns.
 
-df.shape[0] # for identify the number of rows
+You can also use the built-in `len` function to find the total number of rows:
 
-df.shape[1] # for identify the number of columns
-
-We can also use the built-in `len` function to find the total number of rows in a dataframe, just as shown below:
-
+```python
 len(df)
-
-Added by Radikal Lukafiardi
-
+```

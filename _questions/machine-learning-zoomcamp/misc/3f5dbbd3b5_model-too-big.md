@@ -4,7 +4,10 @@ question: Model too big
 sort_order: 3950
 ---
 
-If your model is too big for github one option is to try and compress the model using joblib. For example joblib.dump(model, model_filename, compress=('zlib', 6) will use zlib to compress the model. Just note this could take a few moments as the model is being compressed.
+If your model is too big for GitHub, one option is to compress the model using `joblib`. For example:
 
-Quinn Avila
+```python
+joblib.dump(model, model_filename, compress=('zlib', 6))
+```
 
+This will use zlib to compress the model. Note that this process may take a few moments as the model is being compressed.

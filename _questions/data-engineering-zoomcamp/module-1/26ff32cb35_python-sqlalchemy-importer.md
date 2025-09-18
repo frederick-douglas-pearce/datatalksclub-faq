@@ -5,9 +5,25 @@ question: 'Python - SQLAlchemy - ImportError: cannot import name ''TypeAliasType
 sort_order: 1360
 ---
 
-Error raised during the jupyter notebook’s cell execution:
 
-from sqlalchemy import create_engine.
+The following error occurs during the execution of a Jupyter notebook cell:
 
-Solution: Version of Python module “typing_extensions” [>= 4.6.0](https://github.com/python/typing_extensions/blob/main/CHANGELOG.md#release-460-may-22-2023). Can be updated by Conda or pip.
+```python
+from sqlalchemy import create_engine
+```
 
+Solution:
+
+The issue can be resolved by ensuring the version of the Python module `typing_extensions` is 4.6.0 or later. You can update it using either Conda or pip:
+
+- **Using Conda:**
+  ```bash
+  conda update typing_extensions
+  ```
+
+- **Using pip:**
+  ```bash
+  pip install --upgrade typing_extensions
+  ```
+
+For more details, you can refer to the [changelog for typing_extensions 4.6.0](https://github.com/python/typing_extensions/blob/main/CHANGELOG.md#release-460-may-22-2023).

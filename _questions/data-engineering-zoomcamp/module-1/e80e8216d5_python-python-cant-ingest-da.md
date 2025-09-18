@@ -1,8 +1,9 @@
 ---
 id: e80e8216d5
-question: Python - Python cant ingest data from the github link provided using curl
+question: 'Python: Python can''t ingest data from the GitHub link provided using curl'
 sort_order: 1330
 ---
 
+```python
 os.system(f"curl -LO {url} -o {csv_name}")
-
+```

@@ -1,8 +1,17 @@
 ---
 id: e43abaa421
-question: Docker-Compose - docker-compose still not available after changing .bashrc
+question: 'Docker: docker-compose still not available after changing .bashrc'
 sort_order: 930
 ---
 
-This is happen to me after following 1.4.1 video where we are installing docker compose in our Google Cloud VM. In my case, the docker-compose file downloaded from github named docker-compose-linux-x86_64 while it is more convenient to use docker-compose command instead. So just change the docker-compose-linux-x86_64 into docker-compose.
+This issue can occur after installing Docker Compose in a Google Cloud VM, as demonstrated in video 1.4.1. 
 
+If the downloaded Docker Compose file from GitHub is named `docker-compose-linux-x86_64`, you may need to rename it for convenience. Here's how to resolve the issue:
+
+1. Rename `docker-compose-linux-x86_64` to `docker-compose` using the following command:
+   
+   ```bash
+   mv docker-compose-linux-x86_64 docker-compose
+   ```
+
+By doing this, you can use the `docker-compose` command directly.

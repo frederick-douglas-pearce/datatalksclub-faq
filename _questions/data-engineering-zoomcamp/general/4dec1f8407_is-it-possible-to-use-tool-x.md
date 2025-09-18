@@ -4,9 +4,10 @@ question: Is it possible to use tool “X” instead of the one tool you use in 
 sort_order: 360
 ---
 
-Yes, this applies if you want to use Airflow or Prefect instead of Mage, AWS or Snowflake instead of GCP products or Tableau instead of Metabase or Google data studio.
+Yes, this applies if you want to use Airflow or Prefect instead of Mage, AWS or Snowflake instead of GCP products, or Tableau instead of Metabase or Google Data Studio.
 
-The course covers 2 alternative data stacks, one using GCP and one using local installation of everything. You can use one of them or use your tool of choice.
+The course covers two alternative data stacks: one using GCP and one using local installation of everything. You can use one of them or use your tool of choice.
 
-Should you consider it instead of the one tool you use? That we can’t support you if you choose to use a different stack, also you would need to explain the different choices of tool for the peer review of your capstone project.
-
+Considerations:
+- We can’t support you if you choose to use a different stack.
+- You would need to explain the different choices of tools for the peer review of your capstone project.

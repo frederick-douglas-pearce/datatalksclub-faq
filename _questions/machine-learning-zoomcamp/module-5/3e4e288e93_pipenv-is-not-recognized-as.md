@@ -18,37 +18,39 @@ question: '''pipenv'' is not recognized as an internal or external command, oper
 sort_order: 1990
 ---
 
-This error happens because pipenv is already installed but you can't access it from the path.
+This error occurs because `pipenv` is installed but not accessible from the PATH.
 
-This error comes out if you run.
+You might encounter this error when running:
 
-pipenv  --version
+```bash
+pipenv --version
+```
 
+or
+
+```bash
 pipenv shell
+```
 
-Solution for Windows
+### Solution for Windows:
 
-Open this option
+1. Open this option:
+   
+   <{IMAGE:image_1}>
 
-<{IMAGE:image_1}>
+2. Click here:
+   
+   <{IMAGE:image_2}>
 
-Click here
+3. Click the Edit button:
+   
+   <{IMAGE:image_3}>
 
-<{IMAGE:image_2}>
+4. Ensure the following locations are included in the PATH. If not, add them:
+   
+   - `C:\Users\AppData\...\Python\PythonXX\`
+   - `C:\Users\AppData\...\Python\PythonXX\Scripts\`
+   
+   <{IMAGE:image_4}>
 
-Click in Edit Button
-
-<{IMAGE:image_3}>
-
-Make sure the next two locations are on the PATH, otherwise, add it.
-
-C:\Users\AppData\....\Python\PythonXX\
-
-C:\Users\AppData\....\Python\PythonXX\Scripts\
-
-<{IMAGE:image_4}>
-
-Added by Alejandro Aponte
-
-Note: this answer assumes you don’t use Anaconda. For Windows, using Anaconda would be a better choice and less prone to errors.
-
+**Note:** This solution is for setups without Anaconda. If you use Windows, Anaconda might be a better and less error-prone choice.

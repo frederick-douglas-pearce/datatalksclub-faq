@@ -1,20 +1,19 @@
 ---
 id: 46dbe4810d
 question: 'Docker - Error during connect: In the default daemon configuration on Windows,
-  the docker client must be run with elevated privileges to connect.: Post: "[%2F%2F.%2Fpipe%2Fdocker_engine](http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/containers/create")
+  the docker client must be run with elevated privileges to connect.: Post: "[//./pipe/docker_engine](http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/containers/create")
   : open //./pipe/docker_engine: The system cannot find the file specified'
 sort_order: 580
 ---
 
-As the official [Docker for Windows documentation](https://docs.docker.com/desktop/install/windows-install/) says, the Docker engine can either use the
+To resolve this issue on Windows, follow these guidelines based on your version:
 
-Hyper-V or WSL2 as its backend. However, a few constraints might apply
+- **Windows 10 Pro / 11 Pro Users**: Ensure Hyper-V is enabled, as Docker can use it as a backend.
+  1. Follow the [Enable Hyper-V Option on Windows 10 / 11](https://www.c-sharpcorner.com/article/install-and-configured-docker-desktop-in-windows-10/) tutorial.
 
-Windows 10 Pro / 11 Pro Users: In order to use Hyper-V as its back-end, you MUST have it enabled first, which you can do by following the tutorial: [Enable Hyper-V Option on Windows 10 / 11](https://www.c-sharpcorner.com/article/install-and-configured-docker-desktop-in-windows-10/)
+- **Windows 10 Home / 11 Home Users**: The 'Home' version doesn't support Hyper-V, so use WSL2 (Windows Subsystem for Linux).
+  1. Refer to [install WSL on Windows 11](https://pureinfotech.com/install-wsl-windows-11/) for detailed instructions.
 
-Windows 10 Home / 11 Home Users: On the other hand, Users of the 'Home' version do NOT have the option Hyper-V option enabled, which means, you can only get Docker up and running using the WSL2 credentials(Windows Subsystem for Linux). Url
+If you encounter the "WslRegisterDistribution failed with error: 0x800701bc" error:
 
-You can find the detailed instructions to do so here: rt g[https://pureinfotech.com/install-wsl-windows-11/](https://pureinfotech.com/install-wsl-windows-11/)
-
-In case, you run into another issue while trying to install WSL2 (WslRegisterDistribution failed with error: 0x800701bc), Make sure you update the WSL2 Linux Kernel, following the guidelines here: [https://github.com/microsoft/WSL/issues/5393](https://github.com/microsoft/WSL/issues/5393)
-
+- Update the WSL2 Linux Kernel by following the guidelines at [GitHub: WSL Issue 5393](https://github.com/microsoft/WSL/issues/5393).

@@ -4,29 +4,23 @@ question: How to find the intercept between precision and recall curves by using
 sort_order: 1600
 ---
 
-You can find the intercept between these two curves using numpy diff ([https://numpy.org/doc/stable/reference/generated/numpy.diff.html](https://numpy.org/doc/stable/reference/generated/numpy.diff.html) ) and sign ([https://numpy.org/doc/stable/reference/generated/numpy.sign.html](https://numpy.org/doc/stable/reference/generated/numpy.sign.html)):
+You can find the intercept between these two curves using numpy's `diff` and `sign` functions:
 
-I suppose here that you have your df_scores ready with your three columns ‘threshold’, ‘precision’ and ‘recall’:
+1. Ensure your `df_scores` DataFrame is ready with three columns: `threshold`, `precision`, and `recall`.
+2. Determine the indices where the precision and recall curves intersect (i.e., where the sign of the difference between precision and recall changes):
 
-You want to know at which index (or indices) you have your intercept between precision and recall (namely: where the sign of the difference between precision and recall changes):
+   ```python
+   import numpy as np
 
-idx = np.argwhere(
+   idx = np.argwhere(
+       np.diff(
+           np.sign(np.array(df_scores['precision']) - np.array(df_scores['recall']))
+       )
+   ).flatten()
+   ```
 
-np.diff(
+3. Print the result to easily read it:
 
-np.sign(np.array(df_scores["precision"]) - np.array(df_scores["recall"]))
-
-)
-
-).flatten()
-
-You can print the result to easily read it:
-
-print(
-
-f"The precision and recall curves intersect at a threshold equal to {df_scores.loc[idx]['threshold']}."
-
-)
-
-(Mélanie Fouesnard)
-
+   ```python
+   print(f"The precision and recall curves intersect at a threshold equal to {df_scores.loc[idx]['threshold']}.")
+   ```

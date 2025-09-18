@@ -7,5 +7,6 @@ sort_order: 530
 
 To compute the 75% percentile or 0.75 quantile:
 
-quantile: int = df["col"].quantile(q=0.75)
-
+```python
+quantile = df["col"].quantile(q=0.75)
+```

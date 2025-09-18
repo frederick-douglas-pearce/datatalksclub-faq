@@ -4,15 +4,9 @@ question: Can I do the course in other languages, like R or Scala?
 sort_order: 4230
 ---
 
-Technically, yes. Advisable? Not really. Reasons:
+Technically, yes. Advisable? Not really. Here are the reasons:
 
-Some homework(s) asks for specific python library versions.
-
-Answers may not match in MCQ options if using different languages other than Python 3.10 (the recommended version for 2023 cohort)
-
-And as for midterms/capstones, your peer-reviewers may not know these other languages. Do you want to be penalized for others not knowing these other languages?
-
-You can create a separate repo using course’s lessons but written in other languages for your own learnings, but not advisable for submissions.
-
-tx[[source](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1694531885396789)]
-
+- Some homework assignments require specific Python library versions.
+- Answers may not align with multiple-choice questions if using languages other than Python 3.10 (the recommended version for the 2023 cohort).
+- For midterms or capstones, your peer-reviewers may not know these other languages, which could lead to issues in scoring and feedback.
+- While you can create a separate repository using the course lessons in other languages for personal learning, it is not recommended for official submissions.

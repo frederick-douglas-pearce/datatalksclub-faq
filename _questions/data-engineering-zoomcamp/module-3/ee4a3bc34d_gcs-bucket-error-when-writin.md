@@ -4,5 +4,4 @@ question: 'GCS Bucket - error when writing data from web to GCS:'
 sort_order: 2020
 ---
 
-Make sure to use Nullable dataTypes, such as [Int64](https://pandas.pydata.org/docs/user_guide/integer_na.html) when appliable.
-
+Make sure to use Nullable data types, such as [Int64](https://pandas.pydata.org/docs/user_guide/integer_na.html) when applicable.

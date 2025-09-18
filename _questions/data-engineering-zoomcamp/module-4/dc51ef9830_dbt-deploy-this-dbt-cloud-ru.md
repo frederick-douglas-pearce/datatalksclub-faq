@@ -13,36 +13,35 @@ images:
 - description: 'image #4'
   id: image_4
   path: images/data-engineering-zoomcamp/image_cd924928.png
-question: DBT Deploy - This dbt Cloud run was cancelled because a valid dbt project
-  was not found.
+question: 'DBT Deploy: This dbt Cloud run was cancelled because a valid dbt project
+  was not found.'
 sort_order: 3100
 ---
 
-This happens because we have moved the dbt project to another directory on our repo.
+This issue occurs when the dbt project is moved to another directory in the repository or if you're on a different branch than expected.
 
-Or might be that you’re on a different branch than is expected to be merged from / to.
+**Solution:**
 
-Solution:
+1. Navigate to the projects window on dbt Cloud.
+2. Go to Settings -> Edit.
+3. Add the directory path where the dbt project is located. Ensure that this path matches your file explorer path. For example:
+   
+   ```
+   /week5/taxi_rides_ny
+   ```
 
-Go to the projects window on dbt cloud -> settings -> edit -> and add directory (the extra path to the dbt project)
-
-For example:
-
-/week5/taxi_rides_ny
-
-Make sure your file explorer path and this Project settings path matches and there’s no files waiting to be committed to github if you’re running the job to deploy to PROD.
+4. Check that there are no files waiting to be committed to GitHub if you’re running the job to deploy to PROD.
 
 <{IMAGE:image_1}>
 
 <{IMAGE:image_2}>
 
-And that you had setup the PROD environment to check in the main branch, or whichever you specified.
+5. Ensure the PROD environment is set up to check the main branch, or the specified branch.
 
-In the picture below, I had set it to ella2024 to be checked as “production-ready” by the “freshness” check mark at the PROD environment settings. So each time I merge a branch from something else into ella2024 and then trigger the PR, the CI check job would kick-in. But we still do need to Merge and close the PR manually, I believe, that part is not automated.
+In the image below, the branch "ella2024" is set to be checked as "production-ready" by the "freshness" check mark in PROD environment settings. Each time a branch is merged into "ella2024" and a PR is triggered, the CI check job initiates. Note that merging and closing the PR must be done manually.
 
 <{IMAGE:image_3}>
 
-You set up the PROD custom branch (if not default main) in the Environment setup screen.
+6. Set up the PROD custom branch (if not the default main) in the Environment setup screen.
 
 <{IMAGE:image_4}>
-

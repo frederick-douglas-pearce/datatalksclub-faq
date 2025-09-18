@@ -4,77 +4,105 @@ question: How to Use AWS SAM CLI to Create a Lambda Function as a Container Imag
 sort_order: 3410
 ---
 
-Set Up SAM CLI on Your MachineFollow the installation guide for the AWS SAM CLI here:[ ](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
+### Set Up SAM CLI on Your Machine
 
-[Getting started with AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)
+Follow the installation guide for the AWS SAM CLI: [AWS SAM CLI Installation Guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
 
-Create a New ProjectOpen your command prompt and run the following command to generate boilerplate code:sam init
+Additional reference: [Getting started with AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)
 
-Follow the SAM CLI Wizard
+### Create a New Project
 
-Select "AWS Quick Start Templates".
+Open your command prompt and run the following command to generate boilerplate code:
 
-Choose "Machine Learning" as the application type.
+```bash
+sam init
+```
 
-Select the version of Python you will use for your runtime.
+Follow the SAM CLI Wizard:
 
-When prompted for the starter template, choose "TensorFlow Machine Learning Inference API".
+1. Select "AWS Quick Start Templates".
+2. Choose "Machine Learning" as the application type.
+3. Select the version of Python you will use for your runtime.
+4. When prompted for the starter template, choose "TensorFlow Machine Learning Inference API".
 
-After completing these steps, a new folder with the name you selected will be created. This will be your "SAM project folder" from now on. Inside this folder, you should see an "app" folder.
+After these steps, a new folder will be created with your selected name. This is your "SAM project folder". Inside, you'll find an "app" folder.
 
-Add Required Files for DeploymentMove all the files you need for deployment (such as the TensorFlow Lite model and your Lambda function) into the "app" folder.
+### Add Required Files for Deployment
 
-Modify the Following Files Inside the "app" Folder
+Move all the deployment files (such as the TensorFlow Lite model and your Lambda function) into the "app" folder.
 
-requirements.txtReplace the TensorFlow dependency with tflite-runtime, adjusting the version as necessary. You may also add any other dependencies you require, such as the requests library, and adjust the version of numpy if needed.Example content for requirements.txt:pillow==11.1.0
+### Modify Files Inside the "app" Folder
 
+**requirements.txt**
+
+Replace the TensorFlow dependency with tflite-runtime, and add any other dependencies. Example content:
+
+```
+pillow==11.1.0
 requests==2.32.3
-
 numpy==1.26.4
-
 tflite-runtime==2.7.0
+```
 
-DockerfileModify the Dockerfile to copy the necessary files for your deployment after running pip install. In the default file created, it assumes that the Lambda function is in app.py and the model is inside the app/models folder. However, in this example, we assume the model is at the same level as the Lambda function.Here's an example of an updated Dockerfile:FROM public.ecr.aws/lambda/python:3.9
+**Dockerfile**
+
+Modify the Dockerfile to copy the necessary files for deployment. Example Dockerfile:
+
+```dockerfile
+FROM public.ecr.aws/lambda/python:3.9
 
 COPY requirements.txt ./
 
 RUN python3.9 -m pip install -r requirements.txt -t .
 
 COPY app.py ./
-
 COPY class_indices.json ./
-
 COPY classification_model.tflite ./
 
 ENV MODEL_PATH ./classification_model.tflite
-
 ENV CLASSES_PATH ./class_indices.json
 
 CMD ["app.lambda_handler"]
+```
 
-Build the Lambda FunctionFrom the SAM project directory, build the Lambda function by running:sam build --build-dir .aws-build
+### Build the Lambda Function
 
-After completing this step, the Docker image will be created. You can verify this by running:docker images
+From the SAM project directory, build the Lambda function:
 
-Test the Lambda Function LocallyTo test the image, you can run a container based on it and send a request to the service using a script, as we learned in class, or you can use SAM CLI as follows:
+```bash
+sam build --build-dir .aws-build
+```
 
-Modify the app/event/event.json file to include the JSON input expected by your Lambda function. For example:{
+After building, verify the Docker image by running:
 
-"url": "[bit.ly](http://bit.ly/mlbookcamp-pants")
+```bash
+docker images
+```
 
+### Test the Lambda Function Locally
+
+Modify the `app/event/event.json` file to include the expected JSON input:
+
+```json
+{
+  "url": "http://bit.ly/mlbookcamp-pants"
 }
+```
 
-From the SAM project folder, run the following command:sam local invoke -t .aws-build/template.yaml -e events/event.json
+Run the following command from the SAM project folder:
 
-This will start a container, send the event, and display the response. The output will also show the name of the Docker image used for the container.
+```bash
+sam local invoke -t .aws-build/template.yaml -e events/event.json
+```
 
-Deploy the image
+This command will start a container, send the event, and display the response. The Docker image name used for the container will be shown.
 
-To deploy the image you can follow the instructions learned at classes or you can use this command and follow the prompt
+### Deploy the Image
 
+To deploy the image, follow classroom instructions or use:
+
+```bash
 sam deploy --guided
+```
 
-(AWS SAM takes care of creating and ECR repository)
-
-(added by Karina)
-
+AWS SAM will handle creating an ECR repository.

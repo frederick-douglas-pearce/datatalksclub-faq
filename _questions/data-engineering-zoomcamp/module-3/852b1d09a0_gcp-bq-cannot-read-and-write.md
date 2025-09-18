@@ -15,19 +15,18 @@ question: 'GCP BQ - Cannot read and write in different locations: source: asia-s
 sort_order: 2190
 ---
 
-Solution: This problem arises if your gcs and bigquery storage is in different regions.
+Solution: This problem arises if your GCS and BigQuery storage are in different regions.
 
 One potential way to solve it:
 
-Go to your google cloud bucket and check the region in field named “Location”
+- Go to your Google Cloud bucket and check the region in the field named "Location."
 
-<{IMAGE:image_1}>
+  <{IMAGE:image_1}>
 
-Now in bigquery, click on three dot icon near your project name and select create dataset.
+- In BigQuery, click on the three-dot icon near your project name and select "Create dataset."
 
-<{IMAGE:image_2}>
+  <{IMAGE:image_2}>
 
-In region filed choose the same regions as you saw in your google cloud bucket
+- In the region field, choose the same region as your Google Cloud bucket.
 
-<{IMAGE:image_3}>
-
+  <{IMAGE:image_3}>

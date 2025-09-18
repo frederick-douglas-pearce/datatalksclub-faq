@@ -1,28 +1,52 @@
 ---
 id: 73c8de600c
-question: WSL - Permissions too open at Windows
+question: 'WSL: Permissions too open at Windows'
 sort_order: 1040
 ---
 
-Issue when trying to run the GPC VM through SSH through WSL2,  probably because WSL2 isn’t looking for .ssh keys in the correct folder. My case I was trying to run this command in the terminal and getting an error
 
-PC:/mnt/c/Users/User/.ssh$ ssh -i gpc [username]@[my external IP]
+Issue when trying to run the GPC VM through SSH via WSL2, likely because WSL2 isn’t looking for .ssh keys in the correct folder. The command attempted:
 
-You can try to use sudo before the command
+```bash
+ssh -i gpc [username]@[my external IP]
+```
 
-Sudo .ssh$ ssh -i gpc [username]@[my external IP]
+### Solutions
 
-You can also try to cd to your folder and change the permissions for the private key SSH file.
+1. **Use `sudo` Command**
+   
+   Try using `sudo` before executing the command:
+   
+   ```bash
+   sudo ssh -i gpc [username]@[my external IP]
+   ```
 
-chmod 600 gpc
+2. **Change Permissions**
+   
+   Navigate to your folder and change the permissions for the private key SSH file:
+   
+   ```bash
+   chmod 600 gpc
+   ```
 
-If that doesn’t work, create a .ssh folder in the home diretory of WSL2 and copy the content of windows .ssh folder to that new folder.
-
-cd ~
-
-mkdir .ssh
-
-cp -r /mnt/c/Users/YourUsername/.ssh/* ~/.ssh/
-
-You might need to adjust the permissions of the files and folders in the .ssh directory.
-
+3. **Create a `.ssh` Folder in WSL2**
+   
+   - Navigate to your home directory:
+     
+     ```bash
+     cd ~
+     ```
+   
+   - Create a `.ssh` folder:
+     
+     ```bash
+     mkdir .ssh
+     ```
+   
+   - Copy the content from the Windows `.ssh` folder to the newly created `.ssh` folder:
+     
+     ```bash
+     cp -r /mnt/c/Users/YourUsername/.ssh/* ~/.ssh/
+     ```
+   
+   - Adjust the permissions of the files and folders in the `.ssh` directory if necessary.

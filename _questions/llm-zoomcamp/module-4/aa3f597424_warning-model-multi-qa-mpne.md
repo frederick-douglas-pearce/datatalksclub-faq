@@ -5,5 +5,8 @@ question: 'Warning: ''model "multi-qa-mpnet-base-dot-v1" was made on sentence tr
 sort_order: 480
 ---
 
-Upgrade `sentence-transformers` to v3.0.0>= e.x pip install sentence-transformers>=3.0.0 to avoid the warnings
+To suppress the warning, upgrade `sentence-transformers` to version 3.0.0 or higher. You can do this by running the following command:
 
+```bash
+pip install sentence-transformers>=3.0.0
+```

@@ -4,9 +4,19 @@ question: 'Python Kafka: Installing dependencies for python3 06-streaming/python
 sort_order: 4110
 ---
 
-confluent-kafka: `pip install confluent-kafka` or `conda install conda-forge::python-confluent-kafka`
+To install the necessary dependencies for running `producer.py` in the `avro_example` directory, use the following commands:
 
-fastavro: pip install fastavro
+- Install `confluent-kafka`:
+  - Using pip:
+  ```bash
+  pip install confluent-kafka
+  ```
+  - Using conda:
+  ```bash
+  conda install conda-forge::python-confluent-kafka
+  ```
 
-Abhirup Ghosh
-
+- Install `fastavro`:
+  ```bash
+  pip install fastavro
+  ```

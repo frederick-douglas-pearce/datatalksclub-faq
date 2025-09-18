@@ -4,7 +4,6 @@ question: Dependence of the F-score on class imbalance
 sort_order: 1670
 ---
 
-Precision-recall curve, and thus the score, explicitly depends on the ratio  of positive to negative test cases. This means that comparison of the F-score across different problems with differing class ratios is problematic. One way to address this issue is to use a standard class ratio  when making such comparisons.
+Precision-recall curves, and thus the F-score, explicitly depend on the ratio of positive to negative test cases. This means that comparing the F-score across different problems with differing class ratios can be problematic. 
 
-(George Chizhmak)
-
+One way to address this issue is to use a standard class ratio when making such comparisons.

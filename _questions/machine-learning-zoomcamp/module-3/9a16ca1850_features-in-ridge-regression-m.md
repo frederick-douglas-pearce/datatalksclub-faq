@@ -4,13 +4,10 @@ question: Features in Ridge Regression Model
 sort_order: 1240
 ---
 
-Make sure that the features used in ridge regression model are only NUMERICAL ones not categorical.
+Make sure that the features used in a Ridge Regression model are only numerical, not categorical.
 
-Drop all categorical features first before proceeding.
+- Drop all categorical features first before proceeding.
 
-(Aileah Gotladera)
+While it's true that Ridge Regression accepts only numerical values, categorical ones can be useful for your model. You need to transform them using one-hot encoding before training the model.
 
-While it is True that ridge regression accepts only numerical values, the categorical ones can be useful for your model. You have to transform them using one-hot encoding before training the model. To avoid the error of non convergence, put sparse=True when doing so.
-
-(Erjon)
-
+- To avoid the error of non-convergence, set `sparse=True` when performing one-hot encoding.

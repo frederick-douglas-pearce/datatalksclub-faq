@@ -11,9 +11,8 @@ question: Region Mismatch in DBT and BigQuery
 sort_order: 3240
 ---
 
-If you are using the datasets copied into BigQuery from BigQuery public datasets, the region will be set as US by default and hence it is much easier to set your dbt profile location as US while transforming the tables and views. You can change the location as follows:
+If you are using the datasets copied into BigQuery from BigQuery public datasets, the region will be set as `US` by default. It is much easier to set your dbt profile location as `US` while transforming the tables and views. You can change the location as follows:
 
 <{IMAGE:image_1}>
 
 <{IMAGE:image_2}>
-

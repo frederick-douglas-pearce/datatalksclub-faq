@@ -1,14 +1,13 @@
 ---
 id: 9610a0de1d
-question: How  to Disable/avoid Warnings in Jupyter Notebooks
+question: How to Disable/avoid Warnings in Jupyter Notebooks
 sort_order: 1160
 ---
 
-The warnings on the jupyter notebooks can be disabled/ avoided with the following comments:
+The warnings in Jupyter notebooks can be disabled or avoided with the following commands:
 
-Import warnings
+```python
+import warnings
 
-warnings.filterwarnings(“ignore”)
-
-Krishna Anand
-
+warnings.filterwarnings("ignore")
+```

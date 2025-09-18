@@ -10,23 +10,19 @@ question: How set Pandas to show entire text content in a column. Useful to view
 sort_order: 510
 ---
 
-By default, in the dataframe visualization, Pandas truncate the text content in a column to 50 characters. In order to view the entire explanation given by the judge llm for a NON RELEVANT answer, as in figure:
+By default, Pandas truncates text content in a column to 50 characters. To view the entire explanation provided by the judge LLM for a non-relevant answer, use the following instruction:
+
+```python
+pd.set_option('display.max_colwidth', None)
+```
+
+### Explanation:
+
+- **Option:** `display.max_colwidth`
+- **Type:** `int` or `None`
+- **Description:** Sets the maximum width in characters of a column in the representation of a pandas data structure. When a column overflows, a "..." placeholder is used in the output. Setting it to 'None' allows unlimited width.
+- **Default:** 50
+
+Refer to the [official documentation](https://pandas.pydata.org/docs/user_guide/options.html) for more details.
 
 <{IMAGE:image_1}>
-
-The instruction to show the results must be preceded by:
-
-pd.set_option('display.max_colwidth', None)
-
-Here are the specs for the display_max_colwidth option, as describide in the [official docs](https://pandas.pydata.org/docs/user_guide/options.html):
-
-display.max_colwidth : int or None
-
-The maximum width in characters of a column in the repr of
-
-a pandas data structure. When the column overflows, a "..."
-
-placeholder is embedded in the output. A 'None' value means unlimited.
-
-[default: 50] [currently: 50]
-

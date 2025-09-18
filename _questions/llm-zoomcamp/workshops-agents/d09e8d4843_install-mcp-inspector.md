@@ -4,9 +4,10 @@ question: Install MCP Inspector
 sort_order: 870
 ---
 
-1.     Node should be installed
+1. Ensure Node.js is installed.
 
-2.     To install the MCP Inspector, simply run the following command in your terminal:
+2. To install the MCP Inspector, run the following command in your terminal:
 
-npm i @modelcontextprotocol/inspector
-
+   ```bash
+   npm i @modelcontextprotocol/inspector
+   ```

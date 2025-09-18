@@ -4,19 +4,16 @@ question: What other alternatives to ElasticSearch are there?
 sort_order: 670
 ---
 
-You could use some of this free alternatives for elastic search
+You could use some of these free alternatives to Elasticsearch:
 
-[Milvus](https://milvus.io/): an open source library that has the same functionalities that has elastic
+- [Milvus](https://milvus.io/): An open-source library with similar functionalities to Elasticsearch.
 
-[OpenSearch](https://opensearch.org/): also a free open source library that has the same functionalities as elastic
+- [OpenSearch](https://opensearch.org/): Another free open-source library that provides the same functionalities as Elasticsearch.
 
-Let's imagine, today I start using multi-qa-distilbert-cos-v1  ([huggingface.co](https://huggingface.co/sentence-transformers/multi-qa-distilbert-cos-v)1).
+### Additional Considerations:
 
-I create embeddings and index them.
+If you start using `multi-qa-distilbert-cos-v1` from [huggingface.co](https://huggingface.co/sentence-transformers/multi-qa-distilbert-cos-v1) and create embeddings to index them, consider the following:
 
-Tomorrow, the author of the model decides to update it because of some reason.
+- If the model is updated by the author, the indexed embeddings may become incompatible, requiring re-indexing.
 
-What happens with all indexed embeddings? Do they become incompatible and I will need to re-index everything?
-
-There is an option to save the model locally also. This way even if the cloud model changes your code should work.
-
+- To prevent this, save the model locally. This ensures that your code continues to work even if the cloud model changes.

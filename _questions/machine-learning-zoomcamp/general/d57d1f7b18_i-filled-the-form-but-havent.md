@@ -6,9 +6,7 @@ sort_order: 80
 
 Normally, you'd receive the email shortly after you signed up.
 
-If you haven’t, check your promotions tab in Gmail as well as spam.
+- Check your promotions tab in Gmail as well as spam, as the email might have been filtered there.
+- If you unsubscribed from our newsletter, you won't receive course-related updates.
 
-If you unsubscribed from our newsletter, you won't get course related updates too.
-
-But don't worry, it’s not a problem. To make sure you don’t miss anything, join the [#course -ml-zoomcamp channel](https://app.slack.com/client/T01ATQK62F8/C0288NJ5XSA) in Slack and [our telegram channel with announcements](https://t.me/mlzoomcamp). This is enough to follow the course.
-
+Don't worry, it’s not a problem. To make sure you don’t miss anything, join the [#course-ml-zoomcamp channel in Slack](https://app.slack.com/client/T01ATQK62F8/C0288NJ5XSA) and [our telegram channel with announcements](https://t.me/mlzoomcamp). This is sufficient to follow the course.

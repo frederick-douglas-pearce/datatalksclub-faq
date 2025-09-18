@@ -4,23 +4,30 @@ question: How to spark standalone cluster is run on windows OS
 sort_order: 3700
 ---
 
-Change the working directory to the spark directory:
+- Change the working directory to the Spark directory:
 
-if you have setup up your SPARK_HOME variable, use the following;
+  - If you have set up your `SPARK_HOME` variable, use the following:
+    
+    ```bash
+    cd %SPARK_HOME%
+    ```
 
-cd %SPARK_HOME%
+  - If not, use the following:
 
-if not, use the following;
+    ```bash
+    cd <path to spark installation>
+    ```
 
-cd <path to spark installation>
+- Creating a Local Spark Cluster:
 
-Creating a Local Spark Cluster
-
-To start Spark Master:
-
-bin\spark-class org.apache.spark.deploy.master.Master --host localhost
-
-Starting up a cluster:
-
-bin\spark-class org.apache.spark.deploy.worker.Worker spark://localhost:7077 --host localhost
-
+  1. To start Spark Master:
+  
+     ```bash
+     bin\spark-class org.apache.spark.deploy.master.Master --host localhost
+     ```
+  
+  2. Starting up a cluster:
+     
+     ```bash
+     bin\spark-class org.apache.spark.deploy.worker.Worker spark://localhost:7077 --host localhost
+     ```

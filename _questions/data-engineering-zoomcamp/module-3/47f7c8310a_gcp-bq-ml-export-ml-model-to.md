@@ -9,23 +9,30 @@ question: GCP BQ ML - Export ML model to make predictions does not work for MacB
 sort_order: 2310
 ---
 
-Solution: proceed with setting up serving_dir on your computer as in the extract_model.md file. Then instead of
+**Solution:**
 
+Proceed with setting up `serving_dir` on your computer as described in the `extract_model.md` file. Then, instead of using:
+
+```bash
 docker pull tensorflow/serving
+```
 
-use
+use:
 
+```bash
 docker pull emacski/tensorflow-serving
+```
 
-Then
+Then run:
 
+```bash
 docker run -p 8500:8500 -p 8501:8501 --mount type=bind,source=`pwd`/serving_dir/tip_model,target=/models/tip_model -e MODEL_NAME=tip_model -t emacski/tensorflow-serving
+```
 
-Then run the curl command as written, and you should get a prediction.
+After that, run the `curl` command as instructed, and you should get a prediction.
 
-Or new since Oct 2024:
+**Or new since Oct 2024:**
 
 Beta release of Docker VMM - the more performant alternative to Apple Virtualization Framework on macOS (requires Apple Silicon and macOS 12.5 or later). [https://docs.docker.com/desktop/features/vmm/](https://docs.docker.com/desktop/features/vmm/)
 
 <{IMAGE:image_1}>
-

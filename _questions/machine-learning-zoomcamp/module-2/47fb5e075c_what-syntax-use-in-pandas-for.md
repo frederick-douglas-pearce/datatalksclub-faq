@@ -9,11 +9,7 @@ question: What syntax use in Pandas for multiple conditions using logical AND an
 sort_order: 910
 ---
 
-If you would like to use multiple conditions as an example below you will get the error. The correct syntax for OR is |, and for AND is &
+If you would like to use multiple conditions as an example below you will get the error. The correct syntax for OR is `|`, and for AND is `&`.
 
 <{IMAGE:image_1}>
-
-(Olga Rudakova)
-
-–
 

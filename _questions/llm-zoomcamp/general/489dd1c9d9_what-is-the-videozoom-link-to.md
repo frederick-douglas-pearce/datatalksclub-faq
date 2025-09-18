@@ -7,7 +7,6 @@ sort_order: 30
 
 The zoom link is only published to instructors/presenters/TAs.
 
-Students participate via Youtube Live and submit questions to Slido (link would be pinned in the chat when Alexey goes Live). The video URL should be posted in the [announcements channel on Telegram & Slack](https://t.me/dezoomcamp) before it begins. Also, you will see it live on the DataTalksClub [YouTube Channel](https://www.youtube.com/c/DataTalksClub).
+Students participate via YouTube Live and submit questions to Slido (link is pinned in the chat when live). The video URL should be posted in the [announcements channel on Telegram & Slack](https://t.me/dezoomcamp) before it begins. You can also watch live on the DataTalksClub [YouTube Channel](https://www.youtube.com/c/DataTalksClub).
 
-Don’t post your questions in chat as it would be off-screen before the instructors/moderators have a chance to answer it if the room is very active.
-
+Don’t post questions in chat as they may be missed if the room is very active.

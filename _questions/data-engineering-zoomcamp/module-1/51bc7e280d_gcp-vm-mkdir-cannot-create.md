@@ -4,17 +4,30 @@ question: 'GCP VM - mkdir: cannot create directory ‘.ssh’: Permission denied
 sort_order: 1550
 ---
 
-I am trying to create a directory but it won't let me do it
+If you encounter an error while trying to create a directory:
 
+```bash
 User1@DESKTOP-PD6UM8A MINGW64 /
 
 $ mkdir .ssh
 
 mkdir: cannot create directory ‘.ssh’: Permission denied
+```
 
-You should do it in your home directory. Should be your home (~)
+This error occurs because you are attempting to create the directory in the root folder (`/`).
 
-Local. But it seems you're trying to do it in the root folder (/). Should be your home (~)
+To resolve this, create the directory in your home directory instead. Use the following steps:
 
-[Link to Video 1.4.1](https://www.youtube.com/watch?v=ae-CV2KfoN0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+1. Navigate to your home directory using:
+   
+   ```bash
+   cd ~
+   ```
 
+2. Create the `.ssh` directory:
+   
+   ```bash
+   mkdir .ssh
+   ```
+
+For further guidance, watch [this video](https://www.youtube.com/watch?v=ae-CV2KfoN0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb).

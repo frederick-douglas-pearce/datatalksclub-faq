@@ -5,5 +5,4 @@ question: 'ElasticSearch: ERROR: Elasticsearch.index() got an unexpected keyword
 sort_order: 220
 ---
 
-Instead of document as used in the course video, use doc
-
+Instead of `document` as used in the course video, use `doc`.

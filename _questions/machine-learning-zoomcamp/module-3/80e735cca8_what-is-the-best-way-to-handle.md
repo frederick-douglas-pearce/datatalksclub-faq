@@ -7,11 +7,7 @@ sort_order: 980
 
 You can handle missing values by:
 
-Imputing the missing values with the mean, median, or mode.
-
-Using algorithms that support missing values inherently (e.g., some tree-based methods).
-
-Removing rows or columns with missing data, depending on the extent of missingness. Feature engineering might also help derive new features from incomplete data​
-
-(added by David Peterson)
-
+- Imputing the missing values with the mean, median, or mode.
+- Using algorithms that support missing values inherently (e.g., some tree-based methods).
+- Removing rows or columns with missing data, depending on the extent of missingness.
+- Utilizing feature engineering to derive new features from incomplete data.

@@ -1,8 +1,7 @@
 ---
 id: 8b0214d089
-question: Environment - Roadblock for Windows users in modules with *.sh (shell scripts).
+question: 'Environment: Roadblock for Windows users in modules with *.sh (shell scripts)'
 sort_order: 390
 ---
 
-Later modules (module-05 & RisingWave workshop) use shell scripts in *.sh files and most Windows users not using WSL would hit a wall and cannot continue, even in git bash or MINGW64. This is why WSL environment setup is recommended from the start.
-
+Later modules (module-05 & RisingWave workshop) use shell scripts in *.sh files. Most Windows users not using WSL will encounter issues and may not be able to continue, even in Git Bash or MINGW64. It is recommended to set up a WSL environment from the start.

@@ -9,13 +9,21 @@ question: 'SSH error in VS Code - “Could not establish connection to "de-zoomc
 sort_order: 1830
 ---
 
-If you are using Windows, try copying the .ssh folder from the Linux file path to Windows. In the config file, use
+If you are using Windows, try the following steps to resolve the error:
 
-IdentityFile C:\Users\<username>\.ssh\gcp
+1. Copy the `.ssh` folder from the Linux file path to Windows.
+2. In the `config` file, use:
+   
+   ```bash
+   IdentityFile C:\Users\<username>\.ssh\gcp
+   ```
+   
+   Instead of:
+   
+   ```bash
+   IdentityFile ~/.ssh/gcp
+   ```
 
-Instead of IdentityFile ~/.ssh/gcp
+3. Ensure the private key file located at `C:\Users\<username>\.ssh\gcp` has an extra line at the end:
 
-Another reason: The private key in its file at the local path C:\Users\<username>\.ssh\gcp needs an extra line in the end:
-
-<{IMAGE:image_1}>
-
+   <{IMAGE:image_1}>

@@ -5,17 +5,13 @@ question: Environment - Should I use my local machine, GCP, or GitHub Codespaces
 sort_order: 230
 ---
 
-You can set it up on your laptop or PC if you prefer to work locally from your laptop or PC.
+You can set it up on your laptop or PC if you prefer to work locally. However, Windows users might face some challenges.
 
-You might face some challenges, especially for Windows users.
+If you prefer to work on the local machine, you can start with the Week 1 Introduction to Docker.
 
-If you prefer to work on the local machine, you may start with the week 1 Introduction to Docker and follow through.
+Alternatively, if you prefer to set up a virtual machine, consider the following:
 
-However, if you prefer to set up a virtual machine, you may start with these first:
+- **Using GitHub Codespaces**
+- **Setting up the environment on a cloud VM**: Refer to [this video](https://www.youtube.com/watch?v=ae-CV2KfoN0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb) for guidance.
 
-Using GitHub Codespaces
-
-[Setting up the environment on a cloud VM](https://www.youtube.com/watch?v=ae-CV2KfoN0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb) codespace
-
-I decided to work on a virtual machine because I have different laptops & PCs for my home & office, so I can work on this boot camp virtually anywhere.
-
+Working on a virtual machine is beneficial if you have different devices for home and office, allowing you to work virtually anywhere.

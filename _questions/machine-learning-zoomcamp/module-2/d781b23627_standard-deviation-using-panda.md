@@ -4,11 +4,16 @@ question: Standard deviation using Pandas built in Function
 sort_order: 880
 ---
 
-In pandas you can use built in Pandas function names std() to get standard deviation. For example
+In pandas, you can use the built-in function `std()` to calculate the standard deviation. For example:
 
-df['column_name'].std() to get standard deviation of that column.
+- To get the standard deviation of a single column:
 
-df[['column_1', 'column_2']].std() to get standard deviation of multiple columns.
+  ```python
+  df['column_name'].std()
+  ```
 
-(Khurram Majeed)
+- To get the standard deviation of multiple columns:
 
+  ```python
+  df[['column_1', 'column_2']].std()
+  ```

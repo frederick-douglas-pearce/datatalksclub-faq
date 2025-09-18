@@ -5,15 +5,19 @@ question: 'ValueError: This solver needs samples of at least 2 classes in the da
 sort_order: 1450
 ---
 
-Solution description: duplicating the
+This error indicates that your dataset's `churn` column only contains the class `0`, but at least two classes are required.
 
-df.churn = (df.churn == 'yes').astype(int)
+### Solution
+1. Check your data processing steps where binary conversion might be applied. Specifically, ensure that the line:
+   
+   ```python
+   df.churn = (df.churn == 'yes').astype(int)
+   ```
+   
+   is operating correctly. Verify that there are indeed records where `churn` should evaluate to `1` (i.e., cases where `churn` equals `'yes'`).
 
-This is causing you to have only 0's in your churn column. In fact, match with the error you are getting:  ValueError: This solver needs samples of at least 2 classes in the data, but the data contains only one class: 0.
+2. If all values are `0`, make sure your original dataset and preprocessing steps are correctly implemented to represent cases with both classes (`0` and `1`).
 
-It is telling us that it only contains 0's.
+3. Review data preprocessing steps and confirm the filtering, transformation, or data importing steps do not inadvertently drop or misclassify the non-zero class records.
 
-Delete one of the below cells and you will get the accuracy
-
-Humberto Rodriguez
-
+This should resolve the error by ensuring your data contains at least one record for each class.

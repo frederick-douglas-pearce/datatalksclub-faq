@@ -1,28 +1,27 @@
 ---
 id: 748ffe7992
-question: waitress-serve shows Malformed application
+question: 'Waitress: waitress-serve shows Malformed application'
 sort_order: 2190
 ---
 
-Question:
+When running the command:
 
-When running
-
+```bash
 pipenv run waitress-serve --listen=localhost:9696 q4-predict:app
+```
 
-I get the following:
+You may encounter the following error message:
 
+```
 There was an exception (ValueError) importing your module.
 
 It had these arguments:
 
 1. Malformed application 'q4-predict:app'
+```
 
-Answer:
+### Solution
 
-Waitress doesn’t accept a dash in the python file name.
+Waitress doesn’t accept a dash in the Python file name.
 
-The solution is to rename the file replacing a dash with something else for instance with an underscore eg q4_predict.py
-
-Added by Alex Litvinov
-
+To resolve this, rename the file by replacing the dash with an underscore, for example, use `q4_predict.py`. 

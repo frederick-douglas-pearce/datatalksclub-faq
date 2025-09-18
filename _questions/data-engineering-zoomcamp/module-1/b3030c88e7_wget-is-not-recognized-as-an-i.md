@@ -4,39 +4,61 @@ question: wget is not recognized as an internal or external command
 sort_order: 520
 ---
 
-“wget is not recognized as an internal or external command”, you need to install it.
+If you encounter the error "wget is not recognized as an internal or external command," wget needs to be installed.
 
-“​​No such file or directory: 'output.csv.gz'”, may also caused by wget not recognized
+This error may also cause messages like "No such file or directory: 'output.csv.gz'."
 
-. On Ubuntu, run:
+### Installation Instructions:
 
-$ sudo apt-get install wget
+- **On Ubuntu:**
 
-On MacOS, the easiest way to install wget is to use [Brew](https://brew.sh/):
+  ```bash
+  sudo apt-get install wget
+  ```
 
-$ brew install wget
+- **On macOS:**
 
-On Windows, the easiest way to install wget is to use [Chocolatey](https://chocolatey.org/):
+  Use [Homebrew](https://brew.sh/):
 
-$ choco install wgetOr you can download a binary ([gnuwin32.sourceforge.net](https://gnuwin32.sourceforge.net/packages/wget.ht)m) and put it to any location in your PATH (e.g. C:/tools/)
+  ```bash
+  brew install wget
+  ```
 
-Also, you can following this step to install Wget on MS Windows
+- **On Windows:**
 
-* Download the latest wget binary for windows from [eternallybored] ([eternallybored.org](https://eternallybored.org/misc/wget)/) (they are available as a zip with documentation, or just an exe)
+  Use [Chocolatey](https://chocolatey.org/):
 
-* If you downloaded the zip, extract all (if windows built in zip utility gives an error, use [7-zip] ([7-zip.org](https://7-zip.org)/)).
+  ```bash
+  choco install wget
+  ```
 
-* Rename the file `wget64.exe` to `wget.exe` if necessary.
+  Alternatively, download a binary from [GnuWin32](https://gnuwin32.sourceforge.net/packages/wget.htm) and place it in a location that is in your PATH (e.g., `C:/tools/`).
 
-* Move wget.exe to your `Git\mingw64\bin\`.
+#### Alternative Windows Installation:
 
-Alternatively, you can use a Python wget library, but instead of simply using “wget” you’ll need to use python -m wget
+1. Download the latest wget binary for Windows from [eternallybored](https://eternallybored.org/misc/wget/).
+2. If you downloaded the zip, extract all files (use [7-zip](https://7-zip.org/) if the built-in utility gives an error).
+3. Rename the file `wget64.exe` to `wget.exe` if necessary.
+4. Move `wget.exe` to your `Git\mingw64\bin\` directory.
 
-You need to install it with pip first:
+#### Python Alternative:
 
-pip install wget
+- Use the Python wget library:
 
-Alternatively, you can just paste the file URL into your web browser and download the file normally that way. You’ll want to move the resulting file into your working directory.
+  First, install using pip:
 
-Also recommended a look at the python library requests for the loading gz file  [https://pypi.org/project/requests](https://pypi.org/project/requests/)
+  ```bash
+  pip install wget
+  ```
 
+- Use it with Python:
+
+  ```bash
+  python -m wget
+  ```
+
+You can also paste the file URL into your web browser to download normally, then move the file to your working directory.
+
+### Additional Recommendation:
+
+Consider using the Python library [requests](https://pypi.org/project/requests) for loading gz files.

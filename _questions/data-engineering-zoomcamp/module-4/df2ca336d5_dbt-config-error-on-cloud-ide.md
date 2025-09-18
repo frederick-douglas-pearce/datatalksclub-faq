@@ -4,21 +4,21 @@ question: 'DBT-Config ERROR on CLOUD IDE: No dbt_project.yml found at expected p
 sort_order: 2460
 ---
 
-(Lower left Corner after setting all connections to BQ and Github)
+### Error Details
 
-14:48:39 Running dbt...
-
-14:48:39 Encountered an error:
-
-Runtime Error
-
+```
 No dbt_project.yml found at expected path /usr/src/develop/user-70471823426120/environment-70471823422561/repository-70471823410839/dbt_project.yml
+```
 
-Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+### Solution Steps
 
-Solution: Initialize a project through UI.
+1. **Verify Packages**:
+   - Confirm that every entry in `packages.yml` (and their transitive dependencies) includes a `dbt_project.yml` file.
 
-Importing git repo of an existing dbt project:
+2. **Initialize Project**:
+   - Use the UI to initialize a new project.
 
-Please read through these details for doing it: [https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url](https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url)
-
+3. **Import Git Repo**:
+   - For importing a Git repository of an existing dbt project, follow the instructions available at:
+   
+     [Import a project by Git URL](https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url)

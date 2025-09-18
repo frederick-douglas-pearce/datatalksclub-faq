@@ -4,33 +4,27 @@ question: CREATE TABLE has columns with duplicate name locationid.
 sort_order: 2950
 ---
 
-This error could result if you are using some select * query without mentioning the name of table for ex:
+This error could result if you are using a `SELECT *` query without specifying the table names.
 
-with dim_zones as (
+Example:
 
-select * from `engaged-cosine-374921`.`dbt_victoria_mola`.`dim_zones`
-
-where borough != 'Unknown'
-
+```sql
+WITH dim_zones AS (
+  SELECT * FROM `engaged-cosine-374921`.`dbt_victoria_mola`.`dim_zones`
+  WHERE borough != 'Unknown'
 ),
-
-fhv as (
-
-select * from `engaged-cosine-374921`.`dbt_victoria_mola`.`stg_fhv_tripdata`
-
+fhv AS (
+  SELECT * FROM `engaged-cosine-374921`.`dbt_victoria_mola`.`stg_fhv_tripdata`
 )
+SELECT * FROM fhv
+INNER JOIN dim_zones AS pickup_zone
+ON fhv.PUlocationID = pickup_zone.locationid
+INNER JOIN dim_zones AS dropoff_zone
+ON fhv.DOlocationID = dropoff_zone.locationid;
+```
 
-select * from fhv
+To resolve, replace with:
 
-inner join dim_zones as pickup_zone
-
-on fhv.PUlocationID = pickup_zone.locationid
-
-inner join dim_zones as dropoff_zone
-
-on fhv.DOlocationID = dropoff_zone.locationid
-
-);
-
-To resolve just replace use : select fhv.* from fhv
-
+```sql
+SELECT fhv.* FROM fhv
+```

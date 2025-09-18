@@ -4,15 +4,12 @@ question: GCP BQ - Native tables vs External tables in BigQuery?
 sort_order: 2270
 ---
 
-Native tables are tables where the data is stored in BigQuery.  External tables store the data outside BigQuery, with BigQuery storing metadata about that external table.
+Native tables are tables where the data is stored directly in BigQuery. In contrast, external tables store the data outside BigQuery, with BigQuery storing metadata about that external table.
 
-External tables: They are not stored directly in big query tables but pulled in from a data lake such as Google Cloud Storage or S3.
-
-Materialized table: Copy of this external table. Now the data is stored in the bigquery table and consumes the space.
+- **External tables:** These tables are not stored directly in BigQuery but are pulled in from a data lake such as Google Cloud Storage or AWS S3.
+- **Materialized table:** This is a copy of an external table with data stored in BigQuery, consuming storage space.
 
 Resources:
 
-[https://cloud.google.com/bigquery/docs/external-tables](https://cloud.google.com/bigquery/docs/external-tables)
-
-[https://cloud.google.com/bigquery/docs/tables-intro](https://cloud.google.com/bigquery/docs/tables-intro)
-
+- [External Tables Documentation](https://cloud.google.com/bigquery/docs/external-tables)
+- [BigQuery Tables Introduction](https://cloud.google.com/bigquery/docs/tables-intro)

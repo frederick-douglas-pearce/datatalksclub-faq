@@ -5,21 +5,35 @@ question: How to download CSV data via Jupyter NB and the Kaggle API, for one se
 sort_order: 1770
 ---
 
-You’ll need a kaggle account
+To download CSV data via Jupyter Notebook using the Kaggle API, follow these steps:
 
-Go to settings, API and click `Create New Token`. This will download a `kaggle.json` file which contains your `username` and `key` information
+1. **Set up a Kaggle account**:
+   - Go to your Kaggle account settings, navigate to the API section, and click `Create New Token`. This will download a `kaggle.json` file containing your `username` and `key`.
 
-In the same location as your Jupyter NB, place the `kaggle.json` file
+2. **Place the `kaggle.json` file**:
+   - Ensure the `kaggle.json` file is in the same directory as your Jupyter Notebook.
 
-Run `!chmod 600 <ENTER YOUR FILEPATH>/kaggle.json`
+3. **Set permissions for the `kaggle.json` file**:
+   ```bash
+   !chmod 600 <ENTER YOUR FILEPATH>/kaggle.json
+   ```
 
-Make sure to import os via `import os` and then run:
+4. **Configure the environment**:
+   - Import the `os` module and set the Kaggle config directory:
+   ```python
+   import os
+   os.environ['KAGGLE_CONFIG_DIR'] = '<STRING OF YOUR FILE PATH>'
+   ```
 
-os.environ['KAGGLE_CONFIG_DIR'] = <STRING OF YOUR FILE PATH>
+5. **Download the dataset**:
+   - Use the Kaggle API to download your desired dataset:
+   ```bash
+   !kaggle datasets download -d kapturovalexander/bank-credit-scoring
+   ```
 
-Finally you can run directly in your NB: `!kaggle datasets download -d kapturovalexander/bank-credit-scoring`
+6. **Unzip and access the CSV file**:
+   ```bash
+   !unzip -o bank-credit-scoring.zip
+   ```
 
-And then you can unzip the file and access the CSV via: `!unzip -o bank-credit-scoring.zip`
-
->>> Michael Fronda <<<
-
+Follow these steps to seamlessly integrate Kaggle data retrieval into your Jupyter workflow.

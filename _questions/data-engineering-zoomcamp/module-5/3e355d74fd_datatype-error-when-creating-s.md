@@ -4,11 +4,14 @@ question: DataType error when creating Spark DataFrame with a specified schema?
 sort_order: 3570
 ---
 
-Probably you’ll encounter this if you followed the video ‘5.3.1 - First Look at Spark/PySpark’ and used the parquet file from the TLC website (csv was used in the video).
+When defining the schema for a Spark DataFrame, you might encounter a data type error if you're using a Parquet file with the schema definition from the TLC example. The error occurs because the `PULocationID` and `DOLocationID` columns are defined as `IntegerType`, but the Parquet file uses `INT64`.
 
-When defining the schema, the PULocation and DOLocationID are defined as IntegerType. This will cause an error because the Parquet file is INT64 and you’ll get an error like:
+You'll get an error like:
 
+```plaintext
 Parquet column cannot be converted in file [...] Column [...] Expected: int, Found: INT64
+```
 
-Change the schema definition from IntegerType to LongType and it should work
+To resolve this issue:
 
+- Change the schema definition from `IntegerType` to `LongType`. This adjustment should align the expected and actual data types, allowing the DataFrame to be created successfully.

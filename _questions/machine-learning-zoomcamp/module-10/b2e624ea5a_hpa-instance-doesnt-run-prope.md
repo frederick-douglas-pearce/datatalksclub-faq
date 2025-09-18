@@ -4,31 +4,43 @@ question: HPA instance doesn’t run properly
 sort_order: 3470
 ---
 
-In case the HPA instance does not run correctly even after installing the latest version of Metrics Server from the components.yaml manifest with:
+If the HPA instance does not run correctly even after installing the latest version of Metrics Server from the `components.yaml` manifest with:
 
->>kubectl apply -f [GitHub](https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml)
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
 
-And the targets still appear as <unknown>
+And the targets still appear as `<unknown>`, follow these steps:
 
-Run >>kubectl edit deploy -n kube-system metrics-server
+1. Run the following command to edit the deployment:
+   
+   ```bash
+   kubectl edit deploy -n kube-system metrics-server
+   ```
+   
+2. Search for the line:
+   
+   ```yaml
+   args:
+   - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+   ```
+   
+3. Add the following line in the middle:
+   
+   ```yaml
+   - --kubelet-insecure-tls
+   ```
+   
+   So it looks like this:
 
-And search for this line:
+   ```yaml
+   args:
+   - --kubelet-insecure-tls
+   - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+   ```
 
-args:
+4. Save the changes and run:
 
-- --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-
-Add this line in the middle:  - --kubelet-insecure-tls
-
-So that it stays like this:
-
-args:
-
-- --kubelet-insecure-tls
-
-- --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-
-Save and run again >>kubectl get hpa
-
-Added by Marilina Orihuela
-
+   ```bash
+   kubectl get hpa
+   ```
