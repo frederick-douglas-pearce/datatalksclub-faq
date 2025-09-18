@@ -5,7 +5,6 @@ question: 'Docker: "permission denied" error when creating a PostgreSQL Docker w
 sort_order: 600
 ---
 
-### Issue Description
 
 When attempting to run a Docker command similar to the one below:
 
@@ -25,7 +24,7 @@ You encounter the error message:
 docker: Error response from daemon: error while creating mount source path '/path/to/ny_taxi_postgres_data': chown /path/to/ny_taxi_postgres_data: permission denied.
 ```
 
-### Solution
+Solution
 
 1. **Stop Rancher Desktop:**  
    If you are using Rancher Desktop and face this issue, stop Rancher Desktop to resolve compatibility problems.

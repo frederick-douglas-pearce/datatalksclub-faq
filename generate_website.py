@@ -78,6 +78,10 @@ class HighlightRenderer(mistune.HTMLRenderer):
             return get_lexer_by_name(language)
         except ClassNotFound:
             return get_lexer_by_name('text')
+    
+    def codespan(self, text):
+        """Render inline code with CSS class"""
+        return f'<code class="inline-code">{mistune.escape(text)}</code>'
 
 markdown_processor = mistune.create_markdown(
     renderer=HighlightRenderer(),
