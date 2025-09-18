@@ -14,13 +14,13 @@ If you are using Windows, try the following steps to resolve the error:
 1. Copy the `.ssh` folder from the Linux file path to Windows.
 2. In the `config` file, use:
    
-   ```bash
+   ```
    IdentityFile C:\Users\<username>\.ssh\gcp
    ```
    
    Instead of:
    
-   ```bash
+   ```
    IdentityFile ~/.ssh/gcp
    ```
 

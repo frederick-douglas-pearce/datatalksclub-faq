@@ -7,7 +7,6 @@ sort_order: 1780
 
 If you use Anaconda (recommended for the course), it comes with `pip`, so the issue is probably that Anaconda’s Python is not on the PATH.
 
-### Adding Anaconda to PATH
 
 **For Linux and MacOS:**
 
@@ -28,7 +27,7 @@ If you use Anaconda (recommended for the course), it comes with `pip`, so the is
 3. Add Anaconda to your PATH with the command:
 
    ```bash
-   export PATH="/c/Users/[YourUsername]/Anaconda3/:/c/Users/[YourUsername]/Anaconda3/Scripts/$PATH"
+   export PATH="/c/Users/[YourUsername]/Anaconda3/:/c/Users/[YourUsername]/Anaconda3/Scripts/$PATH"
    ```
 
 4. To make this change permanent, add the command to your `.bashrc` file in your home directory.

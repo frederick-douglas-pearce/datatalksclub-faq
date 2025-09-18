@@ -11,9 +11,15 @@ To launch Kestra, follow these instructions:
 Start Docker with the following command:
 
 ```bash
-docker run --pull=always --rm -it -p 8080:8080 --user=root \
--v /var/run/docker.sock:/var/run/docker.sock \
--v /tmp:/tmp kestra/kestra:latest server local
+docker run \
+  --pull=always \
+  --rm \
+  -it \
+  -p 8080:8080 \
+  --user=root \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /tmp:/tmp \
+  kestra/kestra:latest server local
 ```
 
 Once it is running, you can log in to the dashboard at `localhost:8080`.
@@ -22,7 +28,8 @@ Once it is running, you can log in to the dashboard at `localhost:8080`.
 
 Refer to the Kestra GitHub repository for detailed instructions: [https://github.com/kestra-io/kestra](https://github.com/kestra-io/kestra)
 
-### Sample `docker-compose` for Kestra Services
+
+Sample `docker-compose` for Kestra:
 
 ```yaml
 kestra:

@@ -48,28 +48,8 @@ class HighlightRenderer(mistune.HTMLRenderer):
         'py': 'python',
         'js': 'javascript',
         'ts': 'typescript',
-        'json': 'json',
-        'xml': 'xml',
-        'html': 'html',
-        'css': 'css',
-        'java': 'java',
-        'c': 'c',
-        'cpp': 'cpp',
         'c++': 'cpp',
-        'go': 'go',
-        'rust': 'rust',
-        'r': 'r',
-        'scala': 'scala',
-        'kotlin': 'kotlin',
-        'swift': 'swift',
-        'php': 'php',
-        'ruby': 'ruby',
-        'perl': 'perl',
-        'powershell': 'powershell',
         'psql': 'postgresql',
-        'postgres': 'postgresql',
-        'mysql': 'mysql',
-        'sqlite': 'sqlite'
     }
     
     def block_code(self, code, info=None):
@@ -81,30 +61,23 @@ class HighlightRenderer(mistune.HTMLRenderer):
             language = self.LANGUAGE_ALIASES.get(language, language)
         
         # Try to get the appropriate lexer
-        lexer = None
-        if language:
-            try:
-                lexer = get_lexer_by_name(language)
-            except ClassNotFound:
-                # If specific language not found, try to guess
-                try:
-                    lexer = guess_lexer(code)
-                except ClassNotFound:
-                    # Fall back to plain text
-                    lexer = get_lexer_by_name('text')
-        else:
-            # No language specified, try to guess
-            try:
-                lexer = guess_lexer(code)
-            except ClassNotFound:
-                lexer = get_lexer_by_name('text')
-        
+        lexer = self.get_lexer(code, language)
+
         # Generate highlighted HTML
         formatter = HtmlFormatter(
             cssclass='highlight',
             wrapcode=True
         )
         return highlight(code, lexer, formatter)
+
+    def get_lexer(self, code, language):
+        if not language:
+            return get_lexer_by_name('text')
+
+        try:
+            return get_lexer_by_name(language)
+        except ClassNotFound:
+            return get_lexer_by_name('text')
 
 markdown_processor = mistune.create_markdown(
     renderer=HighlightRenderer(),
@@ -332,6 +305,14 @@ def generate_site(courses):
     assets_dir = site_dir / 'assets' / 'css'
     assets_dir.mkdir(parents=True, exist_ok=True)
 
+    # Copy CSS files
+    css_src = Path('assets') / 'css'
+    if css_src.exists():
+        for css_file in css_src.glob('*.css'):
+            css_dest = assets_dir / css_file.name
+            shutil.copy2(css_file, css_dest)
+            print(f"Copied {css_file.name} to {css_dest}")
+    
     # Copy images
     images_src = Path('images')
     if images_src.exists():
