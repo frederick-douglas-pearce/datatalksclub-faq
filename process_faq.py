@@ -361,6 +361,7 @@ def generate_unique_id(course_name, section, question, used_ids):
             return collision_id
         counter += 1
 
+
 def create_question_file(question_data, course_name, question_index, question_id):
     """Create individual question markdown file with frontmatter in nested section folder"""
     # Load section mapping to get section ID
@@ -401,29 +402,31 @@ def create_question_file(question_data, course_name, question_index, question_id
             })
             content_with_placeholders.append(f'<{{IMAGE:{image_id}}}>')
             image_counter += 1
-    
+
+    # Create frontmatter data
+    frontmatter_data = {
+        'id': question_id,
+        'question': question_data["question"],
+        'sort_order': sort_order
+    }
+
+    # Add images to frontmatter if any exist
+    if images:
+        frontmatter_data['images'] = images
+
+    content = '\n\n'.join(content_with_placeholders)
+
+    write_frontmatter(question_file, frontmatter_data, content)
+
+    return filename
+
+def write_frontmatter(question_file, frontmatter_data, content):
     with open(question_file, 'w', encoding='utf-8') as f:
-        # Create frontmatter data
-        frontmatter_data = {
-            'id': question_id,
-            'question': question_data["question"],
-            'sort_order': sort_order
-        }
-        
-        # Add images to frontmatter if any exist
-        if images:
-            frontmatter_data['images'] = images
-        
-        # Write properly formatted YAML frontmatter
         f.write('---\n')
         yaml.dump(frontmatter_data, f, default_flow_style=False, allow_unicode=True)
         f.write('---\n\n')
-        
-        # Write answer content with image placeholders
-        for content in content_with_placeholders:
-            f.write(f'{content}\n\n')
-    
-    return filename
+
+        f.write(f'{content}')
 
 def create_metadata_file(course_data):
     """Create _metadata.yaml file with section order for the course"""
@@ -459,50 +462,55 @@ def create_metadata_file(course_data):
     print(f"Generated metadata: {metadata_file}")
 
 
-# Main execution
-print("ERROR: You're not supposed to run process_faq.py directly anymore!")
-print("The FAQ system now uses the nested directory structure.")
-print("Questions are already organized in _questions/course/section/ directories.")
-print("Use generate_website.py to generate the static site instead.")
-sys.exit(1)
+def main():
+    # Main execution
+    print("ERROR: You're not supposed to run process_faq.py directly anymore!")
+    print("The FAQ system now uses the nested directory structure.")
+    print("Questions are already organized in _questions/course/section/ directories.")
+    print("Use generate_website.py to generate the static site instead.")
+    sys.exit(1)
 
-faq_documents = {
-    'data-engineering-zoomcamp': '19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw',
-    'machine-learning-zoomcamp': '1LpPanc33QJJ6BSsyxVg-pWNMplal84TdZtq10naIhD8',
-    'mlops-zoomcamp': '12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0',
-    'llm-zoomcamp': '1m2KexowAXTmexfC5rVTCSnaShvdUQ8Ag2IEiwBDHxN0'
-}
+    faq_documents = {
+        'data-engineering-zoomcamp': '19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw',
+        'machine-learning-zoomcamp': '1LpPanc33QJJ6BSsyxVg-pWNMplal84TdZtq10naIhD8',
+        'mlops-zoomcamp': '12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0',
+        'llm-zoomcamp': '1m2KexowAXTmexfC5rVTCSnaShvdUQ8Ag2IEiwBDHxN0'
+    }
 
-documents = []
-used_ids = set()  # Track used IDs across all courses
+    documents = []
+    used_ids = set()  # Track used IDs across all courses
 
-for course, file_id in faq_documents.items():
-    print(f"\nProcessing {course}...")
-    
-    # Download and cache docx file
-    cache_file = download_docx_file(file_id, course)
-    
-    # Read FAQ with images
-    course_documents = read_faq(cache_file, course)
-    
-    course_data = {'course': course, 'questions': course_documents}
-    documents.append(course_data)
-    
-    # Create individual question files with unique IDs
-    print(f"Creating question files for {course}...")
-    for i, question_data in enumerate(course_documents):
-        question_id = generate_unique_id(course, question_data['section'], question_data['question'], used_ids)
-        create_question_file(question_data, course, i + 1, question_id)
-    
-    # Create metadata file with section order
-    create_metadata_file(course_data)
-    
-    # Create course index page - function not implemented yet
-    # create_course_index(course_data)
+    for course, file_id in faq_documents.items():
+        print(f"\nProcessing {course}...")
+        
+        # Download and cache docx file
+        cache_file = download_docx_file(file_id, course)
+        
+        # Read FAQ with images
+        course_documents = read_faq(cache_file, course)
+        
+        course_data = {'course': course, 'questions': course_documents}
+        documents.append(course_data)
+        
+        # Create individual question files with unique IDs
+        print(f"Creating question files for {course}...")
+        for i, question_data in enumerate(course_documents):
+            question_id = generate_unique_id(course, question_data['section'], question_data['question'], used_ids)
+            create_question_file(question_data, course, i + 1, question_id)
+        
+        # Create metadata file with section order
+        create_metadata_file(course_data)
+        
+        # Create course index page - function not implemented yet
+        # create_course_index(course_data)
 
-print(f"\nProcessed {len(documents)} courses successfully!")
-print("Generated files:")
-print("- _questions/ - Individual question files")
-print("- index.md - Main index page")
-print("- [course].md - Course index pages")
-print("- images/ - Extracted images organized by course")
+    print(f"\nProcessed {len(documents)} courses successfully!")
+    print("Generated files:")
+    print("- _questions/ - Individual question files")
+    print("- index.md - Main index page")
+    print("- [course].md - Course index pages")
+    print("- images/ - Extracted images organized by course")
+
+if __name__ == '__main__':
+    pass
+    # main()
