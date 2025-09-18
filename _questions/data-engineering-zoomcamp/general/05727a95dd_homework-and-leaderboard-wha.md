@@ -1,8 +1,7 @@
 ---
 id: 05727a95dd
-question: 'Homework and Leaderboard: What is the system for points in the course management
-  platform?'
-sort_order: 200
+question: 'Homework and Leaderboard: What is the system for points in the course management'
+sort_order: 180
 ---
 
 After you submit your homework, it will be graded based on the number of questions in that particular assignment. You can see the number of points you have earned at the top of the homework page. Additionally, in the [leaderboard](https://courses.datatalks.club/de-zoomcamp-2025/leaderboard), you will find the sum of all points you've earned: points for Homeworks, FAQs, and Learning in Public.
