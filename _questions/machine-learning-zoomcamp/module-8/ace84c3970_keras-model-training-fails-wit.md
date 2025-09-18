@@ -24,7 +24,6 @@ history_after_augmentation = model.fit(
 )
 ```
 
-### Solution
 
 The fix is straightforward. Use the training and validation datasets (`train_ds` and `val_ds`) returned from `flow_from_directory`:
 

@@ -18,7 +18,6 @@ features = dv.get_feature_names_out()
 
 This returns a `numpy.ndarray` instead of a list. Converting it to a list with `list(features)` won't solve the issue.
 
----
 
 If you face a **ValueError** such as:
 
@@ -48,7 +47,7 @@ The problem originates from the output of `DictVectorizer`, which might look lik
 
 The symbols `[, ]` or `<` are not compatible with XGBoost.
 
-### Solutions:
+Solutions:
 
 1. Do not specify `feature_names=` when creating `xgb.DMatrix`.
 2. Alternatively, you can clean your feature names using regex:

@@ -4,7 +4,6 @@ question: 'HPA: CPU metrics don''t show'
 sort_order: 3670
 ---
 
-### Problem
 
 CPU metrics show "Unknown"
 
@@ -16,7 +15,6 @@ credit-hpa   Deployment/credit   <unknown>/20%   1         3         1          
 FailedGetResourceMetric       2m15s (x169 over 44m)  horizontal-pod-autoscaler  failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API:
 ```
 
-### Solution
 
 1. Delete HPA:
    ```bash

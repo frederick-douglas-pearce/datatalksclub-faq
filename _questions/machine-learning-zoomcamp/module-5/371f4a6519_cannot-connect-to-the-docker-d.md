@@ -4,7 +4,7 @@ question: 'Docker: Cannot connect to the docker daemon. Is the Docker daemon run
 sort_order: 1830
 ---
 
-### Ensure Docker Daemon Is Running
+Ensure Docker Daemon Is Running
 
 **On Windows:**
 
@@ -24,7 +24,7 @@ sort_order: 1830
    sudo systemctl status docker
    ```
 
-### Verify Docker Group Membership (Linux Only)
+Verify Docker Group Membership (Linux Only)
 
 - Check if your user is in the Docker group:
 
@@ -40,13 +40,13 @@ sort_order: 1830
 
 - Log out and back in to apply changes.
 
-### Restart the Docker Service (Linux)
+Restart the Docker Service (Linux)
 
 ```bash
 sudo systemctl restart docker
 ```
 
-### Check Docker Socket Permissions (Linux)
+Check Docker Socket Permissions (Linux)
 
 - Run the following command to confirm Docker socket permissions:
 
@@ -54,7 +54,7 @@ sudo systemctl restart docker
   sudo chmod 666 /var/run/docker.sock
   ```
 
-### Try Running Docker with sudo (Linux)
+Try Running Docker with sudo (Linux)
 
 - Run the following to check if permissions are causing the issue:
 
@@ -62,7 +62,7 @@ sudo systemctl restart docker
   sudo docker ps
   ```
 
-### Test Docker Setup
+Test Docker Setup
 
 - Run a test Docker command to verify connection:
 
@@ -70,7 +70,7 @@ sudo systemctl restart docker
   docker run hello-world
   ```
 
-### Solution for WSL Error
+Solution for WSL Error
 
 If you’re encountering the error on WSL, re-install Docker by removing the Docker installation from WSL and installing Docker Desktop on your host machine (Windows).
 
@@ -87,5 +87,3 @@ If you’re encountering the error on WSL, re-install Docker by removing the Doc
   ```bash
   sudo service docker start
   ```
-
-<{IMAGE:image_id}>

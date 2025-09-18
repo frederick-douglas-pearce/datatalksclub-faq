@@ -4,11 +4,11 @@ question: Free cloud alternatives
 sort_order: 4040
 ---
 
-**Q:** Hi folks, I tried deploying my Docker image on Render, but it won't work. I get `SIGTERM` every time.
+I tried deploying my Docker image on Render, but it won't work. I get `SIGTERM` every time.
 
 I think 0.5GB RAM is not enough. Is there any other free alternative available?
 
-**A:** There are several free alternatives:
+There are several free alternatives:
 
 - **AWS (Amazon)** and **GCP (Google)**: Both offer free micro instances for an extended period along with additional free resources.
 - **Saturn Cloud**: Provides free GPU instances. Recent promotional information for Saturn Cloud is available for ML Zoomcamp participants:

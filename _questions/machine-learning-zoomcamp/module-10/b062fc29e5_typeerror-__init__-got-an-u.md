@@ -1,11 +1,9 @@
 ---
 id: b062fc29e5
-question: 'TypeError: __init__() got an unexpected keyword argument ''unbound_message''
-  while importing Flask'
+question: 'TypeError: __init__() got an unexpected keyword argument ''unbound_message'' while importing Flask'
 sort_order: 3630
 ---
 
-### Problem Description
 
 In video 10.3, while testing a Flask service, the following error occurred:
 
@@ -15,7 +13,7 @@ TypeError: __init__() got an unexpected keyword argument 'unbound_message'
 
 This error was encountered when running `docker run ...` in one terminal and then executing `python gateway.py` in another terminal.
 
-### Solution
+
 
 This issue is related to the versions of Flask and Werkzeug.
 

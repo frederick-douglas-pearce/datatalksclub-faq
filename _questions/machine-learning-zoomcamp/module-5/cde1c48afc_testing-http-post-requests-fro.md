@@ -10,17 +10,14 @@ I wanted to have a fast and simple way to check if the HTTP POST requests are wo
 curl --json '<json data>' <url>
 ```
 
-### Piping the structure to the command:
+Piping the structure to the command:
 
 ```bash
 cat <json file path> | curl --json @- <url>
-```
-
-```bash
 echo '<json data>' | curl --json @- <url>
 ```
 
-### Example using piping:
+Example using piping:
 
 ```bash
 echo '{"job": "retired", "duration": 445, "poutcome": "success"}' \

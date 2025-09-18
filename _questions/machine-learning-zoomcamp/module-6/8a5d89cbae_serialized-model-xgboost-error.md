@@ -1,20 +1,19 @@
 ---
 id: 8a5d89cbae
-images:
-- description: 'image #1'
-  id: image_1
-  path: images/machine-learning-zoomcamp/image_37aec513.png
-- description: 'image #2'
-  id: image_2
-  path: images/machine-learning-zoomcamp/image_81ba8874.png
-question: Serialized Model Xgboost error
+question: Saving and loading Xgboost
 sort_order: 2670
 ---
 
-Save model by calling `booster.save_model`, see eg
+If you have problems with pickling the models, you 
+can use an alternative approach.
 
-<{IMAGE:image_1}>
+Save model by calling `save_model`, load with `load_model`:
 
-Load model:
+```python
+model.save_model('model.bin')
 
-<{IMAGE:image_2}>
+...
+
+bst = xgb.Booster()
+bst.load_model('model.bin')
+```

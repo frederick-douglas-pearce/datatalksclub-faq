@@ -35,7 +35,8 @@ This results in 896:
 - +1 for bias
 - 32 filters
 
-### Number of 'Features' after the Flatten Layer
+
+Number of 'Features' after the Flatten Layer
 
 For our homework, `model.summary()` for the last MaxPooling2d and Flatten layers looked like this:
 

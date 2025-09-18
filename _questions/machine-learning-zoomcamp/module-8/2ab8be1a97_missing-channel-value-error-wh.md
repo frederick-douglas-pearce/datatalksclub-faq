@@ -10,11 +10,9 @@ While attempting to reload a model with TensorFlow, you might encounter the foll
 ValueError: The channel dimension of the inputs should be defined. The input_shape received is (None, None, None, None), where axis -1 (0-based) is the channel dimension, which found to be `None`.
 ```
 
-### Solution
+This error is usually caused when the number of channels is not explicitly defined in the Input layer of the model. 
 
-This error is usually caused when the number of channels is not explicitly defined in the Input layer of the model. Here's how you can resolve it:
-
-1. Ensure that you explicitly specify the number of channels in the Input layer of the model architecture.
+Ensure that you explicitly specify the number of channels in the Input layer of the model architecture.
 
 Example:
 

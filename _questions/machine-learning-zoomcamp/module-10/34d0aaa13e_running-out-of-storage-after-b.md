@@ -4,11 +4,9 @@ question: 'Docker: Running out of storage after building many docker images'
 sort_order: 3550
 ---
 
-### Problem Description
 
 Due to experimenting extensively, I ran out of storage on my 30-GB AWS instance. Removing empty directories did not resolve the issue as those primarily contained code, which did not occupy much space.
 
-### Solution
 
 1. **Check Existing Images:**
    - Use the following command to list all Docker images:
@@ -35,6 +33,5 @@ Due to experimenting extensively, I ran out of storage on my 30-GB AWS instance.
      docker system prune
      ```
 
-### Additional Reference
 
 For more details on why this happens, see: [Stack Overflow Discussion](https://stackoverflow.com/questions/36799718/why-removing-docker-containers-and-images-does-not-free-up-storage-space-on-wind)

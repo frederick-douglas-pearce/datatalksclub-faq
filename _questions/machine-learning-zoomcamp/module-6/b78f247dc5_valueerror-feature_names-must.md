@@ -10,15 +10,12 @@ When creating DMatrix for train and validation, you might encounter the error:
 ValueError: feature_names must be string, and may not contain [, ] or <
 ```
 
-### Solution
-
 The cause of this error is special characters in feature names, such as `=` and `<`. To fix this error, you can remove or replace these characters:
 
 ```python
 features = [i.replace("=<", "_").replace("=","_") for i in features]
 ```
 
-### Alternative Solution
 
 If the equal sign `=` is not a problem for you, the following adjustment could also work:
 

@@ -5,13 +5,12 @@ question: 'Error: Could not find a version that satisfies the requirement tflite
 sort_order: 3230
 ---
 
-**Problem:** When trying to install `tflite_runtime` using the command below, you receive an error message:
+When trying to install `tflite_runtime` using the command below, you receive an error message:
 
 ```bash
 !pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
 ```
 
-**Solution:**
 
 `tflite_runtime` is only available for specific OS-Python version combinations. You can find the available combinations here: [https://google-coral.github.io/py-repo/tflite-runtime/](https://google-coral.github.io/py-repo/tflite-runtime/). Your environment combination might be missing.
 

@@ -6,7 +6,7 @@ sort_order: 2860
 
 If you unzip a dataset within a Jupyter Notebook using the `! unzip` command, you may encounter extensive output messages for each file. To suppress this output, follow these solutions:
 
-### Solution 1: Using Magic Commands
+Using Magic Commands
 
 ```python
 %%capture
@@ -14,7 +14,7 @@ If you unzip a dataset within a Jupyter Notebook using the `! unzip` command, yo
 ! unzip zipped_folder_name.zip -d destination_folder_name
 ```
 
-### Solution 2: Using Python's zipfile Library
+Using Python's zipfile Library
 
 ```python
 import zipfile

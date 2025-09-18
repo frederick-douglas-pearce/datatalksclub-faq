@@ -7,7 +7,7 @@ sort_order: 1450
 
 This error indicates that your dataset's `churn` column only contains the class `0`, but at least two classes are required.
 
-### Solution
+
 1. Check your data processing steps where binary conversion might be applied. Specifically, ensure that the line:
    
    ```python

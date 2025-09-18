@@ -6,7 +6,6 @@ sort_order: 2780
 
 Uploading data directly from Kaggle to Saturn Cloud can save time, especially for large datasets. You can download it to your local machine and then upload it to Saturn Cloud, but there is a more efficient method.
 
-### Steps to Upload Kaggle Data to Saturn Cloud
 
 1. **Install Kaggle Package**
    

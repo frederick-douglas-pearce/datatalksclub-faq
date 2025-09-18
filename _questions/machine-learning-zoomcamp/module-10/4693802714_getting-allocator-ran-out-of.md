@@ -1,6 +1,6 @@
 ---
 id: '4693802714'
-question: 'Getting: Allocator ran out of memory errors?'
+question: 'Allocator (GPU_0_bfc) ran out of memory'
 sort_order: 3440
 ---
 
@@ -19,17 +19,3 @@ session = tf.compat.v1.Session(config=config)
 ```
 
 After doing this, most issues should be resolved. Occasionally, the error may still appear during high-demand epochs, but re-running the code should typically resolve it.
-
----
-
-**Problem with Downloading `xception_v4_large_08_0.894.h5` File**
-
-The following old link is no longer valid:
-
-```
-https://github.com/alexeygrigorev/mlbookcamp-code/releases/download/chapter7-model/xception_v4_large_08_0.894.h5
-```
-
-The new link to download the file is:
-
-[https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model](https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/tag/chapter7-model)

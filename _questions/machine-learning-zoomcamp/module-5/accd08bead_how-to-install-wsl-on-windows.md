@@ -1,14 +1,10 @@
 ---
 id: accd08bead
-images:
-- description: 'image #1'
-  id: image_1
-  path: images/machine-learning-zoomcamp/image_b74116cb.png
 question: How to install WSL on Windows 10 and 11?
 sort_order: 1800
 ---
 
-### Windows 10:
+**Windows 10:**
 
 1. Open PowerShell as Admin.
 2. Run the following command:
@@ -18,7 +14,7 @@ sort_order: 1800
 3. Restart your computer.
 4. Set up your Linux distribution (e.g., Ubuntu).
 
-### Windows 11:
+**Windows 11:**
 
 1. Open Windows Terminal as Admin.
 2. Run:
@@ -28,7 +24,7 @@ sort_order: 1800
 3. Restart if prompted.
 4. Set up your Linux distribution.
 
-### Additional Notes:
+**Additional Notes:**
 
 - To install a specific distribution, use:
   ```bash
@@ -52,7 +48,11 @@ Once inside your Linux system, you can try commands such as `pwd`. To navigate b
    ```
 3. List your files to view your disks and move to the desired folder.
 
-<{IMAGE:image_1}>
+   ```
+   mfouesnard@DESKTOP-39IH8UP:/mnt/c/Users/Melanie/ML_Zoomcamp/ML_ZoomCamp$ ls
+   Homework_week2.ipynb  Homework_week3_2023.ipynb  README.md  car_price.csv  data.csv  housing.csv
+   Homework_week3_2022.ipynb  Homework_week4_2023.ipynb  Untitled.ipynb  churn.csv  homework_week1.ipynb
+   ```
 
 Python should be already installed, but you can check with:
 ```bash

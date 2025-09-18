@@ -17,7 +17,6 @@ You may encounter the following error:
 ERROR: NotSupportedError - You can use "eb local" only with preconfigured, generic and multicontainer Docker platforms.
 ```
 
-### Solution
 
 There are two options to fix this issue:
 
@@ -36,7 +35,7 @@ There are two options to fix this issue:
      ```
    - Note that this option might not be available in the future.
 
-### Alternative Solution:
+Alternative Solution:
 
 - Re-run the init command and change the `-p` flag value:
   ```bash

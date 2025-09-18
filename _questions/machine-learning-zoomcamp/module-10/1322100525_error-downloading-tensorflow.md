@@ -7,11 +7,12 @@ sort_order: 3650
 While trying to run the Docker code on M1:
 
 ```bash
-docker run --platform linux/amd64 -it --rm \
--p 8500:8500 \
--v $(pwd)/clothing-model:/models/clothing-model/1 \
--e MODEL_NAME="clothing-model" \
-tensorflow/serving:2.7.0
+docker run --platform linux/amd64 \
+   -it --rm \
+   -p 8500:8500 \
+   -v $(pwd)/clothing-model:/models/clothing-model/1 \
+   -e MODEL_NAME="clothing-model" \
+   tensorflow/serving:2.7.0
 ```
 
 It outputs the error:

@@ -37,5 +37,3 @@ Here's a step-by-step example on Ubuntu terminal, which faced the same issue:
 **Note:**
 - The command `echo $REMOTE_URI` does not require curly brackets, unlike in video 9.6.
 - Replace `REMOTE_URI` with your actual URI.
-
-<Expert's name removed>

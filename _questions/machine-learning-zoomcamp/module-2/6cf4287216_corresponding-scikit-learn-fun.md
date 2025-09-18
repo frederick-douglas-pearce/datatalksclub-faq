@@ -1,23 +1,23 @@
 ---
 id: 6cf4287216
-question: Corresponding Scikit-Learn functions for Linear Regression (with and without
-  Regularization)
+question: Using Scikit-Learn for regression with and without
+  regularization
 sort_order: 710
 ---
 
-**What are the equivalents in Scikit-Learn for linear regression with and without regularization used in week 2?**
+What are the equivalents in Scikit-Learn for linear regression with and without regularization used in week 2?
 
-- **Without Regularization:**
+**Without Regularization:**
   
-  ```python
-  sklearn.linear_model.LinearRegression
-  ```
+```python
+sklearn.linear_model.LinearRegression
+```
 
-- **With Regularization:**
+**With Regularization:**
   
-  ```python
-  sklearn.linear_model.Ridge
-  ```
+```python
+sklearn.linear_model.Ridge
+```
 
 For more information, you can refer to the Scikit-Learn documentation on linear models:
 

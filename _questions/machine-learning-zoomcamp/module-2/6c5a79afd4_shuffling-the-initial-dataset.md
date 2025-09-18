@@ -10,9 +10,6 @@ It is possible to shuffle the dataset using the pandas built-in function [`panda
 - Set `random_state=seed` for consistent randomization.
 
 ```python
-# Shuffling the dataset
-
 df_shuffled = df.sample(frac=1, random_state=seed)
-
 df_shuffled.reset_index(drop=True, inplace=True)
 ```

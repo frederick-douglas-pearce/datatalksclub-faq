@@ -12,8 +12,6 @@ The error received was:
 Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory
 ```
 
-### Solution
-
 To fix this error:
 
 1. Open the `mlbookcamp-code/course-zoomcamp/01-intro/environment/Dockerfile`.

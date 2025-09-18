@@ -20,8 +20,7 @@ It had these arguments:
 1. Malformed application 'q4-predict:app'
 ```
 
-### Solution
 
 Waitress doesn’t accept a dash in the Python file name.
 
-To resolve this, rename the file by replacing the dash with an underscore, for example, use `q4_predict.py`. 
+To resolve this, rename the file by replacing the dash with an underscore, for example, use `q4_predict.py`.

@@ -14,6 +14,3 @@ For more information, see this TF2 [tutorial](https://machinelearningmastery.com
 
 A useful Sequential model example is available in Kaggle’s “Bee or Wasp” dataset folder: [notebook](https://www.kaggle.com/code/tammygusmao/bee-or-wasp-from-scratch-to-transfer-learning).
 
-### Fresh Run on Neural Nets
-
-While correcting errors in neural net architecture, it is advised to perform a fresh run by restarting the kernel. Otherwise, the model may learn on top of previous runs.

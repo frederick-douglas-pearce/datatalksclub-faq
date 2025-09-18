@@ -1,15 +1,30 @@
 ---
 id: ced071dd97
 images:
-- description: 'image #1'
-  id: image_1
-  path: images/machine-learning-zoomcamp/image_36a238d9.png
-question: 'docker: build ERROR [x/y] COPY …'
+question: 'docker: build ERROR COPY [Pipfile, Pipfile.lock]'
 sort_order: 2030
 ---
 
-<{IMAGE:image_1}>
+```
+% docker build -t zoomcamp_test .
 
-Solution:
+[+] Building 0.1s (10/10) FINISHED
+ => [internal] load build definition from Dockerfile
+ => => transferring dockerfile: 332B
+ => [internal] load .dockerignore
+ => => transferring context: 2B
+ => [internal] load build context
+ => => transferring context: 2B
+ => [internal] load metadata for docker.io/svizor/zoomcamp-model:3.9.12-slim
+ => [1/6] FROM docker.io/svizor/zoomcamp-model:3.9.12-slim
+ => [internal] load build context
+ => => transferring context: 2B
+ => CACHED [2/6] RUN pip install pipenv
+ => CACHED [3/6] WORKDIR /app
+ => ERROR [4/6] COPY [Pipfile, Pipfile.lock, ./]
+ => CACHED [5/6] RUN pipenv install --system --deploy
+ => ERROR [6/6] COPY [q5_predict.py, model1.bin, dv.bin, ./]
+```
+
 
 This error occurred because I used single quotes around the filenames. Stick to double quotes.

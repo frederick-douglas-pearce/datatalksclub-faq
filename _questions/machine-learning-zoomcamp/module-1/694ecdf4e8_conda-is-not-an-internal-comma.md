@@ -7,7 +7,7 @@ sort_order: 320
 If you encounter an issue where the command:
 
 ```bash
-conda create -n ml-zoomcamp python=3.9
+conda create -n ml-zoomcamp python=3.13
 ```
 
 doesn't work, try the following solutions:
@@ -18,4 +18,4 @@ doesn't work, try the following solutions:
 2. **Install Anaconda or Miniconda:**
    - If you do not have Anaconda or Miniconda installed, download and install one of them first.
 
-Note: Any version of Python 3.8, 3.9, or 3.10 should be suitable.
+Note: Any version of Python starting from 3.10 should be suitable.

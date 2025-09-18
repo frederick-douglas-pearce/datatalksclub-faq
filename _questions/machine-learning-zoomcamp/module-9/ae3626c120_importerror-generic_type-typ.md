@@ -16,8 +16,6 @@ You might encounter the error:
 ImportError: generic_type: type "InterpreterWrapper" is already registered!
 ```
 
-### Solution
-
 This error occurs if you import both `tensorflow` and `tflite_runtime.interpreter` in the same environment. To resolve it:
 
 1. Restart the kernel.

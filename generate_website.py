@@ -82,6 +82,22 @@ class HighlightRenderer(mistune.HTMLRenderer):
     def codespan(self, text):
         """Render inline code with CSS class"""
         return f'<code class="inline-code">{mistune.escape(text)}</code>'
+    
+    def link(self, text, url, title=None):
+        """Render links to open in new window"""
+        # Escape the URL
+        url = mistune.escape(url, quote=True)
+        
+        # Don't escape text if it contains HTML tags
+        # This allows code elements inside links to render properly
+        if '<' not in text or '>' not in text:
+            text = mistune.escape(text)
+        
+        if title:
+            title = mistune.escape(title, quote=True)
+            return f'<a href="{url}" title="{title}" target="_blank">{text}</a>'
+        else:
+            return f'<a href="{url}" target="_blank">{text}</a>'
 
 markdown_processor = mistune.create_markdown(
     renderer=HighlightRenderer(),

@@ -1,6 +1,6 @@
 ---
 id: 29f149ff07
-question: 'Error with the line “interpreter.set_tensor(input_index, X”):'
+question: 'Error with the line interpreter.set_tensor(input_index, X)'
 sort_order: 3170
 ---
 
@@ -14,14 +14,12 @@ You might see this around 12 minutes into video 9.3.
 
 Error message:
 
-```plaintext
+```
 ValueError: Cannot set tensor: Got value of type UINT8 but expected type FLOAT32 for input 0, name: serving_default_conv2d_input:0
 ```
 
-### Cause:
 This occurs because `X` is an integer, but a float is expected.
 
-### Solution:
 To resolve this issue, convert `X` to `float32` before using `set_tensor`:
  
 ```python

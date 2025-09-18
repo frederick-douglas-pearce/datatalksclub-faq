@@ -12,7 +12,7 @@ Error message:
 Error response from daemon: driver failed programming external connectivity on endpoint beautiful_tharp (875be95c7027cebb853a62fc4463d46e23df99e0175be73641269c3d180f7796): Bind for 0.0.0.0:9696 failed: port is already allocated.
 ```
 
-### Solution Description
+
 
 The issue can be resolved by running the following command:
 

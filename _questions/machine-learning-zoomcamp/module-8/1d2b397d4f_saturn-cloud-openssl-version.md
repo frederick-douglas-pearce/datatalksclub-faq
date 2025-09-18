@@ -7,7 +7,6 @@ sort_order: 3030
 
 This error occurs because the OpenSSH client is built against a specific version of OpenSSL (e.g., 3.0.0), but the system tries to use a different version (e.g., 3.0.3). This mismatch prevents the SSH client from working properly.
 
-**Solution:**
 
 Set the correct OpenSSL library path by running the following command in the terminal:
 

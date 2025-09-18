@@ -19,10 +19,11 @@ Connecting your GPU on Saturn Cloud to a Github repository is not compulsory, as
    - In the "Git SSH keys" section, copy the default public key provided by Saturn Cloud.
    - Paste this key into the SSH keys section of your GitHub repository.
    - Open a terminal on Saturn Cloud and run the following command:
-     
-     ```bash
-     ssh -T git@github.com
-     ```
-   - You should receive a successful authentication notice.
+
+```bash
+ssh -T git@github.com
+```
+
+You should receive a successful authentication notice.
 
 Follow these steps to efficiently push from Saturn Cloud to GitHub.

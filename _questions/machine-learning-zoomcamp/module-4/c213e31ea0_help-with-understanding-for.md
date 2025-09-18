@@ -1,7 +1,6 @@
 ---
 id: c213e31ea0
-question: 'Help with understanding: “For each numerical value, use it as score and
-  compute AUC”'
+question: 'How to use AUC for numerical features?'
 sort_order: 1490
 ---
 
