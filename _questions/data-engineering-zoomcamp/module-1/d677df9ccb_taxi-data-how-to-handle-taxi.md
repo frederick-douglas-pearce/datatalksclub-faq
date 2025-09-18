@@ -1,7 +1,6 @@
 ---
 id: d677df9ccb
-question: 'Taxi Data: How to handle taxi data files, now that the files are available
-  as *.csv.gz?'
+question: 'Taxi Data: How to handle *.csv.gz taxi data files?'
 sort_order: 490
 ---
 
@@ -11,7 +10,7 @@ To handle this:
 
 1. Replace `csv_name = "output.csv"` with the file name extracted from the URL. For example, for the yellow taxi data, use:
    
-   ```
+   ```python
    url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
    csv_name = url.split("/")[-1]
    ```

@@ -109,18 +109,35 @@ header h1 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.question-content pre {
+.question-content > pre {
     background: #f4f4f4;
     padding: 1rem;
     border-radius: 4px;
     overflow-x: auto;
 }
 
-.question-content code {
+.question-content > code,
+.question-content p code {
     background: #f4f4f4;
     padding: 2px 4px;
     border-radius: 2px;
     font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.highlight {
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.highlight pre {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
 }
 
 .question-content a {
