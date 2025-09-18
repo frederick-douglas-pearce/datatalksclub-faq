@@ -7,7 +7,6 @@ Processes markdown files from _questions/ and generates static HTML site in _sit
 import shutil
 from pathlib import Path
 import yaml
-from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
 import markdown
 from datetime import datetime
@@ -50,11 +49,12 @@ markdown_processor = markdown.Markdown(extensions=[
 def process_markdown(content, images=None):
     """Convert markdown to HTML while replacing image placeholders with actual image tags"""
     # Replace image placeholders with markdown image syntax
-    if images:
-        for image in images:
-            # Create proper markdown image syntax
-            image_markdown = f'![{image["description"]}]({image["path"]})'
-            content = content.replace(f'<{{IMAGE:{image["id"]}}}>', image_markdown)
+    images = images or []
+
+    for image in images:
+        # Create proper markdown image syntax
+        image_markdown = f'![{image["description"]}]({image["path"]})'
+        content = content.replace(f'<{{IMAGE:{image["id"]}}}>', image_markdown)
 
     return markdown_processor.convert(content)
 
@@ -62,39 +62,25 @@ def process_markdown(content, images=None):
 def load_course_metadata(course_dir):
     """Load metadata for a course to get section ordering and course name"""
     metadata_file = course_dir / '_metadata.yaml'
-    if metadata_file.exists():
-        try:
-            with open(metadata_file, 'r', encoding='utf-8') as f:
-                metadata = yaml.safe_load(f)
-                sections = metadata.get('sections', [])
-                
-                # Handle both old format (list of strings) and new format (list of dicts)
-                formatted_sections = []
-                for section in sections:
-                    if isinstance(section, dict):
-                        # New format: {id: "...", name: "..."}
-                        formatted_sections.append(section)
-                    else:
-                        # Old format: just strings - create dict format
-                        formatted_sections.append({
-                            'id': section.lower().replace(' ', '-').replace(':', '').replace('.', ''),
-                            'name': section
-                        })
-                
-                return {
-                    'sections': formatted_sections,
-                    'course_name': metadata.get('course_name', course_dir.name)
-                }
-        except Exception as e:
-            print(f"Error loading metadata for {course_dir.name}: {e}")
-    return {
-        'sections': [],
-        'course_name': course_dir.name
-    }
 
+    if not metadata_file.exists():
+        print(f"Warning: No metadata file found for {course_dir.name}, using defaults")
+        return {
+            'sections': [],
+            'course_name': course_dir.name
+        }
+
+    with open(metadata_file, 'r', encoding='utf-8') as f:
+        metadata = yaml.safe_load(f)
+        sections = metadata.get('sections', [])
+        course_name = metadata.get('course_name', course_dir.name)
+
+        return {
+            'sections': sections,
+            'course_name': course_name
+        }
 
 def collect_questions():
-    """Collect all questions from _questions directory, supporting both flat and nested structures"""
     questions_dir = Path('_questions')
     if not questions_dir.exists():
         print("No questions directory found")
@@ -315,7 +301,7 @@ def generate_site(courses):
             page_title=course_data['course_name'],
             generation_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         )
-        
+
         course_file = site_dir / f'{course_name}.html'
         with open(course_file, 'w', encoding='utf-8') as f:
             f.write(html)
