@@ -99,131 +99,109 @@ def collect_questions():
     if not questions_dir.exists():
         print("No questions directory found")
         return {}
-    
-    courses = {}
-    
+
+    courses = []
+
     for course_dir in questions_dir.iterdir():
         if not course_dir.is_dir():
             continue
-            
-        course_name = course_dir.name
-        print(f"Processing course: {course_name}")
-        
-        # Load course metadata to get section ordering and course name
-        metadata = load_course_metadata(course_dir)
-        section_order = metadata['sections']
-        course_display_name = metadata['course_name']
-        print(f"  Found {len(section_order)} sections in metadata, display name: {course_display_name}")
-        
-        # Collect questions by section
-        sections = defaultdict(list)
-        
-        # Check if we have nested structure (section folders) or flat structure
-        has_nested_structure = any(subdir.is_dir() and not subdir.name.startswith('_') 
-                                 for subdir in course_dir.iterdir())
-        
-        if has_nested_structure:
-            # New nested structure: _questions/course/section/question.md
-            print(f"  Using nested directory structure for {course_name}")
-            
-            for section_dir in course_dir.iterdir():
-                if not section_dir.is_dir() or section_dir.name.startswith('_'):
-                    continue
-                
-                section_id = section_dir.name
-                print(f"    Processing section: {section_id}")
-                
-                # Find section name from metadata
-                section_name = None
-                for section_info in section_order:
-                    if section_info['id'] == section_id:
-                        section_name = section_info['name']
-                        break
-                
-                if not section_name:
-                    print(f"Warning: Section {section_id} not found in metadata, using ID as name")
-                    section_name = section_id
-                
-                # Process all markdown files in section directory
-                for question_file in sorted(section_dir.glob('*.md')):
-                    try:
-                        with open(question_file, 'r', encoding='utf-8') as f:
-                            content = f.read()
-                        
-                        frontmatter, markdown_content = parse_frontmatter(content)
-                        
-                        if not frontmatter.get('question'):
-                            print(f"Skipping {question_file}: missing question field in frontmatter")
-                            continue
-                        
-                        # Process markdown to HTML with image placeholders
-                        images = frontmatter.get('images', [])
-                        html_content = process_markdown(markdown_content, images)
-                        
-                        # Get relative path from _questions directory
-                        relative_path = question_file.relative_to(Path('_questions'))
-                        
-                        question_data = {
-                            'id': frontmatter.get('id', ''),
-                            'question': frontmatter['question'],
-                            'section': section_name,  # Use metadata section name
-                            'sort_order': frontmatter.get('sort_order', 999999),
-                            'course': course_name,
-                            'content': html_content,
-                            'file_path': str(relative_path).replace('\\', '/'),  # Full path for GitHub link
-                            'images': images
-                        }
-                        
-                        sections[section_name].append(question_data)
-                        
-                    except Exception as e:
-                        print(f"Error processing {question_file}: {e}")
-        else:
-            # Old flat structure: _questions/course/question.md
-            print(f"  Using flat directory structure for {course_name}")
-            
-            for question_file in sorted(course_dir.glob('*.md')):
-                try:
-                    with open(question_file, 'r', encoding='utf-8') as f:
-                        content = f.read()
-                    
-                    frontmatter, markdown_content = parse_frontmatter(content)
-                    
-                    if not frontmatter.get('question'):
-                        print(f"Skipping {question_file}: missing question field in frontmatter")
-                        continue
-                    
-                    # Process markdown to HTML with image placeholders
-                    images = frontmatter.get('images', [])
-                    html_content = process_markdown(markdown_content, images)
-                    
-                    section_name = frontmatter.get('section', 'Unknown Section')
-                    # Get relative path from _questions directory
-                    relative_path = question_file.relative_to(Path('_questions'))
-                    
-                    question_data = {
-                        'id': frontmatter.get('id', ''),
-                        'question': frontmatter['question'],
-                        'section': section_name,
-                        'sort_order': frontmatter.get('sort_order', 999999),
-                        'course': course_name,
-                        'content': html_content,
-                        'file_path': str(relative_path).replace('\\', '/'),  # Full path for GitHub link
-                        'images': images
-                    }
-                    
-                    sections[section_name].append(question_data)
-                    
-                except Exception as e:
-                    print(f"Error processing {question_file}: {e}")
-        
-        courses[course_name] = {
-            'sections': sections,
-            'section_order': section_order,
-            'course_name': course_display_name
-        }
-    
+
+        course_dir_name = course_dir.name
+
+        course_info = process_course(course_dir)
+        courses.append((course_dir_name, course_info))
+
     return courses
+
+
+def process_course(course_dir):
+    course_dir_name = course_dir.name
+    print(f"Processing course: {course_dir_name}")
+
+    # Load course metadata to get section ordering and course name
+    metadata = load_course_metadata(course_dir)
+    section_order = metadata['sections']
+    course_display_name = metadata['course_name']
+    print(f"  Found {len(section_order)} sections in metadata, display name: {course_display_name}")
+
+    # Collect questions by section
+    sections = {}
+
+    # New nested structure: _questions/course/section/question.md
+    print(f"  Using nested directory structure for {course_dir_name}")
+        
+    for section_dir in course_dir.iterdir():
+        if not section_dir.is_dir() or section_dir.name.startswith('_'):
+            continue
+
+        section_data, section_name = process_section(course_dir_name, section_order, section_dir)
+        sections[section_name] = section_data
+
+    return {
+        'sections': sections,
+        'section_order': section_order,
+        'course_name': course_display_name
+    }
+
+
+def process_section(course_name, section_order, section_dir):
+    section_data = []
+
+    section_id = section_dir.name
+    print(f"    Processing section: {section_id}")
+
+    section_name = find_section_name(section_order, section_id)
+  
+    for question_file in sorted(section_dir.glob('*.md')):
+        try:
+            question_data = process_question_file(course_name, section_name, question_file)
+            if question_data:
+                section_data.append(question_data)
+
+        except Exception as e:
+            print(f"Error processing {question_file}: {e}")
+
+    return section_data, section_name
+
+
+def find_section_name(section_order, section_id):
+    for section_info in section_order:
+        if section_info['id'] == section_id:
+            return section_info['name']
+
+    print(f"Warning: Section {section_id} not found in metadata, using ID as name")
+    return section_id
+
+
+def process_question_file(course_name, section_name, question_file):
+    with open(question_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    frontmatter, markdown_content = parse_frontmatter(content)
+    
+    if not frontmatter.get('question'):
+        print(f"Skipping {question_file}: missing question field in frontmatter")
+        return None
+    
+    # Process markdown to HTML with image placeholders
+    images = frontmatter.get('images', [])
+    html_content = process_markdown(markdown_content, images)
+    
+    # Get relative path from _questions directory
+    relative_path = question_file.relative_to(Path('_questions'))
+    
+    question_data = {
+        'id': frontmatter.get('id', ''),
+        'question': frontmatter['question'],
+        'section': section_name,
+        'sort_order': frontmatter.get('sort_order', 999999),
+        'course': course_name,
+        'content': html_content,
+        'file_path': str(relative_path).replace('\\', '/'),  # Full path for GitHub link
+        'images': images
+    }
+
+    return question_data
 
 
 def setup_jinja_environment():
@@ -246,28 +224,11 @@ def setup_jinja_environment():
     return env
 
 
-def create_default_templates():
-    """Check if templates exist, create minimal ones if missing"""
-    layouts_dir = Path('_layouts')
-    if not layouts_dir.exists():
-        layouts_dir.mkdir(exist_ok=True)
-        print(f"Created {layouts_dir} directory")
-    
-    required_templates = ['base.html', 'index.html', 'course.html']
-    missing_templates = [tmpl for tmpl in required_templates if not (layouts_dir / tmpl).exists()]
-    
-    if missing_templates:
-        print(f"Warning: Missing templates: {missing_templates}")
-        print("Templates should be created in _layouts/ directory")
-    else:
-        print("All required templates found in _layouts/")
-    
-    return True
-
-
 def sort_sections_and_questions(courses):
+    # TODO: side-effect: modifies course_data
     """Sort sections according to metadata order and questions by sort_order"""
-    for course_name, course_data in courses.items():
+
+    for course_name, course_data in courses:
         sections = course_data['sections']
         section_order = course_data['section_order']
         
@@ -301,9 +262,9 @@ def sort_sections_and_questions(courses):
                 'name': section_name,
                 'questions': sections[section_name]
             })
-        
-        courses[course_name]['ordered_sections'] = ordered_sections
-    
+
+        course_data['ordered_sections'] = ordered_sections
+
     return courses
 
 
@@ -328,7 +289,6 @@ def generate_site(courses):
         print(f"Copied images to {images_dest}")
     
     # Setup Jinja environment
-    create_default_templates()
     env = setup_jinja_environment()
     
     # Sort sections and questions
@@ -336,15 +296,14 @@ def generate_site(courses):
     
     # Prepare course list for navigation
     course_list = [
-        {
-            'name': course_data['course_name'],
-            'id': name,
-        } for name, course_data in courses.items()]
+        {'name': course_data['course_name'], 'id': name}
+        for name, course_data in courses
+    ]
 
     # Generate course pages using external templates
     course_template = env.get_template('course.html')
     
-    for course_name, course_data in courses.items():
+    for course_name, course_data in courses:
         ordered_sections = course_data['ordered_sections']
         
         html = course_template.render(
@@ -368,7 +327,7 @@ def generate_site(courses):
     
     # Prepare courses data for index page
     index_courses = []
-    for course_name, course_data in courses.items():
+    for course_name, course_data in courses:
         ordered_sections = course_data['ordered_sections']
         num_sections = len(ordered_sections)
         num_questions = sum(len(section['questions']) for section in ordered_sections)
@@ -410,7 +369,7 @@ def main():
     
     # Print summary
     total_questions = 0
-    for course_name, course_data in courses.items():
+    for course_name, course_data in courses:
         sections = course_data['sections']
         course_questions = sum(len(questions) for questions in sections.values())
         total_questions += course_questions
