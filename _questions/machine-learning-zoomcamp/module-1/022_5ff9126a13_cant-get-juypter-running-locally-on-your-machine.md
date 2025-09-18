@@ -1,6 +1,6 @@
 ---
 id: 5ff9126a13
-question: Can’t get Juypter running locally on your machine?
+question: Can’t get Jupyter running locally on your machine?
 sort_order: 22
 ---
 

@@ -339,9 +339,6 @@ def read_faq(cache_file, course_name):
     return questions
 
 
-
-
-
 def generate_unique_id(course_name, section, question, used_ids):
     """Generate a unique ID for a question, ensuring no collisions"""
     base_text = f"{course_name}_{section}_{question}"
