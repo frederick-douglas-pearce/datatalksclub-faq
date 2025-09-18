@@ -1,7 +1,6 @@
 ---
 id: fde155ddfb
-question: 'Course: I forgot if I registered, can I still join the zoomcampation of
-  this course or that for each module?'
+question: 'I forgot if I registered, can I still join the zoomcamp?'
 sort_order: 10
 ---
 
