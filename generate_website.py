@@ -8,7 +8,13 @@ import shutil
 from pathlib import Path
 import yaml
 from jinja2 import Environment, FileSystemLoader
-import markdown
+import mistune
+from mistune.plugins.table import table
+from mistune.plugins.task_lists import task_lists
+from pygments import highlight
+from pygments.lexers import get_lexer_by_name, guess_lexer
+from pygments.formatters import HtmlFormatter
+from pygments.util import ClassNotFound
 from datetime import datetime
 
 
@@ -31,20 +37,79 @@ def parse_frontmatter(content):
         return {}, content
 
 
-# Configure markdown with extensions including syntax highlighting
-markdown_processor = markdown.Markdown(extensions=[
-    'nl2br', 
-    'tables', 
-    'codehilite',
-    'fenced_code'
-], extension_configs={
-    'codehilite': {
-        'css_class': 'highlight',
-        'use_pygments': True,
-        'guess_lang': True,
-        'linenums': False
+# Configure mistune with plugins for syntax highlighting and tables
+class HighlightRenderer(mistune.HTMLRenderer):
+    # Language aliases for better compatibility
+    LANGUAGE_ALIASES = {
+        'sh': 'bash',
+        'shell': 'bash',
+        'dockerfile': 'docker',
+        'yml': 'yaml',
+        'py': 'python',
+        'js': 'javascript',
+        'ts': 'typescript',
+        'json': 'json',
+        'xml': 'xml',
+        'html': 'html',
+        'css': 'css',
+        'java': 'java',
+        'c': 'c',
+        'cpp': 'cpp',
+        'c++': 'cpp',
+        'go': 'go',
+        'rust': 'rust',
+        'r': 'r',
+        'scala': 'scala',
+        'kotlin': 'kotlin',
+        'swift': 'swift',
+        'php': 'php',
+        'ruby': 'ruby',
+        'perl': 'perl',
+        'powershell': 'powershell',
+        'psql': 'postgresql',
+        'postgres': 'postgresql',
+        'mysql': 'mysql',
+        'sqlite': 'sqlite'
     }
-})
+    
+    def block_code(self, code, info=None):
+        # Clean and normalize the language info
+        language = None
+        if info:
+            language = info.strip().lower()
+            # Apply language aliases
+            language = self.LANGUAGE_ALIASES.get(language, language)
+        
+        # Try to get the appropriate lexer
+        lexer = None
+        if language:
+            try:
+                lexer = get_lexer_by_name(language)
+            except ClassNotFound:
+                # If specific language not found, try to guess
+                try:
+                    lexer = guess_lexer(code)
+                except ClassNotFound:
+                    # Fall back to plain text
+                    lexer = get_lexer_by_name('text')
+        else:
+            # No language specified, try to guess
+            try:
+                lexer = guess_lexer(code)
+            except ClassNotFound:
+                lexer = get_lexer_by_name('text')
+        
+        # Generate highlighted HTML
+        formatter = HtmlFormatter(
+            cssclass='highlight',
+            wrapcode=True
+        )
+        return highlight(code, lexer, formatter)
+
+markdown_processor = mistune.create_markdown(
+    renderer=HighlightRenderer(),
+    plugins=[table, task_lists]
+)
 
 def process_markdown(content, images=None):
     """Convert markdown to HTML while replacing image placeholders with actual image tags"""
@@ -56,7 +121,7 @@ def process_markdown(content, images=None):
         image_markdown = f'![{image["description"]}]({image["path"]})'
         content = content.replace(f'<{{IMAGE:{image["id"]}}}>', image_markdown)
 
-    return markdown_processor.convert(content)
+    return markdown_processor(content)
 
 
 def load_course_metadata(course_dir):
