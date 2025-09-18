@@ -4,19 +4,26 @@ question: 'MlflowException: Unable to Set a Deleted Experiment'
 sort_order: 940
 ---
 
+```python
 raise MlflowException(
 
 mlflow.exceptions.MlflowException: Cannot set a deleted experiment 'random-forest-hyperopt' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.
+```
 
-There are many options to solve in this link: [https://stackoverflow.com/questions/60088889/how-do-you-permanently-delete-an-experiment-in-mlflow](https://stackoverflow.com/questions/60088889/how-do-you-permanently-delete-an-experiment-in-mlflow)
+To resolve this issue, consider the following options:
 
-✅Had deleted the experiment from the mlflow ui, and this command in CLI works mlflow gc --backend-store-uri sqlite:///backend.db (use the filename.db that you had used, obviously)
+- **Restore or Permanently Delete the Experiment**: Refer to guidance on [Stack Overflow](https://stackoverflow.com/questions/60088889/how-do-you-permanently-delete-an-experiment-in-mlflow) for methods to permanently delete an experiment in MLflow.
 
-⛔ Below suggestion didn’t work, as .trash/ was already empty
+- **Command Line Resolution**: If you have deleted the experiment from the MLflow UI, run the following command in the CLI. Make sure to use the correct database filename.
+  
+  ```bash
+  mlflow gc --backend-store-uri sqlite:///backend.db
+  ```
 
-rm -rf mlruns/.trash/*
+- **Ensure .trash is Empty**: If the above command does not work and your .trash folder is already empty, confirm this by executing:
 
-zsh: sure you want to delete all the files in /home/ellacharmed/github/mlops-zoomcamp/cohorts/2024/02-experiment-tracking/homework/mlruns/.trash [yn]? y
-
-zsh: no matches found: mlruns/.trash/*
-
+  ```bash
+  rm -rf mlruns/.trash/*
+  ```
+  
+  Note: Ensure no files remain in `.trash/` that could be interfering with the experiment reset.

@@ -1,16 +1,30 @@
 ---
 id: 16099520dd
-question: AWS regions need to match docker-compose
+question: 'AWS: Regions need to match in docker-compose'
 sort_order: 2360
 ---
 
-Problem description
+**Problem Description**
 
-If you are having problems with the integration tests and kinesis double check that your aws regions match on the docker-compose and local config. Otherwise you will be creating a stream in the wrong region
+If you are experiencing issues with integration tests and Kinesis, ensure that your AWS regions are consistent between docker-compose and your local configuration. Otherwise, you may create a stream in an incorrect region.
 
-Solution description
+**Solution Description**
 
-For example set ~/.aws/config region = us-east-1 and the docker-compose.yaml - AWS_DEFAULT_REGION=us-east-1
+- Set the region in your AWS config file:
+  
+  ```plaintext
+  ~/.aws/config
+  ```
+  
+  Example:
+  
+  ```text
+  region = us-east-1
+  ```
 
-Added by Quinn Avila
-
+- Ensure that the region in your `docker-compose.yaml` is also set:
+  
+  ```yaml
+  environment:
+    - AWS_DEFAULT_REGION=us-east-1
+  ```

@@ -4,35 +4,47 @@ question: How to test AWS Lambda + Docker locally?
 sort_order: 3340
 ---
 
-This deployment setup can be tested locally using [AWS RIE](https://github.com/aws/aws-lambda-runtime-interface-emulator/#test-an-image-with-rie-included-in-the-image) (runtime interface emulator).
+This deployment setup can be tested locally using [AWS RIE](https://github.com/aws/aws-lambda-runtime-interface-emulator/#test-an-image-with-rie-included-in-the-image) (Runtime Interface Emulator).
 
-Basically, if your Docker image was built upon base AWS Lambda image (FROM public.ecr.aws/lambda/python:3.10) - just use certain ports for “docker run” and a certain “localhost link” for testing:
+If your Docker image is built upon the base AWS Lambda image (e.g., `FROM public.ecr.aws/lambda/python:3.10`), use specific ports for `docker run` and a specific localhost link for testing:
 
+```bash
 docker run -it --rm -p 9000:8080 name
+```
 
-This command runs the image as a container and starts up an endpoint locally at:
+This command runs the image as a container and starts an endpoint locally at:
 
-localhost:9000/2015-03-31/functions/function/invocations
+`localhost:9000/2015-03-31/functions/function/invocations`
 
 Post an event to the following endpoint using a curl command:
 
-curl -XPOST "[localhost:9000](http://localhost:9000/2015-03-31/functions/function/invocations") -d '{}'
+```bash
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
+```
 
-Examples of curl testing:
+### Examples of Curl Testing:
 
-* windows testing:
+- **Windows Testing:**
+  
+  ```bash
+  curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d "{\"url\": \"https://habrastorage.org/webt/rt/d9/dh/rtd9dhsmhwrdezeldzoqgijdg8a.jpeg\"}"
+  ```
 
-curl -XPOST "[localhost:9000](http://localhost:9000/2015-03-31/functions/function/invocations") -d "{\"url\": \"[habrastorage.org](https://habrastorage.org/webt/rt/d9/dh/rtd9dhsmhwrdezeldzoqgijdg8a.jpeg\"}")
-
-* unix testing:
-
-curl -XPOST "[localhost:9000](http://localhost:9000/2015-03-31/functions/function/invocations") -d '{"url": "[habrastorage.org](https://habrastorage.org/webt/rt/d9/dh/rtd9dhsmhwrdezeldzoqgijdg8a.jpeg"}')
+- **Unix Testing:**
+  
+  ```bash
+  curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"url": "https://habrastorage.org/webt/rt/d9/dh/rtd9dhsmhwrdezeldzoqgijdg8a.jpeg"}'
+  ```
 
 If during testing you encounter an error like this:
 
-# {"errorMessage": "Unable to marshal response: Object of type float32 is not JSON serializable", "errorType": "Runtime.MarshalError", "requestId": "7ea5d17a-e0a2-48d5-b747-a16fc530ed10", "stackTrace": []}
+```json
+{
+  "errorMessage": "Unable to marshal response: Object of type float32 is not JSON serializable",
+  "errorType": "Runtime.MarshalError",
+  "requestId": "7ea5d17a-e0a2-48d5-b747-a16fc530ed10",
+  "stackTrace": []
+}
+```
 
-just turn your response at lambda_handler() to string - str(result).
-
-Added by Andrii Larkin
-
+just convert your response in `lambda_handler()` to a string using `str(result)`.

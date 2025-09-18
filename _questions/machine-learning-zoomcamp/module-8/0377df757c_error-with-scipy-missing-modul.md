@@ -4,15 +4,16 @@ question: Error with scipy missing module in SaturnCloud
 sort_order: 2880
 ---
 
-Problem:
+**Problem:**
 
-I created a new environment in SaturnCloud and chose the image corresponding to Saturn with Tensorflow, but when I tried to fit the model it showed an error about the missing module: scipy
+I created a new environment in SaturnCloud and chose the image corresponding to Saturn with Tensorflow, but when I tried to fit the model it showed an error about the missing module: `scipy`.
 
-Solution:
+**Solution:**
 
-Install the module in a new cell: !pip install scipy
+1. Install the module in a new cell:
+   
+   ```bash
+   !pip install scipy
+   ```
 
-Restart the kernel and fit the model again
-
-Added by Erick Calderin
-
+2. Restart the kernel and fit the model again.

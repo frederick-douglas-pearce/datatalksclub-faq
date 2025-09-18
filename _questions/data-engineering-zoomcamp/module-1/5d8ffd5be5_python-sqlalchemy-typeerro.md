@@ -9,12 +9,10 @@ When using `create_engine('postgresql://root:root@localhost:5432/ny_taxi')`, you
 ```
 TypeError: 'module' object is not callable
 ```
+Use the correct connection string syntax:
 
-**Solution:**
 
-1. Use the correct connection string syntax:
-   
-   ```python
-   conn_string = "postgresql+psycopg://root:root@localhost:5432/ny_taxi"
-   engine = create_engine(conn_string)
-   ```
+```python
+conn_string = "postgresql+psycopg://root:root@localhost:5432/ny_taxi"
+engine = create_engine(conn_string)
+```

@@ -4,9 +4,6 @@ question: MLflow Autolog not working
 sort_order: 910
 ---
 
-Make sure `mlflow.autolog()` ( or framework-specific autolog ) written BEFORE `with mlflow.start_run()` not after.
+Make sure `mlflow.autolog()` (or framework-specific autolog) is written **before** `with mlflow.start_run()`, not after.
 
-Also make sure that all dependencies for the autologger are installed, including matplotlib. A warning about uninstalled dependencies will be raised.
-
-Mohammed Ayoub Chettouh
-
+Also, ensure that all dependencies for the autologger are installed, including `matplotlib`. A warning about uninstalled dependencies will be raised.

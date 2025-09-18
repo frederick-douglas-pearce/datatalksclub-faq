@@ -4,9 +4,14 @@ question: Unsupported Scikit-Learn version
 sort_order: 1070
 ---
 
-Getting the following warning when running mlflow.sklearn:2022/05/28 04:36:36 WARNING mlflow.utils.autologging_utils: You are using an unsupported version of sklearn. If you encounter errors during autologging, try upgrading / downgrading sklearn to a supported version, or try upgrading MLflow. […]
+Getting the following warning when running `mlflow.sklearn`:
 
-Solution: use 0.24.1 <= scikit-learn <= 1.4.2 (Updated: May 26, 2024)
+```
+2022/05/28 04:36:36 WARNING mlflow.utils.autologging_utils: You are using an unsupported version of sklearn. If you encounter errors during autologging, try upgrading / downgrading sklearn to a supported version, or try upgrading MLflow.
+```
 
-Reference: [https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html)
+**Solution:**
 
+- Use scikit-learn version between 0.24.1 and 1.4.2.
+
+**Reference:** [MLflow Documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html)

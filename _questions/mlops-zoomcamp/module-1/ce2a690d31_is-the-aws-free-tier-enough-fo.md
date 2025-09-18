@@ -10,5 +10,4 @@ sort_order: 370
 
 <{IMAGE:image_1}>
 
-For many parts - yes. Some things like kinesis are not in AWS free tier, but you can do it locally with localstack.
-
+For many parts - yes. Some services like Kinesis are not in the AWS free tier, but you can use them locally with LocalStack.

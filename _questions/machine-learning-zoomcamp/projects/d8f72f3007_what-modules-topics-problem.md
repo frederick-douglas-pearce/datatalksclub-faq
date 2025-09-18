@@ -5,11 +5,8 @@ question: What modules, topics, problem-sets should a midterm/capstone project c
 sort_order: 3730
 ---
 
-Answer: Ideally midterms up to module-06, capstones include all modules in that cohort’s syllabus. But you can include anything  to feature. Just be sure to document anything not covered in class.
+Ideally, midterms should cover up to module-06, while capstone projects should include all modules in the cohort’s syllabus. However, you can include any other topics you wish to feature. Ensure that you document anything not covered in class.
 
-Also watch office hours from previous cohorts. Go to DTC youtube channel and click on Playlists and search for {course yyyy}. ML Zoomcamp was first launched in 2021.
+Also, consider watching office hours from previous cohorts. Visit the DTC YouTube channel, click on Playlists, and search for {course yyyy}. ML Zoomcamp was first launched in 2021.
 
-More discussions:
-
-[[source1](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1695185370037259)] [[source2](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1697512570204859?thread_ts=1697470698.361449&cid=C0288NJ5XSA)] [[source3](https://datatalks-club.slack.com/archives/C0288NJ5XSA/p1698727047169339)]
-
+More discussions can be found in relevant Slack channels (links omitted for privacy).

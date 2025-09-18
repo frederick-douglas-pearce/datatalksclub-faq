@@ -4,7 +4,17 @@ question: 'ValueError: Unknown label type: ''continuous'''
 sort_order: 2540
 ---
 
-Solution: This problem happens because you use DecisionTreeClassifier instead of DecisionTreeRegressor. You should check if you want to use a Decision tree for classification or regression.
+This problem occurs when using `DecisionTreeClassifier` instead of `DecisionTreeRegressor`.
 
-Alejandro Aponte
+To resolve this issue:
 
+- Check whether you want to use a decision tree for classification or regression.
+- Use `DecisionTreeRegressor` for regression tasks.
+
+```python
+from sklearn.tree import DecisionTreeRegressor
+
+# Example: for regression
+model = DecisionTreeRegressor()
+model.fit(X_train, y_train)
+```

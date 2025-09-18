@@ -4,17 +4,15 @@ question: Open/run github notebook(.ipynb) directly in Google Colab
 sort_order: 1190
 ---
 
-Problem: Open/run github notebook(.ipynb) directly in Google Colab
+**Problem:** Open/run GitHub notebook (.ipynb) directly in Google Colab
 
-Solution: Change the domain from 'github.com' to 'githubtocolab.com'. The notebook will open in Google Colab.
+**Solution:**
 
-Only works with Public repo.
+- Change the domain from `github.com` to `githubtocolab.com`. The notebook will open in Google Colab.
+- Note: This only works with public repositories.
 
-Added by Ming Jun
+---
 
 Navigating in Wandb UI became difficult to me, I had to intuit some options until I found the correct one.
 
-Solution: Go to the official doc.
-
-Added by Erick Calderin
-
+**Solution:** Refer to the official documentation.

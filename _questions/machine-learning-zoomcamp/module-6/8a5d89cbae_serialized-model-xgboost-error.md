@@ -11,13 +11,10 @@ question: Serialized Model Xgboost error
 sort_order: 2670
 ---
 
-Save model by calling ‘booster.save_model’, see eg
+Save model by calling `booster.save_model`, see eg
 
 <{IMAGE:image_1}>
 
 Load model:
 
 <{IMAGE:image_2}>
-
-Dawuta Smit
-

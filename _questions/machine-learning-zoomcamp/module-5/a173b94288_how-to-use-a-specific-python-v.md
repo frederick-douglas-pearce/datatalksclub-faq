@@ -4,15 +4,24 @@ question: How to use a specific python version (e.g. 3.11) from conda with pipen
 sort_order: 2350
 ---
 
-First of all, you should avoid being in a virtual environment when using pipenv. You can point pipenv directly to the Python 3.11 interpreter from your Conda installation:
+First, avoid being in a virtual environment when using pipenv. You can point pipenv directly to the Python 3.11 interpreter from your Conda installation:
 
-Activate conda env conda activate env_name
+1. **Activate the Conda environment:**  
+   ```bash
+   conda activate env_name
+   ```
 
-Get python path which python
+2. **Get the Python path:**  
+   ```bash
+   which python
+   ```
 
-Deactivate conda env conda deactivate
+3. **Deactivate the Conda environment:**  
+   ```bash
+   conda deactivate
+   ```
 
-Use pipenv with the python path found in 3 pipenv --python /path/to/python
-
-(added by Kemal Dahha)
-
+4. **Use pipenv with the Python path found in step 2:**  
+   ```bash
+   pipenv --python /path/to/python
+   ```

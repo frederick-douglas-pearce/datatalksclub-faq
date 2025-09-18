@@ -4,8 +4,9 @@ question: 'Error following video 6.2: mlflow=1.27.0'
 sort_order: 2220
 ---
 
-When following the video instructions and running the Dockerfile I get an error that the Dockerfile build failed in line 8, because there is no matching distribution for mlflow=1.27.0. Below is the code output:
+When following the video instructions and running the Dockerfile, I encountered an error that the Dockerfile build failed on line 8 due to no matching distribution for `mlflow==1.27.0`. Below is the code output:
 
+```bash
 4.900 ERROR: No matching distribution found for mlflow==1.27.0
 
 4.901 ERROR: Couldn't install package: {}
@@ -31,4 +32,4 @@ Dockerfile:8
 --------------------
 
 ERROR: failed to solve: process "/bin/sh -c pipenv install --system --deploy" did not complete successfully: exit code: 1
-
+```

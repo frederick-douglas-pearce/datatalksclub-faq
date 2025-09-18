@@ -4,23 +4,22 @@ question: Installing and updating to the python version 3.10 and higher
 sort_order: 1790
 ---
 
-Open terminal and type the code below to check the version on your laptop
+To check your current Python version, open your terminal and run:
 
+```bash
 python3 --version
+```
 
-For windows,
+### For Windows:
 
-Visit the official python website at [ ](https://www.python.org/downloads/)[https://www.python.org/downloads/](https://www.python.org/downloads/) to download the python version you need for installation
+1. Visit the official Python website to download the desired version: [Python Downloads](https://www.python.org/downloads/).
+2. Run the installer and ensure you check the box that says "Add Python to PATH" during installation.
+3. Complete the installation by following the prompts.
 
-Run the installer and  ensure to check the box that says “Add Python to PATH” during installation and complete the installation by following the prompts
-
-Or
-
-For Python 3,
+### For Python 3:
 
 Open your command prompt or terminal and run the following command:
 
+```bash
 pip install --upgrade python
-
-Aminat Abolade
-
+```

@@ -4,21 +4,25 @@ question: Testing HTTP POST requests from command line using curl
 sort_order: 2200
 ---
 
-I wanted to have a fast and simple way to check if the HTTP POST requests are working just running a request from command line. This can be done running ‘curl’. (Used with WSL2 on Windows, should also work on Linux and MacOS)
+I wanted to have a fast and simple way to check if the HTTP POST requests are working just by running a request from the command line. This can be done using `curl`. (Used with WSL2 on Windows; should also work on Linux and MacOS)
 
+```bash
 curl --json '<json data>' <url>
+```
 
-# piping the structure to the command
+### Piping the structure to the command:
 
+```bash
 cat <json file path> | curl --json @- <url>
+```
 
+```bash
 echo '<json data>' | curl --json @- <url>
+```
 
-# example using piping
+### Example using piping:
 
-echo '{"job": "retired", "duration": 445, "poutcome": "success"}'\
-
-| curl --json @- [localhost:9696](http://localhost:9696/predict)
-
-Added by Sylvia Schmitt
-
+```bash
+echo '{"job": "retired", "duration": 445, "poutcome": "success"}' \
+| curl --json @- http://localhost:9696/predict
+```

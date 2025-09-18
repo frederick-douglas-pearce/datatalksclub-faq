@@ -4,19 +4,22 @@ question: Activating Anaconda env in .bashrc
 sort_order: 660
 ---
 
-Problem: For me, Installing anaconda didn’t modify the .bashrc profile. That means Anaconda env was not activated even after exiting and relaunching the unix shell.
+**Problem:** Installing Anaconda didn’t modify the `.bashrc` profile. This means the Anaconda environment was not activated after exiting and relaunching the Unix shell.
 
-Solution:
+**Solution:**
 
-For bash : Initiate conda again, which will add entries for anaconda in .bashrc file.
+- **For Bash:**
+  - Initiate conda again, which will add entries for Anaconda in the `.bashrc` file.
+  
+  ```bash
+  cd YOUR_PATH_ANACONDA/bin 
+  ./conda init bash
+  ```
+  
+  - This will automatically edit your `.bashrc`.
 
-$ cd YOUR_PATH_ANACONDA/bin $ ./conda init bash
-
-That will automatically edit your .bashrc.
-
-Reload:
-
-$ source ~/.bashrc
-
-Ahamed Irshad ([daisyfuentesahamed@gmail.com](mailto:daisyfuentesahamed@gmail.com))
-
+- **Reload:**
+  
+  ```bash
+  source ~/.bashrc
+  ```

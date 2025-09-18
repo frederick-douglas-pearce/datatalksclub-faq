@@ -4,13 +4,22 @@ question: How to save/download jupyter notebook to python script
 sort_order: 2490
 ---
 
-The line of code below convert a notebook to python script which will have the same name as the notebook with a .py extension. This should be run on the terminal
+You can convert a Jupyter notebook to a Python script using the following methods:
 
-jupyter nbconvert --to python notebnook.ipynb
+- **Using the terminal**
+  
+  Run the command below in the terminal:
 
-OR on the jupyter notebook
+  ```bash
+  jupyter nbconvert --to python notebook.ipynb
+  ```
+  
+  This converts the notebook into a Python script with the same name but with a `.py` extension.
+  
+- **Using the Jupyter Notebook interface**
+  
+  1. Navigate to `File` in the menu.
+  2. Select `Save and Export Notebook As`.
+  3. Choose `Executable Scripts`.
 
-File -> Save and Export Notebook As -> Executable Scripts. This will download the file in the download folder
-
-Saikou Y Bah
-
+  This will download the file to your downloads folder.

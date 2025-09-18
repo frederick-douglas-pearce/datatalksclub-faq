@@ -4,7 +4,4 @@ question: 'Homework/Question 2: Namerror: name ‘year’ is not defined'
 sort_order: 1830
 ---
 
-For question 2 which requires you to prepare the dataframe with the output, you need to first define the year and month as integers.
-
-Added by Victor E.
-
+For question 2, which requires you to prepare the dataframe with the output, you need to first define the `year` and `month` as integers.

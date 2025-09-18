@@ -4,7 +4,10 @@ question: 'Q6: Correct mlflow tracking uri'
 sort_order: 1480
 ---
 
-For the correct mlflow tracking uri, use : mlflow.set_tracking_uri(uri="[http://mlflow:5000](http://mlflow:5000)") provided that you used the suggested docker file snippet in the homework question 6.
+For the correct mlflow tracking URI, use:
 
-Added by Victor
+```python
+mlflow.set_tracking_uri(uri="http://mlflow:5000")
+```
 
+This assumes you used the suggested Docker file snippet in Homework Question 6.

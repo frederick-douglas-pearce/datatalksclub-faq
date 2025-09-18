@@ -4,13 +4,10 @@ question: Adding additional metric
 sort_order: 2000
 ---
 
-Problem description
+### Problem Description
 
-Getting “target columns” “prediction columns” not present errors after adding a metric
+Getting “target columns” “prediction columns” not present errors after adding a metric.
 
-Solution description
+### Solution Description
 
-Make sure to read through the documentation on what is required or optional when adding the metric. I added DatasetCorrelationsMetric which doesn’t require any parameters because the metric evaluates for correlations among the features.
-
-Sam Lim
-
+Make sure to read through the documentation on what is required or optional when adding the metric. For example, `DatasetCorrelationsMetric` doesn’t require any parameters because the metric evaluates for correlations among the features.

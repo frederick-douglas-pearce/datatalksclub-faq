@@ -1,12 +1,14 @@
 ---
 id: 4afbb7db24
-question: Prefect server was not running locally
+question: 'Prefect: Prefect server was not running locally'
 sort_order: 2030
 ---
 
-Problem description. Prefect server was not running locally, I ran `prefect server start` command but it stopped immediately..
+### Problem Description
 
-Solution description. I used Prefect cloud to run the script, however I created an issue on the Prefect github.
+Prefect server was not running locally. The command `prefect server start` was executed but it stopped immediately.
 
-By Erick Calderin
+### Solution
 
+- Used Prefect Cloud to run the script.
+- Created an issue on the Prefect GitHub repository.

@@ -4,9 +4,26 @@ question: Using PyCharm & Conda env in remote development
 sort_order: 640
 ---
 
-Problem: PyCharm (remote) doesn’t see conda execution path. So, I cannot use conda env (which is located on a remote server).
+**Problem:** PyCharm (remote) doesn’t see the conda execution path, preventing the use of a conda environment located on a remote server.
 
-Solution: In remote server in command line write “conda activate envname”, after write “which python” - it gives you python execution path. After you can use this path when you will add new interpreter in PyCharm: add local interpreter -> system interpreter -> and put the path with python.
+**Solution:**
 
-Salimov Ilnaz ([salimovilnaz777@gmail.com](mailto:salimovilnaz777@gmail.com))
-
+1. On the remote server's command line, run:
+   
+   ```bash
+   conda activate envname
+   ```
+   
+2. Then, execute:
+   
+   ```bash
+   which python
+   ```
+   
+   This will provide the Python execution path.
+   
+3. Use this path to add a new interpreter in PyCharm:
+   
+   - Add local interpreter.
+   - Select system interpreter.
+   - Enter the path obtained from the previous step.

@@ -4,9 +4,12 @@ question: Parameter adding in case of max_depth not recognized
 sort_order: 1120
 ---
 
-Problem: parameter was not recognized during the model registry
+**Problem:** Parameter was not recognized during the model registry.
 
-Solution: parameters should be added in previous to the model registry. The parameters can be added by mlflow.log_params(params) so that the dictionary can be directly appended to the data.run.params.
+**Solution:** Parameters should be added prior to the model registry. Use the following method to add parameters:
 
-Added and Answered by Sam Lim
+```python
+mlflow.log_params(params)
+```
 
+This way, the dictionary can be directly appended to `data.run.params`.  

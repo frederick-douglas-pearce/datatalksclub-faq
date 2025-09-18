@@ -1,38 +1,28 @@
 ---
 id: 609792b49e
-question: Capture stdout for each iterations of a loop separately
+question: Capture stdout for each iteration of a loop separately
 sort_order: 2500
 ---
 
-I wanted to directly capture the output from the xgboost training for multiple eta values to a dictionary without the need to run the same cell multiple times and manually editing the eta value in between or copy the code for a second eta value.
+I wanted to directly capture the output from the XGBoost training for multiple eta values to a dictionary without needing to run the same cell multiple times, edit the eta value manually, or copy the code for different eta values.
 
-Using the magic cell command “%%capture output” I was only able to capture the complete output for all iterations for the loop, but. I was able to solve this using the following approach. This is just a code sample to grasp the idea.
+Using the magic cell command `%%capture output`, I could only capture the complete output for all iterations of the loop. I was able to solve this using the following approach. This is just a code sample to illustrate the idea:
 
-# This would be the content of the Jupyter Notebook cell
-
+```python
 from IPython.utils.capture import capture_output
-
 import sys
 
 different_outputs = {}
 
 for i in range(3):
+    with capture_output(sys.stdout) as output:
+        print(i)
+        print("testing capture")
+    different_outputs[i] = output.stdout
 
-with capture_output(sys.stdout) as output:
-
-print(i)
-
-print("testing capture")
-
-different_outputs[i] = output.stdout
-
+# Output:
 # different_outputs
-
 # {0: '0\ntesting capture\n',
-
 #  1: '1\ntesting capture\n',
-
 #  2: '2\ntesting capture\n'}
-
-Added by Sylvia Schmitt
-
+```

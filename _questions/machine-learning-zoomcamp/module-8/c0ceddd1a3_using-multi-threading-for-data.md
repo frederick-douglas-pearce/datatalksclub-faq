@@ -4,9 +4,6 @@ question: Using multi-threading for data generation in “model.fit()”
 sort_order: 2910
 ---
 
-When running “model.fit(...)” an additional parameter “workers” can be specified for speeding up the data loading/generation. The default value is “1”. Try out which value between 1 and the cpu count on your system performs best.
+When running `model.fit(...)`, an additional parameter `workers` can be specified for speeding up data loading and generation. The default value is `1`. Try different values between `1` and the CPU count on your system to check which performs best.
 
-[https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit](https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit)
-
-Added by Sylvia Schmitt
-
+For more information, refer to the [TensorFlow documentation](https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit).

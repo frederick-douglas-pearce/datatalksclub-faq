@@ -5,11 +5,12 @@ question: 'mlflow ui on Windows FileNotFoundError: [WinError 2] The system canno
 sort_order: 1050
 ---
 
-Problem: After successfully installing mlflow using pip install mlflow on my Windows system, I am trying to run the mlflow ui command but it throws the following error:
+**Problem:** After successfully installing `mlflow` using `pip install mlflow` on a Windows system, running the `mlflow ui` command results in the error:
 
+```plaintext
 FileNotFoundError: [WinError 2] The system cannot find the file specified
+```
 
-Solution: Add C:\Users\{User_Name}\AppData\Roaming\Python\Python39\Scripts to the PATH
+**Solution:**
 
-Added by Alex Litvinov
-
+Add `C:\Users\{User_Name}\AppData\Roaming\Python\Python39\Scripts` to the `PATH`.

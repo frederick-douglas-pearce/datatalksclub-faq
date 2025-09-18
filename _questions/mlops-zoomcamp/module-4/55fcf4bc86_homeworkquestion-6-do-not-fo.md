@@ -5,7 +5,8 @@ question: 'Homework/Question 6: Do not forget to specify that the folder output/
 sort_order: 1880
 ---
 
-For question 6 which requires you to put your script in a docker file,  you can specify that the folder ‘output/yellow’ should be created in the working directory of your docker container by specifying ‘RUN mkdir -p output/yellow’ in your docker file.
+For question 6, which requires you to include your script in a Dockerfile, specify the creation of the folder `output/yellow` in the working directory of your Docker container by adding the following line in your Dockerfile:
 
-Added by Victor E.
-
+```Dockerfile
+RUN mkdir -p output/yellow
+```

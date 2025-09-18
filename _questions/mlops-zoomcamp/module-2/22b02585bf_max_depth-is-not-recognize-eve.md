@@ -4,9 +4,13 @@ question: Max_depth is not recognize even when I add the mlflow.log_params
 sort_order: 1130
 ---
 
-Problem: Max_depth is not recognize even when I add the mlflow.log_params
+### Problem:
 
-Solution: the mlflow.log_params(params) should be added to the hpo.py script, but if you run it it will append the new model to the previous run that doesn’t contain the parameters, you should either remove the previous experiment or change it
+Max_depth is not recognized even when I add the `mlflow.log_params`.
 
-Pastor Soto
+### Solution:
 
+The `mlflow.log_params(params)` should be added to the `hpo.py` script. If you run it, it will append the new model to the previous run that doesn’t contain the parameters. You should either:
+
+- Remove the previous experiment
+- Change it

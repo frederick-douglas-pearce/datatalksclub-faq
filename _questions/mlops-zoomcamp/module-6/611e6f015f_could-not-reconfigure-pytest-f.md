@@ -13,7 +13,4 @@ sort_order: 2270
 
 No option to remove pytest test
 
-Remove the .vscode folder located on the folder you previously used for testing, e.g. folder code (from week6-best-practices) was chosen to test, so you may remove .vscode inside the folder.
-
-Added by Rizdi Aprilian
-
+- Remove the `.vscode` folder located in the folder you previously used for testing. For example, if you chose to test in the "week6-best-practices" folder, remove the `.vscode` directory inside that folder.

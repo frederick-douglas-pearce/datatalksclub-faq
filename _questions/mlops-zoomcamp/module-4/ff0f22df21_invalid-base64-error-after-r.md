@@ -1,12 +1,15 @@
 ---
 id: ff0f22df21
-question: ‘Invalid base64’ error after running `aws kinesis put-record`
+question: 'AWS CLI: ''Invalid base64'' error after running `aws kinesis put-record`'
 sort_order: 1620
 ---
 
-Problem description:  You might get an error ‘Invalid base64’ after running the ‘aws kinesis put-record’ command on your local machine. This might be the case if you are using the AWS CLI version 2 (note that in the video 4.4, around 57:42, you can see a warning since the instructor is using v1 of the CLI.
+**Problem Description:** 
+You might encounter an 'Invalid base64' error after executing the `aws kinesis put-record` command on your local machine. This issue can occur if you are using AWS CLI version 2. In a referenced video (4.4, around 57:42), a warning is visible as the instructor is using version 1 of the CLI.
 
-Solution description: To get around this, pass the argument ‘--cli-binary-format raw-in-base64-out’. This will encode your data string into base64 before passing it to kinesis
+**Solution:**
+To resolve this issue, use the argument `--cli-binary-format raw-in-base64-out` when executing the command. This option will encode your data string into base64 before transmitting it to Kinesis.
 
-Added by M
-
+```bash
+aws kinesis put-record --cli-binary-format raw-in-base64-out --other-parameters
+```

@@ -4,11 +4,16 @@ question: 'WARNING: You are using pip version 22.0.4; however, version 22.3.1 is
 sort_order: 3140
 ---
 
-When running docker build -t dino-dragon-model it returns the above error
+When running `docker build -t dino-dragon-model`, you might encounter the warning about an outdated pip version.
 
-The most common source of this error in this week is because Alex video shows a version of the wheel with python 8, we need to find a wheel with the version that we are working on. In this case python 9. Another common error is to copy the link, this will also produce the same error, we need to download the raw format:
+This warning often comes up due to a mismatch in the versions of the wheel file shown in Alex's video. The video might show a version compatible with Python 8, but you need a wheel for the version you are working on, such as Python 9.
+
+Additionally, ensure you download the wheel file using its raw format link, as copying the link might cause errors. Use the following link:
 
 [GitHub](https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.7.0-cp39-cp39-linux_x86_64.whl)
 
-Pastor Soto
+Ensure to address the pip version warning when possible by updating pip using:
 
+```bash
+pip install --upgrade pip
+```

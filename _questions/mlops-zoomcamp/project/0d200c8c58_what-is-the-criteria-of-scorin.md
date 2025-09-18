@@ -1,18 +1,13 @@
 ---
 id: 0d200c8c58
-question: What is the criteria of scoring home work?
+question: 'Homework: What is the criteria of scoring home work?'
 sort_order: 2460
 ---
 
-What is the scoring given for homework
+Each homework assignment has a scoring system based on the following criteria:
 
-Each Homework has 6 question on correct answering you can get 6 points
+- Answering 6 questions correctly: **6 points**
+- Adding 7 public learning items: **7 points**
+- Adding 1 valid question to the FAQ: **1 point**
 
-You can also add 7 public learning which you can get 7 points
-
-Adding 1 Question valid in FAQ gives 1 point
-
-So in total you can get 14 point per homework which will help you in leaderboard
-
-(optional) Added by Name
-
+In total, you can earn up to **14 points** per homework, which will contribute to the leaderboard ranking.

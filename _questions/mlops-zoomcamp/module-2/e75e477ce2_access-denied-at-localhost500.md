@@ -8,7 +8,15 @@ question: Access Denied at Localhost:5000 - Authorization Issue
 sort_order: 800
 ---
 
-Problem: Localhost:5000 Unavailable // Access to Localhost Denied // You don’t have authorization to view this page (127.0.0.1:5000)Solution: If you are on an chrome browser you need to head to `chrome://net-internals/#sockets` and press “Flush Socket Pools”
+### Problem
+
+Localhost:5000 Unavailable // Access to Localhost Denied // You don’t have authorization to view this page (127.0.0.1:5000)
+
+### Solution
+
+If you are using Chrome, follow these steps:
+
+1. Navigate to `chrome://net-internals/#sockets`.
+2. Press "Flush Socket Pools".
 
 <{IMAGE:image_1}>
-

@@ -4,13 +4,25 @@ question: 'ModuleNotFoundError: No module named ''pipenv.patched.pip._vendor.url
 sort_order: 1810
 ---
 
-i'm getting this error ModuleNotFoundError: No module named 'pipenv.patched.pip._vendor.urllib3.response'
+If you're encountering the error:
 
-and Resolved from this command pip install pipenv --force-reinstall
+```
+ModuleNotFoundError: No module named 'pipenv.patched.pip._vendor.urllib3.response'
+```
 
-getting this errror site-packages\pipenv\patched\pip\_vendor\urllib3\connectionpool.py"
+Follow these steps to resolve it:
 
-Resolved from this command pip install -U pip and pip install requests
+1. Reinstall `pipenv` with the following command:
+   
+   ```bash
+   pip install pipenv --force-reinstall
+   ```
 
-Asif
+2. If you see an error referring to `site-packages\pipenv\patched\pip\_vendor\urllib3\connectionpool.py`, then:
 
+   - Upgrade `pip` and install `requests`:
+   
+     ```bash
+     pip install -U pip
+     pip install requests
+     ```

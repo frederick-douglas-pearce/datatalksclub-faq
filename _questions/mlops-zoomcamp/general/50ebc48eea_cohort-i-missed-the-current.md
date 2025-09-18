@@ -1,11 +1,10 @@
 ---
 id: 50ebc48eea
-question: Cohort - I missed the current cohort, when is the next cohort scheduled
-  for? Will there be a 202x cohort?
+question: 'Cohort: I missed the current cohort, when is the next cohort scheduled
+  for? Will there be a 202x cohort?'
 sort_order: 110
 ---
 
-Please see the summary of all zoomcamps and their respective schedule at [https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html)
+Please see the summary of all zoomcamps and their respective schedule at [this link](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).
 
-Although note that, there’s no guarantee that the zoomcamps would be run indefinitely or the same zoomcamps would be conducted year-after-year-after-year.
-
+Note that there's no guarantee the zoomcamps will be run indefinitely or that the same zoomcamps will be conducted every year.

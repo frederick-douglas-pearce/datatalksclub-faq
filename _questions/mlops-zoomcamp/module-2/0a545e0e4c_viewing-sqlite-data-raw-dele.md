@@ -11,13 +11,12 @@ question: Viewing SQLite Data Raw & Deleting Experiments Manually
 sort_order: 1100
 ---
 
-All the experiment and other tracking information in mlflow are stored in sqllite database provided while initiating the mlflow ui command. This database can be inspected using Pycharm’s Database tab by using the SQLLite database type. Once the connection is created as below, the tables can be queried and inspected using regular SQL. The same applies for any SQL backed database such as postgres as well.
+All the experiment and other tracking information in MLflow are stored in an SQLite database provided while initiating the `mlflow ui` command. This database can be inspected using PyCharm’s Database tab by selecting the SQLite database type.
 
-This is very useful to understand the entity structure of the data being stored within mlflow and useful for any kind of systematic archiving of model tracking for longer periods.
+Once the connection is created, the tables can be queried and inspected using standard SQL. The same applies to any SQL-backed database such as PostgreSQL.
 
-Added by Senthilkumar Gopal
+This approach is useful to understand the entity structure of the data being stored within MLflow and is beneficial for systematic archiving of model tracking for extended periods.
 
 <{IMAGE:image_1}>
 
 <{IMAGE:image_2}>
-

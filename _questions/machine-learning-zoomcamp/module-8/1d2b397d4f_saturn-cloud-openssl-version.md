@@ -7,9 +7,10 @@ sort_order: 3030
 
 This error occurs because the OpenSSH client is built against a specific version of OpenSSL (e.g., 3.0.0), but the system tries to use a different version (e.g., 3.0.3). This mismatch prevents the SSH client from working properly.
 
-Solution:Set the correct OpenSSL library path by running the following line in the terminal:
+**Solution:**
 
+Set the correct OpenSSL library path by running the following command in the terminal:
+
+```bash
 export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
-
-Added by Kemal Dahha
-
+```

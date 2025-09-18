@@ -5,4 +5,3 @@ sort_order: 1440
 ---
 
 [Here](https://docs.google.com/document/d/1Nyktf7WoRec5lDUBREXL5zLI1Edbw9_R8e45fDn4KB8/edit?usp=sharing)
-

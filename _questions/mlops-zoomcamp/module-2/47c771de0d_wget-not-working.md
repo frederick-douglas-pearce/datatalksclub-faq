@@ -4,11 +4,10 @@ question: wget not working
 sort_order: 1180
 ---
 
-Problem
+**Problem**
 
-Using wget command to download either data or python scripts on Windows, I am using the notebook provided by Visual Studio and despite having a python virtual env, it did not recognize the pip command.
+Using the `wget` command to download either data or Python scripts on Windows, I am using the notebook provided by Visual Studio and despite having a Python virtual environment, it did not recognize the `pip` command.
 
-Solution: Use python -m pip, this same for any other command. Ie. python -m wget
+**Solution**
 
-Added by Erick Calderin
-
+- Use `python -m pip`, this applies to any other command as well, e.g., `python -m wget`. 

@@ -4,13 +4,18 @@ question: Pipenv installation
 sort_order: 1860
 ---
 
-Make sure you have python and pip
+Make sure you have Python and pip installed by checking their versions:
 
+```bash
 python --version
+```
 
+```bash
 pip --version
+```
 
-Preferred Installation of Pipenv
+To install Pipenv, use the following command:
 
+```bash
 pip install pipenv --user
-
+```

@@ -8,39 +8,35 @@ question: 'Connection in use: (''127.0.0.1'', 5000)'
 sort_order: 810
 ---
 
-You have something running on the 5000 port. You need to stop it.
+You have something running on the 5000 port. You need to stop it. Here are some ways to resolve the issue:
 
-Answer: On terminal in mac .
+- **Using Terminal on Mac**:
+  1. Run the command:
+     ```bash
+     ps -A | grep gunicorn
+     ```
+  2. Identify the process ID (the first number after running the command).
+  3. Kill the process using the ID:
+     ```bash
+     kill 13580
+     ```
+     where `13580` represents the process number.
 
-Run ps -A | grep gunicorn
+  <{IMAGE:image_1}>
 
-Look for the number process id which is the 1st number after running the command
+- **To Kill All Processes Using Port 5000**:
+  ```bash
+  sudo fuser -k 5000/tcp
+  ```
 
-<{IMAGE:image_1}>
+- **Alternative Command to Kill the Running Port**:
+  ```bash
+  kill -9 $(ps -A | grep python | awk '{print $1}')
+  ```
 
-kill 13580
+- **Change to a Different Port**:
+  ```bash
+  mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5001
+  ```
 
-where 13580  represents the process number.
-
-[Source](https://stackoverflow.com/questions/60531166/how-to-safely-shutdown-mlflow-ui#:~:text=I%20also%20met%20a%20similar,and%20kill%20%5BPID%5D%20manually.)
-
-[warrie.warrieus@gmail.com](mailto:warrie.warrieus@gmail.com)
-
-Or by executing the following command it will kill all the processes using port 5000:
-
->> sudo fuser -k 5000/tcp
-
-Answered by Vaibhav Khandelwal
-
-Just execute in the command below in the command line to kill the running port
-
-->> kill -9 $(ps -A | grep python | awk '{print $1}')
-
-Answered by kamaldeen (kamaldeen32@gmail.com)
-
-Change to different port (5001 in this case)
-
->> mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5001
-
-Answered by krishna (nellaikrishna@gmail.com)
-
+For more information, refer to the [source](https://stackoverflow.com/questions/60531166/how-to-safely-shutdown-mlflow-ui#:~:text=I%20also%20met%20a%20similar,and%20kill%20%5BPID%5D%20manually).

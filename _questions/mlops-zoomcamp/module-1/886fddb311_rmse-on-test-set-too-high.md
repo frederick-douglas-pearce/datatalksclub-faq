@@ -4,11 +4,15 @@ question: RMSE on test set too high
 sort_order: 550
 ---
 
-Problem: RMSE on test set was too high when hot encoding the validation set with a previously fitted OneHotEncoder(handle_unknown=’ignore’) on the training set, while DictVectorizer would yield the correct RMSE.
+### Problem
 
-In principle both transformers should behave identically when treating categorical features (at least in this week’s homework where we don’t have sequences of strings in each row):
+RMSE on the test set was too high when hot encoding the validation set using a previously fitted `OneHotEncoder(handle_unknown='ignore')` on the training set. In contrast, `DictVectorizer` yielded the correct RMSE.
 
-Features are put into binary columns encoding their presence (1) or absence (0)
+### Explanation
 
-Unknown categories are imputed as zeroes in the hot-encoded matrix
+In principle, both transformers should behave identically when treating categorical features, especially in scenarios where there are no sequences of strings in each row (as in this week’s homework):
 
+- Features are put into binary columns encoding their presence (1) or absence (0).
+- Unknown categories are imputed as zeros in the hot-encoded matrix.
+
+This discrepancy indicates that there might be a difference in how `OneHotEncoder` and `DictVectorizer` handle the data after fitting on the training set and applying to the validation set.

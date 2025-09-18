@@ -4,41 +4,25 @@ question: How do I push from Saturn Cloud to Github?
 sort_order: 2750
 ---
 
-Connecting your GPU on Saturn Cloud to Github repository is not compulsory, since you can just download the notebook and copy it to the Github folder. But if you like technology to do things for you, then follow the solution description below:
+Connecting your GPU on Saturn Cloud to a Github repository is not compulsory, as you can download the notebook and copy it to the Github folder manually. However, if you prefer an automated approach, follow these instructions:
 
-Solution description: Follow the instructions in these github docs to create an SSH private and public key:
+1. **Create SSH Keys**:
+   - Refer to the following GitHub documentation to generate an SSH private and public key:
+     - [Generating a new SSH key and adding it to the SSH agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+     - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=webui)
 
-[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-ke](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. **Authenticating via Terminal**:
+   - Access the second video in the Saturn Cloud module to learn how to add SSH keys to secrets and authenticate via a terminal.
 
-[y-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=webui](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=webui)
+3. **Using Saturn Cloud's Default Public Keys**
+   - Click on your username and select "Manage".
+   - In the "Git SSH keys" section, copy the default public key provided by Saturn Cloud.
+   - Paste this key into the SSH keys section of your GitHub repository.
+   - Open a terminal on Saturn Cloud and run the following command:
+     
+     ```bash
+     ssh -T git@github.com
+     ```
+   - You should receive a successful authentication notice.
 
-Then the second video on this module about saturn cloud would show you how to add the ssh keys to secrets and authenticate through a terminal.
-
-Or alternatively, you could just use the public keys provided by Saturn Cloud by default. To do so, follow these steps:
-
-Click on your username and on manage
-
-Down below you will see the Git SSH keys section.
-
-Copy the default public key provided by Saturn Cloud
-
-Paste these key into the SSH keys section of your github repo
-
-Open a terminal on Saturn Cloud and run this command “ssh -T [git@github.com](mailto:git@github.com)”
-
-You will receive a successful authentication notice.
-
-Odimegwu David
-
-Q: What versions of TensorFlow and NumPy should I use to ensure compatibility in Saturn Cloud notebooks?
-
-A: To avoid compatibility issues when using TensorFlow in Saturn Cloud notebooks, we recommend the following versions:
-
-bash
-
-Copy code
-
-!pip install numpy==1.24 tensorflow==2.10.0 These versions are tested and work seamlessly in the Saturn Cloud environment. Once installed, you should be able to develop and run your machine learning workflows without any issues.
-
-Added by Abdiaziz Qaladid
-
+Follow these steps to efficiently push from Saturn Cloud to GitHub.

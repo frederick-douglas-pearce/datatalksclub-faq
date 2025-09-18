@@ -4,15 +4,19 @@ question: Generate Evidently Chart in Grafana
 sort_order: 2060
 ---
 
-Problem: Can we generate charts like Evidently inside Grafana?
+**Problem:** Can we generate charts like Evidently inside Grafana?
 
-Solution: In Grafana that would be a stat panel (just a number) and scatter plot panel (I believe it requires a plug-in). However, there is no native way to quickly recreate this exact Evidently dashboard. You'd need to make sure you have all the relevant information logged to your Grafana data source, and then design your own plots in Grafana.
+**Solution:**
 
-If you want to recreate the Evidently visualizations externally, you can export the Evidently output in JSON with include_render=True
+- In Grafana, you can use a stat panel (just a number) and a scatter plot panel, which may require a plug-in.
+- Unfortunately, there's no native method to directly recreate the Evidently dashboard.
+- Ensure that all relevant information is logged to your Grafana data source, then design your custom plots.
 
-(more details here [https://docs.evidentlyai.com/user-guide/customization/json-dict-output](https://docs.evidentlyai.com/user-guide/customization/json-dict-output)) and then parse information from it for your external visualization layer. To include everything you need for non-aggregated visuals, you should also add "raw_data": True  option (more details here [https://docs.evidentlyai.com/user-guide/customization/report-data-aggregation](https://docs.evidentlyai.com/user-guide/customization/report-data-aggregation)).
+**External Recreation:**
 
-Overall, this specific plot with under- and over-performance segments is more useful during debugging, so might be easier to access it ad hoc using Evidently.
+- Export the Evidently output in JSON with `include_render=True` for external visualization:
+  - See more details [here](https://docs.evidentlyai.com/user-guide/customization/json-dict-output).
+- For non-aggregated visuals, use the option "`raw_data": True".
+  - More details [here](https://docs.evidentlyai.com/user-guide/customization/report-data-aggregation).
 
-Added by Ming Jun, Asked by Luke, Answered by Elena Samuylova
-
+This specific plot with under- and over-performance segments is particularly useful during debugging and might be easier to view ad hoc using Evidently.

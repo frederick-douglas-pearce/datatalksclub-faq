@@ -4,11 +4,23 @@ question: Connecting s3 bucket to MLFLOW
 sort_order: 1710
 ---
 
-Problem description. How can we connect s3 bucket to MLFLOW?
+### Problem Description
 
-Solution: Use boto3 and AWS CLI to store access keys. The access keys are what will be used by boto3 (AWS' Python API tool) to connect with the AWS servers. If there are no Access Keys how can they make sure that they have the right to access this Bucket? Maybe you're a malicious actor (Hacker for ex). The keys must be present for boto3 to talk to the AWS servers and they will provide access to the Bucket if you possess the right permissions. You can always set the Bucket as public so anyone can access it, now you don't need access keys because AWS won't care.
+How can we connect an S3 bucket to MLflow?
 
-Read more here: [https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html)
+### Solution
 
-Added by Akshit Miglani
+To connect an S3 bucket to MLflow, use `boto3` and AWS CLI to store access keys. These access keys allow `boto3` (AWS' Python API tool) to authenticate and connect with AWS servers. Without access keys, access to the bucket cannot be verified, which could prevent connection attempts by unauthorized individuals.
 
+Steps:
+
+1. **Ensure Access Keys are Available:**
+   - Access keys are essential for `boto3` to communicate with AWS servers securely.
+   - They ensure that only authorized users with the correct permissions can access the bucket.
+
+2. **Set Bucket as Public (Optional):**
+   - Alternatively, you can set the bucket to public access.
+   - In this case, access keys are not needed as anyone can access the bucket without authentication.
+
+For more detailed information on credentials management, refer to the official documentation:
+[https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html)

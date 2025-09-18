@@ -5,21 +5,28 @@ question: In Powershell, Git commit raises utf-8 encoding error after creating p
 sort_order: 2290
 ---
 
-Problem description
+### Problem Description
 
+When executing the following command in PowerShell, an error occurs:
+
+```bash
 git commit -m 'Updated xxxxxx'
+```
 
+The error message is:
+
+```bash
 An error has occurred: InvalidConfigError:
 
 ==> File .pre-commit-config.yaml
 
 =====> 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+```
 
-Solution description
+### Solution Description
 
-Set uft-8 encoding when creating the pre-commit yaml file:
+Set UTF-8 encoding when creating the pre-commit YAML file:
 
+```powershell
 pre-commit sample-config | out-file .pre-commit-config.yaml -encoding utf8
-
-Added by MarcosMJD
-
+```

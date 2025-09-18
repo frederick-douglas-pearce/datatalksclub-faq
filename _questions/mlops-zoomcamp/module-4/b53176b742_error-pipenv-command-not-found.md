@@ -1,16 +1,17 @@
 ---
 id: b53176b742
-question: Error pipenv command not found after pipenv installation
+question: 'Error: pipenv command not found after pipenv installation'
 sort_order: 1820
 ---
 
-When installing pipenv using --user option, not to all users, you would need to update the PATH environment variable to run pipenv commands. You can update the env variable but its much better to update your .bashrc or .profile, depends on you OS, to persist the change. Go to your .bashrc file and include or update a line like this:
+When installing pipenv using the `--user` option, you need to update the PATH environment variable to run pipenv commands. It's recommended to update your `.bashrc` or `.profile` (depending on your OS) to persist the change. Edit your `.bashrc` file to include or update a line like this:
 
-`PATH="<path_to_your_pipenv_install_dir>:$PATH”`
+```bash
+PATH="<path_to_your_pipenv_install_dir>:$PATH"
+```
 
-Or you can try to reinstall pipenv as root, for all users:
+Alternatively, you can reinstall pipenv as root for all users:
 
+```bash
 sudo -H pip install -U pipenv
-
-Added by Eduardo Muñoz
-
+```

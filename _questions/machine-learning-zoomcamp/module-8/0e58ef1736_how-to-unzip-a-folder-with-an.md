@@ -4,29 +4,25 @@ question: How to unzip a folder with an image dataset and suppress output?
 sort_order: 2860
 ---
 
-Problem:
+If you unzip a dataset within a Jupyter Notebook using the `! unzip` command, you may encounter extensive output messages for each file. To suppress this output, follow these solutions:
 
-A dataset for homework is in a zipped folder. If you unzip it within a jupyter notebook by means of ! unzip command, you’ll see a huge amount of output messages about unzipping of each image. So you need to suppress this output
+### Solution 1: Using Magic Commands
 
-Solution:
-
-Execute the next cell:
-
+```python
 %%capture
 
 ! unzip zipped_folder_name.zip -d destination_folder_name
+```
 
-Added by Alena Kniazeva
+### Solution 2: Using Python's zipfile Library
 
-Inside a Jupyter Notebook:
-
+```python
 import zipfile
 
 local_zip = 'data.zip'
-
 zip_ref = zipfile.ZipFile(local_zip, 'r')
-
 zip_ref.extractall('data')
-
 zip_ref.close()
+```
 
+Use Solution 1 to suppress output directly in the notebook. Solution 2 provides an alternative approach using Python code.

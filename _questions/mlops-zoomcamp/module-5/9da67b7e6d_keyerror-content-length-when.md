@@ -4,15 +4,20 @@ question: KeyError ‘content-length’ when running prepare.py
 sort_order: 1950
 ---
 
-Problem: When running prepare.py getting KeyError: ‘content-length’
+**Problem:** When running `prepare.py`, encountering `KeyError: 'content-length'`.
 
-Solution: From Emeli Dral:It seems to me that the link we used in prepare.py to download taxi data does not work anymore. I substituted the instruction:
+**Solution:**
 
-url = f"[https://nyc-tlc.s3.amazonaws.com/trip+data/{file}](https://nyc-tlc.s3.amazonaws.com/trip+data/%7Bfile%7D)
+From Emeli Dral: It seems the link used in `prepare.py` to download taxi data is no longer functional. Replace the URL in the script as follows:
 
-by the
+```python
+url = f"https://nyc-tlc.s3.amazonaws.com/trip+data/{file}"
+```
 
-url = f"[https://d37ci6vzurychx.cloudfront.net/trip-data/{file}](https://d37ci6vzurychx.cloudfront.net/trip-data/%7Bfile%7D)"
+with:
 
-in the prepare.py and it worked for me. Hopefully, if you do the same you will be able to get those data.
+```python
+url = f"https://d37ci6vzurychx.cloudfront.net/trip-data/{file}"
+```
 
+By making this substitution in `prepare.py`, the problem should be resolved, allowing access to the necessary data.

@@ -4,15 +4,16 @@ question: Managing Multiple Docker Containers with docker-compose profile
 sort_order: 2340
 ---
 
-Problem description
+### Problem Description
 
-When a docker-compose file contains a lot of containers, running the containers may take too much resource. There is a need to easily select only a group of containers while ignoring irrelevant containers during testing.
+When a Docker Compose file contains many containers, running them all may consume too many resources. There is often a need to easily select only a group of containers while ignoring irrelevant ones during testing.
 
-Solution description
+### Solution Description
 
-Add profiles: [“profile_name”] in the service definition.
+1. Add `profiles: ["profile_name"]` in the service definition within your `docker-compose.yml` file.
 
-When starting up the service, add `--profile profile_name` in the command.
+2. Start the service with the specific profile using the command:
 
-Added by Ammar Chalifah
-
+   ```bash
+   docker-compose --profile profile_name up
+   ```

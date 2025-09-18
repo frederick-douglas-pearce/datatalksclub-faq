@@ -5,7 +5,4 @@ question: 'ConnectionError: (''Connection aborted.'', RemoteDisconnected(''Remot
 sort_order: 2020
 ---
 
-Set the host to ‘0.0.0.0’ on the flask app and dockerfile then RUN the url using localhost.
-
-(Theresa S.)
-
+Set the host to '0.0.0.0' on the Flask app and Dockerfile, then run the URL using localhost.

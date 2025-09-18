@@ -4,19 +4,18 @@ question: How to Install Xgboost
 sort_order: 2460
 ---
 
-To install Xgboost, use the code below directly in your jupyter notebook:
+To install Xgboost, use the following command directly in your Jupyter Notebook:
 
-(Pip 21.3+ is required)
-
+```bash
 pip install xgboost
+```
 
-You can update your pip by using the code below:
+**Note:** Pip 21.3+ is required.
 
+You can update your pip using the command below:
+
+```bash
 pip install --upgrade pip
+```
 
-For more about xgbboost and installation, check here:
-
-[https://xgboost.readthedocs.io/en/stable/install.html](https://xgboost.readthedocs.io/en/stable/install.html)
-
-Aminat Abolade
-
+For more information about Xgboost and installation details, check the [official documentation](https://xgboost.readthedocs.io/en/stable/install.html).

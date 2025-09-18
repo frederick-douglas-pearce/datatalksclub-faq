@@ -4,9 +4,11 @@ question: Running out of memory
 sort_order: 650
 ---
 
-Problem: The output of DictVectorizer was taking up too much memory. So much so, that I couldn’t even fit the linear regression model before running out of memory on my 16 GB machine.
+**Problem:** The output of DictVectorizer was consuming too much memory, causing an inability to fit the linear regression model before running out of memory on a 16 GB machine.
 
-Solution: In the example for DictVectorizer in the scikit-learn [website](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html), they set the parameter “sparse” as False. Although this helps with viewing the results, this results in a lot of memory usage. The solution is to either use “sparse=True” instead, or leave it at the default which is also True.
+**Solution:**
 
-Ahmed Fahim (afahim03@yahoo.com)
+- In the example for DictVectorizer on the scikit-learn [website](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html), the parameter `sparse` is set as `False`. While this helps with viewing results, it greatly increases memory usage.
+- To address this, either set `sparse=True`, or leave it at the default setting, which is also `True`. 
 
+By using `sparse=True`, memory usage will be reduced, allowing for more efficient model fitting.

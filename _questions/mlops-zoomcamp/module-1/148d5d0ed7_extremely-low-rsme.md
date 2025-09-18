@@ -1,12 +1,14 @@
 ---
 id: 148d5d0ed7
-question: Extremely low RSME
+question: Extremely low RMSE
 sort_order: 610
 ---
 
-Problem: I’m facing an extremely low RMSE score (eg: 4.3451e-6) - what shall I do?
+**Problem:** I’m facing an extremely low RMSE score (e.g., 4.3451e-6) - what should I do?
 
-Answer: Recheck your code to see if your model is learning the target prior to making the prediction. If the target variable is passed in as a parameter while fitting the model, chances are the model would score extremely low. However, that’s not what you would want and would much like to have your model predict that. A good way to check that is to make sure your X_train doesn’t contain any part of your y_train. The same stands for validation too.
+**Answer:**
 
-Snehangsu De ([desnehangsu@gmail.com](mailto:desnehangsu@gmail.com))
-
+- Recheck your code to see if your model is inadvertently learning the target before making predictions.
+- Ensure that the target variable is not included as a parameter while fitting the model. Including it can result in misleadingly low scores.
+- Verify that `X_train` does not contain any part of your `y_train`. This applies to the validation set as well.
+- Adjust your data handling to avoid data leakage between your features and the target.

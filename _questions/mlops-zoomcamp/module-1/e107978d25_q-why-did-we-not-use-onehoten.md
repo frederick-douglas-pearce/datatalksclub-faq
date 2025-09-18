@@ -1,23 +1,13 @@
 ---
 id: e107978d25
-question: 'Q: Why did we not use OneHotEncoder(sklearn) instead of DictVectorizer
-  ?'
+question: Why did we not use OneHotEncoder(sklearn) instead of DictVectorizer?
 sort_order: 570
 ---
 
-Why didn't get_dummies in the pandas library or OneHotEncoder in scikit-learn library be used for one-hot encoding? I know OneHotEncoder is the most common and useful. One-hot coding can also be done using the eye or identity components of the NumPy library.
+There are several reasons for choosing DictVectorizer over OneHotEncoder:
 
-M.Sari
-
-OneHotEncoder has the option to output a row column tuple matrix. DictVectorizer is a one step method to encode and support row column tuple matrix output.
-
-Harinder([sudwalh@gmail.com](mailto:sudwalh@gmail.com))
-
-We used DictVectorizer because it provides a simple one-step way to handle both categorical and numerical features from dictionaries, and directly outputs a sparse matrix—making it ideal for ML pipelines without extra preprocessing.
-
-Yann Pham-Van
-
-Use OneHotEncoder when you want full control, need to work with sklearn pipelines, or must handle unknown categories safely. Use DictVectorizer when your data is in dictionary format (e.g., JSON or from APIs) and you want to plug it into a pipeline quickly.
-
-[Gabi Fonseca](https://github.com/fonsecagabriella/data_science/blob/main/00_general_notes/encoding_summary.ipynb)
-
+- **Simple One-Step Process**: DictVectorizer provides a straightforward method to encode both categorical and numerical features from dictionaries, outputting directly to a sparse matrix.
+- **Ideal for ML Pipelines**: The direct output in sparse matrix format makes DictVectorizer a good fit for machine learning pipelines without needing additional preprocessing.
+- **Use Cases**: 
+  - Use **OneHotEncoder** if you need full control, are working with sklearn pipelines, or need to handle unknown categories safely.
+  - Use **DictVectorizer** when your data is in dictionary format (e.g., JSON or from APIs) and you aim for quick integration into the pipeline.

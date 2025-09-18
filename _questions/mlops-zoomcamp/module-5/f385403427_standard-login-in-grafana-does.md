@@ -1,26 +1,33 @@
 ---
 id: f385403427
-question: Standard login in Grafana does not work
+question: 'Grafana: Standard login does not work'
 sort_order: 2010
 ---
 
-When you try to login in Grafana with standard requisites (admin/admin) it throw up an error.
+When trying to log in to Grafana with the standard credentials (admin/admin), an error occurs.
 
-After run grafana-cli admin reset-admin-password admin in Grafana container the problem will be fixed
+### Solution
 
-Added by Artem Glazkov
+1. To reset the admin password, use the following command inside the Grafana container:
 
-Command above is deprecated:
+   ```bash
+   grafana cli admin reset-admin-password admin
+   ```
 
-Deprecation warning: The standalone 'grafana-cli' program is deprecated and will be removed in the future. Please update all uses of 'grafana-cli' to 'grafana cli'
+   **Note:** The `grafana-cli` command is deprecated. Use `grafana cli` instead.
 
-To enter the docker container with grafana, find the Container ID by running:
+2. Enter the Docker container with Grafana:
 
-docker ps
+   - Find the Container ID by running:
+     
+     ```bash
+     docker ps
+     ```
 
-Then use the Container ID from grafana and prepend it to the command above like this:
+   - Use the Container ID to reset the password. Replace `<container_ID>` with the actual Container ID:
 
-lpep_pickup_datetime<container_ID> grafana cli admin reset-admin-password admin
+     ```bash
+     lpep_pickup_datetime<container_ID> grafana cli admin reset-admin-password admin
+     ```
 
-Added by Svetlana Ulianova
-
+This should resolve the login issue.

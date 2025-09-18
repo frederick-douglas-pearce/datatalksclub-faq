@@ -4,15 +4,16 @@ question: Opening Jupyter in AWS
 sort_order: 300
 ---
 
-Faced issue while setting up JUPYTER NOTEBOOK on AWS. I was unable to access it from my desktop. (I am not using visual studio and hence faced problem)
+Faced issue while setting up Jupyter Notebook on AWS. I was unable to access it from my desktop. (I am not using Visual Studio and hence faced problem)
 
-Run
+1. Run the following command:
+   
+   ```bash
+   jupyter notebook --generate-config
+   ```
 
-jupyter notebook --generate-config
+2. Edit the file `/home/ubuntu/.jupyter/jupyter_notebook_config.py` to add the following line:
 
-Edit file /home/ubuntu/.jupyter/jupyter_notebook_config.py to add following line:
-
-NotebookApp.ip = '*'
-
-Added by Atul Gupta ([samatul@gmail.com](mailto:samatul@gmail.com))
-
+   ```python
+   NotebookApp.ip = '*'
+   ```

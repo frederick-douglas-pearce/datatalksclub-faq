@@ -6,21 +6,25 @@ question: 'WARNING mlflow.xgboost: Failed to infer model signature: could not sa
 sort_order: 1160
 ---
 
-Please make sure you following the order below nd enabling the autologging before constructing the dataset. If you still have this issue check that your data is in format compatible with XGBoost.
+Please make sure you follow the order below, enabling autologging before constructing the dataset. If you still have this issue, check that your data is in a format compatible with XGBoost.
 
-# Enable MLflow autologging for XGBoost
+1. **Enable MLflow autologging for XGBoost**
+   
+   ```python
+   mlflow.xgboost.autolog()
+   ```
 
-mlflow.xgboost.autolog()
+2. **Construct your dataset**
 
-# Construct your dataset
+   ```python
+   X_train, y_train = ...
+   ```
 
-X_train, y_train = ...
+3. **Train your XGBoost model**
 
-# Train your XGBoost model
-
-model = xgb.XGBRegressor(...)
-
-model.fit(X_train, y_train)
-
-Added by Olga Rudakova
-
+   ```python
+   import xgboost as xgb
+   model = xgb.XGBRegressor(...)
+   
+   model.fit(X_train, y_train)
+   ```

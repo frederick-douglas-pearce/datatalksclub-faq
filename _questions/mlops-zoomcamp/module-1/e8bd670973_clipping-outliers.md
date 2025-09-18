@@ -10,9 +10,10 @@ sort_order: 580
 
 How to check that we removed the outliers?
 
-Use the pandas function describe() which can provide a report of the data distribution along with the statistics to describe the data. For example, after clipping the outliers using boolean expression, the min and max can be verified using
+Use the pandas function `describe()` which can provide a report of the data distribution along with the statistics to describe the data. For example, after clipping the outliers using a boolean expression, the min and max can be verified using:
 
-df[‘duration’].describe()
+```python
+ df['duration'].describe()
+```
 
 <{IMAGE:image_1}>
-

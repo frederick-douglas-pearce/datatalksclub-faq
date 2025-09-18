@@ -4,17 +4,18 @@ question: Found array with 0 sample(s)
 sort_order: 1990
 ---
 
-Problem description
+### Problem Description
 
+```python
 ValueError: Found array with 0 sample(s) (shape=(0, 6)) while a minimum of 1 is required by LinearRegression.
+```
 
-Solution description
+### Solution Description
 
-This happens because the generated data is based on an early date therefore the training dataset would be empty.
+This error occurs because the generated data is based on an early date, resulting in an empty training dataset.
 
-Adjust the following
+Adjust the following:
 
+```python
 begin = datetime.datetime(202X, X, X, 0, 0)
-
-Added by Luke
-
+```

@@ -1,27 +1,26 @@
 ---
 id: e781391c86
-question: 'Error while parsing arguments via CLI  [ValueError: Unknown format code
-  ''d'' for object of type ''str'']'
+question: 'Error: Error while parsing arguments via CLI [ValueError: Unknown format
+  code ''d'' for object of type ''str'']'
 sort_order: 1670
 ---
 
-When passing arguments to a script via command line and converting it to a 4 digit number using f’{year:04d}’, this error showed up.
+When passing arguments to a script via command line and converting it to a 4-digit number using `f’{year:04d}’`, this error can occur.
 
-This happens because all inputs from the command line are read as string by the script. They need to be converted to numeric/integer before transformation in fstring.
+This happens because command line inputs are read as strings. They need to be converted to integers before formatting with an f-string:
 
+```python
 year = int(sys.argv[1])
+f'{year:04d}'
+```
 
-f’{year:04d}’
+If you use the `click` library, update your decorator accordingly:
 
-If you use click library just edit a decorator
+```python
+import click
 
 @click.command()
-
-@click.option( "--year",  help="Year for evaluation",   type=int)
-
-def  your_function(year):
-
-<<Your code>>
-
-Added by Taras Sh
-
+@click.option("--year", help="Year for evaluation", type=int)
+def your_function(year):
+    # Your code
+```

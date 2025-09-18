@@ -1,14 +1,15 @@
 ---
 id: 744f73a640
-question: Different values of auc, each time code is re-run
+question: Different values of AUC, each time code is re-run
 sort_order: 2550
 ---
 
-When I run dt = DecisionTreeClassifier() in jupyter in same laptop, each time I re-run it or do (restart kernel + run) I get different values of auc. Some of them are 0.674, 0.652, 0.642, 0.669 and so on.  Anyone knows why it could be? I am referring to 7:40-7:45 of video 6.3.
+When running `dt = DecisionTreeClassifier()` in Jupyter on the same laptop, different AUC values are observed each time it is re-run or after restarting the kernel. Examples include values like 0.674, 0.652, 0.642, 0.669, etc. This variability is discussed in a video between 7:40-7:45 of section 6.3.
 
-Solution: try setting the random seed e.g
+**Solution:**
 
-dt = DecisionTreeClassifier(random_state=22)
+- Set a random seed to ensure reproducibility by using:
 
-Bhaskar Sarma
-
+  ```python
+  dt = DecisionTreeClassifier(random_state=22)
+  ```

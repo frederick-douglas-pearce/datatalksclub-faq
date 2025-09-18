@@ -4,13 +4,12 @@ question: 'Q6: Logged model artifacts lost when mlflow container is down or remo
 sort_order: 1460
 ---
 
-By default, the logged model and artifacts are stored in a local folder in the mlflow container but not in /home/src/mlflow, so when the container is restarted (after a compose down or container remove) the artifacts are deleted and you can not see them in mlflow UI.
+By default, the logged model and artifacts are stored in a local folder in the mlflow container but not in `/home/src/mlflow`. Therefore, when the container is restarted (after a compose down or container removal), the artifacts are deleted and you cannot see them in the mlflow UI.
 
-A simple solution to avoid this issue: You can include a new volume in the docker compose service mlflow to map a folder in the local machine to the folder /mlartifacts in the mlflow container:
+To prevent this issue, you can include a new volume in the Docker Compose service for mlflow to map a folder on the local machine to the folder `/mlartifacts` in the mlflow container:
 
-- "${PWD}/mlartifacts:/mlartifacts/"
+- ```bash
+  "${PWD}/mlartifacts:/mlartifacts/"
+  ```
 
-Then, every data logged to the experiment will be available when the mlflow container is recreated.
-
-Added by edumunozsala
-
+This way, every data logged to the experiment will be available even when the mlflow container is recreated.

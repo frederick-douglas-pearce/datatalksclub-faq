@@ -6,7 +6,8 @@ question: 'Uploading to s3 fails with "An error occurred (InvalidAccessKeyId) wh
 sort_order: 1720
 ---
 
-Even though the upload works using aws cli and boto3 in Jupyter notebook.
+Even though the upload works using AWS CLI and boto3 in Jupyter notebook.
 
-Solution set the AWS_PROFILE environment variable (the default profile is called default)
+**Solution:**
 
+Set the `AWS_PROFILE` environment variable (the default profile is called `default`).

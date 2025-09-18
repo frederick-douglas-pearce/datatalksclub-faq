@@ -4,11 +4,22 @@ question: Viewing MLflow Experiments using MLflow CLI
 sort_order: 1090
 ---
 
-Problem: After starting the tracking server, when we try to use the mlflow cli commands as listed [here](https://mlflow.org/docs/latest/cli.html), most of them can’t seem to find the experiments that have been run with the tracking server
+Problem:
 
-Solution: We need to set the environment variable MLFLOW_TRACKING_URI to the URI of the sqlite database. This is something like “export MLFLOW_TRACKING_URI=sqlite:///{path to sqlite database}” . After this, we can view the experiments from the command line using commands like “mlflow experiments search”
+After starting the tracking server, when trying to use the MLflow CLI commands as listed [here](https://mlflow.org/docs/latest/cli.html), most commands can't find the experiments that have been run with the tracking server.
 
-Even after this commands like “mlflow gc” doesn’t seem to get the tracking uri, and they have to be passed explicitly as an argument every time the command is run.
+Solution:
 
-Ahmed Fahim (afahim03@yahoo.com)
+- Set the environment variable `MLFLOW_TRACKING_URI` to the URI of the SQLite database:
 
+  ```bash
+  export MLFLOW_TRACKING_URI=sqlite:///{path to sqlite database}
+  ```
+
+- After setting the environment variable, you can view the experiments from the command line using commands like:
+
+  ```bash
+  mlflow experiments search
+  ```
+
+- Note: Commands like `mlflow gc` may still not get the tracking URI and need to be passed explicitly as an argument every time the command is run.

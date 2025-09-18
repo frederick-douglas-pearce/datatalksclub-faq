@@ -4,21 +4,32 @@ question: Errors with istio during installation
 sort_order: 3700
 ---
 
-Problem description:
+### Problem Description:
 
-Running this:
+Running the following command:
 
-curl -s "[raw.githubusercontent.com](https://raw.githubusercontent.com/kserve/kserve/release-0.9/hack/quick_install.sh") | bash
+```bash
+curl -s "https://raw.githubusercontent.com/kserve/kserve/release-0.9/hack/quick_install.sh" | bash
+```
 
-Fails with errors because of istio failing to update resources, and you are on kubectl > 1.25.0.
+Fails with errors due to Istio failing to update resources when using `kubectl` version greater than 1.25.0.
 
-Check kubectl version with kubectl version
+Check your `kubectl` version with:
 
-Solution description
+```bash
+kubectl version
+```
 
-Edit the file “quick_install.bash” by downloading it with curl without running bash. Edit the versions of Istio and Knative as per the matrix on the [KServe website](https://kserve.github.io/website/master/admin/serverless/serverless/#recommended-version-matrix).
+### Solution Description:
 
-Run the bash script now.
+1. Download the "quick_install.bash" script without executing it:
+   
+   ```bash
+   curl -O https://raw.githubusercontent.com/kserve/kserve/release-0.9/hack/quick_install.sh
+   ```
 
-Added by Andrew Katoch
+2. Edit the downloaded script to update the versions of Istio and Knative according to the [recommended version matrix on the KServe website](https://kserve.github.io/website/master/admin/serverless/serverless/#recommended-version-matrix).
 
+3. Run the modified bash script.
+
+By following these steps, you should avoid the installation errors related to Istio.

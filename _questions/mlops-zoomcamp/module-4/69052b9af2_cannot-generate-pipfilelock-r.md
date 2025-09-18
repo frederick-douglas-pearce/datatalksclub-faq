@@ -4,11 +4,13 @@ question: Cannot generate pipfile.lock raise InstallationError( pip9.exceptions.
 sort_order: 1700
 ---
 
-Problem description cannot generate pipfile.lock raise InstallationError( pip9.exceptions.InstallationError: Command "python setup.py egg_info" failed with error code 1
+Problem description: Cannot generate `pipfile.lock`. Raises `InstallationError( pip9.exceptions.InstallationError: Command "python setup.py egg_info" failed with error code 1`.
 
-Solution: you need to force and upgrade wheel and pipenv
+Solution:
 
-Just run the command line :
+- You need to force an upgrade of `wheel` and `pipenv`.
+- Run the following command:
 
-pip install --user --upgrade --upgrade-strategy eager pipenv wheel
-
+  ```bash
+  pip install --user --upgrade --upgrade-strategy eager pipenv wheel
+  ```

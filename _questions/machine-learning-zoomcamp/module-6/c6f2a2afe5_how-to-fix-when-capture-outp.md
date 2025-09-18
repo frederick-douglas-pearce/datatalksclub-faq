@@ -11,45 +11,51 @@ question: How to fix when %%capture output is not working in Google Collab Noteb
 sort_order: 2400
 ---
 
-I was using Google Collab Notebook for the 2024 cohort HW 06. For the Q6 here, the
+I was using Google Collab Notebook for the 2024 cohort HW 06. For Question 6, the following was not working in the Collab Notebook:
 
 <{IMAGE:image_1}>
 
 <{IMAGE:image_2}>
 
-was not working in the Collab Notebook. This led me to find a solution which is as follows:
+This led me to find a solution as follows:
 
-# import the required libraries
+1. **Import the required libraries:**
 
-import io
+   ```python
+   import io
+   import sys
+   ```
 
-import sys
+2. **Capture output using `io.StringIO`:**
 
-# Capture output using io.StringIO
+   ```python
+   output_capture = io.StringIO()
+   sys.stdout = output_capture  # Redirect stdout to the StringIO buffer
+   
+   # Train the model with eta=0.3
+   model_eta_03 = xgb.train(xgb_params, dtrain, num_boost_round=num_rounds, verbose_eval=2, evals=watchlist)
+   
+   # Reset stdout
+   sys.stdout = sys.__stdout__
+   
+   # Retrieve and print the captured output
+   captured_output = output_capture.getvalue()
+   ```
 
-output_capture = io.StringIO()
+3. **Modify the parser function for one line:**
 
-sys.stdout = output_capture  # Redirect stdout to the StringIO buffer
+   Replace this line in Alexey’s parser function:
 
-# Train the model with eta=0.3
+   ```python
+   for line in output.stdout.strip().split('\n'):
+   ```
 
-model_eta_03 = xgb.train(xgb_params, dtrain, num_boost_round=num_rounds, verbose_eval=2, evals=watchlist)
+   With this line:
 
-# Reset stdout
+   ```python
+   for line in output.strip().split('\n'):
+   ```
 
-sys.stdout = sys.__stdout__
+4. **Call the parser function:**
 
-# Retrieve and print the captured output
-
-captured_output = output_capture.getvalue()
-
-And, we need to slightly modify the parser function for only one line:
-
-for line in output.stdout.strip().split('\n'):    # replace this line 3 in Alexey’s parser function with
-
-for line in output.strip().split('\n'):
-
-And  then call the df_score_03 = parse_xgb_output(captured_output)for getting the desired dataframe.
-
-(Added by Siddhartha Gogoi)
-
+   Use `df_score_03 = parse_xgb_output(captured_output)` to get the desired dataframe.

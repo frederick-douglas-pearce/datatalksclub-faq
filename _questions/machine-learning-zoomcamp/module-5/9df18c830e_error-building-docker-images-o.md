@@ -6,19 +6,24 @@ sort_order: 1810
 
 Do you get errors building the Docker image on the Mac M1 chipset?
 
-The error I was getting was:
+The error received was:
 
+```
 Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory
+```
 
-The fix (from [here](https://stackoverflow.com/questions/68630526/lib64-ld-linux-x86-64-so-2-no-such-file-or-directory-error)): vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+### Solution
 
-Open mlbookcamp-code/course-zoomcamp/01-intro/environment/Dockerfile
+To fix this error:
 
-Replace line 1 with
+1. Open the `mlbookcamp-code/course-zoomcamp/01-intro/environment/Dockerfile`.
 
-FROM --platform=linux/amd64 ubuntu:latest
+2. Replace line 1 with:
+   
+   ```dockerfile
+   FROM --platform=linux/amd64 ubuntu:latest
+   ```
 
-Now build the image as specified. In the end it took over 2 hours to build the image but it did complete in the end.
+3. Now build the image as specified.
 
-David Colton
-
+Note: Building the image may take over 2 hours, but it should complete successfully.

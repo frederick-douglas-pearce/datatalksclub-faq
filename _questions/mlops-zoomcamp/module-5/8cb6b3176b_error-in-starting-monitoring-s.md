@@ -4,9 +4,18 @@ question: Error in starting monitoring services in Linux
 sort_order: 1940
 ---
 
-Problem Description : In Linux, when starting services using docker compose up --build  as shown in video 5.2, the services won’t start and instead we get message unknown flag: --build in command prompt.
+**Problem Description:**
 
-Solution : Since we install docker-compose separately in Linux, we have to run docker-compose up --build instead of docker compose up --build
+In Linux, when starting services using `docker compose up --build` as shown in video 5.2, the services won’t start and instead we get the message:
 
-Added by Ashish Lalchandani
+```
+unknown flag: --build
+```
 
+**Solution:**
+
+Since we install docker-compose separately in Linux, use the following command:
+
+```bash
+docker-compose up --build
+```

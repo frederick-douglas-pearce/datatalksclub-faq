@@ -4,25 +4,16 @@ question: Sequential vs. Functional Model Modes in Keras (TF2)
 sort_order: 2980
 ---
 
-It’s quite useful to understand that all types of models in the course are a plain stack of layers where each layer has exactly one input tensor and one output tensor ([Sequential](https://www.tensorflow.org/guide/keras/sequential_model) model TF page, [Sequential](https://keras.io/api/models/sequential/) class).
+It’s useful to understand that all types of models in the course are a plain stack of layers where each layer has exactly one input tensor and one output tensor. See the [Sequential model TF page](https://www.tensorflow.org/guide/keras/sequential_model) and the [Sequential class](https://keras.io/api/models/sequential/).
 
-You can simply start from an “empty” model and add more and more layers in a sequential order.
+You can start with an “empty” model and add more layers in sequential order. This is called the “Sequential Model API,” which is easier to use.
 
-This mode is called “Sequential Model API”  (easier)
+In Alexey’s videos, it’s implemented as chained calls of different entities (“inputs,” “base,” “vectors,” “outputs”) in a more advanced mode, the “Functional Model API.” A more complicated approach makes sense for Transfer Learning, where you want to separate the “Base” model from the rest, but in homework, you're required to recreate the full model from scratch. It might be easier to work with a sequence of similar layers.
 
-In Alexey’s videos it is implemented as chained calls of different entities (“inputs”,“base”, “vectors”,  “outputs”) in a more advanced mode “Functional Model API”.
+For more information, see this TF2 [tutorial](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/).
 
-Maybe a more complicated way makes sense when you do Transfer Learning and want to separate “Base” model vs. rest, but in the HW you need to recreate the full model from scratch ⇒ I believe it is easier to work with a sequence of “similar” layers.
+A useful Sequential model example is available in Kaggle’s “Bee or Wasp” dataset folder: [notebook](https://www.kaggle.com/code/tammygusmao/bee-or-wasp-from-scratch-to-transfer-learning).
 
-You can read more about it in this TF2 [tutorial](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/).
+### Fresh Run on Neural Nets
 
-A really useful Sequential model example is shared in the Kaggle’s “Bee or Wasp” dataset folder with code: [notebook](https://www.kaggle.com/code/tammygusmao/bee-or-wasp-from-scratch-to-transfer-learning)
-
-Added by Ivan Brigida
-
-Fresh Run on Neural Nets
-
-While correcting an error on neural net architecture, it is advised to do fresh run by restarting kernel, else the model learns on top of previous runs.
-
-Added by Abhijit Chakraborty
-
+While correcting errors in neural net architecture, it is advised to perform a fresh run by restarting the kernel. Otherwise, the model may learn on top of previous runs.

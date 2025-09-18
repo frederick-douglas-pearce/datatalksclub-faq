@@ -5,5 +5,4 @@ question: Does it matter if we let the Python file create the server or if we ru
 sort_order: 2590
 ---
 
-They both do the same, it's just less typing from the script.
-
+They both do the same. Using the script involves less typing.

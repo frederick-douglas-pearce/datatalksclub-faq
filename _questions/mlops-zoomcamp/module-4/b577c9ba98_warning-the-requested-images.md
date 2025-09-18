@@ -5,5 +5,8 @@ question: 'WARNING: The requested image''s platform (linux/amd64) does not match
 sort_order: 1790
 ---
 
-To resolve this make sure to build the docker image with the platform tag, like this:“docker build -t homework:v1 --platform=linux/arm64 .”
+To resolve this issue, make sure to build the Docker image with the platform tag. Use the following command:
 
+```bash
+docker build -t homework:v1 --platform=linux/arm64 .
+```

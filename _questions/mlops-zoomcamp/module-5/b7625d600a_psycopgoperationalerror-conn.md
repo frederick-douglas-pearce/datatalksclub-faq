@@ -5,9 +5,15 @@ question: 'psycopg.OperationalError: connection failed: connection to server at 
 sort_order: 2170
 ---
 
-It could be that there is already a another docker container running (for example, from previous week).
+It could be that there is already another Docker container running (for example, from a previous session).
 
-Check with docker ps, and stop it with docker stop container_name_or_ID
+To resolve this issue:
 
-Added Ibai Irastorza
-
+1. Check for running containers:
+   ```bash
+   docker ps
+   ```
+2. Stop the running container:
+   ```bash
+   docker stop <container_name_or_ID>
+   ```

@@ -1,15 +1,21 @@
 ---
 id: b395e1c5ec
-question: 'I get below error invalid mount config for type "bind": invalid specification:
-  destination can''t be ''/'' when running docker compose up when running mage'
+question: 'I get the following error: invalid mount config for type "bind": invalid
+  specification: destination can''t be ''/'' when running docker compose up when running
+  mage'
 sort_order: 1490
 ---
 
-You should not run docker compose up for mage repo, should always use bash ./scripts/start.sh
+You should not run `docker compose up` for the mage repo directly. Instead, use:
 
-A
+```bash
+bash ./scripts/start.sh
+```
 
->>> Update from another student of mlops zoomcamp: The start.sh script also runs docker compose up. And depending on how you start your mage project (like starting a fresh one in the capstone project), you may not have a start.sh or scripts directory. The most important thing about start.sh is that it sets the PROJECT_NAME and MAGE_CODE_PATH before executing docker compose up. These ENV variables can and probably should be set in your .env file.
+### Additional Information
 
-Update added by Claudia van Dijk
+- The `start.sh` script handles necessary environment variable settings before executing `docker compose up`.
+- Key environment variables such as `PROJECT_NAME` and `MAGE_CODE_PATH` should be set, potentially in your `.env` file.
+- Note that if you are starting a new mage project, like in a capstone project, you may not have a `start.sh` script or a `scripts` directory, so ensure the environment variables are set correctly.
 
+Update by another student from the MLOps Zoomcamp.

@@ -1,22 +1,23 @@
 ---
 id: f6d64d22b9
-question: 'Q: ValueError: Path not found or generated: WindowsPath(''C:/Users/username/.virtualenvs/envname/Scripts'')'
+question: 'ValueError: Path not found or generated: WindowsPath(''C:/Users/username/.virtualenvs/envname/Scripts'')'
 sort_order: 2010
 ---
 
-After entering `pipenv shell` don’t forget to use `exit` before `pipenv --rm`, as it may cause errors when trying to install packages, it is unclear whether you are “in the shell”(using Windows) at the moment as there are no clear markers for it.
+After entering `pipenv shell`, ensure you use `exit` before `pipenv --rm`. Failing to do so may cause installation errors, making it unclear whether you are "in the shell" on Windows, as there are no clear markers for it.
 
-It can also mess up PATH, if that’s the case, here’s terminal commands for fixing that:
+If this messes up your PATH, use these terminal commands to fix it:
 
-# for Windows
+- **For Windows**:
+  
+  ```bash
+  set VIRTUAL_ENV ""
+  ```
 
-set VIRTUAL_ENV ""
+- **For Unix**:
+  
+  ```bash
+  export VIRTUAL_ENV=""
+  ```
 
-# for Unix
-
-export VIRTUAL_ENV=""
-
-Also manually re-creating removed folder at `C:\Users\username\.virtualenvs\removed-envname` can help, removed-envname can be seen at the error message.
-
-Added by Andrii Larkin
-
+Additionally, manually re-creating the removed folder at `C:\Users\username\.virtualenvs\removed-envname` can help. The `removed-envname` can be identified in the error message.

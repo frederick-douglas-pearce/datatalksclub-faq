@@ -5,62 +5,58 @@ question: Pytest error ‘module not found’ when using pre-commit hooks if usi
 sort_order: 2320
 ---
 
-Problem description
+### Problem Description
 
 Project structure:
 
+```
 /sources/production/model_service.py
+/sources/tests/unit_tests/test_model_service.py 
+```
 
-/sources/tests/unit_tests/test_model_service.py (“from production.model_service import ModelService)
+In `test_model_service.py`:
 
-git commit -t ‘test’ raises ‘No module named ‘production’’ when calling pytest hook
+```python
+from production.model_service import ModelService
+```
 
+A `git commit -t ‘test’` raises `No module named ‘production’` when calling the pytest hook:
+
+```yaml
 - repo: local
 
-hooks:
+  hooks:
+    - id: pytest-check
+      name: pytest-check
+      entry: pytest
+      language: system
+      pass_filenames: false
+      always_run: true
+      args: [
+        "tests/"
+      ]
+```
 
-- id: pytest-check
-
-name: pytest-check
-
-entry: pytest
-
-language: system
-
-pass_filenames: false
-
-always_run: true
-
-args: [
-
-"tests/"
-
-]
-
-Solution description
+### Solution Description
 
 Use this hook instead:
 
+```yaml
 - repo: local
 
-hooks:
+  hooks:
+    - id: pytest-check
+      name: pytest-check
+      entry: "./sources/tests/unit_tests/run.sh"
+      language: system
+      types: [python]
+      pass_filenames: false
+      always_run: true
+```
 
-- id: pytest-check
+Ensure that `run.sh` sets the correct directory and runs pytest:
 
-name: pytest-check
-
-entry: "./sources/tests/unit_tests/run.sh"
-
-language: system
-
-types: [python]
-
-pass_filenames: false
-
-always_run: true
-
-And make sure that run.sh sets the right directory and run pytest:
-
+```bash
 cd "$(dirname "$0")"
 
 cd ../..
@@ -68,6 +64,4 @@ cd ../..
 export PYTHONPATH=.
 
 pipenv run pytest ./tests/unit_tests
-
-Added by MarcosMJD
-
+```

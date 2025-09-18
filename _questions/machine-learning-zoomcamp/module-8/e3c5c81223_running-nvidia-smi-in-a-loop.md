@@ -4,13 +4,14 @@ question: Running ‘nvidia-smi’ in a loop without using ‘watch’
 sort_order: 2950
 ---
 
-The command ‘nvidia-smi’ has a built-in function which will run it in subsequently updating it every N seconds without the need of using the command ‘watch’.
+The command `nvidia-smi` has a built-in function that allows it to run in a loop, updating every N seconds, without using the `watch` command.
 
+```bash
 nvidia-smi -l <N seconds>
+```
 
-The following command will run ‘nvidia-smi’ every 2 seconds until interrupted using CTRL+C.
+For example, the following command will run `nvidia-smi` every 2 seconds until interrupted by pressing `CTRL+C`:
 
+```bash
 nvidia-smi -l 2
-
-Added by Sylvia Schmitt
-
+```

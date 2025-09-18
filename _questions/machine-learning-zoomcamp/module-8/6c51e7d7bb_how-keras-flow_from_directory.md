@@ -1,38 +1,36 @@
 ---
 id: 6c51e7d7bb
-question: How keras flow_from_directory know the names of classes in images?
+question: How does keras flow_from_directory know the names of classes in images?
 sort_order: 2870
 ---
 
-Problem:
+Keras `flow_from_directory` understands the names of classes from the names of folders.
 
-When we run train_gen.flow_from_directory() as in video 8.5, it finds images belonging to 10 classes. Does it understand the names of classes from the names of folders? Or, there is already something going on deep behind?
+### Explanation
 
-Solution:
+- When using `train_gen.flow_from_directory()`, the class names are derived from the folder names within the specified directory.
+- For example, if you create a folder named "xyz", it will be considered a class.
+- This behavior aligns with the function name `flow_from_directory`.
 
-The name of class is the folder name
+A detailed explanation can be found in this [tutorial](https://vijayabhaskar96.medium.com/tutorial-image-classification-with-keras-flow-from-directory-and-generators-95f75ebe5720).
 
-If you just create some random folder with the name "xyz", it will also be considered as a class!! The name itself is saying flow_from_directory
+### Error with TensorFlow Importing using Saturn Cloud Preconfigured Template
 
-a clear explanation below:
-
-[https://vijayabhaskar96.medium.com/tutorial-image-classification-with-keras-flow-from-directory-and-generators-95f75ebe5720](https://vijayabhaskar96.medium.com/tutorial-image-classification-with-keras-flow-from-directory-and-generators-95f75ebe5720)
-
-Added by Bhaskar Sarma
-
-Error with Tensorflow importing using saturn Cloud preconfigured template:
-
+```python
 TypeError: Unable to convert function return value to a Python type! The signature was () -> handle.
+```
 
-Successful Dependency Reinstallation:
+### Solution
 
-Just try uninstalling and re-installing tensorflow you got from saturnCloud twice or thrice.
+1. Uninstall and reinstall TensorFlow that you obtained from Saturn Cloud.
+2. Repeat the reinstallation process two or three times if necessary.
+   
+- This approach addresses potential dependency conflicts.
+- TensorFlow relies on various libraries (e.g., protobuf, numpy, grpcio) that might cause issues.
+- Reinstalling ensures all dependencies align with the correct version, resolving underlying issues.
 
-When you uninstalled and reinstalled TensorFlow, it might have resolved underlying issues with dependencies. TensorFlow relies on several libraries (e.g., protobuf, numpy, grpcio) that can sometimes cause conflicts. By reinstalling, you ensured that all dependencies were reinstalled and aligned with the correct version, allowing TensorFlow to work as expected.
+### Additional Note
 
-Late Recognition of the Change:
-
-In some cases, it might take a moment for the system to recognize the changes in the Python environment after installing packages. It could be that the environment was still "stuck" in an old state before, and after several installation attempts, the correct state was finally loaded, especially after restarting the Jupyter kernel.
-
-Added by Abdiaziz Qaladid
+- It may take a moment for the system to recognize environment changes after package installation.
+- Sometimes, multiple installation attempts are required to transition to the correct state, especially after restarting the Jupyter kernel.
 

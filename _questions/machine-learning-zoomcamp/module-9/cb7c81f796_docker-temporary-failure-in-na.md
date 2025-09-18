@@ -1,18 +1,20 @@
 ---
 id: cb7c81f796
-question: Docker Temporary failure in name resolution
+question: 'Docker: Temporary failure in name resolution'
 sort_order: 3320
 ---
 
-Add the next lines to vim /etc/docker/daemon.json
 
+Add the following lines to your Docker daemon configuration file using `vim /etc/docker/daemon.json`:
+
+```json
 {
-
-"dns": ["8.8.8.8", "8.8.4.4"]
-
+    "dns": ["8.8.8.8", "8.8.4.4"]
 }
+```
 
-Then, restart docker:  sudo service docker restart
+Then, restart Docker using the command:
 
-Ibai Irastorza
-
+```bash
+sudo service docker restart
+```

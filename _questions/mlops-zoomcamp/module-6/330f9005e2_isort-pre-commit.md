@@ -4,13 +4,10 @@ question: Isort Pre-commit
 sort_order: 2370
 ---
 
-Problem description
+### Problem Description
 
 Pre-commit command was failing with isort repo.
 
-Solution description
+### Solution
 
-Set version to 5.12.0
-
-Added by Erick Calderin
-
+- Set version to `5.12.0`

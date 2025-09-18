@@ -4,11 +4,8 @@ question: Is completion of Homework necessary for a certificate?
 sort_order: 2490
 ---
 
-No
-
-Added by Shashank Kumar
+No.
 
 Can I submit the final project on the second attempt and still receive the certificate?
 
-Yes, absolutely - it's your choice whether to submit one or two times; passing any one attempt is sufficient to earn the certificate.
-
+Yes, absolutely. It's your choice whether to submit one or two times; passing any one attempt is sufficient to earn the certificate.

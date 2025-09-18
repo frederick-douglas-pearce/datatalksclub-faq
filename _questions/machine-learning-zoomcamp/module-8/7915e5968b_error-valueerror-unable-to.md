@@ -6,13 +6,18 @@ question: 'Error: (ValueError: Unable to load weights saved in HDF5 format into 
 sort_order: 2800
 ---
 
-Problem description:
+**Problem Description:**
 
-When loading saved model getting error: ValueError: Unable to load weights saved in HDF5 format into a subclassed Model which has not created its variables yet. Call the Model first, then load the weights.
+When loading a saved model, you encounter the error:
 
-Solution description:
+```
+ValueError: Unable to load weights saved in HDF5 format into a subclassed Model which has not created its variables yet. Call the Model first, then load the weights.
+```
 
-Before loading model need to evaluate the model on input data: model.evaluate(train_ds)
+**Solution Description:**
 
-Added by Vladimir Yesipov
+Before loading the model, you need to evaluate the model on input data:
 
+```python
+model.evaluate(train_ds)
+```

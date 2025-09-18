@@ -5,9 +5,20 @@ question: 'TypeError: send_file() unexpected keyword ''max_age'' during MLflow U
 sort_order: 1040
 ---
 
-Problem: When I ran `$ mlflow ui` on a remote server and try to open it in my local browser I got an exception  and the page with mlflow ui wasn’t loaded.
+**Problem:** When running `$ mlflow ui` on a remote server and attempting to open it in a local browser, the following exception occurs, and the MLflow UI page does not load.
 
-Solution: You should `pip uninstall flask` on your remote server on conda env and after it install Flask `pip install Flask`. It is because the base conda env has ~flask<1.2, and when you clone it to your new work env, you are stuck with this old version.
+**Solution:**
 
-Added by Salimov Ilnaz
-
+1. Uninstall Flask on your remote server by using:
+   
+   ```bash
+   pip uninstall flask
+   ```
+   
+2. Reinstall Flask with:
+   
+   ```bash
+   pip install Flask
+   ```
+   
+   This issue arises because the base conda environment includes a version of Flask that's less than 1.2. Cloning this environment retains the older version, causing the error. Installing a newer version of Flask resolves the issue.

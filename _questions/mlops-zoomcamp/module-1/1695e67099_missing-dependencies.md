@@ -8,27 +8,27 @@ question: Missing dependencies
 sort_order: 450
 ---
 
-If some dependencies are missing
+If some dependencies are missing:
 
 <{IMAGE:image_1}>
 
-Install following packages
+Install the following packages:
 
-pandas
+- `pandas`
+- `matplotlib`
+- `scikit-learn`
+- `fastparquet`
+- `pyarrow`
+- `seaborn`
 
-matplotlib
+```bash
+pip install -r requirements.txt
+```
 
-scikit-learn
+I have seen this error when using `pandas.read_parquet()`. The solution is to install `pyarrow` or `fastparquet` by running the following command in the notebook:
 
-fastparquet
+```bash
+!pip install pyarrow
+```
 
-pyarrow
-
-seaborn
-
-pip install -r [requirements.txt](https://github.com/CodeProcessor/mlops-zoomcamp-notes/blob/main/01-Intro/homework/requirements.txt)
-
-I have seen this error when using pandas.read_parquet(), the solution is to install pyarrow or fastparquet by doing !pip install pyarrow in the notebook
-
-NOTE: if you’re using Conda instead of pip, install fastparquet rather than pyarrow, as it is much easier to install and it’s functionally identical to pyarrow for our needs.
-
+**Note:** If you’re using Conda instead of pip, install `fastparquet` rather than `pyarrow`, as it is much easier to install and it’s functionally identical to `pyarrow` for our needs.

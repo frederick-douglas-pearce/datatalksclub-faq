@@ -4,55 +4,62 @@ question: Running multiple services in a Docker container
 sort_order: 1690
 ---
 
-If you are trying to run Flask gunicorn & MLFlow server from the same container, defining both in Dockerfile with CMD will only run MLFlow & not Flask.
+If you are trying to run Flask with Gunicorn and an MLFlow server from the same container, defining both services in the Dockerfile with CMD will only run MLFlow and not Flask.
 
-Solution: Create separate shell script with server run commands, for eg:
+### Solution
 
-> script1.sh
-
-#!/bin/bash
-
+1. **Create separate shell scripts with server run commands**:
+   
+   - **For Flask with Gunicorn:**
+     
+     Save as `script1.sh`:
+     
+     ```bash
+     #!/bin/bash
+     
 gunicorn --bind=0.0.0.0:9696 predict:app
+     ```
 
-Another script with e.g. MLFlow server:
-
->script2.sh
-
-#!/bin/bash
-
+   - **For MLFlow server:**
+     
+     Save as `script2.sh`:
+     
+     ```bash
+     #!/bin/bash
+     
 mlflow server -h 0.0.0.0 -p 5000 --backend-store-uri=sqlite:///mlflow.db --default-artifact-root=g3://zc-bucket/mlruns/
+     ```
 
-Create a wrapper script to run above 2 scripts:
+2. **Create a wrapper script** to run the above two scripts:
 
->wrapper_script.sh
+   Save as `wrapper_script.sh`:
+   
+   ```bash
+   #!/bin/bash
 
-#!/bin/bash
+   # Start the first process
+   ./script1.sh &
 
-# Start the first process
+   # Start the second process
+   ./script2.sh &
 
-./script1.sh &
+   # Wait for any process to exit
+   wait -n
 
-# Start the second process
+   # Exit with status of process that exited first
+   exit $?
+   ```
 
-./script2.sh &
+3. **Give executable permissions to all scripts**:
+   
+   ```bash
+   chmod +x *.sh
+   ```
 
-# Wait for any process to exit
+4. **Define the last line of your Dockerfile** as:
+   
+   ```bash
+   CMD ./wrapper_script.sh
+   ```
 
-wait -n
-
-# Exit with status of process that exited first
-
-exit $?
-
-Give executable permissions to all scripts:
-
-chmod +x *.sh
-
-Now we can define last line of Dockerfile as:
-
-> Dockerfile
-
-CMD ./wrapper_script.sh
-
-Dont forget to expose all ports defined by services!
-
+5. **Don't forget to expose all ports defined by the services**.

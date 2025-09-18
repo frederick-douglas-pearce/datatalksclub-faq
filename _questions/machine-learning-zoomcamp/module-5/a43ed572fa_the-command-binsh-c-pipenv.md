@@ -1,25 +1,30 @@
 ---
 id: a43ed572fa
-question: 'The command ''/bin/sh -c pipenv install --deploy --system &&  rm -rf /root/.cache''
-  returned a non-zero code: 1'
+question: 'Docker: The command ''/bin/sh -c pipenv install --deploy --system && rm
+  -rf /root/.cache'' returned a non-zero code: 1'
 sort_order: 1840
 ---
 
-After using the command “docker build -t churn-prediction .” to build the Docker image, the above error is raised and the image is not created.
+After using the command `docker build -t churn-prediction .` to build the Docker image, this error occurs, and the image is not created.
 
-In your Dockerfile, change the Python version in the first line the Python version installed in your system:
+To fix this issue, adjust the Python version in your Dockerfile to match the version installed on your system:
 
-FROM python:3.7.5-slim
+1. Determine your Python version by running:
+   
+   ```bash
+   python --version
+   ```
+   
+   Example output:
+   
+   ```bash
+   Python 3.9.7
+   ```
 
-To find your python version, use the command python --version. For example:
+2. Update the first line of your Dockerfile with the correct Python version:
 
-python --version
+   ```dockerfile
+   FROM python:3.9.7-slim
+   ```
 
->> Python 3.9.7
-
-Then, change it on your Dockerfile:
-
-FROM python:3.9.7-slim
-
-Added by [Filipe Melo](https://github.com/lipinor)
-
+Make sure to replace `3.9.7` with your actual Python version.

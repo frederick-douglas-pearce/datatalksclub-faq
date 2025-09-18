@@ -4,7 +4,12 @@ question: Failed to read Dockerfile
 sort_order: 1890
 ---
 
-When you create the dockerfile the name should be dockerfile and needs to be without extension. One of the problems we can get at this point is to create the dockerfile as a dockerfile extension Dockerfile.dockerfile which creates an error when we build the docker image. Instead we just need to create the file without extension: Dockerfile and will run perfectly.
+When you create the Dockerfile, ensure the name is `Dockerfile` without any extensions. A common mistake is naming it with an extension, such as `Dockerfile.dockerfile`, which results in an error during the image build. To avoid this, create the file simply as `Dockerfile`.
 
-Added by Pastor Soto
+```bash
+# Incorrect way:
+Dockerfile.dockerfile
 
+# Correct way:
+Dockerfile
+```

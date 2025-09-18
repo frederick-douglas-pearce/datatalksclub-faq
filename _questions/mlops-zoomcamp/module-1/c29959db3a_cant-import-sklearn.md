@@ -4,13 +4,14 @@ question: Can’t import sklearn
 sort_order: 700
 ---
 
-more specific error line:
+If you encounter an error when trying to import sklearn, specifically:
 
+```python
 from sklearn.feature_extraction import DictVectorizer
+```
 
-I had this issue and to solve it I did
+You can resolve it by installing scikit-learn with the following command:
 
+```bash
 !pip install scikit-learn
-
-Joel Auccapuclla ([auccapuclla 2013@gmail.com](mailto:tahinadanny@gmail.com))
-
+```

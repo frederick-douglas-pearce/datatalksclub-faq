@@ -5,21 +5,28 @@ question: 'Pipenv installation not working (AttributeError: module ''collections
 sort_order: 1570
 ---
 
-If one gets pipenv failures for pipenv install command -
+If you encounter pipenv failures with the command `pipenv install` and see the following error:
 
+```python
 AttributeError: module 'collections' has no attribute 'MutableMapping'
+```
 
-It happens because you use the system Python (3.10) for pipenv.
+The issue occurs because you are using the system Python (3.10) for pipenv.
 
-If you previously installed pipenv with apt-get, remove it - sudo-apt remove pipenv
+To resolve this issue:
 
-Make sure you have a non-system Python installed in your environment. The easiest way to do it is to install anaconda or miniconda
+1. If pipenv was previously installed via `apt-get`, remove it using:
+   ```bash
+   sudo apt remove pipenv
+   ```
 
-Next, install pipenv to your non-system Python. If you use the setup from the lectures, it’s just this: pip install pipenv
+2. Ensure a non-system Python is installed in your environment. An easy way to achieve this is by installing Anaconda or Miniconda.
 
-Now re-run pipenv install XXXX (relevant dependencies) - should work
+3. Install pipenv using your non-system Python:
+   ```bash
+   pip install pipenv
+   ```
 
-Tested and worked on AWS instance, similar to the config Alexey presented in class.
+4. Re-run `pipenv install <dependencies>` with the relevant dependencies. It should work without issues.
 
-Added by Daniel HenSSL
-
+This solution was tested and worked on an AWS instance similar to the configuration presented in class.

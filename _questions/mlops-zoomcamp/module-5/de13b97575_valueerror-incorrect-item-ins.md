@@ -5,9 +5,4 @@ question: 'ValueError: Incorrect item instead of a metric or metric preset was p
 sort_order: 1970
 ---
 
-When using evidently if you get this error.
-
-You probably forgot to and parentheses () just and opening and closing and you are good to go.
-
-Quinn Avila
-
+When using Evidently, if you encounter this error, you likely forgot to add parentheses. Simply include opening and closing parentheses to resolve the issue.

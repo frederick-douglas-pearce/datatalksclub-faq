@@ -5,13 +5,16 @@ question: Permission denied (publickey) Error (when you remove your public key o
 sort_order: 680
 ---
 
-I found a good guide how to get acces to your machine again when you removed your public key.
+If you encounter a "Permission denied (publickey)" error after removing your public key from an AWS machine, follow these steps:
 
-Using the following link you can go to Session Manager and log in to your instance and create public key again. [https://repost.aws/knowledge-center/ec2-linux-fix-permission-denied-errors](https://repost.aws/knowledge-center/ec2-linux-fix-permission-denied-errors)
+1. Access your machine via Session Manager to recreate your public key. Refer to the guide for more details: [Fix Permission Denied Errors](https://repost.aws/knowledge-center/ec2-linux-fix-permission-denied-errors).
 
-The main problem for me here was to get my old public key, so for doing this you should run the following command: ssh-keygen -y -f /path_to_key_pair/my-key-pair.pem
+2. To retrieve your old public key, use this command:
+   
+   ```bash
+   ssh-keygen -y -f /path_to_key_pair/my-key-pair.pem
+   ```
 
-For more information: [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/describe-keys.html#retrieving-the-public-key](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/describe-keys.html#retrieving-the-public-key)
+   Replace `/path_to_key_pair/my-key-pair.pem` with the actual path to your key pair.
 
-Hanna Zhukavets ([a.zhukovec1901@gmail.com](mailto:a.zhukovec1901@gmail.com))
-
+3. For additional instructions on retrieving the public key, consult the AWS documentation: [Retrieving the Public Key](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/describe-keys.html#retrieving-the-public-key).

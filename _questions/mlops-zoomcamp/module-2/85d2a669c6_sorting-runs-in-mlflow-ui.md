@@ -8,11 +8,8 @@ question: Sorting runs in MLflow UI
 sort_order: 1030
 ---
 
-I can’t sort runs in MLFlow
+I can’t sort runs in MLflow
 
 Make sure you are in table view (not list view) in the MLflow UI.
 
 <{IMAGE:image_1}>
-
-Added and Answered by Anna Vasylytsya
-

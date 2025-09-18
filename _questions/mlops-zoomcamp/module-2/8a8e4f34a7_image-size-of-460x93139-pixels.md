@@ -5,9 +5,12 @@ question: Image size of 460x93139 pixels is too large. It must be less than 2^16
 sort_order: 890
 ---
 
-This is caused by ```mlflow.xgboost.autolog()``` when version 1.6.1 of xgboostDowngrade to 1.6.0
+This issue is caused by `mlflow.xgboost.autolog()` in version 1.6.1 of XGBoost. To resolve this:
 
-```pip install xgboost==1.6.0``` or update requirements file with xgboost==1.6.0 instead of xgboost
+- Downgrade XGBoost to version 1.6.0 using the following command:
 
-Added by Nakul Bajaj
+```bash
+pip install xgboost==1.6.0
+```
 
+- Alternatively, update your requirements file to specify `xgboost==1.6.0`. 

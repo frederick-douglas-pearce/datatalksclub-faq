@@ -4,9 +4,11 @@ question: Mage Dashboard on unit_3 is not showing charts
 sort_order: 1370
 ---
 
+
+```plaintext
 Error: Cannot cast DatetimeArray to dtype float64
+```
 
-Have the runs completed successfully? We need to have successfully running Pipelines in order to populate the mage and mlflow databases.
+- Have the runs completed successfully? We need to have successfully running Pipelines in order to populate the mage and mlflow databases.
 
-If all pipelines are successfully completed and still getting this error, then please provide this info.
-
+- If all pipelines are successfully completed and you are still getting this error, please provide further information.

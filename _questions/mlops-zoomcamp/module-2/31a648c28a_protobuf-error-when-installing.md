@@ -8,23 +8,30 @@ question: Protobuf error when installing MLflow
 sort_order: 980
 ---
 
-Error: I installed all the libraries from the requirements.txt document in a new environment as follows:
+### Error:
 
-pip install -r requirementes.txt
+I installed all the libraries from the `requirements.txt` document in a new environment with the following command:
 
-Then when I run mlflow from my terminal like this:
+```bash
+pip install -r requirements.txt
+```
 
+Then, when I run `mlflow` from my terminal like this:
+
+```bash
 mlflow
+```
 
 I get this error:
 
 <{IMAGE:image_1}>
 
-SOLUTION: You need to downgrade the version of 'protobuf' module to 3.20.x or lower. Initially, it was version=4.21, I installed protobuf==3.20
+### Solution:
 
+You need to downgrade the version of the `protobuf` module to 3.20.x or lower. Initially, it was version 4.21. Use the following command to install the compatible version:
+
+```bash
 pip install protobuf==3.20
+```
 
-After which I was able to run mlflow from my terminal.
-
--Submitted by Aashnna Soni
-
+After doing this, I was able to run `mlflow` from my terminal.

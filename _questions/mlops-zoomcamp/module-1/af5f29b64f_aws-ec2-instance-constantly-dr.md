@@ -4,43 +4,42 @@ question: AWS EC2 instance constantly drops SSH connection
 sort_order: 400
 ---
 
-My SSH connection to AWS cannot last more than a few minutes, whether via terminal or VS code.
+My SSH connection to AWS cannot last more than a few minutes, whether via terminal or VS Code.
 
 My config:
 
-# Copy Configuration in local nano editor, then Save it!
-
-Host mlops-zoomcamp                                         # ssh connection calling name
-
-User ubuntu                                             # username AWS EC2
-
-HostName <instance-public-IPv4-addr>                    # Public IP, it changes when Source EC2 is turned off.
-
-IdentityFile ~/.ssh/name-of-your-private-key-file.pem   # Private SSH key file path
-
-LocalForward 8888 localhost:8888                        # Connecting to a service on an internal network from the outside, static forward or set port user forward via on vscode
-
+```bash
+Host mlops-zoomcamp  # ssh connection calling name
+User ubuntu  # username AWS EC2
+HostName <instance-public-IPv4-addr>  # Public IP, changes when instance is turned off.
+IdentityFile ~/.ssh/name-of-your-private-key-file.pem  # Private SSH key file path
+LocalForward 8888 localhost:8888  # Connecting to internal service
 StrictHostKeyChecking no
+```
 
-Added by Muhammed Çelik
+The disconnection occurs whether I SSH via WSL2 or via VS Code, often after running some code like `import mlflow`.
 
-The disconnection will occur whether I SSH via WSL2 or via VS Code, and usually occurs after I run some code, i.e. “import mlflow”, so not particularly intense computation.
+To reconnect, I need to stop and restart the instance, which assigns a new IPv4 address.
 
-I cannot reconnect to the instance without stopping and restarting with a new IPv4 address.
+I've checked the steps at AWS's troubleshooting page: [AWS SSH Connection Errors](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-resolve-ssh-connection-errors/)
 
-I’ve gone through steps listed on this page:[ [aws.amazon.com](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-resolve-ssh-connection-errors)/](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-resolve-ssh-connection-errors/)
+Inbound rule should allow all IPs for SSH.
 
-Inbound rule should allow all incoming IPs for SSH.
+### Expected Behavior:
 
-What I expect to happen:
+- SSH connection should remain active while using the instance.
+- Should be able to reconnect if disconnected.
 
-SSH connection should remain while I’m actively using the instance, and if it does disconnect, I should be able to reconnect back.
+### Solution:
 
-Solution: sometimes the hang ups are caused by the instance running out of memory. In one instance, using EC2 feature to view screenshot of the instance as a means to troubleshoot, it was the OS out-of-memory feature which killed off some critical processes. In this case, if we can’t use a higher compute VM with more RAM, try adding a swap file, which uses the disk as RAM substitute and prevents the OOM error. Follow Ubuntu’s documentation here: [https://help.ubuntu.com/community/SwapFaq](https://help.ubuntu.com/community/SwapFaq).
+- **Memory Issue**: Disconnections may occur if the instance runs out of memory. Use EC2's screenshot feature to troubleshoot. If it's an OS out-of-memory issue, consider:
+  - Using a higher compute VM with more RAM.
+  - Adding a swap file, which uses disk as a RAM substitute to prevent OOM errors.
+  - Follow Ubuntu's documentation: [Ubuntu Swap FAQ](https://help.ubuntu.com/community/SwapFaq).
+  - Alternatively, follow AWS documentation: [AWS Swap File](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/).
 
-Alternatively follow AWS’s own doc, which mirrors Ubuntu’s: [https://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/)
+- **Timeout Issue**: If connections drop due to timeouts, add the following to your local `.ssh/config` file to ping every 50 seconds:
 
-Added by Claudia van Dijk: In addition, if your connection happens to be dropping because of timeouts, you can add this line to your local .ssh/config file, which makes it ping the connection every 50 seconds in case timeout is set to 60 seconds:
-
-ServerAliveInterval 50
-
+  ```bash
+  ServerAliveInterval 50
+  ```

@@ -1,16 +1,35 @@
 ---
 id: 9dedd0bb1c
-question: Evidently Import Error
+question: 'Evidently: Import Error'
 sort_order: 2210
 ---
 
-Problem description
+### Problem Description
 
-When I run the command “from evidently import ColumnMapping” I get an import error ImportError: cannot import name 'ColumnMapping' from 'evidently'
+When running the command:
 
-Solution description
+```python
+from evidently import ColumnMapping
+```
 
-Uninstall the latest version (Version: 0.7.8) with “pip uninstall evidently -y” then install an older compatible version “pip install evidently==0.4.18” and restart the kernel to reload the environment.
+The following import error occurs:
 
-Added by Mohamed Cherif
+```plaintext
+ImportError: cannot import name 'ColumnMapping' from 'evidently'
+```
 
+### Solution
+
+1. Uninstall the latest version of `evidently`:
+   
+   ```bash
+   pip uninstall evidently -y
+   ```
+
+2. Install an older compatible version:
+   
+   ```bash
+   pip install evidently==0.4.18
+   ```
+
+3. Restart the kernel to reload the environment.

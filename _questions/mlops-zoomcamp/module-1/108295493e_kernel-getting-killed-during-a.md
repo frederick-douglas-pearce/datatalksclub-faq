@@ -4,23 +4,25 @@ question: Kernel getting killed during assignment tasks on local
 sort_order: 520
 ---
 
-If the jupyter notebook kernel gets killed repeatedly due to out of memory issues when converting pandas DF to dict or other memory intensive steps, try google colab as it offers larger memory.
+If the Jupyter notebook kernel gets killed repeatedly due to out-of-memory issues when converting a Pandas DataFrame to a dictionary or other memory-intensive steps, try using Google Colab as it offers more memory.
 
-For this,
+Here's how you can proceed:
 
-Upload the datasets to google drive [Folder Colab Notebooks]
+1. **Upload the datasets** to Google Drive in the folder "Colab Notebooks."
 
-Mount the drive on colab
+2. **Mount the drive** on Colab:
+   
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+   
+3. **Pull the data** from uploaded tables in Colab:
 
-from google.colab import drive
+   ```python
+   df_jan = pq.read_table('/content/drive/My Drive/Colab Notebooks/yellow_tripdata_2023-01.parquet').to_pandas()
+   ```
 
-drive.mount('/content/drive')
+4. **Complete the assignment** in Colab.
 
-Pull the data from uploaded tables in colab
-
-df_jan = pq.read_table('/content/drive/My Drive/Colab Notebooks/yellow_tripdata_2023-01.parquet').to_pandas()
-
-All set for doing the assignment
-
-Download the final assignment to your local and copy into the relevant repo
-
+5. **Download the final assignment** to your local machine and copy it into the relevant repository.

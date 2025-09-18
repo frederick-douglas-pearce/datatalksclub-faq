@@ -1,36 +1,29 @@
 ---
 id: 2383fdd2f6
-question: Created repo without .gitignore
+question: 'Git: Created repo without .gitignore'
 sort_order: 320
 ---
 
-If you created a repo without .gitignore, follow this steps to add .gitignore:
+If you created a repository without a .gitignore, follow these steps to add one:
 
-Open Terminal.
+1. Open Terminal.
+2. Navigate to the location of your Git repository.
+3. Create a .gitignore file for your repository:
 
-Navigate to the location of your Git repository.
+   ```bash
+   touch .gitignore
+   ```
 
-Create a .gitignore file for your repository.
+4. Locate the .gitignore file. If you already have it, open it.
+5. Edit the .gitignore file and add the following lines:
 
-touch .gitignore
+   ```plaintext
+   # Python
+   *.pyc
+   __pycache__/
+   *.py[cod]
+   *$
+   ```
 
-Locate the .gitignore file: If you already have a .gitignore file, open it.
-
-Edit the .gitignore File: Add the following lines to the .gitignore file:
-
-# Python
-
-*.pyc
-
-__pycache__/
-
-*.py[cod]
-
-*$
-
-Save the Changes: Save the .gitignore file.
-
-Commit the Changes
-
-Added by Chuks Okoli (chuks.o.okoli@gmail.com)
-
+6. Save the changes to the .gitignore file.
+7. Commit the changes.

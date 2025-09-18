@@ -8,17 +8,28 @@ This means your MLflow container tries to access a db file which was a backend f
 
 The easiest solution is to check which version you worked with before, and change the docker image accordingly.
 
-You can check your version by opening a terminal on your host, conda activate into the env you worked in, and run:
+1. Open a terminal on your host and activate the conda environment you worked in:
 
-mlflow --version
+   ```bash
+   conda activate <your-env-name>
+   ```
 
-Now edit the mlflow.dockerfile line to your version:
+2. Run the following command to check your MLflow version:
 
-RUN pip install mlflow==2.??.??
+   ```bash
+   mlflow --version
+   ```
 
-Save the file and rebuild the docker service by running:
+3. Edit the `mlflow.dockerfile` line to your version:
 
-docker-compose build
+   ```Dockerfile
+   RUN pip install mlflow==2.??.??
+   ```
 
-Now you can start up the containers again and your MLflow container should be able to successfully read your mounted DB file.
+4. Save the file and rebuild the docker service by running:
 
+   ```bash
+   docker-compose build
+   ```
+
+5. Now you can start up the containers again, and your MLflow container should be able to successfully read your mounted DB file.

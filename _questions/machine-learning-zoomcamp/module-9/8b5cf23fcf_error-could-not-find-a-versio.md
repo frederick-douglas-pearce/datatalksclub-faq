@@ -1,35 +1,33 @@
 ---
 id: 8b5cf23fcf
 question: 'Error: Could not find a version that satisfies the requirement tflite_runtime
-  (from versions:none)'
+  (from versions: none)'
 sort_order: 3230
 ---
 
-Problem: When trying to install tflite_runtime with
+**Problem:** When trying to install `tflite_runtime` using the command below, you receive an error message:
 
-!pip install --extra-index-url[ ](https://google-coral.github.io/py-repo/)[https://google-coral.github.io/py-repo/](https://google-coral.github.io/py-repo/) tflite_runtime
+```bash
+!pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
+```
 
-one gets an error message above.
+**Solution:**
 
-Solution:
+`tflite_runtime` is only available for specific OS-Python version combinations. You can find the available combinations here: [https://google-coral.github.io/py-repo/tflite-runtime/](https://google-coral.github.io/py-repo/tflite-runtime/). Your environment combination might be missing.
 
-fflite_runtime is only available for the os-python version combinations that can be found here: [https://google-coral.github.io/py-repo/tflite-runtime/](https://google-coral.github.io/py-repo/tflite-runtime/)
+To proceed, follow these steps:
 
-your combination must be missing here
+1. Check if any of the available versions work for you at [https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite](https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite).
 
-you can see if any of these work for you [https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite](https://github.com/alexeygrigorev/tflite-aws-lambda/tree/main/tflite)
+2. Install the needed version using pip. For example:
 
-and install the needed one using pip
+   ```bash
+   pip install https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.7.0-cp38-cp38-linux_x86_64.whl
+   ```
 
-eg
+3. Reference how it's done in the lecture code [here](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/09-serverless/code/Dockerfile#L4).
 
-pip install [https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.7.0-cp38-cp38-linux_x86_64.whl](https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.7.0-cp38-cp38-linux_x86_64.whl)
+Alternatively, you can:
 
-as it is done in the lectures code:
-
-[https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/09-serverless/code/Dockerfile#L4](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/09-serverless/code/Dockerfile#L4)
-
-Alternatively, use a virtual machine (with VM VirtualBox, for example) with a Linux system. The other way is to run a code at a virtual machine within cloud service, for example you can use Vertex AI Workbench at GCP (notebooks and terminals are provided there, so all tasks may be performed).
-
-Added by Alena Kniazeva, modified by Alex Litvinov
-
+- Use a virtual machine (e.g., VM VirtualBox) with a Linux system.
+- Run the code on a virtual machine within a cloud service such as Vertex AI Workbench on GCP, which provides notebooks and terminals for tasks execution.

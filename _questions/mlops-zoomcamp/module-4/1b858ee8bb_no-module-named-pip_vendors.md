@@ -6,19 +6,32 @@ sort_order: 1590
 
 During scikit-learn installation via the command:
 
+```bash
 pipenv install scikit-learn==1.0.2
+```
 
 The following error is raised:
 
+```
 ModuleNotFoundError: No module named 'pip._vendor.six'
+```
 
-Then, one should:
+To resolve this issue, follow these steps:
 
-sudo apt install python-six
+1. Install the `python-six` package:
+   
+   ```bash
+   sudo apt install python-six
+   ```
 
-pipenv --rm
+2. Remove the existing Pipenv environment:
+   
+   ```bash
+   pipenv --rm
+   ```
 
-pipenv install scikit-learn==1.0.2
+3. Reinstall `scikit-learn`:
 
-Added by Giovanni Pecoraro
-
+   ```bash
+   pipenv install scikit-learn==1.0.2
+   ```

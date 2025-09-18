@@ -1,22 +1,22 @@
 ---
 id: 8e6e50be33
-question: Why do aws cli commands throw <botocore.awsrequest.AWSRequest object at
-  0x74c89c3562d0> type messages when listing or creating aws s3 buckets with localstack
-  ?
+question: 'AWS CLI: Why do AWS CLI commands throw <botocore.awsrequest.AWSRequest
+  object at 0x74c89c3562d0> type messages when listing or creating AWS S3 buckets
+  with LocalStack?'
 sort_order: 2350
 ---
 
-If you encounter such messages when you try to list your aws s3 buckets for example (aws --endpoint-url=[localhost:4566](http://localhost:4566) s3 ls), you can try to configure AWS by setting up the same region, access key and secret key as the ones that appear in your docker-compose file.
+If you encounter such messages when trying to list your AWS S3 buckets (e.g., `aws --endpoint-url=http://localhost:4566 s3 ls`), you can try configuring AWS with the same region, access key, and secret key as those in your `docker-compose` file.
 
-After installing the aws cli, make sure you configure it in your terminal by entering this command line : aws configure
+To configure AWS CLI, follow these steps:
 
-It will ask for:
+1. After installing the AWS CLI, run the following command in your terminal:
+   
+   ```bash
+   aws configure
+   ```
 
-AWS Access Key ID [None]: abc (example)
-
-AWS Secret Access Key [None]: xyz (example)
-
-Default region name [None]: eu-west-1 (example)
-
-Added by Mélanie Fouesnard
-
+2. Input the required information when prompted:
+   - **AWS Access Key ID:** [Example: `abc`]
+   - **AWS Secret Access Key:** [Example: `xyz`]
+   - **Default region name:** [Example: `eu-west-1`]

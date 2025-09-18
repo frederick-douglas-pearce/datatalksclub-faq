@@ -8,13 +8,10 @@ question: Checking GPU and CPU utilization using ‘nvitop’
 sort_order: 2960
 ---
 
-The Python package ‘’ is an interactive GPU process viewer similar to ‘htop’ for CPU.
+The Python package `nvitop` is an interactive GPU process viewer similar to `htop` for CPU.
 
-[https://pypi.org/project//](https://pypi.org/project/nvitop/)
+[https://pypi.org/project/nvitop/](https://pypi.org/project/nvitop/)
 
 <{IMAGE:image_1}>
 
-Image source: [https://pypi.org/project//](https://pypi.org/project/nvitop/)
-
-Added by Sylvia Schmitt
-
+Image source: [https://pypi.org/project/nvitop/](https://pypi.org/project/nvitop/)

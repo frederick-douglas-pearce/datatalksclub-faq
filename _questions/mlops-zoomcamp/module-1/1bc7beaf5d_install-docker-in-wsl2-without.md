@@ -4,47 +4,48 @@ question: Install docker in WSL2 without installing Docker Desktop
 sort_order: 710
 ---
 
-If you don’t want to install docker desktop and run docker in WSL2 on Windows you can try the following:
+If you want to install Docker in WSL2 on Windows without Docker Desktop, follow these steps:
 
-Install docker and docker compose and give the user the right privileges (you do not need
+1. **Install Docker**
 
-# Install Docker, you can ignore the warnings
+   You can ignore the warnings during installation.
+   
+   ```bash
+   curl -fsSL https://get.docker.com -o get-docker.sh
+   sudo sh get-docker.sh
+   ```
+   
+2. **Add Your User to the Docker Group**
+   
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
 
-curl -fsSL[ ](https://get.docker.com/)[https://get.docker.com](https://get.docker.com/) -o get-docker.sh
+3. **Enable the Docker Service**
+   
+   ```bash
+   sudo systemctl enable docker.service
+   ```
 
-sudo sh get-docker.sh
+4. **Test the Installation**
 
-# Add your user to the Docker group
+   Verify that both Docker and Docker Compose are installed successfully.
+   
+   ```bash
+   docker --version
+   docker compose version
+   docker run hello-world
+   ```
 
-sudo usermod -aG docker $USER
-
-Then you need to start the service:
-
-sudo systemctl enable docker.service
-
-Then you can test both are installed:
-
-# Sanity check that both tools were installed successfully
-
-docker --version
-
-docker compose version
-
-docker run hello-world
-
-if after restarting WSL the service is not started automatically, you will need to change your .profile o .zprofile file and include something like this:
-
-if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
-
-if service docker status 2>&1 | grep -q "is not running"; then
-
-wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
-
---exec /usr/sbin/service docker start > /dev/null 2>&1
-
-fi
-
-fi
-
-Added by Eduardo Munoz
-
+5. **Ensure Docker Starts Automatically**
+   
+   If the service does not start automatically after restarting WSL, update your `.profile` or `.zprofile` file with:
+   
+   ```bash
+   if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
+      if service docker status 2>&1 | grep -q "is not running"; then
+         wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
+         --exec /usr/sbin/service docker start > /dev/null 2>&1
+      fi
+   fi
+   ```

@@ -5,9 +5,6 @@ question: When using Autologging, do I need to set a training parameter to track
 sort_order: 1240
 ---
 
-No, in the official documentation it’s mentioned that autologging keep track of the parameters even when you do not explicitly set them when calling .fit.
+No, in the official documentation it’s mentioned that autologging keeps track of the parameters even when you do not explicitly set them when calling `.fit`.
 
-You can run the training, only setting the parameters you want, but you can check all the parameters in mlflow UI.
-
-Added by Eduardo Munoz
-
+You can run the training, only setting the parameters you want, but you can check all the parameters in the MLflow UI.

@@ -4,11 +4,8 @@ question: How to conduct peer reviews for projects?
 sort_order: 3750
 ---
 
-Answer: Previous cohorts projects page has instructions (youtube).
+Previous cohorts' projects page has instructions (YouTube).
 
-[https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/cohorts/2022/projects.md#midterm-project](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/cohorts/2022/projects.md#midterm-project)
+[GitHub Instructions](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/cohorts/2022/projects.md#midterm-project)
 
-Alexey and his team will compile a g-sheet with links to submitted projects with our hashed emails (just like when we check leaderboard for homework) that are ours to review within the evaluation deadline.
-
-~~~ Added by Nukta Bhatia ~~~
-
+Alexey and his team will compile a Google Sheet with links to submitted projects using our hashed emails, similar to how we check the leaderboard for homework. These will be our projects to review within the evaluation deadline.

@@ -1,31 +1,28 @@
 ---
 id: b396205ad7
-question: 'Error “[Errno 13] Permission denied: ''/home/ubuntu/.aws/credentials’”
+question: 'Error "[Errno 13] Permission denied: ''/home/ubuntu/.aws/credentials''"
   when running any aws command'
 sort_order: 2390
 ---
 
-After installing awscliv2 in linux you can get this error every time you try to run an aws command that needs to use the credentials. For example, if you run aws configure, you can insert the key and secret but finally you receive the error message.
+After installing AWS CLI v2 on Linux, you may encounter a permission error when trying to run AWS commands that require access to your credentials. For example, when running `aws configure`, you might insert the key and secret but receive a permission error.
 
-The user ubuntu does not have permission to read/write files in .aws folder and neither credentials and config files exists. What I have done to solve:
+The issue arises because the `ubuntu` user does not have permission to read or write files in the `.aws` folder, and the `credentials` and `config` files do not exist. To resolve this:
 
-Go to .aws folder, usually /home/ubuntu/.aws
+1. Navigate to the `.aws` folder, typically located at `/home/ubuntu/.aws`.
 
-Create an empty credentials and config files:
+2. Create empty `credentials` and `config` files:
 
-touch credentials
+   ```bash
+   touch credentials
+   touch config
+   ```
 
-touch config
+3. Modify the file permissions:
 
-Modify the permissions:
+   ```bash
+   sudo chmod -R 777 credentials
+   sudo chmod -R 777 config
+   ```
 
-sudo chmod -R 777 credentials
-
-sudo chmod -R 777 config
-
-Now, you can run aws configure
-
-Run aws configure, modify the keys and secret and save them to the credentials file. And then you can execute your aws commands from your python scripts or in the command line.
-
-Added by Eduardo Muñoz
-
+4. Run `aws configure`, modify the keys and secret, and save them to the `credentials` file. You can then execute AWS commands from your Python scripts or the command line.

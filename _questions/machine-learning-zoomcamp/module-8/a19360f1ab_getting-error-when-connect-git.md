@@ -4,13 +4,22 @@ question: 'Getting error when connect git on Saturn Cloud: permission denied'
 sort_order: 2810
 ---
 
-Problem description:
+**Problem Description:**
 
-When follow module 8.1b video to setup git in Saturn Cloud, run `ssh -T [git@github.com](mailto:git@github.com)` lead error `git@github.com: Permission denied (publickey).`
+When following module 8.1b video to set up Git in Saturn Cloud, running the command:
 
-Solution description:
+```bash
+ssh -T git@github.com
+```
 
-Alternative way, we can setup git in our Saturn Cloud env with generate SSH key in our Saturn Cloud and add it to our git account host. After it, we can access/manage our git through Saturn’s jupyter server. All steps detailed on this following tutorial: [https://saturncloud.io/docs/using-saturn-cloud/gitrepo/](https://saturncloud.io/docs/using-saturn-cloud/gitrepo/)
+results in the error:
 
-Added by Ryan Pramana
+```bash
+Permission denied (publickey).
+```
 
+**Solution Description:**
+
+An alternative method involves setting up Git in your Saturn Cloud environment by generating an SSH key in Saturn Cloud and adding it to your Git account. After completing this setup, you can access and manage your Git repositories through Saturn’s Jupyter server.
+
+For detailed steps, refer to this tutorial: [https://saturncloud.io/docs/using-saturn-cloud/gitrepo/](https://saturncloud.io/docs/using-saturn-cloud/gitrepo/)

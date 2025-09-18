@@ -11,17 +11,11 @@ question: How to use Google Colab for Deep Learning?
 sort_order: 2740
 ---
 
-Create or import your notebook into Google Colab.
-
-Click on the Drop Down at the top right hand side
-
-Click on “Change runtime type”
-
-Choose T4 GPU
+1. Create or import your notebook into Google Colab.
+2. Click on the drop-down at the top right-hand side.
+3. Click on “Change runtime type.”
+4. Choose T4 GPU.
 
 <{IMAGE:image_1}>
 
 <{IMAGE:image_2}>
-
-Khurram Majeed
-

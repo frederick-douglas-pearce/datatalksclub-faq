@@ -1,22 +1,29 @@
 ---
 id: 04109cf821
-question: One of the method to visualize the decision trees
+question: What is one method to visualize decision trees?
 sort_order: 2530
 ---
 
-dot_data = tree.export_graphviz(regr, out_file=None,
+To visualize decision trees, you can use Graphviz along with Scikit-learn's `export_graphviz` method and `plot_tree` function.
 
-feature_names=boston.feature_names,
+Here are two approaches:
 
-filled=True)
+1. **Using `export_graphviz`:**
+   ```python
+   from sklearn import tree
+   import graphviz
 
-graphviz.Source(dot_data, format="png")
+   dot_data = tree.export_graphviz(regr, out_file=None,
+                                   feature_names=boston.feature_names,
+                                   filled=True)
+   graphviz.Source(dot_data, format="png")
+   ```
 
-Krishna Anand
+2. **Using `plot_tree`:**
+   ```python
+   from sklearn import tree
+   
+   tree.plot_tree(dt, feature_names=dv.feature_names_)
+   ```
 
-from sklearn import tree
-
-tree.plot_tree(dt,feature_names=dv.feature_names_)
-
-Added By Ryan Pramana
-
+Both methods help in generating a visual representation of the decision tree.

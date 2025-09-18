@@ -4,17 +4,28 @@ question: How to Delete an Experiment Permanently from MLFlow UI
 sort_order: 870
 ---
 
-After deleting an experiment from UI, the deleted experiment still persists in the database.
+After deleting an experiment from the UI, it may still persist in the database. To delete this experiment permanently, follow these steps:
 
-Solution: To delete this experiment permanently, follow these steps.
+1. **Install `ipython-sql`**
+   
+   ```bash
+   pip install ipython-sql
+   ```
 
-Assuming you are using sqlite database;
+2. **Load SQL Magic Scripts in Jupyter Notebook**
 
-Install ipython sql using the following command: pip install ipython-sql
+   ```python
+   %load_ext sql
+   ```
 
-In your jupyter notebook, load the SQL magic scripts with this: %load_ext sql
+3. **Load the Database**
+   
+   Replace `nameofdatabase.db` with your actual database name:
 
-Load the database with this: %sql sqlite:///nameofdatabase.db
+   ```python
+   %sql sqlite:///nameofdatabase.db
+   ```
 
-Run the following SQL script to delete the experiment permanently: check[ link ](https://stackoverflow.com/a/68431980/14151292)
+4. **Run SQL Script**
 
+   Use SQL commands to delete the experiment permanently. Refer to [this link](https://stackoverflow.com/a/68431980/14151292) for a detailed guide.

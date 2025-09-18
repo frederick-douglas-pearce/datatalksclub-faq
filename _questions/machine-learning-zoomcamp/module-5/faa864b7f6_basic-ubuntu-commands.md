@@ -4,13 +4,28 @@ question: 'Basic Ubuntu Commands:'
 sort_order: 1780
 ---
 
-Cd .. (go back)
+- ```bash
+  cd ..
+  ```
+  Go back to the previous directory.
 
-Ls (see current folders)Cd ‘path’/ (go to this path)
+- ```bash
+  ls
+  ```
+  List the contents of the current directory.
 
-Pwd (home)
+- ```bash
+  cd 'path'/
+  ```
+  Navigate to the specified path.
 
-Cat “file name’ --edit txt file in ubuntu
+- ```bash
+  pwd
+  ```
+  Print the current working directory.
 
-Aileah Gotladera
+- ```bash
+  cat 'file name'
+  ```
+  Display the contents of a file.
 

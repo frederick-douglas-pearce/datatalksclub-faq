@@ -4,7 +4,10 @@ question: Jupyter notebook not seeing package
 sort_order: 3270
 ---
 
-On vscode running jupyter notebook. After I ‘pip install pillow’, my notebook did not recognize using the import for example from PIL import image. After restarting the jupyter notebook the imports worked.
+On VSCode running Jupyter Notebook. After using `pip install pillow`, the notebook did not recognize the import, such as:
 
-Quinn Avila
+```python
+from PIL import Image
+```
 
+After restarting the Jupyter Notebook, the imports worked.

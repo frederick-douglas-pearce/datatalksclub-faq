@@ -8,11 +8,8 @@ question: How to get the training and validation metrics from XGBoost?
 sort_order: 2410
 ---
 
-During the XGBoost lesson, we created a parser to extract the training and validation auc from the standard output. However, we can accomplish that in a more straightforward way.
+During the XGBoost lesson, we created a parser to extract the training and validation AUC from the standard output. However, we can accomplish that in a more straightforward way.
 
-We can use the evals_result  parameters, which takes an empty dictionary and updates it for each tree. Additionally, you can store the data in a dataframe and plot it in an easier manner.
+We can use the `evals_result` parameter, which takes an empty dictionary and updates it for each tree. Additionally, you can store the data in a dataframe and plot it in an easier manner.
 
 <{IMAGE:image_1}>
-
-Added by Daniel Coronel
-

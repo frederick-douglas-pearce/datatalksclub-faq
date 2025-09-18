@@ -4,33 +4,32 @@ question: Hyperopt is not installable with Conda
 sort_order: 1250
 ---
 
-Description
+**Description**
 
-When setting up your venv with
+When setting up your virtual environment with
 
-$conda install --file requirements.txt
-
-You may encounter the following error
-
-​​
-
+```bash
+conda install --file requirements.txt
 ```
 
+you may encounter the following error:
+
+```bash
 PackagesNotFoundError: The following packages are not available from current channels:
 
 - hyperopt
-
 ```
 
-Solution
+**Solution**
 
-It is probably because your conda is out of date. You can update Conda with
+- Your conda installation might be out of date. You can update Conda with:
 
-$conda update -n base -c defaults conda
+  ```bash
+  conda update -n base -c defaults conda
+  ```
 
-If that doesn’t work you can always install it via, which is the advice from the [conda page](https://anaconda.org/intel/hyperopt)
+- If updating does not solve the issue, consider installing the package via the Intel channel, as advised on the [conda page](https://anaconda.org/intel/hyperopt):
 
-$conda install intel::hyperopt
-
-Added by Marcus Leiwe
-
+  ```bash
+  conda install intel::hyperopt
+  ```

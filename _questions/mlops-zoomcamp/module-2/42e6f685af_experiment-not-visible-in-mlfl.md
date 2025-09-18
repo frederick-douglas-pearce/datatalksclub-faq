@@ -14,39 +14,48 @@ question: Experiment not visible in MLflow UI
 sort_order: 830
 ---
 
+
+
 <{IMAGE:image_1}>
 
 <{IMAGE:image_2}>
 
 <{IMAGE:image_3}>
 
-Make sure you launch the mlflow UI from the same directory as the code that is running the experiments (same directory that contains the mlruns directory and the database that stores the experiments).
+Make sure you launch the MLflow UI from the same directory as the code that is running the experiments (the same directory that contains the `mlruns` directory and the database that stores the experiments).
 
-Or navigate to the correct directory when specifying the tracking_uri.
+Or, navigate to the correct directory when specifying the `tracking_uri`.
 
 For example:
 
-If the mlflow.db is in a subdirectory called database, the tracking uri would be ‘sqllite:///database/mlflow.db’
+- If the `mlflow.db` is in a subdirectory called `database`, the tracking URI would be:
+  ```python
+  sqlite:///database/mlflow.db
+  ```
+  
+- If the `mlflow.db` is a directory above your current directory, the tracking URI would be:
+  ```python
+  sqlite:///../mlflow.db
+  ```
 
-If the mlflow.db is a directory above your current directory: the tracking uri would be
+Another alternative is to use an absolute path to `mlflow.db` rather than a relative path.
 
-‘sqlite:///../mlflow.db’
+You can also launch the UI from the same notebook by executing the following code cell:
 
-Answered by Anna Vasylytsya
-
-Another alternative is to use an absolute path to mlflow.db rather than relative path
-
-And yet another alternative is to launch the UI from the same notebook by executing the following code cell
-
+```python
 import subprocess
 
 MLFLOW_TRACKING_URI = "sqlite:///data/mlflow.db"
 
 subprocess.Popen(["mlflow", "ui", "--backend-store-uri", MLFLOW_TRACKING_URI])
+```
 
-And then using the same MLFLOW_TRACKING_URI when initializing mlflow or the client
+Then, use the same `MLFLOW_TRACKING_URI` when initializing MLflow or the client:
+
+```python
+from mlflow.tracking import MlflowClient
 
 client = MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-
+```

@@ -5,15 +5,14 @@ question: 'Failed to listen on :::8080 (reason: php_network_getaddresses: getadd
 sort_order: 2050
 ---
 
-Problem: when run docker-compose up –build, you may see this error. To solve, add `command: php -S 0.0.0.0:8080 -t /var/www/html` in adminer block in yml file like:
+Problem: When running `docker-compose up --build`, you may encounter this error.
 
-adminer:
+To solve this issue, add the following command in the `adminer` block in your `docker-compose.yml` file:
 
-command: php -S 0.0.0.0:8080 -t /var/www/html
+```yaml
+a dminer:
+  command: php -S 0.0.0.0:8080 -t /var/www/html
+  image: adminer...
+```
 
-image: adminer…
-
-Ilnaz Salimov
-
-[salimovilnaz777@gmail.com](mailto:salimovilnaz777@gmail.com)
-
+This configuration specifies the command to be executed when the container starts, setting up PHP to listen on `0.0.0.0:8080`. This addresses the network error by changing the bind address.

@@ -4,7 +4,12 @@ question: No module named ‘ping’?
 sort_order: 2570
 ---
 
-When I tried to run example from the video using function ping and can not import it. I use import ping and it was unsuccessful. To fix it I use the statement:from [file name] import ping
+When you encounter the error stating that there is no module named 'ping', it means the 'ping' module is not found in your Python environment.
 
-Olga Rudakova
+To fix this, you can import the 'ping' function directly from the specific file where it is defined using:
 
+```python
+from [file name] import ping
+```
+
+Replace `[file name]` with the actual file name where the 'ping' function is located.

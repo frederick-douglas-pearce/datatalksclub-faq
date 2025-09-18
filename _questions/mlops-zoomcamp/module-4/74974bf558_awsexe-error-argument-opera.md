@@ -1,37 +1,34 @@
 ---
 id: 74974bf558
-question: 'aws.exe: error: argument operation: Invalid choice — Docker can not login
-  to ECR.'
+question: 'Docker: aws.exe: error: argument operation: Invalid choice — Docker can
+  not login to ECR.'
 sort_order: 1550
 ---
 
-Windows with AWS CLI already installed
+When using AWS CLI on Windows, you might encounter the following error:
 
-AWS CLI version:
+```
+aws.exe: error: argument operation: Invalid choice
+```
 
-aws-cli/2.4.24 Python/3.8.8 Windows/10 exe/AMD64 prompt/off
+### Solution
 
-Executing
+1. Check your AWS CLI version. For example:
+   
+   ```
+   aws-cli/2.4.24 Python/3.8.8 Windows/10 exe/AMD64 prompt/off
+   ```
 
-$(aws ecr get-login --no-include-email)
+2. Instead of using the outdated command, use the updated command provided by AWS:
 
-shows error
+   ```bash
+   aws ecr get-login-password \
+   --region <region> \
+   | docker login \
+   --username AWS \
+   --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
+   ```
 
-aws.exe: error: argument operation: Invalid choice, valid choices are…
+3. Refer to the official AWS documentation for additional details: [AWS CLI ECR Login Password](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html)
 
-Use this command instead. More info here:
-
-[https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html)
-
-aws ecr get-login-password \
-
---region <region> \
-
-| docker login \
-
---username AWS \
-
---password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
-
-Added by MarcosMJD
-
+Ensure that you replace `<region>` and `<aws_account_id>` with your specific values.

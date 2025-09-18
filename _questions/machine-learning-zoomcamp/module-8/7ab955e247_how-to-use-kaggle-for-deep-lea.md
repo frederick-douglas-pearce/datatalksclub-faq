@@ -8,15 +8,9 @@ question: How to use Kaggle for Deep Learning?
 sort_order: 2730
 ---
 
-Create or import your notebook into Kaggle.
-
-Click on the Three dots at the top right hand side
-
-Click on Accelerator
-
-Choose T4 GPU
+- Create or import your notebook into Kaggle.
+- Click on the three dots at the top right-hand side.
+- Click on "Accelerator."
+- Choose "T4 GPU."
 
 <{IMAGE:image_1}>
-
-Khurram Majeed
-

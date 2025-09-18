@@ -5,4 +5,3 @@ sort_order: 2430
 ---
 
 No, the capstone is a solo project.
-

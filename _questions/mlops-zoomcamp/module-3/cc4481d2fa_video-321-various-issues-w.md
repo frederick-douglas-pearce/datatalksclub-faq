@@ -4,49 +4,61 @@ question: Video 3.2.1 - Various issues with Global Data Products
 sort_order: 1390
 ---
 
-[https://docs.mage.ai/platform/projects/management](https://docs.mage.ai/platform/projects/management)
+Refer to the following documentation for more details:
 
-[https://docs.mage.ai/design/abstractions/project-structure](https://docs.mage.ai/design/abstractions/project-structure)
+- [Project Management](https://docs.mage.ai/platform/projects/management)
+- [Project Structure](https://docs.mage.ai/design/abstractions/project-structure)
+- [Global Data Products Overview](https://docs.mage.ai/orchestration/global-data-products/overview)
 
-[https://docs.mage.ai/orchestration/global-data-products/overview](https://docs.mage.ai/orchestration/global-data-products/overview)
+## Issues and Solutions
 
-Running the GDP block takes forever.
+### Running the GDP Block Takes Forever
 
-Exception: Pipeline run xx for global data product training_set: failed
+**Exception:**
 
+```
+Pipeline run xx for global data product training_set: failed
 AttributeError: 'NoneType' object has no attribute 'to_dict'
+```
 
-We need to replicate the pipelines and codes into each sub-project as the Settings indicate that only one project can be active at any one time, which means the sub-projects do not communicate with each other. (Needs confirmation during office hours.)
+### Potential Causes and Solutions:
 
-Things you can try:
+- **Ensure Project and Pipeline Matching**:
+  
+  Make sure the following configurations are correct:
+  
+  ```python
+  "project": "unit_2_training",
+  "repo_path": "/home/src/mlops/unit_2_training",
+  ```
 
-Make sure the following lines in the GDP block are for the actual project and pipeline you’re running
+- **Restart Steps**:
+  
+  1. Interrupt and restart the Kernel from the Run menu.
+  2. Bring Docker down and restart it via the script.
 
-"project": "unit_2_training",
+- **Recreate Everything (if above steps fail):**
+  
+  1. Remove connections from the `hyperparameter_tuning/sklearn` block in the Tree panel to its upstream blocks.
+     - Click on the connector → Remove Connection.
+  2. Remove the Global Data Product block from the Tree panel.
+     - Right click → Delete Block (ignore dependencies).
+  3. Click on All blocks, select Global Data Products, drag and drop this block to be the first in the pipeline.
+  4. Rename the block to what is used in the video.
+  5. Run the block to test it (Play button or Ctrl+Enter).
 
-"repo_path": "/home/src/mlops/unit_2_training",
+### Note
 
-Interrupt and Restart Kernel from the Run menu
+If helpful, repeat similar steps for the file in path "unit_3_observability." There is an ongoing attempt to replicate this process.
 
-Bring docker down and restarting it via the script
+### Error with Creating Global Data Product on Mage
 
-If both of the above does not resolve, recreate everything from scratch:
+**Error:**
 
-Remove the connections from the hyperparameter_tuning/sklearn block in the Tree panel to its upstream blocks. Click on the connector → Remove Connection
+```
+AttributeError: 'NoneType' object has no attribute 'to_dict'
+```
 
-Remove the Global Data Product block from the Tree panel, right click → Delete Block (ignore dependencies)
+**Solution:**
 
-Click on All blocks and select the Global Data Products, drag+drop this block to be the first in the pipeline
-
-Rename the block to what is used in the video
-
-Run the block to test it (Play button or Ctrl+Enter)
-
-If it helps, do the same for the file in path “unit_3_observability” (ella’s full disclosure: unit_2 works after I removed all things GDP and recreate, now I cannot replicate the same success for unit_3. Still trying…[let’s discuss here](https://datatalks-club.slack.com/archives/C02R98X7DS9/p1717396679251329))
-
-Error with creating Global Data Product on Mage: AttributeError: 'NoneType' object has no attribute 'to_dict'
-
-Solution: Global product is currently not cross product. You will have to create the data preparation pipeline in unit_2_training and configure to build.
-
-Added by Oluwadara Adedeji
-
+Global product is currently not cross-product. You will need to create the data preparation pipeline in `unit_2_training` and configure it to build.

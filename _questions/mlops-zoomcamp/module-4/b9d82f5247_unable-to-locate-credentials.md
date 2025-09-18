@@ -1,10 +1,7 @@
 ---
 id: b9d82f5247
-question: Unable to locate credentials
+question: 'Error: Unable to locate credentials'
 sort_order: 1900
 ---
 
-This error appeared when I was running the jupyter notebooks inside visual code in codespace. I fixed just running the jupyter notebooks outside codespaces.
-
-Added by Ibai Irastorza
-
+This error appeared when I was running the Jupyter notebooks inside Visual Studio Code in Codespaces. I fixed it by running the Jupyter notebooks outside of Codespaces.

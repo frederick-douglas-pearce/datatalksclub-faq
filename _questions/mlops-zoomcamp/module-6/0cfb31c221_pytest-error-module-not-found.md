@@ -1,29 +1,43 @@
 ---
 id: 0cfb31c221
-question: Pytest error ‘module not found’ when if using custom packages in the source
+question: Pytest error 'module not found' when using custom packages in the source
   code
 sort_order: 2310
 ---
 
-Problem description
+### Problem Description
 
 Project structure:
 
+```
 /sources/production/model_service.py
+/sources/tests/unit_tests/test_model_service.py
+```
 
-/sources/tests/unit_tests/test_model_service.py (“from production.model_service import ModelService)
+The test file contains:
 
-When running python test_model_service.py from the sources directory, it works.
+```python
+from production.model_service import ModelService
+```
 
-When running pytest ./test/unit_tests fails. ‘No module named ‘production’’
+- Running `python test_model_service.py` from the `sources` directory works.
+- Running `pytest ./test/unit_tests` fails with: `No module named 'production'`.
 
-Solution description
+### Solution
 
-Use python -m pytest ./test/unit_tests
+- Use the following command:
+  
+  ```bash
+  python -m pytest ./test/unit_tests
+  ```
 
-Explanation: pytest does not add to the sys.path the path where pytest is run.
+#### Explanation
 
-You can run python -m pytest, or alternatively export PYTHONPATH=. Before executing pytest
-
-Added by MarcosMJD
-
+- `pytest` does not automatically add to the `sys.path` the path where it is run.
+- Alternatives include:
+  - Running `python -m pytest`
+  - Exporting the `PYTHONPATH` before executing `pytest`:
+    
+    ```bash
+    export PYTHONPATH=.
+    ```

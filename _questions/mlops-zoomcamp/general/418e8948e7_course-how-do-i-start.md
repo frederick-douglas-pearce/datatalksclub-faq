@@ -10,33 +10,32 @@ images:
 - description: 'image #3'
   id: image_3
   path: images/mlops-zoomcamp/image_81e4432c.png
-question: Course - How do I start?
+question: 'Course: How do I start?'
 sort_order: 50
 ---
 
-No matter if you're with a 'live' cohort or follow on the self-paced mode, the way to start is similar:
+No matter if you're with a 'live' cohort or following in self-paced mode, start by:
 
-see what things are where by reading  pins and  bookmarks on the course-channel
+- Reading pins and bookmarks on the course channel to see what things are where.
 
-<{IMAGE:image_1}>
+  <{IMAGE:image_1}>
 
-<{IMAGE:image_2}>
+  <{IMAGE:image_2}>
 
-reading the repo (bookmarked in channel) and watching the video lessons (playlist bookmarked in channel)
+- Reading the repository (bookmarked in channel) and watching the video lessons (playlist bookmarked in channel).
 
-if have questions, search the channel itself first; someone may have already asked and gotten a solution
+- If you have questions, search the channel itself first; someone may have already asked and gotten a solution.
 
-if don't want to comb through the search results, read  for the most Frequently Asked Questions (this document)
+- For the most Frequently Asked Questions, refer to this document:
 
-<{IMAGE:image_3}>
+  <{IMAGE:image_3}>
 
-if don't even want to read/skim/search (use ctrl+F) the questions in FAQ doc, tag the @ZoomcampQABot when you ask questions, and it will summarize it for you (if answers in its knowledge-base)
+- If you don't want to read/skimmer/search the FAQ document, tag the `@ZoomcampQABot` when asking questions, and it will summarize answers from its knowledge base.
 
-For generic, non-zoomcamp queries, you can also ask ChatGPT/BingCopilot/GoogleGemini/etc, especially for error messages
+- For generic, non-zoomcamp queries, consider using tools like ChatGPT, BingCopilot, or Google Gemini, especially for error messages.
 
-check if you're on track by checking the deadlines (in Course Management form for Homework submissions)
+- Check if you're on track by checking the deadlines in the Course Management form for homework submissions.
 
-main difference of not being in a “live” cohort is that the responses to your questions might be delayed as not many active students come online anymore. Which is not an issue if you do your own due diligence and search for answers first or reading the documentation of the library.
+The main difference if you're not in a "live" cohort is that responses to your questions might be delayed because fewer active students are online. This won't be an issue if you do your own due diligence by searching for answers first and reading the documentation of the library.
 
-If you do need to ask questions when no answers supplied in resources above have helped, follow the asking-questions.md (bookmarked in channel) guidelines, also in Pins…
-
+- If you need to ask questions and the resources above haven't helped, follow the guidelines in the `asking-questions.md` document (bookmarked in channel) and also check the Pins.

@@ -4,15 +4,12 @@ question: Slightly different RMSE
 sort_order: 600
 ---
 
-Problem: My LinearRegression RMSE is very close to the answer but not exactly the same. Is this normal?
+**Problem:** My LinearRegression RMSE is very close to the answer but not exactly the same. Is this normal?
 
-Answer: No, LinearRegression is an deterministic model, it should always output the same results when given the same inputs.
+**Answer:** No, LinearRegression is a deterministic model; it should always output the same results when given the same inputs.
 
-Answer:
+### Check the Following:
 
-Check if you have treated the outlier properly for both train and validation sets
-
-Check if the one hot encoding has been done properly by looking at the shape of one hot encoded feature matrix. If it shows 2 features, there is something wrong with one hot encoding. Hint: the drop off and pick up codes need to be converted to proper data format and then DictVectorizer is fitted.
-
-Harshit Lamba (hlamba19@gmail.com)
-
+- Ensure outliers are properly treated in both the train and validation sets.
+- Verify that one-hot encoding is correctly applied by inspecting the shape of the one-hot encoded feature matrix. If it shows 2 features, there may be an issue.
+  - Hint: Convert drop-off and pick-up codes to the proper data format before fitting with `DictVectorizer`.

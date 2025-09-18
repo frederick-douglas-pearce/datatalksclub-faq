@@ -5,7 +5,12 @@ question: 'xgboost.core.XGBoostError: This app has encountered an error. The ori
 sort_order: 2640
 ---
 
-Expanded error says: xgboost.core.XGBoostError: sklearn needs to be installed in order to use this module. So, sklearn in requirements solved the problem.
+Expanded error:
 
-George Chizhmak
+```
+xgboost.core.XGBoostError: sklearn needs to be installed in order to use this module.
+```
 
+Solution:
+
+- Ensure that `sklearn` is listed in your requirements and installed. This should solve the problem.

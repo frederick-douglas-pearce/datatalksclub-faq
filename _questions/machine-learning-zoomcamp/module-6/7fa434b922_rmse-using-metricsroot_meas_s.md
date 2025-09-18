@@ -4,9 +4,8 @@ question: RMSE using metrics.root_meas_square()
 sort_order: 2620
 ---
 
-Instead of using np.sqrt() as the second step. You can extract it using like this way :
+Instead of using `np.sqrt()` as a second step, you can extract it using:
 
-mean_squared_error(y_val, y_predict_val,squared=False)
-
-Ahmed Okka
-
+```python
+mean_squared_error(y_val, y_predict_val, squared=False)
+```

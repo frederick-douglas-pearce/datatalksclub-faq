@@ -5,9 +5,8 @@ question: Error index 311297 is out of bounds for axis 0 with size 131483 when l
 sort_order: 1630
 ---
 
-Problem description:   Running starter.ipynb in homework’s Q1 will show up this error.
+Problem description: Running `starter.ipynb` in homework’s Q1 will show this error.
 
-Solution description: Update pandas (actually pandas version was the latest, but several dependencies are updated).
+Solution:
 
-Added by Marcos Jimenez
-
+- Update pandas along with related dependencies to the latest versions.

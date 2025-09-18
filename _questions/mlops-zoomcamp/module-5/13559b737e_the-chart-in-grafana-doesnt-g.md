@@ -4,11 +4,9 @@ question: The chart in Grafana doesn’t get updates
 sort_order: 2020
 ---
 
-Problem description. While my metric generation script was still running, I noticed that the charts in Grafana don’t get updated.
+**Problem Description:** While my metric generation script was still running, I noticed that the charts in Grafana don’t get updated.
 
-Solution description. There are two things to pay attention to:
+**Solution:**
 
-Refresh interval: set it to a small value: 5-10-30 seconds
-
-Use your local timezone in a call to `pytz.timezone` – I couldn’t get updates before changing this from the original value “Europe/London” to my own zone
-
+- **Refresh Interval:** Set it to a small value, such as 5, 10, or 30 seconds.
+- **Timezone Setting:** Ensure you use your local timezone in a call to `pytz.timezone`. For example, change the setting from "Europe/London" to your local timezone to get updates.

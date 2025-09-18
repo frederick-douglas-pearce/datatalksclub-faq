@@ -4,15 +4,11 @@ question: The same accuracy on epochs
 sort_order: 2830
 ---
 
-Problem description
+### Problem Description
 
-The accuracy and the loss are both still the same or nearly the same while training.
+The accuracy and the loss are both the same or nearly the same while training.
 
-Solution description
+### Solution Description
 
-In the homework, you should set class_mode='binary' while reading the data.
-
-Also, problem occurs when you choose the wrong optimizer, batch size, or learning rate
-
-Added by Ekaterina Kutovaia
-
+- In the homework, set `class_mode='binary'` while reading the data.
+- The problem may also occur if you choose the wrong optimizer, batch size, or learning rate.

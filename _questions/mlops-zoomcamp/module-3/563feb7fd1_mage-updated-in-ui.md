@@ -6,25 +6,38 @@ sort_order: 1340
 
 When you see the mage version change in the UI after you’ve started the container, and you want to update, follow these steps. Read the release notes first to see if there’s a fix that affected your work and would benefit from an update.
 
-If you want to remain in the previous version is also fine; unless the fixes were specifically for our zoomcamp course-work (check slack and/or the repository for any new instructions or PRs added).
+If you want to remain in the previous version, it's also fine unless the fixes were specifically for our zoomcamp coursework (check the repository for any new instructions or PRs added).
 
-Close the browser page
+1. Close the browser page.
+2. In the terminal console, bring down the container:
+   ```bash
+   docker compose down
+   ```
+3. Rebuild the container with the new mage image:
+   ```bash
+   docker compose build --no-cache
+   ```
+4. Verify that you see:
+   ```bash
+   [magic-platform 1/4] FROM docker.io/mageai/mageai:alpha
+   ```
+   This means that the container is being rebuilt with a new version.
 
-In the terminal console, bring down the container `docker compose down`
+5. If the image is not updated, press `ctrl+c` to cancel the process and pull the image manually:
+   ```bash
+   docker pull mageai/mageai:alpha
+   ```
+   Then rebuild.
 
-Rebuild the container with new mage image `docker compose build --no-cache`
+6. Restart the docker container as before:
+   ```bash
+   ./scripts/start.sh
+   ```
 
-Verify that you see `[magic-platform 1/4] FROM docker.io/mageai/mageai:alpha` meaning that the container is being rebuild with a new version
+Note: This is the same sequence of steps if you want to switch to the latest tagged image instead of using the alpha image.
 
-If the image is not updated, ctrl+c to cancel the process and pull the image manually with `docker pull mageai/mageai:alpha` then rebuild
+**What does alpha and latest mean?**
 
-Then restart the docker container with `./scripts/start.sh` as before
+- **Latest** is the fully released version ready for production use, and it has gone through verification, testing, QA, and whatever else the release cycle entails.
 
-ps: this is the same sequence of steps if you want to switch to the latest tagged image instead of using the alpha image.
-
-What does alpha and latest mean?
-
-Latest is the fully released version ready for production use, and it has gone through verification, testing, QA and whatever else the release cycle entails.
-
-Alpha is the potentially buggy version with fresh new fixes and newly added features; but not yet put through the full beta test (if there’s one), integration testing and other QA steps. So expect issues to occur.
-
+- **Alpha** is the potentially buggy version with fresh new fixes and newly added features; but not yet put through the full beta test (if there’s one), integration testing, and other QA steps. Expect issues to occur.

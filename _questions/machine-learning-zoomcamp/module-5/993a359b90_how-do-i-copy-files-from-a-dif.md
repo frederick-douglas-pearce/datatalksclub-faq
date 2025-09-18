@@ -1,13 +1,14 @@
 ---
 id: 993a359b90
-question: How do I copy files from a different folder into docker container’s working
+question: How do I copy files from a different folder into a Docker container’s working
   directory?
 sort_order: 2260
 ---
 
-You can copy files from your local machine into a Docker container using the docker cp command. Here's how to do it:
+You can copy files from your local machine into a Docker container using the `docker cp` command.
 
-In the Dockerfile, you can provide the folder containing the files that you want to copy over. The basic syntax is as follows:
+In the Dockerfile, you can specify the folder containing the files you want to copy. The basic syntax is as follows:
 
-COPY ["src/predict.py", "models/xgb_model.bin", "./"]Gopakumar Gopinathan
-
+```dockerfile
+COPY ["src/predict.py", "models/xgb_model.bin", "./"]
+```

@@ -4,35 +4,45 @@ question: Hash Mismatch Error with Package Installation
 sort_order: 860
 ---
 
-Problem:
+### Problem:
 
-Getting
+When attempting to install MLFlow using `pip install mlflow`, an error occurs related to a hash mismatch for the Numpy package:
 
-ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE
-
-during MLFlow's installation process, particularly while installing the Numpy package using pip
-
-When I installed mlflow using ‘pip install mlflow’ on 27th May 2022, I got the following error while numpy was getting installed through mlflow:Collecting numpy
-
-Downloading numpy-1.22.4-cp310-cp310-win_amd64.whl (14.7 MB)
-
-|██████████████              | 6.3 MB 107 kB/s eta 0:01:19
-
+```plaintext
 ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE.
+```
 
+### Error Details:
+
+During the installation on 27th May 2022, the following occurred while Numpy was being installed:
+
+```
+Collecting numpy
+  Downloading numpy-1.22.4-cp310-cp310-win_amd64.whl (14.7 MB)
+  |██████████████              | 6.3 MB 107 kB/s eta 0:01:19
+ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE.
 If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
+```
 
-numpy from [https://files.pythonhosted.org/packages/b5/50/d7978137464251c393df28fe0592fbb968110f752d66f60c7a53f7158076/numpy-1.22.4-cp310-cp310-win_amd64.whl#sha256=3e1ffa4748168e1cc8d3cde93f006fe92b5421396221a02f2274aab6ac83b077](https://files.pythonhosted.org/packages/b5/50/d7978137464251c393df28fe0592fbb968110f752d66f60c7a53f7158076/numpy-1.22.4-cp310-cp310-win_amd64.whl#sha256=3e1ffa4748168e1cc8d3cde93f006fe92b5421396221a02f2274aab6ac83b077) (from mlflow):
+- **Expected SHA256**: `3e1ffa4748168e1cc8d3cde93f006fe92b5421396221a02f2274aab6ac83b077`
+- **Got**: `15e691797dba353af05cf51233aefc4c654ea7ff194b3e7435e6eec321807e90`
 
-Expected sha256 3e1ffa4748168e1cc8d3cde93f006fe92b5421396221a02f2274aab6ac83b077
+### Solution:
 
-Got    15e691797dba353af05cf51233aefc4c654ea7ff194b3e7435e6eec321807e90
+1. **Install Numpy Separately**:
+   
+   - Try installing Numpy separately using:
+     
+     ```bash
+     pip install numpy
+     ```
+   
+2. **Install MLFlow**:
 
-Solution:
+   - After successfully installing Numpy, proceed with reinstalling MLFlow:
+     
+     ```bash
+     pip install mlflow
+     ```
 
-Then when I install numpy separately (and not as part of mlflow), numpy gets installed (same version), and then when I do 'pip install mlflow', it also goes through.
-
-Please note that the above may not be consistently simulatable, but please be aware of this issue that could occur during pip install of mlflow.
-
-Added by Venkat Ramakrishnan
-
+This approach resolved the issue in this instance, although the problem may not be consistently reproducible. Be aware that similar hash mismatch errors might occur during package installations.

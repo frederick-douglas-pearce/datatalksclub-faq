@@ -4,29 +4,27 @@ question: Using a docker image as development environment (Linux)
 sort_order: 730
 ---
 
-If you don’t want to install anaconda on your machine and don’t want to use codespace or a VPS, you could create a docker image and run it locally.
+If you don’t want to install Anaconda locally and prefer not to use Codespace or a VPS, you can create and run a Docker image locally.
 
-For this, can use the following Dockerfile:
+For this, use the following `Dockerfile`:
 
+```dockerfile
 FROM docker.io/bitnami/minideb:bookworm
 
 RUN install_packages wget ca-certificates vim less silversearcher-ag
 
 # Uncomment the `COPY` and comment the `RUN` line if you have downloaded anaconda manually
+# I did this to save bandwidth when experimenting with the image creation
 
-# I did this to save bandwith when experimenting with the image creation
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh && bash Anaconda3-2022.05-Linux-x86_64.sh -b -p /opt/anaconda3
 
-RUN wget [repo.anaconda.com](https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh) && bash Anaconda3-2022.05-Linux-x86_64.sh -b -p /opt/anaconda3
+#COPY Anaconda3-2022.05-Linux-x86_64.sh /tmp/Anaconda3-2022.05-Linux-x86_64.sh
 
-#COPY  Anaconda3-2022.05-Linux-x86_64.sh /tmp/Anaconda3-2022.05-Linux-x86_64.sh
-
-RUN   bash /tmp/Anaconda3-2022.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
-
-rm /tmp/Anaconda3-2022.05-Linux-x86_64.sh
+RUN bash /tmp/Anaconda3-2022.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
+    rm /tmp/Anaconda3-2022.05-Linux-x86_64.sh
 
 ENV PATH="/opt/anaconda3/bin:$PATH" \
-
-HOME="/app"
+    HOME="/app"
 
 EXPOSE 8888
 
@@ -35,18 +33,20 @@ WORKDIR /app
 USER 1001
 
 ENTRYPOINT [ "jupyter", "notebook", "--ip", "0.0.0.0" ]
+```
 
 Build the image using:
 
+```bash
 docker build -f Dockerfile -t mlops:v0 .
+```
 
-Then you could run it with:
+Then you can run it with:
 
+```bash
 mkdir app
-
 chmod -R 777 app
-
 docker run --name jupyter -p 8888:8888 -v ./app:/app mlops:v0
+```
 
-In the logs you could see the jupyter URL that you need to use to enter the jupyter environment. The files you create in the environment will be written under app directory.
-
+In the logs, you will see the Jupyter URL needed to access the environment. The files you create will be stored in the `app` directory.

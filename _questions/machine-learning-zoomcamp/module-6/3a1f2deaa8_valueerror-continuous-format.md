@@ -4,11 +4,10 @@ question: 'ValueError: continuous format is not supported'
 sort_order: 2510
 ---
 
-Calling roc_auc_score() to get auc is throwing the above error.
+Calling `roc_auc_score()` to get AUC is throwing the above error.
 
-Solution to this issue is to make sure that you pass y_actuals as 1st argument and y_pred as 2nd argument.
+Solution to this issue is to ensure that you pass `y_actuals` as the first argument and `y_pred` as the second argument.
 
+```python
 roc_auc_score(y_train, y_pred)
-
-Hareesh Tummala
-
+```

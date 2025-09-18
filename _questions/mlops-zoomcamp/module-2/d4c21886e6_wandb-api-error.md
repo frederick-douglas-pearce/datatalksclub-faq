@@ -4,9 +4,19 @@ question: WandB API error
 sort_order: 1150
 ---
 
-Problem: when running the preprocess_data.py file you get the following error:wandb: ERROR api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+**Problem:** When running the `preprocess_data.py` file, you encounter the following error:
 
-Solution: Go to your WandB profile (top RHS) → user settings → scroll down to “Danger Zone” and copy your API key. Then before running preprocess_data.py, add and run the following cell in your notebook:%%bashWandb login <YOUR_API_KEY_HERE>.
+```bash
+wandb: ERROR api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+```
 
-Added and Answered by James Gammerman (jgammerman@gmail.com)
+**Solution:**
 
+1. Go to your WandB profile and navigate to user settings.
+2. Scroll down to the “Danger Zone” and copy your API key.
+3. Before running `preprocess_data.py`, add and run the following cell in your notebook:
+
+   ```bash
+   %%bash
+   wandb login <YOUR_API_KEY_HERE>
+   ```

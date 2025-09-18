@@ -5,11 +5,18 @@ question: 'Problem: ''ls'' is not recognized as an internal or external command,
 sort_order: 3110
 ---
 
-When trying to run the command  !ls -lh in windows jupyter notebook  , I was getting an error message that says “'ls' is not recognized as an internal or external command,operable program or batch file.
+When trying to run the command `!ls -lh` in a Windows Jupyter Notebook, you may receive an error:
 
-Solution description :
+```
+'ls' is not recognized as an internal or external command, operable program or batch file.
+```
 
-Instead of !ls -lh , you can use this command !dir , and you will get similar output
+Solution:
 
-Asia Saeed
+Instead of `!ls -lh`, you can use this command:
 
+```bash
+!dir
+```
+
+This will provide similar output.

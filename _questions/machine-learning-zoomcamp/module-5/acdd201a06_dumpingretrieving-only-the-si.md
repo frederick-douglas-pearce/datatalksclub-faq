@@ -4,21 +4,33 @@ question: Dumping/Retrieving only the size of for a specific Docker image
 sort_order: 1920
 ---
 
-Using the command docker images or docker image ls will dump all information for all local Docker images. It is possible to dump the information only for a specified image by using:
+To list all information for all local Docker images, you can use the following commands:
 
-docker image ls <image name>
+```bash
+docker images
+docker image ls
+```
+
+To retrieve information for a specific image, use:
+
+```bash
+docker image ls <image_name>
+```
 
 Or alternatively:
 
-docker images <image name>
+```bash
+docker images <image_name>
+```
 
-In action to that it is possible to only dump specific information provided using the option --format which will dump only the size for the specified image name when using the command below:
+To dump only the size of a specified image, use the `--format` option. This will display only the image size:
 
-docker image ls --format "{{.Size}}" <image name>
+```bash
+docker image ls --format "{{.Size}}" <image_name>
+```
 
 Or alternatively:
 
-docker images --format "{{.Size}}" <image name>
-
-Sylvia Schmitt
-
+```bash
+docker images --format "{{.Size}}" <image_name>
+```

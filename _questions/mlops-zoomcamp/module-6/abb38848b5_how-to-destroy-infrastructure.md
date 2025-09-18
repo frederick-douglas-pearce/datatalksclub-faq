@@ -4,17 +4,18 @@ question: How to destroy infrastructure created via GitHub Actions
 sort_order: 2380
 ---
 
-Problem description
+### Problem Description
 
-Infrastructure created in AWS with CD-Deploy Action needs to be destroyed
+Infrastructure created in AWS with CD-Deploy Action needs to be destroyed.
 
-Solution description
+### Solution Description
 
-From local:
+To destroy the infrastructure from local:
 
+```bash
 terraform init -backend-config="key=mlops-zoomcamp-prod.tfstate" --reconfigure
+```
 
+```bash
 terraform destroy --var-file vars/prod.tfvars
-
-Added by Erick Calderin
-
+```

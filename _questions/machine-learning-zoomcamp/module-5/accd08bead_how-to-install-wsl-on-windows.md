@@ -4,71 +4,88 @@ images:
 - description: 'image #1'
   id: image_1
   path: images/machine-learning-zoomcamp/image_b74116cb.png
-question: How to install WSL on Windows 10 and 11 ?
+question: How to install WSL on Windows 10 and 11?
 sort_order: 1800
 ---
 
-Windows 10:
+### Windows 10:
 
-Open PowerShell as Admin.
+1. Open PowerShell as Admin.
+2. Run the following command:
+   ```bash
+   wsl --install
+   ```
+3. Restart your computer.
+4. Set up your Linux distribution (e.g., Ubuntu).
 
-Run: wsl --install
+### Windows 11:
 
-Restart your computer.
+1. Open Windows Terminal as Admin.
+2. Run:
+   ```bash
+   wsl --install
+   ```
+3. Restart if prompted.
+4. Set up your Linux distribution.
 
-Set up your Linux distribution (e.g., Ubuntu).
+### Additional Notes:
 
-Windows 11:
+- To install a specific distribution, use:
+  ```bash
+  wsl --install -d <DistributionName>
+  ```
+- For updates, run:
+  ```bash
+  wsl --update
+  ```
 
-Open Windows Terminal as Admin.
+It is important to ensure that the "Virtual Machine Platform" feature is activated in your Windows "Features." You can check this by searching for "features" in the search bar to see if the checkbox is selected. Additionally, ensure that your system (in the BIOS) supports virtualization.
 
-Run: wsl --install
+In the Microsoft Store, search for ‘Ubuntu’ or ‘Debian’ (or any Linux distribution you want) and install it. After downloading, open the app and choose a username and a password. Note that while typing your password, it may not display any characters (this is normal).
 
-Restart if prompted.
+Once inside your Linux system, you can try commands such as `pwd`. To navigate back to your Windows system:
 
-Set up your Linux distribution.
-
-Note: To install a specific distribution, use wsl --install -d <DistributionName>.
-
-For updates, run: wsl --update.
-
-It is quite simple, and you can follow these instructions here:
-
-[https://www.youtube.com/watch?v=qYlgUDKKK5A&ab_channel=NeuralNine](https://www.youtube.com/watch?v=qYlgUDKKK5A&ab_channel=NeuralNine)
-
-Make sure that you have “Virtual Machine Platform” feature activated in your Windows “Features”. To do that, search “features” in the research bar and see if the checkbox is selected. You also need to make sure that your system (in the bios) is able to virtualize. This is usually the case.
-
-In the Microsoft Store: look for ‘Ubuntu’ or ‘Debian’ (or any linux distribution you want) and install it
-
-Once it is downloaded, open the app and choose a username and a password (secured one). When you type your password, nothing will show in the window, which is normal: the writing is invisible.
-
-You are now inside of your linux system. You can test some commands such as “pwd”. You are not in your Windows system.
-
-To go to your windows system: you need to go back two times with cd ../.. And then go to the “mnt” directory with cd mnt. If you list here your files, you will see your disks. You can move to the desired folder, for example here I moved to the ML_Zoomcamp folder:
+1. Use `cd ../..` twice.
+2. Go to the "mnt" directory:
+   ```bash
+   cd mnt
+   ```
+3. List your files to view your disks and move to the desired folder.
 
 <{IMAGE:image_1}>
 
-Python should be already installed but you can check it by running sudo apt install python3 command.
+Python should be already installed, but you can check with:
+```bash
+sudo apt install python3
+```
 
-You can make your actual folder your default folder when you open your Ubuntu terminal with this command : echo "cd ../../mnt/your/folder/path" >> ~/.bashrc
+To make your current folder the default when opening Ubuntu terminal, use:
+```bash
+echo "cd ../../mnt/your/folder/path" >> ~/.bashrc
+```
 
-You can disable bell sounds (when you type something that does not exist for example) by modifying the inputrc file with this command: sudo vim /etc/inputrc
+To disable bell sounds, edit the inputrc file:
+1. Open the file:
+   ```bash
+   sudo vim /etc/inputrc
+   ```
+2. Uncomment `set bell-style none`:
+   - Press `i` (for insert), navigate to the line, delete `#`, press `Escape`, and then `:wq` to save and quit.
+3. Open a new terminal to check the changes.
 
-You have to uncomment the set bell-style none line -> to do that, press the “i” keyboard letter (for insert) and go with your keyboard to this line. Delete the # and then press the Escape keyboard touch and finally press “:wq” to write (it saves your modifications) then quit.
+To install pip, run:
+```bash
+sudo apt install python3-pip
+```
 
-You can check that your modifications are taken into account by opening a new terminal (you can pin it to your task bar so you do not have to go to the Microsoft app each time).
+#### Possible Error
 
-You will need to install pip by running this command sudo apt install python3-pip
-
-NB: I had this error message when trying to install pipenv ([https://github.com/microsoft/WSL/issues/5663](https://github.com/microsoft/WSL/issues/5663)):
-
+You might encounter the following error when installing pipenv:
+```bash
 /sbin/ldconfig.real: Can't link /usr/lib/wsl/lib/libnvoptix_loader.so.1 to libnvoptix.so.1
-
 /sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link
-
-So I had to create the following symbolic link:
-
+```
+To resolve, create a symbolic link:
+```bash
 sudo ln -s /usr/lib/wsl/lib/libcuda.so.1 /usr/lib64/libcuda.so
-
-(Mélanie Fouesnard)
-
+```

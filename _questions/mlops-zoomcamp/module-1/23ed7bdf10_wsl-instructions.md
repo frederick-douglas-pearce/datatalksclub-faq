@@ -1,42 +1,61 @@
 ---
 id: 23ed7bdf10
-question: WSL instructions
+question: 'WSL: instructions'
 sort_order: 310
 ---
 
-If you wish to use WSL on your windows machine, here are the setup instructions:
+If you wish to use WSL on your Windows machine, here are the setup instructions:
 
-Command: Sudo apt install wget
+1. Install wget:
+   
+   ```bash
+   sudo apt install wget
+   ```
 
-Get [Anaconda download address here](https://www.anaconda.com/download#downloads). wget <download address>
+2. Download Anaconda from the [Anaconda download page](https://www.anaconda.com/download#downloads) using the `wget` command:
+   
+   ```bash
+   wget <download-address>
+   ```
 
-[Turn on Docker Desktop W](https://docs.docker.com/desktop/windows/wsl/#turn-on-docker-desktop-wsl-2)[Free Download | Anaconda](https://www.anaconda.com/download#downloads)[SL2](https://docs.docker.com/desktop/windows/wsl/#turn-on-docker-desktop-wsl-2)
+3. Turn on Docker Desktop WSL 2:
+   
+   [Follow the instructions here](https://docs.docker.com/desktop/windows/wsl/#turn-on-docker-desktop-wsl-2).
 
-Command: git clone <github repository address>
+4. Clone the desired GitHub repository:
+   
+   ```bash
+   git clone <github-repository-address>
+   ```
 
-[VSCODE on WSL](https://code.visualstudio.com/docs/remote/wsl)
+5. Install Jupyter:
+   
+   ```bash
+   pip3 install jupyter
+   ```
 
-Jupyter: pip3 install jupyter
+6. Consider using Anaconda, which includes tools like PyCharm and Jupyter.
 
-Added by Gregory Morris ([gwm1980@gmail.com](mailto:gwm1980@gmail.com))
+7. Alternatively, download Miniforge for a lightweight, open-source version of conda that supports mamba for improved environment solving speed. The Texas Tech University High Performance Computing Center provides a detailed guide:
+   
+   [Installing Miniforge3 Guide by TTU HPCC](https://www.depts.ttu.edu/hpcc/userguides/application_guides/Miniforge.php)
 
-All in all softwares at one shop:
+8. For Windows, install WSL via:
+    
+    ```bash
+    wsl --install
+    ```
 
-You can use anaconda which has all built in services like pycharm, jupyter
+9. If Python shows as version 3.10 after installing Anaconda with Python 3.9, execute:
+    
+    ```bash
+    source .bashrc
+    ```
+    
+    If the issue persists, add the following to your PATH:
+    
+    ```bash
+    export PATH="<anaconda-install-path>/bin:$PATH"
+    ```
 
-Added by Khaja Zaffer ([khajazaffer@aln.iseg.ulisboa.pt](mailto:khajazaffer@aln.iseg.ulisboa.pt))
-
-Alternatively, you can download miniforge, which is a more lightweight open-source version of conda, which doesn’t rely on the proprietary Anaconda repository and allows you to use mamba, as a default package manager, which greatly improves environment solving speed.
-
-For a clear, step-by-step guide to installing miniforge, the Texas Tech University High Performance Computing Center has an excellent comprehensive guide:
-
-[Installing Miniforge3 Guide by TTU HPCC](https://www.depts.ttu.edu/hpcc/userguides/application_guides/Miniforge.php)
-
-Added by Jon Areas ([areasjx@gmail.com](mailto:areasjx@gmail.com))
-
-For windows “wsl --install” in Powershell
-
-Added by Vadim Surin ([vdmsurin@gmai.com](mailto:vdmsurin@gmai.com))
-
-If python is still showing as 3.10 after installing anaconda with Python 3.9, try running ‘source .bashrc’ from ${HOME} folder, for any reason if its still not working, add ‘export PATH=”<anaconda install path>/bin:$PATH”’
-
+For using VSCode with WSL, refer to [VSCode on WSL](https://code.visualstudio.com/docs/remote/wsl).

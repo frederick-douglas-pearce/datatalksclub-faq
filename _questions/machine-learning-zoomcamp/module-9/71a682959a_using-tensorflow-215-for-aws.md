@@ -4,9 +4,6 @@ question: Using Tensorflow 2.15 for AWS deployment
 sort_order: 3290
 ---
 
-Using the 2.14 version with python 3.11 works fine.
+Using Tensorflow 2.14 with Python 3.11 works fine.
 
-In case it doesn’t work, I tried with tensorflow 2.4.4 whl, however, make sure to run it on top of supported python versions like 3.8, else there will be issues installing tf==2.4.4
-
-Added by Abhijit Chakraborty
-
+If it doesn’t work, try using Tensorflow 2.4.4 with supported Python versions like 3.8. Installing Tensorflow 2.4.4 with unsupported versions may cause issues.

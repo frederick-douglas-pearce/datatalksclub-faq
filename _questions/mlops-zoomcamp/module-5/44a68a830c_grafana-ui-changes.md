@@ -7,17 +7,18 @@ images:
 - description: 'image #2'
   id: image_2
   path: images/mlops-zoomcamp/image_27675c03.png
-question: Grafana UI Changes
+question: 'Grafana: UI Changes'
 sort_order: 2110
 ---
 
-Problem: When selecting column from table db has no time column: no time column found
+**Problem:** When selecting a column from the table, the error message is displayed:
+
+```
+no time column: no time column found
+```
 
 <{IMAGE:image_1}>
 
-Solution: Add timestamp column in query builder
+**Solution:** Add a timestamp column in the query builder.
 
 <{IMAGE:image_2}>
-
-Added by Rohmat S
-

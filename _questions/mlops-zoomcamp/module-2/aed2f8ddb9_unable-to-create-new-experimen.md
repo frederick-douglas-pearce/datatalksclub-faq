@@ -8,13 +8,12 @@ question: Unable to create new Experiment
 sort_order: 850
 ---
 
-Following the instructions as per the video as below did not work though the jupyter notebook says it is successfully created.
+Following the instructions in the video did not work, even though the Jupyter notebook indicates it was successfully created.
 
 <{IMAGE:image_1}>
 
-Set the URI to the listener directly. It worked for me. This could be because the video was made with a lower version of the “mlflow” package and we are working on the latest version. The documentation of the latest  “mlflow” package is asking to set as below
+It is recommended to set the URI to the listener directly. This discrepancy might be due to differences in the "mlflow" package versions between the video and the latest version we are using. The documentation for the latest "mlflow" package suggests setting the URI as follows:
 
-mlflow.set_tracking_uri(uri="[127.0.0.1:5000](http://127.0.0.1:5000)")
-
-(optional) Arun Gansi
-
+```python
+mlflow.set_tracking_uri(uri="http://127.0.0.1:5000")
+```

@@ -4,19 +4,20 @@ question: How to replace distplot with histplot
 sort_order: 480
 ---
 
+To replace `sns.distplot` with `sns.histplot`, you can use the following syntax:
+
+```python
 sns.distplot(df_train["duration"])
+```
 
-Can be replaced with
+Can be replaced with:
 
+```python
 sns.histplot(
-
-df_train["duration"] , kde=True,
-
-stat="density", kde_kws=dict(cut=3), bins=50,
-
-alpha=.4, edgecolor=(1, 1, 1, 0.4),
-
+    df_train["duration"], kde=True,
+    stat="density", kde_kws=dict(cut=3), bins=50,
+    alpha=.4, edgecolor=(1, 1, 1, 0.4),
 )
+```
 
-To get almost identical result
-
+This will give you an almost identical result.

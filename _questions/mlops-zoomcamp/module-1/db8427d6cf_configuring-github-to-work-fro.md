@@ -4,31 +4,20 @@ question: Configuring Github to work from the remote VM
 sort_order: 290
 ---
 
-In case one would like to set a github repository (e.g. for Homeworks), one can follow 2 great tutorials that helped a lot
+In case you want to set up a GitHub repository (e.g., for homeworks) from a remote VM, you can follow these helpful tutorials:
 
-Setting up github on AWS instance - [this](https://gist.github.com/matthewoden/b29353e266c554e04be8ea2058bcc2a0)
+- **Setting up GitHub on AWS instance:** [Tutorial](https://gist.github.com/matthewoden/b29353e266c554e04be8ea2058bcc2a0)
+- **Setting up keys on AWS instance:** [GitHub Documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-Setting up keys on AWS instance - [this](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+Once you complete these steps, you should be able to push to your repository successfully.
 
-Then, one should be able to push to its repo
+**AWS Instance Note:**
 
-AWS selected instance
+The selected AWS instance may not be covered under the free tier due to its size or other factors. Here is what the AWS free tier includes:
 
-It is not covered under free subscription due to large in size or other reason..Received below reply from them.(I am referring here the Linux setup video in intro)
+- Resizable compute capacity in the Cloud.
+- 750 hours per month of Linux, RHEL, or SLES t2.micro or t3.micro* instance, depending on the region.
+- 750 hours per month of Windows t2.micro or t3.micro* instance, depending on the region.
+- 750 hours per month of public IPv4 address regardless of the instance type.
 
-For free version you can check the free tier link. EC2 only has the below in free :
-
-Resizable compute capacity in the Cloud.
-
-750 hours per month of Linux, RHEL, or SLES t2.micro or t3.micro* instance dependent on region
-
-750 hours per month of Windows t2.micro or t3.micro* instance dependent on region
-
-750 hours per month of public IPv4 address regardless of instance type
-
-*launches in Unlimited mode (may incur additional charges)
-
-Added by Giri (glk08909@gmail.com)
-
-Added by Daniel Hen ([daniel8hen@gmail.com](mailto:daniel8hen@gmail.com))
-
+*Instances launch in Unlimited mode and may incur additional charges.

@@ -4,13 +4,11 @@ question: How to run a script while a web-server is working?
 sort_order: 2090
 ---
 
-Problem description:
+**Problem Description:**
 
-I started a web-server in terminal (command window, powershell, etc.). How can I run another python script, which makes a request to this server?
+I started a web-server in a terminal (command window, PowerShell, etc.). How can I run another Python script that makes a request to this server?
 
-Solution description:
+**Solution Description:**
 
-Just open another terminal (command window, powershell, etc.) and run a python script.
-
-Alena Kniazeva
-
+- Open another terminal (command window, PowerShell, etc.).
+- Run your Python script from this new terminal.

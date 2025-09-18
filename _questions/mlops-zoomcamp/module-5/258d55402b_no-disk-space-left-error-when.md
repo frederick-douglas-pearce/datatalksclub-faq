@@ -1,12 +1,19 @@
 ---
 id: 258d55402b
-question: no disk space left error when doing docker compose up
+question: 'Docker: no disk space left error when doing docker compose up'
 sort_order: 2040
 ---
 
-Solution. Using docker CLI run docker system prune to remove unused things (build cache, containers, images etc)
+To resolve the "no disk space left" error when running `docker compose up`, follow these steps:
 
-Also, to see what’s taking space before pruning you can run docker system df
+1. Run the following command to remove unused objects (build cache, containers, images, etc.):
+   
+   ```bash
+   docker system prune
+   ```
 
-By Alex Litvinov
-
+2. If you want to see what is taking up space before pruning, use:
+   
+   ```bash
+   docker system df
+   ```

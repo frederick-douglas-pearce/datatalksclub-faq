@@ -1,14 +1,11 @@
 ---
 id: 11a7ea6c2c
-question: AWS suggestions
+question: 'AWS: Suggestions'
 sort_order: 340
 ---
 
-Make sure when you stop an EC2 instance that it actually stops (there's a meme about it somewhere). There are green circles (running), orange (stopping), and red (stopped). Always refresh the page to make sure you see the red circle and status of stopped.
-
-Even when an EC2 instance is stopped, there WILL be other charges that are incurred (e.g. if you uploaded data to the EC2 instance, this data has to be stored somewhere, usually an EBS volume and this storage incurs a cost).
-
-You can set up billing alerts. (I've never done this, so no advice on how to do this).
-
-(Question by: Akshit Miglani ([akshit.miglani09@gmail.com](mailto:akshit.miglani09@gmail.com)) and Answer by Anna Vasylytsya)
-
+- Ensure when stopping an EC2 instance that it fully stops. Look for the status indicator: green (running), orange (stopping), and red (stopped). Refresh the page to confirm it shows a red circle and status as stopped.
+  
+- Note that stopping an EC2 instance might still incur charges, such as storage costs for uploaded data on an EBS volume.
+  
+- Consider setting up billing alerts to monitor costs. However, specific instructions for setting them up are not provided here.

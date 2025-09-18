@@ -4,7 +4,4 @@ question: What does launching the tracking server locally mean?
 sort_order: 1110
 ---
 
-Solution : It is another way to start it for remote hosting a mlflow server. For example, if you are multiple colleagues working together on something you most likely would not run mlflow on one laptop but rather everyone would connect to the same server running mlflow
-
-Answer by Christoffer Added by Akshit Miglani (akshit.miglani09@gmail.com)
-
+Launching the tracking server locally means starting an MLflow server on your machine for remote hosting. This setup is useful when multiple colleagues are collaborating and need to connect to the same MLflow server instead of running it individually on their laptops.

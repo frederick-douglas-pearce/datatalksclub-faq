@@ -4,19 +4,20 @@ question: Evidently service exit with code 2
 sort_order: 1960
 ---
 
-Problem description
+### Problem Description
 
-When I run the command “docker-compose up –build” and send the data to the real-time prediction service. The service will return “Max retries exceeded with url: /api”.
+When running the command `docker-compose up –build` and sending data to the real-time prediction service, the service returns "Max retries exceeded with url: /api". This issue occurs because the evidently service exits with code 2 due to "app.py" in the evidently service being unable to import `from pyarrow import parquet as pq`.
 
-In my case it’s because of my evidently service exit with code 2 due to the “app.py” in evidently service cannot import “from pyarrow import parquet as pq”.
+### Solution
 
-Solution description
+1. **Install the pyarrow module**:
+   
+   ```bash
+   pip install pyarrow
+   ```
 
-The first solution is just install the pyarrow module “pip install pyarrow”
+2. **Restart your machine**.
 
-The second solution is to restart your machine.
-
-The third solution is if the first and second one didn’t work with your machine. I found that “app.py” of evidently service didn’t use that module. So comment the pyarrow module out and the problem was solved for me.
-
-Added by Surawut Jirasaktavee
+3. **If the first and second solutions don’t work**:
+   - Comment out the `pyarrow` module in "app.py" of the evidently service, as it may not be used, which resolved the issue in some cases.
 

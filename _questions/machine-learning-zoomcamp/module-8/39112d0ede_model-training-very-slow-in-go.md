@@ -4,11 +4,12 @@ question: Model training very slow in google colab with T4 GPU
 sort_order: 3010
 ---
 
-When training the models, in the fit function, you can specify the number of workers/threads.
+When training models in Google Colab, you can improve performance by specifying the number of workers/threads in the `fit` function.
 
-The number of threads apparently also works for GPUs, and came very handy in google colab for the T4 GPU, since it was very very slow, and workers default value is 1.
+Increasing the number of threads can also be beneficial for GPUs. This adjustment proved useful for the T4 GPU in Google Colab, as the default value for workers is 1, which can result in very slow processing.
 
-I changed the workers variable to 2560, following this thread in stackoverflow. I am using the free T4 GPU.  ([https://stackoverflow.com/questions/68208398/how-to-find-the-number-of-cores-in-google-colabs-gpu](https://stackoverflow.com/questions/68208398/how-to-find-the-number-of-cores-in-google-colabs-gpu))
+To improve performance:
 
-Added by Ibai Irastorza
+- Change the `workers` variable to a higher value, such as 2560, to accelerate model training.
 
+For further information, consult this [Stack Overflow thread](https://stackoverflow.com/questions/68208398/how-to-find-the-number-of-cores-in-google-colabs-gpu).

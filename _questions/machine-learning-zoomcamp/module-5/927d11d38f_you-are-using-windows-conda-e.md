@@ -1,11 +1,22 @@
 ---
 id: 927d11d38f
-question: You are using windows. Conda environment. You then use waitress instead
-  of gunicorn. After a few runs, suddenly mlflow server fails to run.
+question: 'Conda environment: You are using Windows. You then use Waitress instead
+  of Gunicorn. After a few runs, suddenly the MLflow server fails to run.'
 sort_order: 2130
 ---
 
-Ans: Pip uninstall waitress mflow. Then reinstall just mlflow. By this time you should have successfully built your docker image so you dont need to reinstall waitress. All good. Happy learning.
+1. Uninstall Waitress and MLflow:
 
-Added by 🅱🅻🅰🆀
+   ```bash
+   pip uninstall waitress mlflow
+   ```
 
+2. Reinstall MLflow:
+
+   ```bash
+   pip install mlflow
+   ```
+
+By this time, you should have successfully built your Docker image, so you don't need to reinstall Waitress.
+
+All good. Happy learning.

@@ -1,32 +1,53 @@
 ---
 id: fd11200ead
-question: How to see the model in the docker container in app/?
+question: 'Docker: How to see the model in the docker container in app/?'
 sort_order: 1780
 ---
 
-If anyone is troubleshooting or just interested in seeing the model listed on the image svizor/zoomcamp-model:mlops-3.10.0-slim.
+If you need to view the model inside the Docker container for the image `svizor/zoomcamp-model:mlops-3.10.0-slim`, follow these steps:
 
-Create a dockerfile. (yep thats all) and build “docker build -t zoomcamp_test .”
+1. **Create a Dockerfile:**
+   
+   ```dockerfile
+   FROM svizor/zoomcamp-model:mlops-3.10.0-slim
+   ```
 
-FROM svizor/zoomcamp-model:mlops-3.10.0-slim
+2. **Build the Docker Image:**
 
-Run “docker run -it zoomcamp_test ls /app” output -> model.bin
+   ```bash
+   docker build -t zoomcamp_test .
+   ```
 
-This will list the contents of the app directory and “model.bin” should output. With this you could just copy your files, for example “copy myfile .” maybe a requirements file and this can be run for example “docker run -it myimage myscript arg1 arg2 ”. Of course keep in mind a build is needed everytime you change the Dockerfile.
+3. **Run the Container and List the Contents of `/app`:**
 
-Another variation is to have it run when you run the docker file.
+   ```bash
+   docker run -it zoomcamp_test ls /app
+   ```
 
-“””
+   The output should include `model.bin`, confirming the model is present.
 
+### Additional Instructions
+
+- You can copy files into the Docker image by adding lines like `COPY myfile .` to the Dockerfile, and then run a script with arguments: 
+
+  ```bash
+  docker run -it myimage myscript arg1 arg2
+  ```
+
+- Remember, a new build is required whenever the Dockerfile is modified.
+
+### Alternative Method
+
+To list the contents of `/app` when the container runs, modify the Dockerfile:
+
+```dockerfile
 FROM svizor/zoomcamp-model:mlops-3.10.0-slim
 
 WORKDIR /app
 
 CMD ls
+```
 
-“””
-
-Just keep in mind CMD is needed because the RUN commands are used for building the image and the CMD is used at container runtime. And in your example you probably want to run a script or should we say CMD a script.
-
-Quinn Avila
-
+- **Note:**
+  - Use `CMD` to specify commands for container runtime. 
+  - Use `RUN` for building the image and `CMD` during container execution.

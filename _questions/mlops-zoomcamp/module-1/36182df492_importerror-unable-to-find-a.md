@@ -4,9 +4,10 @@ question: 'ImportError: Unable to find a usable engine; tried using: â€˜pyarrowâ
 sort_order: 500
 ---
 
-Run the following command:!pip install pyarrow
+To resolve this error, run the following command:
 
-After successfully downloading, you can delete the command.
+```bash
+!pip install pyarrow
+```
 
--AnnalieseTech
-
+After successfully installing, you can delete the command.

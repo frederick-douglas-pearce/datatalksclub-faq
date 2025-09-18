@@ -4,17 +4,21 @@ question: Install Docker (udocker) in Google Colab
 sort_order: 3360
 ---
 
-I’ve tried to do everything in Google Colab. Here is a way to work with Docker in Google Colab:
+To work with Docker in Google Colab, follow these steps:
 
-[https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885](https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885)
+1. Open your Google Colab notebook.
+2. Run the following commands:
 
-%%shell
+   ```bash
+   %%shell
+   pip install udocker
+   udocker --allow-root install
+   ```
 
-pip install udocker
+3. Test the installation:
 
-udocker --allow-root install
+   ```bash
+   !udocker --allow-root run hello-world
+   ```
 
-!udocker --allow-root run hello-world
-
-Added by Ivan Brigida
-
+For more details, refer to this [gist](https://gist.github.com/mwufi/6718b30761cd109f9aff04c5144eb885).

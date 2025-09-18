@@ -5,9 +5,14 @@ question: 'docker.errors.DockerException: Error while fetching server API versio
 sort_order: 2150
 ---
 
-Instead of:  docker-compose up –build
+- Instead of using:
+  
+  ```bash
+  docker-compose up --build
+  ```
+  
+- Use:
 
-Use: docker compose up –build
-
-Added Ibai Irastorza
-
+  ```bash
+  docker compose up --build
+  ```

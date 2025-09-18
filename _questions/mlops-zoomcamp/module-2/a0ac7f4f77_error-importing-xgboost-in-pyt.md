@@ -4,5 +4,8 @@ question: 'Error importing xgboost in python with OS mac: library not loaded: @r
 sort_order: 1260
 ---
 
-I fix this error by running `brew install libomp`
+To fix this error, run the following command:
 
+```bash
+brew install libomp
+```

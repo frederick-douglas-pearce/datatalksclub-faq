@@ -4,7 +4,4 @@ question: Distplot takes too long
 sort_order: 540
 ---
 
-First remove the outliers (trips with unusual duration) before plotting
-
-Added by Ibraheem Taha ([ibraheemtaha91@gmail.com](mailto:ibraheemtaha91@gmail.com))
-
+First, remove the outliers (trips with unusual duration) before plotting.

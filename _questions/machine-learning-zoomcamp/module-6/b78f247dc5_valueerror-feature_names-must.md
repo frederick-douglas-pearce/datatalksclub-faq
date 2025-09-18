@@ -1,32 +1,31 @@
 ---
 id: b78f247dc5
-question: 'ValueError: feature_names must be string, and may not contain [, ] or <'
+question: 'ValueError: feature_names must be string, and may not contain [, ] or <:'
 sort_order: 2430
 ---
 
-In question 6, I was getting ValueError: feature_names must be string, and may not contain [, ] or < when I was creating DMatrix for train and validation
+When creating DMatrix for train and validation, you might encounter the error:
 
-Solution description
+```
+ValueError: feature_names must be string, and may not contain [, ] or <
+```
 
-The cause of this error is that some of the features names contain special characters like = and <, and I fixed the error by removing them as  follows:
+### Solution
 
-features= [i.replace("=<", "_").replace("=","_") for i in features]
+The cause of this error is special characters in feature names, such as `=` and `<`. To fix this error, you can remove or replace these characters:
 
-Asia Saeed
+```python
+features = [i.replace("=<", "_").replace("=","_") for i in features]
+```
 
-Alternative Solution:
+### Alternative Solution
 
-In my case the equal sign “=” was not a problem, so in my opinion the first part of Asias solution features= [i.replace("=<", "_") should work as well.
+If the equal sign `=` is not a problem for you, the following adjustment could also work:
 
-For me this works:
-
+```python
 features = []
 
 for f in dv.feature_names_:
-
-string = f.replace(“=<”, “-le”)
-
-features.append(string)
-
-Peter Ernicke
-
+    string = f.replace("=<", "-le")
+    features.append(string)
+```

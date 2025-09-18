@@ -1,28 +1,39 @@
 ---
 id: 884bb9afb7
-question: Passing envs to my docker image
+question: 'Docker: Passing envs to my docker image'
 sort_order: 1770
 ---
 
-Problem description: I was having issues because my python script was not reading AWS credentials from env vars, after building the image I was running it like this:
+**Problem Description:** 
 
+I was having issues because my Python script was not reading AWS credentials from environment variables. After building the image, I was running it like this:
+
+```bash
 docker run -it homework-04 -e AWS_ACCESS_KEY_ID=xxxxxxxx -e AWS_SECRET_ACCESS_KEY=xxxxxx
+```
 
-Solution 1:Environment Variables: You can set the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN (if you are using AWS STS) environment variables. You can set these in your shell, or you can include them in your Docker run command like this:
+### Solutions:
 
-I found out by myself that those variables must be passed before specifying the name of the image, as follow:
+1. **Environment Variables Order: **
+   
+   You can set environment variables like `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` (if using AWS STS). Ensure these variables are passed before the image name:
 
-docker run -e AWS_ACCESS_KEY_ID=xxxxxxxx -e AWS_SECRET_ACCESS_KEY=xxxxxx -it homework-04
+   ```bash
+   docker run -e AWS_ACCESS_KEY_ID=xxxxxxxx -e AWS_SECRET_ACCESS_KEY=xxxxxx -it homework-04
+   ```
 
-Solution 2:
+2. **Using an Env File:**
 
-If you want to pass an env file, you can also do so by adding, for an env file called .env:
+   You can pass an env file by using the following command, assuming your env file is named `.env`:
 
-docker run -it homework-04 --env-file .env
+   ```bash
+   docker run -it homework-04 --env-file .env
+   ```
 
-Solution 3 (if AWS credentials were not found):AWS Configuration Files: The AWS SDKs and CLI will check the ~/.aws/credentials and ~/.aws/config files for credentials if they exist. You can map these files into your Docker container using volumes:docker run -it --rm -v ~/.aws:/root/.aws homework:v1
+3. **AWS Configuration Files:**
 
-Added by Erick Cal
+   If AWS credentials are not found, the AWS SDKs and CLI will check the `~/.aws/credentials` and `~/.aws/config` files for credentials. You can map these files into your Docker container using volumes:
 
-Last edited by: Fustincho
-
+   ```bash
+   docker run -it --rm -v ~/.aws:/root/.aws homework:v1
+   ```

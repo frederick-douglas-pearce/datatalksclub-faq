@@ -5,7 +5,13 @@ question: Getting error module scipy not found during model training in Saturn C
 sort_order: 2770
 ---
 
-The above error happens since module scipy is not installed in the saturn cloud tensorflow image. While creating the Jupyter server resource, in the “Extra Packages” section under pip in the textbox write scipy. Below the textbox, the pip install scipy command will be displayed. This will ensure when the resource spins up, the scipy package will be automatically installed. This approach can also be followed for additional python packages.
+The error occurs because the `scipy` module is not installed in the Saturn Cloud TensorFlow image.
 
-Sumeet Lalla
+To resolve this issue:
 
+1. When creating the Jupyter server resource, navigate to the "Extra Packages" section.
+2. In the pip textbox, write `scipy`.
+3. A command will appear below the textbox: `pip install scipy`.
+4. This ensures that when the resource starts, the `scipy` package will be automatically installed.
+
+This method can be used to install additional Python packages as needed.

@@ -4,13 +4,14 @@ question: Installing md5sum on Macos
 sort_order: 2080
 ---
 
-Install it by using command
+To install `md5sum` on macOS, use the following command:
 
-% brew install md5sha1sum
+```bash
+brew install md5sha1sum
+```
 
-Then run command to check hash for file to check if they the same with the provided
+Then run the command to check the hash for a file to see if it matches the provided hash:
 
-% md5sum model1.bin dv.bin
-
-Olga Rudakova
-
+```bash
+md5sum model1.bin dv.bin
+```

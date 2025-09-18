@@ -4,9 +4,10 @@ question: module is not available (Can't connect to HTTPS URL)
 sort_order: 1580
 ---
 
-First check if SSL module configured with following command:
+First, check if the SSL module is configured with the following command:
 
-Python -m sslIf the output of this is empty there is no problem with SSL configuration.Then you should upgrade your pipenv package in your current environment to resolve the problem.
+```bash
+python -m ssl
+```
 
-Added by Kenan Arslanbay
-
+If the output is empty, there is no problem with the SSL configuration. Then you should upgrade your pipenv package in your current environment to resolve the problem.

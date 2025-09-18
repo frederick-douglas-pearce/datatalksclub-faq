@@ -1,37 +1,33 @@
 ---
 id: b55fea0fc7
-question: Git commit with pre-commit hook raises error ‘'PythonInfo' object has no
-  attribute 'version_nodot'
+question: 'Git: Commit with pre-commit hook raises error ‘''PythonInfo'' object has
+  no attribute ''version_nodot'''
 sort_order: 2300
 ---
 
-Problem description
+### Problem Description
 
+When attempting to commit in Git, the following error occurs:
+
+```bash
 git commit -m 'Updated xxxxxx'
 
-[INFO] Initializing environment for [GitHub](https://github.com/pre-commit/pre-commit-hooks.)
-
-[INFO] Installing environment for [GitHub](https://github.com/pre-commit/pre-commit-hooks.)
-
+[INFO] Initializing environment for GitHub.
+[INFO] Installing environment for GitHub.
 [INFO] Once installed this environment will be reused.
 
 An unexpected error has occurred: CalledProcessError: command:
-
 …
-
 return code: 1
-
 expected return code: 0
-
 stdout:
-
 AttributeError: 'PythonInfo' object has no attribute 'version_nodot'
+```
 
-Solution description
+### Solution
 
-Clear app-data of the virtualenv
+To resolve this issue, clear the app-data of the virtual environment using the following command:
 
+```bash
 python -m virtualenv api -vvv --reset-app-data
-
-Added by MarcosMJD
-
+```

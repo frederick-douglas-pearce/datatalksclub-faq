@@ -8,7 +8,6 @@ question: (root) Additional property mlflow is not allowed
 sort_order: 1450
 ---
 
-This error means that you are not writing below server on Docker Compose file. To solve the issue
+This error means you are not writing below server on the Docker Compose file. To solve the issue:
 
 <{IMAGE:image_1}>
-

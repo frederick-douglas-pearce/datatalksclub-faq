@@ -4,12 +4,12 @@ question: Multiline commands in Windows Powershell
 sort_order: 1560
 ---
 
-Use ` at the end of each line except the last. Note that multiline string does not need `.
+To use multiline commands in Windows PowerShell, place a backtick (`) at the end of each line except the last. Note that multiline strings do not require a backtick.
 
-Escape “ to “\ .
+- Escape double quotes (`"`) to `"\`
+- Use `$env:` to create environment variables (non-persistent). For example:
 
-Use $env: to create env vars (non-persistent). E.g.:
-
+```powershell
 $env:KINESIS_STREAM_INPUT="ride_events"
 
 aws kinesis put-record --cli-binary-format raw-in-base64-out `
@@ -33,6 +33,4 @@ aws kinesis put-record --cli-binary-format raw-in-base64-out `
 \"ride_id\": 156
 
 }'
-
-Added by MarcosMJD
-
+```

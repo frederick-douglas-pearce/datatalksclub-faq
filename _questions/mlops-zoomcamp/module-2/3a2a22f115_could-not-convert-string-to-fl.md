@@ -4,12 +4,15 @@ question: Could not convert string to float - ValueError
 sort_order: 820
 ---
 
-Running python register_model.py results in the following error:
+Running `python register_model.py` results in the following error:
 
+```python
 ValueError: could not convert string to float: '0 int\n1   float\n2     hyperopt_param\n3       Literal{n_estimators}\n4       quniform\n5         Literal{10}\n6         Literal{50}\n7         Literal{1}'
+```
 
-Full Traceback:
+**Full Traceback:**
 
+```python
 Traceback (most recent call last):
 
 File "/Users/name/Desktop/Programming/DataTalksClub/MLOps-Zoomcamp/2. Experiment tracking and model management/homework/scripts/register_model.py", line 101, in <module>
@@ -33,48 +36,36 @@ File "/Users/name/miniconda3/envs/mlops-zoomcamp/lib/python3.9/site-packages/hyp
 rval = scope._impls[node.name](*args, **kwargs)
 
 ValueError: could not convert string to float: '0 int\n1   float\n2     hyperopt_param\n3       Literal{n_estimators}\n4       quniform\n5         Literal{10}\n6         Literal{50}\n7         Literal{1}'
+```
 
-Solution: There are two plausible errors to this. Both are in the hpo.py file where the hyper-parameter tuning is run. The objective function should look like this.   def objective(params):
+**Solution:**
 
-# It's important to set the "with" statement and the "log_params" function here
+There are two plausible errors related to the `hpo.py` file where hyper-parameter tuning is run. The objective function should be structured as follows:
 
-# in order to properly log all the runs and parameters.
+1. Ensure the `with` statement and the `log_params` function are correctly applied to log all runs and parameters:
 
-with mlflow.start_run():
+    ```python
+    def objective(params):
+        with mlflow.start_run():
+            mlflow.log_params(params)
+            rf = RandomForestRegressor(**params)
+            rf.fit(X_train, y_train)
+            y_pred = rf.predict(X_valid)
+            rmse = mean_squared_error(y_valid, y_pred, squared=False)
+            mlflow.log_metric('rmse', rmse)
+    ```
 
-# Log the parameters
+2. Add the `with` statement immediately before the function, just after:
 
-mlflow.log_params(params)
+    ```python
+    X_valid, y_valid = load_pickle(os.path.join(data_path, "valid.pkl"))
+    ```
 
-rf = RandomForestRegressor(**params)
+3. Log parameters just after defining the `search_space` dictionary:
 
-rf.fit(X_train, y_train)
+    ```python
+    search_space = {....}
+    mlflow.log_params(search_space)
+    ```
 
-y_pred = rf.predict(X_valid)
-
-# Calculate and log rmse
-
-rmse = mean_squared_error(y_valid, y_pred, squared=False)
-
-mlflow.log_metric('rmse', rmse)
-
-If you add the with statement before this function, and just after the following line
-
-X_valid, y_valid = load_pickle(os.path.join(data_path, "valid.pkl"))
-
-and you log the parameters just after the search_space dictionary is defined, like this
-
-search_space = {....}
-
-# Log the parameters
-
-mlflow.log_params(search_space)
-
-Then there is a risk that the parameters will be logged in group. As a result, the
-
-params = space_eval(SPACE, params)
-
-register_model.py file will receive the parameters in group, while in fact it expects to receive them one by one. Thus, make sure that the objective function looks as above.
-
-Added by Jakob Salomonsson
-
+Logging parameters in groups can lead to issues because `register_model.py` expects to receive parameters individually. Ensure the objective function matches the example above.

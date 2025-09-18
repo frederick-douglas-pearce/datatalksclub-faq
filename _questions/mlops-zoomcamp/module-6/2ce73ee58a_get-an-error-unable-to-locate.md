@@ -5,17 +5,26 @@ question: Get an error ‘Unable to locate credentials’ after running localsta
 sort_order: 2230
 ---
 
-You may get an error ‘{'errorMessage': 'Unable to locate credentials', …’ from the print statement in test_docker.py after running localstack with kinesis.
+You may encounter the error `{'errorMessage': 'Unable to locate credentials', …` from the print statement in `test_docker.py` after running localstack with Kinesis.
 
-To fix this, in the docker-compose.yaml file, in addition to the environment variables like AWS_DEFAULT_REGION, add two other variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY. Their value is not important; anything like abc will suffice
+To resolve this issue:
 
-Added by M
+1. In the `docker-compose.yaml` file, add the following environment variables:
+   - `AWS_ACCESS_KEY_ID`
+   - `AWS_SECRET_ACCESS_KEY`
+   
+   You can assign any value to these variables (e.g., `abc`).
 
-Other possibility is just to run
+2. Alternatively, you can run the following command:
 
-aws --endpoint-url [localhost:4566](http://localhost:4566) configure
+   ```bash
+   aws --endpoint-url http://localhost:4566 configure
+   ```
 
-And providing random values for AWS Access Key ID , AWS Secret Access Key, Default region name, and Default output format.
+   Provide random values for the following prompts:
+   - AWS Access Key ID
+   - AWS Secret Access Key
+   - Default region name
+   - Default output format
 
-Added by M.A. Monjas
-
+<END>

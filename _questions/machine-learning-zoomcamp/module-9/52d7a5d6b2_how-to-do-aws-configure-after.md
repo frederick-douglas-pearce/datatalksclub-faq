@@ -4,13 +4,10 @@ question: How to do AWS configure after installing awscli
 sort_order: 3150
 ---
 
-Problem description:
+**Problem description:**
 
-In video 9.6, after installing aswcli, we should configure it with aws configure . There it asks for Access Key ID, Secret Access Key, Default Region Name and also Default output format. What we should put for Default output format? Leaving it as  None is okay?
+In video 9.6, after installing `awscli`, we should configure it with `aws configure`. It asks for Access Key ID, Secret Access Key, Default Region Name, and Default Output Format. What should we put for Default Output Format? Is leaving it as None okay?
 
-Solution description:
+**Solution description:**
 
-Yes, in my I case I left everything as the provided defaults (except, obviously, the Access key and the secret access key)
-
-Added by Bhaskar Sarma
-
+Yes, you can leave everything as the provided defaults (except for the Access Key and the Secret Access Key).

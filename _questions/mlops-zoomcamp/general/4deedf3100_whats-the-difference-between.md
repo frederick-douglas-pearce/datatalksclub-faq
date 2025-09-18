@@ -6,5 +6,4 @@ sort_order: 80
 
 The difference is the Orchestration and Monitoring modules. Those videos will be re-recorded to use Prefect. The rest should mostly be the same.
 
-Also all of the homeworks will be changed for the 2023 cohort.
-
+Also, all of the homeworks will be changed for the 2023 cohort.

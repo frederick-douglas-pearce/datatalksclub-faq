@@ -4,7 +4,6 @@ question: The feature size is different for training set and validation set
 sort_order: 670
 ---
 
-While working through the HW1, you will realize that the training and the validation data set feature sizes are different. I was trying to figure out why and went down the entire rabbit hole only to see that I wasn’t doing ```transform``` on the premade dictionary vectorizer instead of ```fit_transform```. You already have the dictionary vectorizer made so no need to execute the fit pipeline on the model.
+While working through HW1, you may notice that the feature sizes for the training and validation datasets are different. This issue often arises when using the incorrect method with a dictionary vectorizer.
 
-Sam Lim([changhyeonlim@gmail.com](mailto:changhyeonlim@gmail.com))
-
+Ensure you use the `transform` method on the premade dictionary vectorizer instead of `fit_transform`. Since you already have the dictionary vectorizer created, there's no need to execute the fit pipeline on the model.
