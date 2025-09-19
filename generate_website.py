@@ -67,10 +67,14 @@ def convert_plain_urls_to_links(text):
                     url_pattern = r'(?<!\[)(?<!\()(?<!<)(https?://[^\s<>\)]+)(?!\])(?!\))(?!>)'
                     
                     def replace_url(match):
-                        url = match.group(1)
-                        # Remove trailing punctuation that's not part of the URL
-                        url = url.rstrip('.,;:!?')
-                        return f'[{url}]({url})'
+                        full_url = match.group(1)
+                        # Extract trailing punctuation
+                        trailing_punct = ''
+                        url = full_url
+                        while url and url[-1] in '.,;:!?':
+                            trailing_punct = url[-1] + trailing_punct
+                            url = url[:-1]
+                        return f'[{url}]({url}){trailing_punct}'
                     
                     processed_part = re.sub(url_pattern, replace_url, inline_part)
                     processed_inline_parts.append(processed_part)
