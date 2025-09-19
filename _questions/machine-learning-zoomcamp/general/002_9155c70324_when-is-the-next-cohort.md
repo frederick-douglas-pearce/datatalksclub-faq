@@ -4,7 +4,7 @@ question: When is the next cohort?
 sort_order: 2
 ---
 
-The course is available in a self-paced mode, allowing you to go through the materials anytime. If you prefer to join a cohort with other students, the next sessions will begin in September 2023, September 2024, and September 2025.
+The course is available in a self-paced mode, allowing you to go through the materials anytime. If you prefer to join a cohort with other students, live cohorts start every September.
 
 Zoomcamps are scheduled throughout the year. For more information, refer to [A Guide to Free Online Courses at DataTalks.Club](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).
 

@@ -13,3 +13,5 @@ I was able to get it working by using the following resources:
 - [Start Locally | PyTorch](https://pytorch.org/get-started/locally/)
 
 I included the link to PyTorch so that you can get that one installed and working too while everything is fresh on your mind. Just select your options, and for Computer Platform, I chose CUDA 11.7 and it worked for me.
+
+If you need GPU support, check this article: [https://knowmledge.com/2023/12/07/ml-zoomcamp-2023-project/](https://knowmledge.com/2023/12/07/ml-zoomcamp-2023-project/)
