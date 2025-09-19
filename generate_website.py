@@ -39,17 +39,45 @@ def parse_frontmatter(content):
 
 
 def convert_plain_urls_to_links(text):
-    """Convert plain text URLs to markdown links"""
-    # URL regex pattern that matches http/https URLs
-    url_pattern = r'(?<![\[\(])(https?://[^\s\)]+)(?![\]\)])'
+    """Convert plain text URLs to markdown links, avoiding code blocks and inline code"""
     
-    def replace_url(match):
-        url = match.group(1)
-        # Remove trailing punctuation that's not part of the URL
-        url = url.rstrip('.,;:!?')
-        return f'[{url}]({url})'
+    # Split content by code blocks first
+    code_block_pattern = r'(```.*?```)'
+    parts = re.split(code_block_pattern, text, flags=re.DOTALL)
     
-    return re.sub(url_pattern, replace_url, text)
+    result_parts = []
+    
+    for i, part in enumerate(parts):
+        # If this is a code block (odd indices in split result), don't process URLs
+        if i % 2 == 1 and part.startswith('```'):
+            result_parts.append(part)
+        else:
+            # For non-code-block parts, split by inline code
+            inline_code_pattern = r'(`[^`]+`)'
+            inline_parts = re.split(inline_code_pattern, part)
+            
+            processed_inline_parts = []
+            for j, inline_part in enumerate(inline_parts):
+                # If this is inline code (odd indices), don't process URLs
+                if j % 2 == 1 and inline_part.startswith('`'):
+                    processed_inline_parts.append(inline_part)
+                else:
+                    # Process URLs in plain text only
+                    # Avoid URLs already in markdown links [text](url) or <url>
+                    url_pattern = r'(?<!\[)(?<!\()(?<!<)(https?://[^\s<>\)]+)(?!\])(?!\))(?!>)'
+                    
+                    def replace_url(match):
+                        url = match.group(1)
+                        # Remove trailing punctuation that's not part of the URL
+                        url = url.rstrip('.,;:!?')
+                        return f'[{url}]({url})'
+                    
+                    processed_part = re.sub(url_pattern, replace_url, inline_part)
+                    processed_inline_parts.append(processed_part)
+            
+            result_parts.append(''.join(processed_inline_parts))
+    
+    return ''.join(result_parts)
 
 
 # Configure mistune with plugins for syntax highlighting and tables
