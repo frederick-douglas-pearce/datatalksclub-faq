@@ -16,6 +16,7 @@ from pygments.lexers import get_lexer_by_name, guess_lexer
 from pygments.formatters import HtmlFormatter
 from pygments.util import ClassNotFound
 from datetime import datetime
+import re
 
 
 def parse_frontmatter(content):
@@ -35,6 +36,20 @@ def parse_frontmatter(content):
         return frontmatter or {}, markdown_content
     except yaml.YAMLError:
         return {}, content
+
+
+def convert_plain_urls_to_links(text):
+    """Convert plain text URLs to markdown links"""
+    # URL regex pattern that matches http/https URLs
+    url_pattern = r'(?<![\[\(])(https?://[^\s\)]+)(?![\]\)])'
+    
+    def replace_url(match):
+        url = match.group(1)
+        # Remove trailing punctuation that's not part of the URL
+        url = url.rstrip('.,;:!?')
+        return f'[{url}]({url})'
+    
+    return re.sub(url_pattern, replace_url, text)
 
 
 # Configure mistune with plugins for syntax highlighting and tables
@@ -113,6 +128,9 @@ def process_markdown(content, images=None):
         # Create proper markdown image syntax
         image_markdown = f'![{image["description"]}]({image["path"]})'
         content = content.replace(f'<{{IMAGE:{image["id"]}}}>', image_markdown)
+
+    # Convert plain text URLs to clickable markdown links
+    content = convert_plain_urls_to_links(content)
 
     return markdown_processor(content)
 
@@ -433,9 +451,9 @@ def main():
     print("\n2. Generating static site...")
     site_dir = generate_site(courses)
     
-    print("\n✅ Site generation complete!")
-    print(f"📁 Output directory: {site_dir.absolute()}")
-    print(f"🌐 Open {site_dir.absolute() / 'index.html'} in your browser")
+    print("\nSite generation complete!")
+    print(f"Output directory: {site_dir.absolute()}")
+    print(f"Open {site_dir.absolute() / 'index.html'} in your browser")
 
 
 if __name__ == '__main__':
