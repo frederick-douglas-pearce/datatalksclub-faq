@@ -179,7 +179,7 @@ def load_course_metadata(course_dir):
         }
 
     with open(metadata_file, 'r', encoding='utf-8') as f:
-        metadata = yaml.safe_load(f)
+        metadata = yaml.safe_load(f) or {}
         sections = metadata.get('sections', [])
         course_name = metadata.get('course_name', course_dir.name)
 

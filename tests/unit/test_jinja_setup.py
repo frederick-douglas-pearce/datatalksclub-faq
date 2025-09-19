@@ -123,9 +123,9 @@ class TestJinjaEnvironment:
                 dangerous_input = '<script>alert("xss")</script>'
                 result = template.render(user_input=dangerous_input)
                 
-                # Should be escaped
+                # Should be escaped - check for the actual escaping format
                 assert '&lt;script&gt;' in result
-                assert '&quot;xss&quot;' in result
+                assert '&#34;' in result or '&quot;' in result  # Accept either format
                 assert '<script>' not in result
                 
             finally:

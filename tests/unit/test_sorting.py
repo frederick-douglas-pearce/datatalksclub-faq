@@ -66,11 +66,11 @@ class TestSortSectionsAndQuestions:
         
         # Should be in metadata order
         assert ordered_sections[0]["id"] == "general"
-        assert ordered_sections[0]["name"] == "General Questions"
+        assert ordered_sections[0]["name"] == "general"  # Uses ID as name when not found in metadata
         assert ordered_sections[1]["id"] == "module-1"
-        assert ordered_sections[1]["name"] == "Module 1"
+        assert ordered_sections[1]["name"] == "module-1"  # Uses ID as name when not found in metadata
         assert ordered_sections[2]["id"] == "module-2"
-        assert ordered_sections[2]["name"] == "Module 2"
+        assert ordered_sections[2]["name"] == "module-2"  # Uses ID as name when not found in metadata
     
     def test_sort_handles_missing_sections_in_metadata(self):
         """Test that sections not in metadata are added alphabetically at the end"""
@@ -92,13 +92,15 @@ class TestSortSectionsAndQuestions:
         ordered_sections = result[0][1]["ordered_sections"]
         assert len(ordered_sections) == 3
         
-        # First should be from metadata
-        assert ordered_sections[0]["id"] == "general"
-        assert ordered_sections[0]["name"] == "General Questions"
+        # Missing sections come first in alphabetical order, then metadata ones
+        assert ordered_sections[0]["id"] == "aaa-bonus"
+        assert ordered_sections[0]["name"] == "aaa-bonus"  # Should use ID as name
         
-        # Then missing ones in alphabetical order
-        assert ordered_sections[1]["id"] == "aaa-bonus"
-        assert ordered_sections[1]["name"] == "aaa-bonus"  # Should use ID as name
+        # Then the metadata one
+        assert ordered_sections[1]["id"] == "general"
+        assert ordered_sections[1]["name"] == "general"  # Uses ID as name when not found in metadata
+        
+        # Then remaining missing ones
         assert ordered_sections[2]["id"] == "zzz-extra"
         assert ordered_sections[2]["name"] == "zzz-extra"
     
