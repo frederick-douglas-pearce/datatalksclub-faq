@@ -4,7 +4,7 @@ question: 'Homework Q7: What do the weights represent?'
 sort_order: 8
 ---
 
-The weight vector, `w`, contains the coefficients for a linear model fit between the target variable, `y`, and the input features in `X`, with the model estimate of `y`, `y_est` defined as follows:
+The weight vector, `w`, contains the coefficients for a linear model fit between the target variable, `y`, and the input features in `X`, with the model estimate of `y`, `y_est`, defined as follows:
 
 $$y_{est} = w[0]*X[0] + w[1]*X[1]$$
 
