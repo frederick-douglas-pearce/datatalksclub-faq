@@ -36,3 +36,6 @@ markers = [
 dev = [
     "pytest>=8.4.2",
 ]
+
+[tool.setuptools]
+packages = ["faq_automation"]
