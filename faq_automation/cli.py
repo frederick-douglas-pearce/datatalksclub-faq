@@ -79,7 +79,7 @@ def main():
     parser.add_argument('--issue-body', required=True, help='GitHub issue body text')
     parser.add_argument('--issue-number', type=int, required=True, help='GitHub issue number')
     parser.add_argument('--course', default='machine-learning-zoomcamp', help='Course name')
-    parser.add_argument('--model', default='gpt-4', help='OpenAI model to use')
+    parser.add_argument('--model', default='gpt-5-nano', help='OpenAI model to use')
     parser.add_argument('--output-dir', default='.', help='Output directory for results')
 
     args = parser.parse_args()

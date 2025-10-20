@@ -110,7 +110,7 @@ class FAQDecision(BaseModel):
 class FAQAgent:
     """Agent for processing FAQ proposals using RAG and LLM"""
 
-    def __init__(self, course_dir: Path, openai_api_key: str, model: str = "gpt-4"):
+    def __init__(self, course_dir: Path, openai_api_key: str, model: str = "gpt-5-nano"):
         """
         Initialize the FAQ Agent
 
@@ -180,7 +180,7 @@ def process_faq_proposal(
     question: str,
     answer: str,
     openai_api_key: str,
-    model: str = "gpt-4"
+    model: str = "gpt-5-nano"
 ) -> FAQDecision:
     """
     Convenience function to process a single FAQ proposal
