@@ -15,12 +15,16 @@ body:
         - Update an existing FAQ entry
         - Mark as duplicate of an existing FAQ
 
-  - type: input
+  - type: dropdown
     id: course
     attributes:
       label: Course
       description: Which course is this FAQ for?
-      placeholder: "machine-learning-zoomcamp"
+      options:
+        - machine-learning-zoomcamp
+        - data-engineering-zoomcamp
+        - llm-zoomcamp
+        - mlops-zoomcamp
     validations:
       required: true
 
