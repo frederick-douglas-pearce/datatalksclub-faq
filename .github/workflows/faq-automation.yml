@@ -3,6 +3,12 @@ name: FAQ Automation
 on:
   issues:
     types: [opened]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to process'
+        required: true
+        type: number
 
 permissions:
   contents: write
@@ -11,7 +17,7 @@ permissions:
 
 jobs:
   process-faq-proposal:
-    if: contains(github.event.issue.labels.*.name, 'faq-proposal')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'faq-proposal')
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +41,16 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const issue = context.payload.issue;
+            // Get issue number from event or manual input
+            const issueNumber = context.payload.issue?.number || ${{ inputs.issue_number || 'null' }};
+
+            // Fetch issue if manually triggered
+            const issue = context.payload.issue || await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber
+            }).then(res => res.data);
+
             const body = issue.body || '';
 
             // Parse the structured issue body
@@ -206,9 +221,10 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const issueNumber = context.payload.issue?.number || ${{ inputs.issue_number || 'null' }};
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number,
+              issue_number: issueNumber,
               body: `❌ FAQ Bot encountered an error processing this proposal.\n\nPlease check the [workflow run](${context.payload.repository.html_url}/actions/runs/${context.runId}) for details.\n\nA maintainer will review this manually.`
             });
