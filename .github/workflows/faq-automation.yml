@@ -128,7 +128,7 @@ jobs:
           # Run FAQ automation CLI
           python -m faq_automation.cli \
             --issue-body "$(cat /tmp/issue_body.txt)" \
-            --issue-number ${{ github.event.issue.number }} \
+            --issue-number ${{ github.event.issue.number || inputs.issue_number }} \
             --course "${{ steps.extract.outputs.course }}" \
             --model "gpt-5-nano" \
             --output-dir /tmp
