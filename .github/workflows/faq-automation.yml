@@ -159,7 +159,9 @@ jobs:
             await exec.exec('git', ['config', 'user.name', 'FAQ Bot']);
             await exec.exec('git', ['config', 'user.email', 'faq-bot@datatalks.club']);
 
-            // Create and switch to new branch
+            // Fetch and checkout main, then create new branch from it
+            await exec.exec('git', ['fetch', 'origin', 'main']);
+            await exec.exec('git', ['checkout', 'main']);
             await exec.exec('git', ['checkout', '-b', branchName]);
 
             // Add modified files
