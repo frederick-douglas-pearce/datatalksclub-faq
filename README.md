@@ -91,15 +91,6 @@ question: 'How do I install the dependencies?'
 sort_order: 10
 ---
 
-To install dependencies, run:
-
-\`\`\`bash
-uv pip install -r requirements.txt
-\`\`\`
-
-See the [installation guide](link) for more details.
-```
-
 ### Frontmatter Fields
 
 - **id**: Unique 10-character identifier (auto-generated)
@@ -141,20 +132,35 @@ The workflow requires:
 
 ```bash
 # Install dependencies
-uv pip install -e .
-
-# Install dev dependencies
-uv pip install -e ".[dev]"
+uv sync --dev
 ```
+
+For testing the FAQ automation locally, you'll need to set your OpenAI API key:
+
+```bash
+export OPENAI_API_KEY='your-api-key-here'
+```
+
+Or add it to your shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`).
 
 ### Running Locally
 
-```bash
-# Generate website
-python generate_website.py
+To test the FAQ automation locally, create a `test_issue.txt` file:
 
-# Process a FAQ proposal (for testing)
-python -m faq_automation.cli \
+```bash
+cat > test_issue.txt << 'EOF'
+### Question
+How do I check my Python version?
+
+### Answer
+Run `python --version` in your terminal.
+EOF
+```
+
+Then process the FAQ proposal:
+
+```bash
+uv run python -m faq_automation.cli \
   --issue-body "$(cat test_issue.txt)" \
   --issue-number 42 \
   --course machine-learning-zoomcamp
@@ -163,15 +169,17 @@ python -m faq_automation.cli \
 ### Testing
 
 ```bash
-# Unit tests
-pytest tests/unit/ -v
+# Run all tests
+make test
 
-# Integration tests
-pytest tests/integration/ -v
+# Run unit tests only
+make test-unit
 
-# All tests with coverage
-pytest tests/ -v --cov=faq_automation
+# Run integration tests only
+make test-int
 ```
+
+See [tests/README.md](tests/README.md) for detailed information about the test suite, including how to run specific test files or methods, test coverage details, and guidelines for adding new tests.
 
 ## Architecture
 
