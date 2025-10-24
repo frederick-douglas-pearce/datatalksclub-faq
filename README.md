@@ -159,7 +159,7 @@ make test-unit
 make test-int
 ```
 
-See [tests/README.md](tests/README.md) for detailed information about the test suite, including how to run specific test files or methods, test coverage details, and guidelines for adding new tests.
+See [testing documentation](tests/README.md) for detailed information about the test suite, including how to run specific test files or methods, test coverage details, and guidelines for adding new tests.
 
 ## Architecture
 

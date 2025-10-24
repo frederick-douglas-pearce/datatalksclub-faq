@@ -90,7 +90,7 @@ For integration tests only:
 make test-int
 ```
 
-See the [testing documentation](link) for more details.
+See the [testing documentation](tests/README.md) for more details.
 ````
 
 ## Manual Contributions
