@@ -79,46 +79,48 @@ End-to-end workflow tests:
 ### Run All Tests
 ```bash
 # Run all tests
-uv run --extra dev pytest
+make test
 
-# Or use the test runner
-python run_tests.py
+# Or run pytest directly
+uv run pytest tests/ -v
 ```
 
 ### Run Specific Test Categories
 ```bash
 # Unit tests only
-uv run --extra dev pytest tests/unit/ -v
+make test-unit
+# Or: uv run pytest tests/unit/ -v
 
-# Integration tests only  
-uv run --extra dev pytest tests/integration/ -v
+# Integration tests only
+make test-int
+# Or: uv run pytest tests/integration/ -v
 ```
 
 ### Run Specific Test Files
 ```bash
 # Test URL conversion functionality
-uv run --extra dev pytest tests/unit/test_url_conversion.py -v
+uv run pytest tests/unit/test_url_conversion.py -v
 
 # Test FAQ automation functionality
-uv run --extra dev pytest tests/unit/test_faq_automation.py -v
+uv run pytest tests/unit/test_faq_automation.py -v
 
 # Test CLI parsing functionality
-uv run --extra dev pytest tests/unit/test_cli_parsing.py -v
+uv run pytest tests/unit/test_cli_parsing.py -v
 
 # Test site generation
-uv run --extra dev pytest tests/integration/test_site_generation.py -v
+uv run pytest tests/integration/test_site_generation.py -v
 ```
 
 ### Run Specific Test Methods
 ```bash
 # Test specific URL conversion functionality
-uv run --extra dev pytest tests/unit/test_url_conversion.py::TestConvertPlainUrlsToLinks::test_preserve_urls_in_code_blocks -v
+uv run pytest tests/unit/test_url_conversion.py::TestConvertPlainUrlsToLinks::test_preserve_urls_in_code_blocks -v
 
 # Test specific FAQ automation functionality
-uv run --extra dev pytest tests/unit/test_faq_automation.py::TestParseFrontmatter::test_parse_frontmatter -v
+uv run pytest tests/unit/test_faq_automation.py::TestParseFrontmatter::test_parse_frontmatter -v
 
 # Test specific CLI parsing functionality
-uv run --extra dev pytest tests/unit/test_cli_parsing.py::TestParseIssueBody::test_parse_issue_body_with_extra_sections -v
+uv run pytest tests/unit/test_cli_parsing.py::TestParseIssueBody::test_parse_issue_body_with_extra_sections -v
 ```
 
 ## Test Coverage
