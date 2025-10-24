@@ -111,8 +111,14 @@ uv run --extra dev pytest tests/integration/test_site_generation.py -v
 
 ### Run Specific Test Methods
 ```bash
-# Test specific functionality
+# Test specific URL conversion functionality
 uv run --extra dev pytest tests/unit/test_url_conversion.py::TestConvertPlainUrlsToLinks::test_preserve_urls_in_code_blocks -v
+
+# Test specific FAQ automation functionality
+uv run --extra dev pytest tests/unit/test_faq_automation.py::TestParseFrontmatter::test_parse_frontmatter -v
+
+# Test specific CLI parsing functionality
+uv run --extra dev pytest tests/unit/test_cli_parsing.py::TestParseIssueBody::test_parse_issue_body_with_extra_sections -v
 ```
 
 ## Test Coverage
