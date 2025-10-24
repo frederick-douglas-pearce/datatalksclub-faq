@@ -216,7 +216,6 @@ See [tests/README.md](tests/README.md) for detailed information about the test s
 ## Support
 
 - **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/DataTalksClub/faq/issues)
-- **Discussions**: Ask questions in [GitHub Discussions](../../discussions)
 - **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Acknowledgments
