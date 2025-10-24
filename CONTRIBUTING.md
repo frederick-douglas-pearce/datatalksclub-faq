@@ -67,7 +67,7 @@ Once you submit your issue, our FAQ Bot will automatically:
 
 **Example:**
 
-```markdown
+````markdown
 ### Question
 How do I run the tests for this project?
 
@@ -91,7 +91,7 @@ make test-int
 ```
 
 See the [testing documentation](link) for more details.
-```
+````
 
 ## Manual Contributions
 
