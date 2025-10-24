@@ -6,24 +6,26 @@ import pytest
 from faq_automation.cli import parse_issue_body
 
 
-def test_parse_issue_body_simple():
-    """Test parsing simple issue body"""
-    issue_body = """### Question
+class TestParseIssueBody:
+    """Test the parse_issue_body function"""
+
+    def test_parse_issue_body_simple(self):
+        """Test parsing simple issue body"""
+        issue_body = """### Question
 How do I install dependencies?
 
 ### Answer
 Run: pip install -r requirements.txt
 """
 
-    question, answer = parse_issue_body(issue_body)
+        question, answer = parse_issue_body(issue_body)
 
-    assert question == "How do I install dependencies?"
-    assert "pip install -r requirements.txt" in answer
+        assert question == "How do I install dependencies?"
+        assert "pip install -r requirements.txt" in answer
 
-
-def test_parse_issue_body_multiline():
-    """Test parsing issue body with multiline content"""
-    issue_body = """### Question
+    def test_parse_issue_body_multiline(self):
+        """Test parsing issue body with multiline content"""
+        issue_body = """### Question
 How do I set up
 the development environment
 for this project?
@@ -40,17 +42,16 @@ pip install -r requirements.txt
 ```
 """
 
-    question, answer = parse_issue_body(issue_body)
+        question, answer = parse_issue_body(issue_body)
 
-    assert "set up" in question
-    assert "development environment" in question
-    assert "git clone" in answer
-    assert "pip install" in answer
+        assert "set up" in question
+        assert "development environment" in question
+        assert "git clone" in answer
+        assert "pip install" in answer
 
-
-def test_parse_issue_body_with_extra_sections():
-    """Test parsing with additional sections that should be ignored"""
-    issue_body = """### Question
+    def test_parse_issue_body_with_extra_sections(self):
+        """Test parsing with additional sections that should be ignored"""
+        issue_body = """### Question
 What is the deadline?
 
 ### Answer
@@ -61,28 +62,26 @@ The deadline is March 1st.
 - [x] Accurate information
 """
 
-    question, answer = parse_issue_body(issue_body)
+        question, answer = parse_issue_body(issue_body)
 
-    assert question == "What is the deadline?"
-    assert answer == "The deadline is March 1st."
-    assert "Checklist" not in answer
+        assert question == "What is the deadline?"
+        assert answer == "The deadline is March 1st."
+        assert "Checklist" not in answer
 
-
-def test_parse_issue_body_missing_question():
-    """Test parsing with missing question raises error"""
-    issue_body = """### Answer
+    def test_parse_issue_body_missing_question(self):
+        """Test parsing with missing question raises error"""
+        issue_body = """### Answer
 Some answer without a question
 """
 
-    with pytest.raises(ValueError, match="Could not parse"):
-        parse_issue_body(issue_body)
+        with pytest.raises(ValueError, match="Could not parse"):
+            parse_issue_body(issue_body)
 
-
-def test_parse_issue_body_missing_answer():
-    """Test parsing with missing answer raises error"""
-    issue_body = """### Question
+    def test_parse_issue_body_missing_answer(self):
+        """Test parsing with missing answer raises error"""
+        issue_body = """### Question
 Some question without an answer
 """
 
-    with pytest.raises(ValueError, match="Could not parse"):
-        parse_issue_body(issue_body)
+        with pytest.raises(ValueError, match="Could not parse"):
+            parse_issue_body(issue_body)
