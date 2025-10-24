@@ -45,6 +45,21 @@ Tests for individual functions and components:
   - Section ordering by metadata
   - Handling missing sections
 
+- **`test_faq_automation.py`** - FAQ automation core functions
+  - Frontmatter parsing and writing
+  - Document ID generation
+  - Content filtering and relevance
+
+- **`test_cli_parsing.py`** - CLI issue body parsing
+  - Simple and multiline issue parsing
+  - Extra section handling (Checklist)
+  - Error handling for missing fields
+
+- **`test_faq_actions.py`** - GitHub Actions integration
+  - PR body generation for NEW/UPDATE actions
+  - Duplicate comment generation
+  - Section placement and reasoning
+
 ### Integration Tests (`tests/integration/`)
 End-to-end workflow tests:
 
@@ -84,6 +99,12 @@ uv run --extra dev pytest tests/integration/ -v
 # Test URL conversion functionality
 uv run --extra dev pytest tests/unit/test_url_conversion.py -v
 
+# Test FAQ automation functionality
+uv run --extra dev pytest tests/unit/test_faq_automation.py -v
+
+# Test CLI parsing functionality
+uv run --extra dev pytest tests/unit/test_cli_parsing.py -v
+
 # Test site generation
 uv run --extra dev pytest tests/integration/test_site_generation.py -v
 ```
@@ -106,6 +127,9 @@ The test suite provides comprehensive coverage of:
 - ✅ Course metadata handling (8 tests)
 - ✅ Template rendering (7 tests)
 - ✅ Sorting and organization (8 tests)
+- ✅ FAQ automation core (6 tests)
+- ✅ CLI issue parsing (5 tests)
+- ✅ GitHub Actions integration (3 tests)
 
 ### Integration Scenarios
 - ✅ Complete site generation (4 tests)
