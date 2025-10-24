@@ -8,10 +8,8 @@ We have an automated system that helps maintain the FAQ repository. Here's how t
 
 ### 1. Create a New Issue
 
-1. Go to the [Issues](../../issues) page
-2. Click "New Issue"
-3. Select "FAQ Proposal" template
-4. Fill out the form:
+1. Go to the [FAQ Proposal form](https://github.com/DataTalksClub/faq/issues/new?template=faq-proposal.yml)
+2. Fill out the form:
    - **Course**: Which course this FAQ is for (e.g., `machine-learning-zoomcamp`)
    - **Question**: The FAQ question
    - **Answer**: A clear, helpful answer with examples if applicable

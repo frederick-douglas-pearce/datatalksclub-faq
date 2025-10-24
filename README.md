@@ -42,7 +42,7 @@ We welcome FAQ contributions! There are two ways to contribute:
 
 ### 1. Automated (Recommended)
 
-Simply [create a new issue](../../issues/new/choose) using the "FAQ Proposal" template. Our FAQ Bot will:
+Simply [create a new issue](https://github.com/DataTalksClub/faq/issues/new?template=faq-proposal.yml) using the "FAQ Proposal" template. Our FAQ Bot will:
 
 1. Analyze your proposal against existing FAQs
 2. Decide the best action (NEW, UPDATE, or DUPLICATE)
@@ -146,6 +146,9 @@ uv run python -m faq_automation.cli \
 ### Testing
 
 ```bash
+# Generate static website
+make website
+
 # Run all tests
 make test
 
@@ -212,7 +215,7 @@ See [tests/README.md](tests/README.md) for detailed information about the test s
 
 ## Support
 
-- **Issues**: Report bugs or request features via [GitHub Issues](../../issues)
+- **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/DataTalksClub/faq/issues)
 - **Discussions**: Ask questions in [GitHub Discussions](../../discussions)
 - **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 
