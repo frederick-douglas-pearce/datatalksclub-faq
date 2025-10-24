@@ -57,6 +57,15 @@ def parse_issue_body(issue_body: str) -> tuple[str, str]:
                     question = '\n'.join(current_content).strip()
             current_section = 'answer'
             current_content = []
+        elif line.startswith('###'):
+            # Any other section (like ### Checklist) - stop collecting
+            if current_section and current_content:
+                if current_section == 'question':
+                    question = '\n'.join(current_content).strip()
+                elif current_section == 'answer':
+                    answer = '\n'.join(current_content).strip()
+            current_section = None
+            current_content = []
         elif line and current_section:
             current_content.append(line)
 
