@@ -61,6 +61,12 @@ Tests for individual functions and components:
   - Duplicate comment generation
   - Section placement and reasoning
 
+- **`test_github_actions.py`** - GitHub Actions helpers
+  - Writing multiline and single-line outputs
+  - GitHub Actions environment detection
+  - Output path retrieval
+  - Local testing mode behavior
+
 ### Integration Tests (`tests/integration/`)
 End-to-end workflow tests:
 
@@ -108,6 +114,9 @@ uv run pytest tests/unit/test_faq_automation.py -v
 # Test CLI parsing functionality
 uv run pytest tests/unit/test_cli_parsing.py -v
 
+# Test GitHub Actions helpers
+uv run pytest tests/unit/test_github_actions.py -v
+
 # Test site generation
 uv run pytest tests/integration/test_site_generation.py -v
 ```
@@ -125,6 +134,9 @@ uv run pytest tests/unit/test_cli_parsing.py::TestParseIssueBody::test_parse_iss
 
 # Test full issue body parsing (course + question + answer)
 uv run pytest tests/unit/test_cli_parsing.py::TestParseFullIssueBody::test_parse_full_issue_body_simple -v
+
+# Test GitHub Actions output writing
+uv run pytest tests/unit/test_github_actions.py::TestWriteGithubOutput::test_write_github_output_multiline -v
 ```
 
 ## Test Coverage
@@ -141,7 +153,7 @@ The test suite provides comprehensive coverage of:
 - ✅ Sorting and organization (8 tests)
 - ✅ FAQ automation core (6 tests)
 - ✅ CLI issue parsing (11 tests)
-- ✅ GitHub Actions integration (3 tests)
+- ✅ GitHub Actions integration (13 tests)
 
 ### Integration Scenarios
 - ✅ Complete site generation (4 tests)

@@ -5,7 +5,6 @@ GitHub Actions helper script to extract fields from FAQ issue body
 Reads issue body from stdin and outputs to GitHub Actions format.
 """
 
-import os
 import sys
 from pathlib import Path
 
@@ -13,20 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from faq_automation.cli import parse_full_issue_body
-
-
-def write_github_output(key: str, value: str) -> None:
-    """Write output to GitHub Actions in multiline format"""
-    github_output = os.environ.get('GITHUB_OUTPUT')
-
-    if not github_output:
-        # Local testing mode
-        print(f"{key}: {value}")
-        return
-
-    with open(github_output, 'a') as f:
-        # Use heredoc format for multiline values
-        f.write(f"{key}<<EOF\n{value}\nEOF\n")
+from faq_automation.github_actions import write_github_output
 
 
 def main():
@@ -42,10 +28,10 @@ def main():
         # Parse using Python function
         course, question, answer = parse_full_issue_body(issue_body)
 
-        # Write to GitHub Actions output
-        write_github_output('course', course)
-        write_github_output('question', question)
-        write_github_output('answer', answer)
+        # Write to GitHub Actions output (multiline format)
+        write_github_output('course', course, multiline=True)
+        write_github_output('question', question, multiline=True)
+        write_github_output('answer', answer, multiline=True)
 
         print("✅ Successfully extracted issue fields")
         print(f"   Course: {course}")

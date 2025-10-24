@@ -86,13 +86,8 @@ jobs:
             --model "gpt-5-nano" \
             --output-dir /tmp
 
-          # Read the output
-          if [ -f /tmp/faq_decision.json ]; then
-            echo "decision=$(cat /tmp/faq_decision.json | jq -c .)" >> $GITHUB_OUTPUT
-          else
-            echo "Error: FAQ decision file not found"
-            exit 1
-          fi
+          # Write decision output to GitHub Actions
+          python scripts/write_faq_decision_output.py
 
       - name: Handle NEW or UPDATE action
         if: fromJson(steps.process.outputs.decision).action != 'DUPLICATE'
