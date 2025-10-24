@@ -67,7 +67,6 @@ Once you submit your issue, our FAQ Bot will automatically:
 
 **Example:**
 
-````markdown
 ### Question
 How do I run the tests for this project?
 
@@ -91,7 +90,6 @@ make test-int
 ```
 
 See the [testing documentation](tests/README.md) for more details.
-````
 
 ## Manual Contributions
 
