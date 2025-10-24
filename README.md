@@ -9,29 +9,6 @@ A static site generator for DataTalks.Club course FAQs with automated AI-powered
 - **Intelligent Triage**: Automatically determines if proposals should create new entries, update existing ones, or are duplicates
 - **GitHub Integration**: Seamless workflow via GitHub Issues and Pull Requests
 
-## Quick Start
-
-### Generate the FAQ Website
-
-```bash
-make website
-```
-
-This processes all markdown files in `_questions/` and generates a static site in `_site/`.
-
-### Run Tests
-
-```bash
-# Run all tests
-make test
-
-# Run unit tests only
-make test-unit
-
-# Run integration tests only
-make test-int
-```
-
 ## Project Structure
 
 ```
@@ -103,7 +80,7 @@ sort_order: 10
 The FAQ automation system uses:
 
 - **minsearch**: Lightweight text search to find similar existing FAQs
-- **OpenAI GPT-4**: LLM-based decision making for triage
+- **OpenAI GPT-5**: LLM-based decision making for triage
 - **Pydantic**: Structured output validation
 - **GitHub Actions**: Automated workflow orchestration
 
@@ -111,7 +88,7 @@ The FAQ automation system uses:
 
 1. **Proposal Submission**: User creates GitHub issue with FAQ proposal
 2. **Retrieval**: System searches existing FAQs for similar content
-3. **LLM Analysis**: GPT-4 analyzes proposal + search results and decides:
+3. **LLM Analysis**: GPT-5 analyzes proposal + search results and decides:
    - **NEW**: Question not covered → create new FAQ file
    - **UPDATE**: Adds valuable context → merge with existing FAQ
    - **DUPLICATE**: Already fully answered → close with explanation
@@ -210,7 +187,7 @@ See [tests/README.md](tests/README.md) for detailed information about the test s
 1. **Issue Parsing**: Extract question/answer from GitHub issue
 2. **Index Building**: Create search index from existing FAQs
 3. **Retrieval**: Find top 5 similar FAQs
-4. **LLM Decision**: GPT-4 analyzes and decides action
+4. **LLM Decision**: GPT-5 analyzes and decides action
 5. **Execution**: Create PR or comment based on decision
 
 ## Dependencies
