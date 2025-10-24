@@ -164,13 +164,14 @@ class FAQAgent:
         ]
 
         # Call OpenAI with structured output
-        response = self.openai_client.beta.chat.completions.parse(
+        response = self.openai_client.responses.parse(
             model=self.model,
-            messages=messages,
-            response_format=FAQDecision,
+            input=messages,
+            text_format=FAQDecision,
         )
 
-        faq_decision = response.choices[0].message.parsed
+        message = next(filter(lambda o: o.type == 'message', response.output))
+        faq_decision = message.content[0].parsed
 
         return faq_decision
 
