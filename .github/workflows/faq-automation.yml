@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install --system -e .
+          uv sync --no-dev
 
       - name: Fetch issue body
         id: fetch_issue
