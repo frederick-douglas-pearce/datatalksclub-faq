@@ -74,21 +74,21 @@ How do I run the tests for this project?
 ### Answer
 To run all tests, use:
 
-\`\`\`bash
+```bash
 make test
-\`\`\`
+```
 
 For unit tests only:
 
-\`\`\`bash
+```bash
 make test-unit
-\`\`\`
+```
 
 For integration tests only:
 
-\`\`\`bash
+```bash
 make test-int
-\`\`\`
+```
 
 See the [testing documentation](link) for more details.
 ```
