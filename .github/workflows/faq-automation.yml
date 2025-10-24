@@ -36,8 +36,8 @@ jobs:
         run: |
           uv pip install --system -e .
 
-      - name: Extract issue fields
-        id: extract
+      - name: Fetch issue body
+        id: fetch_issue
         uses: actions/github-script@v7
         with:
           script: |
@@ -53,71 +53,24 @@ jobs:
 
             const body = issue.body || '';
 
-            // Parse the structured issue body
-            const lines = body.split('\n');
-            let question = '';
-            let answer = '';
-            let course = 'machine-learning-zoomcamp';  // default
-            let currentSection = null;
+            // Save issue body to file for Python to parse
+            const fs = require('fs');
+            fs.writeFileSync('/tmp/issue_body.txt', body);
 
-            for (let i = 0; i < lines.length; i++) {
-              const line = lines[i].trim();
+            console.log('Fetched issue body, saved to /tmp/issue_body.txt');
 
-              // Look for course field
-              if (line.includes('### Course')) {
-                // Next non-empty line has the course
-                for (let j = i + 1; j < lines.length; j++) {
-                  const courseLine = lines[j].trim();
-                  if (courseLine && !courseLine.startsWith('#')) {
-                    course = courseLine;
-                    break;
-                  }
-                }
-              }
-
-              // Look for question field
-              if (line.includes('### Question')) {
-                currentSection = 'question';
-                question = '';
-                continue;
-              }
-
-              // Look for answer field
-              if (line.includes('### Answer')) {
-                currentSection = 'answer';
-                answer = '';
-                continue;
-              }
-
-              // Look for checklist (stop collecting)
-              if (line.includes('### Checklist')) {
-                currentSection = null;
-                continue;
-              }
-
-              // Collect content
-              if (currentSection === 'question' && line && !line.startsWith('#')) {
-                question += (question ? '\n' : '') + line;
-              } else if (currentSection === 'answer' && line && !line.startsWith('#')) {
-                answer += (answer ? '\n' : '') + line;
-              }
-            }
-
-            core.setOutput('course', course);
-            core.setOutput('question', question.trim());
-            core.setOutput('answer', answer.trim());
-
-            console.log('Extracted course:', course);
-            console.log('Extracted question:', question.substring(0, 100));
-            console.log('Extracted answer:', answer.substring(0, 100));
+      - name: Extract issue fields with Python
+        id: extract
+        run: |
+          python scripts/extract_issue_fields.py < /tmp/issue_body.txt
 
       - name: Process FAQ with AI
         id: process
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          # Create issue body file for CLI
-          cat > /tmp/issue_body.txt << 'EOF'
+          # Create simplified issue body for CLI (only needs question and answer)
+          cat > /tmp/cli_issue_body.txt << 'EOF'
           ### Question
           ${{ steps.extract.outputs.question }}
 
@@ -127,7 +80,7 @@ jobs:
 
           # Run FAQ automation CLI
           python -m faq_automation.cli \
-            --issue-body "$(cat /tmp/issue_body.txt)" \
+            --issue-body "$(cat /tmp/cli_issue_body.txt)" \
             --issue-number ${{ github.event.issue.number || inputs.issue_number }} \
             --course "${{ steps.extract.outputs.course }}" \
             --model "gpt-5-nano" \
