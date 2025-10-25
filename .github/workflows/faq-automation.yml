@@ -65,14 +65,14 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           # Run FAQ automation CLI with full issue body
-          python -m faq_automation.cli \
+          uv run python -m faq_automation.cli \
             --issue-body "$(cat /tmp/issue_body.txt)" \
             --issue-number ${{ github.event.issue.number || inputs.issue_number }} \
             --model "gpt-5-nano" \
             --output-dir /tmp
 
           # Write decision output to GitHub Actions
-          python scripts/write_faq_decision_output.py
+          uv run scripts/write_faq_decision_output.py
 
       - name: Handle NEW or UPDATE action
         if: fromJson(steps.process.outputs.decision).action != 'DUPLICATE'
