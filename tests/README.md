@@ -51,7 +51,6 @@ Tests for individual functions and components:
   - Content filtering and relevance
 
 - **`test_cli_parsing.py`** - CLI issue body parsing
-  - Simple and multiline issue parsing (question + answer)
   - Full issue parsing (course + question + answer)
   - Extra section handling (Checklist)
   - Error handling for missing fields
@@ -129,9 +128,6 @@ uv run pytest tests/unit/test_url_conversion.py::TestConvertPlainUrlsToLinks::te
 # Test specific FAQ automation functionality
 uv run pytest tests/unit/test_faq_automation.py::TestParseFrontmatter::test_parse_frontmatter -v
 
-# Test specific CLI parsing functionality
-uv run pytest tests/unit/test_cli_parsing.py::TestParseIssueBody::test_parse_issue_body_with_extra_sections -v
-
 # Test full issue body parsing (course + question + answer)
 uv run pytest tests/unit/test_cli_parsing.py::TestParseFullIssueBody::test_parse_full_issue_body_simple -v
 
@@ -152,7 +148,7 @@ The test suite provides comprehensive coverage of:
 - ✅ Template rendering (7 tests)
 - ✅ Sorting and organization (8 tests)
 - ✅ FAQ automation core (6 tests)
-- ✅ CLI issue parsing (11 tests)
+- ✅ CLI issue parsing (6 tests)
 - ✅ GitHub Actions integration (13 tests)
 
 ### Integration Scenarios

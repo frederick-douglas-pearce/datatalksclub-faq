@@ -107,66 +107,6 @@ def parse_full_issue_body(issue_body: str) -> tuple[str, str, str]:
     return course, question, answer
 
 
-def parse_issue_body(issue_body: str) -> tuple[str, str]:
-    """
-    Parse structured issue body to extract question and answer
-
-    Expected format from GitHub issue template:
-    ### Question
-    <question text>
-
-    ### Answer
-    <answer text>
-    """
-    lines = issue_body.strip().split('\n')
-
-    question = None
-    answer = None
-    current_section = None
-    current_content = []
-
-    for line in lines:
-        line = line.strip()
-
-        if line.startswith('### Question'):
-            if current_section and current_content:
-                if current_section == 'question':
-                    question = '\n'.join(current_content).strip()
-                elif current_section == 'answer':
-                    answer = '\n'.join(current_content).strip()
-            current_section = 'question'
-            current_content = []
-        elif line.startswith('### Answer'):
-            if current_section and current_content:
-                if current_section == 'question':
-                    question = '\n'.join(current_content).strip()
-            current_section = 'answer'
-            current_content = []
-        elif line.startswith('###'):
-            # Any other section (like ### Checklist) - stop collecting
-            if current_section and current_content:
-                if current_section == 'question':
-                    question = '\n'.join(current_content).strip()
-                elif current_section == 'answer':
-                    answer = '\n'.join(current_content).strip()
-            current_section = None
-            current_content = []
-        elif line and current_section:
-            current_content.append(line)
-
-    # Capture last section
-    if current_section and current_content:
-        if current_section == 'question':
-            question = '\n'.join(current_content).strip()
-        elif current_section == 'answer':
-            answer = '\n'.join(current_content).strip()
-
-    if not question or not answer:
-        raise ValueError("Could not parse question and answer from issue body")
-
-    return question, answer
-
-
 def main():
     """Main CLI entry point"""
     parser = argparse.ArgumentParser(description='Process FAQ proposal from GitHub issue')
