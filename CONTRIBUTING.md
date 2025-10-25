@@ -67,6 +67,9 @@ Once you submit your issue, our FAQ Bot will automatically:
 
 **Example:**
 
+### Course
+machine-learning-zoomcamp
+
 ### Question
 How do I run the tests for this project?
 
