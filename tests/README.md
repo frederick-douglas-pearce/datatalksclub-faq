@@ -1,6 +1,6 @@
 # Test Suite for FAQ Site Generator
 
-This directory contains comprehensive tests for the `generate_website.py` script, organized into focused test files for maintainability and clarity.
+This directory contains comprehensive tests for both the static site generator (`generate_website.py`) and the FAQ automation system (`faq_automation/`), organized into focused test files for maintainability and clarity.
 
 ## Test Structure
 
@@ -200,6 +200,17 @@ When adding new functionality to `generate_website.py`:
 1. **Add unit tests** for new functions in appropriate `test_*.py` files
 2. **Add integration tests** if the change affects the complete workflow
 3. **Test edge cases** and error conditions
+4. **Update this README** if new test categories are added
+
+When adding new functionality to the FAQ automation system (`faq_automation/`):
+
+1. **Add unit tests** for new functions in the corresponding test file:
+   - `test_cli_parsing.py` for CLI argument and issue body parsing
+   - `test_faq_automation.py` for core FAQ processing functions
+   - `test_faq_actions.py` for GitHub Actions integration logic
+   - `test_github_actions.py` for GitHub Actions output helpers
+2. **Test with real issue bodies** to ensure parsing handles various formats
+3. **Mock external dependencies** (e.g., OpenAI API calls) in unit tests
 4. **Update this README** if new test categories are added
 
 ### Test Naming Convention
