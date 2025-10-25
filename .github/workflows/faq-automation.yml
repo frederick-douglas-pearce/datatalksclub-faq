@@ -34,10 +34,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install --system -e .
+          uv sync --no-dev
 
-      - name: Extract issue fields
-        id: extract
+      - name: Fetch issue body
+        id: fetch_issue
         uses: actions/github-script@v7
         with:
           script: |
@@ -53,93 +53,26 @@ jobs:
 
             const body = issue.body || '';
 
-            // Parse the structured issue body
-            const lines = body.split('\n');
-            let question = '';
-            let answer = '';
-            let course = 'machine-learning-zoomcamp';  // default
-            let currentSection = null;
+            // Save issue body to file for Python to parse
+            const fs = require('fs');
+            fs.writeFileSync('/tmp/issue_body.txt', body);
 
-            for (let i = 0; i < lines.length; i++) {
-              const line = lines[i].trim();
-
-              // Look for course field
-              if (line.includes('### Course')) {
-                // Next non-empty line has the course
-                for (let j = i + 1; j < lines.length; j++) {
-                  const courseLine = lines[j].trim();
-                  if (courseLine && !courseLine.startsWith('#')) {
-                    course = courseLine;
-                    break;
-                  }
-                }
-              }
-
-              // Look for question field
-              if (line.includes('### Question')) {
-                currentSection = 'question';
-                question = '';
-                continue;
-              }
-
-              // Look for answer field
-              if (line.includes('### Answer')) {
-                currentSection = 'answer';
-                answer = '';
-                continue;
-              }
-
-              // Look for checklist (stop collecting)
-              if (line.includes('### Checklist')) {
-                currentSection = null;
-                continue;
-              }
-
-              // Collect content
-              if (currentSection === 'question' && line && !line.startsWith('#')) {
-                question += (question ? '\n' : '') + line;
-              } else if (currentSection === 'answer' && line && !line.startsWith('#')) {
-                answer += (answer ? '\n' : '') + line;
-              }
-            }
-
-            core.setOutput('course', course);
-            core.setOutput('question', question.trim());
-            core.setOutput('answer', answer.trim());
-
-            console.log('Extracted course:', course);
-            console.log('Extracted question:', question.substring(0, 100));
-            console.log('Extracted answer:', answer.substring(0, 100));
+            console.log('Fetched issue body, saved to /tmp/issue_body.txt');
 
       - name: Process FAQ with AI
         id: process
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          # Create issue body file for CLI
-          cat > /tmp/issue_body.txt << 'EOF'
-          ### Question
-          ${{ steps.extract.outputs.question }}
-
-          ### Answer
-          ${{ steps.extract.outputs.answer }}
-          EOF
-
-          # Run FAQ automation CLI
-          python -m faq_automation.cli \
+          # Run FAQ automation CLI with full issue body
+          uv run python -m faq_automation.cli \
             --issue-body "$(cat /tmp/issue_body.txt)" \
-            --issue-number ${{ github.event.issue.number }} \
-            --course "${{ steps.extract.outputs.course }}" \
+            --issue-number ${{ github.event.issue.number || inputs.issue_number }} \
             --model "gpt-5-nano" \
             --output-dir /tmp
 
-          # Read the output
-          if [ -f /tmp/faq_decision.json ]; then
-            echo "decision=$(cat /tmp/faq_decision.json | jq -c .)" >> $GITHUB_OUTPUT
-          else
-            echo "Error: FAQ decision file not found"
-            exit 1
-          fi
+          # Write decision output to GitHub Actions
+          uv run scripts/write_faq_decision_output.py
 
       - name: Handle NEW or UPDATE action
         if: fromJson(steps.process.outputs.decision).action != 'DUPLICATE'
@@ -159,7 +92,9 @@ jobs:
             await exec.exec('git', ['config', 'user.name', 'FAQ Bot']);
             await exec.exec('git', ['config', 'user.email', 'faq-bot@datatalks.club']);
 
-            // Create and switch to new branch
+            // Fetch and checkout main, then create new branch from it
+            await exec.exec('git', ['fetch', 'origin', 'main']);
+            await exec.exec('git', ['checkout', 'main']);
             await exec.exec('git', ['checkout', '-b', branchName]);
 
             // Add modified files
