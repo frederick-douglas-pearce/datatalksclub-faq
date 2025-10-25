@@ -172,7 +172,6 @@ def main():
     parser = argparse.ArgumentParser(description='Process FAQ proposal from GitHub issue')
     parser.add_argument('--issue-body', required=True, help='GitHub issue body text')
     parser.add_argument('--issue-number', type=int, required=True, help='GitHub issue number')
-    parser.add_argument('--course', default='machine-learning-zoomcamp', help='Course name')
     parser.add_argument('--model', default='gpt-5-nano', help='OpenAI model to use')
     parser.add_argument('--output-dir', default='.', help='Output directory for results')
 
@@ -185,14 +184,15 @@ def main():
         sys.exit(1)
 
     try:
-        # Parse issue body
+        # Parse issue body (extracts course, question, and answer)
         print("Parsing issue body...")
-        question, answer = parse_issue_body(args.issue_body)
+        course, question, answer = parse_full_issue_body(args.issue_body)
+        print(f"Course: {course}")
         print(f"Question: {question[:100]}...")
         print(f"Answer: {answer[:100]}...")
 
         # Set up paths
-        course_dir = Path('_questions') / args.course
+        course_dir = Path('_questions') / course
         if not course_dir.exists():
             print(f"Error: Course directory {course_dir} does not exist", file=sys.stderr)
             sys.exit(1)
@@ -216,7 +216,7 @@ def main():
             'action': faq_decision.action,
             'decision': faq_decision.model_dump(),
             'issue_number': args.issue_number,
-            'course': args.course,
+            'course': course,
         }
 
         # Handle different actions
@@ -226,7 +226,7 @@ def main():
             file_path = create_new_faq_file(course_dir, doc_index, faq_decision)
 
             output['file_path'] = str(file_path)
-            output['pr_body'] = generate_pr_body(faq_decision, args.issue_number, args.course)
+            output['pr_body'] = generate_pr_body(faq_decision, args.issue_number, course)
             output['changes'] = get_file_changes_summary('NEW', file_path, course_dir)
 
             print(f"Created: {file_path}")
@@ -237,7 +237,7 @@ def main():
             file_path = update_existing_faq_file(course_dir, doc_index, faq_decision)
 
             output['file_path'] = str(file_path)
-            output['pr_body'] = generate_pr_body(faq_decision, args.issue_number, args.course)
+            output['pr_body'] = generate_pr_body(faq_decision, args.issue_number, course)
             output['changes'] = get_file_changes_summary('UPDATE', file_path, course_dir)
 
             print(f"Updated: {file_path}")
@@ -246,7 +246,7 @@ def main():
             print("\nGenerating duplicate comment...")
             output['comment'] = generate_duplicate_comment(
                 faq_decision,
-                args.course,
+                course,
                 site_url='https://datatalks.club/faq'  # Update with actual URL
             )
 

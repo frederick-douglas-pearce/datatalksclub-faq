@@ -126,6 +126,9 @@ To test the FAQ automation locally, create a `test_issue.txt` file:
 
 ```bash
 cat > test_issue.txt << 'EOF'
+### Course
+machine-learning-zoomcamp
+
 ### Question
 How do I check my Python version?
 
@@ -139,8 +142,7 @@ Then process the FAQ proposal:
 ```bash
 uv run python -m faq_automation.cli \
   --issue-body "$(cat test_issue.txt)" \
-  --issue-number 42 \
-  --course machine-learning-zoomcamp
+  --issue-number 42
 ```
 
 ### Testing

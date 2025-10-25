@@ -59,30 +59,15 @@ jobs:
 
             console.log('Fetched issue body, saved to /tmp/issue_body.txt');
 
-      - name: Extract issue fields with Python
-        id: extract
-        run: |
-          python scripts/extract_issue_fields.py < /tmp/issue_body.txt
-
       - name: Process FAQ with AI
         id: process
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          # Create simplified issue body for CLI (only needs question and answer)
-          cat > /tmp/cli_issue_body.txt << 'EOF'
-          ### Question
-          ${{ steps.extract.outputs.question }}
-
-          ### Answer
-          ${{ steps.extract.outputs.answer }}
-          EOF
-
-          # Run FAQ automation CLI
+          # Run FAQ automation CLI with full issue body
           python -m faq_automation.cli \
-            --issue-body "$(cat /tmp/cli_issue_body.txt)" \
+            --issue-body "$(cat /tmp/issue_body.txt)" \
             --issue-number ${{ github.event.issue.number || inputs.issue_number }} \
-            --course "${{ steps.extract.outputs.course }}" \
             --model "gpt-5-nano" \
             --output-dir /tmp
 
