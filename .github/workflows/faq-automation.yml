@@ -3,12 +3,6 @@ name: FAQ Automation
 on:
   issues:
     types: [opened]
-  workflow_dispatch:
-    inputs:
-      issue_number:
-        description: 'Issue number to process'
-        required: true
-        type: number
 
 permissions:
   contents: write
@@ -17,7 +11,7 @@ permissions:
 
 jobs:
   process-faq-proposal:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'faq-proposal')
+    if: contains(github.event.issue.labels.*.name, 'faq-proposal')
     runs-on: ubuntu-latest
 
     steps:
@@ -41,17 +35,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            // Get issue number from event or manual input
-            const issueNumber = context.payload.issue?.number || ${{ inputs.issue_number || 'null' }};
-
-            // Fetch issue if manually triggered
-            const issue = context.payload.issue || await github.rest.issues.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issueNumber
-            }).then(res => res.data);
-
-            const body = issue.body || '';
+            const body = context.payload.issue.body || '';
 
             // Save issue body to file for Python to parse
             const fs = require('fs');
@@ -67,7 +51,7 @@ jobs:
           # Run FAQ automation CLI with full issue body
           uv run python -m faq_automation.cli \
             --issue-body "$(cat /tmp/issue_body.txt)" \
-            --issue-number ${{ github.event.issue.number || inputs.issue_number }} \
+            --issue-number ${{ github.event.issue.number }} \
             --model "gpt-5-nano" \
             --output-dir /tmp
 
@@ -156,7 +140,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const issueNumber = context.payload.issue?.number || ${{ inputs.issue_number || 'null' }};
+            const issueNumber = context.payload.issue.number;
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
