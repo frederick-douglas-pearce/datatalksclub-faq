@@ -114,7 +114,7 @@ jobs:
               title: `[FAQ Bot] ${action}: ${decision.decision.question.substring(0, 72)}`,
               head: branchName,
               base: 'main',
-              body: prBody
+              body: `${prBody}\n\nCloses #${issueNumber}`
             });
 
             // Comment on issue with PR link
