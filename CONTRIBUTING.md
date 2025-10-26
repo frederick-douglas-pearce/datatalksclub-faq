@@ -35,7 +35,8 @@ Once you submit your issue, our FAQ Bot will automatically:
   - Explanation of why this action was chosen
   - Section placement and reasoning
 - A maintainer will review the PR
-- Once approved, your FAQ contribution will be merged!
+- Once approved and merged, your FAQ contribution will be live!
+- The originating issue will be automatically closed when the PR is merged
 
 #### For DUPLICATE Decisions
 

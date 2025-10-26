@@ -96,8 +96,8 @@ The FAQ automation system uses:
    - **UPDATE**: Adds valuable context → merge with existing FAQ
    - **DUPLICATE**: Already fully answered → close with explanation
 4. **Action Execution**:
-   - NEW/UPDATE: Create PR with file changes
-   - DUPLICATE: Comment on issue and close
+   - NEW/UPDATE: Create PR with file changes (issue auto-closes when PR is merged)
+   - DUPLICATE: Comment on issue and close immediately
 
 ### Configuration
 
